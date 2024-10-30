@@ -20,7 +20,7 @@ import one from "@/assets/img/1.png";
 import two from "@/assets/img/2.png";
 
 export default function Home() {
-  const isMobile = useMediaQuery("(max-width:768px)"); // Detect if the screen is mobile
+  const isMobile = useMediaQuery("(max-width:768px)");
 
   return (
     <>
@@ -30,9 +30,8 @@ export default function Home() {
       <motion.div
         style={{ paddingTop: "7rem" }}
         initial={{ opacity: 0, y: 100 }}
-        id="goToHome"
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
       >
         <Box
           className="home"
@@ -62,7 +61,7 @@ export default function Home() {
               className="main-title-2 text-primary"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
             >
               مرحبًا بكم في شركة InBrief!
             </motion.h1>
@@ -70,7 +69,7 @@ export default function Home() {
               className="title-h3-2"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
             >
               نحن شركة مرخصة رسمياً و رائدة في مجال البرمجة وتطوير التطبيقات
               والمواقع الإلكترونية والتسويق الإلكتروني، حيث نركز على تلبية
@@ -79,11 +78,10 @@ export default function Home() {
           </Container>
 
           {/* Features Section */}
-
           <Container
             sx={{
               display: "flex",
-              gap: { xs: "6rem",  lg: "15rem" },
+              gap: { xs: "6rem", lg: "15rem" },
               padding: { xs: "6rem 0", md: "10rem 0", xl: "15rem 0" },
               flexDirection: "column",
             }}
@@ -92,8 +90,8 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={isMobile ? { once: true } : { once: true, amount: 0.3 }} // Ensure animation triggers when in view
-              transition={{ duration: 0.6 }}
+              viewport={isMobile ? { once: true } : { once: true, amount: 0.3 }}
+              transition={{ duration: 0.8 }}
             >
               <Box
                 sx={{
@@ -159,8 +157,8 @@ export default function Home() {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={
                         isMobile ? { once: true } : { once: true, amount: 0.3 }
-                      } // Ensure animation triggers when in view
-                      transition={{ duration: 0.6 }}
+                      }
+                      transition={{ duration: 0.8 }}
                     >
                       <Image
                         src={one}
@@ -184,8 +182,8 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={isMobile ? { once: true } : { once: true, amount: 0.3 }} // Ensure animation triggers when in view
-              transition={{ duration: 0.6 }}
+              viewport={isMobile ? { once: true } : { once: true, amount: 0.3 }}
+              transition={{ duration: 0.8 }}
             >
               <Box
                 sx={{
@@ -207,9 +205,8 @@ export default function Home() {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "flex-start",
-                      order: { xs: 2, sm: 1 } // Switch order for mobile view
+                      order: { xs: 2, sm: 1 },
                     }}
-                    
                   >
                     <Image
                       src={two}
@@ -226,18 +223,19 @@ export default function Home() {
                   </Grid>
 
                   {/* Values Text */}
-                  <Grid item xs={12} sm={6}
-                    sx={{ 
-                      order: { xs: 1, sm: 2 } // Switch order for mobile view
-                    }}
+                  <Grid
+                    item
+                    xs={12}
+                    sm={6}
+                    sx={{ order: { xs: 1, sm: 2 } }}
                   >
                     <motion.div
                       initial={{ opacity: 0, y: 50 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={
                         isMobile ? { once: true } : { once: true, amount: 0.3 }
-                      } // Ensure animation triggers when in view
-                      transition={{ duration: 0.6 }}
+                      }
+                      transition={{ duration: 0.8 }}
                     >
                       <Box
                         sx={{
@@ -259,87 +257,70 @@ export default function Home() {
                         >
                           قيمنا
                         </Typography>
-                        <Box>
-                          <Box>
-                            <List
-                              sx={{
-                                listStyleType: "disc",
-                                listStylePosition: "inside",
-                              }}
-                            >
-                              {/* Innovation */}
-                              <ListItem sx={{ padding: "0" }}>
-                                <ListItemText
-                                  primary={
-                                    <Typography
-                                      sx={{
-                                        fontSize: { xs: "2rem", lg: "2.7rem" },
-
-                                        fontWeight: 400,
-                                        lineHeight: "3.7rem",
-                                        color: "#fff",
-                                      }}
-                                    >
-                                      <span style={{ color: "#E1E42A" }}>
-                                        <span className="pl-2">•</span>
-                                        الابتكار :
-                                      </span>
-                                      &nbsp;نسعى دائمًا لتقديم أفكار جديدة وحلول
-                                      مبتكرة .
-                                    </Typography>
-                                  }
-                                />
-                              </ListItem>
-
-                              {/* Quality */}
-                              <ListItem sx={{ padding: "0" }}>
-                                <ListItemText
-                                  primary={
-                                    <Typography
-                                      sx={{
-                                        fontSize: { xs: "2rem", lg: "2.7rem" },
-                                        fontWeight: 400,
-                                        lineHeight: "3.7rem",
-                                        color: "#fff",
-                                      }}
-                                    >
-                                      <span style={{ color: "#E1E42A" }}>
-                                        <span className="pl-2">•</span>
-                                        الجودة :
-                                      </span>
-                                      &nbsp;نلتزم بتقديم أعلى معايير الجودة في
-                                      كل ما نقوم به.
-                                    </Typography>
-                                  }
-                                />
-                              </ListItem>
-
-                              {/* Transparency */}
-                              <ListItem sx={{ padding: "0" }}>
-                                <ListItemText
-                                  primary={
-                                    <Typography
-                                      sx={{
-                                        fontSize: { xs: "2rem", lg: "2.7rem" },
-                                        fontWeight: 400,
-                                        lineHeight: "3.7rem",
-                                        color: "#fff",
-                                      }}
-                                    >
-                                      {" "}
-                                      <span style={{ color: "#E1E42A" }}>
-                                        <span className="pl-2">•</span>
-                                        الشفافية :
-                                      </span>
-                                      &nbsp;نؤمن بأهمية بناء علاقات قائمة على
-                                      الثقة مع عملائنا.
-                                    </Typography>
-                                  }
-                                />
-                              </ListItem>
-                            </List>
-                          </Box>
-                        </Box>
+                        <List
+                          sx={{
+                            listStyleType: "disc",
+                            listStylePosition: "inside",
+                          }}
+                        >
+                          <ListItem sx={{ padding: "0" }}>
+                            <ListItemText
+                              primary={
+                                <Typography
+                                  sx={{
+                                    fontSize: { xs: "2rem", lg: "2.7rem" },
+                                    fontWeight: 400,
+                                    lineHeight: "3.7rem",
+                                    color: "#fff",
+                                  }}
+                                >
+                                  <span style={{ color: "#E1E42A" }}>
+                                    الابتكار :
+                                  </span>
+                                  نسعى دائمًا لتقديم أفكار جديدة وحلول مبتكرة.
+                                </Typography>
+                              }
+                            />
+                          </ListItem>
+                          <ListItem sx={{ padding: "0" }}>
+                            <ListItemText
+                              primary={
+                                <Typography
+                                  sx={{
+                                    fontSize: { xs: "2rem", lg: "2.7rem" },
+                                    fontWeight: 400,
+                                    lineHeight: "3.7rem",
+                                    color: "#fff",
+                                  }}
+                                >
+                                  <span style={{ color: "#E1E42A" }}>
+                                    الجودة :
+                                  </span>
+                                  نلتزم بتقديم أعلى معايير الجودة.
+                                </Typography>
+                              }
+                            />
+                          </ListItem>
+                          <ListItem sx={{ padding: "0" }}>
+                            <ListItemText
+                              primary={
+                                <Typography
+                                  sx={{
+                                    fontSize: { xs: "2rem", lg: "2.7rem" },
+                                    fontWeight: 400,
+                                    lineHeight: "3.7rem",
+                                    color: "#fff",
+                                  }}
+                                >
+                                  <span style={{ color: "#E1E42A" }}>
+                                    الشفافية :
+                                  </span>
+                                  نؤمن ببناء علاقات قائمة على الثقة مع عملائنا.
+                                </Typography>
+                              }
+                            />
+                          </ListItem>
+                        </List>
                       </Box>
                     </motion.div>
                   </Grid>
@@ -351,8 +332,8 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={isMobile ? { once: true } : { once: true, amount: 0.3 }} // Ensure animation triggers when in view
-              transition={{ duration: 0.6 }}
+              viewport={isMobile ? { once: true } : { once: true, amount: 0.3 }}
+              transition={{ duration: 0.8 }}
               style={{
                 width: "100%",
               }}
@@ -395,7 +376,6 @@ export default function Home() {
                   variant="body1"
                   sx={{
                     fontSize: { xs: "2rem", lg: "2.7rem" },
-
                     fontWeight: 600,
                     lineHeight: "3.7rem",
                     textAlign: "center",
@@ -413,7 +393,7 @@ export default function Home() {
         </Box>
       </motion.div>
 
-      {/* Feedback and Form Components (No Animations) */}
+      {/* Feedback and Form Components */}
       <Feedback />
       <Form />
     </>

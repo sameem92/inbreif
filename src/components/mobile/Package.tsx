@@ -67,7 +67,10 @@ const cardVariants = {
 
 export default function Package() {
   const isMobile = useMediaQuery("(max-width:768px)"); // Detect if the screen is mobile
-
+  const goToWhatsApp = ()=>{
+    //href="" 
+    window.open("http://wa.me/96877276659","_target")
+  }
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -107,7 +110,7 @@ export default function Package() {
              pagination={true}
              className="mySwiper-dots"
               autoplay={{
-               delay: 0,
+               delay: 1700,
                disableOnInteraction: false,
                pauseOnMouseEnter: true,
                reverseDirection: false,
@@ -259,7 +262,9 @@ export default function Package() {
                    fontWeight: 600,
                   lineHeight: "1.6rem",
                   
+
                 }}
+                onClick={goToWhatsApp}
                 className='t-buttin'
               >
 احصل على التطبيق              </Button>

@@ -55,7 +55,7 @@ export default function Home() {
                   sx={{
                     color: "white",
                     // fontFamily: "var(--font-ibm-plex-sans-arabic) !important",
-                    fontSize: { xs: "2.4rem", lg: "3.2rem" },
+                    fontSize: { xs: "2.6rem", lg: "3.2rem" },
                     fontStyle: "normal",
                     fontWeight: "700",
                     textAlign: { xs: "center", md: "end" },

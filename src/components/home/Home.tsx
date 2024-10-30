@@ -39,6 +39,10 @@ const items = [
 ];
 
 export default function Home() {
+  const goToWhatsApp = ()=>{
+    //href="" 
+    window.open("http://wa.me/96877276659","_target")
+  }
   return (
     <>
       <Social />
@@ -101,6 +105,7 @@ export default function Home() {
                 fontWeight: 600,
                 lineHeight: "1.6rem",
               }}
+              onClick={goToWhatsApp}
             >
               اطلب استشارة مجانية
             </Button>

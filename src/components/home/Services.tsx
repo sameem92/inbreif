@@ -31,6 +31,7 @@ const firstService = [
     img: "/image/service3.png",
     title: "نظام محاسبي ومبيعات",
     href: "/mobile-apps",
+    soon:true
   },
 ];
 const secService = [
@@ -94,9 +95,9 @@ export default function Services() {
 
             <Box
               sx={{
-                width: {xs:'90%',lg:'100%'},
+                width: {xs:'90%',sm:'100%',md:'100%',lg:'100%'},
                 margin:'auto',
-                padding: { xs: "0 2rem", lg: "0 10rem" },
+                padding: { xs: "0 2rem" , sm:'0 6rem', md:'0 8rem', lg: "0 10rem" },
               }}
             >
               <Grid container spacing={{ xs: 3 }}>
@@ -112,6 +113,7 @@ export default function Services() {
                     >
                       <Item
                         sx={{
+                          position:'relative',
                           display: "flex",
                           flexDirection: "column",
                           alignItems: "center",
@@ -120,6 +122,10 @@ export default function Services() {
                           cursor:'pointer',
                           "& .service-img-scale": {
                             transform: "scale(1.3)",
+                            "@media (max-width: 1240px)": {
+                               transform: "scale(1.05)",
+
+                            },
                             "@media (max-width: 1024px)": {
                               maxWidth: "220px",
                               transform: "scale(1.2)",
@@ -155,7 +161,26 @@ export default function Services() {
                           className="service-img-scale"
                         />
                         <h3>{item.title}</h3>
-                        <Button
+                        {item.soon && (
+                        <Box
+                          sx={{
+                            position: "absolute",
+                            top: "10px",
+                            right: "10px",
+                            backgroundColor: "#E0E327",
+                            color: "#000",
+                            fontSize: "1.2rem",
+                            fontWeight: "bold",
+                            padding: "0.5rem 1rem",
+                            borderRadius: "5px",
+                            textTransform: "uppercase",
+                          }}
+                        >
+                          قريباً
+                        </Box>
+                      )}
+
+                         <Button
                           variant="text"
                           sx={{
                             color: "#E0E327",

@@ -56,7 +56,7 @@ export default function Slider() {
 
           justifyContent: "center",
           width: {
-            xs: "90%",
+            xs: "100%",
             lg: "100%",
           },
         }}

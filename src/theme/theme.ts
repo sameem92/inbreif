@@ -14,7 +14,7 @@ const theme = createTheme({
     values: {
       xs: 0,
       custom490: 490, // Custom breakpoint at 450px
-
+      custom768:768,
       sm: 600,
       md: 900,
       custom992: 950, // Custom breakpoint at 450px

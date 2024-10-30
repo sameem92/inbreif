@@ -236,7 +236,12 @@ const Header = () => {
                 >
                   مواقع ومتاجر الكترونية{" "}
                 </MenuItem>
-                <MenuItem onClick={popupState.close}>نظام محاسبي</MenuItem>
+                <MenuItem  
+                  onClick={() => {
+                    handleNavigation("/system-apps")
+                    popupState.close();
+                  }}
+                >نظام محاسبي</MenuItem>
               </StyledMenu>
             </ListItem>
           ) : (
@@ -476,7 +481,11 @@ const Header = () => {
                           >
                             مواقع ومتاجر الكترونية{" "}
                           </MenuItem>
-                          <MenuItem onClick={popupState.close}>
+                          <MenuItem onClick={()=>{
+                                                handleNavigation("/system-apps")
+                                                popupState.close();
+
+                          }}>
                             نظام محاسبي
                           </MenuItem>
                         </StyledMenu>
@@ -503,7 +512,7 @@ const Header = () => {
                   </React.Fragment>
                 ))}
 
-                <Lang />
+                {/* <Lang /> */}
               </Box>
 
               {/* Logo */}

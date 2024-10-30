@@ -99,13 +99,13 @@ console.log(isT,"isT")
             gap: "2.4rem",
             margin: "0 auto",
             marginTop: { xs: "0 ", md: "4rem" },
-
-            width: { xs: "80%", sm: "80%", md: "80%", lg: "100%", xl: "100%" },
+ 
+            width: { xs: "69%",sm:'90%' ,custom992: "90%", lg: "100%", xl: "100%" },
           }}
         >
           <Grid container spacing={3} justifyContent="center">
             {packages.map((item, index) => (
-              <Grid item xs={12} sm={6} md={6} lg={4} key={index}>
+              <Grid item xs={12}  sm={6}   custom992={4} lg={4} key={index}>
                 <motion.div
                   key={index}
                   className={`price ${item.recommend ? "recommend recommend-hover" : "price-h"}`}

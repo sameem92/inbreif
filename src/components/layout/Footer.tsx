@@ -444,7 +444,11 @@ export default function ResponsiveFooter() {
                     >
                       مواقع ومتاجر الكترونية{" "}
                     </MenuItem>
-                    <MenuItem onClick={popupState.close}>نظام محاسبي</MenuItem>
+                    <MenuItem  onClick={()=>{
+                                                handleNavigation("/system-apps")
+                                                popupState.close();
+
+                          }}>نظام محاسبي</MenuItem>
                   </StyledMenu>
 
                   <Typography
@@ -561,8 +565,7 @@ export default function ResponsiveFooter() {
                       fontSize: "1.6rem",
                       fontWeight: 400,
                       lineHeight: "1.6rem",
-                      cursor: "pointer",
-                      display: "flex",
+                       display: "flex",
                       alignItems: "center",
                       gap: "1rem",
                     }}
@@ -597,8 +600,7 @@ export default function ResponsiveFooter() {
                         fontSize: "1.6rem",
                         fontWeight: 400,
                         lineHeight: "1.6rem",
-                        cursor: "pointer",
-                        display: "flex",
+                         display: "flex",
                         alignItems: "center",
                         gap: "1rem",
                       }}
@@ -660,8 +662,7 @@ export default function ResponsiveFooter() {
                         fontSize: "1.6rem",
                         fontWeight: 400,
                         lineHeight: "1.6rem",
-                        cursor: "pointer",
-                        display: "flex",
+                         display: "flex",
                         alignItems: "center",
                         gap: "1rem",
                       }}
@@ -676,8 +677,8 @@ export default function ResponsiveFooter() {
                       />
 
                       <span>
-                        <strong>الكويت</strong>: القبلة - شارع علي السالم - برج
-                        العدل الدور١٢
+                        <strong>الكويت</strong>:
+                        الفروانية - خيطان - الهيئة العامه للاستثمار -الدور الأول - 13
                       </span>
                     </Typography>
                     <Typography
@@ -723,8 +724,7 @@ export default function ResponsiveFooter() {
                         fontSize: "1.6rem",
                         fontWeight: 400,
                         lineHeight: "1.6rem",
-                        cursor: "pointer",
-                        display: "flex",
+                         display: "flex",
                         alignItems: "center",
                         gap: "1rem",
                       }}

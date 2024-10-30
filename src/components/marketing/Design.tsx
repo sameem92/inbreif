@@ -126,7 +126,7 @@ export default function Design() {
             >
               <Box
                 sx={{
-                  width: { xs: "85%", lg: "80%" },
+                  width: { xs: "89%",sm:'95%',md:'89%', lg: "80%" },
                   paddingBottom: "4.8rem",
                   position: "relative",
                   top: "5.8rem",
@@ -134,9 +134,9 @@ export default function Design() {
                   margin: "0 auto",
                 }}
               >
-<Grid container spacing={{ xs: 4, lg: 7 }}>
+<Grid container spacing={{ xs: 2, lg: 7 }}>
 {items.map((item, index) => (
-                    <Grid item key={index} xs={6} sm={6} md={4}>
+                    <Grid item key={index} xs={6} sm={4} md={4}>
                       <motion.div
                         whileHover={{ scale: 1.05 }}
                         transition={{
@@ -157,7 +157,7 @@ export default function Design() {
                             alignItems: "center",
                             padding: {
                               xs: "1.6rem 0rem",
-                              md: "1rem",
+                              md: "1rem ",
                               lg: "1.1rem 1.2rem",
                             },
                             height: "100%",
@@ -195,7 +195,7 @@ export default function Design() {
                               variant="h6"
                               sx={{
                                 fontSize: {
-                                  xs: "2rem",
+                                  xs: "1.9rem",
                                   md: "1.8rem",
                                   lg: "2.4rem",
                                 },

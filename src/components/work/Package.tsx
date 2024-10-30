@@ -64,6 +64,7 @@ const cardVariants = {
 };
 
 export default function Package() {
+
   const isMobile = useMediaQuery("(max-width:768px)"); // Detect if the screen is mobile
   const isT = useMediaQuery("(max-width:1350px)"); // Detect if the screen is mobile
 console.log(isT ? { scale: 1.01}: { scale: 1.05 })
@@ -98,12 +99,12 @@ console.log(isT ? { scale: 1.01}: { scale: 1.05 })
             margin: "0 auto",
             marginTop: { xs: "0 ", md: "4rem" },
 
-            width: { xs: "80%", sm: "80%", md: "80%", lg: "100%", xl: "100%" },
+            width: { xs: "69%",sm:'90%' ,custom992: "90%", lg: "100%", xl: "100%" },
           }}
         >
           <Grid container spacing={3} justifyContent="center">
             {packages.map((item, index) => (
-              <Grid item xs={12} sm={6} md={6} lg={4} key={index}>
+              <Grid item xs={12}  sm={6}   custom992={4} lg={4} key={index}>
                 <motion.div
                   key={index}
                   className={`price`}

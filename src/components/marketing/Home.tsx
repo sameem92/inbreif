@@ -151,7 +151,7 @@ export default function Home() {
                   margin: "0 auto",
                 }}
               >
-                <Grid container spacing={6}>
+                <Grid container spacing={{xs:2 , md:4 , lg:6}}>
                   {items.map((item, index) => (
                     <Grid item key={index} xs={6} sm={6} md={4}>
                       <motion.div
@@ -256,7 +256,7 @@ export default function Home() {
           <Tab className="tab" label=" هويات بصرية" {...a11yProps(1)} />
           <Tab
             className="tab"
-            label=" اعلانات السوشيال ميديا"
+            label="  سوشيال ميديا"
             {...a11yProps(2)}
           />
           <Tab className="tab" label="بروفايلات ومجلات" {...a11yProps(3)} />

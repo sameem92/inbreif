@@ -39,7 +39,8 @@ export default function AppLayout({ children }: AppLayoutProps) {
       window?.location?.pathname?.includes("web-apps") ||
       window?.location?.pathname?.includes("mobile-apps") ||
       window?.location?.pathname?.includes("about") ||
-      window?.location?.pathname?.includes("work") 
+      window?.location?.pathname?.includes("work")  ||
+      window?.location?.pathname?.includes("system")  
  
     // Set a small, placeholder image initially (for performance)
     body.style.backgroundImage = `url("/image/placeholder.svg")`;

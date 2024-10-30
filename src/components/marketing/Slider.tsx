@@ -45,7 +45,7 @@ export default function Slider() {
           display: "flex",
           justifyContent: "center",
           width: {
-            xs: "90%",
+            xs: "100%",
             lg: "100%",
           },
           margin: "auto",

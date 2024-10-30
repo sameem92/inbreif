@@ -61,7 +61,7 @@ export default function Slider() {
           margin: "auto",
 
           width: {
-            xs: "90%",
+            xs: "100%",
             lg: "100%",
           },
         }}

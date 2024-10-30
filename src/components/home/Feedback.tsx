@@ -33,16 +33,16 @@ export default function Feedback() {
 
   const totalSlides = 10;
   const IMGS = [
-    "/image/f1.png",
-    "/image/f2.png",
-    "/image/f3.png",
-    "/image/f4.png",
-    "/image/f.png",
-    "/image/f6.png",
-    "/image/f7.png",
-    "/image/f8.png",
-    "/image/f9.png",
-    "/image/f7.png",
+    "/image/feedback/7.png",
+    "/image/feedback/6.png",
+    "/image/feedback/6.png",
+    "/image/feedback/2.png",
+    "/image/feedback/4.png",
+    "/image/feedback/3.png",
+    "/image/feedback/8.png",
+    "/image/feedback/9.png",
+    "/image/feedback/1.png",
+    "/image/feedback/8.png",
   ];
   const items = [
     {
@@ -234,7 +234,7 @@ export default function Feedback() {
               }}
               loop={true} // Enable looping
               autoplay={{
-                delay: 0,
+                delay: 2000,
 
                 disableOnInteraction: false, // Continue autoplay after user interaction
                 pauseOnMouseEnter: true,
@@ -252,8 +252,8 @@ export default function Feedback() {
                     sx={{
                       maxWidth: { xs: "92%", md: 600, lg: 682 },
                       minWidth: { xs: "92%", md: 600, lg: 682 },
-                      height: {xs:260,md:284},
-                      maxHeight: {xs:260,md:300},
+                      height: {xs:270,md:284},
+                      maxHeight: {xs:270,md:300},
                       borderRadius: "2.5rem",
                       display: "flex",
                       flexDirection: "column",
@@ -274,14 +274,14 @@ export default function Feedback() {
                         flexDirection: "column",
                         alignItems: "center",
                         justifyContent: "center",
-                        padding: { xs: "1rem", md:'2rem',lg: "3.2rem" },
-                        gap: { xs: "1rem", md:'1rem', lg: "3rem" },
+                        padding: { xs: "0.5rem", md:'2rem',lg: "3.2rem" },
+                        gap: { xs: "1.5rem", md:'1rem', lg: "3rem" },
                       }}
                     >
                       <Typography
                         gutterBottom
                         sx={{
-                            fontSize: { xs: "1.6rem", lg:'1.8rem' },
+                            fontSize: { xs: "1.7rem" ,  md:'1.8rem', lg:'1.8rem' },
 
                           fontWeight: 400,
                           lineHeight: "26px",
@@ -303,8 +303,8 @@ export default function Feedback() {
                       >
                         <Image
                           loading="lazy"
-                          width={110}
-                          height={110}
+                          width={120}
+                          height={120}
                           src={IMGS[index]}
                           alt="f"
                           className='i-x'
