@@ -252,8 +252,8 @@ export default function Feedback() {
                     sx={{
                       maxWidth: { xs: "92%", md: 600, lg: 682 },
                       minWidth: { xs: "92%", md: 600, lg: 682 },
-                      height: {xs:270,md:284},
-                      maxHeight: {xs:270,md:300},
+                      height: {xs:284,md:284},
+                      maxHeight: {xs:284,md:300},
                       borderRadius: "2.5rem",
                       display: "flex",
                       flexDirection: "column",
@@ -274,7 +274,7 @@ export default function Feedback() {
                         flexDirection: "column",
                         alignItems: "center",
                         justifyContent: "center",
-                        padding: { xs: "0.5rem", md:'2rem',lg: "3.2rem" },
+                        padding: { xs: "1rem", md:'2rem',lg: "3.2rem" },
                         gap: { xs: "1.5rem", md:'1rem', lg: "3rem" },
                       }}
                     >
@@ -287,7 +287,7 @@ export default function Feedback() {
                           lineHeight: "26px",
                           textAlign: "center",
                           color: "#fff",
-                          width:{xs:'90%',md:'100%'}
+                          width:{xs:'95%',md:'100%'}
                         }}
                       >
                         {item.say}

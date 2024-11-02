@@ -70,6 +70,10 @@ export default function Slider() {
               effect={"fade"}
               modules={[ Autoplay ,Scrollbar]}
               scrollbar={{ draggable: true, dragSize: 20 }}
+              loop={true}
+              allowTouchMove={true}
+              grabCursor={true}
+              spaceBetween={20}
               initialSlide={1}
               className="mySwiper mySwiper-auto"
                autoplay={{
@@ -78,11 +82,9 @@ export default function Slider() {
                 pauseOnMouseEnter: true,
              
               }}
-              loop={true}
-              allowTouchMove={true}
-              speed={2500}
-              grabCursor={true}
-              spaceBetween={20}
+              speed={3500}
+
+             
               breakpoints={{
                 1: {
                   slidesPerView: 1,

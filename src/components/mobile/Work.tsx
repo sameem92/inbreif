@@ -89,6 +89,8 @@ export default function Slider() {
               dir="rtl"
               effect={"fade"}
               modules={[Scrollbar, Autoplay]}
+              speed={3500}
+
               loop={true}
               grabCursor={true}
               scrollbar={{ draggable: true, dragSize: 24 }}
@@ -100,7 +102,6 @@ export default function Slider() {
                 pauseOnMouseEnter: true,
               }}
               allowTouchMove={true}
-              speed={3500}
               
               breakpoints={{
                 1: {
