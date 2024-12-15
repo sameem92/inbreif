@@ -1,22 +1,23 @@
-"use client";
-import React from "react";
-import { Box, Container } from "@mui/material";
-import Typography from "@mui/material/Typography";
-import TextField from "@mui/material/TextField";
-import MenuItem from "@mui/material/MenuItem";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import Button from "@mui/material/Button";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { dynamicBlurDataUrl } from "@/lib";
-const images = ["/image/arrow-select.png", "/image/right.png"];
+"use client"
+
+import React from "react"
+import { Box, Container } from "@mui/material"
+import Typography from "@mui/material/Typography"
+import TextField from "@mui/material/TextField"
+import MenuItem from "@mui/material/MenuItem"
+import Select from "@mui/material/Select"
+import Button from "@mui/material/Button"
+import Image from "next/image"
+import { motion, AnimatePresence } from "framer-motion"
+import { dynamicBlurDataUrl } from "@/lib"
+import emailjs from "@emailjs/browser"
+const images = ["/image/arrow-select.png", "/image/right.png"]
+
 const textStyle = {
-  '& .MuiInputBase-root': {
-    color: 'white',
+  "& .MuiInputBase-root": {
+    color: "white",
   },
   "&.MuiTextField-root": {
-   
-
     "& .MuiInputLabel-outlined": {
       height: "5.6rem",
       padding: "0 1.6rem",
@@ -38,10 +39,10 @@ const textStyle = {
       margin: 0,
     },
   },
-};
+}
 const textStyleTextare = {
-  '& .MuiInputBase-root': {
-    color: 'white',
+  "& .MuiInputBase-root": {
+    color: "white",
   },
   "&.MuiTextField-root": {
     color: "#FFF",
@@ -60,43 +61,66 @@ const textStyleTextare = {
     },
     "&:hover .MuiOutlinedInput-notchedOutline": {
       borderColor: "primary.main",
-      
     },
     "& .MuiFormHelperText-contained": {
       color: "error.main",
-      
+
       margin: 0,
     },
   },
-};
+}
 
 export default function SpecialOffers() {
-  const [selected, setSelected] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [emailValid, setEmailValid] = React.useState(false); 
-   const [isPopupOpen, setIsPopupOpen] = React.useState(false);
+  const [name, setName] = React.useState("")
+  const [email, setEmail] = React.useState("")
+  const [phone, setPhone] = React.useState("")
+  const [emailValid, setEmailValid] = React.useState(false)
+  const [service, setService] = React.useState("استفسارات اخري")
+  const [message, setMessage] = React.useState("")
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setSelected(event.target.value);
-  };
+  const [isPopupOpen, setIsPopupOpen] = React.useState(false)
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const emailValue = e.target.value;
-    setEmail(emailValue);
+    const emailValue = e.target.value
+    setEmail(emailValue)
 
-     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    setEmailValid(emailRegex.test(emailValue));  
-  };
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    setEmailValid(emailRegex.test(emailValue))
+  }
 
-  const handleSubmit = () => {
-    if (emailValid) {
-      setIsPopupOpen(true);
-     }
-  };
+  const handleSubmit = async () => {
+    // if (emailValid) {
+    //   setIsPopupOpen(true)
+    // }
+
+    await emailjs
+      .send(
+        "service_xznqpsf",
+        "inbrief_dz2f8nw", // Replace with your EmailJS template ID
+        {
+          name: name,
+          phone: phone,
+          email: email,
+          service: service,
+          message: message,
+        },
+        "RoVHFVDjpZcFQSnv8" // Replace with your EmailJS public key
+      )
+      .then(
+        (response) => {
+          console.log(response)
+          alert("Message sent successfully!")
+        },
+        (error) => {
+          alert("Failed to send message. Please try again.")
+          console.error("Error:", error)
+        }
+      )
+  }
 
   const handleClosePopup = () => {
-     setIsPopupOpen(false);
-  };
+    setIsPopupOpen(false)
+  }
   return (
     <>
       <div
@@ -105,7 +129,6 @@ export default function SpecialOffers() {
           width: "100%",
         }}
         id="goToHome"
-
       />
       <Box
         sx={{
@@ -156,10 +179,9 @@ export default function SpecialOffers() {
               flexDirection: "column",
               borderRadius: "4.8rem",
               padding: { xs: "2rem 3rem", md: "6.6rem 5.6rem " },
-              paddingBottom: {xs:'5rem' , lg:'5rem'},
+              paddingBottom: { xs: "5rem", lg: "5rem" },
 
-              background:
-                "linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
+              background: "linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
               backdropFilter: "blur(10px)",
             }}
           >
@@ -187,6 +209,38 @@ export default function SpecialOffers() {
                 placeholder="اكتب اسمك"
                 fullWidth
                 type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                sx={textStyle}
+              />
+            </Box>
+
+            <Box
+              sx={{
+                display: "flex",
+                gap: { xs: ".6rem", md: "1.6rem" },
+                width: "100%",
+                flexDirection: "column",
+              }}
+            >
+              <Typography
+                variant="body2"
+                sx={{
+                  fontSize: "1.6rem",
+                  fontWeight: 500,
+                  lineHeight: "2.4rem",
+                  color: "#fff",
+                }}
+              >
+                الاسم
+              </Typography>
+
+              <TextField
+                placeholder="اكتب اسمك"
+                fullWidth
+                type="text"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
                 sx={textStyle}
               />
             </Box>
@@ -209,7 +263,7 @@ export default function SpecialOffers() {
               >
                 بريد إلكتروني
               </Typography>
- 
+
               <TextField
                 placeholder="demo@gmail.com"
                 fullWidth
@@ -244,8 +298,8 @@ export default function SpecialOffers() {
               <Select
                 defaultValue="استفسارات اخري "
                 displayEmpty
-                value={selected}
-                onChange={handleChange}
+                value={service}
+                onChange={(e) => setService(e.target.value)}
                 renderValue={(value) => {
                   if (!value) {
                     return (
@@ -257,10 +311,11 @@ export default function SpecialOffers() {
                           color: "#fff",
                         }}
                       >
-استفسارات اخري                      </Typography>
-                    );
+                        استفسارات اخري
+                      </Typography>
+                    )
                   }
-                  return value;
+                  return value
                 }}
                 variant="outlined"
                 IconComponent={() => (
@@ -284,7 +339,7 @@ export default function SpecialOffers() {
                   width: "100%",
                   height: "5.6rem",
                   marginRight: 15,
- 
+
                   borderRadius: "7rem",
                   color: "#fff",
                   "& .arrow-icon-2": {
@@ -312,8 +367,7 @@ export default function SpecialOffers() {
                         padding: "1.2rem",
                         gap: "4px",
                         border: "1px solid ",
-                        borderImageSource:
-                          "linear-gradient(81.07deg, #22373C 53.33%, #18292D 93.73%)",
+                        borderImageSource: "linear-gradient(81.07deg, #22373C 53.33%, #18292D 93.73%)",
                       },
                       "& li": {
                         "&:hover": {
@@ -348,18 +402,13 @@ export default function SpecialOffers() {
                   },
                 }}
               >
-                <MenuItem value={"برمجة تطبيقات موبايل"}>
-                  برمجة تطبيقات موبايل
-                </MenuItem>
+                <MenuItem value={"برمجة تطبيقات موبايل"}>برمجة تطبيقات موبايل</MenuItem>
                 <MenuItem value={"تطوير مواقع"}>تطوير مواقع</MenuItem>
                 <MenuItem value={"متاجر إلكترونية"}>متاجر إلكترونية</MenuItem>
                 <MenuItem value={"تصميم جرافيك"}>تصميم جرافيك</MenuItem>
                 <MenuItem value={"موشن جرافيك"}>موشن جرافيك</MenuItem>
                 <MenuItem value={"موشن جرافيك"}>موشن جرافيك</MenuItem>
-                <MenuItem value={"محتوى وحملات تسويقية"}>
-                  محتوى وحملات تسويقية
-                </MenuItem>
-                <MenuItem value={"نظام محاسبي"}>نظام محاسبي</MenuItem>
+                <MenuItem value={"محتوى وحملات تسويقية"}>محتوى وحملات تسويقية</MenuItem>
                 <MenuItem value={"استفسارات أخرى"}>استفسارات أخرى</MenuItem>
               </Select>
             </Box>
@@ -384,6 +433,8 @@ export default function SpecialOffers() {
               </Typography>
               <TextField
                 placeholder="اكتب رسالة لنا"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 multiline
                 rows={4}
                 maxRows={8}
@@ -392,8 +443,8 @@ export default function SpecialOffers() {
             </Box>
 
             <Button
-               onClick={handleSubmit}
-               disabled={!emailValid} 
+              onClick={handleSubmit}
+              disabled={!emailValid}
               sx={{
                 display: "flex",
                 justifyContent: "center",
@@ -421,31 +472,29 @@ export default function SpecialOffers() {
       <AnimatePresence>
         {isPopupOpen && (
           <>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.4 }}
-            style={{
-              position: "fixed",
-              top: 0,
-              left: 0,
-              width: "100vw",
-              height: "100vh",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              backgroundColor: "rgba(0, 0, 0, 0.6)",
-              cursor:'pointer',
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 50 }}
+              transition={{ duration: 0.4 }}
+              style={{
+                position: "fixed",
+                top: 0,
+                left: 0,
+                width: "100vw",
+                height: "100vh",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "rgba(0, 0, 0, 0.6)",
+                cursor: "pointer",
+              }}
+              onClick={handleClosePopup}
+            />
 
-            }}
-            onClick={handleClosePopup}
-          />
-          
-           <Box
+            <Box
               sx={{
-                background:
-                  "linear-gradient(137deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
+                background: "linear-gradient(137deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
                 borderRadius: "2.4rem",
                 padding: { xs: "2.4rem", md: "3.6rem" },
                 textAlign: "center",
@@ -453,13 +502,11 @@ export default function SpecialOffers() {
                 backdropFilter: "blur(25px)",
                 width: { xs: "90%", sm: "50rem", lg: "56rem" },
                 margin: "auto",
-                position: "fixed",  // Element is positioned relative to the viewport
-                top: '50%',         // Center vertically
-                left: '50%',        // Center horizontally
-                zIndex: 99999999,   // Keep high z-index for visibility
-                transform: 'translate(-50%, -50%)',  // Shift the element by 50% of its own width and height
-              
-
+                position: "fixed", // Element is positioned relative to the viewport
+                top: "50%", // Center vertically
+                left: "50%", // Center horizontally
+                zIndex: 99999999, // Keep high z-index for visibility
+                transform: "translate(-50%, -50%)", // Shift the element by 50% of its own width and height
               }}
             >
               <Box
@@ -491,13 +538,7 @@ export default function SpecialOffers() {
                   }}
                   onClick={handleClosePopup}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="13"
-                    viewBox="0 0 12 13"
-                    fill="none"
-                  >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
                     <path
                       d="M8.625 3.875L3.375 9.125M3.375 3.875L8.625 9.125"
                       stroke="white"
@@ -552,7 +593,7 @@ export default function SpecialOffers() {
                       color: "#fff",
                     }}
                   >
-                    تم استلام طلبك{" "}
+                    تم استلام طلبك
                   </Typography>
 
                   <Typography
@@ -567,15 +608,14 @@ export default function SpecialOffers() {
                       lineHeight: "2.4rem",
                     }}
                   >
-                    سيتم الرد عليك خلال ٢٤ ساعة ، شكراً لك.{" "}
+                    سيتم الرد عليك خلال ٢٤ ساعة ، شكراً لك.
                   </Typography>
                 </Box>
               </Box>
             </Box>
- 
-           </>
+          </>
         )}
       </AnimatePresence>
     </>
-  );
+  )
 }

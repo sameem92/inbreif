@@ -1,60 +1,46 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/scrollbar";
-import "swiper/css/autoplay";
+"use client"
+import React, { useState, useEffect } from "react"
+import { Swiper, SwiperSlide } from "swiper/react"
+import "swiper/css"
+import "swiper/css/scrollbar"
+import "swiper/css/autoplay"
 
-import { Box } from "@mui/material";
-import Image from "next/image";
-import CircularProgress from "@mui/material/CircularProgress";
-import { Scrollbar, Autoplay } from "swiper/modules";
- import { dynamicBlurDataUrl } from "@/lib";
+import { Box } from "@mui/material"
+import Image from "next/image"
+import { Scrollbar, Autoplay } from "swiper/modules"
+import { dynamicBlurDataUrl } from "@/lib"
 
-const img1 = "/image/web/1.png";
-const img2 = "/image/web/2.png";
-const img3 = "/image/web/3.png";
-const img4 = "/image/web/4.png";
-const img5 = "/image/web/5.png";
-const img6 = "/image/web/6.png";
-const img7 = "/image/web/7.png";
-const img8 = "/image/web/8.png";
-const img9 = "/image/web/9.png";
-const img10 = "/image/web/10.png";
-const img11 = "/image/web/11.png";
- const IMGS = [
-  img1,
-  img2,
-  img3,
-  img4,
-  img5,
-  img6,
-  img7,
-  img8,
-  img9,
-  img10,
-  img11,
- 
- ];
+const img1 = "/image/web/1.png"
+const img2 = "/image/web/2.png"
+const img3 = "/image/web/3.png"
+const img4 = "/image/web/4.png"
+const img5 = "/image/web/5.png"
+const img6 = "/image/web/6.png"
+const img7 = "/image/web/7.png"
+const img8 = "/image/web/8.png"
+const img9 = "/image/web/9.png"
+const img10 = "/image/web/10.png"
+const img11 = "/image/web/11.png"
+const IMGS = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11]
 
 export default function Slider() {
-  const [imagesLoaded, setImagesLoaded] = useState(false);
- 
+  const [imagesLoaded, setImagesLoaded] = useState(false)
+
   useEffect(() => {
-    let imagesToLoad = IMGS.slice(0, 4)?.length;
+    let imagesToLoad = IMGS.slice(0, 4)?.length
     const handleImageLoad = () => {
-      imagesToLoad -= 1;
+      imagesToLoad -= 1
       if (imagesToLoad === 0) {
-        setImagesLoaded(true);
+        setImagesLoaded(true)
       }
-    };
+    }
 
     IMGS.forEach((imgSrc) => {
-      const img = new window.Image();
-      img.src = imgSrc;
-      img.onload = handleImageLoad;
-    });
-  }, []);
+      const img = new window.Image()
+      img.src = imgSrc
+      img.onload = handleImageLoad
+    })
+  }, [])
 
   return (
     <div className="noise">
@@ -82,8 +68,7 @@ export default function Slider() {
               height: "400px",
             }}
           >
-                  <div className="loader"></div> 
-
+            <div className="loader"></div>
           </div>
         ) : (
           <>
@@ -125,8 +110,7 @@ export default function Slider() {
                       flexDirection: "column",
                       gap: "1rem",
                       justifyContent: "center",
-                     }}
-                   
+                    }}
                   >
                     <div className="image-container">
                       <Image
@@ -143,10 +127,8 @@ export default function Slider() {
                     </div>
                     <h3 className="title-h3">تطبيق أسيست</h3>
                     <p className="p-h3">
-                      هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
-                      توليد هذا النص من مولد النص العربى هذا النص هو مثال لنص
-                      يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من
-                      مولد النص العربى
+                      هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا
+                      النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
                     </p>
                   </Box>
                 </SwiperSlide>
@@ -156,5 +138,5 @@ export default function Slider() {
         )}
       </Box>
     </div>
-  );
+  )
 }

@@ -1,27 +1,19 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 //@ts-nocheck
 
-"use client";
+"use client"
 
-import React from "react";
-import {
-  Box,
-  Container,
-  Button,
-  Card,
-  CardContent,
-  Typography,
-  Grid,
-} from "@mui/material";
-import { motion } from "framer-motion"; // Import framer-motion
-import Image from "next/image";
-import Slider from "@/components/home/Slider";
-import Package from "@/components/home/Package";
-import Services from "@/components/home/Services";
-import Feedback from "@/components/home/Feedback";
-import Form from "@/components/home/Form";
-import Social from "@/components/layout/Social";
-import { dynamicBlurDataUrl } from "@/lib";
+import React from "react"
+import { Box, Container, Button, Card, CardContent, Typography, Grid } from "@mui/material"
+import { motion } from "framer-motion" // Import framer-motion
+import Image from "next/image"
+import Slider from "@/components/home/Slider"
+import Package from "@/components/home/Package"
+import Services from "@/components/home/Services"
+import Feedback from "@/components/home/Feedback"
+import Form from "@/components/tools/form/form"
+import Social from "@/components/layout/Social"
+import { dynamicBlurDataUrl } from "@/lib"
 
 const items = [
   {
@@ -36,12 +28,11 @@ const items = [
   {
     title: "أسعار تنافسية",
   },
-];
+]
 
 export default function Home() {
-  const goToWhatsApp = ()=>{
-    //href="" 
-    window.open("http://wa.me/96877276659","_target")
+  const goToWhatsApp = () => {
+    window.open("http://wa.me/96877276659", "_target")
   }
   return (
     <>
@@ -117,27 +108,26 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Container
-              sx={{ display: "flex", justifyContent: "center", gap: "2.4rem" }}
-              maxWidth="lg"
-            >
+            <Container sx={{ display: "flex", justifyContent: "center", gap: "2.4rem" }} maxWidth="lg">
               <Box
                 sx={{
-                  width: {xs:'75%',lg:"84.3%"},
-                  paddingBottom:"4.8rem",
+                  width: { xs: "75%", lg: "84.3%" },
+                  paddingBottom: "4.8rem",
                   position: "relative",
                   top: "5.8rem",
                   zIndex: 10,
                   margin: "0 auto",
                 }}
               >
-                <Grid container spacing={{
-    xs: 3, // Spacing for extra small screens
-    lg: 6, // Spacing for large screens
-  }}>
+                <Grid
+                  container
+                  spacing={{
+                    xs: 3, // Spacing for extra small screens
+                    lg: 6, // Spacing for large screens
+                  }}
+                >
                   {items.map((item, index) => (
-                    <Grid item key={index} xs={12} 
-                    custom490={6} sm={6} md={3}>
+                    <Grid item key={index} xs={12} custom490={6} sm={6} md={3}>
                       <motion.div
                         whileHover={{ scale: 1.05 }}
                         transition={{
@@ -162,7 +152,7 @@ export default function Home() {
                               lg: "1.1rem 2rem",
                             },
                             height: "100%",
-                             gap: {
+                            gap: {
                               xs: "0.6rem",
                               md: "1rem",
                               lg: "1.6rem",
@@ -201,7 +191,7 @@ export default function Home() {
                                   lg: "2rem",
                                 },
                                 fontWeight: 400,
-                                lineHeight: {xs:'2rem' , lg:"5.6rem"},
+                                lineHeight: { xs: "2rem", lg: "5.6rem" },
                                 display: "flex",
                                 alignItems: "center",
                                 textAlign: "center",
@@ -229,5 +219,5 @@ export default function Home() {
       <Feedback />
       <Form />
     </>
-  );
+  )
 }

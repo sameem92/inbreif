@@ -1,35 +1,27 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
 //@ts-nocheck
-"use client";
+"use client"
 
-import React, { useRef, useState } from "react";
-import {
-  Container,
-  Button,
-  Box,
-  Card,
-  CardContent,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/autoplay";
-import { Navigation, Autoplay } from "swiper/modules";
-import Image from "next/image";
-import { dynamicBlurDataUrl } from "@/lib";
+import { useRef, useState } from "react"
+import { Container, Button, Box, Card, CardContent, Typography, useMediaQuery } from "@mui/material"
+import { Swiper, SwiperSlide } from "swiper/react"
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/autoplay"
+import { Navigation, Autoplay } from "swiper/modules"
+import Image from "next/image"
+import { dynamicBlurDataUrl } from "@/lib"
 
-import Company from "./Company";
+import Company from "./Company"
 
 export default function Feedback() {
-  const prevButtonRef = useRef(null);
-  const nextButtonRef = useRef(null);
-  const [isBeginning, setIsBeginning] = useState(true);
-  const [isEnd, setIsEnd] = useState(false);
-  const isMobile = useMediaQuery("(max-width:768px)");
-  const totalSlides = 10;
+  const prevButtonRef = useRef(null)
+  const nextButtonRef = useRef(null)
+  const [isBeginning, setIsBeginning] = useState(true)
+  const [isEnd, setIsEnd] = useState(false)
+  const isMobile = useMediaQuery("(max-width:768px)")
+  const totalSlides = 10
   const IMGS = [
     "/image/f1.png",
     "/image/f2.png",
@@ -41,7 +33,7 @@ export default function Feedback() {
     "/image/f8.png",
     "/image/f9.png",
     "/image/f10.png",
-  ];
+  ]
   const items = [
     {
       say: `حبيت أشكركم على خدمتكم الرائعة و الراقية فعلاً تعاملكم جميل جداً مع سرعة الإستجابة في العمل والتواصل من أعلى وأفضل المستويات خدمة
@@ -126,8 +118,8 @@ export default function Feedback() {
       compnay: "شركة نقلة ـ سليمان الدلالي",
       location: "المملكة العربية السعودية",
     },
-  ];
-  console.log(items.length);
+  ]
+  console.log(items.length)
   return (
     <>
       <div className="package">
@@ -181,13 +173,7 @@ export default function Feedback() {
                 }}
                 disabled={isBeginning}
               >
-                <svg
-                  width="18"
-                  height="14"
-                  viewBox="0 0 18 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     fillRule="evenodd"
                     clipRule="evenodd"
@@ -210,21 +196,20 @@ export default function Feedback() {
               }
               onBeforeInit={(swiper) => {
                 if (!isMobile) {
-                  swiper.params.navigation.prevEl = prevButtonRef.current;
-                  swiper.params.navigation.nextEl = nextButtonRef.current;
-                  swiper.navigation.update();
+                  swiper.params.navigation.prevEl = prevButtonRef.current
+                  swiper.params.navigation.nextEl = nextButtonRef.current
+                  swiper.navigation.update()
                 }
               }}
               onSlideChange={(swiper) => {
-                const realIndex = swiper.realIndex;
+                const realIndex = swiper.realIndex
 
                 // Check if it's the first or last slide
-                setIsBeginning(realIndex === 0);
-                setIsEnd(realIndex === totalSlides - 1);
+                setIsBeginning(realIndex === 0)
+                setIsEnd(realIndex === totalSlides - 1)
               }}
               loop={true} // Enable looping
               autoplay={{
-                 
                 disableOnInteraction: false, // Continue autoplay after user interaction
                 pauseOnMouseEnter: true, // Pause autoplay when hovered
               }}
@@ -348,13 +333,7 @@ export default function Feedback() {
                 }}
                 disabled={isEnd}
               >
-                <svg
-                  width="18"
-                  height="14"
-                  viewBox="0 0 18 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     fillRule="evenodd"
                     clipRule="evenodd"
@@ -369,5 +348,5 @@ export default function Feedback() {
         <Company />
       </div>
     </>
-  );
+  )
 }

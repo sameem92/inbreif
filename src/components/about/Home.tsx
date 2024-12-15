@@ -1,26 +1,17 @@
-"use client";
-import React from "react";
-import {
-  Box,
-  Container,
-  List,
-  ListItem,
-  ListItemText,
-  Typography,
-  Grid,
-  useMediaQuery,
-} from "@mui/material";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import Social from "@/components/layout/Social";
-import Form from "@/components/home/Form";
-import Feedback from "@/components/home/Feedback";
-import { dynamicBlurDataUrl } from "@/lib";
-import one from "@/assets/img/1.png";
-import two from "@/assets/img/2.png";
+"use client"
+import React from "react"
+import { Box, Container, List, ListItem, ListItemText, Typography, Grid, useMediaQuery } from "@mui/material"
+import { motion } from "framer-motion"
+import Image from "next/image"
+import Social from "@/components/layout/Social"
+import Form from "@/components/tools/form/form"
+import Feedback from "@/components/home/Feedback"
+import { dynamicBlurDataUrl } from "@/lib"
+import one from "@/assets/img/1.png"
+import two from "@/assets/img/2.png"
 
 export default function Home() {
-  const isMobile = useMediaQuery("(max-width:768px)");
+  const isMobile = useMediaQuery("(max-width:768px)")
 
   return (
     <>
@@ -71,9 +62,8 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              نحن شركة مرخصة رسمياً و رائدة في مجال البرمجة وتطوير التطبيقات
-              والمواقع الإلكترونية والتسويق الإلكتروني، حيث نركز على تلبية
-              احتياجات السوق الخليجي.
+              نحن شركة مرخصة رسمياً و رائدة في مجال البرمجة وتطوير التطبيقات والمواقع الإلكترونية والتسويق الإلكتروني،
+              حيث نركز على تلبية احتياجات السوق الخليجي.
             </motion.p>
           </Container>
 
@@ -99,12 +89,7 @@ export default function Home() {
                   width: { xs: "86%", md: "92%", lg: "100%" },
                 }}
               >
-                <Grid
-                  container
-                  spacing={6}
-                  alignItems="center"
-                  justifyContent="center"
-                >
+                <Grid container spacing={6} alignItems="center" justifyContent="center">
                   <Grid item xs={12} sm={6}>
                     <Box
                       sx={{
@@ -135,8 +120,7 @@ export default function Home() {
                           color: "#fff",
                         }}
                       >
-                        نسعى لأن نكون الوجهة الأولى للعملاء الذين يبحثون عن حلول
-                        رقمية متكاملة.
+                        نسعى لأن نكون الوجهة الأولى للعملاء الذين يبحثون عن حلول رقمية متكاملة.
                       </Typography>
                     </Box>
                   </Grid>
@@ -155,9 +139,7 @@ export default function Home() {
                     <motion.div
                       initial={{ opacity: 0, scale: 0.9 }}
                       whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={
-                        isMobile ? { once: true } : { once: true, amount: 0.3 }
-                      }
+                      viewport={isMobile ? { once: true } : { once: true, amount: 0.3 }}
                       transition={{ duration: 0.8 }}
                     >
                       <Image
@@ -191,12 +173,7 @@ export default function Home() {
                   width: { xs: "86%", md: "92%", lg: "100%" },
                 }}
               >
-                <Grid
-                  container
-                  spacing={6}
-                  alignItems="center"
-                  justifyContent="center"
-                >
+                <Grid container spacing={6} alignItems="center" justifyContent="center">
                   <Grid
                     item
                     xs={12}
@@ -223,18 +200,11 @@ export default function Home() {
                   </Grid>
 
                   {/* Values Text */}
-                  <Grid
-                    item
-                    xs={12}
-                    sm={6}
-                    sx={{ order: { xs: 1, sm: 2 } }}
-                  >
+                  <Grid item xs={12} sm={6} sx={{ order: { xs: 1, sm: 2 } }}>
                     <motion.div
                       initial={{ opacity: 0, y: 50 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      viewport={
-                        isMobile ? { once: true } : { once: true, amount: 0.3 }
-                      }
+                      viewport={isMobile ? { once: true } : { once: true, amount: 0.3 }}
                       transition={{ duration: 0.8 }}
                     >
                       <Box
@@ -274,9 +244,7 @@ export default function Home() {
                                     color: "#fff",
                                   }}
                                 >
-                                  <span style={{ color: "#E1E42A" }}>
-                                    الابتكار :
-                                  </span>
+                                  <span style={{ color: "#E1E42A" }}>الابتكار :</span>
                                   نسعى دائمًا لتقديم أفكار جديدة وحلول مبتكرة.
                                 </Typography>
                               }
@@ -293,9 +261,7 @@ export default function Home() {
                                     color: "#fff",
                                   }}
                                 >
-                                  <span style={{ color: "#E1E42A" }}>
-                                    الجودة :
-                                  </span>
+                                  <span style={{ color: "#E1E42A" }}>الجودة :</span>
                                   نلتزم بتقديم أعلى معايير الجودة.
                                 </Typography>
                               }
@@ -312,9 +278,7 @@ export default function Home() {
                                     color: "#fff",
                                   }}
                                 >
-                                  <span style={{ color: "#E1E42A" }}>
-                                    الشفافية :
-                                  </span>
+                                  <span style={{ color: "#E1E42A" }}>الشفافية :</span>
                                   نؤمن ببناء علاقات قائمة على الثقة مع عملائنا.
                                 </Typography>
                               }
@@ -383,9 +347,8 @@ export default function Home() {
                     width: { xs: "100%", lg: "85%" },
                   }}
                 >
-                  يتكون فريقنا من مجموعة من المحترفين ذوي الخبرة، الذين يجمعهم
-                  شغف التكنولوجيا والإبداع. نحن نعمل كفريق واحد لتحقيق أهداف
-                  عملائنا وتقديم الدعم اللازم في كل خطوة.
+                  يتكون فريقنا من مجموعة من المحترفين ذوي الخبرة، الذين يجمعهم شغف التكنولوجيا والإبداع. نحن نعمل كفريق
+                  واحد لتحقيق أهداف عملائنا وتقديم الدعم اللازم في كل خطوة.
                 </Typography>
               </Box>
             </motion.div>
@@ -397,5 +360,5 @@ export default function Home() {
       <Feedback />
       <Form />
     </>
-  );
+  )
 }

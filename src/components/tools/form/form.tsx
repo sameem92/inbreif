@@ -1,10 +1,11 @@
-import React from "react";
-import { Container, useMediaQuery } from "@mui/material";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import { motion } from "framer-motion"; // Import framer-motion
+import { Container, useMediaQuery } from "@mui/material"
+import Box from "@mui/material/Box"
+import Typography from "@mui/material/Typography"
+import Button from "@mui/material/Button"
+import TextField from "@mui/material/TextField"
+import { motion } from "framer-motion" // Import framer-motion
+import emailjs from "@emailjs/browser"
+import { useState } from "react"
 
 const textStyle = {
   "&.MuiTextField-root": {
@@ -32,11 +33,35 @@ const textStyle = {
       margin: 0,
     },
   },
-};
+}
 
 export default function Form() {
-  const isMobile = useMediaQuery("(max-width:768px)"); // Detect if the screen is mobile
-  const animation = isMobile ? { once: true } : { once: true, amount: 0.3 };
+  const isMobile = useMediaQuery("(max-width:768px)") // Detect if the screen is mobile
+  const animation = isMobile ? { once: true } : { once: true, amount: 0.3 }
+  const [value, setValue] = useState("")
+
+  const handleSubmit = async () => {
+    await emailjs
+      .send(
+        "service_xznqpsf",
+        "inbrief_dz2f8nw", // Replace with your EmailJS template ID
+        {
+          name: value,
+          [`${value.includes("@") ? "email" : "phone"}`]: value,
+        },
+        "RoVHFVDjpZcFQSnv8" // Replace with your EmailJS public key
+      )
+      .then(
+        (response) => {
+          console.log(response)
+          alert("Message sent successfully!")
+        },
+        (error) => {
+          alert("Failed to send message. Please try again.")
+          console.error("Error:", error)
+        }
+      )
+  }
 
   return (
     <>
@@ -121,12 +146,15 @@ export default function Form() {
                 }}
               >
                 <TextField
+                  value={value}
+                  onChange={(e) => setValue(e.target.value)}
                   placeholder="قم بإدخال رقم الهاتف أو عنوان البريد الالكتروني"
                   fullWidth
                   type="text"
                   sx={textStyle}
                 />
                 <Button
+                  onClick={handleSubmit}
                   sx={{
                     display: "flex",
                     justifyContent: "center",
@@ -152,5 +180,5 @@ export default function Form() {
         </motion.div>
       </Container>
     </>
-  );
+  )
 }

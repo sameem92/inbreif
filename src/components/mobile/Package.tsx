@@ -1,28 +1,19 @@
-import React from "react";
-import {
-  Container,
-  Box,
-  Grid,
-  Card,
-  CardContent,
-  Typography,
-  useMediaQuery,
-  Button,
-} from "@mui/material";
-import Image from "next/image";
-import { motion } from "framer-motion";
-const icon1 = "/image/icon8.png";
-import { Pagination,Autoplay } from "swiper/modules";
-import "swiper/css"; // Import Swiper styles
-import "swiper/css/pagination";
-import { Swiper, SwiperSlide } from "swiper/react";
-import {dynamicBlurDataUrl } from "@/lib";
-import imagMob from "@/assets/img/imagMob.png";
+import React from "react"
+import { Container, Box, Grid, Card, CardContent, Typography, useMediaQuery, Button } from "@mui/material"
+import Image from "next/image"
+import { motion } from "framer-motion"
+const icon1 = "/image/icon8.png"
+import { Pagination, Autoplay } from "swiper/modules"
+import "swiper/css" // Import Swiper styles
+import "swiper/css/pagination"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { dynamicBlurDataUrl } from "@/lib"
+import imagMob from "@/assets/img/imagMob.png"
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/autoplay";
+import "swiper/css"
+import "swiper/css/pagination"
+import "swiper/css/autoplay"
 
 const items = [
   {
@@ -49,7 +40,7 @@ const items = [
     icon: icon1,
     title: "الربط مع بوابة دفع",
   },
-];
+]
 
 // Motion variants for the cards
 const cardVariants = {
@@ -63,13 +54,13 @@ const cardVariants = {
       ease: "easeOut",
     },
   }),
-};
+}
 
 export default function Package() {
-  const isMobile = useMediaQuery("(max-width:768px)"); // Detect if the screen is mobile
-  const goToWhatsApp = ()=>{
-    //href="" 
-    window.open("http://wa.me/96877276659","_target")
+  const isMobile = useMediaQuery("(max-width:768px)") // Detect if the screen is mobile
+  const goToWhatsApp = () => {
+    //href=""
+    window.open("http://wa.me/96877276659", "_target")
   }
   return (
     <motion.div
@@ -104,22 +95,21 @@ export default function Package() {
           <Grid container spacing={{ xs: 6, md: 18 }} justifyContent="center">
             <Grid item xs={12} sm={12} md={7}>
               <Swiper
-             modules={[Pagination , Autoplay]} // Make sure modules are correctly passed
-             spaceBetween={30}
-             slidesPerView={1}
-             pagination={true}
-             className="mySwiper-dots"
-              autoplay={{
-               delay: 1700,
-               disableOnInteraction: false,
-               pauseOnMouseEnter: true,
-               reverseDirection: false,
-             }}
-             loop={true}
-
-               allowTouchMove={true}   
-             grabCursor={true}
-             speed={3500}
+                modules={[Pagination, Autoplay]} // Make sure modules are correctly passed
+                spaceBetween={30}
+                slidesPerView={1}
+                pagination={true}
+                className="mySwiper-dots"
+                autoplay={{
+                  delay: 1700,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true,
+                  reverseDirection: false,
+                }}
+                loop={true}
+                allowTouchMove={true}
+                grabCursor={true}
+                speed={3500}
               >
                 {/* SwiperSlide for each group of 6 cards */}
                 {[...Array(4)].map((_, slideIndex) => (
@@ -133,8 +123,8 @@ export default function Package() {
                               type: "spring",
                               stiffness: 300,
                             }}
-                          > 
-                             <Card
+                          >
+                            <Card
                               sx={{
                                 background:
                                   "linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
@@ -144,7 +134,7 @@ export default function Package() {
                                 flexDirection: "column",
                                 justifyContent: "center",
                                 alignItems: "center",
-                                 
+
                                 height: { xs: "15rem", md: "20rem" },
                                 gap: "1.6rem",
                                 padding: {
@@ -152,7 +142,7 @@ export default function Package() {
                                   md: "1.6rem 0.5rem",
                                   lg: "1.1rem",
                                 },
-                             
+
                                 "&:hover": {
                                   border: "1px solid #E0E324",
                                 },
@@ -183,17 +173,14 @@ export default function Package() {
                                 <Typography
                                   variant="h6"
                                   sx={{
-                                      
-        
-                                     
-                                    lineHeight: {xs:'3rem',lg:"3.4rem"},
+                                    lineHeight: { xs: "3rem", lg: "3.4rem" },
                                     fontSize: {
                                       xs: "1.6rem",
                                       md: "1.8rem",
                                       lg: "2rem",
                                     },
                                     fontWeight: 600,
-                                     display: "flex",
+                                    display: "flex",
                                     alignItems: "center",
                                     textAlign: "center",
                                     color: "#ffffff",
@@ -215,9 +202,7 @@ export default function Package() {
               <motion.div
                 initial="hidden"
                 whileInView="visible"
-                viewport={
-                  isMobile ? { once: true } : { once: true, amount: 0.1 }
-                }
+                viewport={isMobile ? { once: true } : { once: true, amount: 0.1 }}
                 style={{
                   width: "100%",
                   height: "100%",
@@ -234,7 +219,7 @@ export default function Package() {
                     sx={{
                       position: "absolute",
                       minWidth: "13rem",
-                       left: "50%",
+                      left: "50%",
                       zIndex: "2",
                       margin: "auto",
                       height: "7rem",
@@ -243,42 +228,41 @@ export default function Package() {
                       cursor: "pointer",
                     }}
                   >
-                       <Button
-                 sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  minWidth: "13rem",
-                  height: "5rem",
-                   gap: "6px",
-                  borderRadius: "52px",
-                  background: "#E0E324",
-                  backdropFilter: "blur(24px)",
-                  color: "#124650",
-                  textAlign: "center",
-                  padding: {xs:"1rem 0.5rem",lg:"1rem 2rem"},
-                  fontSize: {xs:'1.3rem',lg:"1.6rem"},
+                    <Button
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        minWidth: "13rem",
+                        height: "5rem",
+                        gap: "6px",
+                        borderRadius: "52px",
+                        background: "#E0E324",
+                        backdropFilter: "blur(24px)",
+                        color: "#124650",
+                        textAlign: "center",
+                        padding: { xs: "1rem 0.5rem", lg: "1rem 2rem" },
+                        fontSize: { xs: "1.3rem", lg: "1.6rem" },
 
-                   fontWeight: 600,
-                  lineHeight: "1.6rem",
-                  
-
-                }}
-                onClick={goToWhatsApp}
-                className='t-buttin'
-              >
-احصل على التطبيق              </Button>
-              </Box>
+                        fontWeight: 600,
+                        lineHeight: "1.6rem",
+                      }}
+                      onClick={goToWhatsApp}
+                      className="t-buttin"
+                    >
+                      احصل على التطبيق
+                    </Button>
+                  </Box>
                   <Image
                     src={imagMob}
                     alt="moeeb"
                     className="img-sm"
-                     style={{
+                    style={{
                       width: "100%",
                       height: "100%",
                     }}
                     blurDataURL={dynamicBlurDataUrl}
-                    placeholder="blur" 
+                    placeholder="blur"
                     loading="lazy"
                   />
                 </Box>
@@ -288,5 +272,5 @@ export default function Package() {
         </Box>
       </Container>
     </motion.div>
-  );
+  )
 }

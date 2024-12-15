@@ -1,24 +1,23 @@
-"use client";
-import React from "react";
-import { Box, Container, Button } from "@mui/material";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import Feedback from "@/components/home/Feedback";
-import Form from "@/components/home/Form";
-import Social from "@/components/layout/Social";
- const img1 = "/image/a.png";
-const img2 = "/image/img2.png";
-const img3 = "/image/img3.png";
-import { dynamicBlurDataUrl } from "@/lib";
+"use client"
+import React from "react"
+import { Box, Container, Button } from "@mui/material"
+import { motion } from "framer-motion"
+import Image from "next/image"
+import Feedback from "@/components/home/Feedback"
+import Form from "@/components/tools/form/form"
+import Social from "@/components/layout/Social"
+const img1 = "/image/a.png"
+const img2 = "/image/img2.png"
+const img3 = "/image/img3.png"
+import { dynamicBlurDataUrl } from "@/lib"
 
-const IMGS = [img2, img3, img1];
+const IMGS = [img2, img3, img1]
 
 export default function Home() {
- 
   const handleNavigation = () => {
     //http://wa.me/96877276659
-    window.open("http://wa.me/96877276659","_target")
-  };
+    window.open("http://wa.me/96877276659", "_target")
+  }
 
   return (
     <>
@@ -62,7 +61,7 @@ export default function Home() {
             >
               تطبيق عيادة
             </motion.h1>
-           
+
             <Button
               onClick={() => handleNavigation()}
               sx={{
@@ -96,10 +95,7 @@ export default function Home() {
             maxWidth="lg"
           >
             {IMGS.map((i, index) => (
-              <Box
-                sx={{ width: { xs: "90%", lg: "100%" }, margin: "auto" }}
-                key={index}
-              >
+              <Box sx={{ width: { xs: "90%", lg: "100%" }, margin: "auto" }} key={index}>
                 <Image
                   src={i}
                   alt={`Image ${index + 1}`}
@@ -120,5 +116,5 @@ export default function Home() {
       <Feedback />
       <Form />
     </>
-  );
+  )
 }

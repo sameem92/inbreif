@@ -1,28 +1,18 @@
-import React from "react";
-import {
-  Container,
-  Box,
-  Grid,
-  Card,
-  CardContent,
-  Typography,
-  Button,
-  useMediaQuery,
-} from "@mui/material";
-import Image from "next/image";
-import { motion } from "framer-motion";
-const w = "/image/w.png";
-const icon1 = "/image/icon8.png";
-import { Pagination, Autoplay } from "swiper/modules";
-import "swiper/css"; // Import Swiper styles
-import "swiper/css/pagination";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { dynamicBlurDataUrl } from "@/lib";
+import { Container, Box, Grid, Card, CardContent, Typography, Button, useMediaQuery } from "@mui/material"
+import Image from "next/image"
+import { motion } from "framer-motion"
+const w = "/image/w.png"
+const icon1 = "/image/icon8.png"
+import { Pagination, Autoplay } from "swiper/modules"
+import "swiper/css" // Import Swiper styles
+import "swiper/css/pagination"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { dynamicBlurDataUrl } from "@/lib"
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/autoplay";
+import "swiper/css"
+import "swiper/css/pagination"
+import "swiper/css/autoplay"
 
 const items = [
   {
@@ -49,7 +39,7 @@ const items = [
     icon: icon1,
     title: "/الربط مع شحن محلي أو دولي",
   },
-];
+]
 
 // Motion variants for the cards
 const cardVariants = {
@@ -63,13 +53,13 @@ const cardVariants = {
       ease: "easeOut",
     },
   }),
-};
+}
 
 export default function Package() {
-  const isMobile = useMediaQuery("(max-width:768px)"); // Detect if the screen is mobile
-  const goToWhatsApp = ()=>{
-    //href="" 
-    window.open("http://wa.me/96877276659","_target")
+  const isMobile = useMediaQuery("(max-width:768px)") // Detect if the screen is mobile
+  const goToWhatsApp = () => {
+    //href=""
+    window.open("http://wa.me/96877276659", "_target")
   }
   return (
     <motion.div
@@ -101,19 +91,12 @@ export default function Package() {
             width: { xs: "90%" },
           }}
         >
-          <Grid
-            container
-            spacing={5}
-            alignItems="center"
-            justifyContent="center"
-          >
+          <Grid container spacing={5} alignItems="center" justifyContent="center">
             <Grid item className="hidden-img" xs={12} md={5}>
               <motion.div
                 initial="hidden"
                 whileInView="visible"
-                viewport={
-                  isMobile ? { once: true } : { once: true, amount: 0.1 }
-                }
+                viewport={isMobile ? { once: true } : { once: true, amount: 0.1 }}
                 variants={cardVariants}
               >
                 <Box
@@ -130,7 +113,7 @@ export default function Package() {
                     sx={{
                       position: "absolute",
                       minWidth: "13rem",
-                       left: "50%",
+                      left: "50%",
                       zIndex: "2",
                       margin: "auto",
                       height: "2rem",
@@ -139,34 +122,31 @@ export default function Package() {
                       cursor: "pointer",
                     }}
                   >
-                                           <Button
-                 sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  minWidth: "13rem",
-                  height: "5rem",
-                  padding: {xs:"1rem 0.5rem",lg:"1rem 2rem"},
-                  fontSize: {xs:'1.3rem',lg:"1.6rem"},
+                    <Button
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        minWidth: "13rem",
+                        height: "5rem",
+                        padding: { xs: "1rem 0.5rem", lg: "1rem 2rem" },
+                        fontSize: { xs: "1.3rem", lg: "1.6rem" },
 
-                  gap: "6px",
-                  borderRadius: "52px",
-                  background: "#E0E324",
-                  backdropFilter: "blur(24px)",
-                  color: "#124650",
-                  textAlign: "center",
-                  fontWeight: 600,
-                  lineHeight: "1.6rem",
-                }}
-                onClik={goToWhatsApp}
-                className='t-buttin'
-
-              >
-
-اطلب الان موقعك
-
-      </Button>
-</Box>
+                        gap: "6px",
+                        borderRadius: "52px",
+                        background: "#E0E324",
+                        backdropFilter: "blur(24px)",
+                        color: "#124650",
+                        textAlign: "center",
+                        fontWeight: 600,
+                        lineHeight: "1.6rem",
+                      }}
+                      onClik={goToWhatsApp}
+                      className="t-buttin"
+                    >
+                      اطلب الان موقعك
+                    </Button>
+                  </Box>
                   <Image
                     blurDataURL={dynamicBlurDataUrl}
                     placeholder="blur"
@@ -200,7 +180,7 @@ export default function Package() {
                 allowTouchMove={true}
                 grabCursor={true}
                 speed={3500}
-                >
+              >
                 {/* SwiperSlide for each group of 6 cards */}
                 {[...Array(4)].map((_, slideIndex) => (
                   <SwiperSlide key={slideIndex}>
@@ -224,7 +204,7 @@ export default function Package() {
                                 flexDirection: "column",
                                 justifyContent: "center",
                                 alignItems: "center",
-                                 
+
                                 height: { xs: "15rem", md: "20rem" },
                                 gap: "1.6rem",
                                 padding: {
@@ -232,7 +212,7 @@ export default function Package() {
                                   md: "1.6rem 0.5rem",
                                   lg: "1.1rem",
                                 },
-                             
+
                                 "&:hover": {
                                   border: "1px solid #E0E324",
                                 },
@@ -263,17 +243,14 @@ export default function Package() {
                                 <Typography
                                   variant="h6"
                                   sx={{
-                                      
-        
-                                     
-                                    lineHeight: {xs:'3rem',lg:"3.4rem"},
+                                    lineHeight: { xs: "3rem", lg: "3.4rem" },
                                     fontSize: {
                                       xs: "1.6rem",
                                       md: "1.8rem",
                                       lg: "2rem",
                                     },
                                     fontWeight: 600,
-                                     display: "flex",
+                                    display: "flex",
                                     alignItems: "center",
                                     textAlign: "center",
                                     color: "#ffffff",
@@ -295,5 +272,5 @@ export default function Package() {
         </Box>
       </Container>
     </motion.div>
-  );
+  )
 }

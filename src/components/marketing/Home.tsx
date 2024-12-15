@@ -1,46 +1,39 @@
-"use client";
-const icon1 = "/image/icon5.png";
-const icon2 = "/image/icon6.png";
-const icon3 = "/image/icon7.png";
-import React from "react";
-import {
-  Box,
-  Container,
-  Card,
-  CardContent,
-  Typography,
-  Grid,
-} from "@mui/material";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import Slider from "@/components/marketing/Slider";
-import Profile from "@/components/marketing/Profile";
-import ADS from "@/components/marketing/ADS";
-import Slider2 from "@/components/marketing/Slider2";
+"use client"
+const icon1 = "/image/icon5.png"
+const icon2 = "/image/icon6.png"
+const icon3 = "/image/icon7.png"
+import React from "react"
+import { Box, Container, Card, CardContent, Typography, Grid } from "@mui/material"
+import { motion } from "framer-motion"
+import Image from "next/image"
+import Slider from "@/components/marketing/Slider"
+import Profile from "@/components/marketing/Profile"
+import ADS from "@/components/marketing/ADS"
+import Slider2 from "@/components/marketing/Slider2"
 
-import Package from "@/components/marketing/Package";
-import Design from "@/components/marketing/Design";
-import Feedback from "@/components/home/Feedback";
-import Form from "@/components/home/Form";
-import Tabs from "@mui/material/Tabs";
-import { dynamicBlurDataUrl } from "@/lib";
+import Package from "@/components/marketing/Package"
+import Design from "@/components/marketing/Design"
+import Feedback from "@/components/home/Feedback"
+import Form from "@/components/tools/form/form"
+import Tabs from "@mui/material/Tabs"
+import { dynamicBlurDataUrl } from "@/lib"
 
-import Social from "@/components/layout/Social";
-import Tab from "@mui/material/Tab";
+import Social from "@/components/layout/Social"
+import Tab from "@mui/material/Tab"
 interface TabPanelProps {
-  index: number | string;
-  value: number | string;
-  children: React.ReactNode;
+  index: number | string
+  value: number | string
+  children: React.ReactNode
 }
 function a11yProps(index: number) {
   return {
     id: `simple-tab-${index}`,
     "aria-controls": `simple-tabpanel-${index}`,
-  };
+  }
 }
 
 function CustomTabPanel(props: TabPanelProps) {
-  const { value, index, children, ...other } = props;
+  const { value, index, children, ...other } = props
 
   return (
     <Box
@@ -56,7 +49,7 @@ function CustomTabPanel(props: TabPanelProps) {
     >
       {value === index && <>{children}</>}
     </Box>
-  );
+  )
 }
 const items = [
   {
@@ -71,17 +64,14 @@ const items = [
     icon: icon3,
     title: " تعديلات حتى رضا العميل",
   },
-];
+]
 
 export default function Home() {
-  const [value, setValue] = React.useState<string | number>(0);
+  const [value, setValue] = React.useState<string | number>(0)
 
-  const handleChange = (
-    _event: React.SyntheticEvent,
-    newValue: string | number,
-  ) => {
-    setValue(newValue);
-  };
+  const handleChange = (_event: React.SyntheticEvent, newValue: string | number) => {
+    setValue(newValue)
+  }
   return (
     <>
       <Social />
@@ -125,8 +115,7 @@ export default function Home() {
               التصميم الجرافيك{" "}
             </motion.h1>
             <p className="paragrph">
-              نسعى لتحقيق التميز والابداع والعصرية لعملائنا في هويتهم البصرية
-              وإعلاناتهم في سوق مليء بالتحديات
+              نسعى لتحقيق التميز والابداع والعصرية لعملائنا في هويتهم البصرية وإعلاناتهم في سوق مليء بالتحديات
             </p>
           </Container>
 
@@ -136,14 +125,11 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Container
-              sx={{ display: "flex", justifyContent: "center", gap: "2.4rem" }}
-              maxWidth="lg"
-            >
+            <Container sx={{ display: "flex", justifyContent: "center", gap: "2.4rem" }} maxWidth="lg">
               <Box
                 sx={{
                   width: { xs: "90%", lg: "74%" },
-                   paddingBottom: {xs:'8rem',lg:"4.8rem"},
+                  paddingBottom: { xs: "8rem", lg: "4.8rem" },
 
                   position: "relative",
                   top: "5.8rem",
@@ -151,7 +137,7 @@ export default function Home() {
                   margin: "0 auto",
                 }}
               >
-                <Grid container spacing={{xs:2 , md:4 , lg:6}}>
+                <Grid container spacing={{ xs: 2, md: 4, lg: 6 }}>
                   {items.map((item, index) => (
                     <Grid item key={index} xs={6} sm={6} md={4}>
                       <motion.div
@@ -174,7 +160,7 @@ export default function Home() {
                             alignItems: "center",
                             padding: { xs: "1.6rem 0.5rem", md: "1rem", lg: "1.1rem" },
                             height: "100%",
-                             gap: { xs: ".6rem", md: "1rem", lg: "1.6rem" },
+                            gap: { xs: ".6rem", md: "1rem", lg: "1.6rem" },
 
                             "&:hover": {
                               border: "1px solid #E0E324",
@@ -210,7 +196,7 @@ export default function Home() {
                                   lg: "2.4rem",
                                 },
                                 fontWeight: 400,
-                                lineHeight: {xs:'3rem' , lg:"3.7rem"},
+                                lineHeight: { xs: "3rem", lg: "3.7rem" },
                                 display: "flex",
                                 alignItems: "center",
                                 textAlign: "center",
@@ -254,11 +240,7 @@ export default function Home() {
         >
           <Tab className="tab" label="شعارات" {...a11yProps(0)} />
           <Tab className="tab" label=" هويات بصرية" {...a11yProps(1)} />
-          <Tab
-            className="tab"
-            label="  سوشيال ميديا"
-            {...a11yProps(2)}
-          />
+          <Tab className="tab" label="  سوشيال ميديا" {...a11yProps(2)} />
           <Tab className="tab" label="بروفايلات ومجلات" {...a11yProps(3)} />
         </Tabs>
         <CustomTabPanel value={value} index={0}>
@@ -282,5 +264,5 @@ export default function Home() {
       <Feedback />
       <Form />
     </>
-  );
+  )
 }

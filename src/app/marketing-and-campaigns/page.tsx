@@ -1,10 +1,5 @@
-import React from "react";
-import Home from "@/components/shop/Home";
+import Home from "@/components/shop/Home"
 
 export default function Main() {
-  return (
-    <>
-      <Home />
-    </>
-  );
+  return <Home />
 }

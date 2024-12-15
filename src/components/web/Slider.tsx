@@ -1,16 +1,15 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/scrollbar";
-import "swiper/css/autoplay";
-import { Box } from "@mui/material";
-import Image from "next/image";
-import CircularProgress from "@mui/material/CircularProgress";
-import { Scrollbar, Autoplay } from "swiper/modules";
-import { dynamicBlurDataUrl } from "@/lib";
- 
-import { useRouter } from "next/navigation";
+"use client"
+import { useState, useEffect } from "react"
+import { Swiper, SwiperSlide } from "swiper/react"
+import "swiper/css"
+import "swiper/css/scrollbar"
+import "swiper/css/autoplay"
+import { Box } from "@mui/material"
+import Image from "next/image"
+import { Scrollbar, Autoplay } from "swiper/modules"
+import { dynamicBlurDataUrl } from "@/lib"
+
+import { useRouter } from "next/navigation"
 
 const IMGS = [
   "/image/hook/1.png",
@@ -19,33 +18,30 @@ const IMGS = [
   "/image/hook/4.png",
   "/image/hook/5.png",
   "/image/hook/6.png",
- 
-   
-];
+]
 
 export default function Slider() {
-  const [imagesLoaded, setImagesLoaded] = useState(false);
-  const router = useRouter();
+  const [imagesLoaded, setImagesLoaded] = useState(false)
+  const router = useRouter()
   const handleNavigation = (path: string) => {
-    router.push(path);
-  };
-
+    router.push(path)
+  }
 
   useEffect(() => {
-    let imagesToLoad = IMGS.slice(0, 4)?.length;
+    let imagesToLoad = IMGS.slice(0, 4)?.length
     const handleImageLoad = () => {
-      imagesToLoad -= 1;
+      imagesToLoad -= 1
       if (imagesToLoad === 0) {
-        setImagesLoaded(true);
+        setImagesLoaded(true)
       }
-    };
+    }
 
     IMGS.forEach((imgSrc) => {
-      const img = new window.Image();
-      img.src = imgSrc;
-      img.onload = handleImageLoad;
-    });
-  }, []);
+      const img = new window.Image()
+      img.src = imgSrc
+      img.onload = handleImageLoad
+    })
+  }, [])
 
   return (
     <div className="noise">
@@ -70,13 +66,11 @@ export default function Slider() {
               height: "400px",
             }}
           >
-                  <div className="loader"></div> 
-
+            <div className="loader"></div>
           </div>
         ) : (
           <>
             <Swiper
-            
               dir="rtl"
               effect={"fade"}
               modules={[Scrollbar, Autoplay]}
@@ -84,7 +78,7 @@ export default function Slider() {
               initialSlide={1}
               className="mySwiper"
               // slidesPerView={4}
-               autoplay={{
+              autoplay={{
                 delay: 0,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
@@ -114,10 +108,11 @@ export default function Slider() {
             >
               {IMGS.map((img, i) => (
                 <SwiperSlide key={i}>
-                  <div className="image-container"
-                  style={{cursor:'pointer'}}
+                  <div
+                    className="image-container"
+                    style={{ cursor: "pointer" }}
                     onClick={() => {
-                      handleNavigation(`/work/${i + 1}`);
+                      handleNavigation(`/work/${i + 1}`)
                     }}
                   >
                     <Image
@@ -139,5 +134,5 @@ export default function Slider() {
         )}
       </Box>
     </div>
-  );
+  )
 }

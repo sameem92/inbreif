@@ -1,24 +1,24 @@
-"use client";
-import React from "react";
-import { Box, Grid } from "@mui/material";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import Slider from "@/components/web/Slider";
-import Package from "@/components/web/Package";
-import Feedback from "@/components/home/Feedback";
-import Form from "@/components/home/Form";
-const web = "/image/web.png";
-import Social from "@/components/layout/Social";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
-import Work from "@/components/web/Work";
-import { dynamicBlurDataUrl } from "@/lib";
+"use client"
+
+import { Box, Grid } from "@mui/material"
+import { motion } from "framer-motion"
+import Image from "next/image"
+import Slider from "@/components/web/Slider"
+import Package from "@/components/web/Package"
+import Feedback from "@/components/home/Feedback"
+import Form from "@/components/tools/form/form"
+const web = "/image/web.png"
+import Social from "@/components/layout/Social"
+import { styled } from "@mui/material/styles"
+import Paper from "@mui/material/Paper"
+import Work from "@/components/web/Work"
+import { dynamicBlurDataUrl } from "@/lib"
 
 const Item = styled(Paper)(() => ({
   backgroundColor: "transparent",
   boxShadow: "none",
   border: "none",
-}));
+}))
 
 export default function Home() {
   return (
@@ -85,8 +85,8 @@ export default function Home() {
                   transition={{ delay: 0.3, duration: 0.6 }}
                   className="paragrph-another"
                 >
-                  في InBrief نقدم لك موقعاً تعريفياً أو متجراً إلكترونياً يتناسب
-                  مع هويتك التجارية ويزيد سرعة انتشارك وجذب عملائك.{" "}
+                  في InBrief نقدم لك موقعاً تعريفياً أو متجراً إلكترونياً يتناسب مع هويتك التجارية ويزيد سرعة انتشارك
+                  وجذب عملائك.{" "}
                 </motion.p>
               </Item>
             </Grid>
@@ -136,5 +136,5 @@ export default function Home() {
       <Feedback />
       <Form />
     </>
-  );
+  )
 }

@@ -1,15 +1,14 @@
-"use client";
+"use client"
 
-import React from "react";
-import { Box, Typography, Button } from "@mui/material";
-import { useRouter } from "next/navigation";
+import { Box, Typography, Button } from "@mui/material"
+import { useRouter } from "next/navigation"
 
 const NotFound = () => {
-  const router = useRouter();
+  const router = useRouter()
 
   const goHome = () => {
-    router.push("/");
-  };
+    router.push("/")
+  }
 
   return (
     <Box
@@ -24,10 +23,7 @@ const NotFound = () => {
         backgroundColor: "#f5f5f5",
       }}
     >
-      <Typography
-        variant="h1"
-        sx={{ fontSize: "4rem", margin: "2rem 0", fontWeight: "bold" }}
-      >
+      <Typography variant="h1" sx={{ fontSize: "4rem", margin: "2rem 0", fontWeight: "bold" }}>
         404
       </Typography>
       <Typography variant="h6" sx={{ marginBottom: "1.5rem" }}>
@@ -58,7 +54,7 @@ const NotFound = () => {
         Go Home
       </Button>
     </Box>
-  );
-};
+  )
+}
 
-export default NotFound;
+export default NotFound

@@ -1,31 +1,28 @@
-"use client";
-import React from "react";
-import { Box, Button, Container, useMediaQuery } from "@mui/material";
+"use client"
+import React from "react"
+import { Box, Button, Container, useMediaQuery } from "@mui/material"
 
-import Image from "next/image";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
-import { motion } from "framer-motion"; // Import framer-motion
-import { dynamicBlurDataUrl } from "@/lib";
+import Image from "next/image"
+import { styled } from "@mui/material/styles"
+import Paper from "@mui/material/Paper"
+import Grid from "@mui/material/Grid"
+import { motion } from "framer-motion" // Import framer-motion
+import { dynamicBlurDataUrl } from "@/lib"
 
 const Item = styled(Paper)({
   textAlign: "center",
   boxShadow: "none",
-});
+})
 
-const arrow = "/image/arrow.png";
+const arrow = "/image/arrow.png"
 const firstService = [
   {
     title: "تطبيقات الموبايل",
   },
   {
-    title: "مواقع ومتاجر إلكترونية",
+    title: "متاجر الكترونية",
   },
-  {
-    title: "نظام محاسبي ومبيعات",
-  },
-];
+]
 const secService = [
   {
     title: "هويات بصرية و شعارات",
@@ -45,20 +42,20 @@ const secService = [
   {
     title: " إعداد خطط تسويقية",
   },
-];
+]
 
 const fromLeft = {
   hidden: { opacity: 0, x: -100 },
   visible: { opacity: 1, x: 0 },
-};
+}
 
 const fromRight = {
   hidden: { opacity: 0, x: 100 },
   visible: { opacity: 1, x: 0 },
-};
+}
 export default function Services() {
-  const isMobile = useMediaQuery("(max-width:768px)"); // Detect if the screen is mobile
-  const animation = isMobile ? { once: true } : { once: true, amount: 0.3 };
+  const isMobile = useMediaQuery("(max-width:768px)") // Detect if the screen is mobile
+  const animation = isMobile ? { once: true } : { once: true, amount: 0.3 }
   return (
     <>
       <div className="hero">
@@ -125,13 +122,8 @@ export default function Services() {
                           alt={item.title}
                           loading="lazy"
                           objectFit="cover"
-                          width={
-                            index == 0 ? 279.563 : index == 1 ? 210 : 354.295
-                          }
-                          height={210}
                           blurDataURL={dynamicBlurDataUrl}
                           placeholder="blur"
-                          className="service-img-scale"
                         />
                         <h3>{item.title}</h3>
                         <Button
@@ -209,17 +201,10 @@ export default function Services() {
           >
             <h1 className="secondry-title">خدمات التصميم والتسويق </h1>
 
-            <Grid
-              container
-              columnSpacing={{ xs: 6, md: 4, xl: 0 }}
-              rowSpacing={{ xs: 6, md: 4, xl: 10 }}
-            >
+            <Grid container columnSpacing={{ xs: 6, md: 4, xl: 0 }} rowSpacing={{ xs: 6, md: 4, xl: 10 }}>
               {secService.map((item, index) => (
                 <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 10 }}
-                  >
+                  <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300, damping: 10 }}>
                     <Box
                       sx={{
                         width: "100%",
@@ -251,10 +236,7 @@ export default function Services() {
                         },
                       }}
                     >
-                      <Item
-                        sx={{ mb: 2 }}
-                        className="service-box service-box-sm"
-                      >
+                      <Item sx={{ mb: 2 }} className="service-box service-box-sm">
                         <Image
                           src={`/image/service${index + 4}.png`}
                           alt={item.title}
@@ -316,5 +298,5 @@ export default function Services() {
         </motion.div>
       </div>
     </>
-  );
+  )
 }

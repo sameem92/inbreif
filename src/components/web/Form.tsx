@@ -1,10 +1,9 @@
-import React from "react";
-import { Container, useMediaQuery } from "@mui/material";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import { motion } from "framer-motion"; // Import framer-motion
+import { Container, useMediaQuery } from "@mui/material"
+import Box from "@mui/material/Box"
+import Typography from "@mui/material/Typography"
+import Button from "@mui/material/Button"
+import TextField from "@mui/material/TextField"
+import { motion } from "framer-motion" // Import framer-motion
 
 const textStyle = {
   "&.MuiTextField-root": {
@@ -32,11 +31,11 @@ const textStyle = {
       margin: 0,
     },
   },
-};
+}
 
 export default function Form() {
-  const isMobile = useMediaQuery("(max-width:768px)"); // Detect if the screen is mobile
-  const animation = isMobile ? { once: true } : { once: true, amount: 0.3 };
+  const isMobile = useMediaQuery("(max-width:768px)") // Detect if the screen is mobile
+  const animation = isMobile ? { once: true } : { once: true, amount: 0.3 }
 
   return (
     <>
@@ -152,5 +151,5 @@ export default function Form() {
         </motion.div>
       </Container>
     </>
-  );
+  )
 }

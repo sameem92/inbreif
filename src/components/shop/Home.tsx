@@ -1,27 +1,31 @@
-"use client";
-import r from "@/assets/img/r.png";
+"use client"
+import r from "@/assets/img/r.png"
 
-import React from "react";
-import { Box, Container, Grid, Button, useMediaQuery } from "@mui/material";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import Package from "@/components/shop/Package";
-import Design from "@/components/shop/Design";
-import Feedback from "@/components/home/Feedback";
-import Form from "@/components/home/Form";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
-import { dynamicBlurDataUrl } from "@/lib";
+import React from "react"
+import { Box, Container, Grid, Button, useMediaQuery } from "@mui/material"
+import { motion } from "framer-motion"
+import Image from "next/image"
+import Package from "@/components/shop/Package"
+import Design from "@/components/shop/Design"
+import Feedback from "@/components/home/Feedback"
+import Form from "@/components/tools/form/form"
+import { styled } from "@mui/material/styles"
+import Paper from "@mui/material/Paper"
+import { dynamicBlurDataUrl } from "@/lib"
 
-import Social from "@/components/layout/Social";
+import Social from "@/components/layout/Social"
 const Item = styled(Paper)(() => ({
   backgroundColor: "transparent",
   boxShadow: "none",
   border: "none",
-}));
+}))
 
 export default function Home() {
-  const isMobile = useMediaQuery("(max-width:768px)"); // Detect if the screen is mobile
+  const isMobile = useMediaQuery("(max-width:768px)") // Detect if the screen is mobile
+
+  const goToWhatsApp = () => {
+    window.open("http://wa.me/96877276659", "_target")
+  }
 
   return (
     <>
@@ -102,6 +106,7 @@ export default function Home() {
                       fontWeight: 600,
                       lineHeight: "1.6rem",
                     }}
+                    onClick={goToWhatsApp}
                   >
                     اطلب استشارة مجانية
                   </Button>
@@ -155,5 +160,5 @@ export default function Home() {
       <Feedback />
       <Form />
     </>
-  );
+  )
 }

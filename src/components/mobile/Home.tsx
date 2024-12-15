@@ -1,23 +1,23 @@
-"use client";
-import React from "react";
-import { Box, Grid } from "@mui/material";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import Slider from "@/components/mobile/Slider";
-import Package from "@/components/mobile/Package";
-import Feedback from "@/components/home/Feedback";
-import Form from "@/components/home/Form";
-import mobile from "@/assets/img/mobile.png";
-import Social from "@/components/layout/Social";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
- 
-import Work from "@/components/mobile/Work";
+"use client"
+import React from "react"
+import { Box, Grid } from "@mui/material"
+import { motion } from "framer-motion"
+import Image from "next/image"
+import Slider from "@/components/mobile/Slider"
+import Package from "@/components/mobile/Package"
+import Feedback from "@/components/home/Feedback"
+import Form from "@/components/tools/form/form"
+import mobile from "@/assets/img/mobile.png"
+import Social from "@/components/layout/Social"
+import { styled } from "@mui/material/styles"
+import Paper from "@mui/material/Paper"
+
+import Work from "@/components/mobile/Work"
 const Item = styled(Paper)(() => ({
   backgroundColor: "transparent",
   boxShadow: "none",
   border: "none",
-}));
+}))
 
 export default function Home() {
   return (
@@ -40,8 +40,8 @@ export default function Home() {
                 justifyContent: { xs: "center", lg: "flex-start" },
                 width: { xs: "90%", lg: "100%" },
                 position: "relative",
-                 margin: "auto",
-                
+                margin: "auto",
+
                 left: { xs: "", lg: "17%" },
                 gap: { xs: "1.6rem", md: "3rem" },
               }}
@@ -79,8 +79,8 @@ export default function Home() {
                 transition={{ delay: 0.3, duration: 0.6 }}
                 className="paragrph-another"
               >
-                في InBrief، نلتزم بتقديم تطبيقات متميزة تجمع بين الوظائف الفعالة
-                والتصميم العصري. نحن هنا لمساعدتكم في تحقيق أهدافكم الرقمية.{" "}
+                في InBrief، نلتزم بتقديم تطبيقات متميزة تجمع بين الوظائف الفعالة والتصميم العصري. نحن هنا لمساعدتكم في
+                تحقيق أهدافكم الرقمية.{" "}
               </motion.p>
             </Item>
           </Grid>
@@ -93,7 +93,7 @@ export default function Home() {
               >
                 <Image
                   src={mobile}
-                   placeholder="blur"
+                  placeholder="blur"
                   style={{
                     maxWidth: "100%",
                     maxHeight: "75rem",
@@ -127,5 +127,5 @@ export default function Home() {
       <Feedback />
       <Form />
     </>
-  );
+  )
 }
