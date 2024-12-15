@@ -3,7 +3,7 @@
 import { Box, Grid } from "@mui/material"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import Slider from "@/components/web/Slider"
+import Slider from "@/components/tools/slider/Slider"
 import Package from "@/components/web/Package"
 import Feedback from "@/components/home/Feedback"
 import Form from "@/components/tools/form/form"

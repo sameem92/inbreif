@@ -7,7 +7,6 @@ import React from "react"
 import { Box, Container, Button, Card, CardContent, Typography, Grid } from "@mui/material"
 import { motion } from "framer-motion" // Import framer-motion
 import Image from "next/image"
-import Slider from "@/components/home/Slider"
 import Package from "@/components/home/Package"
 import Services from "@/components/home/Services"
 import Feedback from "@/components/home/Feedback"
@@ -213,7 +212,6 @@ export default function Home() {
         </Box>
       </motion.div>
 
-      <Slider />
       <Package />
       <Services />
       <Feedback />

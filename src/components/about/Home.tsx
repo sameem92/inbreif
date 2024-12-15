@@ -1,5 +1,5 @@
 "use client"
-import React from "react"
+
 import { Box, Container, List, ListItem, ListItemText, Typography, Grid, useMediaQuery } from "@mui/material"
 import { motion } from "framer-motion"
 import Image from "next/image"

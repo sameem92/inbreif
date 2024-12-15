@@ -1,41 +1,40 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/scrollbar";
-import "swiper/css/autoplay";
+"use client"
+import React, { useState, useEffect } from "react"
+import { Swiper, SwiperSlide } from "swiper/react"
+import "swiper/css"
+import "swiper/css/scrollbar"
+import "swiper/css/autoplay"
 
-import { Box } from "@mui/material";
-import Image from "next/image";
-import CircularProgress from "@mui/material/CircularProgress";
-import { Autoplay, Scrollbar } from "swiper/modules";
-import img1 from "@/assets/img/x1.png";
-import img2 from "@/assets/img/x2.png";
-import img3 from "@/assets/img/x3.png";
-import img4 from "@/assets/img/x4.png";
-import img5 from "@/assets/img/x5.png";
-import { dynamicBlurDataUrl } from "@/lib";
+import { Box } from "@mui/material"
+import Image from "next/image"
+import { Autoplay, Scrollbar } from "swiper/modules"
+import img1 from "@/assets/img/x1.png"
+import img2 from "@/assets/img/x2.png"
+import img3 from "@/assets/img/x3.png"
+import img4 from "@/assets/img/x4.png"
+import img5 from "@/assets/img/x5.png"
+import { dynamicBlurDataUrl } from "@/lib"
 
-const IMGS = [img1, img2, img3, img4, img5, img1, img2, img3, img4, img5];
+const IMGS = [img1, img2, img3, img4, img5, img1, img2, img3, img4, img5]
 
 export default function Slider() {
-  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(false)
 
   useEffect(() => {
-    let imagesToLoad = IMGS.slice(0, 4)?.length;
+    let imagesToLoad = IMGS.slice(0, 4)?.length
     const handleImageLoad = () => {
-      imagesToLoad -= 1;
+      imagesToLoad -= 1
       if (imagesToLoad === 0) {
-        setImagesLoaded(true);
+        setImagesLoaded(true)
       }
-    };
+    }
 
     IMGS.forEach((imgSrc) => {
-      const img = new window.Image();
-      img.src = imgSrc.src;
-      img.onload = handleImageLoad;
-    });
-  }, []);
+      const img = new window.Image()
+      img.src = imgSrc.src
+      img.onload = handleImageLoad
+    })
+  }, [])
 
   return (
     <div className="noise">
@@ -60,15 +59,14 @@ export default function Slider() {
               height: "400px",
             }}
           >
-                  <div className="loader"></div> 
-
+            <div className="loader"></div>
           </div>
         ) : (
           <>
             <Swiper
               dir="rtl"
               effect={"fade"}
-              modules={[ Autoplay ,Scrollbar]}
+              modules={[Autoplay, Scrollbar]}
               scrollbar={{ draggable: true, dragSize: 20 }}
               loop={true}
               allowTouchMove={true}
@@ -76,15 +74,12 @@ export default function Slider() {
               spaceBetween={20}
               initialSlide={1}
               className="mySwiper mySwiper-auto"
-               autoplay={{
+              autoplay={{
                 delay: 0,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
-             
               }}
               speed={3500}
-
-             
               breakpoints={{
                 1: {
                   slidesPerView: 1,
@@ -127,5 +122,5 @@ export default function Slider() {
         )}
       </Box>
     </div>
-  );
+  )
 }
