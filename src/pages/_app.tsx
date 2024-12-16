@@ -28,8 +28,6 @@ export default function MyApp({
     <CacheProvider value={emotionCache}>
 
 
-
-
       <Component {...pageProps} />
     </CacheProvider>
   );
