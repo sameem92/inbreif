@@ -5,15 +5,15 @@ import React from "react"
 import { Box, Container, Grid, Button, useMediaQuery } from "@mui/material"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import Package from "@/components/shop/Package"
+import Package from "@/components/tools/package/package"
 import Design from "@/components/shop/Design"
-import Feedback from "@/components/home/Feedback"
+import Feedback from "@/components/tools/feedback/Feedback"
+import Social from "@/components/tools/social/social"
 import Form from "@/components/tools/form/form"
 import { styled } from "@mui/material/styles"
 import Paper from "@mui/material/Paper"
 import { dynamicBlurDataUrl } from "@/lib"
 
-import Social from "@/components/layout/Social"
 const Item = styled(Paper)(() => ({
   backgroundColor: "transparent",
   boxShadow: "none",

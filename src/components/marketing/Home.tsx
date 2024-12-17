@@ -1,25 +1,30 @@
 "use client"
-const icon1 = "/image/icon5.png"
-const icon2 = "/image/icon6.png"
-const icon3 = "/image/icon7.png"
+
 import React from "react"
+import Image from "next/image"
+
+// Components
 import { Box, Container, Card, CardContent, Typography, Grid } from "@mui/material"
 import { motion } from "framer-motion"
-import Image from "next/image"
 import Slider from "@/components/tools/slider/Slider"
+import Package from "@/components/tools/package/Package"
+import Feedback from "@/components/tools/feedback/Feedback"
+import Form from "@/components/tools/form/form"
 import Profile from "@/components/marketing/Profile"
 import ADS from "@/components/marketing/ADS"
 import Slider2 from "@/components/marketing/Slider2"
-
-import Package from "@/components/marketing/Package"
 import Design from "@/components/marketing/Design"
-import Feedback from "@/components/home/Feedback"
-import Form from "@/components/tools/form/form"
 import Tabs from "@mui/material/Tabs"
 import { dynamicBlurDataUrl } from "@/lib"
-
-import Social from "@/components/layout/Social"
+import Social from "@/components/tools/social/social"
 import Tab from "@mui/material/Tab"
+
+// Images
+const icon1 = "/image/icon5.png"
+const icon2 = "/image/icon6.png"
+const icon3 = "/image/icon7.png"
+
+// Types
 interface TabPanelProps {
   index: number | string
   value: number | string
@@ -112,7 +117,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              التصميم الجرافيك{" "}
+              التصميم الجرافيك
             </motion.h1>
             <p className="paragrph">
               نسعى لتحقيق التميز والابداع والعصرية لعملائنا في هويتهم البصرية وإعلاناتهم في سوق مليء بالتحديات

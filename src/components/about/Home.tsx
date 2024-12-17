@@ -3,9 +3,15 @@
 import { Box, Container, List, ListItem, ListItemText, Typography, Grid, useMediaQuery } from "@mui/material"
 import { motion } from "framer-motion"
 import Image from "next/image"
+<<<<<<< HEAD
 import Social from "@/components/layout/Social"
 import Form from "@/components/tools/form/form"
 import Feedback from "@/components/home/Feedback"
+=======
+import Social from "@/components/tools/social/social"
+import Form from "@/components/tools/form/form"
+import Feedback from "@/components/tools/feedback/Feedback"
+>>>>>>> 476c981bc55ccbd2c81ce2acba121f15d5de6896
 import { dynamicBlurDataUrl } from "@/lib"
 import one from "@/assets/img/1.png"
 import two from "@/assets/img/2.png"

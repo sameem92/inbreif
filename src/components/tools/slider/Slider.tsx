@@ -7,15 +7,16 @@ import "swiper/css/autoplay"
 
 import { Box } from "@mui/material"
 import Image from "next/image"
-import { Autoplay, Scrollbar } from "swiper/modules"
-import img1 from "@/assets/img/x1.png"
-import img2 from "@/assets/img/x2.png"
-import img3 from "@/assets/img/x3.png"
-import img4 from "@/assets/img/x4.png"
-import img5 from "@/assets/img/x5.png"
+import { Scrollbar, Autoplay } from "swiper/modules"
 import { dynamicBlurDataUrl } from "@/lib"
 
-const IMGS = [img1, img2, img3, img4, img5, img1, img2, img3, img4, img5]
+const img1 = "/image/x1.png"
+const img2 = "/image/x2.png"
+const img3 = "/image/x3.png"
+const img4 = "/image/x4.png"
+const img5 = "/image/x5.png"
+
+const IMGS = [img1, img2, img3, img4, img5]
 
 export default function Slider() {
   const [imagesLoaded, setImagesLoaded] = useState(false)
@@ -31,7 +32,7 @@ export default function Slider() {
 
     IMGS.forEach((imgSrc) => {
       const img = new window.Image()
-      img.src = imgSrc.src
+      img.src = imgSrc
       img.onload = handleImageLoad
     })
   }, [])
@@ -67,51 +68,50 @@ export default function Slider() {
               dir="rtl"
               effect={"fade"}
               modules={[Autoplay, Scrollbar]}
-              scrollbar={{ draggable: true, dragSize: 20 }}
               loop={true}
-              allowTouchMove={true}
               grabCursor={true}
-              spaceBetween={20}
+              scrollbar={{ draggable: true, dragSize: 24 }}
               initialSlide={1}
-              className="mySwiper mySwiper-auto"
+              className="mySwiper"
               autoplay={{
                 delay: 0,
                 disableOnInteraction: false,
+
                 pauseOnMouseEnter: true,
               }}
-              speed={3500}
+              allowTouchMove={true}
+              speed={2500}
               breakpoints={{
                 1: {
                   slidesPerView: 1,
                   spaceBetween: 10,
                 },
                 768: {
-                  slidesPerView: 1,
+                  slidesPerView: 2,
                   spaceBetween: 20,
                 },
-                // 992: {
-                //   slidesPerView: 3,
-                //   spaceBetween: 20,
-                // },
-                // 1280: {
-                //   slidesPerView: 3,
-                //   spaceBetween: 20,
-                // },
+                992: {
+                  slidesPerView: 3,
+                  spaceBetween: 30,
+                },
+                1280: {
+                  slidesPerView: 4,
+                  spaceBetween: 40,
+                },
               }}
             >
               {IMGS.map((img, i) => (
                 <SwiperSlide key={i}>
                   <div className="image-container">
                     <Image
-                      src={img}
-                      alt={`Slide ${i}`}
                       blurDataURL={dynamicBlurDataUrl}
                       placeholder="blur"
+                      src={img}
+                      alt={`Slide ${i}`}
                       className="image-zoom"
                       layout="responsive"
-                      width={800}
-                      style={{ width: "100%", height: "auto" }}
-                      height={500}
+                      width={500}
+                      height={300}
                       loading="lazy"
                     />
                   </div>

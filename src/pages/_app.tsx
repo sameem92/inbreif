@@ -14,17 +14,14 @@ interface MyAppProps extends AppProps {
 }
 
 // Create a client-side cache, if not available
-
 const clientSideEmotionCache = createEmotionCache();
 
 export default function MyApp({
   Component,
-
   pageProps,
   emotionCache = clientSideEmotionCache,
 }: MyAppProps) {
   return (
-
     <CacheProvider value={emotionCache}>
 
 

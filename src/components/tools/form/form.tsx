@@ -1,4 +1,4 @@
-import { Container, useMediaQuery } from "@mui/material"
+import { Alert, Container, useMediaQuery } from "@mui/material"
 import Box from "@mui/material/Box"
 import Typography from "@mui/material/Typography"
 import Button from "@mui/material/Button"
@@ -39,8 +39,17 @@ export default function Form() {
   const isMobile = useMediaQuery("(max-width:768px)") // Detect if the screen is mobile
   const animation = isMobile ? { once: true } : { once: true, amount: 0.3 }
   const [value, setValue] = useState("")
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
+
+  const showSuccess = () => {
+    setSuccess(true)
+    setTimeout(() => setSuccess(false), 2000)
+  }
 
   const handleSubmit = async () => {
+    setLoading(true)
+
     await emailjs
       .send(
         "service_xznqpsf",
@@ -52,13 +61,12 @@ export default function Form() {
         "RoVHFVDjpZcFQSnv8" // Replace with your EmailJS public key
       )
       .then(
-        (response) => {
-          console.log(response)
-          alert("Message sent successfully!")
+        () => {
+          setLoading(false)
+          showSuccess()
         },
-        (error) => {
-          alert("Failed to send message. Please try again.")
-          console.error("Error:", error)
+        () => {
+          setLoading(false)
         }
       )
   }
@@ -155,6 +163,7 @@ export default function Form() {
                 />
                 <Button
                   onClick={handleSubmit}
+                  disabled={loading}
                   sx={{
                     display: "flex",
                     justifyContent: "center",
@@ -175,6 +184,17 @@ export default function Form() {
                   إرسال
                 </Button>
               </Box>
+              {success && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  viewport={animation}
+                  style={{ width: "60%", margin: "0 auto" }}
+                >
+                  <Alert severity="success">تم استلام رسالتك بنجاح</Alert>
+                </motion.div>
+              )}
             </Box>
           </Box>
         </motion.div>

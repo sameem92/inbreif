@@ -1,17 +1,17 @@
 "use client"
+
 import { Box, Grid } from "@mui/material"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import Slider from "@/components/tools/slider/Slider"
-import Package from "@/components/mobile/Package"
-import Feedback from "@/components/home/Feedback"
+import Features from "@/components/mobile/features"
+import Feedback from "@/components/tools/feedback/Feedback"
 import Form from "@/components/tools/form/form"
 import mobile from "@/assets/img/mobile.png"
-import Social from "@/components/layout/Social"
+import Social from "@/components/tools/social/social"
 import { styled } from "@mui/material/styles"
 import Paper from "@mui/material/Paper"
 
-import Work from "@/components/mobile/Work"
+import Work from "@/components/tools/work/work"
 const Item = styled(Paper)(() => ({
   backgroundColor: "transparent",
   boxShadow: "none",
@@ -105,24 +105,17 @@ export default function Home() {
           </Grid>
         </Grid>
       </motion.div>
-      <Box
-        sx={{
-          width: "100%",
 
-          mt: { xs: 2, md: "15rem" },
-        }}
-      >
-        <Slider />
-      </Box>
       <Box
         sx={{
-          width: "95%",
-          margin: "auto",
+          paddingTop: { xs: "5.3rem", md: "10rem" },
+          background: "linear-gradient(rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.21))",
         }}
       >
         <Work />
       </Box>
-      <Package />
+
+      <Features />
       <Feedback />
       <Form />
     </>

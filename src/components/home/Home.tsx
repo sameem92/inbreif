@@ -1,17 +1,16 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 //@ts-nocheck
-
 "use client"
-
-import React from "react"
-import { Box, Container, Button, Card, CardContent, Typography, Grid } from "@mui/material"
-import { motion } from "framer-motion" // Import framer-motion
 import Image from "next/image"
-import Package from "@/components/home/Package"
-import Services from "@/components/home/Services"
-import Feedback from "@/components/home/Feedback"
+
+// Components
+import { Box, Container, Link, Card, CardContent, Typography, Grid } from "@mui/material"
+import { motion } from "framer-motion" // Import framer-motion
+import Package from "@/components/tools/package/Package"
+import Feedback from "@/components/tools/feedback/Feedback"
 import Form from "@/components/tools/form/form"
-import Social from "@/components/layout/Social"
+import Services from "@/components/home/Services"
+import Social from "@/components/tools/social/social"
 import { dynamicBlurDataUrl } from "@/lib"
 
 const items = [
@@ -30,9 +29,6 @@ const items = [
 ]
 
 export default function Home() {
-  const goToWhatsApp = () => {
-    window.open("http://wa.me/96877276659", "_target")
-  }
   return (
     <>
       <Social />
@@ -76,7 +72,7 @@ export default function Home() {
             >
               المنصة الأقوى في البرمجيات والتسويق في العالم العربي.
             </motion.h1>
-            <Button
+            <Link
               sx={{
                 display: "flex",
                 justifyContent: "center",
@@ -94,11 +90,13 @@ export default function Home() {
                 fontSize: "1.6rem",
                 fontWeight: 600,
                 lineHeight: "1.6rem",
+                textDecoration: "none",
               }}
-              onClick={goToWhatsApp}
+              href="http://wa.me/96877276659"
+              target="_blank"
             >
               اطلب استشارة مجانية
-            </Button>
+            </Link>
           </Container>
 
           <motion.div

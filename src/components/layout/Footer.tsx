@@ -38,7 +38,7 @@ function ScrollTop() {
         sx={{
           position: "fixed",
           bottom: 16,
-          right: 16, // Standard position for scroll-to-top buttons
+          right: 16,
           cursor: "pointer",
           zIndex: 1000,
         }}
@@ -63,8 +63,13 @@ export default function ResponsiveFooter() {
   const pathname = usePathname()
 
   const router = useRouter()
+<<<<<<< HEAD
   const handleNavigationScroll = (path: string, sectionId: string) => {
     console.log(pathname, path)
+=======
+
+  const handleNavigationScroll = (path: string, sectionId: string) => {
+>>>>>>> 476c981bc55ccbd2c81ce2acba121f15d5de6896
     if (pathname === path) {
       // If already on the target page, scroll to the section directly
       scroll.scrollTo(document.getElementById(sectionId)?.offsetTop, {
@@ -87,7 +92,6 @@ export default function ResponsiveFooter() {
       className="footer"
       sx={{
         color: "white",
-
         padding: { xs: "5rem 0", lg: "10rem 10rem 3rem 10rem" },
       }}
     >
@@ -96,23 +100,21 @@ export default function ResponsiveFooter() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
 
+          justifyContent: "center",
           gap: "4rem",
         }}
       >
         <Box
           sx={{
             display: "flex",
-            alignItems: "center",
             gap: "1.6rem",
             flexDirection: "column",
             justifyContent: "space-between",
             width: "100%",
           }}
         >
-          <Grid container direction={"row"} spacing={{ xs: 3, md: 3 }}>
+          <Grid container direction={"row"} spacing={{ xs: 3, md: 3 }} style={{ alignItems: "flex-start" }}>
             {/* Column 1 */}
             <Grid item xs={12} md={4}>
               <Box
@@ -255,7 +257,7 @@ export default function ResponsiveFooter() {
                     color: "#e1e42a",
                   }}
                 >
-                  روابط تهمك{" "}
+                  روابط تهمك
                 </Typography>
 
                 <Box
@@ -319,7 +321,7 @@ export default function ResponsiveFooter() {
                     }}
                     onClick={() => handleNavigation("/mobile-apps")}
                   >
-                    متاجر الكترونية
+                    متاجر إلكترونية
                   </Typography>
 
                   <Typography
@@ -663,7 +665,7 @@ export default function ResponsiveFooter() {
               textAlign: "center",
             }}
           >
-            ⁠جميع الحقوق محفوظة لشركة Inbrief للبرمجيات والتسويق 2024
+            ⁠جميع الحقوق محفوظة لشركة Inbrief للبرمجيات والتسويق 2025
           </Typography>
         </Box>
       </Container>

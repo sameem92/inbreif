@@ -229,14 +229,14 @@ export default function Services() {
                     <div>
                       <Image
                         src={service2}
-                        alt="متاجر الكترونية"
+                        alt="متاجر إلكترونية"
                         loading="lazy"
                         objectFit="cover"
                         blurDataURL={dynamicBlurDataUrl}
                         placeholder="blur"
                       />
                     </div>
-                    <h3>متاجر الكترونية</h3>
+                    <h3>متاجر إلكترونية</h3>
 
                     <Button
                       variant="text"
@@ -298,6 +298,7 @@ export default function Services() {
             sx={{
               width: { xs: "90%", lg: "100%" },
               margin: "auto",
+              paddingBottom: "150px",
             }}
           >
             <Grid container columnSpacing={{ xs: 6, md: 4, xl: 0 }} rowSpacing={{ xs: 6, md: 4, xl: 10 }}>

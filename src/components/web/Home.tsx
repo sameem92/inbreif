@@ -1,18 +1,22 @@
 "use client"
 
+import Image from "next/image"
+
+// Components
 import { Box, Grid } from "@mui/material"
 import { motion } from "framer-motion"
-import Image from "next/image"
 import Slider from "@/components/tools/slider/Slider"
-import Package from "@/components/web/Package"
-import Feedback from "@/components/home/Feedback"
+import Features from "@/components/web/features"
+import Work from "@/components/tools/work/work"
 import Form from "@/components/tools/form/form"
-const web = "/image/web.png"
-import Social from "@/components/layout/Social"
+import Feedback from "@/components/tools/feedback/Feedback"
+import Social from "@/components/tools/social/social"
 import { styled } from "@mui/material/styles"
 import Paper from "@mui/material/Paper"
-import Work from "@/components/web/Work"
 import { dynamicBlurDataUrl } from "@/lib"
+
+// Imgaes
+const web = "/image/web.png"
 
 const Item = styled(Paper)(() => ({
   backgroundColor: "transparent",
@@ -67,7 +71,7 @@ export default function Home() {
                     width: "100%",
                   }}
                 >
-                  تطوير المواقع والمتاجر الإلكترونية{" "}
+                  تطوير المواقع والمتاجر الإلكترونية
                 </Box>
                 <motion.h1
                   className="main-title mobile-title"
@@ -77,7 +81,7 @@ export default function Home() {
                 >
                   معنا،
                   <br />
-                  وجودك على الانترنت غير.{" "}
+                  وجودك على الانترنت غير.
                 </motion.h1>
                 <motion.p
                   initial={{ opacity: 0, y: -50 }}
@@ -86,7 +90,7 @@ export default function Home() {
                   className="paragrph-another"
                 >
                   في InBrief نقدم لك موقعاً تعريفياً أو متجراً إلكترونياً يتناسب مع هويتك التجارية ويزيد سرعة انتشارك
-                  وجذب عملائك.{" "}
+                  وجذب عملائك.
                 </motion.p>
               </Item>
             </Grid>
@@ -132,7 +136,7 @@ export default function Home() {
       >
         <Work />
       </Box>
-      <Package />
+      <Features />
       <Feedback />
       <Form />
     </>

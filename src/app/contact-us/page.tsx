@@ -1,6 +1,10 @@
 "use client"
 
+<<<<<<< HEAD
 import React from "react"
+=======
+import React, { useState } from "react"
+>>>>>>> 476c981bc55ccbd2c81ce2acba121f15d5de6896
 import { Box, Container } from "@mui/material"
 import Typography from "@mui/material/Typography"
 import TextField from "@mui/material/TextField"
@@ -77,6 +81,7 @@ export default function SpecialOffers() {
   const [emailValid, setEmailValid] = React.useState(false)
   const [service, setService] = React.useState("استفسارات اخري")
   const [message, setMessage] = React.useState("")
+  const [loading, setLoading] = useState(false)
 
   const [isPopupOpen, setIsPopupOpen] = React.useState(false)
 
@@ -89,14 +94,11 @@ export default function SpecialOffers() {
   }
 
   const handleSubmit = async () => {
-    // if (emailValid) {
-    //   setIsPopupOpen(true)
-    // }
-
+    setLoading(true)
     await emailjs
       .send(
         "service_xznqpsf",
-        "inbrief_dz2f8nw", // Replace with your EmailJS template ID
+        "inbrief_dz2f8nw",
         {
           name: name,
           phone: phone,
@@ -104,16 +106,16 @@ export default function SpecialOffers() {
           service: service,
           message: message,
         },
-        "RoVHFVDjpZcFQSnv8" // Replace with your EmailJS public key
+        "RoVHFVDjpZcFQSnv8"
       )
       .then(
-        (response) => {
-          console.log(response)
-          alert("Message sent successfully!")
+        () => {
+          setLoading(false)
+          setIsPopupOpen(true)
         },
-        (error) => {
-          alert("Failed to send message. Please try again.")
-          console.error("Error:", error)
+        () => {
+          setLoading(false)
+          console.log("Failed to send message. Please try again.")
         }
       )
   }
@@ -232,11 +234,11 @@ export default function SpecialOffers() {
                   color: "#fff",
                 }}
               >
-                الاسم
+                رقم الجوال
               </Typography>
 
               <TextField
-                placeholder="اكتب اسمك"
+                placeholder="اكتب رقم الجوال"
                 fullWidth
                 type="text"
                 value={phone}
@@ -407,7 +409,6 @@ export default function SpecialOffers() {
                 <MenuItem value={"متاجر إلكترونية"}>متاجر إلكترونية</MenuItem>
                 <MenuItem value={"تصميم جرافيك"}>تصميم جرافيك</MenuItem>
                 <MenuItem value={"موشن جرافيك"}>موشن جرافيك</MenuItem>
-                <MenuItem value={"موشن جرافيك"}>موشن جرافيك</MenuItem>
                 <MenuItem value={"محتوى وحملات تسويقية"}>محتوى وحملات تسويقية</MenuItem>
                 <MenuItem value={"استفسارات أخرى"}>استفسارات أخرى</MenuItem>
               </Select>
@@ -444,7 +445,7 @@ export default function SpecialOffers() {
 
             <Button
               onClick={handleSubmit}
-              disabled={!emailValid}
+              disabled={!emailValid || loading}
               sx={{
                 display: "flex",
                 justifyContent: "center",

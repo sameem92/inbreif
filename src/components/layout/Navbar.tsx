@@ -10,13 +10,13 @@ import MenuIcon from "@mui/icons-material/Menu"
 import Link from "next/link"
 import { useState } from "react"
 import { useMediaQuery } from "@mui/material"
-import InbreifLogo from "../../../public/image/InbreifLogo.png"
+import InbreifLogo from "../../../public/image/InbreifLogo.svg"
 
 const list = [
   { title: "الرئيسية", path: "/" },
   { title: "من نحن", path: "/about-us" },
   { title: "تطبيقات الموبايل", path: "/mobile-apps" },
-  { title: "متاجر الكترونية", path: "/web-apps" },
+  { title: "متاجر إلكترونية", path: "/web-apps" },
   { title: "التصميم و الموشن", path: "/design-and-marketing" },
   { title: "التسويق والحملات", path: "/marketing-and-campaigns" },
   { title: "عروض خاصة", path: "/special-offers" },
@@ -80,7 +80,6 @@ const Header = () => {
               background: "transparent",
               color: "white",
               border: "none",
-              // fontFamily: "var(--font-ibm-plex-sans-arabic)",
               fontStyle: "normal",
               fontWeight: 400,
               fontSize: "1.8rem",
