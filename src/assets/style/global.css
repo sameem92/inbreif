@@ -68,6 +68,10 @@ body .background-loaded {
   margin-bottom: 15rem !important;
 }
 
+.mySwiper-work .swiper-wrapper {
+  max-height: 562px;
+}
+
 @media screen and (max-width: 1340px) {
   .nav-link {
     font-size: 1.4rem;
@@ -603,7 +607,6 @@ button:hover:disabled {
   width: 100%;
   padding-top: 5rem;
   padding-bottom: 7rem;
-  margin-bottom: 5rem;
 }
 
 .mySwiper-auto {

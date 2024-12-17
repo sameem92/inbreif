@@ -3,15 +3,17 @@
 import { Box, Grid } from "@mui/material"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import Features from "@/components/mobile/features"
+import Features from "@/components/tools/features/features"
 import Feedback from "@/components/tools/feedback/feedback"
 import Form from "@/components/tools/form/form"
 import mobile from "@/assets/img/mobile.png"
 import Social from "@/components/tools/social/social"
 import { styled } from "@mui/material/styles"
 import Paper from "@mui/material/Paper"
-
 import Work from "@/components/tools/work/work"
+
+import imagMob from "@/assets/img/imagMob.png"
+
 const Item = styled(Paper)(() => ({
   backgroundColor: "transparent",
   boxShadow: "none",
@@ -115,7 +117,7 @@ export default function Home() {
         <Work />
       </Box>
 
-      <Features />
+      <Features imgPath={imagMob} />
       <Feedback />
       <Form />
     </>

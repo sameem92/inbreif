@@ -6,7 +6,7 @@ import Image from "next/image"
 import { Box, Grid } from "@mui/material"
 import { motion } from "framer-motion"
 import Slider from "@/components/tools/slider/slider"
-import Features from "@/components/web/features"
+import Features from "@/components/tools/features/features"
 import Work from "@/components/tools/work/work"
 import Form from "@/components/tools/form/form"
 import Feedback from "@/components/tools/feedback/feedback"
@@ -16,6 +16,8 @@ import Paper from "@mui/material/Paper"
 import { dynamicBlurDataUrl } from "@/lib"
 
 // Imgaes
+import imagWeb from "../../../public/image/w.png"
+
 const web = "/image/web.png"
 
 const Item = styled(Paper)(() => ({
@@ -136,7 +138,7 @@ export default function Home() {
       >
         <Work />
       </Box>
-      <Features />
+      <Features imgPath={imagWeb} />
       <Feedback />
       <Form />
     </>

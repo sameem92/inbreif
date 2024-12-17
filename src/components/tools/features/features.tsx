@@ -1,13 +1,16 @@
-import { Container, Box, Grid, Card, CardContent, Typography, Button, useMediaQuery } from "@mui/material"
+import React from "react"
 import Image from "next/image"
+
+import { Container, Box, Card, CardContent, Typography, useMediaQuery, Button } from "@mui/material"
+import Grid from "@mui/material/Grid2"
 import { motion } from "framer-motion"
-const w = "/image/w.png"
-const icon1 = "/image/icon8.png"
-import { Pagination, Autoplay } from "swiper/modules"
-import "swiper/css" // Import Swiper styles
-import "swiper/css/pagination"
+
 import { Swiper, SwiperSlide } from "swiper/react"
+import { Pagination, Autoplay } from "swiper/modules"
 import { dynamicBlurDataUrl } from "@/lib"
+
+const icon1 = "/image/icon8.png"
+import imagMob from "@/assets/img/imagMob.png"
 
 // Import Swiper styles
 import "swiper/css"
@@ -103,12 +106,14 @@ const cardVariants = {
   }),
 }
 
-export default function Features() {
+export default function Features({ imgPath }) {
   const isMobile = useMediaQuery("(max-width:768px)") // Detect if the screen is mobile
+
   const goToWhatsApp = () => {
     //href=""
     window.open("http://wa.me/96877276659", "_target")
   }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -123,7 +128,8 @@ export default function Features() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          gap: { xs: "0", md: "4.8rem" },
+          gap: "4.8rem",
+          paddingTop: { xs: "5.3rem", md: "10rem" },
           paddingBottom: { xs: "5.3rem", md: "10rem" },
         }}
       >
@@ -139,78 +145,8 @@ export default function Features() {
             width: { xs: "90%" },
           }}
         >
-          <Grid container spacing={5} alignItems="center" justifyContent="center">
-            <Grid item className="hidden-img" xs={12} md={5}>
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={isMobile ? { once: true } : { once: true, amount: 0.1 }}
-                variants={cardVariants}
-              >
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    width: "100%",
-                    height: "100%",
-                    position: "relative",
-                  }}
-                >
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      minWidth: "13rem",
-                      left: "50%",
-                      zIndex: "2",
-                      margin: "auto",
-                      height: "2rem",
-                      bottom: "33%",
-                      transform: "translateX(-50%)",
-                      cursor: "pointer",
-                    }}
-                  >
-                    <Button
-                      sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        minWidth: "13rem",
-                        height: "5rem",
-                        padding: { xs: "1rem 0.5rem", lg: "1rem 2rem" },
-                        fontSize: { xs: "1.3rem", lg: "1.6rem" },
-                        gap: "6px",
-                        borderRadius: "52px",
-                        background: "#E0E324",
-                        backdropFilter: "blur(24px)",
-                        color: "#124650",
-                        textAlign: "center",
-                        fontWeight: 600,
-                        lineHeight: "1.6rem",
-                      }}
-                      onClik={goToWhatsApp}
-                      className="t-buttin"
-                    >
-                      اطلب الان موقعك
-                    </Button>
-                  </Box>
-                  <Image
-                    blurDataURL={dynamicBlurDataUrl}
-                    placeholder="blur"
-                    src={w}
-                    alt="w"
-                    width={1000} // Example width, adjust based on your image
-                    height={750} // Example height, adjust based on your image
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                    }}
-                    loading="lazy"
-                  />
-                </Box>
-              </motion.div>
-            </Grid>
-            <Grid item xs={12} md={7}>
+          <Grid container spacing={{ xs: 6, md: 18 }} justifyContent="center" alignItems="center">
+            <Grid size={{ xs: 12, md: 7 }}>
               <Swiper
                 modules={[Pagination, Autoplay]} // Make sure modules are correctly passed
                 spaceBetween={30}
@@ -233,7 +169,7 @@ export default function Features() {
                   <SwiperSlide key={index}>
                     <Grid container spacing={4} justifyContent="center">
                       {slides.map((item, i) => (
-                        <Grid item key={i} xs={6} md={6}>
+                        <Grid size={{ xs: 6 }} key={i}>
                           <motion.div
                             whileHover={{ scale: 0.9 }}
                             transition={{
@@ -314,6 +250,76 @@ export default function Features() {
                   </SwiperSlide>
                 ))}
               </Swiper>
+            </Grid>
+            <Grid size={{ xs: 12, md: 5 }} className="hidden-img">
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={isMobile ? { once: true } : { once: true, amount: 0.1 }}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                }}
+                variants={cardVariants}
+              >
+                <Box
+                  width="100%"
+                  sx={{
+                    position: "relative",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      minWidth: "13rem",
+                      left: "50%",
+                      zIndex: "2",
+                      margin: "auto",
+                      height: "7rem",
+                      bottom: "18%",
+                      transform: "translateX(-50%)",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <Button
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        minWidth: "13rem",
+                        height: "5rem",
+                        gap: "6px",
+                        borderRadius: "52px",
+                        background: "#E0E324",
+                        backdropFilter: "blur(24px)",
+                        color: "#124650",
+                        textAlign: "center",
+                        padding: { xs: "1rem 0.5rem", lg: "1rem 2rem" },
+                        fontSize: { xs: "1.3rem", lg: "1.6rem" },
+
+                        fontWeight: 600,
+                        lineHeight: "1.6rem",
+                      }}
+                      onClick={goToWhatsApp}
+                      className="t-buttin"
+                    >
+                      احصل على التطبيق
+                    </Button>
+                  </Box>
+                  <Image
+                    src={imgPath}
+                    alt="moeeb"
+                    className="img-sm"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                    }}
+                    blurDataURL={dynamicBlurDataUrl}
+                    placeholder="blur"
+                    loading="lazy"
+                  />
+                </Box>
+              </motion.div>
             </Grid>
           </Grid>
         </Box>
