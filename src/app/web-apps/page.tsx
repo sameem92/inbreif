@@ -1,5 +1,5 @@
-import Home from "@/components/web/Home"
+import StoresComponent from "@/components/stores/storesComponent"
 
-export default function Main() {
-  return <Home />
+export default function StoresPage() {
+  return <StoresComponent />
 }

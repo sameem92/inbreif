@@ -34,6 +34,7 @@ export default function Feedback() {
     "/image/f9.png",
     "/image/f10.png",
   ]
+
   const items = [
     {
       say: `حبيت أشكركم على خدمتكم الرائعة و الراقية فعلاً تعاملكم جميل جداً مع سرعة الإستجابة في العمل والتواصل من أعلى وأفضل المستويات خدمة
@@ -119,7 +120,7 @@ export default function Feedback() {
       location: "المملكة العربية السعودية",
     },
   ]
-  console.log(items.length)
+
   return (
     <>
       <div className="package">

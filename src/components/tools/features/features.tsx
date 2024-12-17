@@ -10,7 +10,6 @@ import { Pagination, Autoplay } from "swiper/modules"
 import { dynamicBlurDataUrl } from "@/lib"
 
 const icon1 = "/image/icon8.png"
-import imagMob from "@/assets/img/imagMob.png"
 
 // Import Swiper styles
 import "swiper/css"

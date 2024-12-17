@@ -1,0 +1,212 @@
+.storesComponent :global {
+  .heroSection {
+    h1 {
+      font-size: 55px;
+      font-weight: 700;
+      color: #e1e42a;
+      margin-bottom: 29px;
+    }
+
+    p {
+      font-size: 27px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 56px;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 56px;
+        width: 168px;
+        font-size: 22px;
+        font-weight: 600;
+        color: #e0e324;
+        border-radius: 60px;
+        border: 2px solid #e0e324;
+
+        &.bg {
+          background: #e0e324;
+          color: #001014;
+        }
+      }
+    }
+
+    .featureBox {
+      width: 613px;
+      background: linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%);
+      border-radius: 25px;
+      padding: 14px 28px;
+      position: relative;
+
+      .content {
+        max-width: 400px;
+
+        h3 {
+          font-size: 30px;
+          font-weight: 700;
+          color: #e1e42a;
+          margin-bottom: 8px;
+        }
+
+        p {
+          font-size: 20px;
+          margin-bottom: 8px;
+        }
+
+        ul li {
+          list-style: none;
+          display: flex;
+          align-items: center;
+          gap: 18px;
+          font-size: 20px;
+          font-weight: 600;
+          color: #ffffff8f;
+
+          &:not(:last-of-type) {
+            margin-bottom: 16px;
+          }
+        }
+      }
+
+      .img {
+        position: absolute;
+      }
+
+      &:nth-of-type(2) {
+        align-self: flex-end;
+
+        .img {
+          left: -60px;
+          bottom: 0;
+        }
+      }
+
+      &:last-of-type {
+        .img {
+          left: -110px;
+          bottom: calc(50% - 150px);
+        }
+      }
+    }
+  }
+
+  .plansSection {
+    .sectionHead {
+      text-align: center;
+
+      h2 {
+        font-size: 42px;
+        font-weight: 700;
+        color: #e1e42a;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 25px;
+        font-weight: 600;
+        color: #fff;
+      }
+    }
+
+    .tabs {
+      .MuiTabs-flexContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0px;
+        width: 208px;
+        margin: 0 auto;
+        background: #124651;
+        border-radius: 123px;
+        padding: 4px;
+
+        button {
+          display: block;
+          min-height: 44px;
+          flex: 1;
+          padding: 0px;
+          border-radius: 123px;
+          font-size: 22px;
+          font-weight: 600;
+          color: #cdcdcd;
+
+          span {
+            display: block;
+            height: 100%;
+          }
+
+          &.Mui-selected {
+            color: #001014;
+          }
+        }
+      }
+    }
+
+    .planCard {
+      max-width: 398px;
+      background: linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%);
+      border: 1px solid linear-gradient(81.07deg, #22373c 53.33%, #18292d 93.73%);
+      backdrop-filter: blur(10px);
+      padding: 20px 36px;
+      border-radius: 25px;
+      text-align: center;
+
+      h4 {
+        font-size: 32px;
+        font-weight: 700;
+        color: #e1e42a;
+        margin-bottom: 26px;
+      }
+
+      .plan_price {
+        font-size: 33px;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .oldPrice {
+        font-size: 25px;
+        font-weight: 600;
+        color: #ffffff59;
+        text-decoration: line-through;
+        margin: 23px auto;
+      }
+
+      ul {
+        margin-bottom: 28px;
+
+        li {
+          text-align: start;
+          font-size: 20px;
+          font-weight: 600;
+          color: #fff;
+          list-style: none;
+          margin-bottom: 14px;
+        }
+      }
+
+      button {
+        display: block;
+        height: 56px;
+        width: 100%;
+        border: 2px solid #e1e42a;
+        background: transparent;
+        border-radius: 60px;
+        font-size: 22px;
+        font-weight: 600;
+        color: #e1e42a;
+        margin-bottom: 32px;
+      }
+
+      a {
+      }
+    }
+  }
+}
