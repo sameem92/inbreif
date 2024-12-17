@@ -50,6 +50,7 @@ export default function Design() {
   const [isBeginning, setIsBeginning] = useState(true)
   const [isEnd, setIsEnd] = useState(false)
   const isMobile = useMediaQuery("(max-width:768px)")
+  const [players, setPlayers] = useState<{ [key: number] }>({}) // Store video player instances
   const totalSlides = 9
 
   const opts = {
@@ -62,6 +63,23 @@ export default function Design() {
       iv_load_policy: 3,
       disablekb: 1,
     },
+  }
+
+  // Handle video player ready
+  const handleVideoReady = (event, index) => {
+    setPlayers((prevPlayers) => ({
+      ...prevPlayers,
+      [index]: event.target, // Store YouTube player instance
+    }))
+  }
+
+  // Stop all inactive videos
+  const stopVideos = (activeIndex: number) => {
+    Object.entries(players).forEach(([index, player]) => {
+      if (parseInt(index) !== activeIndex && player) {
+        player.stopVideo() // Stop the video for non-active slides
+      }
+    })
   }
 
   return (
@@ -284,9 +302,9 @@ export default function Design() {
             }}
             onSlideChange={(swiper) => {
               const realIndex = swiper.realIndex
-
               setIsBeginning(realIndex === 0)
               setIsEnd(realIndex === totalSlides - 1)
+              stopVideos(swiper.realIndex) // Clean up videos on slide change
             }}
             modules={[Navigation]}
             className="mySwiper-video"
@@ -328,7 +346,7 @@ export default function Design() {
                       },
                     }}
                   >
-                    <YouTube videoId={id} opts={opts} />
+                    <YouTube videoId={id} opts={opts} onReady={(event) => handleVideoReady(event, index)} />
                   </CardContent>
                 </Card>
               </SwiperSlide>
