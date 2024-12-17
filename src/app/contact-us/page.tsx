@@ -1,10 +1,6 @@
 "use client"
 
-<<<<<<< HEAD
-import React from "react"
-=======
 import React, { useState } from "react"
->>>>>>> 476c981bc55ccbd2c81ce2acba121f15d5de6896
 import { Box, Container } from "@mui/material"
 import Typography from "@mui/material/Typography"
 import TextField from "@mui/material/TextField"
