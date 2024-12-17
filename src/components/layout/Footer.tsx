@@ -63,13 +63,8 @@ export default function ResponsiveFooter() {
   const pathname = usePathname()
 
   const router = useRouter()
-<<<<<<< HEAD
-  const handleNavigationScroll = (path: string, sectionId: string) => {
-    console.log(pathname, path)
-=======
 
   const handleNavigationScroll = (path: string, sectionId: string) => {
->>>>>>> 476c981bc55ccbd2c81ce2acba121f15d5de6896
     if (pathname === path) {
       // If already on the target page, scroll to the section directly
       scroll.scrollTo(document.getElementById(sectionId)?.offsetTop, {
