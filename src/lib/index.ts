@@ -1,6 +1,6 @@
 export const dynamicBlurDataUrl = `data:image/svg+xml;base64,${Buffer.from(
   `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 100 50" preserveAspectRatio="none">
-    <rect width="100%" height="100%" fill="#f0f0f0" />
+    <rect    width="100%" height="100%" fill="#f0f0f0" />
     <rect  width="100%" height="100%" fill="url(#shimmer)" />
     <defs>
       <linearGradient id="shimmer">
