@@ -5,7 +5,9 @@ export const dynamicBlurDataUrl = `data:image/svg+xml;base64,${Buffer.from(
     <defs>
       <linearGradient id="shimmer">
         <stop offset="0%" stop-color="#f5f5f5" stop-opacity="0" />
-        <stop offset="50%" stop-color="#e0e0e0" stop-opacity="1" />
+        <stop offset="50%" stop-color="#e0e0e0" stop-opacity="1" /
+        
+        >
         <stop offset="100%" stop-color="#f5f5f5" stop-opacity="0" />
         <animateTransform attributeName="gradientTransform" type="translate" from="-100 0" to="100 0" dur="1s" repeatCount="indefinite" />
       </linearGradient>
