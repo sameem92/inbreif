@@ -625,8 +625,6 @@ button:hover:disabled {
 .swiper-slide img {
   display: block;
   width: 100%;
-  /* height: 27.8rem !important; */
-  object-fit: cover;
 }
 
 .mySwiper-work .swiper-slide img {

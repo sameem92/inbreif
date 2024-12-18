@@ -6,13 +6,10 @@ import Image from "next/image"
 // Components
 import { Box, Container, Card, CardContent, Typography, Grid } from "@mui/material"
 import { motion } from "framer-motion"
-import Slider from "@/components/tools/slider/slider"
+import SliderS1 from "@/components/tools/sliders/sliderS1"
 import Package from "@/components/tools/package/package"
 import Feedback from "@/components/tools/feedback/feedback"
 import Form from "@/components/tools/form/form"
-import Profile from "@/components/marketing/Profile"
-import ADS from "@/components/marketing/ADS"
-import Slider2 from "@/components/marketing/Slider2"
 import Design from "@/components/marketing/Design"
 import Tabs from "@mui/material/Tabs"
 import { dynamicBlurDataUrl } from "@/lib"
@@ -23,6 +20,111 @@ import Tab from "@mui/material/Tab"
 const icon1 = "/image/icon5.png"
 const icon2 = "/image/icon6.png"
 const icon3 = "/image/icon7.png"
+const img1 = "/image/sh/1.png"
+const img2 = "/image/sh/2.png"
+const img3 = "/image/sh/3.png"
+const img4 = "/image/sh/4.png"
+const img5 = "/image/sh/5.png"
+const img6 = "/image/sh/6.png"
+const img7 = "/image/sh/7.png"
+const img8 = "/image/sh/8.png"
+const img9 = "/image/sh/9.png"
+const img10 = "/image/sh/10.png"
+const img11 = "/image/sh/11.png"
+const img12 = "/image/sh/12.png"
+const img13 = "/image/sh/13.png"
+const img14 = "/image/sh/14.png"
+const img15 = "/image/sh/15.png"
+const img16 = "/image/sh/16.png"
+const img17 = "/image/sh/17.png"
+const img18 = "/image/sh/18.png"
+const img19 = "/image/sh/19.png"
+const img20 = "/image/sh/20.png"
+const img21 = "/image/sh/21.png"
+const img22 = "/image/sh/22.png"
+const img23 = "/image/x1.png"
+const img24 = "/image/x2.png"
+const img25 = "/image/x3.png"
+const img26 = "/image/x4.png"
+const img27 = "/image/x5.png"
+const img28 = "/image/socail/1.png"
+const img29 = "/image/socail/2.png"
+const img30 = "/image/socail/3.png"
+const img31 = "/image/socail/4.png"
+const img32 = "/image/socail/5.png"
+const img33 = "/image/socail/6.png"
+const img34 = "/image/socail/7.png"
+const img35 = "/image/socail/8.png"
+const img36 = "/image/socail/9.png"
+const img37 = "/image/socail/10.png"
+const img38 = "/image/socail/11.png"
+const img39 = "/image/socail/12.png"
+const img40 = "/image/profile/1.png"
+const img41 = "/image/profile/2.png"
+const img42 = "/image/profile/3.png"
+const img43 = "/image/profile/4.png"
+const img44 = "/image/profile/5.png"
+const img45 = "/image/profile/6.png"
+const img46 = "/image/profile/7.png"
+const img47 = "/image/profile/8.png"
+const img48 = "/image/profile/9.png"
+const img49 = "/image/profile/10.png"
+const img50 = "/image/profile/11.png"
+const img51 = "/image/profile/12.png"
+const img52 = "/image/profile/13.png"
+const img53 = "/image/profile/14.png"
+const img54 = "/image/profile/15.png"
+const img55 = "/image/profile/16.png"
+const img56 = "/image/profile/17.png"
+
+const logos = [
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img7,
+  img8,
+  img9,
+  img10,
+  img11,
+  img12,
+  img13,
+  img14,
+  img15,
+  img16,
+  img17,
+  img18,
+  img19,
+  img20,
+  img21,
+  img22,
+]
+
+const visualIdentities = [img23, img24, img25, img26, img27]
+
+const socials = [img28, img29, img30, img31, img32, img33, img34, img35, img36, img37, img38, img39]
+
+const profiles = [
+  img40,
+  img41,
+  img42,
+  img43,
+  img44,
+  img45,
+  img46,
+  img47,
+  img48,
+  img49,
+  img50,
+  img51,
+  img52,
+  img53,
+  img54,
+  img55,
+  img56,
+]
 
 // Types
 interface TabPanelProps {
@@ -245,29 +347,33 @@ export default function Home() {
           }}
         >
           <Tab className="tab" label="شعارات" {...a11yProps(0)} />
-          <Tab className="tab" label=" هويات بصرية" {...a11yProps(1)} />
+          <Tab className="tab" label="هويات بصرية" {...a11yProps(1)} />
           <Tab className="tab" label="  سوشيال ميديا" {...a11yProps(2)} />
           <Tab className="tab" label="بروفايلات ومجلات" {...a11yProps(3)} />
         </Tabs>
         <CustomTabPanel value={value} index={0}>
-          <Slider2 />
+          <SliderS1 images={logos} />
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={1}>
-          <Slider />
+          <SliderS1 images={visualIdentities} />
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={2}>
-          <ADS />
+          <SliderS1 images={socials} />
         </CustomTabPanel>
+
         <CustomTabPanel value={value} index={3}>
-          <Profile />
+          <SliderS1 images={profiles} />
         </CustomTabPanel>
       </Box>
 
       <Package />
+
       <Design />
+
       <Feedback />
+
       <Form />
     </>
   )

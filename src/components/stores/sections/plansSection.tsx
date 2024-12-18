@@ -1,8 +1,12 @@
 import React, { useState } from "react"
+import Image from "next/image"
 
 // Components
 import Grid from "@mui/material/Grid2"
 import { Box, Tab, Tabs } from "@mui/material"
+
+// Icons
+import checked from "../../../../public/icons/checkedIcon.svg"
 
 // Types
 interface TabPanelProps {
@@ -72,7 +76,7 @@ const plans = [
 ]
 
 const PlansSection = () => {
-  const [value, setValue] = React.useState<string | number>(0)
+  const [value, setValue] = useState<string | number>(0)
 
   const handleChange = (_event: React.SyntheticEvent, newValue: string | number) => {
     setValue(newValue)
@@ -126,39 +130,91 @@ const PlansSection = () => {
               <Tab label="سنوي" {...a11yProps(0)} />
               <Tab label="شهري" {...a11yProps(1)} />
             </Tabs>
+
             <CustomTabPanel value={value} index={0}>
               <Grid container alignItems="flex-end">
-                {plans.map((plan) => (
+                {plans.map((plan, i) => (
                   <Grid key={plan.title} size={{ xs: 12, md: 4 }}>
-                    <div className="planCard">
-                      <h4>{plan.title}</h4>
-                      <div className="plan_price">
-                        <span>{plan.price}</span>
-                        <span> ر.س</span>
+                    <div className={`planCard ${i === 1 ? "gold" : ""}`}>
+                      <div className="content">
+                        <h4>{plan.title}</h4>
+                        <div className="plan_price">
+                          <span>{plan.price}</span>
+                          <span> ر.س</span>
+                        </div>
+                        <div className="oldPrice">
+                          <span>{plan.oldPrice}</span>
+                          <span>ر.س</span>
+                        </div>
+                        <ul>
+                          {plan.features.map((feature) => (
+                            <li key={feature}>
+                              <Image src={checked} alt="checked" /> <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <button>الإشتراك الآن</button>
+                        <a href="">المزيد من التفاصيل</a>
                       </div>
-                      <div className="oldPrice">
-                        <span>{plan.oldPrice}</span>
-                        <span>ر.س</span>
-                      </div>
-
-                      <ul>
-                        {plan.features.map((feature) => (
-                          <li key={feature}>{feature}</li>
-                        ))}
-                      </ul>
-
-                      <button>الإشتراك الآن</button>
-                      <a href="">المزيد من التفاصيل</a>
                     </div>
                   </Grid>
                 ))}
 
-                <Grid></Grid>
+                <Grid size={{ xs: 12, md: 4 }}>
+                  <div className="planCard custom">
+                    <div className="content">
+                      <h4>مخصصة</h4>
+
+                      <p>يمكنك تخصيص باقتك وفقا لاحتياجاتك الخاصةمما يتيح لك اختيار الخدمات التي تناسب نشاطك</p>
+
+                      <button>تواصل معنا</button>
+                    </div>
+                  </div>
+                </Grid>
               </Grid>
             </CustomTabPanel>
 
             <CustomTabPanel value={value} index={1}>
-              tab2
+              <Grid container alignItems="flex-end">
+                {plans.map((plan, i) => (
+                  <Grid key={plan.title} size={{ xs: 12, md: 4 }}>
+                    <div className={`planCard ${i === 1 ? "gold" : ""}`}>
+                      <div className="content">
+                        <h4>{plan.title}</h4>
+                        <div className="plan_price">
+                          <span>{plan.price}</span>
+                          <span> ر.س</span>
+                        </div>
+                        <div className="oldPrice">
+                          <span>{plan.oldPrice}</span>
+                          <span>ر.س</span>
+                        </div>
+                        <ul>
+                          {plan.features.map((feature) => (
+                            <li key={feature}>
+                              <Image src={checked} alt="checked" /> <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <button>الإشتراك الآن</button>
+                        <a href="">المزيد من التفاصيل</a>
+                      </div>
+                    </div>
+                  </Grid>
+                ))}
+
+                <Grid size={{ xs: 12, md: 4 }}>
+                  <div className="planCard custom">
+                    <div className="content">
+                      <h4>مخصصة</h4>
+
+                      <p>يمكنك تخصيص باقتك وفقا لاحتياجاتك الخاصةمما يتيح لك اختيار الخدمات التي تناسب نشاطك</p>
+
+                      <button>تواصل معنا</button>
+                    </div>
+                  </div>
+                </Grid>
+              </Grid>
             </CustomTabPanel>
           </Box>
         </Grid>
