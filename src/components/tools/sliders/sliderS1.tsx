@@ -87,8 +87,8 @@ const SliderS1: React.FC<{ images: string[] }> = ({ images }) => {
                   spaceBetween: 30,
                 },
                 1280: {
-                  slidesPerView: 4,
-                  spaceBetween: 40,
+                  slidesPerView: 3,
+                  spaceBetween: 60,
                 },
               }}
             >

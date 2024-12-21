@@ -1072,16 +1072,7 @@ a {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* .mySwiper-auto {
-width: 100%!important;
-height: 100%!important;
-}
 
-.mySwiper-auto .swiper-slide {
-  height: auto !important;
-}
-
- */
 .mySwiper-auto .swiper-slide img {
   display: block !important;
   width: 97% !important;
@@ -1102,10 +1093,7 @@ height: 100%!important;
   border-radius: 50%;
 }
 .mySwiper-x .swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 8.3rem !important;
-  object-fit: contain !important;
+  max-height: 8.3rem !important;
 }
 .mySwiper-x {
   width: 100% !important;
@@ -1113,9 +1101,7 @@ height: 100%!important;
   padding-bottom: 0px !important;
   margin-bottom: 0px !important;
 }
-.mySwiper-x {
-  /* height: 10rem!important; */
-}
+
 .mySwiper-x .swiper-wrapper {
   width: 100% !important;
   height: 100% !important;

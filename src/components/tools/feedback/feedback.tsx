@@ -14,7 +14,21 @@ import Image from "next/image"
 import { dynamicBlurDataUrl } from "@/lib"
 import SliderS3 from "../../tools/sliders/sliderS3"
 
-const companies = Array.from({ length: 13 }, (_, i) => `/image/company/${i + 1}.png`)
+import img1 from "../../../../public/image/company/1.png"
+import img2 from "../../../../public/image/company/2.png"
+import img3 from "../../../../public/image/company/3.png"
+import img4 from "../../../../public/image/company/4.png"
+import img5 from "../../../../public/image/company/5.png"
+import img6 from "../../../../public/image/company/6.png"
+import img7 from "../../../../public/image/company/7.png"
+import img8 from "../../../../public/image/company/8.png"
+import img9 from "../../../../public/image/company/9.png"
+import img10 from "../../../../public/image/company/10.png"
+import img11 from "../../../../public/image/company/11.png"
+import img12 from "../../../../public/image/company/12.png"
+import img13 from "../../../../public/image/company/13.png"
+
+const companies = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13]
 
 export default function Feedback() {
   const prevButtonRef = useRef(null)

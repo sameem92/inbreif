@@ -37,7 +37,7 @@ export default function SliderS3({ images }) {
         >
           {/* Swiper component */}
           <Swiper
-            spaceBetween={10} // Space between slides
+            spaceBetween={24} // Space between slides
             slidesPerView={slidesPerView} // Number of slides visible at once
             loop={true} // Enable infinite loop
             autoplay={{
@@ -58,22 +58,18 @@ export default function SliderS3({ images }) {
                   sx={{
                     borderRadius: "1.6rem",
                     background: "#FFFFFF0D",
-                    height: "10rem",
+                    height: "9.5rem",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    padding: "1rem .4rem",
                     margin: "auto 2px",
                   }}
                   className="fix-x"
                 >
                   <Image
                     loading="lazy"
-                    width={220}
-                    height={85}
                     src={src} // Use the image path from array
                     alt={`company-logo-${index + 1}`}
-                    objectFit="cover"
                     blurDataURL={dynamicBlurDataUrl}
                     placeholder="blur"
                   />

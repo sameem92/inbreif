@@ -11,11 +11,17 @@ import ServicesSection from "./sections/servicesSection"
 import TemplatesSection from "./sections/templatesSection"
 import FeaturesSection from "./sections/featuresSection"
 import DeliverySection from "./sections/deliverySection"
+import PaymentSection from "./sections/paymentSection"
+import ExpansionSecton from "./sections/expansionSecton"
+import TopServicesSecton from "./sections/topServicesSecton"
+import MainFeaturesSection from "./sections/mainFeaturesSection"
 
 const StoresPage = () => {
   return (
     <div className={style.storesComponent}>
       <HeroSecion />
+
+      <MainFeaturesSection />
 
       <PlansSection />
 
@@ -26,6 +32,12 @@ const StoresPage = () => {
       <FeaturesSection />
 
       <DeliverySection />
+
+      <PaymentSection />
+
+      <ExpansionSecton />
+
+      <TopServicesSecton />
 
       <Feedback />
 

@@ -22,6 +22,16 @@ const products = [
   { title: "عبايات و أزياء", image: product3 },
   { title: "اثاث ومفروشات", image: product4 },
   { title: "العاب أطفال", image: product5 },
+  { title: "عطور", image: product1 },
+  { title: "اجهزة الكترونية", image: product2 },
+  { title: "عبايات و أزياء", image: product3 },
+  { title: "اثاث ومفروشات", image: product4 },
+  { title: "العاب أطفال", image: product5 },
+  { title: "عطور", image: product1 },
+  { title: "اجهزة الكترونية", image: product2 },
+  { title: "عبايات و أزياء", image: product3 },
+  { title: "اثاث ومفروشات", image: product4 },
+  { title: "العاب أطفال", image: product5 },
 ]
 
 const TemplatesSection = () => {
