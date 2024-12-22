@@ -142,7 +142,7 @@ export default function Design() {
               >
                 <Grid container spacing={{ xs: 2, lg: 7 }}>
                   {items.map((item, index) => (
-                    <Grid item key={index} xs={6} sm={4} md={4}>
+                    <Grid item key={index} xs={12} sm={6} md={4}>
                       <motion.div
                         whileHover={{ scale: 1.05 }}
                         transition={{

@@ -227,9 +227,7 @@ const Header = () => {
                   backdropFilter: "blur(24px)",
                   color: "#001014",
                   textAlign: "center",
-                  fontSize: "1.6rem",
                   fontWeight: 600,
-                  lineHeight: "1.6rem",
                 }}
               >
                 تواصل معنا

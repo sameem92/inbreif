@@ -18,19 +18,19 @@ const TopServicesSecton = () => {
         justifyContent="center"
         alignItems="center"
         sx={{
-          padding: "100px 10rem 100px",
+          padding: "0px 10rem 100px",
           "@media (max-width: 1340px)": {
-            padding: "100px 2rem",
+            padding: "0px 2rem",
           },
           "@media (max-width: 1240px)": {
-            padding: "100px 1rem",
+            padding: "0px 1rem",
           },
           "@media (max-width: 992px)": {
-            padding: "100px 2rem",
+            padding: "0px 2rem",
           },
         }}
       >
-        <Grid size={{ xs: 12, md: 6 }}>
+        <Grid size={{ xs: 12, lg: 6 }}>
           <div>
             <div className="sectionHead">
               <h2>شات بوت ذكي لخدمة عملائك</h2>
@@ -44,7 +44,7 @@ const TopServicesSecton = () => {
             </ul>
           </div>
         </Grid>
-        <Grid size={{ xs: 12, md: 6 }}>
+        <Grid size={{ xs: 12, lg: 6 }}>
           <div className="img">
             <Image src={service1} alt="service1" />
           </div>
@@ -57,24 +57,31 @@ const TopServicesSecton = () => {
         justifyContent="center"
         alignItems="center"
         sx={{
-          padding: "100px 10rem 100px 0rem",
+          padding: "0px 10rem 100px 0rem",
           "@media (max-width: 1340px)": {
-            padding: "100px 2rem 100px 0rem",
+            padding: "0px 2rem 100px 0rem",
           },
           "@media (max-width: 1240px)": {
-            padding: "100px 1rem 100px 0rem",
+            padding: "0rem 1rem 12rem 0rem",
           },
           "@media (max-width: 992px)": {
-            padding: "100px 2rem 100px 0rem",
+            padding: "0rem 2rem 6rem 0rem",
           },
         }}
       >
-        <Grid size={{ xs: 12, md: 6 }}>
-          <div className="img">
+        <Grid size={{ xs: 12, lg: 6 }}>
+          <div className="img start">
             <Image src={service2} alt="service2" />
           </div>
         </Grid>
-        <Grid size={{ xs: 12, md: 6 }}>
+        <Grid
+          size={{ xs: 12, lg: 6 }}
+          sx={{
+            "@media (max-width: 992px)": {
+              padding: "0 2rem",
+            },
+          }}
+        >
           <div>
             <div className="sectionHead">
               <h2>حول متجرك لتطبيق موبايل احترافي</h2>
@@ -99,19 +106,19 @@ const TopServicesSecton = () => {
         justifyContent="center"
         alignItems="center"
         sx={{
-          padding: "100px 10rem 100px",
+          padding: "0px 10rem 100px",
           "@media (max-width: 1340px)": {
-            padding: "100px 2rem",
+            padding: "0px 2rem",
           },
           "@media (max-width: 1240px)": {
-            padding: "100px 1rem",
+            padding: "0px 1rem",
           },
           "@media (max-width: 992px)": {
-            padding: "100px 2rem",
+            padding: "0px 2rem",
           },
         }}
       >
-        <Grid size={{ xs: 12, md: 6 }}>
+        <Grid size={{ xs: 12, lg: 6 }}>
           <div>
             <div className="sectionHead">
               <h2>خدمات المحاسبة و إدارة المخزون</h2>
@@ -129,7 +136,7 @@ const TopServicesSecton = () => {
             </ul>
           </div>
         </Grid>
-        <Grid size={{ xs: 12, md: 6 }}>
+        <Grid size={{ xs: 12, lg: 6 }}>
           <div className="img">
             <Image src={service3} alt="service3" />
           </div>

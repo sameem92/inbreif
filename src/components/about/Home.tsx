@@ -7,8 +7,8 @@ import Social from "@/components/tools/social/social"
 import Form from "@/components/tools/form/form"
 import Feedback from "@/components/tools/feedback/feedback"
 import { dynamicBlurDataUrl } from "@/lib"
-import one from "@/assets/img/1.png"
-import two from "@/assets/img/2.png"
+import distinguishes from "../../../public/images/about/distinguishes.svg"
+import values from "../../../public/images/about/values.svg"
 
 export default function Home() {
   const isMobile = useMediaQuery("(max-width:768px)")
@@ -63,7 +63,8 @@ export default function Home() {
               transition={{ delay: 0.4, duration: 0.8 }}
             >
               نحن شركة مرخصة رسمياً و رائدة في مجال البرمجة وتطوير التطبيقات والمواقع الإلكترونية والتسويق الإلكتروني،
-              حيث نركز على تلبية احتياجات السوق الخليجي.
+              حيث نركز على تلبية احتياجات السوق الخليجي. بفضل مكاتبنا المنتشرة في السعودية والكويت وسلطنة عمان، نتمكن من
+              تقديم حلول مبتكرة ترتقي بتجربة عملائنا وتجعلهم في مقدمة المنافسة.
             </motion.p>
           </Container>
 
@@ -120,7 +121,8 @@ export default function Home() {
                           color: "#fff",
                         }}
                       >
-                        نسعى لأن نكون الوجهة الأولى للعملاء الذين يبحثون عن حلول رقمية متكاملة.
+                        نسعى لأن نكون الوجهة الأولى للعملاء الذين يبحثون عن حلول رقمية متكاملة. نؤمن بقوة التكنولوجيا في
+                        تحسين الأعمال وتحقيق النجاح، ونعمل بجد لتوفير كل ما يلزم لتحقيق رؤى عملائنا.
                       </Typography>
                     </Box>
                   </Grid>
@@ -143,7 +145,7 @@ export default function Home() {
                       transition={{ duration: 0.8 }}
                     >
                       <Image
-                        src={one}
+                        src={distinguishes}
                         style={{
                           maxWidth: "55rem",
                           width: "100%",
@@ -186,7 +188,7 @@ export default function Home() {
                     }}
                   >
                     <Image
-                      src={two}
+                      src={values}
                       style={{
                         maxWidth: "55rem",
                         width: "100%",
@@ -334,7 +336,7 @@ export default function Home() {
                     letterSpacing: "-1.44px",
                   }}
                 >
-                  فريق العمل{" "}
+                  فريق العمل
                 </Typography>
                 <Typography
                   variant="body1"

@@ -3,6 +3,7 @@ import Image from "next/image"
 
 // Components
 import Grid from "@mui/material/Grid2"
+import { motion } from "framer-motion"
 
 // Icons
 import scrollIcon from "../../../../public/icons/scrollIcon.svg"
@@ -109,28 +110,37 @@ const ServicesSection = () => {
       >
         <Grid size={{ xs: 12 }}>
           <div className="sectionHead">
-            <div>
+            <a href="#features">
               <Image src={scrollIcon} alt="scroll" />
-            </div>
+            </a>
             <h2>استمتع بحرية اختيار الإضافات التي تجعل باقتك متكاملة</h2>
           </div>
         </Grid>
-        <Grid size={{ xs: 12 }} container gap="56px" justifyContent="center">
+        <Grid size={{ xs: 12 }} container justifyContent="center">
           {services.map((service) => (
-            <Grid key={service.title} size={{ xs: 12, md: 3 }}>
-              <div className="service">
-                <div className="content">
-                  <div className="service_price">
-                    <span>300 </span>
-                    <span>ر.س</span>
+            <Grid key={service.title} size={{ xs: 12, md: 4, lg: 3 }} display="flex" justifyContent="center">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 10,
+                }}
+              >
+                <div className="service">
+                  <div className="content">
+                    <div className="service_price">
+                      <span>300 </span>
+                      <span>ر.س</span>
+                    </div>
+                    <div className="img">
+                      <Image src={service.icon} alt={service.title} />
+                    </div>
+                    <h4>{service.title}</h4>
+                    <p>{service.description}</p>
                   </div>
-                  <div className="img">
-                    <Image src={service.icon} alt={service.title} />
-                  </div>
-                  <h4>{service.title}</h4>
-                  <p>{service.description}</p>
                 </div>
-              </div>
+              </motion.div>
             </Grid>
           ))}
         </Grid>

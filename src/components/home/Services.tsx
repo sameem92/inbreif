@@ -18,35 +18,41 @@ const Item = styled(Paper)({
 const arrow = "/image/arrow.png"
 import service1 from "../../../public/image/service1.svg"
 import service2 from "../../../public/image/service2.svg"
+import service3 from "../../../public/images/services/service1.svg"
+import service4 from "../../../public/images/services/service2.svg"
+import service5 from "../../../public/images/services/service3.svg"
+import service6 from "../../../public/images/services/service4.svg"
+import service7 from "../../../public/images/services/service5.svg"
+import service8 from "../../../public/images/services/service6.svg"
 
 const secService = [
   {
-    img: "/image/service4.png",
+    img: service3,
     title: "هويات بصرية و شعارات",
     href: "/design-and-marketing",
   },
   {
-    img: "/image/service5.png",
+    img: service4,
     title: "تصميم إعلانات و بروفايلات",
     href: "/design-and-marketing",
   },
   {
-    img: "/image/service6.png",
+    img: service5,
     title: "موشن جرافيك ومونتاج",
     href: "/design-and-marketing",
   },
   {
-    img: "/image/service7.png",
+    img: service6,
     title: "حملات تسويقية",
     href: "/design-and-marketing",
   },
   {
-    img: "/image/service8.png",
+    img: service7,
     title: "إدارة حسابات التواصل الاجتماعي",
     href: "/design-and-marketing",
   },
   {
-    img: "/image/service9.png",
+    img: service8,
     title: "إعداد خطط تسويقية",
     href: "/design-and-marketing",
   },

@@ -63,7 +63,6 @@ const SliderS1: React.FC<{ images: string[] }> = ({ images }) => {
               loop={true}
               grabCursor={true}
               scrollbar={{ draggable: true, dragSize: 24 }}
-              initialSlide={1}
               className="mySwiper"
               autoplay={{
                 delay: 0,

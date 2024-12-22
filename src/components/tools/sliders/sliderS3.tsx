@@ -68,7 +68,7 @@ export default function SliderS3({ images }) {
                 >
                   <Image
                     loading="lazy"
-                    src={src} // Use the image path from array
+                    src={src}
                     alt={`company-logo-${index + 1}`}
                     blurDataURL={dynamicBlurDataUrl}
                     placeholder="blur"

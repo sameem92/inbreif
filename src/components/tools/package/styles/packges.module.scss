@@ -1,0 +1,200 @@
+.packagesSection :global {
+  .sectionHead {
+    margin: 0 auto;
+    text-align: center;
+
+    h2 {
+      font-size: 42px;
+      font-weight: 700;
+      color: #e1e42a;
+      margin-bottom: 18px;
+    }
+
+    p {
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 46px;
+      color: #fff;
+    }
+
+    @media (max-width: 991px) {
+      h2 {
+        font-size: 35px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .tabs {
+    .MuiTabs-flexContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0px;
+      width: 208px;
+      margin: 0 auto;
+      background: #124651;
+      border-radius: 123px;
+      padding: 4px;
+
+      button {
+        display: block;
+        min-height: 44px;
+        flex: 1;
+        padding: 0px;
+        border-radius: 123px;
+        font-size: 22px;
+        font-weight: 600;
+        color: #cdcdcd;
+
+        span {
+          display: block;
+          height: 100%;
+        }
+
+        &.Mui-selected {
+          color: #001014;
+        }
+      }
+    }
+  }
+
+  .planCard {
+    max-width: 398px;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+
+    .content {
+      min-height: 730px;
+      background: #032932 !important;
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 1;
+      border-radius: 25px;
+      padding: 48px 36px;
+
+      h4 {
+        font-size: 32px;
+        font-weight: 700;
+        color: #e1e42a;
+        margin-bottom: 26px;
+      }
+
+      .plan_price {
+        font-size: 33px;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .oldPrice {
+        width: fit-content;
+        font-size: 25px;
+        font-weight: 600;
+        color: #ffffff59;
+        margin: 23px auto;
+        position: relative;
+
+        &::after {
+          content: "";
+          height: 2px;
+          width: 100%;
+          background: #ffffffad;
+          position: absolute;
+          top: 50%;
+          left: 0;
+        }
+      }
+
+      ul {
+        margin-bottom: 28px;
+
+        li {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          text-align: start;
+          font-size: 20px;
+          font-weight: 600;
+          color: #fff;
+          list-style: none;
+          margin-bottom: 14px;
+        }
+      }
+
+      p {
+        max-width: 70%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      button {
+        display: block;
+        height: 56px;
+        width: 100%;
+        border: 2px solid #e1e42a;
+        background: transparent;
+        border-radius: 60px;
+        font-size: 22px;
+        font-weight: 600;
+        color: #e1e42a;
+        margin-bottom: 32px;
+      }
+
+      a {
+        font-size: 19px;
+        font-weight: 600;
+        color: #e1e42a;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          height: 2px;
+          width: 100%;
+          left: 0;
+          bottom: 3.5px;
+          background: #e1e42a;
+        }
+      }
+    }
+
+    &::before {
+      content: "";
+      background-image: linear-gradient(81.07deg, #22373c 53.33%, #18292d 93.73%);
+      top: -1.5px;
+      left: -1.5px;
+      bottom: -1.5px;
+      right: -1.5px;
+      position: absolute;
+      z-index: -1;
+      border-radius: 25px;
+    }
+
+    &.custom {
+      .content {
+        height: 100%;
+        padding: 76px 36px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+
+    &.gold {
+      &::before {
+        background: linear-gradient(81.07deg, #fad414 53.33%, #80660e 93.73%);
+      }
+
+      button {
+        color: #001014;
+        background: #e0e324;
+      }
+    }
+  }
+}

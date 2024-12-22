@@ -31,15 +31,21 @@ const MainFeaturesSection = () => {
         justifyContent="center"
         alignItems="center"
         sx={{
-          padding: "20rem 10rem 10rem",
+          padding: "20rem 20rem 10rem",
           "@media (max-width: 1340px)": {
-            padding: "2rem 2rem",
+            padding: "10rem 20rem",
           },
           "@media (max-width: 1240px)": {
-            padding: "1.7rem 1rem",
+            padding: "0rem 20rem 10rem",
           },
-          "@media (max-width: 992px)": {
-            padding: "1.7rem 2rem",
+          "@media (max-width: 1016px)": {
+            padding: "0rem 10rem 10rem",
+          },
+          "@media (max-width: 991px)": {
+            padding: "0rem 10rem 10rem",
+          },
+          "@media (max-width: 480px)": {
+            padding: "0rem 2rem 10rem",
           },
         }}
       >

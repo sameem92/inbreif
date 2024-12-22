@@ -7,7 +7,7 @@ import Image from "next/image"
 import { Box, Container, Card, CardContent, Typography, Grid } from "@mui/material"
 import { motion } from "framer-motion"
 import SliderS1 from "@/components/tools/sliders/sliderS1"
-import Package from "@/components/tools/package/package"
+import Packages from "@/components/tools/package/packages"
 import Feedback from "@/components/tools/feedback/feedback"
 import Form from "@/components/tools/form/form"
 import Design from "@/components/marketing/Design"
@@ -368,7 +368,7 @@ export default function Home() {
         </CustomTabPanel>
       </Box>
 
-      <Package />
+      <Packages />
 
       <Design />
 

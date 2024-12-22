@@ -110,7 +110,7 @@ const packages = [
 
 const FeaturesSection = () => {
   return (
-    <div className="featuresSection">
+    <div className="featuresSection" id="features">
       <Grid
         container
         spacing={{ xs: 6, md: 12 }}
@@ -137,7 +137,18 @@ const FeaturesSection = () => {
           </div>
         </Grid>
 
-        <Grid size={{ xs: 12 }} container justifyContent="space-between" alignItems="flex-end">
+        <Grid
+          size={{ xs: 12 }}
+          container
+          justifyContent="space-between"
+          alignItems="flex-end"
+          sx={{
+            "@media (max-width: 992px)": {
+              justifyContent: "center",
+              gap: "50px",
+            },
+          }}
+        >
           <Grid size={{ xs: 12, md: 4 }}>
             <div className="featuresCard">
               <h3>المميزات</h3>

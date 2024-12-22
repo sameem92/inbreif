@@ -40,6 +40,7 @@ const textStyle = {
     },
   },
 }
+
 const textStyleTextare = {
   "& .MuiInputBase-root": {
     color: "white",
@@ -139,6 +140,7 @@ export default function ContactUsComponent() {
           gap: { xs: "3.6rem", md: "4.8rem" },
           padding: { xs: "5rem 0 5rem 0", md: "5rem 0 15rem 0" },
           width: "100%",
+          background: "#032932",
         }}
       >
         <Container

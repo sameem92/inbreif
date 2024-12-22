@@ -19,13 +19,13 @@ const HeroSecion = () => {
         sx={{
           padding: "20rem 10rem 10rem",
           "@media (max-width: 1340px)": {
-            padding: "2rem 2rem",
+            padding: "20rem 2rem",
           },
           "@media (max-width: 1240px)": {
-            padding: "1.7rem 1rem",
+            padding: "15rem 1rem",
           },
           "@media (max-width: 992px)": {
-            padding: "1.7rem 2rem",
+            padding: "12rem 2rem",
           },
         }}
       >

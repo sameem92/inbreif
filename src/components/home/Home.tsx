@@ -6,7 +6,6 @@ import Image from "next/image"
 // Components
 import { Box, Container, Link, Card, CardContent, Typography, Grid } from "@mui/material"
 import { motion } from "framer-motion" // Import framer-motion
-import Package from "@/components/tools/package/package"
 import Feedback from "@/components/tools/feedback/feedback"
 import Form from "@/components/tools/form/form"
 import Services from "@/components/home/Services"
@@ -210,9 +209,10 @@ export default function Home() {
         </Box>
       </motion.div>
 
-      <Package />
       <Services />
+
       <Feedback />
+
       <Form />
     </>
   )

@@ -82,10 +82,11 @@ const PaymentSection = () => {
           },
           "@media (max-width: 992px)": {
             padding: "100px 2rem",
+            gap: "40px 0px",
           },
         }}
       >
-        <Grid size={{ xs: 12, md: 6 }}>
+        <Grid size={{ xs: 12, lg: 6 }}>
           <div className="info">
             <h3>مدفوعات سهلة و آمنة</h3>
             <h2>حلول بلا حدود ...</h2>
@@ -93,7 +94,7 @@ const PaymentSection = () => {
           </div>
         </Grid>
 
-        <Grid size={{ xs: 12, md: 6 }}>
+        <Grid size={{ xs: 12, lg: 6 }}>
           <Swiper
             modules={[Autoplay]}
             spaceBetween={22}
@@ -114,7 +115,7 @@ const PaymentSection = () => {
               <SwiperSlide key={index}>
                 <Grid container spacing={2} justifyContent="center">
                   {slides.map((item, i) => (
-                    <Grid size={{ xs: 2 }} key={i}>
+                    <Grid size={{ xs: 3, md: 2 }} key={i}>
                       <motion.div
                         whileHover={{ scale: 0.9 }}
                         transition={{
@@ -156,7 +157,16 @@ const PaymentSection = () => {
           </Swiper>
         </Grid>
 
-        <Grid size={{ xs: 12 }} container justifyContent="center">
+        <Grid
+          size={{ xs: 12 }}
+          container
+          justifyContent="center"
+          sx={{
+            "@media (max-width: 480px)": {
+              flexDirection: "column",
+            },
+          }}
+        >
           <div className="count">
             <div className="content">
               <div className="icon">

@@ -34,38 +34,8 @@ export default function AppLayout({ children }: AppLayoutProps) {
   React.useEffect(() => {
     const body = document.body
 
-    // Lazy load background image based on path
-    const isPhoneApps =
-      window?.location?.pathname?.includes("web-apps") ||
-      window?.location?.pathname?.includes("mobile-apps") ||
-      window?.location?.pathname?.includes("about") ||
-      window?.location?.pathname?.includes("work") ||
-      window?.location?.pathname?.includes("system")
-
-    // Set a small, placeholder image initially (for performance)
-    body.style.backgroundImage = `url("/image/placeholder.svg")`
-    body.style.backgroundPosition = "top"
-    body.style.backgroundSize = "cover"
-    body.style.backgroundRepeat = "no-repeat"
     body.style.overflowX = "hidden"
     body.style.direction = "rtl" // Set direction to rtl
-
-    // Lazy load the full-size image after the placeholder
-    const loadImage = new Image()
-    loadImage.src = isPhoneApps ? "/image/home2.svg" : "/image/home.svg"
-    loadImage.onload = () => {
-      body.style.backgroundImage = `url(${loadImage.src})`
-      body.classList.add("background-loaded")
-
-      setTimeout(() => {
-        setLoading(false) // Stop loadπing once the image is loaded and timeout is complete
-      }, 2000) // Delay for 2 seconds to ensure caching
-
-      // Stop loading once the image is loaded
-    }
-    return () => {
-      loadImage.onload = null // Avoid memory leaks
-    }
   }, [pathname])
 
   React.useEffect(() => {
@@ -75,7 +45,6 @@ export default function AppLayout({ children }: AppLayoutProps) {
 
       return
     } // If footer is not rendered, exit early
-    console.log(footer, "--->")
     const loadFooterImage = new Image()
     loadFooterImage.src = "/image/noise.png"
     loadFooterImage.onload = () => {

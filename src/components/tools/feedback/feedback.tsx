@@ -224,10 +224,10 @@ export default function Feedback() {
               setIsEnd(realIndex === totalSlides - 1)
             }}
             loop={true} // Enable looping
-            autoplay={{
-              disableOnInteraction: false, // Continue autoplay after user interaction
-              pauseOnMouseEnter: true, // Pause autoplay when hovered
-            }}
+            // autoplay={{
+            //   disableOnInteraction: false, // Continue autoplay after user interaction
+            //   pauseOnMouseEnter: true, // Pause autoplay when hovered
+            // }}
             speed={1000} // Speed of slide transition (1 second)
             modules={[Navigation, Autoplay]} // Add Autoplay module
             className="mySwiper2"
@@ -288,13 +288,13 @@ export default function Feedback() {
                     >
                       <Image
                         loading="lazy"
-                        width={50}
-                        height={50}
+                        width={80}
+                        height={80}
                         src={IMGS[index]}
                         alt="f"
                         blurDataURL={dynamicBlurDataUrl}
                         placeholder="blur"
-                        objectFit="contain"
+                        style={{ width: "auto", borderRadius: "50%" }}
                       />
                       <span className="company">{item.compnay}</span>
                       <Box

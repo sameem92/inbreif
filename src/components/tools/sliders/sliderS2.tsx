@@ -13,8 +13,8 @@ import { Scrollbar, Navigation, EffectCoverflow } from "swiper/modules"
 
 import "swiper/css"
 import "swiper/css/scrollbar"
-import "swiper/css/autoplay"
 import "swiper/css/effect-coverflow"
+import "swiper/css/navigation"
 
 // Images & Icons
 import star from "../../../../public/icons/starIcon.svg"
@@ -94,12 +94,16 @@ export default function SlideS2({ products }) {
           )}
 
           <Swiper
-            modules={[Navigation, EffectCoverflow]}
-            dir="rtl"
+            modules={[Navigation, EffectCoverflow, Scrollbar]}
+            scrollbar={{ draggable: true, dragSize: 24 }}
             effect="coverflow"
+            className="mySwiper"
             centeredSlides={true}
-            slidesPerView={3}
+            slidesPerView={"auto"}
             spaceBetween={60}
+            grabCursor={true}
+            allowTouchMove={true}
+            speed={2500}
             loop={true}
             navigation={
               isMobile
@@ -125,7 +129,7 @@ export default function SlideS2({ products }) {
             coverflowEffect={{
               rotate: 0,
               stretch: 0,
-              depth: 120,
+              depth: 38.5,
               modifier: 2.5,
               slideShadows: false,
             }}
@@ -201,51 +205,4 @@ export default function SlideS2({ products }) {
       )}
     </div>
   )
-}
-
-{
-  /* <Swiper
-modules={[Scrollbar, Navigation, EffectCoverflow]}
-effect="coverflow"
-dir="rtl"
-allowTouchMove={true}
-grabCursor={true}
-centeredSlides={true}
-initialSlide={1}
-scrollbar={{ draggable: true, dragSize: 24 }}
-// loop={true}
-navigation={
-  isMobile
-    ? false
-    : {
-        prevEl: prevButtonRef.current,
-        nextEl: nextButtonRef.current,
-      }
-}
-
-
-coverflowEffect={{
-  rotate: 0,
-  stretch: 0,
-  depth: 100,
-  modifier: 3,
-  slideShadows: false,
-}}
-breakpoints={{
-  1: {
-    slidesPerView: 1,
-    spaceBetween: 30,
-  },
-  992: {
-    slidesPerView: 2,
-    spaceBetween: 40,
-  },
-  1280: {
-    slidesPerView: 3,
-    spaceBetween: 0,
-  },
-}}
->
-
-</Swiper> */
 }

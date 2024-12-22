@@ -1,28 +1,24 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 //@ts-nocheck
-"use client";
+"use client"
 
-import React from "react";
-import {
-  Container,
-  Box,
-  Card,
-  CardContent,
-  Typography,
-  Grid,
-} from "@mui/material";
-import { motion } from "framer-motion";
-import Image from "next/image";
-const icon1 = "/image/l1.png";
-const icon2 = "/image/l2.png";
-const icon3 = "/image/l3.png";
-const icon4 = "/image/l4.png";
-const icon5 = "/image/l5.png";
-const icon6 = "/image/l6.png";
-const icon7 = "/image/l7.png";
-const icon8 = "/image/l8.png";
-const icon9 = "/image/l9.png";
-import { dynamicBlurDataUrl } from "@/lib";
+import React from "react"
+import { Container, Box, Card, CardContent, Typography, Grid } from "@mui/material"
+import { motion } from "framer-motion"
+import Image from "next/image"
+const icon1 = "/image/l1.png"
+const icon2 = "/image/l2.png"
+const icon3 = "/image/l3.png"
+const icon4 = "/image/l4.png"
+const icon5 = "/image/l5.png"
+const icon6 = "/image/l6.png"
+const icon7 = "/image/l7.png"
+const icon8 = "/image/l8.png"
+const icon9 = "/image/l9.png"
+const icon10 = "/image/l11.png"
+const icon11 = "/image/l12.png"
+const icon12 = "/image/l13.png"
+import { dynamicBlurDataUrl } from "@/lib"
 
 // Data
 const sections = [
@@ -33,10 +29,7 @@ const sections = [
       {
         icon: icon1,
         title: "إنشاء محتوى جذاب",
-        list: [
-          "تصميم محتوى بصري ونصي يتناسب مع هويتكم.",
-          "إنتاج فيديوهات قصيرة وملفتة لزيادة التفاعل.",
-        ],
+        list: ["تصميم محتوى بصري ونصي يتناسب مع هويتكم.", "إنتاج فيديوهات قصيرة وملفتة لزيادة التفاعل."],
       },
       {
         icon: icon2,
@@ -49,10 +42,7 @@ const sections = [
       {
         icon: icon3,
         title: "تحليل الأداء",
-        list: [
-          "تقارير دورية عن الأداء تشمل التفاعل والنمو.",
-          "تحليل سلوك الجمهور وتقديم توصيات.",
-        ],
+        list: ["تقارير دورية عن الأداء تشمل التفاعل والنمو.", "تحليل سلوك الجمهور وتقديم توصيات."],
       },
     ],
   },
@@ -62,27 +52,42 @@ const sections = [
     items: [
       {
         icon: icon4,
-        title: "تحليل السوق",
-        list: [
-          " دراسة الاتجاهات والسلوكيات لفهم السوق .",
-          " تحليل المنافسين لتحديد الفرص والتحديات.",
-        ],
+        title: "تصميم الحملات الإبداعية",
+        list: ["تطوير استراتيجية إعلانية مبتكرة تتماشى مع أهدافكم.", "تصميم إعلانات جذابة بصريًا."],
       },
       {
         icon: icon5,
-        title: "تحديد الأهداف",
+        title: " استهداف دقيق",
         list: [
-          " وضع أهداف دقيقة وقابلة للقياس تلبي احتياجاتكم.",
-          " تطوير استراتيجيات لتحقيق الأهداف.",
+          "تحديد الفئات المستهدفة بناءً على اهتماماتهم وسلوكهم.",
+          "استخدام تقنيات مثل إعادة الاستهداف لزيادة فعالية الحملات",
         ],
       },
       {
         icon: icon6,
+        title: "تحليل الأداء والعائد",
+        list: ["قياس فعالية الحملات باستخدام مؤشرات الأداء الرئيسية.", "تقديم تقارير و توصيات للتحسين."],
+      },
+    ],
+  },
+  {
+    title: " استراتيجيات التسويق",
+    subtitle: "نقدم لك خطة تسويقية مخصصة تناسب احتياجاتك",
+    items: [
+      {
+        icon: icon7,
+        title: "تحليل السوق",
+        list: [" دراسة الاتجاهات والسلوكيات لفهم السوق .", " تحليل المنافسين لتحديد الفرص والتحديات."],
+      },
+      {
+        icon: icon8,
+        title: "تحديد الأهداف",
+        list: [" وضع أهداف دقيقة وقابلة للقياس تلبي احتياجاتكم.", " تطوير استراتيجيات لتحقيق الأهداف."],
+      },
+      {
+        icon: icon9,
         title: "تنفيذ الاستراتيجيات",
-        list: [
-          " دعمك في تنفيذ الخطط عبر القنوات التسويقية.",
-          "متابعة الأداء وتعديل الاستراتيجيات حسب الحاجة.",
-        ],
+        list: [" دعمك في تنفيذ الخطط عبر القنوات التسويقية.", "متابعة الأداء وتعديل الاستراتيجيات حسب الحاجة."],
       },
     ],
   },
@@ -91,32 +96,23 @@ const sections = [
     subtitle: "نساعدك في تطوير محتوى يجذب ويؤثر في جمهورك",
     items: [
       {
-        icon: icon7,
+        icon: icon10,
         title: "التخطيط للمحتوى",
-        list: [
-          "إنشاء تقويم زمني للمحتوى شامل.",
-          "تحديد أنواع المحتوى الأكثر ملاءمة لجمهوركم (مقالات، تصاميم، فيديو).",
-        ],
+        list: ["إنشاء تقويم زمني للمحتوى شامل.", "تحديد أنواع المحتوى الأكثر ملاءمة لجمهوركم (مقالات، تصاميم، فيديو)."],
       },
       {
-        icon: icon8,
+        icon: icon11,
         title: " كتابة المحتوى",
-        list: [
-          "تحسين المحتوى لمحركات البحث (SEO) لزيادة الظهور.",
-          "كتابة نصوص تسويقية متخصصة.",
-        ],
+        list: ["تحسين المحتوى لمحركات البحث (SEO) لزيادة الظهور.", "كتابة نصوص تسويقية متخصصة."],
       },
       {
-        icon: icon9,
+        icon: icon12,
         title: " إدارة المحتوى",
-        list: [
-          "متابعة الأداء وضبط الاستراتيجيات بناءً على النتائج..",
-          " تقديم توصيات لتحسين التفاعل وزيادة الوصول..",
-        ],
+        list: ["متابعة الأداء وضبط الاستراتيجيات بناءً على النتائج..", " تقديم توصيات لتحسين التفاعل وزيادة الوصول.."],
       },
     ],
   },
-];
+]
 
 // Component to render a section
 const Section = ({ section }) => (
@@ -181,10 +177,7 @@ const Section = ({ section }) => (
             <Grid container spacing={3} justifyContent="center">
               {section.items.map((item, index) => (
                 <Grid item key={index} xs={12} sm={6} md={4}>
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ type: "spring", stiffness: 200, damping: 10 }}
-                  >
+                  <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 200, damping: 10 }}>
                     <Card
                       sx={{
                         background:
@@ -245,7 +238,7 @@ const Section = ({ section }) => (
       </motion.div>
     </Box>
   </>
-);
+)
 
 export default function Design() {
   return (
@@ -269,5 +262,5 @@ export default function Design() {
         ))}
       </Container>
     </motion.div>
-  );
+  )
 }

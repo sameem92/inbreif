@@ -1,11 +1,11 @@
 "use client"
-import r from "@/assets/img/r.png"
+import r from "../../../public/images/rocket.svg"
 
 import React from "react"
 import { Box, Container, Grid, Button, useMediaQuery } from "@mui/material"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import Package from "@/components/tools/package/package"
+import Packages from "@/components/tools/package/packages"
 import Design from "@/components/shop/Design"
 import Feedback from "@/components/tools/feedback/feedback"
 import Social from "@/components/tools/social/social"
@@ -21,8 +21,6 @@ const Item = styled(Paper)(() => ({
 }))
 
 export default function Home() {
-  const isMobile = useMediaQuery("(max-width:768px)") // Detect if the screen is mobile
-
   const goToWhatsApp = () => {
     window.open("http://wa.me/96877276659", "_target")
   }
@@ -32,7 +30,7 @@ export default function Home() {
       <Social />
 
       <motion.div
-        style={{ paddingTop: "7rem", paddingBottom: "7rem" }}
+        style={{ paddingTop: "7rem" }}
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -61,7 +59,17 @@ export default function Home() {
             }}
             maxWidth="lg"
           >
-            <Grid container alignItems="center">
+            <Grid
+              container
+              alignItems="center"
+              sx={{
+                backgroundColor: "#032932",
+                backgroundImage: 'url("/images/store/bg.svg")',
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "65% center",
+                backgroundSize: "45% 100%",
+              }}
+            >
               <Grid item xs={12} md={6}>
                 <Item
                   sx={{
@@ -87,7 +95,7 @@ export default function Home() {
                     transition={{ delay: 0.3, duration: 0.6 }}
                     className="paragrph-another"
                   >
-                    باختصار نصل بك إلى هدفك.{" "}
+                    باختصار نصل بك إلى هدفك.
                   </motion.p>
                   <Button
                     sx={{
@@ -125,25 +133,10 @@ export default function Home() {
                     }}
                   >
                     <Image
+                      style={{ maxWidth: "100%" }}
                       src={r}
                       blurDataURL={dynamicBlurDataUrl}
                       placeholder="blur"
-                      style={
-                        isMobile
-                          ? {
-                              maxWidth: "100%",
-                              width: "100%",
-                              height: "auto",
-                            }
-                          : {
-                              maxWidth: "100%",
-                              width: "100%",
-                              height: "auto",
-                              position: "relative",
-                              left: "-10%",
-                              top: "-2%",
-                            }
-                      }
                       loading="lazy"
                       alt="mobile-apps"
                     />
@@ -155,7 +148,7 @@ export default function Home() {
         </Box>
       </motion.div>
 
-      <Package />
+      <Packages />
       <Design />
       <Feedback />
       <Form />
