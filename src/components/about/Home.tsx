@@ -19,7 +19,6 @@ export default function Home() {
 
       {/* Hero Section */}
       <motion.div
-        style={{ paddingTop: "7rem" }}
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
@@ -32,6 +31,16 @@ export default function Home() {
             display: "flex",
             flexDirection: "column",
             gap: "4.8rem",
+            padding: "10px 10rem 100px",
+            "@media (max-width: 1340px)": {
+              padding: "10px 2rem 100px",
+            },
+            "@media (max-width: 1240px)": {
+              padding: "10px 1rem 100px",
+            },
+            "@media (max-width: 992px)": {
+              padding: "10px 2rem 100px",
+            },
           }}
         >
           {/* Main Title */}
@@ -73,7 +82,6 @@ export default function Home() {
             sx={{
               display: "flex",
               gap: { xs: "6rem", lg: "15rem" },
-              padding: { xs: "6rem 0", md: "10rem 0", xl: "15rem 0" },
               flexDirection: "column",
             }}
             maxWidth="lg"

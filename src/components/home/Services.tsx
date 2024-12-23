@@ -65,7 +65,21 @@ export default function Services() {
     router.push(path)
   }
   return (
-    <div className="hero">
+    <Container
+      sx={{
+        padding: "100px 10rem 100px",
+        "@media (max-width: 1340px)": {
+          padding: "100px 2rem",
+        },
+        "@media (max-width: 1240px)": {
+          padding: "100px 1rem",
+        },
+        "@media (max-width: 992px)": {
+          padding: "100px 2rem",
+        },
+      }}
+      className="hero"
+    >
       <div className="hero">
         <Container
           maxWidth="xl"
@@ -75,8 +89,6 @@ export default function Services() {
             alignItems: "center",
             justifyContent: "center",
             gap: "4.8rem",
-            padding: { xs: "8rem 0", md: "15rem 0" },
-
             zIndex: 1,
             position: "relative",
           }}
@@ -299,12 +311,13 @@ export default function Services() {
       </div>
       <div>
         <Container>
-          <h1 className="secondry-title">خدمات التصميم والتسويق </h1>
+          <h1 className="secondry-title" style={{ margin: "42px auto" }}>
+            خدمات التصميم والتسويق
+          </h1>
           <Box
             sx={{
               width: { xs: "90%", lg: "100%" },
               margin: "auto",
-              paddingBottom: "150px",
             }}
           >
             <Grid container columnSpacing={{ xs: 6, md: 4, xl: 0 }} rowSpacing={{ xs: 6, md: 4, xl: 10 }}>
@@ -413,6 +426,6 @@ export default function Services() {
           </Box>
         </Container>
       </div>
-    </div>
+    </Container>
   )
 }

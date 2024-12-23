@@ -8,9 +8,8 @@ export default function Social() {
         sx={{
           position: "absolute",
           transform: { xs: "translateY(0px)", lg: "translateY(-50%)" },
-          top: { xs: "50%", lg: "50%" },
-
-          right: { xs: "2%", lg: "6%" },
+          top: { xs: "25%", lg: "50%" },
+          right: { xs: "4%", lg: "6%" },
           padding: "1rem",
           zIndex: 10,
         }}
@@ -92,7 +91,7 @@ export default function Social() {
         sx={{
           position: "fixed",
           top: "90%",
-          left: "6%",
+          left: "8%",
           zIndex: 9000,
           padding: "1rem",
         }}

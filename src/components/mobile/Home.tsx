@@ -37,7 +37,6 @@ export default function Home() {
       >
         <Grid
           container
-          spacing={{ xs: 6, md: 12 }}
           justifyContent="center"
           alignItems="center"
           sx={{
@@ -47,13 +46,13 @@ export default function Home() {
             backgroundPosition: "right top",
             backgroundSize: "65% 90%",
             "@media (max-width: 1340px)": {
-              padding: "20rem 2rem",
+              padding: "20rem 2rem 10rem",
             },
             "@media (max-width: 1240px)": {
-              padding: "15rem 1rem",
+              padding: "15rem 1rem 7rem",
             },
             "@media (max-width: 992px)": {
-              padding: "12rem 2rem",
+              padding: "12rem 2rem 6rem",
             },
             "@media (max-width: 768px)": {
               backgroundPosition: "50% 75%",
@@ -134,7 +133,16 @@ export default function Home() {
 
       <Box
         sx={{
-          paddingTop: { xs: "5.3rem", md: "10rem" },
+          padding: "100px 10rem 100px",
+          "@media (max-width: 1340px)": {
+            padding: "100px 2rem",
+          },
+          "@media (max-width: 1240px)": {
+            padding: "100px 1rem",
+          },
+          "@media (max-width: 992px)": {
+            padding: "100px 2rem",
+          },
           background: "linear-gradient(rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.21))",
         }}
       >

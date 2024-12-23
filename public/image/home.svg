@@ -2,11 +2,7 @@
 <g clip-path="url(#clip0_470_3839)">
 <rect width="1440" height="6545" fill="#032932"/>
 <rect width="1440" height="6545" transform="matrix(1 0 0 -1 0 6545)" fill="url(#pattern0_470_3839)" fill-opacity="0.4" style="mix-blend-mode:soft-light"/>
-<circle opacity="0.05" cx="720" cy="484" r="437.5" stroke="#D2EDE5"/>
-<circle opacity="0.1" cx="720" cy="484" r="369.413" stroke="#D2EDE5"/>
-<circle opacity="0.1" cx="720" cy="484" r="287.99" stroke="#D2EDE5"/>
-<circle opacity="0.1" cx="720" cy="484" r="202.356" stroke="#D2EDE5"/>
-<circle opacity="0.1" cx="720" cy="484" r="129.356" stroke="#D2EDE5"/>
+
 </g>
 <defs>
 <pattern id="pattern0_470_3839" patternContentUnits="objectBoundingBox" width="0.313333" height="0.0689381">

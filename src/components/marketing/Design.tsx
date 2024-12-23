@@ -49,12 +49,13 @@ export default function Design() {
   const nextButtonRef = useRef(null)
   const [isBeginning, setIsBeginning] = useState(true)
   const [isEnd, setIsEnd] = useState(false)
-  const isMobile = useMediaQuery("(max-width:768px)")
+  const isTablet = useMediaQuery("(max-width:991px)")
+  const isMobile = useMediaQuery("(max-width:480px)")
   const [players, setPlayers] = useState<{ [key: number] }>({}) // Store video player instances
   const totalSlides = 9
 
   const opts = {
-    height: isMobile ? "350px" : "500px",
+    height: isMobile ? "150px" : isTablet ? "350px" : "500px",
     width: "100%",
     playerVars: {
       modestbranding: 1,
@@ -247,6 +248,12 @@ export default function Design() {
             justifyContent: "space-between",
             width: "100%",
             padding: { xs: "0 2rem" },
+            "@media(max-width:480px)": {
+              flexWrap: "wrap",
+              justifyContent: "center",
+              flexDirection: "row-reverse",
+              gap: "2rem",
+            },
           }}
         >
           {/* {!isMobile && ( */}
@@ -257,7 +264,6 @@ export default function Design() {
               height: { xs: "5rem", lg: "6rem" },
               minHeight: { xs: "5rem", lg: "6rem" },
               minWidth: { xs: "5rem", lg: "6rem" },
-
               borderRadius: "50%",
               background: !isBeginning
                 ? "#E1E42A"
@@ -272,6 +278,9 @@ export default function Design() {
               },
               "&:hover svg": {
                 marginRight: "1rem",
+              },
+              "@media(max-width:480px)": {
+                order: 3,
               },
             }}
             disabled={isBeginning}
@@ -311,47 +320,11 @@ export default function Design() {
           >
             {videoIds.map((id, index) => (
               <SwiperSlide key={index}>
-                <Card
-                  sx={{
-                    maxWidth: { xs: "95%", md: "100%" },
-                    minWidth: { xs: "95%", md: "100%" },
-                    minHeight: { xs: 350, md: 500 },
-                    maxHeight: { xs: 350, md: 600 },
-                    margin: "auto",
-                    borderRadius: "2.5rem",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    background: "transparent",
-                    boxShadow: "none",
-                    overflow: "auto",
-                    borderRadius: "none",
-                    border: "none",
-                    position: "relative", // Add relative positioning for the loading overlay
-                  }}
-                >
-                  <CardContent
-                    sx={{
-                      width: "100%",
-                      height: "100%",
-
-                      padding: "0px !important",
-                      "& img": {
-                        width: "100% !important",
-                        height: "100% !important",
-                        "@media screen and (max-width:768px)": {
-                          height: "200px !important",
-                        },
-                      },
-                    }}
-                  >
-                    <YouTube videoId={id} opts={opts} onReady={(event) => handleVideoReady(event, index)} />
-                  </CardContent>
-                </Card>
+                <YouTube videoId={id} opts={opts} onReady={(event) => handleVideoReady(event, index)} />
               </SwiperSlide>
             ))}
           </Swiper>
+
           {/* {!isMobile && ( */}
           <Button
             ref={nextButtonRef}

@@ -22,71 +22,72 @@ import feature13 from "../../../public/images/features/feature13.svg"
 import feature14 from "../../../public/images/features/feature14.svg"
 import feature15 from "../../../public/images/features/feature15.svg"
 import feature16 from "../../../public/images/features/feature16.svg"
+import Link from "next/link"
 
 const features = [
   {
     icon: feature1,
-    title: "ربط مع واتساب بيزنس",
+    title: "تصميم الشعار الخاص بمشروعك",
   },
   {
     icon: feature2,
-    title: "الرسائل النصية (SMS)",
+    title: "برمجة التطبيق ولوحة التحكم بتقنيات حديثة",
   },
   {
     icon: feature3,
-    title: "الشات بوت",
+    title: "موقع تعريفي خاص بمشروعك",
   },
   {
     icon: feature4,
-    title: "نظام نقاط البيع (POS)",
+    title: "استضافة ودومين مجاني لمدة عام",
   },
   {
     icon: feature5,
-    title: "نظام إدارة السائقين",
+    title: "تسجيل مشروعك على جوجل ماب",
   },
   {
     icon: feature6,
-    title: "إنشاء تطبيق للمتجر",
+    title: "شهادة حماية SSL",
   },
   {
     icon: feature7,
-    title: "استشاري إدارة المتجر",
+    title: "الربط مع شحن محلي أو دولي",
   },
   {
     icon: feature8,
-    title: "إضافة المحتوى",
+    title: "٢٠ بريد إلكتروني رسمي",
   },
   {
     icon: feature9,
-    title: "تحسين محركات البحث",
+    title: "الربط مع بوابة الرسائل لخدمة OTP و التسويق",
   },
   {
     icon: feature10,
-    title: "استشاري تسويق المتجر",
+    title: "تصميم احترافي من إختيارك",
   },
   {
     icon: feature11,
-    title: "نظام حجز الطاولات",
+    title: "متوافق مع كافة الشاشات",
   },
   {
     icon: feature12,
-    title: "متجر متعدد التجار",
+    title: "متوافق مع محركات البحث SEO",
   },
   {
     icon: feature13,
-    title: "نظام حجز الطاولات",
+    title: "الربط مع بوابات التقسيط",
   },
   {
     icon: feature14,
-    title: "متجر متعدد التجار",
+    title: "الربط مع بوابة دفع",
   },
   {
     icon: feature15,
-    title: "نظام حجز الطاولات",
+    title: "دعم فني مجاني لمدة سنة",
   },
   {
     icon: feature16,
-    title: "متجر متعدد التجار",
+    title: "تعدد اللغات",
   },
 ]
 
@@ -97,7 +98,7 @@ const featuresSection = () => {
         container
         justifyContent="center"
         alignItems="center"
-        gap="82px"
+        gap="42px"
         sx={{
           padding: "100px 10rem 100px",
           "@media (max-width: 1340px)": {
@@ -118,7 +119,7 @@ const featuresSection = () => {
         </Grid>
         <Grid size={{ xs: 12 }} container rowSpacing={3} columnSpacing={3}>
           {features.map((feature) => (
-            <Grid key={feature.title} size={{ xs: 12, md: 4, lg: 3 }}>
+            <Grid key={feature.title} size={{ xs: 12, sm: 4, md: 3 }}>
               <motion.div
                 style={{ width: "100%" }}
                 whileHover={{ scale: 1.05 }}
@@ -139,6 +140,9 @@ const featuresSection = () => {
               </motion.div>
             </Grid>
           ))}
+        </Grid>
+        <Grid size={{ xs: 12 }}>
+          <Link href="">اطلب الأن تطبيقك</Link>
         </Grid>
       </Grid>
     </div>

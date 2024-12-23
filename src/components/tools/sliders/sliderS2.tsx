@@ -25,6 +25,8 @@ export default function SlideS2({ products }) {
   const [isBeginning, setIsBeginning] = useState(true)
   const [isEnd, setIsEnd] = useState(false)
   const isMobile = useMediaQuery("(max-width:768px)")
+  const isTablet = useMediaQuery("(max-width:1024px)")
+
   const totalSlides = 10
   const [imagesLoaded, setImagesLoaded] = useState(false)
 
@@ -129,7 +131,7 @@ export default function SlideS2({ products }) {
             coverflowEffect={{
               rotate: 0,
               stretch: 0,
-              depth: 38.5,
+              depth: isTablet ? 123 : 38.5,
               modifier: 2.5,
               slideShadows: false,
             }}

@@ -145,8 +145,17 @@ export default function Feedback() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          gap: "4.8rem",
-          padding: { xs: "5.3rem 0", md: "10rem 0" },
+          gap: "42px",
+          padding: "100px 10rem 100px",
+          "@media (max-width: 1340px)": {
+            padding: "100px 2rem",
+          },
+          "@media (max-width: 1240px)": {
+            padding: "100px 1rem",
+          },
+          "@media (max-width: 992px)": {
+            padding: "100px 2rem",
+          },
         }}
       >
         <h2 className="secondry-title">رأي العملاء</h2>

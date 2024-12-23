@@ -433,6 +433,20 @@
       color: #e1e42a;
       text-decoration: underline;
     }
+
+    @media (max-width: 480px) {
+      .swiper {
+        .swiper-wrapper {
+          .swiper-slide {
+            width: 180px;
+          }
+
+          .swiper-slide-active .product .content .img {
+            height: 200px;
+          }
+        }
+      }
+    }
   }
 
   .featuresSection {
@@ -860,6 +874,10 @@
     }
 
     @media (max-width: 480px) {
+      img {
+        max-height: 500px;
+      }
+
       ul li {
         font-size: 16px;
       }

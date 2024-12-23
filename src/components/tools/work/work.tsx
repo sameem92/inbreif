@@ -62,8 +62,7 @@ export default function Slider() {
           alignItems: "center",
           flexDirection: "column",
           margin: "auto",
-
-          gap: "6rem",
+          gap: "42px",
           justifyContent: "center",
           width: {
             xs: "90%",

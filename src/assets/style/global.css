@@ -12,18 +12,16 @@ html,
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
   scroll-behavior: smooth;
 }
 
 body {
   background-color: #032932 !important;
-
   direction: rtl;
   background-position: top !important; /* Center the background horizontally */
   background-size: cover !important; /* Ensure the background covers the entire viewport */
   background-repeat: no-repeat !important;
-  overflow-x: hidden !important; /* Prevent horizontal scrolling */
+  overflow: hidden; /* Prevent horizontal scrolling */
   overflow-y: auto; /* Allow vertical scrolling */
 }
 
@@ -31,7 +29,6 @@ body .background-loaded {
   background-color: "#032932" !important;
 }
 .hero {
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,6 +46,16 @@ body .background-loaded {
 .cursor-pointer {
   cursor: pointer;
 }
+
+header .css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+header .css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input > div {
+  display: flex;
+}
+
 .nav-link {
   cursor: pointer;
   font-size: 1.6rem;
@@ -60,13 +67,13 @@ body .background-loaded {
   text-transform: none;
   text-decoration: none;
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
 .h-f {
   transition: color 0.3s ease;
 }
 .mySwiper-work {
   padding-bottom: 7rem !important;
-  margin-bottom: 15rem !important;
 }
 
 .mySwiper-work .swiper-wrapper {
@@ -87,7 +94,7 @@ body .background-loaded {
 }
 
 .home {
-  margin-top: 9.8rem;
+  margin-top: 10rem;
 }
 
 button:disabled {
@@ -279,7 +286,7 @@ button:hover:disabled {
 
 .secondry-title {
   width: fit-content;
-  margin: 0px auto 48px;
+  margin: 0px auto;
   font-style: normal;
   font-weight: 500;
   font-size: 4rem;
@@ -563,7 +570,8 @@ button:hover:disabled {
     font-size: 9px;
   }
   .main-title {
-    font-size: 4.2rem;
+    margin-top: 10px;
+    font-size: 4rem;
   }
   .main-title-2 {
     font-size: 4rem;

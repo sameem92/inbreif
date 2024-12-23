@@ -318,11 +318,11 @@ export default function ContactUsComponent() {
                   return value
                 }}
                 variant="outlined"
-                IconComponent={() => (
+                IconComponent={({ className }) => (
                   <Image
+                    className={`arrow-icon-2 ${className}`}
                     width={24}
                     height={24}
-                    className="arrow-icon-2"
                     src={images[0]}
                     alt="arrowSelect"
                     loading="lazy"
@@ -338,13 +338,11 @@ export default function ContactUsComponent() {
                   },
                   width: "100%",
                   height: "5.6rem",
-                  marginRight: 15,
-
                   borderRadius: "7rem",
                   color: "#fff",
                   "& .arrow-icon-2": {
-                    position: "relative",
-                    right: "1.8rem",
+                    top: "32%",
+                    right: "2%",
                   },
                   "&:focus": {
                     outline: "none",

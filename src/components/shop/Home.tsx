@@ -2,7 +2,7 @@
 import r from "../../../public/images/rocket.svg"
 
 import React from "react"
-import { Box, Container, Grid, Button, useMediaQuery } from "@mui/material"
+import { Box, Container, Grid, Button } from "@mui/material"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Packages from "@/components/tools/package/packages"
@@ -63,11 +63,10 @@ export default function Home() {
               container
               alignItems="center"
               sx={{
-                backgroundColor: "#032932",
                 backgroundImage: 'url("/images/store/bg.svg")',
                 backgroundRepeat: "no-repeat",
-                backgroundPosition: "65% center",
-                backgroundSize: "45% 100%",
+                backgroundPosition: "100% center",
+                backgroundSize: "80% 90%",
               }}
             >
               <Grid item xs={12} md={6}>
