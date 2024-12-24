@@ -420,18 +420,11 @@ button:hover:disabled {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem 3.2rem;
-  gap: 1rem;
   box-shadow: none !important;
-
   background: linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%) !important;
   backdrop-filter: blur(5px) !important;
   border-radius: 2.4rem !important;
-}
-.service-box-sm {
-  gap: 1rem;
-  padding: 2.1rem 2rem;
-  border-radius: 2.4rem !important;
+  padding: 32px;
 }
 
 .service-box h3,
@@ -552,15 +545,9 @@ button:hover:disabled {
   .mySwiper-video .swiper-slide {
     height: 100% !important;
   }
-  .service-box {
-    padding: 2rem 0;
-    margin: auto;
-    width: 90%;
-  }
 }
 @media screen and (max-width: 1240px) {
   .service-box {
-    padding: 0rem 2.2rem 1.2rem 2.2rem;
     gap: 1rem;
   }
 }
@@ -694,7 +681,7 @@ button:hover:disabled {
 
 @media screen and (max-width: 992px) {
   .service-box {
-    padding: 1rem 2rem;
+    /* padding: 1rem 2rem; */
   }
 }
 
@@ -852,7 +839,7 @@ a {
 @media screen and (max-width: 768px) {
   .service-box h3,
   .third-title {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
   .MuiTabs-flexContainer {
     gap: 2rem;
@@ -992,9 +979,6 @@ a {
     font-size: 2rem;
     text-align: center;
   }
-  .social-menu {
-    display: none;
-  }
   .secondry-title,
   .main-shop-title {
     font-size: 3.5rem;
@@ -1017,6 +1001,9 @@ a {
   }
 }
 @media screen and (max-width: 578px) {
+  .social-menu:not(.social-menu-whatsapp) {
+    display: none;
+  }
   .paragrph,
   .paragrph-another {
     font-size: 1.8rem;

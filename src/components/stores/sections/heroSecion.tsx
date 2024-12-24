@@ -1,16 +1,20 @@
 import React from "react"
 import Image from "next/image"
-import Link from "next/link"
 
 // Components
 import Grid from "@mui/material/Grid2"
 
 // Images & Icons
 import store from "../../../../public/images/store/store.svg"
+import { Button } from "@mui/material"
 
 const HeroSecion = () => {
+  const goToWhatsApp = () => {
+    window.open("http://wa.me/96877276659", "_target")
+  }
+
   return (
-    <div className="heroSection">
+    <div className="heroSection" id="goToHome">
       <Grid
         container
         spacing={{ xs: 6, md: 12 }}
@@ -36,10 +40,10 @@ const HeroSecion = () => {
             <p>صمم متجرك الإلكتروني الآن من خلال واجهة وخدمات تتيح لك التحكم الكامل من الدفع الى الشحن بكل سلاسة.</p>
 
             <div className="actions">
-              <Link href="" className="bg">
-                ابدأ الآن
-              </Link>
-              <Link href="">تواصل معنا</Link>
+              <Button>ابدأ الآن</Button>
+              <Button onClick={goToWhatsApp} sx={{ background: "transparent" }} className="transparent">
+                تواصل معنا
+              </Button>
             </div>
           </div>
         </Grid>

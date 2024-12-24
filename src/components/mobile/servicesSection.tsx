@@ -22,7 +22,7 @@ import feature13 from "../../../public/images/features/feature13.svg"
 import feature14 from "../../../public/images/features/feature14.svg"
 import feature15 from "../../../public/images/features/feature15.svg"
 import feature16 from "../../../public/images/features/feature16.svg"
-import Link from "next/link"
+import { Button } from "@mui/material"
 
 const features = [
   {
@@ -91,7 +91,11 @@ const features = [
   },
 ]
 
-const featuresSection = () => {
+const ServicesSection = () => {
+  const goToWhatsApp = () => {
+    window.open("http://wa.me/96877276659", "_target")
+  }
+
   return (
     <div className="featuresSection">
       <Grid
@@ -142,11 +146,11 @@ const featuresSection = () => {
           ))}
         </Grid>
         <Grid size={{ xs: 12 }}>
-          <Link href="">اطلب الأن تطبيقك</Link>
+          <Button onClick={goToWhatsApp}>اطلب الأن تطبيقك</Button>
         </Grid>
       </Grid>
     </div>
   )
 }
 
-export default featuresSection
+export default ServicesSection

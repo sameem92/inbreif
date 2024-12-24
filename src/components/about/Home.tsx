@@ -1,6 +1,6 @@
 "use client"
 
-import { Box, Container, List, ListItem, ListItemText, Typography, Grid, useMediaQuery } from "@mui/material"
+import { Box, Container, List, ListItem, ListItemText, Typography, Grid, useMediaQuery, Grid2 } from "@mui/material"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Social from "@/components/tools/social/social"
@@ -81,7 +81,7 @@ export default function Home() {
           <Container
             sx={{
               display: "flex",
-              gap: { xs: "6rem", lg: "15rem" },
+              gap: { xs: "5rem", lg: "10rem" },
               flexDirection: "column",
             }}
             maxWidth="lg"
@@ -92,82 +92,83 @@ export default function Home() {
               viewport={isMobile ? { once: true } : { once: true, amount: 0.3 }}
               transition={{ duration: 0.8 }}
             >
-              <Box
-                sx={{
-                  margin: "0 auto",
-                  width: { xs: "86%", md: "92%", lg: "100%" },
-                }}
-              >
-                <Grid container spacing={6} alignItems="center" justifyContent="center">
-                  <Grid item xs={12} sm={6}>
-                    <Box
-                      sx={{
-                        width: "100%",
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: { xs: "2rem", lg: "3.6rem" },
-                      }}
-                    >
-                      <Typography
-                        variant="h3"
-                        sx={{
-                          fontSize: { xs: "2.8rem", lg: "3.6rem" },
-                          fontWeight: 600,
-                          lineHeight: "5.6rem",
-                          letterSpacing: "-1.44px",
-                          color: "#E1E42A",
-                        }}
-                      >
-                        المميزات
-                      </Typography>
-                      <Typography
-                        variant="h3"
-                        sx={{
-                          fontSize: { xs: "2rem", lg: "2.7rem" },
-                          fontWeight: 400,
-                          lineHeight: "3.7rem",
-                          color: "#fff",
-                        }}
-                      >
-                        نسعى لأن نكون الوجهة الأولى للعملاء الذين يبحثون عن حلول رقمية متكاملة. نؤمن بقوة التكنولوجيا في
-                        تحسين الأعمال وتحقيق النجاح، ونعمل بجد لتوفير كل ما يلزم لتحقيق رؤى عملائنا.
-                      </Typography>
-                    </Box>
-                  </Grid>
-
-                  {/* Image */}
-                  <Grid
-                    item
-                    xs={12}
-                    sm={6}
+              <Grid2 container alignItems="center" justifyContent="space-between" gap="20px">
+                <Grid2 size={{ xs: 12, md: 5 }}>
+                  <Box
                     sx={{
+                      width: "100%",
                       display: "flex",
-                      alignItems: "center",
-                      justifyContent: "flex-end",
+                      flexDirection: "column",
+                      gap: { xs: "2rem", lg: "3.6rem" },
+                      marginTop: "140px",
+                      "@media(max-width:1100px)": {
+                        marginTop: "120px",
+                      },
+                      "@media(max-width:991px)": {
+                        marginTop: "100px",
+                      },
+                      "@media(max-width:900px)": {
+                        marginTop: "0px",
+                      },
                     }}
                   >
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={isMobile ? { once: true } : { once: true, amount: 0.3 }}
-                      transition={{ duration: 0.8 }}
+                    <Typography
+                      variant="h3"
+                      sx={{
+                        fontSize: { xs: "2.8rem", lg: "3.6rem" },
+                        fontWeight: 600,
+                        lineHeight: "5.6rem",
+                        letterSpacing: "-1.44px",
+                        color: "#E1E42A",
+                      }}
                     >
-                      <Image
-                        src={distinguishes}
-                        style={{
-                          maxWidth: "55rem",
-                          width: "100%",
-                          height: "auto",
-                        }}
-                        loading="lazy"
-                        alt="one"
-                        blurDataURL={dynamicBlurDataUrl}
-                        placeholder="blur"
-                      />
-                    </motion.div>
-                  </Grid>
-                </Grid>
-              </Box>
+                      ما يميزنا
+                    </Typography>
+                    <Typography
+                      variant="h3"
+                      sx={{
+                        fontSize: { xs: "2rem", lg: "2.7rem" },
+                        fontWeight: 400,
+                        lineHeight: "3.7rem",
+                        color: "#fff",
+                      }}
+                    >
+                      نسعى لأن نكون الوجهة الأولى للعملاء الذين يبحثون عن حلول رقمية متكاملة. نؤمن بقوة التكنولوجيا في
+                      تحسين الأعمال وتحقيق النجاح، ونعمل بجد لتوفير كل ما يلزم لتحقيق رؤى عملائنا.
+                    </Typography>
+                  </Box>
+                </Grid2>
+
+                {/* Image */}
+                <Grid2
+                  size={{ xs: 12, md: 6 }}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "flex-end",
+                  }}
+                >
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={isMobile ? { once: true } : { once: true, amount: 0.3 }}
+                    transition={{ duration: 0.8 }}
+                  >
+                    <Image
+                      src={distinguishes}
+                      style={{
+                        maxWidth: "55rem",
+                        width: "100%",
+                        height: "auto",
+                      }}
+                      loading="lazy"
+                      alt="one"
+                      blurDataURL={dynamicBlurDataUrl}
+                      placeholder="blur"
+                    />
+                  </motion.div>
+                </Grid2>
+              </Grid2>
             </motion.div>
 
             {/* Values Section */}
@@ -177,129 +178,135 @@ export default function Home() {
               viewport={isMobile ? { once: true } : { once: true, amount: 0.3 }}
               transition={{ duration: 0.8 }}
             >
-              <Box
-                sx={{
-                  margin: "0 auto",
-                  width: { xs: "86%", md: "92%", lg: "100%" },
-                }}
-              >
-                <Grid container spacing={6} alignItems="center" justifyContent="center">
-                  <Grid
-                    item
-                    xs={12}
-                    sm={6}
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "flex-start",
-                      order: { xs: 2, sm: 1 },
+              <Grid2 container alignItems="center" justifyContent="space-between" gap="20px">
+                <Grid2
+                  size={{ xs: 12, md: 6 }}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    order: { xs: 2, sm: 1 },
+                  }}
+                >
+                  <Image
+                    src={values}
+                    style={{
+                      maxWidth: "55rem",
+                      width: "100%",
+                      height: "auto",
                     }}
-                  >
-                    <Image
-                      src={values}
-                      style={{
-                        maxWidth: "55rem",
-                        width: "100%",
-                        height: "auto",
-                      }}
-                      loading="lazy"
-                      alt="two"
-                      blurDataURL={dynamicBlurDataUrl}
-                      placeholder="blur"
-                    />
-                  </Grid>
+                    loading="lazy"
+                    alt="two"
+                    blurDataURL={dynamicBlurDataUrl}
+                    placeholder="blur"
+                  />
+                </Grid2>
 
-                  {/* Values Text */}
-                  <Grid item xs={12} sm={6} sx={{ order: { xs: 1, sm: 2 } }}>
-                    <motion.div
-                      initial={{ opacity: 0, y: 50 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={isMobile ? { once: true } : { once: true, amount: 0.3 }}
-                      transition={{ duration: 0.8 }}
+                {/* Values Text */}
+                <Grid2
+                  size={{ xs: 12, md: 5 }}
+                  sx={{
+                    order: { xs: 1, md: 2 },
+                    marginTop: "150px",
+                    "@media(max-width:1100px)": {
+                      marginTop: "120px",
+                    },
+                    "@media(max-width:991px)": {
+                      marginTop: "100px",
+                    },
+                    "@media(max-width:900px)": {
+                      marginTop: "0px",
+                    },
+                  }}
+                >
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={isMobile ? { once: true } : { once: true, amount: 0.3 }}
+                    transition={{ duration: 0.8 }}
+                  >
+                    <Box
+                      sx={{
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        gap: { xs: "2rem", lg: "3.6rem" },
+                      }}
                     >
-                      <Box
+                      <Typography
+                        variant="h3"
                         sx={{
-                          width: "100%",
-                          display: "flex",
-                          flexDirection: "column",
-                          gap: { xs: "2rem", lg: "3.6rem" },
+                          fontSize: { xs: "2.8rem", lg: "3.6rem" },
+                          fontWeight: 600,
+                          lineHeight: "4rem",
+                          letterSpacing: "-1.44px",
+                          color: "#E1E42A",
                         }}
                       >
-                        <Typography
-                          variant="h3"
-                          sx={{
-                            fontSize: { xs: "2.8rem", lg: "3.6rem" },
-                            fontWeight: 600,
-                            lineHeight: "4rem",
-                            letterSpacing: "-1.44px",
-                            color: "#fff",
-                          }}
-                        >
-                          قيمنا
-                        </Typography>
-                        <List
-                          sx={{
-                            listStyleType: "disc",
-                            listStylePosition: "inside",
-                          }}
-                        >
-                          <ListItem sx={{ padding: "0" }}>
-                            <ListItemText
-                              primary={
-                                <Typography
-                                  sx={{
-                                    fontSize: { xs: "2rem", lg: "2.7rem" },
-                                    fontWeight: 400,
-                                    lineHeight: "3.7rem",
-                                    color: "#fff",
-                                  }}
-                                >
-                                  <span style={{ color: "#E1E42A" }}>الابتكار :</span>
-                                  نسعى دائمًا لتقديم أفكار جديدة وحلول مبتكرة.
-                                </Typography>
-                              }
-                            />
-                          </ListItem>
-                          <ListItem sx={{ padding: "0" }}>
-                            <ListItemText
-                              primary={
-                                <Typography
-                                  sx={{
-                                    fontSize: { xs: "2rem", lg: "2.7rem" },
-                                    fontWeight: 400,
-                                    lineHeight: "3.7rem",
-                                    color: "#fff",
-                                  }}
-                                >
-                                  <span style={{ color: "#E1E42A" }}>الجودة :</span>
-                                  نلتزم بتقديم أعلى معايير الجودة.
-                                </Typography>
-                              }
-                            />
-                          </ListItem>
-                          <ListItem sx={{ padding: "0" }}>
-                            <ListItemText
-                              primary={
-                                <Typography
-                                  sx={{
-                                    fontSize: { xs: "2rem", lg: "2.7rem" },
-                                    fontWeight: 400,
-                                    lineHeight: "3.7rem",
-                                    color: "#fff",
-                                  }}
-                                >
-                                  <span style={{ color: "#E1E42A" }}>الشفافية :</span>
-                                  نؤمن ببناء علاقات قائمة على الثقة مع عملائنا.
-                                </Typography>
-                              }
-                            />
-                          </ListItem>
-                        </List>
-                      </Box>
-                    </motion.div>
-                  </Grid>
-                </Grid>
-              </Box>
+                        قيمنا
+                      </Typography>
+                      <List
+                        sx={{
+                          listStyleType: "disc",
+                          listStylePosition: "inside",
+                        }}
+                      >
+                        <ListItem sx={{ padding: "0" }}>
+                          <ListItemText
+                            primary={
+                              <Typography
+                                sx={{
+                                  fontSize: { xs: "2rem", lg: "2.7rem" },
+                                  fontWeight: 400,
+                                  lineHeight: "3.7rem",
+                                  color: "#fff",
+                                }}
+                              >
+                                <span style={{ color: "#E1E42A" }}>الابتكار :</span>
+                                نسعى دائمًا لتقديم أفكار جديدة وحلول مبتكرة.
+                              </Typography>
+                            }
+                          />
+                        </ListItem>
+                        <ListItem sx={{ padding: "0" }}>
+                          <ListItemText
+                            primary={
+                              <Typography
+                                sx={{
+                                  fontSize: { xs: "2rem", lg: "2.7rem" },
+                                  fontWeight: 400,
+                                  lineHeight: "3.7rem",
+                                  color: "#fff",
+                                }}
+                              >
+                                <span style={{ color: "#E1E42A" }}>الجودة :</span>
+                                نلتزم بتقديم أعلى معايير الجودة.
+                              </Typography>
+                            }
+                          />
+                        </ListItem>
+                        <ListItem sx={{ padding: "0" }}>
+                          <ListItemText
+                            primary={
+                              <Typography
+                                sx={{
+                                  fontSize: { xs: "2rem", lg: "2.7rem" },
+                                  fontWeight: 400,
+                                  lineHeight: "3.7rem",
+                                  color: "#fff",
+                                }}
+                              >
+                                <span style={{ color: "#E1E42A" }}>الشفافية :</span>
+                                نؤمن ببناء علاقات قائمة على الثقة مع عملائنا.
+                              </Typography>
+                            }
+                          />
+                        </ListItem>
+                      </List>
+                    </Box>
+                  </motion.div>
+                </Grid2>
+              </Grid2>
             </motion.div>
 
             {/* Team Section */}
@@ -315,7 +322,7 @@ export default function Home() {
               <Box
                 className="border"
                 sx={{
-                  width: { xs: "90%", lg: "100%" },
+                  width: { xs: "100%" },
                   margin: "0 auto",
                   gap: { xs: "2rem", lg: "3.6rem" },
                   display: "flex",

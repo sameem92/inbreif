@@ -55,7 +55,6 @@ export const metadata = {
       "Inbrief is a leading software development and marketing company in the MENA region, offering comprehensive solutions in web development, mobile applications, digital marketing, UX/UI design, and branding.",
     site: "@inbriefmena",
     creator: "@inbriefmena",
-    images: ["https://example.com/your-image.jpg"],
   },
 }
 

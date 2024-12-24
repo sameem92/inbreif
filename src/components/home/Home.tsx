@@ -4,7 +4,7 @@
 import Image from "next/image"
 
 // Components
-import { Box, Container, Link, Card, CardContent, Typography, Grid } from "@mui/material"
+import { Box, Container, Link, Card, CardContent, Typography, Grid, Button } from "@mui/material"
 import { motion } from "framer-motion" // Import framer-motion
 import Feedback from "@/components/tools/feedback/feedback"
 import Form from "@/components/tools/form/form"
@@ -28,6 +28,10 @@ const items = [
 ]
 
 export default function Home() {
+  const goToWhatsApp = () => {
+    window.open("http://wa.me/96877276659", "_target")
+  }
+
   return (
     <>
       <Social />
@@ -71,7 +75,7 @@ export default function Home() {
             >
               المنصة الأقوى في البرمجيات والتسويق في العالم العربي.
             </motion.h1>
-            <Link
+            <Button
               sx={{
                 display: "flex",
                 justifyContent: "center",
@@ -91,11 +95,10 @@ export default function Home() {
                 lineHeight: "1.6rem",
                 textDecoration: "none",
               }}
-              href="http://wa.me/96877276659"
-              target="_blank"
+              onClick={goToWhatsApp}
             >
               اطلب استشارة مجانية
-            </Link>
+            </Button>
           </Container>
 
           <motion.div

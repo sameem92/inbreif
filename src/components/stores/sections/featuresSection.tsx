@@ -7,6 +7,7 @@ import Grid from "@mui/material/Grid2"
 // Images & Icons
 import checked from "../../../../public/icons/checkedIcon.svg"
 import available from "../../../../public/icons/availableIcon.svg"
+import { Button } from "@mui/material"
 
 const features = [
   "عدد المنتجات",
@@ -70,7 +71,7 @@ const packages = [
       "checked",
       "checked",
       "checked",
-      "دعم فني واتساب في أوقات الدوام",
+      "أوقات الدوام",
     ],
   },
   {
@@ -103,7 +104,7 @@ const packages = [
       "checked",
       "checked",
       "checked",
-      "دعم فني واتساب ٢٤ ساعة",
+      "٢٤ ساعة",
     ],
   },
 ]
@@ -170,9 +171,14 @@ const FeaturesSection = () => {
                   <div className="packageHead">
                     <h4>{item.title}</h4>
 
-                    <button>الإشتراك الآن</button>
-
-                    <a href="">المزيد من التفاصيل</a>
+                    <Button
+                      sx={{
+                        background: i === 1 ? "#e0e324" : "transparent",
+                        borderColor: i === 1 ? "transparent" : "#e1e42a",
+                      }}
+                    >
+                      الإشتراك الآن
+                    </Button>
                   </div>
 
                   <ul>

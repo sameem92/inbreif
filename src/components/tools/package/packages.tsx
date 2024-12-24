@@ -5,7 +5,7 @@ import style from "./styles/packges.module.scss"
 
 // Components
 import Grid from "@mui/material/Grid2"
-import { Box, Tab, Tabs } from "@mui/material"
+import { Box, Button, Tab, Tabs } from "@mui/material"
 
 // Icons
 import checked from "../../../../public/icons/checkedIcon.svg"
@@ -84,6 +84,10 @@ const Packages = () => {
     setValue(newValue)
   }
 
+  const goToWhatsApp = () => {
+    window.open("http://wa.me/96877276659", "_target")
+  }
+
   return (
     <div className={`${style.packagesSection} package`}>
       <Grid
@@ -155,8 +159,17 @@ const Packages = () => {
                             </li>
                           ))}
                         </ul>
-                        <button>الإشتراك الآن</button>
-                        <a href="">المزيد من التفاصيل</a>
+                        <Button
+                          sx={{
+                            background: i === 1 ? "#E0E324" : "transparent",
+                            borderColor: i === 1 ? "transparent" : "#e1e42a",
+                          }}
+                        >
+                          الإشتراك الآن
+                        </Button>
+                        <a href="http://wa.me/96877276659" target="_blank" rel="noopener noreferrer">
+                          المزيد من التفاصيل
+                        </a>
                       </div>
                     </div>
                   </Grid>
@@ -169,7 +182,14 @@ const Packages = () => {
 
                       <p>يمكنك تخصيص باقتك وفقا لاحتياجاتك الخاصةمما يتيح لك اختيار الخدمات التي تناسب نشاطك</p>
 
-                      <button>تواصل معنا</button>
+                      <Button
+                        onClick={goToWhatsApp}
+                        sx={{
+                          background: "transparent",
+                        }}
+                      >
+                        تواصل معنا
+                      </Button>
                     </div>
                   </div>
                 </Grid>
@@ -198,8 +218,17 @@ const Packages = () => {
                             </li>
                           ))}
                         </ul>
-                        <button>الإشتراك الآن</button>
-                        <a href="">المزيد من التفاصيل</a>
+                        <Button
+                          sx={{
+                            background: i === 1 ? "#E0E324" : "transparent",
+                            borderColor: i === 1 ? "transparent" : "#e1e42a",
+                          }}
+                        >
+                          الإشتراك الآن
+                        </Button>
+                        <a href="http://wa.me/96877276659" target="_blank" rel="noopener noreferrer">
+                          المزيد من التفاصيل
+                        </a>
                       </div>
                     </div>
                   </Grid>
@@ -212,7 +241,14 @@ const Packages = () => {
 
                       <p>يمكنك تخصيص باقتك وفقا لاحتياجاتك الخاصةمما يتيح لك اختيار الخدمات التي تناسب نشاطك</p>
 
-                      <button>تواصل معنا</button>
+                      <Button
+                        sx={{
+                          background: "transparent",
+                        }}
+                        onClick={goToWhatsApp}
+                      >
+                        تواصل معنا
+                      </Button>
                     </div>
                   </div>
                 </Grid>

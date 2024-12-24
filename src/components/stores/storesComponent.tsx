@@ -15,10 +15,13 @@ import ExpansionSecton from "./sections/expansionSecton"
 import TopServicesSecton from "./sections/topServicesSecton"
 import MainFeaturesSection from "./sections/mainFeaturesSection"
 import Packages from "../tools/package/packages"
+import Social from "../tools/social/social"
 
 const StoresPage = () => {
   return (
     <div className={style.storesComponent}>
+      <Social />
+
       <HeroSecion />
 
       <MainFeaturesSection />

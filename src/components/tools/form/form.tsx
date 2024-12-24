@@ -82,12 +82,12 @@ export default function Form() {
         zIndex: "1",
         padding: "100px 10rem 100px",
         "@media (max-width: 1340px)": {
-          padding: "100px 2rem",
-        },
-        "@media (max-width: 1240px)": {
-          padding: "100px 1rem",
+          padding: "100px 10rem",
         },
         "@media (max-width: 992px)": {
+          padding: "100px 5rem",
+        },
+        "@media (max-width: 480px)": {
           padding: "100px 2rem",
         },
       }}
@@ -203,7 +203,9 @@ export default function Form() {
                 viewport={animation}
                 style={{ width: "60%", margin: "0 auto" }}
               >
-                <Alert severity="success">تم استلام رسالتك بنجاح</Alert>
+                <Alert severity="success" style={{ borderRadius: "52px" }}>
+                  تم استلام رسالتك بنجاح
+                </Alert>
               </motion.div>
             )}
           </Box>
