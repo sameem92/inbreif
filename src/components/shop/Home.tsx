@@ -67,6 +67,9 @@ export default function Home() {
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "100% center",
                 backgroundSize: "80% 90%",
+                "@media(max-width:900px)": {
+                  backgroundPosition: "center",
+                },
               }}
             >
               <Grid item xs={12} md={6}>
@@ -78,6 +81,16 @@ export default function Home() {
                     justifyContent: { xs: "center", md: "flex-start" },
                     width: "100%",
                     gap: { xs: "2rem", md: "5rem" },
+                    "@media(max-width:900px)": {
+                      ".main-title": {
+                        textAlign: "center",
+                      },
+                    },
+                    "@media(max-width:480px)": {
+                      ".main-title": {
+                        fontSize: "3.5rem",
+                      },
+                    },
                   }}
                 >
                   <motion.h1

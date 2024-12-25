@@ -13,6 +13,13 @@ const HeroSecion = () => {
     window.open("http://wa.me/96877276659", "_target")
   }
 
+  const scrollToPackages = () => {
+    const packagesSection = document.getElementById("packages")
+    if (packagesSection) {
+      packagesSection.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   return (
     <div className="heroSection" id="goToHome">
       <Grid
@@ -40,7 +47,7 @@ const HeroSecion = () => {
             <p>صمم متجرك الإلكتروني الآن من خلال واجهة وخدمات تتيح لك التحكم الكامل من الدفع الى الشحن بكل سلاسة.</p>
 
             <div className="actions">
-              <Button>ابدأ الآن</Button>
+              <Button onClick={scrollToPackages}>ابدأ الآن</Button>
               <Button onClick={goToWhatsApp} sx={{ background: "transparent" }} className="transparent">
                 تواصل معنا
               </Button>

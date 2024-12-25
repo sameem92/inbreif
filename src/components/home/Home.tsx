@@ -4,13 +4,14 @@
 import Image from "next/image"
 
 // Components
-import { Box, Container, Link, Card, CardContent, Typography, Grid, Button } from "@mui/material"
+import { Box, Container, Card, CardContent, Typography, Grid, Button } from "@mui/material"
 import { motion } from "framer-motion" // Import framer-motion
 import Feedback from "@/components/tools/feedback/feedback"
 import Form from "@/components/tools/form/form"
 import Services from "@/components/home/Services"
 import Social from "@/components/tools/social/social"
 import { dynamicBlurDataUrl } from "@/lib"
+import { ReactTyped } from "react-typed"
 
 const items = [
   {
@@ -73,7 +74,12 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              المنصة الأقوى في البرمجيات والتسويق في العالم العربي.
+              <ReactTyped
+                backSpeed={60}
+                strings={["المنصة الأقوى في البرمجيات والتسويق في العالم العربي.", "باختصار نصل بك إلى النجاح الرقمي."]}
+                typeSpeed={60}
+                loop={true}
+              />
             </motion.h1>
             <Button
               sx={{
@@ -110,7 +116,6 @@ export default function Home() {
             <Container sx={{ display: "flex", justifyContent: "center", gap: "2.4rem" }} maxWidth="lg">
               <Box
                 sx={{
-                  width: { xs: "75%", lg: "84.3%" },
                   paddingBottom: "4.8rem",
                   position: "relative",
                   top: "5.8rem",
@@ -145,6 +150,7 @@ export default function Home() {
                             flexDirection: "column",
                             justifyContent: "center",
                             alignItems: "center",
+                            minWidth: "215px",
                             padding: {
                               xs: ".6rem",
                               md: "1rem 0.5rem",
@@ -158,6 +164,9 @@ export default function Home() {
                             },
                             "&:hover": {
                               border: "1px solid #E0E324",
+                            },
+                            "@media(max-width:991px)": {
+                              minWidth: "200px",
                             },
                           }}
                           className="border"
@@ -183,7 +192,6 @@ export default function Home() {
                             <Typography
                               variant="h6"
                               sx={{
-                                // fontFamily: "var(--font-ibm-plex-sans-arabic)",
                                 fontSize: {
                                   xs: "1.8rem",
                                   md: "1.6rem",

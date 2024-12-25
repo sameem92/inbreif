@@ -75,19 +75,19 @@ const SliderS1: React.FC<{ images: string[] }> = ({ images }) => {
               breakpoints={{
                 1: {
                   slidesPerView: 1,
-                  spaceBetween: 10,
+                  spaceBetween: 20,
                 },
-                768: {
+                480: {
                   slidesPerView: 2,
                   spaceBetween: 20,
                 },
                 992: {
-                  slidesPerView: 3,
+                  slidesPerView: 4,
                   spaceBetween: 30,
                 },
                 1280: {
-                  slidesPerView: 3,
-                  spaceBetween: 60,
+                  slidesPerView: 4,
+                  spaceBetween: 30,
                 },
               }}
             >
@@ -100,7 +100,6 @@ const SliderS1: React.FC<{ images: string[] }> = ({ images }) => {
                       src={img}
                       alt={`Slide ${i}`}
                       className="image-zoom"
-                      layout="responsive"
                       width={500}
                       height={300}
                       loading="lazy"

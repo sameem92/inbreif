@@ -57,7 +57,9 @@ const TemplatesSection = () => {
           <SliderS2 products={products} />
         </Grid>
         <Grid size={{ xs: 12 }}>
-          <a href="">اطلب معاينة القوالب المميزة</a>
+          <a href="http://wa.me/96877276659" target="_blank" rel="noopener noreferrer">
+            اطلب معاينة القوالب المميزة
+          </a>
         </Grid>
       </Grid>
     </div>

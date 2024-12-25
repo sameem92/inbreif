@@ -617,6 +617,7 @@ button:hover:disabled {
 .swiper-slide img {
   display: block;
   width: 100%;
+  object-fit: cover;
 }
 
 .mySwiper-work .swiper-slide img {
@@ -641,13 +642,13 @@ button:hover:disabled {
 .image-zoom {
   transition: transform 0.3s ease;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   border-radius: inherit;
 }
 
 .swiper-slide .image-container img {
   object-fit: cover !important;
-  height: 100% !important;
+  /* height: 100% !important; */
 }
 
 .image-zoom:hover {
@@ -845,7 +846,7 @@ a {
     gap: 2rem;
   }
   .tab {
-    font-size: 1.6rem !important;
+    font-size: 1.8rem !important;
     padding: 1rem 2.4rem !important;
   }
 }
@@ -966,12 +967,15 @@ a {
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 2.2rem; /* 157.143% */
+  line-height: 3rem; /* 157.143% */
 }
 @media screen and (max-width: 900px) {
   .title-h3-2 {
     font-size: 2.4rem;
     text-align: center;
+  }
+  .shop-list li {
+    font-size: 2rem;
   }
 }
 @media screen and (max-width: 768px) {

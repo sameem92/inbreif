@@ -169,17 +169,21 @@ const Section = ({ section }) => (
             display: "flex",
             justifyContent: "center",
             gap: { xs: "4rem", md: "5rem", lg: "6rem" },
-
             width: "100%",
           }}
         >
           <Box sx={{ width: "100%" }}>
             <Grid container spacing={3} justifyContent="center">
               {section.items.map((item, index) => (
-                <Grid item key={index} xs={12} sm={6} md={4}>
-                  <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 200, damping: 10 }}>
+                <Grid item key={index} xs={12} sm={6} md={4} alignSelf="stretch">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 200, damping: 10 }}
+                    style={{ height: "100%" }}
+                  >
                     <Card
                       sx={{
+                        height: "100%",
                         background:
                           "linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
                         backdropFilter: "blur(5px)",
@@ -188,8 +192,13 @@ const Section = ({ section }) => (
                         flexDirection: "column",
                         padding: { xs: "1.2rem", xl: "1.6rem 3rem" },
                         gap: "2.4rem",
-                        height: { xs: "auto", md: "30rem", lg: "28.4rem" },
                         "&:hover": { border: "1px solid #E0E324" },
+                        "@media(max-width:900px": {
+                          minHeight: "330px",
+                        },
+                        "@media(max-width:480px": {
+                          minHeight: "auto",
+                        },
                       }}
                     >
                       <CardContent
@@ -216,7 +225,7 @@ const Section = ({ section }) => (
                             lineHeight: "2.2rem",
                             color: "#ffffff",
                             textAlign: "left",
-                            marginTop: "1.2rem",
+                            margin: "1.2rem 0",
                             opacity: "0.9",
                           }}
                         >
@@ -253,7 +262,7 @@ export default function Design() {
           display: "flex",
           flexDirection: "column",
           padding: { xs: "6rem 0", md: "10rem 0", xl: "15rem 0" },
-          gap: { xs: "8rem", md: "10rem", xl: "15rem" },
+          gap: { xs: "8rem", md: "10rem" },
         }}
         maxWidth="lg"
       >

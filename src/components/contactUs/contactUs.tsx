@@ -76,6 +76,7 @@ export default function ContactUsComponent() {
   const [email, setEmail] = React.useState("")
   const [phone, setPhone] = React.useState("")
   const [emailValid, setEmailValid] = React.useState(false)
+  const [phoneValid, setPhoneValid] = React.useState(false)
   const [service, setService] = React.useState("استفسارات اخري")
   const [message, setMessage] = React.useState("")
   const [loading, setLoading] = useState(false)
@@ -88,6 +89,14 @@ export default function ContactUsComponent() {
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     setEmailValid(emailRegex.test(emailValue))
+  }
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const phone = e.target.value
+    setPhone(phone)
+
+    const valid = phone.trim().length >= 8
+    setPhoneValid(valid)
   }
 
   const handleSubmit = async () => {
@@ -240,7 +249,8 @@ export default function ContactUsComponent() {
                 fullWidth
                 type="text"
                 value={phone}
-                onChange={(e) => setPhone(e.target.value)}
+                onChange={handlePhoneChange}
+                helperText={!phoneValid && phone !== "" ? "يجب ان لا يقل رقم الجوال عن ٨ ارقام" : ""}
                 sx={textStyle}
               />
             </Box>
@@ -441,7 +451,7 @@ export default function ContactUsComponent() {
 
             <Button
               onClick={handleSubmit}
-              disabled={!emailValid || loading}
+              disabled={(!emailValid && !phoneValid) || loading}
               sx={{
                 display: "flex",
                 justifyContent: "center",

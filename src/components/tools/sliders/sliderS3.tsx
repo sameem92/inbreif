@@ -40,11 +40,11 @@ export default function SliderS3({ images }) {
             spaceBetween={24} // Space between slides
             slidesPerView={slidesPerView} // Number of slides visible at once
             loop={true} // Enable infinite loop
-            autoplay={{
-              delay: 0,
-              disableOnInteraction: false, // Continue autoplay after user interaction
-              pauseOnMouseEnter: true, // Pause autoplay when hovered
-            }}
+            // autoplay={{
+            //   delay: 0,
+            //   disableOnInteraction: false, // Continue autoplay after user interaction
+            //   pauseOnMouseEnter: true, // Pause autoplay when hovered
+            // }}
             allowTouchMove={true}
             speed={2000} // Speed of slide transition
             modules={[Autoplay]} // Add Autoplay module

@@ -237,7 +237,7 @@ export default function Design() {
           alignItems: "center",
           justifyContent: "center",
           gap: "4.8rem",
-          padding: { xs: "5.3rem 0", md: "15rem 0" },
+          padding: { xs: "5.3rem 0", md: "10rem 0", lg: "15rem 0" },
         }}
       >
         <Box
@@ -248,6 +248,11 @@ export default function Design() {
             justifyContent: "space-between",
             width: "100%",
             padding: { xs: "0 2rem" },
+            "@media (max-width: 991px)": {
+              flexWrap: "wrap",
+              justifyContent: "center",
+              flexDirection: "row-reverse",
+            },
             "@media(max-width:480px)": {
               flexWrap: "wrap",
               justifyContent: "center",
@@ -256,7 +261,6 @@ export default function Design() {
             },
           }}
         >
-          {/* {!isMobile && ( */}
           <Button
             ref={prevButtonRef}
             sx={{
@@ -279,8 +283,8 @@ export default function Design() {
               "&:hover svg": {
                 marginRight: "1rem",
               },
-              "@media(max-width:480px)": {
-                order: 3,
+              "@media (max-width: 991px)": {
+                order: "2",
               },
             }}
             disabled={isBeginning}
@@ -294,7 +298,6 @@ export default function Design() {
               />
             </svg>
           </Button>
-          {/* )} */}
 
           <Swiper
             centeredSlides={true}
@@ -325,7 +328,6 @@ export default function Design() {
             ))}
           </Swiper>
 
-          {/* {!isMobile && ( */}
           <Button
             ref={nextButtonRef}
             sx={{
@@ -361,7 +363,6 @@ export default function Design() {
               />
             </svg>
           </Button>
-          {/* )} */}
         </Box>
       </Container>
     </>

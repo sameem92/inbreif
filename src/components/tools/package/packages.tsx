@@ -89,7 +89,7 @@ const Packages = () => {
   }
 
   return (
-    <div className={`${style.packagesSection} package`}>
+    <div className={`${style.packagesSection} package`} id="packages">
       <Grid
         container
         spacing={{ xs: 6, md: 12 }}
