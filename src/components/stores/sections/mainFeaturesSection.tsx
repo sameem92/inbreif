@@ -3,6 +3,7 @@ import Image from "next/image"
 
 // Components
 import Grid from "@mui/material/Grid2"
+import { motion } from "framer-motion"
 
 // Images & Icons
 import feat1 from "../../../../public/images/store/feat1.svg"
@@ -31,9 +32,9 @@ const MainFeaturesSection = () => {
         justifyContent="center"
         alignItems="center"
         sx={{
-          padding: "20rem 20rem 10rem",
+          padding: "100px 20rem",
           "@media (max-width: 1340px)": {
-            padding: "10rem 20rem",
+            padding: "100px 20rem",
           },
           "@media (max-width: 1240px)": {
             padding: "0rem 20rem 10rem",
@@ -45,104 +46,131 @@ const MainFeaturesSection = () => {
             padding: "0rem 10rem 10rem",
           },
           "@media (max-width: 480px)": {
-            padding: "0rem 2rem 10rem",
+            padding: "0rem 2rem 5rem",
           },
         }}
       >
         <Grid size={{ xs: 12 }} display="flex" flexDirection="column" gap="50px">
-          <div className="featureBox">
-            <div className="bg">
-              <div className="content">
-                <h3>متجرك على ذوقك</h3>
-                <p>تصميم مخصص يحمل هويتك التجارية بطريقة احترافية لتعزيز مبيعاتك</p>
-                <ul>
-                  <li>
-                    <Image src={icon1} alt="icon1" />
-                    <span>اختيار من قوالب عديدة</span>
-                  </li>
-                  <li>
-                    <Image src={icon2} alt="icon1" />
-                    <span>امكانية تخصيص ألوان وخطوط هويتك</span>
-                  </li>
-                  <li>
-                    <Image src={icon3} alt="icon1" />
-                    <span>انشاء القالب الخاص بك</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="img">
-                <Image src={feat1} alt="feat1" />
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 10,
+            }}
+          >
+            <div className="featureBox">
+              <div className="bg">
+                <div className="content">
+                  <h3>متجرك على ذوقك</h3>
+                  <p>تصميم مخصص يحمل هويتك التجارية بطريقة احترافية لتعزيز مبيعاتك</p>
+                  <ul>
+                    <li>
+                      <Image src={icon1} alt="icon1" />
+                      <span>اختيار من قوالب عديدة</span>
+                    </li>
+                    <li>
+                      <Image src={icon2} alt="icon1" />
+                      <span>امكانية تخصيص ألوان وخطوط هويتك</span>
+                    </li>
+                    <li>
+                      <Image src={icon3} alt="icon1" />
+                      <span>انشاء القالب الخاص بك</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="img">
+                  <Image src={feat1} alt="feat1" />
+                </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="featureBox">
-            <div className="bg">
-              <div className="content">
-                <h3>مميزات احترافية لجميع الباقات</h3>
-                <p>خدمات ومزايا تعززّ مشروعك وتوسِع إنتشارك</p>
-                <ul>
-                  <li>
-                    <Image src={icon4} alt="icon4" />
-                    <span>نطاق مخصص لمتجرك (دومين)</span>
-                  </li>
-                  <li>
-                    <Image src={icon5} alt="icon5" />
-                    <span>أمان عالي وشهادات حماية</span>
-                  </li>
-                  <li>
-                    <Image src={icon6} alt="icon6" />
-                    <span>عدد عملاء وطلبات غير محدود</span>
-                  </li>
-                  <li>
-                    <Image src={icon7} alt="icon7" />
-                    <span>استضافة زوار بعدد غير محدود</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="img">
-                <Image src={feat2} alt="feat2" />
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 10,
+            }}
+          >
+            <div className="featureBox">
+              <div className="bg">
+                <div className="content">
+                  <h3>مميزات احترافية لجميع الباقات</h3>
+                  <p>خدمات ومزايا تعززّ مشروعك وتوسِع إنتشارك</p>
+                  <ul>
+                    <li>
+                      <Image src={icon4} alt="icon4" />
+                      <span>نطاق مخصص لمتجرك (دومين)</span>
+                    </li>
+                    <li>
+                      <Image src={icon5} alt="icon5" />
+                      <span>أمان عالي وشهادات حماية</span>
+                    </li>
+                    <li>
+                      <Image src={icon6} alt="icon6" />
+                      <span>عدد عملاء وطلبات غير محدود</span>
+                    </li>
+                    <li>
+                      <Image src={icon7} alt="icon7" />
+                      <span>استضافة زوار بعدد غير محدود</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="img">
+                  <Image src={feat2} alt="feat2" />
+                </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="featureBox">
-            <div className="bg">
-              <div className="content">
-                <h3>خدمات تسويقية مُبتكرة</h3>
-                <p>نحول أفكارك لواقع ملموس مدعوم بكافة الخدمات المتقدمة التي تساعدك في زيادة عدد عملائك</p>
-                <ul>
-                  <li>
-                    <Image src={icon8} alt="icon8" />
-                    <span>إستهداف للسلات المتروكة</span>
-                  </li>
-                  <li>
-                    <Image src={icon9} alt="icon9" />
-                    <span>خصم الشحن المجاني</span>
-                  </li>
-                  <li>
-                    <Image src={icon10} alt="icon10" />
-                    <span>إضافة العروض والخصومات</span>
-                  </li>
-                  <li>
-                    <Image src={icon11} alt="icon11" />
-                    <span>إدارة الحملات التسويقية لمتجرك</span>
-                  </li>
-                  <li>
-                    <Image src={icon12} alt="icon12" />
-                    <span>خصومات لعملاء المتجر</span>
-                  </li>
-                  <li>
-                    <Image src={icon13} alt="icon13" />
-                    <span>رسائل نصية تسويقية عبر الإيميل والـ SMS</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="img">
-                <Image src={feat3} alt="feat3" />
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 10,
+            }}
+          >
+            <div className="featureBox">
+              <div className="bg">
+                <div className="content">
+                  <h3>خدمات تسويقية مُبتكرة</h3>
+                  <p>نحول أفكارك لواقع ملموس مدعوم بكافة الخدمات المتقدمة التي تساعدك في زيادة عدد عملائك</p>
+                  <ul>
+                    <li>
+                      <Image src={icon8} alt="icon8" />
+                      <span>إستهداف للسلات المتروكة</span>
+                    </li>
+                    <li>
+                      <Image src={icon9} alt="icon9" />
+                      <span>خصم الشحن المجاني</span>
+                    </li>
+                    <li>
+                      <Image src={icon10} alt="icon10" />
+                      <span>إضافة العروض والخصومات</span>
+                    </li>
+                    <li>
+                      <Image src={icon11} alt="icon11" />
+                      <span>إدارة الحملات التسويقية لمتجرك</span>
+                    </li>
+                    <li>
+                      <Image src={icon12} alt="icon12" />
+                      <span>خصومات لعملاء المتجر</span>
+                    </li>
+                    <li>
+                      <Image src={icon13} alt="icon13" />
+                      <span>رسائل نصية تسويقية عبر الإيميل والـ SMS</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="img">
+                  <Image src={feat3} alt="feat3" />
+                </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </Grid>
       </Grid>
     </div>

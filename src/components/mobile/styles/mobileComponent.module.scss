@@ -7,7 +7,7 @@
         font-size: 40px;
         font-weight: 500;
         line-height: 56px;
-        color: #fff;
+        color: #e1e42a;
       }
     }
 
@@ -40,6 +40,7 @@
 
           img {
             max-height: 100%;
+            max-width: 100%;
           }
         }
 
@@ -90,24 +91,42 @@
       }
 
       .feature .content {
+        min-height: 180px;
         padding: 18px 16px;
         h4 {
           font-size: 18px;
         }
       }
     }
-  }
 
-  @media (max-width: 480px) {
-    .sectionHead h2 {
-      font-size: 25px;
-    }
-    .feature .content h4 {
-      font-size: 16px;
+    @media (min-width: 600px) and (max-width: 845px) {
+      .feature .content {
+        h4 {
+          font-size: 16px;
+          line-height: normal;
+        }
+      }
     }
 
-    a {
-      font-size: 14px;
+    @media (max-width: 480px) {
+      .sectionHead h2 {
+        font-size: 25px;
+      }
+
+      .feature .content {
+        .img {
+          margin-bottom: 10px;
+        }
+
+        h4 {
+          font-size: 14px;
+          line-height: normal;
+        }
+      }
+
+      a {
+        font-size: 14px;
+      }
     }
   }
 }

@@ -13,7 +13,7 @@ import { Autoplay } from "swiper/modules"
 import Image from "next/image"
 import { dynamicBlurDataUrl } from "@/lib"
 
-export default function SliderS3({ images }) {
+export default function SliderS3({ images, className }) {
   const isMobile = useMediaQuery("(max-width: 600px)")
   const isTablet = useMediaQuery("(max-width: 900px)")
   const isTablet2 = useMediaQuery("(max-width: 1240px)")
@@ -40,16 +40,16 @@ export default function SliderS3({ images }) {
             spaceBetween={24} // Space between slides
             slidesPerView={slidesPerView} // Number of slides visible at once
             loop={true} // Enable infinite loop
-            // autoplay={{
-            //   delay: 0,
-            //   disableOnInteraction: false, // Continue autoplay after user interaction
-            //   pauseOnMouseEnter: true, // Pause autoplay when hovered
-            // }}
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: false, // Continue autoplay after user interaction
+              pauseOnMouseEnter: true, // Pause autoplay when hovered
+            }}
             allowTouchMove={true}
             speed={2000} // Speed of slide transition
             modules={[Autoplay]} // Add Autoplay module
             grabCursor={true} // Show grab cursor to indicate draggable
-            className="mySwiper-x"
+            className={`mySwiper-x ${className}`}
           >
             {/* Loop through images */}
             {images.map((src, index) => (

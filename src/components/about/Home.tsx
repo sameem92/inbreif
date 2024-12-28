@@ -260,9 +260,23 @@ export default function Home() {
                                   fontWeight: 400,
                                   lineHeight: "3.7rem",
                                   color: "#fff",
+                                  position: "relative",
+                                  marginInlineStart: "20px",
+                                  "&:before": {
+                                    position: "absolute",
+                                    content: '""',
+                                    left: "-20px",
+                                    flexShrink: 0,
+                                    display: "block",
+                                    height: "8px",
+                                    width: "8px",
+                                    borderRadius: "45%",
+                                    background: "#e1e42a",
+                                    marginTop: "12px",
+                                  },
                                 }}
                               >
-                                <span style={{ color: "#E1E42A" }}>الابتكار :</span>
+                                <span style={{ color: "#E1E42A", flexShrink: 0 }}>الابتكار :</span>
                                 نسعى دائمًا لتقديم أفكار جديدة وحلول مبتكرة.
                               </Typography>
                             }
@@ -277,9 +291,23 @@ export default function Home() {
                                   fontWeight: 400,
                                   lineHeight: "3.7rem",
                                   color: "#fff",
+                                  position: "relative",
+                                  marginInlineStart: "20px",
+                                  "&:before": {
+                                    position: "absolute",
+                                    content: '""',
+                                    left: "-20px",
+                                    flexShrink: 0,
+                                    display: "block",
+                                    height: "8px",
+                                    width: "8px",
+                                    borderRadius: "45%",
+                                    background: "#e1e42a",
+                                    marginTop: "12px",
+                                  },
                                 }}
                               >
-                                <span style={{ color: "#E1E42A" }}>الجودة :</span>
+                                <span style={{ color: "#E1E42A", flexShrink: 0 }}>الجودة :</span>
                                 نلتزم بتقديم أعلى معايير الجودة.
                               </Typography>
                             }
@@ -294,9 +322,23 @@ export default function Home() {
                                   fontWeight: 400,
                                   lineHeight: "3.7rem",
                                   color: "#fff",
+                                  position: "relative",
+                                  marginInlineStart: "20px",
+                                  "&:before": {
+                                    position: "absolute",
+                                    content: '""',
+                                    left: "-20px",
+                                    flexShrink: 0,
+                                    display: "block",
+                                    height: "8px",
+                                    width: "8px",
+                                    borderRadius: "45%",
+                                    background: "#e1e42a",
+                                    marginTop: "12px",
+                                  },
                                 }}
                               >
-                                <span style={{ color: "#E1E42A" }}>الشفافية :</span>
+                                <span style={{ color: "#E1E42A", flexShrink: 0 }}>الشفافية :</span>
                                 نؤمن ببناء علاقات قائمة على الثقة مع عملائنا.
                               </Typography>
                             }

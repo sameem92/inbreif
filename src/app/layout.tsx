@@ -1,4 +1,6 @@
-import "@/assets/style/global.css"
+import "@/styles/sections.scss"
+import "@/styles/global.css"
+
 import { IBM_Plex_Sans_Arabic } from "next/font/google"
 import AppLayout from "@/components/layout/AppLayout"
 

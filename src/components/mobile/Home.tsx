@@ -15,7 +15,7 @@ import style from "./styles/mobileComponent.module.scss"
 
 // Images
 import mobile from "../../../public/images/mobHero.svg"
-import ServicesSection from "./servicesSection"
+import FeaturesSection from "./featuresSection"
 
 const Item = styled(Paper)(() => ({
   backgroundColor: "transparent",
@@ -45,6 +45,7 @@ export default function Home() {
             backgroundRepeat: "no-repeat",
             backgroundPosition: "right top",
             backgroundSize: "65% 90%",
+            gap: "50px 0px",
             "@media (max-width: 1340px)": {
               padding: "20rem 2rem 10rem",
             },
@@ -57,10 +58,11 @@ export default function Home() {
             "@media (max-width: 768px)": {
               backgroundPosition: "50% 75%",
               backgroundSize: "contain",
+              gap: "0px",
             },
           }}
         >
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid size={{ xs: 12, lg: 6 }}>
             <Item
               sx={{
                 display: "flex",
@@ -72,42 +74,47 @@ export default function Home() {
               }}
             >
               <Box
+                className="main-secandry-title"
                 sx={{
-                  color: "white",
-                  fontSize: { xs: "2.6rem", lg: "3.2rem" },
-                  fontStyle: "normal",
-                  fontWeight: "700",
-                  textAlign: { xs: "center", lg: "end" },
-                  lineHeight: "normal",
+                  textAlign: { xs: "center", sm: "start", xl: "end" },
                   position: "relative",
-                  left: { xs: "", lg: "12%" },
+                  left: { xs: "", lg: "45%" },
                   top: { xs: "", lg: "-4rem" },
                   width: "100%",
                 }}
               >
                 تطوير تطبيقات الموبايل
               </Box>
-              <motion.h1
-                className="main-title mobile-title"
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.6 }}
+              <Box
+                sx={{
+                  "@media (max-width:1240px)": {
+                    ".mobile-title": { textAlign: "center" },
+                    ".paragrph-another": { textAlign: "center" },
+                  },
+                }}
               >
-                معنا، تتحول الأفكار إلى واقع
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-                className="paragrph-another"
-              >
-                في InBrief، نلتزم بتقديم تطبيقات متميزة تجمع بين الوظائف الفعالة والتصميم العصري. نحن هنا لمساعدتكم في
-                تحقيق أهدافكم الرقمية.
-              </motion.p>
+                <motion.h1
+                  className="main-title mobile-title"
+                  initial={{ opacity: 0, y: -50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2, duration: 0.6 }}
+                >
+                  معنا، تتحول الأفكار إلى واقع
+                </motion.h1>
+                <motion.p
+                  initial={{ opacity: 0, y: -50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.6 }}
+                  className="paragrph-another"
+                >
+                  في InBrief، نلتزم بتقديم تطبيقات متميزة تجمع بين الوظائف الفعالة والتصميم العصري. نحن هنا لمساعدتكم في
+                  تحقيق أهدافكم الرقمية.
+                </motion.p>
+              </Box>
             </Item>
           </Grid>
 
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid size={{ xs: 12, lg: 6 }}>
             <Item>
               <motion.div
                 initial={{ opacity: 0, y: -50 }}
@@ -149,7 +156,7 @@ export default function Home() {
         <Work />
       </Box>
 
-      <ServicesSection />
+      <FeaturesSection />
 
       <Feedback />
 

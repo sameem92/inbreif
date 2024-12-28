@@ -3,11 +3,11 @@ import Image from "next/image"
 
 // Components
 import Grid from "@mui/material/Grid2"
+import { Button } from "@mui/material"
 
 // Images & Icons
 import checked from "../../../../public/icons/checkedIcon.svg"
 import available from "../../../../public/icons/availableIcon.svg"
-import { Button } from "@mui/material"
 
 const features = [
   "عدد المنتجات",
@@ -129,6 +129,9 @@ const FeaturesSection = () => {
           "@media (max-width: 992px)": {
             padding: "100px 2rem",
           },
+          "@media (max-width: 480px)": {
+            padding: "5rem 2rem",
+          },
         }}
       >
         <Grid size={{ xs: 12 }}>
@@ -146,11 +149,11 @@ const FeaturesSection = () => {
           sx={{
             "@media (max-width: 992px)": {
               justifyContent: "center",
-              gap: "50px",
+              gap: "25px",
             },
           }}
         >
-          <Grid size={{ xs: 12, md: 4 }}>
+          <Grid size={{ xs: 4 }}>
             <div className="featuresCard">
               <h3>المميزات</h3>
 

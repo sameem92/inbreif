@@ -41,6 +41,9 @@ const DeliverySection = () => {
           "@media (max-width: 992px)": {
             padding: "100px 2rem",
           },
+          "@media (max-width: 480px)": {
+            padding: "5rem 2rem",
+          },
         }}
       >
         <Grid size={{ xs: 12 }} container justifyContent="space-between" alignItems="center">
@@ -61,7 +64,7 @@ const DeliverySection = () => {
         </Grid>
       </Grid>
 
-      <SliderS3 images={companies} />
+      <SliderS3 images={companies} className="swiper-y" />
     </div>
   )
 }

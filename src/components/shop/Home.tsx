@@ -1,5 +1,5 @@
 "use client"
-import r from "../../../public/images/rocket.svg"
+import marketing from "../../../public/images/marketing.svg"
 
 import React from "react"
 import { Box, Container, Grid, Button } from "@mui/material"
@@ -44,6 +44,7 @@ export default function Home() {
             display: "flex",
             flexDirection: "column",
             gap: "4.8rem",
+            paddingBottom: "48px",
           }}
         >
           <Container
@@ -144,14 +145,7 @@ export default function Home() {
                       alignItems: "center",
                     }}
                   >
-                    <Image
-                      style={{ maxWidth: "100%" }}
-                      src={r}
-                      blurDataURL={dynamicBlurDataUrl}
-                      placeholder="blur"
-                      loading="lazy"
-                      alt="mobile-apps"
-                    />
+                    <Image style={{ maxWidth: "100%" }} src={marketing} loading="lazy" alt="mobile-apps" />
                   </motion.div>
                 </Item>
               </Grid>

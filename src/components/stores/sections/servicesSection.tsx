@@ -106,6 +106,9 @@ const ServicesSection = () => {
           "@media (max-width: 992px)": {
             padding: "100px 2rem",
           },
+          "@media (max-width: 480px)": {
+            padding: "5rem 2rem",
+          },
         }}
       >
         <Grid size={{ xs: 12 }}>
@@ -116,9 +119,9 @@ const ServicesSection = () => {
             <h2>استمتع بحرية اختيار الإضافات التي تجعل باقتك متكاملة</h2>
           </div>
         </Grid>
-        <Grid size={{ xs: 12 }} container justifyContent="center">
+        <Grid size={{ xs: 12 }} container spacing={{ xs: 2, md: 4 }}>
           {services.map((service) => (
-            <Grid key={service.title} size={{ xs: 12, md: 4, lg: 3 }} display="flex" justifyContent="center">
+            <Grid key={service.title} size={{ xs: 6, sm: 4, md: 3 }}>
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{

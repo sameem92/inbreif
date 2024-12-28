@@ -88,7 +88,7 @@ export default function Form() {
           padding: "100px 5rem",
         },
         "@media (max-width: 480px)": {
-          padding: "100px 2rem",
+          padding: "5rem 2rem",
         },
       }}
     >

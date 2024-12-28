@@ -2,10 +2,11 @@ import React from "react"
 
 // Components
 import Grid from "@mui/material/Grid2"
-import Image from "next/image"
+// import Image from "next/image"
+import { motion } from "framer-motion"
 
 // Images & Icons
-import expansion from "../../../../public/images/store/expansion.svg"
+// import expansion from "../../../../public/images/store/expansion.svg"
 
 const ExpansionSecton = () => {
   return (
@@ -27,6 +28,7 @@ const ExpansionSecton = () => {
             padding: "100px 2rem",
           },
           "@media (max-width: 480px)": {
+            padding: "5rem 2rem",
             gap: 0,
           },
         }}
@@ -38,34 +40,53 @@ const ExpansionSecton = () => {
           </div>
         </Grid>
 
-        <Grid size={{ xs: 12 }} container>
+        <Grid size={{ xs: 12 }} container alignItems="center">
           <Grid size={{ xs: 12, md: 6 }}>
-            <div className="img">
-              <Image src={expansion} alt="expansion" />
-            </div>
+            <video autoPlay muted loop>
+              <source src="/videos/video.mp4" type="video/mp4" />
+            </video>
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
-            <div className="expansionCard">
-              <div className="content">
-                <h3>توسيع نطاق الوصول وزيادة المبيعات</h3>
-                <ul>
-                  <li>
-                    عرض منتجاتك مباشرة على كتالوج الواتساب بيزنس الخاص بك مما يتيح لعملائك الوصول إليها والتسوق بسهولة.
-                  </li>
-                  <li>إنشاء حملات إعلانية للكتالوج الخاص بك على منصات التواصل الاجتماعي.</li>
-                </ul>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 10,
+              }}
+            >
+              <div className="expansionCard">
+                <div className="content">
+                  <h3>توسيع نطاق الوصول وزيادة المبيعات</h3>
+                  <ul>
+                    <li>
+                      عرض منتجاتك مباشرة على كتالوج الواتساب بيزنس الخاص بك مما يتيح لعملائك الوصول إليها والتسوق
+                      بسهولة.
+                    </li>
+                    <li>إنشاء حملات إعلانية للكتالوج الخاص بك على منصات التواصل الاجتماعي.</li>
+                  </ul>
+                </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="expansionCard">
-              <div className="content">
-                <h3>إدارة مركزية</h3>
-                <ul>
-                  <li>تحديث المنتجات و الأسعار تلقائياً من متجرك الى الكتالوجدون الحاجة الى إدخال البيانات.</li>
-                  <li>متابعة لحظية من لوحة التحكم المتجر لطلبات العملاء على الواتساب الخاص بك.</li>
-                </ul>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 10,
+              }}
+            >
+              <div className="expansionCard">
+                <div className="content">
+                  <h3>إدارة مركزية</h3>
+                  <ul>
+                    <li>تحديث المنتجات و الأسعار تلقائياً من متجرك الى الكتالوجدون الحاجة الى إدخال البيانات.</li>
+                    <li>متابعة لحظية من لوحة التحكم المتجر لطلبات العملاء على الواتساب الخاص بك.</li>
+                  </ul>
+                </div>
               </div>
-            </div>
+            </motion.div>
           </Grid>
         </Grid>
       </Grid>

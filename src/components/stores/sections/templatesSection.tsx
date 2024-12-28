@@ -45,6 +45,9 @@ const TemplatesSection = () => {
           "@media (max-width: 992px)": {
             padding: "100px 2rem",
           },
+          "@media (max-width: 480px)": {
+            padding: "5rem 2rem",
+          },
         }}
       >
         <Grid size={{ xs: 12 }} marginBottom="82px">

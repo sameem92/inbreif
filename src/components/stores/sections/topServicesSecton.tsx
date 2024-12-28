@@ -29,7 +29,7 @@ const TopServicesSecton = () => {
             padding: "100px 2rem",
           },
           "@media (max-width: 480px)": {
-            padding: "100px 2rem 0px",
+            padding: "5rem 2rem 0px",
           },
         }}
       >

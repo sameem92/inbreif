@@ -114,6 +114,24 @@
       margin-bottom: 56px;
     }
 
+    .css-11zr3sc-MuiGrid2-root {
+      & > div:nth-of-type(2) {
+        align-self: flex-end;
+
+        .img {
+          left: -60px;
+          bottom: 0;
+        }
+      }
+
+      & > div:last-of-type {
+        .img {
+          left: -110px;
+          bottom: calc(50% - 150px);
+        }
+      }
+    }
+
     .featureBox {
       width: 613px;
       position: relative;
@@ -171,22 +189,16 @@
           position: absolute;
           left: -34px;
           bottom: -6.5px;
+
+          img {
+            max-width: 100%;
+          }
         }
       }
 
-      &:nth-of-type(2) {
-        align-self: flex-end;
-
-        .img {
-          left: -60px;
-          bottom: 0;
-        }
-      }
-
-      &:last-of-type {
-        .img {
-          left: -110px;
-          bottom: calc(50% - 150px);
+      &:hover {
+        &::before {
+          background-image: linear-gradient(81.07deg, #fad414 53.33%, #80660e 93.73%);
         }
       }
 
@@ -215,6 +227,71 @@
     }
   }
 
+  .packagesSection {
+    .sectionHead {
+      margin: 0 auto;
+      text-align: center;
+
+      h2 {
+        font-size: 42px;
+        font-weight: 700;
+        color: #e1e42a;
+        margin-bottom: 18px;
+      }
+
+      p {
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 46px;
+        color: #fff;
+      }
+
+      @media (max-width: 991px) {
+        h2 {
+          font-size: 35px;
+        }
+
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .tabs {
+      .MuiTabs-flexContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0px;
+        width: 208px;
+        margin: 0 auto;
+        background: #124651;
+        border-radius: 123px;
+        padding: 4px;
+
+        button {
+          display: block;
+          min-height: 44px;
+          flex: 1;
+          padding: 0px;
+          border-radius: 123px;
+          font-size: 22px;
+          font-weight: 600;
+          color: #cdcdcd;
+
+          span {
+            display: block;
+            height: 100%;
+          }
+
+          &.Mui-selected {
+            color: #001014;
+          }
+        }
+      }
+    }
+  }
+
   .servicesSection {
     .sectionHead {
       text-align: center;
@@ -234,7 +311,6 @@
 
         .service {
           height: 100%;
-          max-width: 258px;
           position: relative;
 
           .content {
@@ -297,6 +373,54 @@
           &:hover {
             &::before {
               background-image: linear-gradient(81.07deg, #fad414 53.33%, #80660e 93.73%);
+            }
+          }
+        }
+
+        @media (max-width: 1200px) {
+          .service .content {
+            padding: 6px;
+
+            h4 {
+              font-size: 20px;
+              line-height: normal;
+            }
+
+            p {
+              font-size: 14px;
+            }
+          }
+        }
+
+        @media (max-width: 767px) {
+          .service .content {
+            h4 {
+              font-size: 18px;
+              line-height: normal;
+            }
+          }
+        }
+
+        @media (max-width: 400px) {
+          .service .content {
+            .img {
+              height: 80px;
+              width: 150px;
+              margin-bottom: 8px;
+
+              img {
+                max-height: 100%;
+                max-width: 100%;
+              }
+            }
+
+            h4 {
+              font-size: 16px;
+              line-height: normal;
+            }
+
+            p {
+              font-size: 12px;
             }
           }
         }
@@ -646,7 +770,7 @@
     }
 
     p {
-      font-size: 23px;
+      font-size: 20px;
       font-weight: 600;
       line-height: 44px;
       color: #fff;
@@ -694,25 +818,43 @@
         z-index: -1;
         border-radius: 25px;
       }
+
+      &:hover {
+        &::before {
+          background-image: linear-gradient(81.07deg, #fad414 53.33%, #80660e 93.73%);
+        }
+      }
+    }
+
+    @media (max-width: 991px) {
+      p {
+        font-size: 18px;
+      }
     }
 
     @media (max-width: 991px) {
       h2 {
         font-size: 40px;
       }
+    }
+
+    @media (max-width: 991px) {
+      h3 {
+        font-size: 30px;
+      }
+
+      h2 {
+        font-size: 35px;
+      }
 
       p {
-        font-size: 20px;
+        font-size: 16px;
       }
     }
 
     @media (max-width: 480px) {
       h2 {
         font-size: 35px;
-      }
-
-      p {
-        font-size: 18px;
       }
 
       .count {
@@ -726,10 +868,14 @@
   }
 
   .expansionSecton {
-    .img {
-      img {
-        width: 100%;
-      }
+    // .img {
+    //   img {
+    //     width: 100%;
+    //   }
+    // }
+
+    video {
+      width: 100%;
     }
 
     .expansionCard {
@@ -748,7 +894,7 @@
           font-weight: 600;
           line-height: 33px;
           color: #fff;
-          margin-bottom: 16px;
+          margin-bottom: 20px;
         }
 
         ul li {
@@ -792,6 +938,12 @@
         position: absolute;
         z-index: -1;
         border-radius: 25px;
+      }
+
+      &:hover {
+        &::before {
+          background-image: linear-gradient(81.07deg, #fad414 53.33%, #80660e 93.73%);
+        }
       }
     }
 

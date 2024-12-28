@@ -7,9 +7,9 @@ import Image from "next/image"
 import { Box, Container, Card, CardContent, Typography, Grid } from "@mui/material"
 import { motion } from "framer-motion"
 import SliderS1 from "@/components/tools/sliders/sliderS1"
-import Packages from "@/components/tools/package/packages"
 import Feedback from "@/components/tools/feedback/feedback"
 import Form from "@/components/tools/form/form"
+import PackagesSection from "@/components/marketing/packagesSection"
 import Design from "@/components/marketing/Design"
 import Tabs from "@mui/material/Tabs"
 import { dynamicBlurDataUrl } from "@/lib"
@@ -368,7 +368,7 @@ export default function Home() {
         </CustomTabPanel>
       </Box>
 
-      <Packages />
+      <PackagesSection />
 
       <Design />
 

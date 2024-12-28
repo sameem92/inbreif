@@ -28,15 +28,15 @@ const HeroSecion = () => {
         justifyContent="center"
         alignItems="center"
         sx={{
-          padding: "20rem 10rem 10rem",
+          padding: "20rem 10rem 100px",
           "@media (max-width: 1340px)": {
-            padding: "20rem 2rem",
+            padding: "20rem 2rem 100px",
           },
           "@media (max-width: 1240px)": {
-            padding: "15rem 1rem",
+            padding: "15rem 1rem 100px",
           },
           "@media (max-width: 992px)": {
-            padding: "12rem 2rem",
+            padding: "12rem 2rem 100px",
           },
         }}
       >

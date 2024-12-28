@@ -139,6 +139,9 @@ export default function Feedback() {
           "@media (max-width: 992px)": {
             padding: "100px 2rem",
           },
+          "@media (max-width: 480px)": {
+            padding: "5rem 2rem",
+          },
         }}
       >
         <h2 className="secondry-title">رأي العملاء</h2>
@@ -214,10 +217,10 @@ export default function Feedback() {
               setIsEnd(realIndex === totalSlides - 1)
             }}
             loop={true} // Enable looping
-            // autoplay={{
-            //   disableOnInteraction: false, // Continue autoplay after user interaction
-            //   pauseOnMouseEnter: true, // Pause autoplay when hovered
-            // }}
+            autoplay={{
+              disableOnInteraction: false, // Continue autoplay after user interaction
+              pauseOnMouseEnter: true, // Pause autoplay when hovered
+            }}
             speed={1000} // Speed of slide transition (1 second)
             modules={[Navigation, Autoplay]} // Add Autoplay module
             className="mySwiper2"

@@ -101,7 +101,7 @@ export default function Slider() {
               }}
               allowTouchMove={true}
               breakpoints={{
-                1: {
+                0: {
                   slidesPerView: 1,
                   spaceBetween: 10,
                 },
@@ -121,6 +121,16 @@ export default function Slider() {
                       flexDirection: "column",
                       gap: "1rem",
                       justifyContent: "center",
+                      "@media (max-width:1240px)": {
+                        ".title-h3": {
+                          fontSize: "2.5rem",
+                        },
+                      },
+                      "@media (max-width:480px)": {
+                        ".title-h3": {
+                          fontSize: "2rem",
+                        },
+                      },
                     }}
                   >
                     <div className="image-container w-100">

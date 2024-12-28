@@ -14,8 +14,8 @@ import PaymentSection from "./sections/paymentSection"
 import ExpansionSecton from "./sections/expansionSecton"
 import TopServicesSecton from "./sections/topServicesSecton"
 import MainFeaturesSection from "./sections/mainFeaturesSection"
-import Packages from "../tools/package/packages"
 import Social from "../tools/social/social"
+import PackagesSection from "./sections/packagesSction"
 
 const StoresPage = () => {
   return (
@@ -26,7 +26,7 @@ const StoresPage = () => {
 
       <MainFeaturesSection />
 
-      <Packages />
+      <PackagesSection />
 
       <ServicesSection />
 
