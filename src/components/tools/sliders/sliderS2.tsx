@@ -105,22 +105,12 @@ export default function SlideS2({ products }) {
             spaceBetween={60}
             grabCursor={true}
             allowTouchMove={true}
-            speed={2500}
             loop={true}
-            navigation={
-              isMobile
-                ? false
-                : {
-                    prevEl: prevButtonRef.current,
-                    nextEl: nextButtonRef.current,
-                  }
-            }
+            navigation={{ prevEl: prevButtonRef.current, nextEl: nextButtonRef.current }}
             onBeforeInit={(swiper) => {
-              if (!isMobile) {
-                swiper.params.navigation.prevEl = prevButtonRef.current
-                swiper.params.navigation.nextEl = nextButtonRef.current
-                swiper.navigation.update()
-              }
+              swiper.params.navigation.prevEl = prevButtonRef.current
+              swiper.params.navigation.nextEl = nextButtonRef.current
+              swiper.navigation.update()
             }}
             onSlideChange={(swiper) => {
               const realIndex = swiper.realIndex
@@ -131,8 +121,8 @@ export default function SlideS2({ products }) {
             coverflowEffect={{
               rotate: 0,
               stretch: 0,
-              depth: isTablet ? 123 : 38.5,
-              modifier: 2.5,
+              depth: isTablet ? 123 : 38.6,
+              modifier: 3.25,
               slideShadows: false,
             }}
           >

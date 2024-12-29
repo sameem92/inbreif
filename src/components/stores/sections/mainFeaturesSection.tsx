@@ -37,16 +37,16 @@ const MainFeaturesSection = () => {
             padding: "100px 20rem",
           },
           "@media (max-width: 1240px)": {
-            padding: "0rem 20rem 10rem",
+            padding: "15px 20rem 10rem",
           },
           "@media (max-width: 1016px)": {
-            padding: "0rem 10rem 10rem",
+            padding: "15px 10rem 10rem",
           },
           "@media (max-width: 991px)": {
-            padding: "0rem 10rem 10rem",
+            padding: "15px 10rem 10rem",
           },
           "@media (max-width: 480px)": {
-            padding: "0rem 2rem 5rem",
+            padding: "15px 2rem 5rem",
           },
         }}
       >

@@ -5,14 +5,13 @@ import React from "react"
 import { Box, Container, Grid, Button } from "@mui/material"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import Packages from "@/components/tools/package/packages"
 import Design from "@/components/shop/Design"
 import Feedback from "@/components/tools/feedback/feedback"
 import Social from "@/components/tools/social/social"
 import Form from "@/components/tools/form/form"
 import { styled } from "@mui/material/styles"
 import Paper from "@mui/material/Paper"
-import { dynamicBlurDataUrl } from "@/lib"
+import PackagesSection from "./packagesSection"
 
 const Item = styled(Paper)(() => ({
   backgroundColor: "transparent",
@@ -154,7 +153,7 @@ export default function Home() {
         </Box>
       </motion.div>
 
-      <Packages />
+      <PackagesSection />
       <Design />
       <Feedback />
       <Form />

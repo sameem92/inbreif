@@ -38,6 +38,9 @@ const HeroSecion = () => {
           "@media (max-width: 992px)": {
             padding: "12rem 2rem 100px",
           },
+          "@media (max-width: 480px)": {
+            padding: "12rem 2rem 0px",
+          },
         }}
       >
         <Grid size={{ xs: 12, md: 6 }}>

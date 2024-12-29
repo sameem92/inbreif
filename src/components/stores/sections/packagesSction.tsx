@@ -39,10 +39,10 @@ function CustomTabPanel(props: TabPanelProps) {
   )
 }
 
-const plans = [
+const plansY = [
   {
     title: "الفضية",
-    price: "300",
+    price: "800",
     oldPrice: "550",
     features: [
       "عدد غير محدود من الطلبات",
@@ -53,10 +53,14 @@ const plans = [
       "اصدار وطباعة الفواتير",
       "كوبونات خصم و عروض",
     ],
+    USD: "250",
+    SAR: "800",
+    OMR: "90",
+    KD: "80",
   },
   {
     title: "الذهبية",
-    price: "500",
+    price: "2000",
     oldPrice: "750",
     features: [
       "جميع مميزات الباقة الفضية",
@@ -69,6 +73,51 @@ const plans = [
       "3 مستخدمين لإدارة المتجر",
       "دعم فني واتساب 24 ساعة",
     ],
+    USD: "490",
+    SAR: "2000",
+    OMR: "150",
+    KD: "150",
+  },
+]
+
+const plansM = [
+  {
+    title: "الفضية",
+    price: "70",
+    oldPrice: "180",
+    features: [
+      "عدد غير محدود من الطلبات",
+      "تقارير وتحليلات دورية",
+      "الربط مع بوابة الدفع",
+      "الربط مع بوابة التقسيط",
+      "الربط مع بوابة شحن",
+      "اصدار وطباعة الفواتير",
+      "كوبونات خصم و عروض",
+    ],
+    USD: "22",
+    SAR: "70",
+    OMR: "9",
+    KD: "8",
+  },
+  {
+    title: "الذهبية",
+    price: "2000",
+    oldPrice: "750",
+    features: [
+      "جميع مميزات الباقة الفضية",
+      "تحكم في تصميم المتجر",
+      "لغات متعددة",
+      "التسويق بالعمولة",
+      "متابعة وتحديث أداء المتجر",
+      "طرق شحن متنوعة",
+      "دعم 3 فروع",
+      "3 مستخدمين لإدارة المتجر",
+      "دعم فني واتساب 24 ساعة",
+    ],
+    USD: "45",
+    SAR: "180",
+    OMR: "14",
+    KD: "15",
   },
 ]
 
@@ -133,13 +182,13 @@ const PackagesSection = () => {
 
             <CustomTabPanel value={value} index={0}>
               <Grid container alignItems="flex-end" gap="80px 0px">
-                <Packages plans={plans} more />
+                <Packages plans={plansY} more className="" buttonText="الإشتراك الآن" />
               </Grid>
             </CustomTabPanel>
 
             <CustomTabPanel value={value} index={1}>
               <Grid container alignItems="flex-end" gap="80px 0px">
-                <Packages plans={plans} more />
+                <Packages plans={plansM} more className="" buttonText="الإشتراك الآن" />
               </Grid>
             </CustomTabPanel>
           </Box>

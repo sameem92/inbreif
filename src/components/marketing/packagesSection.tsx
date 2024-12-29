@@ -89,7 +89,7 @@ const PackagesSection = () => {
             }}
           >
             <Grid container gap="80px 0px">
-              <Packages plans={plans} className="planCardS2" />
+              <Packages plans={plans} className="planCardS2" more={false} buttonText="أطلب الأن" />
             </Grid>
           </Box>
         </Grid>

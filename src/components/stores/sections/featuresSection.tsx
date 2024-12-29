@@ -151,6 +151,10 @@ const FeaturesSection = () => {
               justifyContent: "center",
               gap: "25px",
             },
+            "@media (max-width: 767px)": {
+              justifyContent: "center",
+              gap: "10px",
+            },
           }}
         >
           <Grid size={{ xs: 4 }}>
@@ -167,17 +171,17 @@ const FeaturesSection = () => {
             </div>
           </Grid>
 
-          {packages.map((item, i) => (
-            <Grid key={item.title} size={{ xs: 12, md: 4 }}>
-              <div className={`packageCard ${i === 1 ? "gold" : ""}`}>
+          {packages.map((item) => (
+            <Grid key={item.title} size={{ xs: 4 }}>
+              <div className={`features`}>
                 <div className="content">
                   <div className="packageHead">
                     <h4>{item.title}</h4>
 
                     <Button
                       sx={{
-                        background: i === 1 ? "#e0e324" : "transparent",
-                        borderColor: i === 1 ? "transparent" : "#e1e42a",
+                        background: "transparent",
+                        borderColor: "#e1e42a",
                       }}
                     >
                       الإشتراك الآن
