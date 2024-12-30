@@ -1,31 +1,22 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
 //@ts-nocheck
-"use client";
+"use client"
 
-import React, { useRef, useState } from "react";
-import {
-  Container,
-  Button,
-  Box,
-  Card,
-  CardContent,
-  Typography,
-  Grid,
-  useMediaQuery,
-} from "@mui/material";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
-import Image from "next/image";
-const icon1 = "/image/icon5.png";
-const icon2 = "/image/icon6.png";
-const icon3 = "/image/icon7.png";
-const dummy = "/image/dummy.png";
+import React, { useRef, useState } from "react"
+import { Container, Button, Box, Card, CardContent, Typography, Grid, useMediaQuery } from "@mui/material"
+import { Swiper, SwiperSlide } from "swiper/react"
+import "swiper/css"
+import "swiper/css/navigation"
+import { Navigation } from "swiper/modules"
+import Image from "next/image"
+const icon1 = "/image/icon5.png"
+const icon2 = "/image/icon6.png"
+const icon3 = "/image/icon7.png"
+const dummy = "/image/dummy.png"
 
-import { motion } from "framer-motion";
-import { dynamicBlurDataUrl } from "@/lib";
+import { motion } from "framer-motion"
+import { dynamicBlurDataUrl } from "@/lib"
 
 const items = [
   {
@@ -40,14 +31,14 @@ const items = [
     icon: icon3,
     title: "  كتابة سيناريو",
   },
-];
+]
 export default function Design() {
-  const prevButtonRef = useRef(null);
-  const nextButtonRef = useRef(null);
-  const [isBeginning, setIsBeginning] = useState(true);
-  const [isEnd, setIsEnd] = useState(false);
-  const isMobile = useMediaQuery("(max-width:768px)");
-  const totalSlides = 9;
+  const prevButtonRef = useRef(null)
+  const nextButtonRef = useRef(null)
+  const [isBeginning, setIsBeginning] = useState(true)
+  const [isEnd, setIsEnd] = useState(false)
+  const isMobile = useMediaQuery("(max-width:768px)")
+  const totalSlides = 9
 
   return (
     <>
@@ -87,10 +78,7 @@ export default function Design() {
             >
               موشن جرافيك ومونتاج
             </motion.h1>
-            <p className="paragrph">
-              نحن نؤمن أن كل لقطة تروي قصة وفريقنا المحترف يجعل قصتك تنبض
-              بالحياة{" "}
-            </p>
+            <p className="paragrph">نحن نؤمن أن كل لقطة تروي قصة وفريقنا المحترف يجعل قصتك تنبض بالحياة </p>
           </Container>
 
           <motion.div
@@ -99,10 +87,7 @@ export default function Design() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Container
-              sx={{ display: "flex", justifyContent: "center", gap: "6rem" }}
-              maxWidth="lg"
-            >
+            <Container sx={{ display: "flex", justifyContent: "center", gap: "6rem" }} maxWidth="lg">
               <Box
                 sx={{
                   width: { xs: "90%", lg: "80%" },
@@ -117,7 +102,7 @@ export default function Design() {
                   {items.map((item, index) => (
                     <Grid item key={index} xs={12} sm={6} md={4}>
                       <motion.div
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.02 }}
                         transition={{
                           type: "spring",
                           stiffness: 400,
@@ -238,13 +223,7 @@ export default function Design() {
               }}
               disabled={isBeginning}
             >
-              <svg
-                width="18"
-                height="14"
-                viewBox="0 0 18 14"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -266,16 +245,16 @@ export default function Design() {
             }
             onBeforeInit={(swiper) => {
               if (!isMobile) {
-                swiper.params.navigation.prevEl = prevButtonRef.current;
-                swiper.params.navigation.nextEl = nextButtonRef.current;
-                swiper.navigation.update();
+                swiper.params.navigation.prevEl = prevButtonRef.current
+                swiper.params.navigation.nextEl = nextButtonRef.current
+                swiper.navigation.update()
               }
             }}
             onSlideChange={(swiper) => {
-              const realIndex = swiper.realIndex;
+              const realIndex = swiper.realIndex
 
-              setIsBeginning(realIndex === 0);
-              setIsEnd(realIndex === totalSlides - 1);
+              setIsBeginning(realIndex === 0)
+              setIsEnd(realIndex === totalSlides - 1)
             }}
             modules={[Navigation]}
             className="mySwiper-video"
@@ -351,13 +330,7 @@ export default function Design() {
               }}
               disabled={isEnd}
             >
-              <svg
-                width="18"
-                height="14"
-                viewBox="0 0 18 14"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -370,5 +343,5 @@ export default function Design() {
         </Box>
       </Container>
     </>
-  );
+  )
 }

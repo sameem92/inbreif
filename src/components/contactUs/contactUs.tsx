@@ -566,16 +566,7 @@ export default function ContactUsComponent() {
                   flexDirection: "column",
                 }}
               >
-                <Image
-                  src={images[1]}
-                  alt="right"
-                  loading="lazy"
-                  className="right"
-                  height={120}
-                  width={120}
-                  blurDataURL={dynamicBlurDataUrl}
-                  placeholder="blur"
-                />
+                <Image src={images[1]} alt="right" className="right" height={120} width={120} />
                 <Box
                   sx={{
                     display: "flex",

@@ -8,9 +8,8 @@ export default function Social() {
         sx={{
           position: "absolute",
           transform: { xs: "translateY(0px)", lg: "translateY(-50%)" },
-          top: { xs: "50%", lg: "50%" },
-          right: { xs: "4%", lg: "6%" },
-          padding: "1rem",
+          top: { xs: "40%", lg: "50%" },
+          right: { xs: "4%", lg: "4%" },
           zIndex: 10,
         }}
         className="social-menu"

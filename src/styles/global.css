@@ -1187,3 +1187,7 @@ a {
   cursor: not-allowed !important;
   opacity: 0.5;
 }
+
+.service-img {
+  object-fit: cover;
+}

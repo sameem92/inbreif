@@ -62,6 +62,7 @@ export default function Home() {
             <Grid
               container
               alignItems="center"
+              gap="50px"
               sx={{
                 backgroundImage: 'url("/images/store/bg.svg")',
                 backgroundRepeat: "no-repeat",
@@ -69,6 +70,9 @@ export default function Home() {
                 backgroundSize: "80% 90%",
                 "@media(max-width:900px)": {
                   backgroundPosition: "center",
+                },
+                "@media(max-width:480px)": {
+                  gap: "25px",
                 },
               }}
             >

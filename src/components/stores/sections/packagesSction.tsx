@@ -154,8 +154,8 @@ const PackagesSection = () => {
       >
         <Grid size={{ xs: 12 }}>
           <div className="sectionHead">
-            <h2>خطط الإشتراك</h2>
-            <p>انشئ متجرك وأحصل على تجربة رائعة تستطيع ترقية الإشتراك من لوحة تحكم المتجر</p>
+            <h2>خطط الاشتراك</h2>
+            <p>انشئ متجرك وأحصل على تجربة رائعة تستطيع ترقية الاشتراك من لوحة تحكم المتجر</p>
           </div>
         </Grid>
         <Grid size={{ xs: 12 }}>
@@ -181,14 +181,14 @@ const PackagesSection = () => {
             </Tabs>
 
             <CustomTabPanel value={value} index={0}>
-              <Grid container alignItems="flex-end" gap="80px 0px">
-                <Packages plans={plansY} more className="" buttonText="الإشتراك الآن" />
+              <Grid container alignItems="flex-end" columnSpacing={2} rowSpacing={2}>
+                <Packages plans={plansY} more className="" buttonText="الاشتراك الآن" link="" />
               </Grid>
             </CustomTabPanel>
 
             <CustomTabPanel value={value} index={1}>
-              <Grid container alignItems="flex-end" gap="80px 0px">
-                <Packages plans={plansM} more className="" buttonText="الإشتراك الآن" />
+              <Grid container alignItems="flex-end" columnSpacing={2} rowSpacing={2}>
+                <Packages plans={plansM} more className="" buttonText="الاشتراك الآن" link="" />
               </Grid>
             </CustomTabPanel>
           </Box>

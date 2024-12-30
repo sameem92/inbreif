@@ -209,7 +209,7 @@ const ServicesSection = () => {
           {services.map((service) => (
             <Grid key={service.title} size={{ xs: 6, sm: 4, md: 3 }}>
               <motion.div
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.02 }}
                 transition={{
                   type: "spring",
                   stiffness: 400,

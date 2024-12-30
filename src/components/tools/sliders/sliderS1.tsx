@@ -75,19 +75,19 @@ const SliderS1: React.FC<{ images: string[] }> = ({ images }) => {
               breakpoints={{
                 1: {
                   slidesPerView: 1,
-                  spaceBetween: 20,
+                  spaceBetween: 10,
                 },
-                480: {
+                600: {
                   slidesPerView: 2,
                   spaceBetween: 20,
                 },
                 992: {
-                  slidesPerView: 4,
+                  slidesPerView: 3,
                   spaceBetween: 30,
                 },
                 1280: {
                   slidesPerView: 4,
-                  spaceBetween: 30,
+                  spaceBetween: 40,
                 },
               }}
             >

@@ -63,6 +63,7 @@ export default function Form() {
       .then(
         () => {
           setLoading(false)
+          setValue("")
           showSuccess()
         },
         () => {

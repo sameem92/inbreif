@@ -80,11 +80,32 @@
       }
     }
 
+    @media (max-width: 1400px) {
+      background-position: 50% center;
+
+      h1 {
+        font-size: 50px;
+      }
+
+      p {
+        font-size: 24px;
+      }
+    }
+
+    @media (max-width: 1216px) {
+      background-position: 50% center;
+
+      h1 {
+        font-size: 40px;
+        margin-bottom: 14px;
+      }
+    }
+
     @media (max-width: 991px) {
       background-position: 50% center;
 
       h1 {
-        font-size: 45px;
+        font-size: 34px;
       }
 
       p {
@@ -731,7 +752,6 @@
       }
 
       ul li {
-        min-height: 90px;
         font-size: 12px;
       }
 
@@ -753,13 +773,17 @@
       }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 580px) {
+      div:has(> .featuresCard) {
+        flex: 2;
+      }
+
+      div:has(> .features) {
+        flex: 1;
+      }
+
       .packageCard {
         padding: 20px 12px;
-
-        ul li {
-          font-size: 16px;
-        }
 
         .packageHead {
           h4 {
@@ -887,18 +911,6 @@
     }
 
     @media (max-width: 991px) {
-      p {
-        font-size: 18px;
-      }
-    }
-
-    @media (max-width: 991px) {
-      h2 {
-        font-size: 40px;
-      }
-    }
-
-    @media (max-width: 991px) {
       h3 {
         font-size: 30px;
       }
@@ -912,16 +924,57 @@
       }
     }
 
+    @media (max-width: 767px) {
+      div:has(> .count) {
+        width: auto;
+        flex: 1;
+
+        .content {
+          height: 180px;
+          width: 100%;
+
+          h4 {
+            font-size: 20px;
+          }
+
+          span {
+            font-size: 26px;
+          }
+        }
+      }
+    }
+
     @media (max-width: 480px) {
       h2 {
         font-size: 35px;
       }
 
-      .count {
-        width: 100%;
+      div:has(> .count) {
+        width: auto;
+        flex: 1;
 
         .content {
+          height: 120px;
           width: 100%;
+          padding: 4px;
+          text-align: center;
+
+          .icon {
+            height: 40px;
+            img {
+              max-height: 100%;
+            }
+          }
+
+          h4 {
+            font-size: 14px;
+            line-height: 22px;
+          }
+
+          span {
+            font-size: 20px;
+            line-height: normal;
+          }
         }
       }
     }
@@ -1078,8 +1131,34 @@
     }
 
     @media (max-width: 991px) {
+      .sectionHead {
+        margin-bottom: 16px;
+
+        h2 {
+          font-size: 30px;
+          margin-bottom: 0;
+        }
+      }
+
       ul li {
         font-size: 18px;
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: 840px) {
+      .sectionHead {
+        margin-bottom: 16px;
+
+        h2 {
+          font-size: 20px;
+          margin-bottom: 0;
+        }
+      }
+
+      ul li {
+        font-size: 14px;
+        margin-bottom: 0;
       }
     }
 

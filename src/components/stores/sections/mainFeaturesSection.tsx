@@ -45,16 +45,16 @@ const MainFeaturesSection = () => {
           "@media (max-width: 991px)": {
             padding: "15px 10rem 10rem",
           },
-          "@media (max-width: 480px)": {
+          "@media (max-width: 600px)": {
             padding: "15px 2rem 5rem",
           },
         }}
       >
         <Grid size={{ xs: 12 }} display="flex" flexDirection="column" gap="50px">
           <motion.div
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.02 }}
             transition={{
-              type: "spring",
+              type: "tween",
               stiffness: 400,
               damping: 10,
             }}
@@ -87,9 +87,9 @@ const MainFeaturesSection = () => {
           </motion.div>
 
           <motion.div
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.02 }}
             transition={{
-              type: "spring",
+              type: "tween",
               stiffness: 400,
               damping: 10,
             }}
@@ -98,7 +98,7 @@ const MainFeaturesSection = () => {
               <div className="bg">
                 <div className="content">
                   <h3>مميزات احترافية لجميع الباقات</h3>
-                  <p>خدمات ومزايا تعززّ مشروعك وتوسِع إنتشارك</p>
+                  <p>خدمات ومزايا تعززّ مشروعك وتوسِع انتشارك</p>
                   <ul>
                     <li>
                       <Image src={icon4} alt="icon4" />
@@ -126,9 +126,9 @@ const MainFeaturesSection = () => {
           </motion.div>
 
           <motion.div
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.02 }}
             transition={{
-              type: "spring",
+              type: "tween",
               stiffness: 400,
               damping: 10,
             }}

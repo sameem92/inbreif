@@ -77,7 +77,7 @@ const PackagesSection = () => {
         }}
       >
         <Grid size={{ xs: 12 }}>
-          <h2 className="main-secandry-title">باقات التصميم والتسويق</h2>
+          <h2 className="main-secandry-title">باقات التصميم و الفيديو</h2>
         </Grid>
         <Grid size={{ xs: 12 }}>
           <Box
@@ -88,8 +88,14 @@ const PackagesSection = () => {
               },
             }}
           >
-            <Grid container gap="80px 0px">
-              <Packages plans={plans} className="planCardS2" more={false} buttonText="أطلب الأن" />
+            <Grid container columnSpacing={2} rowSpacing={2}>
+              <Packages
+                plans={plans}
+                className="planCardS2"
+                more={false}
+                buttonText="أطلب الأن"
+                link="http://wa.me/96877276659"
+              />
             </Grid>
           </Box>
         </Grid>

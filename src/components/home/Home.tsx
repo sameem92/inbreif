@@ -133,9 +133,9 @@ export default function Home() {
                   {items.map((item, index) => (
                     <Grid item key={index} xs={12} custom490={6} sm={6} md={3}>
                       <motion.div
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.02 }}
                         transition={{
-                          type: "spring",
+                          type: "tween",
                           stiffness: 400,
                           damping: 10,
                         }}

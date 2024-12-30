@@ -48,7 +48,7 @@ const ExpansionSecton = () => {
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
             <motion.div
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.02 }}
               transition={{
                 type: "spring",
                 stiffness: 400,
@@ -70,7 +70,7 @@ const ExpansionSecton = () => {
             </motion.div>
 
             <motion.div
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.02 }}
               transition={{
                 type: "spring",
                 stiffness: 400,

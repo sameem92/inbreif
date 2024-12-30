@@ -39,22 +39,22 @@ const secService = [
   {
     img: service5,
     title: "موشن جرافيك ومونتاج",
-    href: "/design-and-marketing",
+    href: "/design-and-marketing#motion",
   },
   {
     img: service6,
     title: "حملات تسويقية",
-    href: "/design-and-marketing",
+    href: "/marketing-and-campaigns",
   },
   {
     img: service7,
     title: "إدارة حسابات التواصل الاجتماعي",
-    href: "/design-and-marketing",
+    href: "/marketing-and-campaigns",
   },
   {
     img: service8,
     title: "إعداد خطط تسويقية",
-    href: "/design-and-marketing",
+    href: "/marketing-and-campaigns",
   },
 ]
 
@@ -64,6 +64,7 @@ export default function Services() {
   const handleNavigation = (path: string) => {
     router.push(path)
   }
+
   return (
     <Container
       sx={{
@@ -80,239 +81,173 @@ export default function Services() {
       }}
     >
       <div>
-        <Grid2
-          maxWidth="lg"
-          container
-          sx={{
-            margin: "0 auto",
-            justifyContent: "center",
-            gap: "4.8rem",
-          }}
-        >
-          <Grid2>
-            <h1 className="secondry-title">الخدمات البرمجية</h1>
-          </Grid2>
-
-          <Grid2
-            container
-            size={{ xs: 12 }}
-            display="flex"
-            justifyContent="center"
+        <Container>
+          <h1 className="secondry-title" style={{ margin: "84px auto 4.6rem" }}>
+            الخدمات البرمجية
+          </h1>
+          <Box
             sx={{
-              gap: "100px",
-              "@media (max-width: 900px)": {
-                gap: "50px",
-              },
+              width: { xs: "90%", lg: "100%" },
+              margin: "auto",
             }}
           >
-            <Grid2 size={{ xs: 12, sm: 5 }}>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 10,
-                }}
-              >
-                <Item
-                  sx={{
-                    position: "relative",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "3.2rem",
-                    cursor: "pointer",
-                    maxWidth: "424px",
-                    margin: "0 auto",
-                    "& .service-img-scale": {
-                      "@media (max-width: 1240px)": {
-                        transform: "scale(1.05)",
-                      },
-                      "@media (max-width: 1024px)": {
-                        maxWidth: "220px",
-                        transform: "scale(1.2)",
-                      },
-                      "@media (max-width: 900px)": {
-                        maxWidth: "240px",
-                        transform: "scale(1.2)",
-                      },
-                      "@media (max-width: 600px)": {
-                        maxWidth: "220px",
-                        transform: "scale(1.4)",
-                      },
-                    },
-                  }}
-                  onClick={() => handleNavigation("/mobile-apps")}
-                  className="service-box border service-box-hover"
-                >
-                  <div>
-                    <Image
-                      src={service1}
-                      alt="تطبيقات الموبايل"
-                      loading="lazy"
-                      objectFit="cover"
-                      blurDataURL={dynamicBlurDataUrl}
-                      placeholder="blur"
-                    />
-                  </div>
-                  <h3>تطبيقات الموبايل</h3>
-
-                  <Button
-                    variant="text"
+            <Grid container columnSpacing={{ xs: 2, md: 3, xl: 0 }} rowSpacing={{ xs: 6, md: 4, xl: 10 }}>
+              <Grid item xs={12} sm={6} md={6} custom992={4} lg={4}>
+                <motion.div whileHover={{ scale: 1.02 }} transition={{ type: "tween", stiffness: 300, damping: 10 }}>
+                  <Box
+                    onClick={() => handleNavigation("/mobile-apps")}
                     sx={{
-                      color: "#E0E327",
-                      backgroundColor: "transparent",
-                      fontFamily: "Kumbh Sans, sans-serif !important",
-                      fontStyle: "normal",
-                      fontWeight: 400,
-                      fontSize: "1.6rem",
-                      lineHeight: "2rem",
+                      width: "100%",
                       display: "flex",
+                      flexDirection: "column",
                       alignItems: "center",
-                      textAlign: "center",
-                      transition: "all 0.2s ease",
-
-                      "&:hover": {
+                      justifyContent: "center",
+                      gap: { xs: "1.4rem !important", lg: "1.2rem !important" },
+                      transition: "all 0.3s ease",
+                      cursor: "pointer",
+                      "&:hover h3": {
                         color: "#E0E327",
-                        backgroundColor: "transparent",
-                        transform: "translateY(0px)",
                       },
-                      span: {
-                        transition: "all 0.2s ease",
-                      },
-                      ".arrow-icon": {
-                        display: "none",
+                      "&:hover .service-box": {
+                        border: "1px solid #E0E327 ",
                       },
                       "&:hover .arrow-icon": {
-                        display: "block",
-                      },
-                      "&:hover span": {
-                        marginLeft: "1rem",
+                        opacity: 1,
                       },
                     }}
                   >
-                    <Image
-                      src={arrow}
-                      alt="arrow"
-                      width={24}
-                      height={24}
-                      loading="lazy"
-                      blurDataURL={dynamicBlurDataUrl}
-                      placeholder="blur"
-                      className="arrow-icon"
-                    />
-                    <span>اعرف أكثر</span>
-                  </Button>
-                </Item>
-              </motion.div>
-            </Grid2>
+                    <Item sx={{ mb: 2, padding: "0 !important" }} className="service-box">
+                      <Image
+                        src={service1}
+                        alt="تطبيقات الموبايل"
+                        width={292}
+                        height={260}
+                        style={{ maxWidth: "100%" }}
+                      />
+                    </Item>
 
-            <Grid2 size={{ xs: 12, sm: 5 }}>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 10,
-                }}
-              >
-                <Item
-                  sx={{
-                    position: "relative",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "32px",
-                    cursor: "pointer",
-                    maxWidth: "424px",
-                    margin: "0 auto",
-                    "& .service-img-scale": {
-                      transform: "scale(1.3)",
-                      "@media (max-width: 1240px)": {
-                        transform: "scale(1.05)",
-                      },
-                      "@media (max-width: 1024px)": {
-                        maxWidth: "220px",
-                        transform: "scale(1.2)",
-                      },
-                      "@media (max-width: 900px)": {
-                        maxWidth: "240px",
-                        transform: "scale(1.2)",
-                      },
-                      "@media (max-width: 600px)": {
-                        maxWidth: "220px",
-                        transform: "scale(1.4)",
-                      },
-                    },
-                  }}
-                  onClick={() => handleNavigation("/web-apps")}
-                  className="service-box border service-box-hover"
-                >
-                  <div>
-                    <Image
-                      src={service2}
-                      alt="متاجر إلكترونية"
-                      loading="lazy"
-                      objectFit="cover"
-                      blurDataURL={dynamicBlurDataUrl}
-                      placeholder="blur"
-                    />
-                  </div>
-                  <h3>متاجر إلكترونية</h3>
-
-                  <Button
-                    variant="text"
-                    sx={{
-                      color: "#E0E327",
-                      backgroundColor: "transparent",
-                      fontFamily: "Kumbh Sans, sans-serif !important",
-                      fontStyle: "normal",
-                      fontWeight: 400,
-                      fontSize: "1.6rem",
-                      lineHeight: "2rem",
-                      display: "flex",
-                      alignItems: "center",
-                      textAlign: "center",
-                      transition: "all 0.2s ease",
-
-                      "&:hover": {
+                    <h3 className="third-title">تطبيقات الموبايل</h3>
+                    <Button
+                      variant="text"
+                      sx={{
                         color: "#E0E327",
                         backgroundColor: "transparent",
-                        transform: "translateY(0px)",
-                      },
-                      span: {
+                        fontFamily: "Kumbh Sans, sans-serif !important",
+                        fontStyle: "normal",
+                        fontWeight: 400,
+                        fontSize: "1.6rem",
+                        lineHeight: "2rem",
+                        display: "flex",
+                        alignItems: "center",
+                        textAlign: "center",
                         transition: "all 0.2s ease",
+
+                        "&:hover": {
+                          color: "#E0E327",
+                          backgroundColor: "transparent",
+                          transform: "translateY(0px)",
+                        },
+
+                        ".arrow-icon": {
+                          opacity: 0,
+                        },
+                      }}
+                    >
+                      <Image
+                        src={arrow}
+                        alt="arrow"
+                        loading="lazy"
+                        width={24}
+                        blurDataURL={dynamicBlurDataUrl}
+                        placeholder="blur"
+                        height={24}
+                        className="arrow-icon" // Add class to the arrow icon
+                      />
+                      <span>اعرف أكثر</span>
+                    </Button>
+                  </Box>
+                </motion.div>
+              </Grid>
+
+              <Grid item xs={12} sm={6} md={6} custom992={4} lg={4}>
+                <motion.div whileHover={{ scale: 1.02 }} transition={{ type: "tween", stiffness: 300, damping: 10 }}>
+                  <Box
+                    onClick={() => handleNavigation("/web-apps")}
+                    sx={{
+                      width: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: { xs: "1.4rem !important", lg: "1.2rem !important" },
+                      transition: "all 0.3s ease",
+                      cursor: "pointer",
+                      "&:hover h3": {
+                        color: "#E0E327",
                       },
-                      ".arrow-icon": {
-                        display: "none",
+                      "&:hover .service-box": {
+                        border: "1px solid #E0E327 ",
                       },
                       "&:hover .arrow-icon": {
-                        display: "block",
-                      },
-                      "&:hover span": {
-                        marginLeft: "1rem",
+                        opacity: 1,
                       },
                     }}
                   >
-                    <Image
-                      src={arrow}
-                      alt="arrow"
-                      width={24}
-                      height={24}
-                      loading="lazy"
-                      blurDataURL={dynamicBlurDataUrl}
-                      placeholder="blur"
-                      className="arrow-icon"
-                    />
-                    <span>اعرف أكثر</span>
-                  </Button>
-                </Item>
-              </motion.div>
-            </Grid2>
-          </Grid2>
-        </Grid2>
+                    <Item sx={{ mb: 2, padding: "0 !important" }} className="service-box">
+                      <Image
+                        src={service2}
+                        alt="متاجر إلكترونية"
+                        width={292}
+                        height={260}
+                        style={{ maxWidth: "100%" }}
+                      />
+                    </Item>
+
+                    <h3 className="third-title">متاجر إلكترونية</h3>
+                    <Button
+                      variant="text"
+                      sx={{
+                        color: "#E0E327",
+                        backgroundColor: "transparent",
+                        fontFamily: "Kumbh Sans, sans-serif !important",
+                        fontStyle: "normal",
+                        fontWeight: 400,
+                        fontSize: "1.6rem",
+                        lineHeight: "2rem",
+                        display: "flex",
+                        alignItems: "center",
+                        textAlign: "center",
+                        transition: "all 0.2s ease",
+
+                        "&:hover": {
+                          color: "#E0E327",
+                          backgroundColor: "transparent",
+                          transform: "translateY(0px)",
+                        },
+
+                        ".arrow-icon": {
+                          opacity: 0,
+                        },
+                      }}
+                    >
+                      <Image
+                        src={arrow}
+                        alt="arrow"
+                        loading="lazy"
+                        width={24}
+                        blurDataURL={dynamicBlurDataUrl}
+                        placeholder="blur"
+                        height={24}
+                        className="arrow-icon" // Add class to the arrow icon
+                      />
+                      <span>اعرف أكثر</span>
+                    </Button>
+                  </Box>
+                </motion.div>
+              </Grid>
+            </Grid>
+          </Box>
+        </Container>
       </div>
 
       <div>
@@ -329,7 +264,7 @@ export default function Services() {
             <Grid container columnSpacing={{ xs: 2, md: 3, xl: 0 }} rowSpacing={{ xs: 6, md: 4, xl: 10 }}>
               {secService.map((item, index) => (
                 <Grid item xs={12} sm={6} md={6} custom992={4} lg={4} key={index}>
-                  <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300, damping: 10 }}>
+                  <motion.div whileHover={{ scale: 1.02 }} transition={{ type: "spring", stiffness: 300, damping: 10 }}>
                     <Box
                       onClick={() => handleNavigation(item.href)}
                       sx={{
@@ -356,10 +291,6 @@ export default function Services() {
                         <Image
                           src={item.img}
                           alt={item.title}
-                          objectFit="cover"
-                          loading="lazy"
-                          blurDataURL={dynamicBlurDataUrl}
-                          placeholder="blur"
                           width={292}
                           height={260}
                           style={{ maxWidth: "100%" }}

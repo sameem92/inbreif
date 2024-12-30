@@ -177,7 +177,7 @@ const Section = ({ section }) => (
               {section.items.map((item, index) => (
                 <Grid item key={index} xs={12} sm={6} md={4} alignSelf="stretch">
                   <motion.div
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ scale: 1.02 }}
                     transition={{ type: "spring", stiffness: 200, damping: 10 }}
                     style={{ height: "100%" }}
                   >

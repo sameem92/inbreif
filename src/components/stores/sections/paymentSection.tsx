@@ -127,15 +127,18 @@ const PaymentSection = () => {
           container
           justifyContent="center"
           sx={{
-            "@media (max-width: 480px)": {
-              flexDirection: "column",
+            "@media (max-width: 767px)": {
+              columnGap: "14px",
             },
+            // "@media (max-width: 400px)": {
+            //   flexDirection: "column",
+            // },
           }}
         >
           <motion.div
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.02 }}
             transition={{
-              type: "spring",
+              type: "tween",
               stiffness: 400,
               damping: 10,
             }}
@@ -151,9 +154,9 @@ const PaymentSection = () => {
             </div>
           </motion.div>
           <motion.div
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.02 }}
             transition={{
-              type: "spring",
+              type: "tween",
               stiffness: 400,
               damping: 10,
             }}
@@ -170,9 +173,9 @@ const PaymentSection = () => {
           </motion.div>
 
           <motion.div
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.02 }}
             transition={{
-              type: "spring",
+              type: "tween",
               stiffness: 400,
               damping: 10,
             }}

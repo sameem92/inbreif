@@ -184,7 +184,7 @@ export default function Home() {
                   sx={{
                     display: "flex",
                     alignItems: "center",
-                    order: { xs: 2, sm: 1 },
+                    order: { xs: 2, md: 1 },
                   }}
                 >
                   <Image

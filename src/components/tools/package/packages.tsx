@@ -16,17 +16,17 @@ const currencyMap = {
   OM: { code: "OMR", symbol: "ر.ع" },
 }
 
-const Packages = ({ plans, className, more, buttonText }) => {
+const Packages = ({ plans, className, more, buttonText, link }) => {
   const [currency, setCurrency] = useState(currencyMap.default)
 
   useEffect(() => {
     const fetchUserLocation = async () => {
       try {
         // Example with `ip-api`
-        const response = await fetch("https://ip-api.com/json/")
+        const response = await fetch("https://ipapi.co/json/")
         const data = await response.json()
 
-        switch (data.countryCode) {
+        switch (data.country_code) {
           case "SA": // Saudi Arabia
             setCurrency(currencyMap.KSA)
             break
@@ -52,14 +52,18 @@ const Packages = ({ plans, className, more, buttonText }) => {
     window.open("http://wa.me/96877276659", "_target")
   }
 
+  const goToSite = () => {
+    window.open(link, "_target")
+  }
+
   return (
     <>
       {plans?.map((plan, i) => (
-        <Grid key={plan.title} size={{ xs: 12, lg: 4 }}>
+        <Grid key={plan.title} size={{ xs: 12, sm: 4 }}>
           <motion.div
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.02 }}
             transition={{
-              type: "spring",
+              type: "tween",
               stiffness: 400,
               damping: 10,
             }}
@@ -68,13 +72,13 @@ const Packages = ({ plans, className, more, buttonText }) => {
               <div className="content">
                 <h4>{plan.title}</h4>
                 <div className="plan_price">
-                  <span>{plan.price}</span>
-                  <span> ر.س</span>
+                  <span>{plan[currency.code]}</span>
+                  <span>{currency.symbol}</span>
                 </div>
                 {plan.label && <div className="label">{plan.label}</div>}
                 {plan.oldPrice && (
                   <div className="oldPrice">
-                    <span>{plan[currency.code]}</span>
+                    <span>{plan.oldPrice}</span>
                     <span>{currency.symbol}</span>
                   </div>
                 )}
@@ -87,9 +91,11 @@ const Packages = ({ plans, className, more, buttonText }) => {
                 </ul>
                 <Button
                   sx={{
+                    color: "#001014",
                     background: className !== "planCardS2" && i === 1 ? "#E0E324" : "transparent",
                     borderColor: className !== "planCardS2" && i === 1 ? "transparent" : "#e1e42a",
                   }}
+                  onClick={goToSite}
                 >
                   {buttonText}
                 </Button>
@@ -101,9 +107,9 @@ const Packages = ({ plans, className, more, buttonText }) => {
       ))}
 
       {plans.length < 3 && (
-        <Grid size={{ xs: 12, lg: 4 }}>
+        <Grid size={{ xs: 12, sm: 4 }}>
           <motion.div
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.02 }}
             transition={{
               type: "spring",
               stiffness: 400,

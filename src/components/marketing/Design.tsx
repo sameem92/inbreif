@@ -45,8 +45,6 @@ const items = [
 ]
 
 export default function Design() {
-  const prevButtonRef = useRef(null)
-  const nextButtonRef = useRef(null)
   const [isBeginning, setIsBeginning] = useState(true)
   const [isEnd, setIsEnd] = useState(false)
   const isTablet = useMediaQuery("(max-width:991px)")
@@ -84,7 +82,7 @@ export default function Design() {
   }
 
   return (
-    <>
+    <div id="motion">
       <motion.div
         style={isMobile ? { paddingTop: "8rem" } : { paddingTop: "15rem" }}
         initial={{ opacity: 0, y: 100 }}
@@ -133,7 +131,7 @@ export default function Design() {
             <Container sx={{ display: "flex", justifyContent: "center", gap: "6rem" }} maxWidth="lg">
               <Box
                 sx={{
-                  width: { xs: "89%", sm: "95%", md: "89%", lg: "80%" },
+                  width: { xs: "95%", md: "89%", lg: "80%" },
                   paddingBottom: "4.8rem",
                   position: "relative",
                   top: "5.8rem",
@@ -145,7 +143,7 @@ export default function Design() {
                   {items.map((item, index) => (
                     <Grid item key={index} xs={12} sm={6} md={4}>
                       <motion.div
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.02 }}
                         transition={{
                           type: "spring",
                           stiffness: 400,
@@ -248,21 +246,15 @@ export default function Design() {
             justifyContent: "space-between",
             width: "100%",
             padding: { xs: "0 2rem" },
-            "@media (max-width: 991px)": {
+            "@media (max-width: 900px)": {
               flexWrap: "wrap",
               justifyContent: "center",
               flexDirection: "row-reverse",
-            },
-            "@media(max-width:480px)": {
-              flexWrap: "wrap",
-              justifyContent: "center",
-              flexDirection: "row-reverse",
-              gap: "2rem",
             },
           }}
         >
           <Button
-            ref={prevButtonRef}
+            className="prev"
             sx={{
               width: { xs: "5rem", lg: "6rem" },
               height: { xs: "5rem", lg: "6rem" },
@@ -283,11 +275,10 @@ export default function Design() {
               "&:hover svg": {
                 marginRight: "1rem",
               },
-              "@media (max-width: 991px)": {
+              "@media (max-width: 900px)": {
                 order: "2",
               },
             }}
-            disabled={isBeginning}
           >
             <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -304,13 +295,8 @@ export default function Design() {
             slidesPerView={1}
             spaceBetween={20}
             navigation={{
-              prevEl: prevButtonRef.current,
-              nextEl: nextButtonRef.current,
-            }}
-            onBeforeInit={(swiper) => {
-              swiper.params.navigation.prevEl = prevButtonRef.current
-              swiper.params.navigation.nextEl = nextButtonRef.current
-              swiper.navigation.update()
+              prevEl: ".prev",
+              nextEl: ".next",
             }}
             onSlideChange={(swiper) => {
               const realIndex = swiper.realIndex
@@ -329,7 +315,7 @@ export default function Design() {
           </Swiper>
 
           <Button
-            ref={nextButtonRef}
+            className="next"
             sx={{
               width: { xs: "5rem", lg: "6rem" },
               height: { xs: "5rem", lg: "6rem" },
@@ -352,7 +338,6 @@ export default function Design() {
                 marginLeft: "1rem",
               },
             }}
-            disabled={isEnd}
           >
             <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -365,6 +350,6 @@ export default function Design() {
           </Button>
         </Box>
       </Container>
-    </>
+    </div>
   )
 }

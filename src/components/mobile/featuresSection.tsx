@@ -126,7 +126,7 @@ const FeaturesSection = () => {
             <Grid key={feature.title} size={{ xs: 6, sm: 3 }}>
               <motion.div
                 style={{ height: "100%", width: "100%" }}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.02 }}
                 transition={{
                   type: "spring",
                   stiffness: 400,

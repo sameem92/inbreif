@@ -31,8 +31,6 @@ import img13 from "../../../../public/image/company/13.png"
 const companies = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13]
 
 export default function Feedback() {
-  const prevButtonRef = useRef(null)
-  const nextButtonRef = useRef(null)
   const [isBeginning, setIsBeginning] = useState(true)
   const [isEnd, setIsEnd] = useState(false)
   const totalSlides = 10
@@ -153,8 +151,8 @@ export default function Feedback() {
             gap: "1.6rem",
             justifyContent: "space-between",
             width: "100%",
-            padding: { xs: "0 2rem" },
-            "@media (max-width: 480px)": {
+            padding: { sm: "0 2rem" },
+            "@media (max-width: 900px)": {
               flexWrap: "wrap",
               justifyContent: "center",
               flexDirection: "row-reverse",
@@ -162,7 +160,7 @@ export default function Feedback() {
           }}
         >
           <Button
-            ref={prevButtonRef}
+            className="prev"
             sx={{
               width: "6rem",
               height: "6rem",
@@ -183,11 +181,10 @@ export default function Feedback() {
               "&:hover svg": {
                 marginRight: "1rem",
               },
-              "@media (max-width: 480px)": {
+              "@media (max-width: 900px)": {
                 order: "2",
               },
             }}
-            disabled={isBeginning}
           >
             <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -201,18 +198,11 @@ export default function Feedback() {
 
           <Swiper
             navigation={{
-              prevEl: prevButtonRef.current,
-              nextEl: nextButtonRef.current,
-            }}
-            onBeforeInit={(swiper) => {
-              swiper.params.navigation.prevEl = prevButtonRef.current
-              swiper.params.navigation.nextEl = nextButtonRef.current
-              swiper.navigation.update()
+              prevEl: ".prev",
+              nextEl: ".next",
             }}
             onSlideChange={(swiper) => {
               const realIndex = swiper.realIndex
-
-              // Check if it's the first or last slide
               setIsBeginning(realIndex === 0)
               setIsEnd(realIndex === totalSlides - 1)
             }}
@@ -229,8 +219,8 @@ export default function Feedback() {
               <SwiperSlide key={index}>
                 <Card
                   sx={{
-                    maxWidth: { xs: "92%", md: 484, lg: 582 },
-                    minWidth: { xs: "92%", md: 484, lg: 582 },
+                    maxWidth: { xs: "95%", sm: "92%", lg: 582 },
+                    minWidth: { xs: "95%", sm: "92%", lg: 582 },
                     height: "100%",
                     borderRadius: "2.5rem",
                     display: "flex",
@@ -280,13 +270,11 @@ export default function Feedback() {
                     >
                       <Image
                         loading="lazy"
-                        width={80}
-                        height={80}
+                        width={100}
+                        height={100}
                         src={item.image}
                         alt=""
-                        blurDataURL={dynamicBlurDataUrl}
-                        placeholder="blur"
-                        style={{ width: "auto", borderRadius: "50%" }}
+                        style={{ width: "auto", borderRadius: "50%", objectFit: index < 6 ? "none" : "cover" }}
                       />
                       <span className="company">{item.compnay}</span>
                       <Box
@@ -317,7 +305,7 @@ export default function Feedback() {
           </Swiper>
 
           <Button
-            ref={nextButtonRef}
+            className="next"
             sx={{
               width: "6rem",
               height: "6rem",
@@ -339,7 +327,6 @@ export default function Feedback() {
                 marginLeft: "1rem",
               },
             }}
-            disabled={isEnd}
           >
             <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path

@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { useEffect } from "react"
 import Image from "next/image"
 
 // Components
@@ -180,6 +180,16 @@ export default function Home() {
   const handleChange = (_event: React.SyntheticEvent, newValue: string | number) => {
     setValue(newValue)
   }
+
+  useEffect(() => {
+    const hash = window.location.href.split("#")[1]
+    if (hash) {
+      const targetElement = document.getElementById(hash)
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth", block: "center" })
+      }
+    }
+  }, [])
   return (
     <>
       <Social />
@@ -249,7 +259,7 @@ export default function Home() {
                   {items.map((item, index) => (
                     <Grid item key={index} xs={6} sm={6} md={4}>
                       <motion.div
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.02 }}
                         transition={{
                           type: "spring",
                           stiffness: 400,
