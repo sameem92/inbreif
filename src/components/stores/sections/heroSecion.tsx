@@ -24,7 +24,7 @@ const HeroSecion = () => {
     <div className="heroSection" id="goToHome">
       <Grid
         container
-        spacing={{ xs: 6, md: 12 }}
+        spacing={{ xs: 4, sm: 6, lg: 12 }}
         justifyContent="center"
         alignItems="center"
         sx={{
@@ -37,8 +37,21 @@ const HeroSecion = () => {
           },
           "@media (max-width: 992px)": {
             padding: "12rem 7.5rem 0px 2rem",
+            ".store_img": {
+              height: "300px",
+              img: {
+                height: "100%",
+              },
+            },
           },
-
+          "@media (max-width: 560px)": {
+            ".store_img": {
+              height: "250px",
+              img: {
+                height: "100%",
+              },
+            },
+          },
           "@media (max-width: 480px)": {
             padding: "12rem 2rem 0px",
           },

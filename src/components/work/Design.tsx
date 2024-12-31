@@ -16,7 +16,6 @@ const icon3 = "/image/icon7.png"
 const dummy = "/image/dummy.png"
 
 import { motion } from "framer-motion"
-import { dynamicBlurDataUrl } from "@/lib"
 
 const items = [
   {
@@ -137,15 +136,7 @@ export default function Design() {
                               gap: "1.6rem",
                             }}
                           >
-                            <Image
-                              src={item.icon}
-                              alt={item.title}
-                              width={50}
-                              height={50}
-                              loading="lazy"
-                              blurDataURL={dynamicBlurDataUrl}
-                              placeholder="blur"
-                            />
+                            <Image src={item.icon} alt={item.title} width={50} height={50} loading="lazy" />
                             <Typography
                               variant="h6"
                               sx={{
@@ -297,8 +288,6 @@ export default function Design() {
                         width: "100%",
                         height: "100%",
                       }}
-                      blurDataURL={dynamicBlurDataUrl}
-                      placeholder="blur"
                       loading="lazy"
                     />
                   </CardContent>

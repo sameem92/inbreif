@@ -2,14 +2,14 @@
 //@ts-nocheck
 
 "use client"
-import React, { useState, useRef, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import Image from "next/image"
 
 // Components
 import { Box, Button, useMediaQuery } from "@mui/material"
 import { Swiper, SwiperSlide } from "swiper/react"
 
-import { Scrollbar, Navigation, EffectCoverflow } from "swiper/modules"
+import { Scrollbar, Navigation, EffectCoverflow, Autoplay } from "swiper/modules"
 
 import "swiper/css"
 import "swiper/css/scrollbar"
@@ -52,6 +52,7 @@ export default function SlideS2({ products }) {
             gap: "60px",
             padding: { sm: "0 2rem" },
             "@media (max-width: 900px)": {
+              gap: "1.6rem",
               flexWrap: "wrap",
               justifyContent: "center",
               flexDirection: "row-reverse",
@@ -81,7 +82,14 @@ export default function SlideS2({ products }) {
                 marginRight: "1rem",
               },
               "@media (max-width: 900px)": {
+                width: "4rem",
+                height: "4rem",
+                minHeight: "4rem",
+                minWidth: "4rem",
                 order: "2",
+                svg: {
+                  width: "14px",
+                },
               },
             }}
           >
@@ -96,7 +104,7 @@ export default function SlideS2({ products }) {
           </Button>
 
           <Swiper
-            modules={[Navigation, EffectCoverflow, Scrollbar]}
+            modules={[Navigation, EffectCoverflow, Scrollbar, Autoplay]}
             scrollbar={{ draggable: true, dragSize: 24 }}
             effect="coverflow"
             className="mySwiper"
@@ -115,6 +123,11 @@ export default function SlideS2({ products }) {
               setIsBeginning(realIndex === 0)
               setIsEnd(realIndex === totalSlides - 1)
             }}
+            autoplay={{
+              disableOnInteraction: false, // Continue autoplay after user interaction
+              pauseOnMouseEnter: true, // Pause autoplay when hovered
+            }}
+            speed={1000} // Speed of slide transition (1 second)
             coverflowEffect={{
               rotate: 0,
               stretch: 0,
@@ -175,6 +188,15 @@ export default function SlideS2({ products }) {
               },
               "&:hover svg": {
                 marginLeft: "1rem",
+              },
+              "@media (max-width: 900px)": {
+                width: "4rem",
+                height: "4rem",
+                minHeight: "4rem",
+                minWidth: "4rem",
+                svg: {
+                  width: "14px",
+                },
               },
             }}
           >

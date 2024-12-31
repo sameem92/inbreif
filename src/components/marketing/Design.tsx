@@ -3,18 +3,18 @@
 //@ts-nocheck
 "use client"
 
-import React, { useRef, useState } from "react"
+import React, { useState } from "react"
 import { Container, Button, Box, Card, CardContent, Typography, Grid, useMediaQuery } from "@mui/material"
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
 import "swiper/css/navigation"
-import { Navigation } from "swiper/modules"
+import { Navigation, Autoplay } from "swiper/modules"
 import Image from "next/image"
 const icon1 = "/image/icon5.png"
 const icon2 = "/image/icon6.png"
 const icon3 = "/image/icon7.png"
 import { motion } from "framer-motion"
-import { dynamicBlurDataUrl } from "@/lib"
+
 import YouTube from "react-youtube"
 
 const videoIds = [
@@ -186,15 +186,7 @@ export default function Design() {
                               gap: "1.6rem",
                             }}
                           >
-                            <Image
-                              loading="lazy"
-                              src={item.icon}
-                              alt={item.title}
-                              width={50}
-                              height={50}
-                              blurDataURL={dynamicBlurDataUrl}
-                              placeholder="blur"
-                            />
+                            <Image loading="lazy" src={item.icon} alt={item.title} width={50} height={50} />
                             <Typography
                               variant="h6"
                               sx={{
@@ -247,6 +239,7 @@ export default function Design() {
             width: "100%",
             padding: { xs: "0 2rem" },
             "@media (max-width: 900px)": {
+              gap: "1.6rem",
               flexWrap: "wrap",
               justifyContent: "center",
               flexDirection: "row-reverse",
@@ -276,7 +269,14 @@ export default function Design() {
                 marginRight: "1rem",
               },
               "@media (max-width: 900px)": {
+                width: "4rem",
+                height: "4rem",
+                minHeight: "4rem",
+                minWidth: "4rem",
                 order: "2",
+                svg: {
+                  width: "14px",
+                },
               },
             }}
           >
@@ -298,13 +298,18 @@ export default function Design() {
               prevEl: ".prev",
               nextEl: ".next",
             }}
+            autoplay={{
+              disableOnInteraction: false, // Continue autoplay after user interaction
+              pauseOnMouseEnter: true, // Pause autoplay when hovered
+            }}
+            speed={1000} // Speed of slide transition (1 second)
             onSlideChange={(swiper) => {
               const realIndex = swiper.realIndex
               setIsBeginning(realIndex === 0)
               setIsEnd(realIndex === totalSlides - 1)
               stopVideos(swiper.realIndex) // Clean up videos on slide change
             }}
-            modules={[Navigation]}
+            modules={[Navigation, Autoplay]}
             className="mySwiper-video"
           >
             {videoIds.map((id, index) => (
@@ -336,6 +341,15 @@ export default function Design() {
               },
               "&:hover svg": {
                 marginLeft: "1rem",
+              },
+              "@media (max-width: 900px)": {
+                width: "4rem",
+                height: "4rem",
+                minHeight: "4rem",
+                minWidth: "4rem",
+                svg: {
+                  width: "14px",
+                },
               },
             }}
           >

@@ -97,6 +97,12 @@ header .css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input > 
   margin-top: 10rem;
 }
 
+@media (max-width: 900px) {
+  .home {
+    margin-top: 8rem;
+  }
+}
+
 button:disabled {
   cursor: not-allowed !important;
   pointer-events: 1 !important;

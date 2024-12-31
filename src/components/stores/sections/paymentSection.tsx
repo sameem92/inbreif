@@ -130,9 +130,6 @@ const PaymentSection = () => {
             "@media (max-width: 767px)": {
               columnGap: "14px",
             },
-            // "@media (max-width: 400px)": {
-            //   flexDirection: "column",
-            // },
           }}
         >
           <motion.div

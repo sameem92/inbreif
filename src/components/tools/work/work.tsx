@@ -21,8 +21,6 @@ const img7 = "/image/mob/7.png"
 const img8 = "/image/mob/8.png"
 const img9 = "/image/mob/9.png"
 
-import { dynamicBlurDataUrl } from "@/lib"
-
 const list = [
   { image: img1, title: "تطبيق افاق" },
   { image: img2, title: "تطبيق وجيز" },
@@ -137,10 +135,8 @@ export default function Slider() {
                       <Image
                         src={item.image}
                         alt={`Slide ${i}`}
-                        blurDataURL={dynamicBlurDataUrl}
                         width={100} // Placeholder width
                         height={100} // Placeholder height
-                        placeholder="blur"
                         className="image-zoom"
                         layout="responsive"
                       />

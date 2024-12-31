@@ -3,7 +3,7 @@
 //@ts-nocheck
 "use client"
 
-import React, { useRef, useState } from "react"
+import React, { useState } from "react"
 import { Container, Button, Box, Card, CardContent, Typography } from "@mui/material"
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
@@ -11,7 +11,7 @@ import "swiper/css/navigation"
 import "swiper/css/autoplay"
 import { Navigation, Autoplay } from "swiper/modules"
 import Image from "next/image"
-import { dynamicBlurDataUrl } from "@/lib"
+
 import SliderS3 from "../../tools/sliders/sliderS3"
 
 import img1 from "../../../../public/image/company/1.png"
@@ -40,7 +40,7 @@ export default function Feedback() {
       say: `حبيت أشكركم على خدمتكم الرائعة و الراقية فعلاً تعاملكم جميل جداً مع سرعة الإستجابة في العمل والتواصل من أعلى وأفضل المستويات خدمة
 نتمنى لكم مزيداً من التوفيق والنجاح.
   `,
-      image: "/image/f1.png",
+      image: "/image/f1.svg",
       compnay: " مصنع أبواب الفتح الأتوماتيكية",
       location: "المملكة العربية السعودية",
     },
@@ -48,7 +48,7 @@ export default function Feedback() {
       say: `
 شغل ممتاز وتعامل راقي في وقت وجيز بالتوفيق والسداد.
   `,
-      image: "/image/f2.png",
+      image: "/image/f2.svg",
       compnay: "وسيط المزاحمية",
       location: "المملكة العربية السعودية",
     },
@@ -58,7 +58,7 @@ export default function Feedback() {
 ومرونة في التعامل من قبل الفريق
 شكراً لكم من القلب.
   `,
-      image: "/image/f3.png",
+      image: "/image/f3.svg",
       compnay: "مركز أوفرسيز الطبي",
       location: "الهند",
     },
@@ -68,7 +68,7 @@ export default function Feedback() {
 آخر تعامل بإذن الله
 شكراً لكم.
   `,
-      image: "/image/f4.png",
+      image: "/image/f4.svg",
       compnay: "مشروع بكلة",
       location: "المملكة العربية السعودية",
     },
@@ -76,7 +76,7 @@ export default function Feedback() {
       say: `
  تعامل راقي و عمل احترافي رائع فعلاً فكرتك بين يديك عملت معهم لجور يلاكس وكان العمل ذو جودة عالية أفكر مستقبلاً أن أعمل معاهم أعمال مستقبلية قادمة.
   `,
-      image: "/image/f.png",
+      image: "/image/f.svg",
       compnay: "جو ريلاكس",
       location: "المملكة العربية السعودية",
     },
@@ -85,7 +85,7 @@ export default function Feedback() {
  خدمة رائعة و عمل رائع وأسلوب أكثر من رائع و الالتزام بالوقت وتكلفة بسيطة يعني جد أفضل شركة بتعامل معها لا تقبل بأقل مما تستحق.
 
   `,
-      image: "/image/f6.png",
+      image: "/image/f6.svg",
       compnay: "مركز رواند",
       location: "المملكة الأردنية الهاشمية",
     },
@@ -111,7 +111,7 @@ export default function Feedback() {
 شركة تعاملها راقي و تصاميم مبتكرة و احترافية و الأهم من ذلك كلة السرعة و تحمل تعديلات العميل
 للوصول لحد ارضائه.
   `,
-      image: "/image/f9.png",
+      image: "/image/f9.svg",
       compnay: "شركة مكعبات",
       location: "المملكة العربية السعودية",
     },
@@ -182,7 +182,14 @@ export default function Feedback() {
                 marginRight: "1rem",
               },
               "@media (max-width: 900px)": {
+                width: "4rem",
+                height: "4rem",
+                minHeight: "4rem",
+                minWidth: "4rem",
                 order: "2",
+                svg: {
+                  width: "14px",
+                },
               },
             }}
           >
@@ -270,11 +277,11 @@ export default function Feedback() {
                     >
                       <Image
                         loading="lazy"
-                        width={100}
-                        height={100}
+                        width={80}
+                        height={80}
                         src={item.image}
                         alt=""
-                        style={{ width: "auto", borderRadius: "50%", objectFit: index < 6 ? "none" : "cover" }}
+                        style={{ width: "auto", borderRadius: "50%" }}
                       />
                       <span className="company">{item.compnay}</span>
                       <Box
@@ -290,8 +297,6 @@ export default function Feedback() {
                           src={"/image/lo.png"}
                           className="location"
                           alt="location"
-                          blurDataURL={dynamicBlurDataUrl}
-                          placeholder="blur"
                           width={20}
                           height={20}
                         />
@@ -325,6 +330,15 @@ export default function Feedback() {
               },
               "&:hover svg": {
                 marginLeft: "1rem",
+              },
+              "@media (max-width: 900px)": {
+                width: "4rem",
+                height: "4rem",
+                minHeight: "4rem",
+                minWidth: "4rem",
+                svg: {
+                  width: "14px",
+                },
               },
             }}
           >

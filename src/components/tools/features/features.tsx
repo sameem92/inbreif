@@ -7,7 +7,6 @@ import { motion } from "framer-motion"
 
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Pagination, Autoplay } from "swiper/modules"
-import { dynamicBlurDataUrl } from "@/lib"
 
 const icon1 = "/image/icon8.png"
 
@@ -213,15 +212,7 @@ export default function Features({ imgPath }) {
                                   },
                                 }}
                               >
-                                <Image
-                                  blurDataURL={dynamicBlurDataUrl}
-                                  placeholder="blur"
-                                  src={item.icon}
-                                  alt={item.title}
-                                  width={40}
-                                  height={40}
-                                  loading="lazy"
-                                />
+                                <Image src={item.icon} alt={item.title} width={40} height={40} loading="lazy" />
                                 <Typography
                                   variant="h6"
                                   sx={{
@@ -313,8 +304,6 @@ export default function Features({ imgPath }) {
                       width: "100%",
                       height: "100%",
                     }}
-                    blurDataURL={dynamicBlurDataUrl}
-                    placeholder="blur"
                     loading="lazy"
                   />
                 </Box>

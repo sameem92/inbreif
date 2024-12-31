@@ -43,7 +43,6 @@ const plansY = [
   {
     title: "الفضية",
     price: "800",
-    oldPrice: "550",
     features: [
       "عدد غير محدود من الطلبات",
       "تقارير وتحليلات دورية",
@@ -61,7 +60,6 @@ const plansY = [
   {
     title: "الذهبية",
     price: "2000",
-    oldPrice: "750",
     features: [
       "جميع مميزات الباقة الفضية",
       "تحكم في تصميم المتجر",
@@ -84,7 +82,6 @@ const plansM = [
   {
     title: "الفضية",
     price: "70",
-    oldPrice: "180",
     features: [
       "عدد غير محدود من الطلبات",
       "تقارير وتحليلات دورية",
@@ -102,7 +99,6 @@ const plansM = [
   {
     title: "الذهبية",
     price: "2000",
-    oldPrice: "750",
     features: [
       "جميع مميزات الباقة الفضية",
       "تحكم في تصميم المتجر",
@@ -181,13 +177,13 @@ const PackagesSection = () => {
             </Tabs>
 
             <CustomTabPanel value={value} index={0}>
-              <Grid container alignItems="flex-end" columnSpacing={2} rowSpacing={2}>
+              <Grid container alignItems="flex-end" columnSpacing={2} rowSpacing={6}>
                 <Packages plans={plansY} more className="" buttonText="الاشتراك الآن" link="" />
               </Grid>
             </CustomTabPanel>
 
             <CustomTabPanel value={value} index={1}>
-              <Grid container alignItems="flex-end" columnSpacing={2} rowSpacing={2}>
+              <Grid container alignItems="flex-end" columnSpacing={2} rowSpacing={6}>
                 <Packages plans={plansM} more className="" buttonText="الاشتراك الآن" link="" />
               </Grid>
             </CustomTabPanel>

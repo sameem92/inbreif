@@ -91,12 +91,12 @@ const packages = [
       "checked",
       "checked",
       "checked",
-      "",
+      "checked",
       "checked",
       "checked",
       "checked",
       "3 فروع",
-      "",
+      "checked",
       "checked",
       "checked",
       "checked",
@@ -180,6 +180,7 @@ const FeaturesSection = () => {
 
                     <Button
                       sx={{
+                        color: "#e1e42a",
                         background: "transparent",
                         borderColor: "#e1e42a",
                       }}

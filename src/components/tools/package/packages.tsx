@@ -17,7 +17,7 @@ const currencyMap = {
 }
 
 const Packages = ({ plans, className, more, buttonText, link }) => {
-  const [currency, setCurrency] = useState(currencyMap.default)
+  const [currency, setCurrency] = useState(null)
 
   useEffect(() => {
     const fetchUserLocation = async () => {
@@ -68,20 +68,16 @@ const Packages = ({ plans, className, more, buttonText, link }) => {
               damping: 10,
             }}
           >
-            <div className={`plancard ${className} ${className !== "planCardS2" && i === 1 ? "gold" : ""}`}>
+            <div className={`plancard ${i === 1 ? "gold" : ""}`}>
               <div className="content">
                 <h4>{plan.title}</h4>
-                <div className="plan_price">
-                  <span>{plan[currency.code]}</span>
-                  <span>{currency.symbol}</span>
-                </div>
-                {plan.label && <div className="label">{plan.label}</div>}
-                {plan.oldPrice && (
-                  <div className="oldPrice">
-                    <span>{plan.oldPrice}</span>
+                {currency && (
+                  <div className="plan_price">
+                    <span>{plan[currency.code]}</span>
                     <span>{currency.symbol}</span>
                   </div>
                 )}
+                {plan.label && <div className="label">{plan.label}</div>}
                 <ul>
                   {plan?.features?.map((feature) => (
                     <li key={feature}>
@@ -106,35 +102,33 @@ const Packages = ({ plans, className, more, buttonText, link }) => {
         </Grid>
       ))}
 
-      {plans.length < 3 && (
-        <Grid size={{ xs: 12, sm: 4 }}>
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            transition={{
-              type: "spring",
-              stiffness: 400,
-              damping: 10,
-            }}
-          >
-            <div className="plancard custom">
-              <div className="content">
-                <h4>مخصصة</h4>
+      <Grid size={{ xs: 12, sm: 4 }}>
+        <motion.div
+          whileHover={{ scale: 1.02 }}
+          transition={{
+            type: "spring",
+            stiffness: 400,
+            damping: 10,
+          }}
+        >
+          <div className="plancard custom">
+            <div className="content">
+              <h4>مخصصة</h4>
 
-                <p>يمكنك تخصيص باقتك وفقا لاحتياجاتك الخاصةمما يتيح لك اختيار الخدمات التي تناسب نشاطك</p>
+              <p>يمكنك تخصيص باقتك وفقا لاحتياجاتك الخاصةمما يتيح لك اختيار الخدمات التي تناسب نشاطك</p>
 
-                <Button
-                  onClick={goToWhatsApp}
-                  sx={{
-                    background: "transparent",
-                  }}
-                >
-                  تواصل معنا
-                </Button>
-              </div>
+              <Button
+                onClick={goToWhatsApp}
+                sx={{
+                  background: "transparent",
+                }}
+              >
+                تواصل معنا
+              </Button>
             </div>
-          </motion.div>
-        </Grid>
-      )}
+          </div>
+        </motion.div>
+      </Grid>
     </>
   )
 }

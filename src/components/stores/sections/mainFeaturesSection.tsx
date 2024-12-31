@@ -50,7 +50,7 @@ const MainFeaturesSection = () => {
           },
         }}
       >
-        <Grid size={{ xs: 12 }} display="flex" flexDirection="column" gap="50px">
+        <Grid size={{ xs: 12 }} display="flex" flexDirection="column" gap="50px" className="feats">
           <motion.div
             whileHover={{ scale: 1.02 }}
             transition={{

@@ -2,12 +2,12 @@ import React from "react"
 
 // Components
 import Grid from "@mui/material/Grid2"
-import { Box } from "@mui/material"
+import { Box, Button } from "@mui/material"
+import { motion } from "framer-motion"
+import Image from "next/image"
 
 // Icons
-import Packages from "../tools/package/packages"
-
-// Types
+import checked from "../../../public/icons/checkedIcon.svg"
 
 const plans = [
   {
@@ -52,6 +52,10 @@ const plans = [
 ]
 
 const PackagesSection = () => {
+  const goToSite = (link) => {
+    window.open(link, "_target")
+  }
+
   return (
     <div className="package" id="packages">
       <Grid
@@ -88,14 +92,48 @@ const PackagesSection = () => {
               },
             }}
           >
-            <Grid container columnSpacing={2} rowSpacing={2}>
-              <Packages
-                plans={plans}
-                className="planCardS2"
-                more={false}
-                buttonText="أطلب الأن"
-                link="http://wa.me/96877276659"
-              />
+            <Grid container columnSpacing={2} rowSpacing={6}>
+              {plans?.map((plan, i) => (
+                <Grid key={plan.title} size={{ xs: 12, sm: 4 }}>
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    transition={{
+                      type: "tween",
+                      stiffness: 400,
+                      damping: 10,
+                    }}
+                  >
+                    <div className={`plancard planCardS2 ${i === 1 ? "gold" : ""}`}>
+                      <div className="content">
+                        <h4>{plan.title}</h4>
+
+                        <div className="plan_price">
+                          <span>{plan.price} </span>
+                          <span>ر.س</span>
+                        </div>
+
+                        <ul>
+                          {plan?.features?.map((feature) => (
+                            <li key={feature}>
+                              <Image src={checked} alt="checked" /> <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <Button
+                          sx={{
+                            color: "#001014",
+                            background: i === 1 ? "#E0E324" : "transparent",
+                            borderColor: i === 1 ? "transparent" : "#e1e42a",
+                          }}
+                          onClick={() => goToSite("http://wa.me/96877276659")}
+                        >
+                          اطلب الأن
+                        </Button>
+                      </div>
+                    </div>
+                  </motion.div>
+                </Grid>
+              ))}
             </Grid>
           </Box>
         </Grid>

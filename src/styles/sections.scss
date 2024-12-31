@@ -19,13 +19,13 @@
       font-size: 32px;
       font-weight: 700;
       color: #e1e42a;
-      margin-bottom: 26px;
     }
 
     .plan_price {
       font-size: 33px;
       font-weight: 600;
       color: #fff;
+      margin-bottom: 42px;
     }
 
     .oldPrice {
@@ -33,7 +33,6 @@
       font-size: 25px;
       font-weight: 600;
       color: #ffffff59;
-      margin: 23px auto;
       position: relative;
 
       &::after {
@@ -143,6 +142,10 @@
       background: linear-gradient(81.07deg, #fad414 53.33%, #80660e 93.73%);
     }
 
+    .content {
+      min-height: 840px;
+    }
+
     button {
       border: 2px solid transparent;
       color: #001014;
@@ -156,6 +159,10 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
+      button {
+        margin-bottom: 30px;
+      }
     }
   }
 
@@ -180,15 +187,25 @@
     }
   }
 
-  &.withMinHeight:not(.gold) {
+  &.withMinHeight {
     .content {
-      min-height: 1020px;
-      padding: 35px 36px;
+      min-height: 1060px;
+
+      .plan_price {
+        margin-bottom: 0;
+      }
+    }
+
+    &.gold {
+      .content {
+        min-height: 1140px;
+      }
     }
   }
 
-  @media (max-width: 1020px) {
+  @media (max-width: 1050px) {
     .content {
+      min-height: 615px;
       padding: 36px;
 
       h4 {
@@ -203,17 +220,43 @@
       p {
         font-size: 16px;
       }
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        font-size: 20px;
+      }
+    }
+
+    &.withMinHeight {
+      .content {
+        min-height: 900px;
+
+        .label {
+          height: 40px;
+          width: 130px;
+          font-size: 22px;
+        }
+      }
+
+      &.gold {
+        .content {
+          min-height: 950px;
+        }
+      }
     }
 
     &.custom .content {
-      padding: 42px 36px;
+      padding: 67px 36px;
     }
   }
 
   @media (max-width: 991px) {
     .content {
-      min-height: 600px;
-      padding: 18px;
+      min-height: 580px;
+      padding: 36px 18px;
 
       ul li,
       p {
@@ -229,15 +272,35 @@
       }
     }
 
-    &.custom .content {
-      padding: 42px 18px;
+    &.gold {
+      .content {
+        min-height: 600px;
+      }
+    }
+
+    &.withMinHeight {
+      .content {
+        min-height: 840px;
+
+        .label {
+          height: 35px;
+          width: 120px;
+          font-size: 20px;
+        }
+      }
+
+      &.gold {
+        .content {
+          min-height: 850px;
+        }
+      }
     }
   }
 
-  @media (min-width: 600px) and (max-width: 767px) {
+  @media (max-width: 880px) {
     .content {
-      min-height: 500px;
-      padding: 14px;
+      min-height: 480px;
+      padding: 26px 8px;
 
       h4 {
         font-size: 25px;
@@ -246,6 +309,7 @@
 
       .plan_price {
         font-size: 25px;
+        margin-bottom: 22px;
       }
 
       .oldPrice {
@@ -253,18 +317,16 @@
         margin: 8px auto;
       }
 
-      ul li,
-      p {
-        font-size: 12px;
-      }
-
       p {
         max-width: 100%;
       }
 
       button {
-        height: 45px;
-        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        font-size: 16px;
         margin-bottom: 16px;
       }
 
@@ -273,13 +335,101 @@
       }
     }
 
-    &.custom .content {
-      padding: 42px 14px;
+    &.gold .content {
+      min-height: 500px;
+    }
 
-      button {
-        margin-bottom: 10px;
+    &.withMinHeight {
+      .content {
+        min-height: 760px;
+
+        .label {
+          width: 110px;
+          font-size: 18px;
+        }
+      }
+
+      &.gold {
+        .content {
+          min-height: 780px;
+        }
       }
     }
+
+    &.custom .content {
+      padding: 36px 14px;
+    }
+  }
+
+  @media (min-width: 600px) and (max-width: 767px) {
+    .content {
+      min-height: 400px;
+
+      h4 {
+        font-size: 22px;
+        margin-bottom: 0;
+      }
+
+      .plan_price {
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+
+      .oldPrice {
+        font-size: 18px;
+        margin: 8px auto;
+      }
+
+      ul li,
+      p {
+        font-size: 10px !important;
+      }
+
+      ul {
+        margin-bottom: 20px;
+
+        li {
+          margin-bottom: 10px !important;
+
+          img {
+            height: 14px;
+            width: 14px;
+          }
+        }
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 35px;
+        font-size: 14px;
+      }
+    }
+
+    &.gold .content {
+      min-height: 450px;
+    }
+
+    &.withMinHeight {
+      .content {
+        min-height: 600px;
+        .label {
+          width: 100px;
+          font-size: 16px;
+        }
+      }
+
+      &.gold {
+        .content {
+          min-height: 650px;
+        }
+      }
+    }
+
+    // &.custom .content {
+    //   padding: 4px;
+    // }
   }
 }
 

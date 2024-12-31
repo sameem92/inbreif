@@ -8,7 +8,6 @@ import "swiper/css/autoplay"
 import { Box } from "@mui/material"
 import Image from "next/image"
 import { Scrollbar, Autoplay } from "swiper/modules"
-import { dynamicBlurDataUrl } from "@/lib"
 
 const SliderS1: React.FC<{ images: string[] }> = ({ images }) => {
   const [imagesLoaded, setImagesLoaded] = useState(false)
@@ -67,7 +66,6 @@ const SliderS1: React.FC<{ images: string[] }> = ({ images }) => {
               autoplay={{
                 delay: 0,
                 disableOnInteraction: false,
-
                 pauseOnMouseEnter: true,
               }}
               allowTouchMove={true}
@@ -77,7 +75,7 @@ const SliderS1: React.FC<{ images: string[] }> = ({ images }) => {
                   slidesPerView: 1,
                   spaceBetween: 10,
                 },
-                600: {
+                620: {
                   slidesPerView: 2,
                   spaceBetween: 20,
                 },
@@ -93,16 +91,19 @@ const SliderS1: React.FC<{ images: string[] }> = ({ images }) => {
             >
               {images.map((img, i) => (
                 <SwiperSlide key={i}>
-                  <div className="image-container">
+                  <div
+                    style={{
+                      borderRadius: "16px",
+                    }}
+                  >
                     <Image
-                      blurDataURL={dynamicBlurDataUrl}
-                      placeholder="blur"
                       src={img}
                       alt={`Slide ${i}`}
                       className="image-zoom"
                       width={500}
                       height={300}
                       loading="lazy"
+                      style={{ objectFit: "fill" }}
                     />
                   </div>
                 </SwiperSlide>

@@ -12,7 +12,7 @@ import Form from "@/components/tools/form/form"
 import PackagesSection from "@/components/marketing/packagesSection"
 import Design from "@/components/marketing/Design"
 import Tabs from "@mui/material/Tabs"
-import { dynamicBlurDataUrl } from "@/lib"
+
 import Social from "@/components/tools/social/social"
 import Tab from "@mui/material/Tab"
 
@@ -295,15 +295,7 @@ export default function Home() {
                               gap: "1rem",
                             }}
                           >
-                            <Image
-                              src={item.icon}
-                              alt={item.title}
-                              width={50}
-                              blurDataURL={dynamicBlurDataUrl}
-                              placeholder="blur"
-                              height={50}
-                              loading="lazy"
-                            />
+                            <Image src={item.icon} alt={item.title} width={50} height={50} loading="lazy" />
                             <Typography
                               variant="h6"
                               sx={{

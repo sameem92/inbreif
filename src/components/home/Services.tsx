@@ -8,7 +8,6 @@ import Paper from "@mui/material/Paper"
 import Grid from "@mui/material/Grid"
 import { motion } from "framer-motion" // Import framer-motion
 import { useRouter } from "next/navigation"
-import { dynamicBlurDataUrl } from "@/lib"
 
 const Item = styled(Paper)({
   textAlign: "center",
@@ -158,8 +157,6 @@ export default function Services() {
                         alt="arrow"
                         loading="lazy"
                         width={24}
-                        blurDataURL={dynamicBlurDataUrl}
-                        placeholder="blur"
                         height={24}
                         className="arrow-icon" // Add class to the arrow icon
                       />
@@ -235,8 +232,6 @@ export default function Services() {
                         alt="arrow"
                         loading="lazy"
                         width={24}
-                        blurDataURL={dynamicBlurDataUrl}
-                        placeholder="blur"
                         height={24}
                         className="arrow-icon" // Add class to the arrow icon
                       />
@@ -330,8 +325,6 @@ export default function Services() {
                           alt="arrow"
                           loading="lazy"
                           width={24}
-                          blurDataURL={dynamicBlurDataUrl}
-                          placeholder="blur"
                           height={24}
                           className="arrow-icon" // Add class to the arrow icon
                         />

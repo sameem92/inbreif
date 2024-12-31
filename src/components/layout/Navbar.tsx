@@ -1,6 +1,5 @@
 "use client" // Ensure it's a client component
 import { animateScroll as scroll } from "react-scroll"
-import { dynamicBlurDataUrl } from "@/lib"
 
 import React from "react"
 import { Stack, Toolbar, AppBar, Box, Button, IconButton, Drawer, List, ListItem, ListItemText } from "@mui/material"
@@ -59,8 +58,6 @@ const Header = () => {
       <List sx={{ background: "#124651", padding: "2rem", height: "100vh" }}>
         <ListItem sx={{ width: "100%", display: "flex", justifyContent: "flex-start" }}>
           <Image
-            blurDataURL={dynamicBlurDataUrl}
-            placeholder="blur"
             loading="lazy"
             onClick={() => handleNavigation("/")}
             src={InbreifLogo}
@@ -179,8 +176,6 @@ const Header = () => {
                   alt="Inbreif Logo"
                   width={100}
                   height={48}
-                  blurDataURL={dynamicBlurDataUrl}
-                  placeholder="blur"
                   className="cursor-pointer"
                   style={{
                     height: "auto",
@@ -270,8 +265,8 @@ const Header = () => {
                     src={arrowDownIcon}
                     alt="arrowSelect"
                     loading="lazy"
-                    blurDataURL={dynamicBlurDataUrl}
-                    placeholder="blur"
+                    
+                   
                   />
                 )}
                 MenuProps={{
@@ -362,8 +357,6 @@ const Header = () => {
                 onClick={() => handleNavigation("/")}
                 src={InbreifLogo}
                 alt="Inbreif Logo"
-                blurDataURL={dynamicBlurDataUrl}
-                placeholder="blur"
                 className="cursor-pointer"
               />
             </Stack>

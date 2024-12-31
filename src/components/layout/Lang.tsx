@@ -1,17 +1,11 @@
-"use client"; // Ensure it's a client component
+"use client" // Ensure it's a client component
 
-import React from "react";
-import { Box, MenuItem } from "@mui/material";
-import Image from "next/image";
-import { styled } from "@mui/material/styles";
-import {
-  usePopupState,
-  bindHover,
-  bindMenu,
-  bindTrigger,
-} from "material-ui-popup-state/hooks";
-import HoverMenu from "material-ui-popup-state/HoverMenu";
-import { dynamicBlurDataUrl } from "@/lib";
+import React from "react"
+import { Box, MenuItem } from "@mui/material"
+import Image from "next/image"
+import { styled } from "@mui/material/styles"
+import { usePopupState, bindHover, bindMenu, bindTrigger } from "material-ui-popup-state/hooks"
+import HoverMenu from "material-ui-popup-state/HoverMenu"
 
 const StyledMenu = styled((props: MenuProps) => (
   <HoverMenu
@@ -31,8 +25,7 @@ const StyledMenu = styled((props: MenuProps) => (
   "& .MuiPaper-root": {
     minWidth: 180,
 
-    background:
-      "linear-gradient(137.34deg, rgba(2, 5, 4, 0.16) 23.98%, rgba(35, 36, 56, 0.16) 65.73%)",
+    background: "linear-gradient(137.34deg, rgba(2, 5, 4, 0.16) 23.98%, rgba(35, 36, 56, 0.16) 65.73%)",
     backdropFilter: "blur(100px)",
     borderRadius: "0px 11px 11px 11px",
     border: "1px solid #22373C",
@@ -64,15 +57,15 @@ const StyledMenu = styled((props: MenuProps) => (
       "&:active": {},
     },
   },
-}));
+}))
 
-import { MenuProps } from "@mui/material/Menu";
+import { MenuProps } from "@mui/material/Menu"
 
 const Header = () => {
   const popupState = usePopupState({
     variant: "popover",
     popupId: "popupLang",
-  });
+  })
 
   return (
     <>
@@ -88,14 +81,7 @@ const Header = () => {
         {...bindTrigger(popupState)}
       >
         <p className="nav-link">العربية</p>
-        <Image
-          src={"/image/chevron-down.svg"}
-          blurDataURL={dynamicBlurDataUrl}
-          placeholder="blur"
-          alt="arrow down"
-          width={24}
-          height={24}
-        />
+        <Image src={"/image/chevron-down.svg"} alt="arrow down" width={24} height={24} />
       </Box>
 
       <StyledMenu
@@ -114,7 +100,7 @@ const Header = () => {
         </MenuItem>
       </StyledMenu>
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

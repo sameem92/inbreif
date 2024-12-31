@@ -10,7 +10,7 @@ import Feedback from "@/components/tools/feedback/feedback"
 import Form from "@/components/tools/form/form"
 import Services from "@/components/home/Services"
 import Social from "@/components/tools/social/social"
-import { dynamicBlurDataUrl } from "@/lib"
+
 import { ReactTyped } from "react-typed"
 
 const items = [
@@ -186,8 +186,6 @@ export default function Home() {
                               width={50}
                               height={50}
                               loading="lazy"
-                              blurDataURL={dynamicBlurDataUrl}
-                              placeholder="blur"
                             />
                             <Typography
                               variant="h6"

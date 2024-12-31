@@ -63,7 +63,7 @@ const features = [
   },
   {
     icon: feature10,
-    title: "تصميم احترافي من إختيارك",
+    title: "تصميم احترافي من اختيارك",
   },
   {
     icon: feature11,

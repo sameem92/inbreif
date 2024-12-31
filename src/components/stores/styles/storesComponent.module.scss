@@ -96,7 +96,7 @@
       background-position: 50% center;
 
       h1 {
-        font-size: 40px;
+        font-size: 38px;
         margin-bottom: 14px;
       }
     }
@@ -137,7 +137,7 @@
       margin-bottom: 56px;
     }
 
-    .css-11zr3sc-MuiGrid2-root {
+    .feats {
       & > div:nth-of-type(2) {
         align-self: flex-end;
 
@@ -162,16 +162,23 @@
       }
 
       @media (max-width: 880px) {
-        & > div:last-of-type {
-          .img {
-            left: -120px;
-          }
-        }
-      }
-
-      @media (max-width: 880px) {
         & > div:nth-of-type(2) {
           align-self: stretch;
+        }
+
+        & > div:last-of-type {
+          .content {
+            padding: 0px 20px;
+          }
+
+          .img {
+            max-height: 200px;
+            left: -120px;
+
+            img {
+              height: 100%;
+            }
+          }
         }
       }
     }
@@ -266,12 +273,12 @@
           width: 100%;
           flex-direction: column;
           display: flex;
-          gap: 10px;
+          gap: 0px;
           padding: 0px;
 
           .content {
             max-width: 100%;
-            padding: 20px;
+            padding: 10px 20px;
 
             p {
               font-size: 18px;
@@ -689,7 +696,6 @@
           border-radius: 60px;
           font-size: 22px;
           font-weight: 600;
-          color: #e1e42a;
           margin-bottom: 32px;
         }
 
@@ -1093,6 +1099,10 @@
     .sectionHead {
       text-align: start;
       margin-bottom: 35px;
+
+      p {
+        max-width: 90%;
+      }
     }
 
     .img {
@@ -1130,7 +1140,7 @@
       }
     }
 
-    @media (max-width: 991px) {
+    @media (max-width: 1066px) {
       .sectionHead {
         margin-bottom: 16px;
 
@@ -1140,16 +1150,35 @@
         }
       }
 
+      .img img {
+        max-height: 400px;
+        width: 300px;
+      }
+    }
+
+    @media (max-width: 956px) {
+      .sectionHead {
+        margin-bottom: 16px;
+
+        h2 {
+          font-size: 25px;
+          margin-bottom: 0;
+        }
+
+        p {
+          font-size: 20px;
+          line-height: 35px;
+        }
+      }
+
       ul li {
         font-size: 18px;
         margin-bottom: 0;
       }
     }
 
-    @media (max-width: 840px) {
+    @media (max-width: 880px) {
       .sectionHead {
-        margin-bottom: 16px;
-
         h2 {
           font-size: 20px;
           margin-bottom: 0;
@@ -1158,17 +1187,18 @@
 
       ul li {
         font-size: 14px;
+        line-height: 26px;
         margin-bottom: 0;
+
+        &::before {
+          margin-top: 6px;
+        }
       }
     }
 
     @media (max-width: 480px) {
-      img {
-        max-height: 500px;
-      }
-
-      ul li {
-        font-size: 16px;
+      .img img {
+        max-height: 300px;
       }
     }
   }

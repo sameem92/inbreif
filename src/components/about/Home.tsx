@@ -6,7 +6,7 @@ import Image from "next/image"
 import Social from "@/components/tools/social/social"
 import Form from "@/components/tools/form/form"
 import Feedback from "@/components/tools/feedback/feedback"
-import { dynamicBlurDataUrl } from "@/lib"
+
 import distinguishes from "../../../public/images/about/distinguishes.svg"
 import values from "../../../public/images/about/values.svg"
 
@@ -163,8 +163,6 @@ export default function Home() {
                       }}
                       loading="lazy"
                       alt="one"
-                      blurDataURL={dynamicBlurDataUrl}
-                      placeholder="blur"
                     />
                   </motion.div>
                 </Grid2>
@@ -196,8 +194,6 @@ export default function Home() {
                     }}
                     loading="lazy"
                     alt="two"
-                    blurDataURL={dynamicBlurDataUrl}
-                    placeholder="blur"
                   />
                 </Grid2>
 

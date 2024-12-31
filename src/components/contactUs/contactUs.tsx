@@ -9,7 +9,7 @@ import Select from "@mui/material/Select"
 import Button from "@mui/material/Button"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
-import { dynamicBlurDataUrl } from "@/lib"
+
 import emailjs from "@emailjs/browser"
 const images = ["/image/arrow-select.png", "/image/right.png"]
 
@@ -336,8 +336,6 @@ export default function ContactUsComponent() {
                     src={images[0]}
                     alt="arrowSelect"
                     loading="lazy"
-                    blurDataURL={dynamicBlurDataUrl}
-                    placeholder="blur"
                   />
                 )}
                 sx={{

@@ -8,7 +8,6 @@ import Social from "@/components/tools/social/social"
 const img1 = "/image/a.png"
 const img2 = "/image/img2.png"
 const img3 = "/image/img3.png"
-import { dynamicBlurDataUrl } from "@/lib"
 
 const IMGS = [img2, img3, img1]
 
@@ -101,8 +100,6 @@ export default function Home() {
                   layout="responsive"
                   width={100} // Placeholder width
                   height={100} // Placeholder height
-                  blurDataURL={dynamicBlurDataUrl}
-                  placeholder="blur"
                   className="work-ig"
                   loading="lazy"
                 />

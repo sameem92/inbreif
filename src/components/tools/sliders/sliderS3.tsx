@@ -11,7 +11,6 @@ import "swiper/css/navigation"
 import "swiper/css/autoplay"
 import { Autoplay } from "swiper/modules"
 import Image from "next/image"
-import { dynamicBlurDataUrl } from "@/lib"
 
 export default function SliderS3({ images, className }) {
   const isMobile = useMediaQuery("(max-width: 600px)")
@@ -66,13 +65,7 @@ export default function SliderS3({ images, className }) {
                   }}
                   className="fix-x"
                 >
-                  <Image
-                    loading="lazy"
-                    src={src}
-                    alt={`company-logo-${index + 1}`}
-                    blurDataURL={dynamicBlurDataUrl}
-                    placeholder="blur"
-                  />
+                  <Image loading="lazy" src={src} alt={`company-logo-${index + 1}`} />
                 </Box>
               </SwiperSlide>
             ))}

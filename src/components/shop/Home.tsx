@@ -61,8 +61,9 @@ export default function Home() {
           >
             <Grid
               container
+              rowSpacing={4}
+              columnSpacing={4}
               alignItems="center"
-              gap="50px"
               sx={{
                 backgroundImage: 'url("/images/store/bg.svg")',
                 backgroundRepeat: "no-repeat",
@@ -70,9 +71,6 @@ export default function Home() {
                 backgroundSize: "80% 90%",
                 "@media(max-width:900px)": {
                   backgroundPosition: "center",
-                },
-                "@media(max-width:480px)": {
-                  gap: "25px",
                 },
               }}
             >
@@ -84,7 +82,10 @@ export default function Home() {
                     alignItems: { xs: "center", md: "flex-start" },
                     justifyContent: { xs: "center", md: "flex-start" },
                     width: "100%",
-                    gap: { xs: "2rem", md: "5rem" },
+                    gap: { xs: "2rem", md: "4rem" },
+                    ".main-title": {
+                      lineHeight: "4rem",
+                    },
                     "@media(max-width:900px)": {
                       ".main-title": {
                         textAlign: "center",

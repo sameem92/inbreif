@@ -6,7 +6,6 @@ import Fade from "@mui/material/Fade"
 import useScrollTrigger from "@mui/material/useScrollTrigger"
 import { animateScroll as scroll } from "react-scroll"
 import { useRouter, usePathname } from "next/navigation"
-import { dynamicBlurDataUrl } from "@/lib"
 import footer from "../../../public/image/fo.png"
 import timer from "../../../public/image/time.png"
 import email from "../../../public/image/email.png"
@@ -46,8 +45,6 @@ function ScrollTop() {
         <Image
           loading="lazy"
           onClick={handleClick}
-          blurDataURL={dynamicBlurDataUrl}
-          placeholder="blur"
           width={50}
           height={50}
           src={up}
@@ -120,16 +117,7 @@ export default function ResponsiveFooter() {
                   flexDirection: "column",
                 }}
               >
-                <Image
-                  src={footer}
-                  alt="footer"
-                  width={172}
-                  height={60}
-                  blurDataURL={dynamicBlurDataUrl}
-                  placeholder="blur"
-                  loading="lazy"
-                  className="footer-logo"
-                />
+                <Image src={footer} alt="footer" width={172} height={60} loading="lazy" className="footer-logo" />
                 <Typography
                   variant="body2"
                   sx={{
@@ -155,14 +143,7 @@ export default function ResponsiveFooter() {
                   ⁠مرخصة برقم : س ت 1559152
                 </Typography>
                 <Box sx={{ display: "flex", alignItems: "center", gap: "0.7rem" }}>
-                  <Image
-                    blurDataURL={dynamicBlurDataUrl}
-                    placeholder="blur"
-                    src={timer}
-                    alt="timer"
-                    width={36}
-                    height={36}
-                  />
+                  <Image src={timer} alt="timer" width={36} height={36} />
 
                   <Typography
                     variant="body2"
@@ -174,7 +155,7 @@ export default function ResponsiveFooter() {
                       textAlign: "left",
                     }}
                   >
-                    <strong>أوقات الدوام</strong>: من الساعة 8 صباحاً إلى ٨ مساءً يومياً عدا الجمعة
+                    <strong>أوقات الدوام</strong>: من الساعة 8 صباحاً إلى 8 مساءً يومياً عدا الجمعة
                   </Typography>
                 </Box>
                 <div className="social-menu-footer">
@@ -393,23 +374,6 @@ export default function ResponsiveFooter() {
                   >
                     التسويق والحملات
                   </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      fontFamily: "Kumbh Sans, sans-serif",
-                      fontSize: "1.6rem",
-                      fontWeight: 400,
-                      lineHeight: "1.6rem",
-                      cursor: "pointer",
-                      transition: "color 0.3s ease",
-                      "&:hover": {
-                        color: " #e0e324",
-                      },
-                    }}
-                    onClick={() => handleNavigationScroll("/", "special-offers")}
-                  >
-                    عروض خاصة
-                  </Typography>
                 </Box>
               </Box>
             </Grid>
@@ -466,14 +430,7 @@ export default function ResponsiveFooter() {
                       gap: "1rem",
                     }}
                   >
-                    <Image
-                      blurDataURL={dynamicBlurDataUrl}
-                      placeholder="blur"
-                      src={email}
-                      alt="email"
-                      width={34}
-                      height={34}
-                    />
+                    <Image src={email} alt="email" width={34} height={34} />
 
                     <a href="mailto:contact@inbrief.click" style={{ color: "white" }}>
                       contact@inbrief.click
@@ -498,14 +455,7 @@ export default function ResponsiveFooter() {
                         gap: "1rem",
                       }}
                     >
-                      <Image
-                        src={location}
-                        alt="location"
-                        width={34}
-                        blurDataURL={dynamicBlurDataUrl}
-                        placeholder="blur"
-                        height={34}
-                      />
+                      <Image src={location} alt="location" width={34} height={34} />
 
                       <span style={{ lineHeight: "2rem" }}>
                         <strong>الدمام</strong> : طريق الملك فهد مع طريق عثمان ابن عفان مقابل عمارة المعجل
@@ -524,14 +474,7 @@ export default function ResponsiveFooter() {
                         gap: "1rem",
                       }}
                     >
-                      <Image
-                        blurDataURL={dynamicBlurDataUrl}
-                        placeholder="blur"
-                        src={phone}
-                        alt="phone"
-                        width={34}
-                        height={34}
-                      />
+                      <Image src={phone} alt="phone" width={34} height={34} />
 
                       <strong>
                         <a href="http://wa.me/966552647805" target="_blank" style={{ color: "white" }}>
@@ -559,14 +502,7 @@ export default function ResponsiveFooter() {
                         gap: "1rem",
                       }}
                     >
-                      <Image
-                        src={location}
-                        alt="location"
-                        width={34}
-                        blurDataURL={dynamicBlurDataUrl}
-                        placeholder="blur"
-                        height={34}
-                      />
+                      <Image src={location} alt="location" width={34} height={34} />
 
                       <span style={{ lineHeight: "2.5rem" }}>
                         <strong>الكويت</strong>: الفروانية - خيطان - الهيئة العامه للاستثمار -الدور الأول - 13
@@ -585,14 +521,7 @@ export default function ResponsiveFooter() {
                         gap: "1rem",
                       }}
                     >
-                      <Image
-                        blurDataURL={dynamicBlurDataUrl}
-                        placeholder="blur"
-                        src={phone}
-                        alt="phone"
-                        width={34}
-                        height={34}
-                      />
+                      <Image src={phone} alt="phone" width={34} height={34} />
 
                       <strong>
                         <a href="http://wa.me/96550337772" target="_blank" style={{ color: "white" }}>
@@ -620,14 +549,7 @@ export default function ResponsiveFooter() {
                         gap: "1rem",
                       }}
                     >
-                      <Image
-                        src={location}
-                        alt="location"
-                        width={34}
-                        blurDataURL={dynamicBlurDataUrl}
-                        placeholder="blur"
-                        height={34}
-                      />
+                      <Image src={location} alt="location" width={34} height={34} />
 
                       <span>
                         <strong>مسقط</strong>: العذيبة - ١٨نوفمبر -مقابل بنك مسقط
@@ -646,14 +568,7 @@ export default function ResponsiveFooter() {
                         gap: "1rem",
                       }}
                     >
-                      <Image
-                        blurDataURL={dynamicBlurDataUrl}
-                        placeholder="blur"
-                        src={phone}
-                        alt="phone"
-                        width={34}
-                        height={34}
-                      />
+                      <Image src={phone} alt="phone" width={34} height={34} />
 
                       <strong>
                         <a href="http://wa.me/96877276659" target="_blank" style={{ color: "white" }}>

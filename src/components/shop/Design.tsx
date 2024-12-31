@@ -18,7 +18,6 @@ const icon9 = "/image/l9.png"
 const icon10 = "/image/l11.png"
 const icon11 = "/image/l12.png"
 const icon12 = "/image/l13.png"
-import { dynamicBlurDataUrl } from "@/lib"
 
 // Data
 const sections = [
@@ -208,15 +207,7 @@ const Section = ({ section }) => (
                           gap: "1.6rem",
                         }}
                       >
-                        <Image
-                          src={item.icon}
-                          alt={item.title}
-                          width={50}
-                          blurDataURL={dynamicBlurDataUrl}
-                          placeholder="blur"
-                          height={50}
-                          loading="lazy"
-                        />
+                        <Image src={item.icon} alt={item.title} width={50} height={50} loading="lazy" />
                         <Typography
                           variant="h6"
                           sx={{
