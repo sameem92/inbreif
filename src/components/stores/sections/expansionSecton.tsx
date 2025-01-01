@@ -54,6 +54,7 @@ const ExpansionSecton = () => {
                 stiffness: 400,
                 damping: 10,
               }}
+              className="expansionCard1"
             >
               <div className="expansionCard">
                 <div className="content">

@@ -42,12 +42,6 @@ export default function AppLayout({ children }: AppLayoutProps) {
       window?.location?.pathname?.includes("work") ||
       window?.location?.pathname?.includes("system")
 
-    // Set a small, placeholder image initially (for performance)
-    body.style.backgroundImage = `url("/image/placeholder.svg")`
-    body.style.backgroundPosition = "top"
-    body.style.backgroundSize = "cover"
-    body.style.backgroundRepeat = "no-repeat"
-
     // Lazy load the full-size image after the placeholder
     const loadImage = new Image()
     loadImage.src = isPhoneApps ? "/image/home2.svg" : "/image/home.svg"
@@ -73,7 +67,6 @@ export default function AppLayout({ children }: AppLayoutProps) {
 
       return
     } // If footer is not rendered, exit early
-    console.log(footer, "--->")
     const loadFooterImage = new Image()
     loadFooterImage.src = "/image/noise.png"
     loadFooterImage.onload = () => {

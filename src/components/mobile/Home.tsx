@@ -53,7 +53,10 @@ export default function Home() {
               padding: "15rem 1rem 7rem",
             },
             "@media (max-width: 992px)": {
-              padding: "12rem 2rem 6rem",
+              padding: "15rem 2rem 6rem",
+            },
+            "@media (max-width: 900px)": {
+              padding: "0rem 2rem 6rem",
             },
             "@media (max-width: 768px)": {
               backgroundPosition: "50% 75%",
@@ -62,7 +65,14 @@ export default function Home() {
             },
           }}
         >
-          <Grid size={{ xs: 12, lg: 6 }}>
+          <Grid
+            size={{ xs: 12, lg: 6 }}
+            sx={{
+              "@media (min-width:480px) and (max-width: 768px)": {
+                marginBottom: "4rem",
+              },
+            }}
+          >
             <Item
               sx={{
                 display: "flex",
@@ -71,6 +81,9 @@ export default function Home() {
                 justifyContent: { xs: "center", lg: "flex-start" },
                 margin: "auto",
                 gap: { xs: "1.6rem", md: "3rem" },
+                "@media (max-width:991px)": {
+                  ".main-secandry-title": { lineHeight: "normal" },
+                },
               }}
             >
               <Box
@@ -89,7 +102,10 @@ export default function Home() {
                 sx={{
                   "@media (max-width:1240px)": {
                     ".mobile-title": { textAlign: "center" },
-                    ".paragrph-another": { textAlign: "center" },
+                    ".paragrph-another": { textAlign: "center", maxWidth: "90%", margin: "0 auto" },
+                  },
+                  "@media (max-width:767px)": {
+                    ".mobile-title": { marginTop: "0px" },
                   },
                 }}
               >

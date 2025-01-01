@@ -19,14 +19,20 @@ const TopServicesSecton = () => {
         alignItems="center"
         sx={{
           padding: "100px 15rem ",
-          "@media (max-width: 1340px)": {
-            padding: "100px 10rem 50px",
+          "@media (max-width: 1400px)": {
+            padding: "80px 10rem 50px",
           },
           "@media (max-width: 1240px)": {
-            padding: "100px 4rem 50px",
+            padding: "50px 4rem",
           },
           "@media (max-width: 992px)": {
-            padding: "100px 4rem 0px",
+            padding: "50px 4rem 0px",
+          },
+          "@media (max-width: 767px)": {
+            padding: "50px 4rem",
+          },
+          "@media (max-width: 600px)": {
+            padding: "80px 4rem 0px",
           },
           "@media (max-width: 480px)": {
             padding: "5rem 4rem 0px",
@@ -121,10 +127,16 @@ const TopServicesSecton = () => {
             padding: "0px 4rem 50px",
           },
           "@media (max-width: 992px)": {
-            padding: "0px 4rem",
+            padding: "0px 4rem 50px",
+          },
+          "@media (max-width: 767px)": {
+            padding: "0px 4rem 80px",
+          },
+          "@media (max-width: 600px)": {
+            padding: "0px 4rem 80px",
           },
           "@media (max-width: 480px)": {
-            padding: "0px 2rem",
+            padding: "0px 2rem 0rem",
           },
         }}
       >

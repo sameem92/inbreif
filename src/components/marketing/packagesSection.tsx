@@ -1,4 +1,8 @@
-import React from "react"
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+
+//@ts-nocheck
+
+import React, { useEffect, useState } from "react"
 
 // Components
 import Grid from "@mui/material/Grid2"
@@ -12,7 +16,10 @@ import checked from "../../../public/icons/checkedIcon.svg"
 const plans = [
   {
     title: "هوية بصرية",
-    price: "800",
+    USD: "210",
+    SAR: "800",
+    KD: "65",
+    OMR: "80",
     features: [
       "تصميم شعار احترافي - Logo",
       "إعداد هوية بصرية كاملة ( ألوان + خطوط + رموز )",
@@ -25,7 +32,10 @@ const plans = [
   },
   {
     title: "موشن جرافيك",
-    price: "1200",
+    USD: "320",
+    SAR: "1200",
+    KD: "100",
+    OMR: "120",
     features: [
       "كتابة المحتوى - Script Writing",
       "إنشاء القصة - Story Boarding",
@@ -38,7 +48,10 @@ const plans = [
   },
   {
     title: "مونتاج فيديو",
-    price: "500",
+    USD: "135",
+    SAR: "500",
+    KD: "40",
+    OMR: "50",
     features: [
       "كتابة المحتوى - Script Writing",
       "تجميع المواد من فيديوهات وصور",
@@ -51,7 +64,45 @@ const plans = [
   },
 ]
 
+const currencyMap = {
+  default: { code: "USD", symbol: "دولار" },
+  KSA: { code: "SAR", symbol: "ر.س" },
+  KW: { code: "KD", symbol: "د.ك" },
+  OM: { code: "OMR", symbol: "ر.ع" },
+}
+
 const PackagesSection = () => {
+  const [currency, setCurrency] = useState(null)
+
+  useEffect(() => {
+    const fetchUserLocation = async () => {
+      try {
+        // Example with `ip-api`
+        const response = await fetch("https://ipapi.co/json/")
+        const data = await response.json()
+
+        switch (data.country_code) {
+          case "SA": // Saudi Arabia
+            setCurrency(currencyMap.KSA)
+            break
+          case "KW": // Kuwait
+            setCurrency(currencyMap.KW)
+            break
+          case "OM": // Oman
+            setCurrency(currencyMap.OM)
+            break
+          default:
+            setCurrency(currencyMap.default) // Default to USD
+        }
+      } catch (error) {
+        console.error("Error fetching user location:", error)
+        setCurrency(currencyMap.default)
+      }
+    }
+
+    fetchUserLocation()
+  }, [])
+
   const goToSite = (link) => {
     window.open(link, "_target")
   }
@@ -107,10 +158,12 @@ const PackagesSection = () => {
                       <div className="content">
                         <h4>{plan.title}</h4>
 
-                        <div className="plan_price">
-                          <span>{plan.price} </span>
-                          <span>ر.س</span>
-                        </div>
+                        {currency && (
+                          <div className="plan_price">
+                            <span>{plan[currency.code]}</span>
+                            <span>{currency.symbol}</span>
+                          </div>
+                        )}
 
                         <ul>
                           {plan?.features?.map((feature) => (

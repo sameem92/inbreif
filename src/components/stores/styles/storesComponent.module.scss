@@ -1043,10 +1043,6 @@
         }
       }
 
-      &:first-of-type {
-        margin-bottom: 30px;
-      }
-
       &::before {
         content: "";
         background-image: linear-gradient(81.07deg, #22373c 53.33%, #18292d 93.73%);
@@ -1063,6 +1059,12 @@
         &::before {
           background-image: linear-gradient(81.07deg, #fad414 53.33%, #80660e 93.73%);
         }
+      }
+    }
+
+    .expansionCard1 {
+      .expansionCard {
+        margin-bottom: 30px;
       }
     }
 
@@ -1150,9 +1152,11 @@
         }
       }
 
-      .img img {
-        max-height: 400px;
-        width: 300px;
+      .img {
+        img {
+          max-height: 400px;
+          width: 300px;
+        }
       }
     }
 
@@ -1194,11 +1198,21 @@
           margin-top: 6px;
         }
       }
+
+      .img {
+        &:not(.start) img {
+          max-height: 300px;
+          width: 300px;
+        }
+      }
     }
 
-    @media (max-width: 480px) {
-      .img img {
-        max-height: 300px;
+    @media (max-width: 767px) {
+      .img {
+        &:not(.start) img {
+          max-height: 300px;
+          width: 300px;
+        }
       }
     }
   }

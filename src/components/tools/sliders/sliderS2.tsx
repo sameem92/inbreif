@@ -132,7 +132,7 @@ export default function SlideS2({ products }) {
               rotate: 0,
               stretch: 0,
               depth: isTablet ? 123 : 38.6,
-              modifier: 3.25,
+              modifier: 1.3,
               slideShadows: false,
             }}
           >

@@ -3,7 +3,7 @@ import Box from "@mui/material/Box"
 import Typography from "@mui/material/Typography"
 import Button from "@mui/material/Button"
 import TextField from "@mui/material/TextField"
-import { motion } from "framer-motion" // Import framer-motion
+import { motion } from "framer-motion"
 import emailjs from "@emailjs/browser"
 import { useState } from "react"
 
@@ -36,7 +36,7 @@ const textStyle = {
 }
 
 export default function Form() {
-  const isMobile = useMediaQuery("(max-width:768px)") // Detect if the screen is mobile
+  const isMobile = useMediaQuery("(max-width:768px)")
   const animation = isMobile ? { once: true } : { once: true, amount: 0.3 }
   const [value, setValue] = useState("")
   const [loading, setLoading] = useState(false)
@@ -53,12 +53,12 @@ export default function Form() {
     await emailjs
       .send(
         "service_xznqpsf",
-        "inbrief_dz2f8nw", // Replace with your EmailJS template ID
+        "inbrief_dz2f8nw",
         {
           name: value,
           [`${value.includes("@") ? "email" : "phone"}`]: value,
         },
-        "RoVHFVDjpZcFQSnv8" // Replace with your EmailJS public key
+        "RoVHFVDjpZcFQSnv8"
       )
       .then(
         () => {
@@ -86,7 +86,7 @@ export default function Form() {
           padding: "100px 10rem",
         },
         "@media (max-width: 992px)": {
-          padding: "100px 5rem",
+          padding: "100px 2rem",
         },
         "@media (max-width: 480px)": {
           padding: "5rem 2rem",
