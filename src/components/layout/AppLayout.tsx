@@ -8,10 +8,7 @@ import rtlPlugin from "stylis-plugin-rtl"
 import Navbar from "./Navbar"
 import React, { ReactNode } from "react"
 import Footer from "./Footer"
-import { animateScroll as scroll } from "react-scroll"
-import { usePathname } from "next/navigation"
 import createCache from "@emotion/cache"
-import { Box, Typography } from "@mui/material"
 
 function createEmotionCache() {
   return createCache({
@@ -26,111 +23,15 @@ interface AppLayoutProps {
 }
 
 export default function AppLayout({ children }: AppLayoutProps) {
-  const pathname = usePathname() // Get the current pathname
   const clientSideEmotionCache = createEmotionCache()
-  const [loading, setLoading] = React.useState(false) // State to control loading
-  const [loading2, setLoading2] = React.useState(false) // State to control loading
-
-  React.useEffect(() => {
-    const body = document.body
-
-    // Lazy load background image based on path
-    const isPhoneApps =
-      window?.location?.pathname?.includes("web-apps") ||
-      window?.location?.pathname?.includes("mobile-apps") ||
-      window?.location?.pathname?.includes("about") ||
-      window?.location?.pathname?.includes("work") ||
-      window?.location?.pathname?.includes("system")
-
-    // Lazy load the full-size image after the placeholder
-    const loadImage = new Image()
-    loadImage.src = isPhoneApps ? "/image/home2.svg" : "/image/home.svg"
-    loadImage.onload = () => {
-      body.style.backgroundImage = `url(${loadImage.src})`
-      body.classList.add("background-loaded")
-
-      setTimeout(() => {
-        setLoading(false) // Stop loadπing once the image is loaded and timeout is complete
-      }, 2000) // Delay for 2 seconds to ensure caching
-
-      // Stop loading once the image is loaded
-    }
-    return () => {
-      loadImage.onload = null // Avoid memory leaks
-    }
-  }, [pathname])
-
-  React.useEffect(() => {
-    const footer = document.querySelector<HTMLElement>(".footer") // Explicitly typing as HTMLElement
-    if (!footer) {
-      setLoading2(false)
-
-      return
-    } // If footer is not rendered, exit early
-    const loadFooterImage = new Image()
-    loadFooterImage.src = "/image/noise.png"
-    loadFooterImage.onload = () => {
-      if (footer) {
-        footer.style.backgroundImage = `url(${loadFooterImage.src}), none`
-      }
-      setTimeout(() => {
-        setLoading2(false) // Stop loading once the image is loaded
-      }, 2000) // Delay for 2 seconds to ensure caching
-    }
-  }, [pathname])
-  React.useEffect(() => {
-    const hash = window.location.hash // Get the hash value from the URL
-
-    if (hash) {
-      const section = document.querySelector(hash) as HTMLElement
-
-      // Delay the scroll action to ensure the DOM is fully loaded
-      if (section) {
-        setTimeout(() => {
-          scroll.scrollTo(section.offsetTop, {
-            duration: 800,
-            smooth: "easeInOutQuad",
-          })
-        }, 600) // Delay for 300ms to ensure proper timing
-      }
-    }
-  }) // Trigger when the path changes
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <CacheProvider value={clientSideEmotionCache}>
-        {loading || loading2 ? (
-          <Box
-            sx={{
-              minHeight: "100vh",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexDirection: "column",
-              textAlign: "center",
-              padding: "2rem",
-              background: "#032932",
-              position: "fixed",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              zIndex: 9999,
-            }}
-          >
-            <div className="loader"></div>
-            <Typography variant="h6" sx={{ marginTop: "1.5rem" }} className="loading">
-              برجاء الانتظار
-            </Typography>
-          </Box>
-        ) : (
-          <>
-            <Navbar />
-            {children}
-            <Footer />
-          </>
-        )}
+        <Navbar />
+        {children}
+        <Footer />
       </CacheProvider>
     </ThemeProvider>
   )

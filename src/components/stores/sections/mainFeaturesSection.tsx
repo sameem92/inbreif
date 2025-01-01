@@ -22,8 +22,11 @@ import icon10 from "../../../../public/icons/icon10.svg"
 import icon11 from "../../../../public/icons/icon11.svg"
 import icon12 from "../../../../public/icons/icon12.svg"
 import icon13 from "../../../../public/icons/icon13.svg"
+import { useMediaQuery } from "@mui/material"
 
 const MainFeaturesSection = () => {
+  const isMobile = useMediaQuery("(max-width:768px)")
+  const animation = isMobile ? { once: true } : { once: true, amount: 0.3 }
   return (
     <div className="mainFeaturesSection">
       <Grid
@@ -58,6 +61,9 @@ const MainFeaturesSection = () => {
               stiffness: 400,
               damping: 10,
             }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={animation}
           >
             <div className="featureBox">
               <div className="bg">
@@ -93,6 +99,9 @@ const MainFeaturesSection = () => {
               stiffness: 400,
               damping: 10,
             }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={animation}
           >
             <div className="featureBox">
               <div className="bg">
@@ -132,6 +141,9 @@ const MainFeaturesSection = () => {
               stiffness: 400,
               damping: 10,
             }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={animation}
           >
             <div className="featureBox">
               <div className="bg">

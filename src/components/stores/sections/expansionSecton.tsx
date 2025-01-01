@@ -34,10 +34,18 @@ const ExpansionSecton = () => {
         }}
       >
         <Grid size={{ xs: 12 }}>
-          <div className="sectionHead">
-            <h2>توسع بعالمك التجاري</h2>
-            <p>الأن صار بامكانك تبيع منتجاتك بشكل كامل من خلال الواتساب الخاص بك</p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            style={{ margin: "0 auto" }}
+          >
+            <div className="sectionHead">
+              <h2>توسع بعالمك التجاري</h2>
+              <p>الأن صار بامكانك تبيع منتجاتك بشكل كامل من خلال الواتساب الخاص بك</p>
+            </div>
+          </motion.div>
         </Grid>
 
         <Grid size={{ xs: 12 }} container alignItems="center">
@@ -54,6 +62,9 @@ const ExpansionSecton = () => {
                 stiffness: 400,
                 damping: 10,
               }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
               className="expansionCard1"
             >
               <div className="expansionCard">
@@ -77,6 +88,9 @@ const ExpansionSecton = () => {
                 stiffness: 400,
                 damping: 10,
               }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
             >
               <div className="expansionCard">
                 <div className="content">

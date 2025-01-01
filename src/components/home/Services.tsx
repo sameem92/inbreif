@@ -1,12 +1,12 @@
 "use client"
 import React from "react"
-import { Box, Button, Container, Grid2 } from "@mui/material"
+import { Box, Button, Container, useMediaQuery } from "@mui/material"
 
 import Image from "next/image"
 import { styled } from "@mui/material/styles"
 import Paper from "@mui/material/Paper"
 import Grid from "@mui/material/Grid"
-import { motion } from "framer-motion" // Import framer-motion
+import { motion } from "framer-motion"
 import { useRouter } from "next/navigation"
 
 const Item = styled(Paper)({
@@ -59,6 +59,8 @@ const secService = [
 
 export default function Services() {
   const router = useRouter()
+  const isMobile = useMediaQuery("(max-width:768px)")
+  const animation = isMobile ? { once: true } : { once: true, amount: 0.3 }
 
   const handleNavigation = (path: string) => {
     router.push(path)
@@ -80,188 +82,27 @@ export default function Services() {
       }}
     >
       <div>
-        <Container>
-          <h1 className="secondry-title" style={{ margin: "84px auto 4.6rem" }}>
-            الخدمات البرمجية
-          </h1>
-          <Box
-            sx={{
-              width: { xs: "90%", lg: "100%" },
-              margin: "auto",
-            }}
-          >
-            <Grid container columnSpacing={{ xs: 2, md: 3, xl: 0 }} rowSpacing={{ xs: 6, md: 4, xl: 10 }}>
-              <Grid item xs={12} sm={6} md={6} custom992={4} lg={4}>
-                <motion.div whileHover={{ scale: 1.02 }} transition={{ type: "tween", stiffness: 300, damping: 10 }}>
-                  <Box
-                    onClick={() => handleNavigation("/mobile-apps")}
-                    sx={{
-                      width: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: { xs: "1.4rem !important", lg: "1.2rem !important" },
-                      transition: "all 0.3s ease",
-                      cursor: "pointer",
-                      "&:hover h3": {
-                        color: "#E0E327",
-                      },
-                      "&:hover .service-box": {
-                        border: "1px solid #E0E327 ",
-                      },
-                      "&:hover .arrow-icon": {
-                        opacity: 1,
-                      },
-                    }}
-                  >
-                    <Item sx={{ mb: 2, padding: "0 !important" }} className="service-box">
-                      <Image
-                        src={service1}
-                        alt="تطبيقات الموبايل"
-                        width={292}
-                        height={260}
-                        style={{ maxWidth: "100%" }}
-                      />
-                    </Item>
-
-                    <h3 className="third-title">تطبيقات الموبايل</h3>
-                    <Button
-                      variant="text"
-                      sx={{
-                        color: "#E0E327",
-                        backgroundColor: "transparent",
-                        fontFamily: "Kumbh Sans, sans-serif !important",
-                        fontStyle: "normal",
-                        fontWeight: 400,
-                        fontSize: "1.6rem",
-                        lineHeight: "2rem",
-                        display: "flex",
-                        alignItems: "center",
-                        textAlign: "center",
-                        transition: "all 0.2s ease",
-
-                        "&:hover": {
-                          color: "#E0E327",
-                          backgroundColor: "transparent",
-                          transform: "translateY(0px)",
-                        },
-
-                        ".arrow-icon": {
-                          opacity: 0,
-                        },
-                      }}
-                    >
-                      <Image
-                        src={arrow}
-                        alt="arrow"
-                        loading="lazy"
-                        width={24}
-                        height={24}
-                        className="arrow-icon" // Add class to the arrow icon
-                      />
-                      <span>اعرف أكثر</span>
-                    </Button>
-                  </Box>
-                </motion.div>
-              </Grid>
-
-              <Grid item xs={12} sm={6} md={6} custom992={4} lg={4}>
-                <motion.div whileHover={{ scale: 1.02 }} transition={{ type: "tween", stiffness: 300, damping: 10 }}>
-                  <Box
-                    onClick={() => handleNavigation("/web-apps")}
-                    sx={{
-                      width: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: { xs: "1.4rem !important", lg: "1.2rem !important" },
-                      transition: "all 0.3s ease",
-                      cursor: "pointer",
-                      "&:hover h3": {
-                        color: "#E0E327",
-                      },
-                      "&:hover .service-box": {
-                        border: "1px solid #E0E327 ",
-                      },
-                      "&:hover .arrow-icon": {
-                        opacity: 1,
-                      },
-                    }}
-                  >
-                    <Item sx={{ mb: 2, padding: "0 !important" }} className="service-box">
-                      <Image
-                        src={service2}
-                        alt="متاجر إلكترونية"
-                        width={292}
-                        height={260}
-                        style={{ maxWidth: "100%" }}
-                      />
-                    </Item>
-
-                    <h3 className="third-title">متاجر إلكترونية</h3>
-                    <Button
-                      variant="text"
-                      sx={{
-                        color: "#E0E327",
-                        backgroundColor: "transparent",
-                        fontFamily: "Kumbh Sans, sans-serif !important",
-                        fontStyle: "normal",
-                        fontWeight: 400,
-                        fontSize: "1.6rem",
-                        lineHeight: "2rem",
-                        display: "flex",
-                        alignItems: "center",
-                        textAlign: "center",
-                        transition: "all 0.2s ease",
-
-                        "&:hover": {
-                          color: "#E0E327",
-                          backgroundColor: "transparent",
-                          transform: "translateY(0px)",
-                        },
-
-                        ".arrow-icon": {
-                          opacity: 0,
-                        },
-                      }}
-                    >
-                      <Image
-                        src={arrow}
-                        alt="arrow"
-                        loading="lazy"
-                        width={24}
-                        height={24}
-                        className="arrow-icon" // Add class to the arrow icon
-                      />
-                      <span>اعرف أكثر</span>
-                    </Button>
-                  </Box>
-                </motion.div>
-              </Grid>
-            </Grid>
-          </Box>
-        </Container>
-      </div>
-
-      <div>
-        <Container>
-          <h1 className="secondry-title" style={{ margin: "84px auto 4.6rem" }}>
-            خدمات التصميم والتسويق
-          </h1>
-          <Box
-            sx={{
-              width: { xs: "90%", lg: "100%" },
-              margin: "auto",
-            }}
-          >
-            <Grid container columnSpacing={{ xs: 2, md: 3, xl: 0 }} rowSpacing={{ xs: 6, md: 4, xl: 10 }}>
-              {secService.map((item, index) => (
-                <Grid item xs={12} sm={6} md={6} custom992={4} lg={4} key={index}>
-                  <motion.div whileHover={{ scale: 1.02 }} transition={{ type: "spring", stiffness: 300, damping: 10 }}>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={animation}
+          transition={{ duration: 0.6 }}
+        >
+          <Container>
+            <h1 className="secondry-title" style={{ margin: "84px auto 4.6rem" }}>
+              الخدمات البرمجية
+            </h1>
+            <Box
+              sx={{
+                width: { xs: "90%", lg: "100%" },
+                margin: "auto",
+              }}
+            >
+              <Grid container columnSpacing={{ xs: 2, md: 3, xl: 0 }} rowSpacing={{ xs: 6, md: 4, xl: 10 }}>
+                <Grid item xs={12} sm={6} md={6} custom992={4} lg={4}>
+                  <motion.div whileHover={{ scale: 1.02 }} transition={{ type: "tween", stiffness: 300, damping: 10 }}>
                     <Box
-                      onClick={() => handleNavigation(item.href)}
+                      onClick={() => handleNavigation("/mobile-apps")}
                       sx={{
                         width: "100%",
                         display: "flex",
@@ -284,16 +125,15 @@ export default function Services() {
                     >
                       <Item sx={{ mb: 2, padding: "0 !important" }} className="service-box">
                         <Image
-                          src={item.img}
-                          alt={item.title}
+                          src={service1}
+                          alt="تطبيقات الموبايل"
                           width={292}
                           height={260}
                           style={{ maxWidth: "100%" }}
-                          className="service-img"
                         />
                       </Item>
 
-                      <h3 className="third-title">{item.title}</h3>
+                      <h3 className="third-title">تطبيقات الموبايل</h3>
                       <Button
                         variant="text"
                         sx={{
@@ -333,10 +173,189 @@ export default function Services() {
                     </Box>
                   </motion.div>
                 </Grid>
-              ))}
-            </Grid>
-          </Box>
-        </Container>
+
+                <Grid item xs={12} sm={6} md={6} custom992={4} lg={4}>
+                  <motion.div whileHover={{ scale: 1.02 }} transition={{ type: "tween", stiffness: 300, damping: 10 }}>
+                    <Box
+                      onClick={() => handleNavigation("/web-apps")}
+                      sx={{
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        gap: { xs: "1.4rem !important", lg: "1.2rem !important" },
+                        transition: "all 0.3s ease",
+                        cursor: "pointer",
+                        "&:hover h3": {
+                          color: "#E0E327",
+                        },
+                        "&:hover .service-box": {
+                          border: "1px solid #E0E327 ",
+                        },
+                        "&:hover .arrow-icon": {
+                          opacity: 1,
+                        },
+                      }}
+                    >
+                      <Item sx={{ mb: 2, padding: "0 !important" }} className="service-box">
+                        <Image
+                          src={service2}
+                          alt="متاجر إلكترونية"
+                          width={292}
+                          height={260}
+                          style={{ maxWidth: "100%" }}
+                        />
+                      </Item>
+
+                      <h3 className="third-title">متاجر إلكترونية</h3>
+                      <Button
+                        variant="text"
+                        sx={{
+                          color: "#E0E327",
+                          backgroundColor: "transparent",
+                          fontFamily: "Kumbh Sans, sans-serif !important",
+                          fontStyle: "normal",
+                          fontWeight: 400,
+                          fontSize: "1.6rem",
+                          lineHeight: "2rem",
+                          display: "flex",
+                          alignItems: "center",
+                          textAlign: "center",
+                          transition: "all 0.2s ease",
+
+                          "&:hover": {
+                            color: "#E0E327",
+                            backgroundColor: "transparent",
+                            transform: "translateY(0px)",
+                          },
+
+                          ".arrow-icon": {
+                            opacity: 0,
+                          },
+                        }}
+                      >
+                        <Image
+                          src={arrow}
+                          alt="arrow"
+                          loading="lazy"
+                          width={24}
+                          height={24}
+                          className="arrow-icon" // Add class to the arrow icon
+                        />
+                        <span>اعرف أكثر</span>
+                      </Button>
+                    </Box>
+                  </motion.div>
+                </Grid>
+              </Grid>
+            </Box>
+          </Container>
+        </motion.div>
+      </div>
+
+      <div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={animation}
+          transition={{ duration: 0.6 }}
+        >
+          <Container>
+            <h1 className="secondry-title" style={{ margin: "84px auto 4.6rem" }}>
+              خدمات التصميم والتسويق
+            </h1>
+            <Box
+              sx={{
+                width: { xs: "90%", lg: "100%" },
+                margin: "auto",
+              }}
+            >
+              <Grid container columnSpacing={{ xs: 2, md: 3, xl: 0 }} rowSpacing={{ xs: 6, md: 4, xl: 10 }}>
+                {secService.map((item, index) => (
+                  <Grid item xs={12} sm={6} md={6} custom992={4} lg={4} key={index}>
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                    >
+                      <Box
+                        onClick={() => handleNavigation(item.href)}
+                        sx={{
+                          width: "100%",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          gap: { xs: "1.4rem !important", lg: "1.2rem !important" },
+                          transition: "all 0.3s ease",
+                          cursor: "pointer",
+                          "&:hover h3": {
+                            color: "#E0E327",
+                          },
+                          "&:hover .service-box": {
+                            border: "1px solid #E0E327 ",
+                          },
+                          "&:hover .arrow-icon": {
+                            opacity: 1,
+                          },
+                        }}
+                      >
+                        <Item sx={{ mb: 2, padding: "0 !important" }} className="service-box">
+                          <Image
+                            src={item.img}
+                            alt={item.title}
+                            width={292}
+                            height={260}
+                            style={{ maxWidth: "100%" }}
+                            className="service-img"
+                          />
+                        </Item>
+
+                        <h3 className="third-title">{item.title}</h3>
+                        <Button
+                          variant="text"
+                          sx={{
+                            color: "#E0E327",
+                            backgroundColor: "transparent",
+                            fontFamily: "Kumbh Sans, sans-serif !important",
+                            fontStyle: "normal",
+                            fontWeight: 400,
+                            fontSize: "1.6rem",
+                            lineHeight: "2rem",
+                            display: "flex",
+                            alignItems: "center",
+                            textAlign: "center",
+                            transition: "all 0.2s ease",
+
+                            "&:hover": {
+                              color: "#E0E327",
+                              backgroundColor: "transparent",
+                              transform: "translateY(0px)",
+                            },
+
+                            ".arrow-icon": {
+                              opacity: 0,
+                            },
+                          }}
+                        >
+                          <Image
+                            src={arrow}
+                            alt="arrow"
+                            loading="lazy"
+                            width={24}
+                            height={24}
+                            className="arrow-icon" // Add class to the arrow icon
+                          />
+                          <span>اعرف أكثر</span>
+                        </Button>
+                      </Box>
+                    </motion.div>
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
+          </Container>
+        </motion.div>
       </div>
     </Container>
   )

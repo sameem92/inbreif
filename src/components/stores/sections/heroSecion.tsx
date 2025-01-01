@@ -3,6 +3,7 @@ import Image from "next/image"
 
 // Components
 import Grid from "@mui/material/Grid2"
+import { motion } from "framer-motion"
 
 // Images & Icons
 import store from "../../../../public/images/store/store.svg"
@@ -22,62 +23,68 @@ const HeroSecion = () => {
 
   return (
     <div className="heroSection" id="goToHome">
-      <Grid
-        container
-        spacing={{ xs: 4, sm: 8, lg: 12 }}
-        justifyContent="center"
-        alignItems="center"
-        sx={{
-          padding: "20rem 10rem 0px",
-          "@media (max-width: 1340px)": {
-            padding: "20rem 7.5rem 0px 2rem",
-          },
-          "@media (max-width: 1240px)": {
-            padding: "15rem 7.5rem 0px 1rem",
-          },
-          "@media (max-width: 992px)": {
-            padding: "12rem 7.5rem 100px 2rem",
-            ".store_img": {
-              height: "300px",
-              img: {
-                height: "100%",
-              },
-            },
-          },
-          "@media (max-width: 560px)": {
-            ".store_img": {
-              height: "250px",
-              img: {
-                height: "100%",
-              },
-            },
-          },
-          "@media (max-width: 480px)": {
-            padding: "12rem 2rem 0px",
-          },
-        }}
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <Grid size={{ xs: 12, md: 6 }}>
-          <div>
-            <h1>أنشئ متجرك الإلكتروني الآن</h1>
+        <Grid
+          container
+          spacing={{ xs: 4, sm: 8, lg: 12 }}
+          justifyContent="center"
+          alignItems="center"
+          sx={{
+            padding: "20rem 10rem 0px",
+            "@media (max-width: 1340px)": {
+              padding: "20rem 7.5rem 0px 2rem",
+            },
+            "@media (max-width: 1240px)": {
+              padding: "15rem 7.5rem 0px 1rem",
+            },
+            "@media (max-width: 992px)": {
+              padding: "12rem 7.5rem 100px 2rem",
+              ".store_img": {
+                height: "300px",
+                img: {
+                  height: "100%",
+                },
+              },
+            },
+            "@media (max-width: 560px)": {
+              ".store_img": {
+                height: "250px",
+                img: {
+                  height: "100%",
+                },
+              },
+            },
+            "@media (max-width: 480px)": {
+              padding: "12rem 2rem 0px",
+            },
+          }}
+        >
+          <Grid size={{ xs: 12, md: 6 }}>
+            <div>
+              <h1>أنشئ متجرك الإلكتروني الآن</h1>
 
-            <p>صمم متجرك الإلكتروني الآن من خلال واجهة وخدمات تتيح لك التحكم الكامل من الدفع الى الشحن بكل سلاسة.</p>
+              <p>صمم متجرك الإلكتروني الآن من خلال واجهة وخدمات تتيح لك التحكم الكامل من الدفع الى الشحن بكل سلاسة.</p>
 
-            <div className="actions">
-              <Button onClick={scrollToPackages}>ابدأ الآن</Button>
-              <Button onClick={goToWhatsApp} sx={{ background: "transparent" }} className="transparent">
-                تواصل معنا
-              </Button>
+              <div className="actions">
+                <Button onClick={scrollToPackages}>ابدأ الآن</Button>
+                <Button onClick={goToWhatsApp} sx={{ background: "transparent" }} className="transparent">
+                  تواصل معنا
+                </Button>
+              </div>
             </div>
-          </div>
-        </Grid>
+          </Grid>
 
-        <Grid size={{ xs: 12, md: 6 }}>
-          <div className="store_img">
-            <Image src={store} alt="store" />
-          </div>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <div className="store_img">
+              <Image src={store} alt="store" />
+            </div>
+          </Grid>
         </Grid>
-      </Grid>
+      </motion.div>
     </div>
   )
 }

@@ -47,148 +47,155 @@ const payments = [
 const PaymentSection = () => {
   return (
     <div className="paymentSection">
-      <Grid
-        container
-        spacing={{ xs: 6, md: 12 }}
-        justifyContent="center"
-        alignItems="center"
-        gap="160px 40px"
-        sx={{
-          padding: "100px 10rem 100px",
-          "@media (max-width: 1340px)": {
-            padding: "100px 2rem",
-          },
-          "@media (max-width: 1240px)": {
-            padding: "100px 1rem",
-          },
-          "@media (max-width: 992px)": {
-            padding: "100px 2rem",
-            gap: "40px",
-          },
-          "@media (max-width: 480px)": {
-            padding: "5rem 2rem",
-          },
-        }}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
       >
-        <Grid size={{ xs: 12, sm: 6 }}>
-          <div className="info">
-            <h3>مدفوعات سهلة و آمنة</h3>
-            <h2>حلول بلا حدود ...</h2>
-            <p>طرق دفع آمنة، تتيح لعملائك التسوق بثقة وأمان في كل عملية شراء</p>
-          </div>
-        </Grid>
-
         <Grid
-          size={{ xs: 12, sm: 6 }}
           container
-          spacing={2}
-          sx={{
-            height: "100%",
-          }}
-          display="flex"
-          alignItems="center"
-          height="100%"
-        >
-          {payments.map((item, i) => (
-            <Grid size={{ xs: 3, sm: 4, lg: 2 }} key={i}>
-              <motion.div
-                whileHover={{ scale: 0.9 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 300,
-                }}
-              >
-                <Box
-                  sx={{
-                    background:
-                      "linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
-                    backdropFilter: "blur(10px)",
-                    borderRadius: "14px",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: "80px",
-
-                    "&:hover": {
-                      border: "1px solid #E0E324",
-                    },
-                  }}
-                >
-                  <Image height={60} width={60} src={item} alt="company" loading="lazy" />
-                </Box>
-              </motion.div>
-            </Grid>
-          ))}
-        </Grid>
-
-        <Grid
-          size={{ xs: 12 }}
-          container
+          spacing={{ xs: 6, md: 12 }}
           justifyContent="center"
+          alignItems="center"
+          gap="160px 40px"
           sx={{
-            "@media (max-width: 767px)": {
-              columnGap: "14px",
+            padding: "100px 10rem 100px",
+            "@media (max-width: 1340px)": {
+              padding: "100px 2rem",
+            },
+            "@media (max-width: 1240px)": {
+              padding: "100px 1rem",
+            },
+            "@media (max-width: 992px)": {
+              padding: "100px 2rem",
+              gap: "40px",
+            },
+            "@media (max-width: 480px)": {
+              padding: "5rem 2rem",
             },
           }}
         >
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            transition={{
-              type: "tween",
-              stiffness: 400,
-              damping: 10,
-            }}
-          >
-            <div className="count">
-              <div className="content">
-                <div className="icon">
-                  <Image src={store} alt="store" />
-                </div>
-                <h4>متاجر</h4>
-                <span>+300</span>
-              </div>
+          <Grid size={{ xs: 12, sm: 6 }}>
+            <div className="info">
+              <h3>مدفوعات سهلة و آمنة</h3>
+              <h2>حلول بلا حدود ...</h2>
+              <p>طرق دفع آمنة، تتيح لعملائك التسوق بثقة وأمان في كل عملية شراء</p>
             </div>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            transition={{
-              type: "tween",
-              stiffness: 400,
-              damping: 10,
-            }}
-          >
-            <div className="count">
-              <div className="content">
-                <div className="icon">
-                  <Image src={sector} alt="sectorstore" />
-                </div>
-                <h4>قطاعات مختلفة</h4>
-                <span>+20</span>
-              </div>
-            </div>
-          </motion.div>
+          </Grid>
 
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            transition={{
-              type: "tween",
-              stiffness: 400,
-              damping: 10,
+          <Grid
+            size={{ xs: 12, sm: 6 }}
+            container
+            spacing={2}
+            sx={{
+              height: "100%",
+            }}
+            display="flex"
+            alignItems="center"
+            height="100%"
+          >
+            {payments.map((item, i) => (
+              <Grid size={{ xs: 3, sm: 4, lg: 2 }} key={i}>
+                <motion.div
+                  whileHover={{ scale: 0.9 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 300,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      background:
+                        "linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
+                      backdropFilter: "blur(10px)",
+                      borderRadius: "14px",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      height: "80px",
+
+                      "&:hover": {
+                        border: "1px solid #E0E324",
+                      },
+                    }}
+                  >
+                    <Image height={60} width={60} src={item} alt="company" loading="lazy" />
+                  </Box>
+                </motion.div>
+              </Grid>
+            ))}
+          </Grid>
+
+          <Grid
+            size={{ xs: 12 }}
+            container
+            justifyContent="center"
+            sx={{
+              "@media (max-width: 767px)": {
+                columnGap: "14px",
+              },
             }}
           >
-            <div className="count">
-              <div className="content">
-                <div className="icon">
-                  <Image src={support} alt="support" />
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              transition={{
+                type: "tween",
+                stiffness: 400,
+                damping: 10,
+              }}
+            >
+              <div className="count">
+                <div className="content">
+                  <div className="icon">
+                    <Image src={store} alt="store" />
+                  </div>
+                  <h4>متاجر</h4>
+                  <span>+300</span>
                 </div>
-                <h4>دعم فني</h4>
-                <span>24 / 7</span>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              transition={{
+                type: "tween",
+                stiffness: 400,
+                damping: 10,
+              }}
+            >
+              <div className="count">
+                <div className="content">
+                  <div className="icon">
+                    <Image src={sector} alt="sectorstore" />
+                  </div>
+                  <h4>قطاعات مختلفة</h4>
+                  <span>+20</span>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              transition={{
+                type: "tween",
+                stiffness: 400,
+                damping: 10,
+              }}
+            >
+              <div className="count">
+                <div className="content">
+                  <div className="icon">
+                    <Image src={support} alt="support" />
+                  </div>
+                  <h4>دعم فني</h4>
+                  <span>24 / 7</span>
+                </div>
+              </div>
+            </motion.div>
+          </Grid>
         </Grid>
-      </Grid>
+      </motion.div>
     </div>
   )
 }

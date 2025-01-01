@@ -18,6 +18,7 @@ body {
 body {
   background-color: #032932 !important;
   direction: rtl;
+  background-image: url("/image/home2.svg");
   background-position: top !important; /* Center the background horizontally */
   background-size: cover !important; /* Ensure the background covers the entire viewport */
   background-repeat: no-repeat !important;
@@ -74,10 +75,6 @@ header .css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input > 
 }
 .mySwiper-work {
   padding-bottom: 7rem !important;
-}
-
-.mySwiper-work .swiper-wrapper {
-  max-height: 562px;
 }
 
 @media screen and (max-width: 1340px) {
@@ -483,7 +480,6 @@ button:hover:disabled {
 @media screen and (max-width: 900px) {
   .mySwiper-work {
     padding-bottom: 7rem !important;
-    margin-bottom: 8rem !important;
   }
 }
 @media screen and (max-width: 900px) {
@@ -681,7 +677,6 @@ button:hover:disabled {
   }
   .mySwiper-work {
     padding-bottom: 5rem !important;
-    margin-bottom: 6rem !important;
   }
 }
 @media screen and (max-width: 1024px) {

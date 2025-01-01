@@ -138,342 +138,351 @@ export default function ContactUsComponent() {
         }}
         id="goToHome"
       />
-      <Box
-        sx={{
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          flexDirection: "column",
-          gap: { xs: "3.6rem", md: "4.8rem" },
-          padding: { xs: "5rem 0 5rem 0", md: "5rem 0 15rem 0" },
-          width: "100%",
-          background: "#032932",
-        }}
+      <motion.div
+        className="hero"
+        id="goToHome"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <Container
+        <Box
           sx={{
-            margin: "0 auto",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             display: "flex",
-            flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
+            flexDirection: "column",
             gap: { xs: "3.6rem", md: "4.8rem" },
+            padding: { xs: "5rem 0 5rem 0", md: "5rem 0 15rem 0" },
+            width: "100%",
+            background: "#032932",
           }}
-          maxWidth="md"
         >
-          <Typography
-            variant="h1"
+          <Container
             sx={{
-              fontSize: { xs: "3.6rem", md: "4rem" },
-              fontWeight: 700,
-              lineHeight: "6rem",
-              color: "#fff",
-              textAlign: "center",
-            }}
-          >
-            املأ الاستمارة ،
-            <br />
-            وسيقوم فريقنا بالاتصال بك.
-          </Typography>
-          <Box
-            className="border contact-us"
-            sx={{
-              width: "100%",
-              gap: "2.4rem",
+              margin: "0 auto",
               display: "flex",
+              flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
-              flexDirection: "column",
-              borderRadius: "4.8rem",
-              padding: { xs: "2rem 3rem", md: "6.6rem 5.6rem " },
-              paddingBottom: { xs: "5rem", lg: "5rem" },
-
-              background: "linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
-              backdropFilter: "blur(10px)",
+              gap: { xs: "3.6rem", md: "4.8rem" },
             }}
+            maxWidth="md"
           >
-            <Box
+            <Typography
+              variant="h1"
               sx={{
-                display: "flex",
-                gap: { xs: ".6rem", md: "1.6rem" },
-                width: "100%",
-                flexDirection: "column",
+                fontSize: { xs: "3.6rem", md: "4rem" },
+                fontWeight: 700,
+                lineHeight: "6rem",
+                color: "#fff",
+                textAlign: "center",
               }}
             >
-              <Typography
-                variant="body2"
-                sx={{
-                  fontSize: "1.6rem",
-                  fontWeight: 500,
-                  lineHeight: "2.4rem",
-                  color: "#fff",
-                }}
-              >
-                الاسم
-              </Typography>
-
-              <TextField
-                placeholder="اكتب اسمك"
-                fullWidth
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                sx={textStyle}
-              />
-            </Box>
-
+              املأ الاستمارة ،
+              <br />
+              وسيقوم فريقنا بالاتصال بك.
+            </Typography>
             <Box
+              className="border contact-us"
               sx={{
-                display: "flex",
-                gap: { xs: ".6rem", md: "1.6rem" },
                 width: "100%",
+                gap: "2.4rem",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
                 flexDirection: "column",
+                borderRadius: "4.8rem",
+                padding: { xs: "2rem 3rem", md: "6.6rem 5.6rem " },
+                paddingBottom: { xs: "5rem", lg: "5rem" },
+
+                background:
+                  "linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
+                backdropFilter: "blur(10px)",
               }}
             >
-              <Typography
-                variant="body2"
+              <Box
                 sx={{
-                  fontSize: "1.6rem",
-                  fontWeight: 500,
-                  lineHeight: "2.4rem",
-                  color: "#fff",
-                }}
-              >
-                رقم الجوال
-              </Typography>
-
-              <TextField
-                placeholder="اكتب رقم الجوال"
-                fullWidth
-                type="text"
-                value={phone}
-                onChange={handlePhoneChange}
-                helperText={!phoneValid && phone !== "" ? "يجب ان لا يقل رقم الجوال عن ٨ ارقام" : ""}
-                sx={textStyle}
-              />
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                gap: { xs: ".6rem", md: "1.6rem" },
-                width: "100%",
-                flexDirection: "column",
-              }}
-            >
-              <Typography
-                variant="body2"
-                sx={{
-                  fontSize: "1.6rem",
-                  fontWeight: 500,
-                  lineHeight: "2.4rem",
-                  color: "#fff",
-                }}
-              >
-                بريد إلكتروني
-              </Typography>
-
-              <TextField
-                placeholder="demo@gmail.com"
-                fullWidth
-                type="email"
-                value={email}
-                onChange={handleEmailChange}
-                error={!emailValid && email !== ""} // Show error if email is invalid and not empty
-                helperText={!emailValid && email !== "" ? "البريد الإلكتروني غير صالح" : ""}
-                sx={textStyle}
-              />
-            </Box>
-            <Box
-              className="select"
-              sx={{
-                display: "flex",
-                gap: { xs: ".6rem", md: "1.6rem" },
-                width: "100%",
-                flexDirection: "column",
-              }}
-            >
-              <Typography
-                variant="body2"
-                sx={{
-                  fontSize: "1.6rem",
-                  fontWeight: 500,
-                  lineHeight: "2.4rem",
-                  color: "#fff",
-                }}
-              >
-                نوع الخدمة
-              </Typography>
-              <Select
-                defaultValue="استفسارات اخري "
-                displayEmpty
-                value={service}
-                onChange={(e) => setService(e.target.value)}
-                renderValue={(value) => {
-                  if (!value) {
-                    return (
-                      <Typography
-                        style={{
-                          fontSize: "1.6rem",
-                          fontWeight: 400,
-                          lineHeight: "2.4rem",
-                          color: "#fff",
-                        }}
-                      >
-                        استفسارات اخري
-                      </Typography>
-                    )
-                  }
-                  return value
-                }}
-                variant="outlined"
-                IconComponent={({ className }) => (
-                  <Image
-                    className={`arrow-icon-2 ${className}`}
-                    width={24}
-                    height={24}
-                    src={images[0]}
-                    alt="arrowSelect"
-                    loading="lazy"
-                  />
-                )}
-                sx={{
-                  "& .MuiOutlinedInput-notchedOutline": {
-                    border: "1px solid rgba(255, 255, 255, 0.20)",
-                    boxShadow: "0px 1px 2px 0px rgba(18, 18, 23, 0.05)",
-                    padding: "0 1.6rem",
-                  },
+                  display: "flex",
+                  gap: { xs: ".6rem", md: "1.6rem" },
                   width: "100%",
-                  height: "5.6rem",
-                  borderRadius: "7rem",
-                  color: "#fff",
-                  "& .arrow-icon-2": {
-                    top: "32%",
-                    right: "2%",
-                  },
-                  "&:focus": {
-                    outline: "none",
-                  },
-                  "&:hover .MuiOutlinedInput-notchedOutline": {
-                    borderColor: "primary.main",
-                  },
+                  flexDirection: "column",
                 }}
-                MenuProps={{
-                  PaperProps: {
-                    sx: {
-                      minWidth: 180,
-                      background:
-                        "linear-gradient(137.34deg, rgba(2, 5, 4, 0.16) 23.98%, rgba(35, 36, 56, 0.16) 65.73%)",
-                      backdropFilter: "blur(100px)",
-                      borderRadius: "11px",
-                      marginTop: 1,
-                      color: "white",
-                      "& .MuiMenu-list": {
-                        padding: "1.2rem",
-                        gap: "4px",
-                        border: "1px solid ",
-                        borderImageSource: "linear-gradient(81.07deg, #22373C 53.33%, #18292D 93.73%)",
-                      },
-                      "& li": {
-                        "&:hover": {
-                          background: "#FFFFFF0F",
-                          color: "#E0E324",
-                        },
-                        background: "transparent",
+              >
+                <Typography
+                  variant="body2"
+                  sx={{
+                    fontSize: "1.6rem",
+                    fontWeight: 500,
+                    lineHeight: "2.4rem",
+                    color: "#fff",
+                  }}
+                >
+                  الاسم
+                </Typography>
+
+                <TextField
+                  placeholder="اكتب اسمك"
+                  fullWidth
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  sx={textStyle}
+                />
+              </Box>
+
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: { xs: ".6rem", md: "1.6rem" },
+                  width: "100%",
+                  flexDirection: "column",
+                }}
+              >
+                <Typography
+                  variant="body2"
+                  sx={{
+                    fontSize: "1.6rem",
+                    fontWeight: 500,
+                    lineHeight: "2.4rem",
+                    color: "#fff",
+                  }}
+                >
+                  رقم الجوال
+                </Typography>
+
+                <TextField
+                  placeholder="اكتب رقم الجوال"
+                  fullWidth
+                  type="text"
+                  value={phone}
+                  onChange={handlePhoneChange}
+                  helperText={!phoneValid && phone !== "" ? "يجب ان لا يقل رقم الجوال عن ٨ ارقام" : ""}
+                  sx={textStyle}
+                />
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: { xs: ".6rem", md: "1.6rem" },
+                  width: "100%",
+                  flexDirection: "column",
+                }}
+              >
+                <Typography
+                  variant="body2"
+                  sx={{
+                    fontSize: "1.6rem",
+                    fontWeight: 500,
+                    lineHeight: "2.4rem",
+                    color: "#fff",
+                  }}
+                >
+                  بريد إلكتروني
+                </Typography>
+
+                <TextField
+                  placeholder="demo@gmail.com"
+                  fullWidth
+                  type="email"
+                  value={email}
+                  onChange={handleEmailChange}
+                  error={!emailValid && email !== ""} // Show error if email is invalid and not empty
+                  helperText={!emailValid && email !== "" ? "البريد الإلكتروني غير صالح" : ""}
+                  sx={textStyle}
+                />
+              </Box>
+              <Box
+                className="select"
+                sx={{
+                  display: "flex",
+                  gap: { xs: ".6rem", md: "1.6rem" },
+                  width: "100%",
+                  flexDirection: "column",
+                }}
+              >
+                <Typography
+                  variant="body2"
+                  sx={{
+                    fontSize: "1.6rem",
+                    fontWeight: 500,
+                    lineHeight: "2.4rem",
+                    color: "#fff",
+                  }}
+                >
+                  نوع الخدمة
+                </Typography>
+                <Select
+                  defaultValue="استفسارات اخري "
+                  displayEmpty
+                  value={service}
+                  onChange={(e) => setService(e.target.value)}
+                  renderValue={(value) => {
+                    if (!value) {
+                      return (
+                        <Typography
+                          style={{
+                            fontSize: "1.6rem",
+                            fontWeight: 400,
+                            lineHeight: "2.4rem",
+                            color: "#fff",
+                          }}
+                        >
+                          استفسارات اخري
+                        </Typography>
+                      )
+                    }
+                    return value
+                  }}
+                  variant="outlined"
+                  IconComponent={({ className }) => (
+                    <Image
+                      className={`arrow-icon-2 ${className}`}
+                      width={24}
+                      height={24}
+                      src={images[0]}
+                      alt="arrowSelect"
+                      loading="lazy"
+                    />
+                  )}
+                  sx={{
+                    "& .MuiOutlinedInput-notchedOutline": {
+                      border: "1px solid rgba(255, 255, 255, 0.20)",
+                      boxShadow: "0px 1px 2px 0px rgba(18, 18, 23, 0.05)",
+                      padding: "0 1.6rem",
+                    },
+                    width: "100%",
+                    height: "5.6rem",
+                    borderRadius: "7rem",
+                    color: "#fff",
+                    "& .arrow-icon-2": {
+                      top: "32%",
+                      right: "2%",
+                    },
+                    "&:focus": {
+                      outline: "none",
+                    },
+                    "&:hover .MuiOutlinedInput-notchedOutline": {
+                      borderColor: "primary.main",
+                    },
+                  }}
+                  MenuProps={{
+                    PaperProps: {
+                      sx: {
+                        minWidth: 180,
+                        background:
+                          "linear-gradient(137.34deg, rgba(2, 5, 4, 0.16) 23.98%, rgba(35, 36, 56, 0.16) 65.73%)",
+                        backdropFilter: "blur(100px)",
+                        borderRadius: "11px",
+                        marginTop: 1,
                         color: "white",
-                        fontStyle: "normal",
-                        fontWeight: "400",
-                        lineHeight: "4rem",
-                        fontSize: "1.4rem",
-                        height: "4rem",
-                        marginBottom: "1rem",
-                        borderRadius: "4px",
-                      },
-                      "& .Mui-selected": {
-                        background: "#FFFFFF0F",
-                        color: "#ffff",
-                        "&:hover": {
-                          background: "#FFFFFF0F",
-                          color: "#ffff",
+                        "& .MuiMenu-list": {
+                          padding: "1.2rem",
+                          gap: "4px",
+                          border: "1px solid ",
+                          borderImageSource: "linear-gradient(81.07deg, #22373C 53.33%, #18292D 93.73%)",
                         },
-                      },
-                      "& .MuiMenuItem-root": {
-                        "&:active": {
+                        "& li": {
+                          "&:hover": {
+                            background: "#FFFFFF0F",
+                            color: "#E0E324",
+                          },
+                          background: "transparent",
+                          color: "white",
+                          fontStyle: "normal",
+                          fontWeight: "400",
+                          lineHeight: "4rem",
+                          fontSize: "1.4rem",
+                          height: "4rem",
+                          marginBottom: "1rem",
+                          borderRadius: "4px",
+                        },
+                        "& .Mui-selected": {
                           background: "#FFFFFF0F",
                           color: "#ffff",
+                          "&:hover": {
+                            background: "#FFFFFF0F",
+                            color: "#ffff",
+                          },
+                        },
+                        "& .MuiMenuItem-root": {
+                          "&:active": {
+                            background: "#FFFFFF0F",
+                            color: "#ffff",
+                          },
                         },
                       },
                     },
-                  },
-                }}
-              >
-                <MenuItem value={"برمجة تطبيقات موبايل"}>برمجة تطبيقات موبايل</MenuItem>
-                <MenuItem value={"تطوير مواقع"}>تطوير مواقع</MenuItem>
-                <MenuItem value={"متاجر إلكترونية"}>متاجر إلكترونية</MenuItem>
-                <MenuItem value={"تصميم جرافيك"}>تصميم جرافيك</MenuItem>
-                <MenuItem value={"موشن جرافيك"}>موشن جرافيك</MenuItem>
-                <MenuItem value={"محتوى وحملات تسويقية"}>محتوى وحملات تسويقية</MenuItem>
-                <MenuItem value={"استفسارات أخرى"}>استفسارات أخرى</MenuItem>
-              </Select>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                gap: { xs: ".6rem", md: "1.6rem" },
-                width: "100%",
-                flexDirection: "column",
-              }}
-            >
-              <Typography
-                variant="body2"
+                  }}
+                >
+                  <MenuItem value={"برمجة تطبيقات موبايل"}>برمجة تطبيقات موبايل</MenuItem>
+                  <MenuItem value={"تطوير مواقع"}>تطوير مواقع</MenuItem>
+                  <MenuItem value={"متاجر إلكترونية"}>متاجر إلكترونية</MenuItem>
+                  <MenuItem value={"تصميم جرافيك"}>تصميم جرافيك</MenuItem>
+                  <MenuItem value={"موشن جرافيك"}>موشن جرافيك</MenuItem>
+                  <MenuItem value={"محتوى وحملات تسويقية"}>محتوى وحملات تسويقية</MenuItem>
+                  <MenuItem value={"استفسارات أخرى"}>استفسارات أخرى</MenuItem>
+                </Select>
+              </Box>
+              <Box
                 sx={{
-                  fontSize: "1.6rem",
-                  fontWeight: 500,
-                  lineHeight: "2.4rem",
-                  color: "#fff",
+                  display: "flex",
+                  gap: { xs: ".6rem", md: "1.6rem" },
+                  width: "100%",
+                  flexDirection: "column",
                 }}
               >
-                رسالتك
-              </Typography>
-              <TextField
-                placeholder="اكتب رسالة لنا"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                multiline
-                rows={4}
-                maxRows={8}
-                sx={textStyleTextare}
-              />
-            </Box>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    fontSize: "1.6rem",
+                    fontWeight: 500,
+                    lineHeight: "2.4rem",
+                    color: "#fff",
+                  }}
+                >
+                  رسالتك
+                </Typography>
+                <TextField
+                  placeholder="اكتب رسالة لنا"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  multiline
+                  rows={4}
+                  maxRows={8}
+                  sx={textStyleTextare}
+                />
+              </Box>
 
-            <Button
-              onClick={handleSubmit}
-              disabled={(!emailValid && !phoneValid) || loading}
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                padding: "1rem 2rem",
-                height: "6rem",
-                gap: "6px",
-                width: "17rem",
-                marginTop: "2.4rem",
-                borderRadius: "52px",
-                background: "#E0E324",
-                backdropFilter: "blur(24px)",
-                color: "#001014",
-                textAlign: "center",
-                fontSize: "1.6rem",
-                fontWeight: 600,
-                lineHeight: "1.6rem",
-              }}
-            >
-              إرسال
-            </Button>
-          </Box>
-        </Container>
-      </Box>
+              <Button
+                onClick={handleSubmit}
+                disabled={(!emailValid && !phoneValid) || loading}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: "1rem 2rem",
+                  height: "6rem",
+                  gap: "6px",
+                  width: "17rem",
+                  marginTop: "2.4rem",
+                  borderRadius: "52px",
+                  background: "#E0E324",
+                  backdropFilter: "blur(24px)",
+                  color: "#001014",
+                  textAlign: "center",
+                  fontSize: "1.6rem",
+                  fontWeight: 600,
+                  lineHeight: "1.6rem",
+                }}
+              >
+                إرسال
+              </Button>
+            </Box>
+          </Container>
+        </Box>
+      </motion.div>
       <AnimatePresence>
         {isPopupOpen && (
           <>

@@ -2,8 +2,9 @@ import React, { useState } from "react"
 
 // Components
 import Grid from "@mui/material/Grid2"
-import { Box, Tab, Tabs } from "@mui/material"
+import { Box, Tab, Tabs, useMediaQuery } from "@mui/material"
 import Packages from "@/components/tools/package/packages"
+import { motion } from "framer-motion"
 
 // Types
 interface TabPanelProps {
@@ -118,6 +119,8 @@ const plansM = [
 ]
 
 const PackagesSection = () => {
+  const isMobile = useMediaQuery("(max-width:768px)")
+  const animation = isMobile ? { once: true } : { once: true, amount: 0.3 }
   const [value, setValue] = useState<string | number>(0)
 
   const handleChange = (_event: React.SyntheticEvent, newValue: string | number) => {
@@ -149,45 +152,59 @@ const PackagesSection = () => {
         }}
       >
         <Grid size={{ xs: 12 }}>
-          <div className="sectionHead">
-            <h2>خطط الاشتراك</h2>
-            <p>انشئ متجرك وأحصل على تجربة رائعة تستطيع ترقية الاشتراك من لوحة تحكم المتجر</p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={animation}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="sectionHead">
+              <h2>خطط الاشتراك</h2>
+              <p>انشئ متجرك وأحصل على تجربة رائعة تستطيع ترقية الاشتراك من لوحة تحكم المتجر</p>
+            </div>
+          </motion.div>
         </Grid>
         <Grid size={{ xs: 12 }}>
-          <Box
-            sx={{
-              width: "100%",
-              "& .MuiTabs-flexContainer": {
-                gap: "3.2rem",
-              },
-            }}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            <Tabs
-              className="tabs"
-              value={value}
-              onChange={handleChange}
+            <Box
               sx={{
-                alignItems: "center",
-                justifyContent: "center",
+                width: "100%",
+                "& .MuiTabs-flexContainer": {
+                  gap: "3.2rem",
+                },
               }}
             >
-              <Tab label="سنوي" {...a11yProps(0)} />
-              <Tab label="شهري" {...a11yProps(1)} />
-            </Tabs>
+              <Tabs
+                className="tabs"
+                value={value}
+                onChange={handleChange}
+                sx={{
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Tab label="سنوي" {...a11yProps(0)} />
+                <Tab label="شهري" {...a11yProps(1)} />
+              </Tabs>
 
-            <CustomTabPanel value={value} index={0}>
-              <Grid container alignItems="flex-end" columnSpacing={2} rowSpacing={6}>
-                <Packages plans={plansY} more className="" buttonText="الاشتراك الآن" link="" />
-              </Grid>
-            </CustomTabPanel>
+              <CustomTabPanel value={value} index={0}>
+                <Grid container alignItems="flex-end" columnSpacing={2} rowSpacing={6}>
+                  <Packages plans={plansY} more className="" buttonText="الاشتراك الآن" link="" />
+                </Grid>
+              </CustomTabPanel>
 
-            <CustomTabPanel value={value} index={1}>
-              <Grid container alignItems="flex-end" columnSpacing={2} rowSpacing={6}>
-                <Packages plans={plansM} more className="" buttonText="الاشتراك الآن" link="" />
-              </Grid>
-            </CustomTabPanel>
-          </Box>
+              <CustomTabPanel value={value} index={1}>
+                <Grid container alignItems="flex-end" columnSpacing={2} rowSpacing={6}>
+                  <Packages plans={plansM} more className="" buttonText="الاشتراك الآن" link="" />
+                </Grid>
+              </CustomTabPanel>
+            </Box>
+          </motion.div>
         </Grid>
       </Grid>
     </div>

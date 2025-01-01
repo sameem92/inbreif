@@ -3,6 +3,8 @@ import React from "react"
 // Components
 import Grid from "@mui/material/Grid2"
 import SliderS2 from "@/components/tools/sliders/sliderS2"
+import { motion } from "framer-motion"
+import { useMediaQuery } from "@mui/material"
 
 // Images & Icons
 import product1 from "../../../../public/images/store/products/product1.svg"
@@ -30,41 +32,52 @@ const products = [
 ]
 
 const TemplatesSection = () => {
+  const isMobile = useMediaQuery("(max-width:768px)")
+  const animation = isMobile ? { once: true } : { once: true, amount: 0.3 }
+
   return (
     <div className="templatesSection package">
-      <Grid
-        container
-        sx={{
-          padding: "100px 10rem 100px",
-          "@media (max-width: 1340px)": {
-            padding: "100px 2rem",
-          },
-          "@media (max-width: 1240px)": {
-            padding: "100px 1rem",
-          },
-          "@media (max-width: 992px)": {
-            padding: "100px 2rem",
-          },
-          "@media (max-width: 480px)": {
-            padding: "5rem 2rem",
-          },
-        }}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={animation}
+        transition={{ duration: 0.6 }}
+        style={{ margin: "0 auto" }}
       >
-        <Grid size={{ xs: 12 }} marginBottom="82px">
-          <div className="sectionHead">
-            <h2>هنا متجرك مهما كان مجالك !</h2>
-            <p>متواجدون لتلبية كل احتياجاتك، خدمات متنوعة لجميع المجالات</p>
-          </div>
+        <Grid
+          container
+          sx={{
+            padding: "100px 10rem 100px",
+            "@media (max-width: 1340px)": {
+              padding: "100px 2rem",
+            },
+            "@media (max-width: 1240px)": {
+              padding: "100px 1rem",
+            },
+            "@media (max-width: 992px)": {
+              padding: "100px 2rem",
+            },
+            "@media (max-width: 480px)": {
+              padding: "5rem 2rem",
+            },
+          }}
+        >
+          <Grid size={{ xs: 12 }} marginBottom="82px">
+            <div className="sectionHead">
+              <h2>هنا متجرك مهما كان مجالك !</h2>
+              <p>متواجدون لتلبية كل احتياجاتك، خدمات متنوعة لجميع المجالات</p>
+            </div>
+          </Grid>
+          <Grid size={{ xs: 12 }} marginBottom="28px">
+            <SliderS2 products={products} />
+          </Grid>
+          <Grid size={{ xs: 12 }}>
+            <a href="http://wa.me/96877276659" target="_blank" rel="noopener noreferrer">
+              اطلب معاينة القوالب المميزة
+            </a>
+          </Grid>
         </Grid>
-        <Grid size={{ xs: 12 }} marginBottom="28px">
-          <SliderS2 products={products} />
-        </Grid>
-        <Grid size={{ xs: 12 }}>
-          <a href="http://wa.me/96877276659" target="_blank" rel="noopener noreferrer">
-            اطلب معاينة القوالب المميزة
-          </a>
-        </Grid>
-      </Grid>
+      </motion.div>
     </div>
   )
 }

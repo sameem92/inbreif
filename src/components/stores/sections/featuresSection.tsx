@@ -3,7 +3,8 @@ import Image from "next/image"
 
 // Components
 import Grid from "@mui/material/Grid2"
-import { Button } from "@mui/material"
+import { Button, useMediaQuery } from "@mui/material"
+import { motion } from "framer-motion"
 
 // Images & Icons
 import checked from "../../../../public/icons/checkedIcon.svg"
@@ -110,6 +111,9 @@ const packages = [
 ]
 
 const FeaturesSection = () => {
+  const isMobile = useMediaQuery("(max-width:768px)")
+  const animation = isMobile ? { once: true } : { once: true, amount: 0.3 }
+
   return (
     <div className="featuresSection" id="features">
       <Grid
@@ -135,10 +139,18 @@ const FeaturesSection = () => {
         }}
       >
         <Grid size={{ xs: 12 }}>
-          <div className="sectionHead">
-            <h2>أهم المزايا والخدمات</h2>
-            <p>المزايا المتوفرة في المتجر الإلكتروني الخاص بك والخدمات التي تحتاجها لدعم نشاطك</p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={animation}
+            transition={{ duration: 0.6 }}
+            style={{ margin: "0 auto" }}
+          >
+            <div className="sectionHead">
+              <h2>أهم المزايا والخدمات</h2>
+              <p>المزايا المتوفرة في المتجر الإلكتروني الخاص بك والخدمات التي تحتاجها لدعم نشاطك</p>
+            </div>
+          </motion.div>
         </Grid>
 
         <Grid
@@ -158,46 +170,60 @@ const FeaturesSection = () => {
           }}
         >
           <Grid size={{ xs: 4 }}>
-            <div className="featuresCard">
-              <h3>المميزات</h3>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="featuresCard">
+                <h3>المميزات</h3>
 
-              <ul>
-                {features.map((feature) => (
-                  <li key={feature}>
-                    <Image src={checked} alt="checked" /> <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                <ul>
+                  {features.map((feature) => (
+                    <li key={feature}>
+                      <Image src={checked} alt="checked" /> <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
           </Grid>
 
           {packages.map((item) => (
             <Grid key={item.title} size={{ xs: 4 }}>
-              <div className={`features`}>
-                <div className="content">
-                  <div className="packageHead">
-                    <h4>{item.title}</h4>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className={`features`}>
+                  <div className="content">
+                    <div className="packageHead">
+                      <h4>{item.title}</h4>
 
-                    <Button
-                      sx={{
-                        color: "#e1e42a",
-                        background: "transparent",
-                        borderColor: "#e1e42a",
-                      }}
-                    >
-                      الاشتراك الآن
-                    </Button>
+                      <Button
+                        sx={{
+                          color: "#e1e42a",
+                          background: "transparent",
+                          borderColor: "#e1e42a",
+                        }}
+                      >
+                        الاشتراك الآن
+                      </Button>
+                    </div>
+
+                    <ul>
+                      {item.features.map((feature) => (
+                        <li key={feature}>
+                          {feature !== "checked" ? feature : <Image src={available} alt="available" />}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-
-                  <ul>
-                    {item.features.map((feature) => (
-                      <li key={feature}>
-                        {feature !== "checked" ? feature : <Image src={available} alt="available" />}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
-              </div>
+              </motion.div>
             </Grid>
           ))}
         </Grid>

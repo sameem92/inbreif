@@ -132,63 +132,77 @@ const PackagesSection = () => {
         }}
       >
         <Grid size={{ xs: 12 }}>
-          <h2 className="main-secandry-title">باقات التصميم و الفيديو</h2>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="main-secandry-title">باقات التصميم و الفيديو</h2>
+          </motion.div>
         </Grid>
         <Grid size={{ xs: 12 }}>
-          <Box
-            sx={{
-              width: "100%",
-              "& .MuiTabs-flexContainer": {
-                gap: "3.2rem",
-              },
-            }}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            <Grid container columnSpacing={2} rowSpacing={6}>
-              {plans?.map((plan, i) => (
-                <Grid key={plan.title} size={{ xs: 12, sm: 4 }}>
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    transition={{
-                      type: "tween",
-                      stiffness: 400,
-                      damping: 10,
-                    }}
-                  >
-                    <div className={`plancard planCardS2 ${i === 1 ? "gold" : ""}`}>
-                      <div className="content">
-                        <h4>{plan.title}</h4>
+            <Box
+              sx={{
+                width: "100%",
+                "& .MuiTabs-flexContainer": {
+                  gap: "3.2rem",
+                },
+              }}
+            >
+              <Grid container columnSpacing={2} rowSpacing={6}>
+                {plans?.map((plan, i) => (
+                  <Grid key={plan.title} size={{ xs: 12, sm: 4 }}>
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      transition={{
+                        type: "tween",
+                        stiffness: 400,
+                        damping: 10,
+                      }}
+                    >
+                      <div className={`plancard planCardS2 ${i === 1 ? "gold" : ""}`}>
+                        <div className="content">
+                          <h4>{plan.title}</h4>
 
-                        {currency && (
-                          <div className="plan_price">
-                            <span>{plan[currency.code]}</span>
-                            <span>{currency.symbol}</span>
-                          </div>
-                        )}
+                          {currency && (
+                            <div className="plan_price">
+                              <span>{plan[currency.code]}</span>
+                              <span>{currency.symbol}</span>
+                            </div>
+                          )}
 
-                        <ul>
-                          {plan?.features?.map((feature) => (
-                            <li key={feature}>
-                              <Image src={checked} alt="checked" /> <span>{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                        <Button
-                          sx={{
-                            color: "#001014",
-                            background: i === 1 ? "#E0E324" : "transparent",
-                            borderColor: i === 1 ? "transparent" : "#e1e42a",
-                          }}
-                          onClick={() => goToSite("http://wa.me/96877276659")}
-                        >
-                          اطلب الأن
-                        </Button>
+                          <ul>
+                            {plan?.features?.map((feature) => (
+                              <li key={feature}>
+                                <Image src={checked} alt="checked" /> <span>{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+                          <Button
+                            sx={{
+                              color: "#001014",
+                              background: i === 1 ? "#E0E324" : "transparent",
+                              borderColor: i === 1 ? "transparent" : "#e1e42a",
+                            }}
+                            onClick={() => goToSite("http://wa.me/96877276659")}
+                          >
+                            اطلب الأن
+                          </Button>
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
-                </Grid>
-              ))}
-            </Grid>
-          </Box>
+                    </motion.div>
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
+          </motion.div>
         </Grid>
       </Grid>
     </div>

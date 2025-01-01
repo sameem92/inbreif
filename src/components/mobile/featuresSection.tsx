@@ -22,7 +22,7 @@ import feature13 from "../../../public/images/features/feature13.svg"
 import feature14 from "../../../public/images/features/feature14.svg"
 import feature15 from "../../../public/images/features/feature15.svg"
 import feature16 from "../../../public/images/features/feature16.svg"
-import { Button } from "@mui/material"
+import { Button, useMediaQuery } from "@mui/material"
 
 const features = [
   {
@@ -92,6 +92,8 @@ const features = [
 ]
 
 const FeaturesSection = () => {
+  const isMobile = useMediaQuery("(max-width:768px)")
+  const animation = isMobile ? { once: true } : { once: true, amount: 0.3 }
   const goToWhatsApp = () => {
     window.open("http://wa.me/96877276659", "_target")
   }
@@ -132,6 +134,9 @@ const FeaturesSection = () => {
                   stiffness: 400,
                   damping: 10,
                 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={animation}
               >
                 <div className="feature">
                   <div className="content">

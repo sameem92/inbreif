@@ -8,6 +8,7 @@ import Image from "next/image"
 // Components
 import Grid from "@mui/material/Grid2"
 import { motion } from "framer-motion"
+import { useMediaQuery } from "@mui/material"
 
 // Icons
 import scrollIcon from "../../../../public/icons/scrollIcon.svg"
@@ -146,6 +147,8 @@ const currencyMap = {
 }
 
 const ServicesSection = () => {
+  const isMobile = useMediaQuery("(max-width:768px)")
+  const animation = isMobile ? { once: true } : { once: true, amount: 0.3 }
   const [currency, setCurrency] = useState(null)
   useEffect(() => {
     const fetchUserLocation = async () => {
@@ -201,12 +204,20 @@ const ServicesSection = () => {
         }}
       >
         <Grid size={{ xs: 12 }}>
-          <div className="sectionHead">
-            <a href="#features">
-              <Image src={scrollIcon} alt="scroll" />
-            </a>
-            <h2>استمتع بحرية اختيار الإضافات التي تجعل باقتك متكاملة</h2>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={animation}
+            transition={{ duration: 0.6 }}
+            style={{ margin: "0 auto" }}
+          >
+            <div className="sectionHead">
+              <a href="#features">
+                <Image src={scrollIcon} alt="scroll" />
+              </a>
+              <h2>استمتع بحرية اختيار الإضافات التي تجعل باقتك متكاملة</h2>
+            </div>
+          </motion.div>
         </Grid>
         <Grid size={{ xs: 12 }} container spacing={{ xs: 2, md: 4 }}>
           {services.map((service, i) => (
@@ -218,6 +229,9 @@ const ServicesSection = () => {
                   stiffness: 400,
                   damping: 10,
                 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={animation}
               >
                 <div className="service">
                   <div className="content">

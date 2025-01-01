@@ -328,47 +328,54 @@ export default function Home() {
         </Box>
       </motion.div>
 
-      <Box
-        className="tabs"
-        sx={{
-          width: "100%",
-          "& .MuiTabs-flexContainer": {
-            gap: "3.2rem",
-          },
-        }}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
       >
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="basic tabs example"
+        <Box
+          className="tabs"
           sx={{
-            alignItems: "center",
-            mt: { xs: 5, md: "15rem" },
-
-            justifyContent: "center",
+            width: "100%",
+            "& .MuiTabs-flexContainer": {
+              gap: "3.2rem",
+            },
           }}
         >
-          <Tab className="tab" label="شعارات" {...a11yProps(0)} />
-          <Tab className="tab" label="هويات بصرية" {...a11yProps(1)} />
-          <Tab className="tab" label="  سوشيال ميديا" {...a11yProps(2)} />
-          <Tab className="tab" label="بروفايلات ومجلات" {...a11yProps(3)} />
-        </Tabs>
-        <CustomTabPanel value={value} index={0}>
-          <SliderS1 images={logos} />
-        </CustomTabPanel>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            aria-label="basic tabs example"
+            sx={{
+              alignItems: "center",
+              mt: { xs: 5, md: "15rem" },
 
-        <CustomTabPanel value={value} index={1}>
-          <SliderS1 images={visualIdentities} />
-        </CustomTabPanel>
+              justifyContent: "center",
+            }}
+          >
+            <Tab className="tab" label="شعارات" {...a11yProps(0)} />
+            <Tab className="tab" label="هويات بصرية" {...a11yProps(1)} />
+            <Tab className="tab" label="  سوشيال ميديا" {...a11yProps(2)} />
+            <Tab className="tab" label="بروفايلات ومجلات" {...a11yProps(3)} />
+          </Tabs>
+          <CustomTabPanel value={value} index={0}>
+            <SliderS1 images={logos} />
+          </CustomTabPanel>
 
-        <CustomTabPanel value={value} index={2}>
-          <SliderS1 images={socials} />
-        </CustomTabPanel>
+          <CustomTabPanel value={value} index={1}>
+            <SliderS1 images={visualIdentities} />
+          </CustomTabPanel>
 
-        <CustomTabPanel value={value} index={3}>
-          <SliderS1 images={profiles} />
-        </CustomTabPanel>
-      </Box>
+          <CustomTabPanel value={value} index={2}>
+            <SliderS1 images={socials} />
+          </CustomTabPanel>
+
+          <CustomTabPanel value={value} index={3}>
+            <SliderS1 images={profiles} />
+          </CustomTabPanel>
+        </Box>
+      </motion.div>
 
       <PackagesSection />
 
