@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid2"
 import { motion } from "framer-motion"
 
 // Images & Icons
-import delivery from "../../../../public/images/store/delivery.svg"
+import delivery from "../../../../public/images/store/delivery.png"
 import SliderS3 from "@/components/tools/sliders/sliderS3"
 
 import company1 from "../../../../public/images/store/companies/company1.svg"

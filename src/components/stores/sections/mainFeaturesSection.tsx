@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid2"
 import { motion } from "framer-motion"
 
 // Images & Icons
-import feat1 from "../../../../public/images/store/feat1.png"
+import feat1 from "../../../../public/images/store/feat1.svg"
 import feat2 from "../../../../public/images/store/feat2.png"
 import feat3 from "../../../../public/images/store/feat3.png"
 import icon1 from "../../../../public/icons/icon1.png"
