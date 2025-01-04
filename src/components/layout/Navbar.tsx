@@ -8,7 +8,7 @@ import MenuIcon from "@mui/icons-material/Menu"
 import Link from "next/link"
 import { useState } from "react"
 import { useMediaQuery } from "@mui/material"
-import InbreifLogo from "../../../public/image/InbreifLogo.png"
+import InbreifLogo from "../../../public/image/InbreifLogo.svg"
 
 const list = [
   { title: "الرئيسية", path: "/" },

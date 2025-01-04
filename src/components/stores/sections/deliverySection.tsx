@@ -6,18 +6,18 @@ import Grid from "@mui/material/Grid2"
 import { motion } from "framer-motion"
 
 // Images & Icons
-import delivery from "../../../../public/images/store/delivery.png"
+import delivery from "../../../../public/images/store/delivery.svg"
 import SliderS3 from "@/components/tools/sliders/sliderS3"
 
-import company1 from "../../../../public/images/store/companies/company1.png"
-import company2 from "../../../../public/images/store/companies/company2.png"
-import company3 from "../../../../public/images/store/companies/company3.png"
-import company4 from "../../../../public/images/store/companies/company4.png"
-import company5 from "../../../../public/images/store/companies/company5.png"
-import company6 from "../../../../public/images/store/companies/company6.png"
-import company7 from "../../../../public/images/store/companies/company7.png"
-import company8 from "../../../../public/images/store/companies/company8.png"
-import company9 from "../../../../public/images/store/companies/company9.png"
+import company1 from "../../../../public/images/store/companies/company1.svg"
+import company2 from "../../../../public/images/store/companies/company2.svg"
+import company3 from "../../../../public/images/store/companies/company3.svg"
+import company4 from "../../../../public/images/store/companies/company4.svg"
+import company5 from "../../../../public/images/store/companies/company5.svg"
+import company6 from "../../../../public/images/store/companies/company6.svg"
+import company7 from "../../../../public/images/store/companies/company7.svg"
+import company8 from "../../../../public/images/store/companies/company8.svg"
+import company9 from "../../../../public/images/store/companies/company9.svg"
 
 const companies = [company1, company2, company3, company4, company5, company6, company7, company8, company9]
 
