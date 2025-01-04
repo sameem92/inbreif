@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid2"
 import { motion } from "framer-motion"
 
 // Images & Icons
-import store from "../../../../public/images/store/store.svg"
+import store from "../../../../public/images/store/store.png"
 import { Button } from "@mui/material"
 
 const HeroSecion = () => {

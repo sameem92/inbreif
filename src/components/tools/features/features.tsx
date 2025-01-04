@@ -212,7 +212,7 @@ export default function Features({ imgPath }) {
                                   },
                                 }}
                               >
-                                <Image src={item.icon} alt={item.title} width={40} height={40} loading="lazy" />
+                                <Image src={item.icon} alt={item.title} width={40} height={40} />
                                 <Typography
                                   variant="h6"
                                   sx={{
@@ -304,7 +304,6 @@ export default function Features({ imgPath }) {
                       width: "100%",
                       height: "100%",
                     }}
-                    loading="lazy"
                   />
                 </Box>
               </motion.div>

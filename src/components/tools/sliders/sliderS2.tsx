@@ -17,7 +17,7 @@ import "swiper/css/effect-coverflow"
 import "swiper/css/navigation"
 
 // Images & Icons
-import star from "../../../../public/icons/starIcon.svg"
+import star from "../../../../public/icons/starIcon.png"
 
 export default function SlideS2({ products }) {
   const [isBeginning, setIsBeginning] = useState(true)
@@ -60,6 +60,7 @@ export default function SlideS2({ products }) {
           }}
         >
           <Button
+            title="previous"
             className="prev"
             sx={{
               width: "6rem",
@@ -168,6 +169,7 @@ export default function SlideS2({ products }) {
           </Swiper>
 
           <Button
+            title="next"
             className="next"
             sx={{
               width: "6rem",

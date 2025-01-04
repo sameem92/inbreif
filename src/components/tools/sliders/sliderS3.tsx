@@ -65,7 +65,7 @@ export default function SliderS3({ images, className }) {
                   }}
                   className="fix-x"
                 >
-                  <Image loading="lazy" src={src} alt={`company-logo-${index + 1}`} />
+                  <Image src={src} alt={`company-logo-${index + 1}`} />
                 </Box>
               </SwiperSlide>
             ))}

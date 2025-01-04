@@ -295,7 +295,7 @@ export default function Home() {
                               gap: "1rem",
                             }}
                           >
-                            <Image src={item.icon} alt={item.title} width={50} height={50} loading="lazy" />
+                            <Image src={item.icon} alt={item.title} width={50} height={50} />
                             <Typography
                               variant="h6"
                               sx={{

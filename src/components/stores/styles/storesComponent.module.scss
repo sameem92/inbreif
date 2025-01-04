@@ -29,7 +29,7 @@
   }
 
   .heroSection {
-    background-image: url("/images/store/bg.svg");
+    background-image: url("/images/store/bg.png");
     background-repeat: no-repeat;
     background-position: 33% center;
 
@@ -606,7 +606,7 @@
             &::after {
               display: block;
               content: "";
-              background: url("/icons/cartIcon.svg");
+              background: url("/icons/cartIcon.png");
               background-repeat: no-repeat;
               height: 50px;
               width: 50px;

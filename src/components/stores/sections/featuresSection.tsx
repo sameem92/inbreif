@@ -7,8 +7,8 @@ import { Button, useMediaQuery } from "@mui/material"
 import { motion } from "framer-motion"
 
 // Images & Icons
-import checked from "../../../../public/icons/checkedIcon.svg"
-import available from "../../../../public/icons/availableIcon.svg"
+import checked from "../../../../public/icons/checkedIcon.png"
+import available from "../../../../public/icons/availableIcon.png"
 
 const features = [
   "عدد المنتجات",

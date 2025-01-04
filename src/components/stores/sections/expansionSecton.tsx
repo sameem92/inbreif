@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid2"
 import { motion } from "framer-motion"
 
 // Images & Icons
-// import expansion from "../../../../public/images/store/expansion.svg"
+// import expansion from "../../../../public/images/store/expansion.png"
 
 const ExpansionSecton = () => {
   return (

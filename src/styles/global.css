@@ -18,7 +18,7 @@ body {
 body {
   background-color: #032932 !important;
   direction: rtl;
-  background-image: url("/image/home2.svg");
+  background-image: url("/image/home2.png");
   background-position: top !important; /* Center the background horizontally */
   background-size: cover !important; /* Ensure the background covers the entire viewport */
   background-repeat: no-repeat !important;
@@ -796,7 +796,6 @@ a {
   line-height: 1.6rem !important;
 }
 .footer {
-  /* background-image: url("/image/noise.png"), none; */
   background-color: #124651;
   background-position: 0% 0%;
   background-size: 80px 80px;

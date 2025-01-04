@@ -43,7 +43,7 @@ export default function Feedback() {
       say: `حبيت أشكركم على خدمتكم الرائعة و الراقية فعلاً تعاملكم جميل جداً مع سرعة الإستجابة في العمل والتواصل من أعلى وأفضل المستويات خدمة
 نتمنى لكم مزيداً من التوفيق والنجاح.
   `,
-      image: "/image/f1.svg",
+      image: "/image/f1.png",
       compnay: " مصنع أبواب الفتح الأتوماتيكية",
       location: "المملكة العربية السعودية",
     },
@@ -51,7 +51,7 @@ export default function Feedback() {
       say: `
 شغل ممتاز وتعامل راقي في وقت وجيز بالتوفيق والسداد.
   `,
-      image: "/image/f2.svg",
+      image: "/image/f2.png",
       compnay: "وسيط المزاحمية",
       location: "المملكة العربية السعودية",
     },
@@ -61,7 +61,7 @@ export default function Feedback() {
 ومرونة في التعامل من قبل الفريق
 شكراً لكم من القلب.
   `,
-      image: "/image/f3.svg",
+      image: "/image/f3.png",
       compnay: "مركز أوفرسيز الطبي",
       location: "الهند",
     },
@@ -71,7 +71,7 @@ export default function Feedback() {
 آخر تعامل بإذن الله
 شكراً لكم.
   `,
-      image: "/image/f4.svg",
+      image: "/image/f4.png",
       compnay: "مشروع بكلة",
       location: "المملكة العربية السعودية",
     },
@@ -79,7 +79,7 @@ export default function Feedback() {
       say: `
  تعامل راقي و عمل احترافي رائع فعلاً فكرتك بين يديك عملت معهم لجور يلاكس وكان العمل ذو جودة عالية أفكر مستقبلاً أن أعمل معاهم أعمال مستقبلية قادمة.
   `,
-      image: "/image/f.svg",
+      image: "/image/f.png",
       compnay: "جو ريلاكس",
       location: "المملكة العربية السعودية",
     },
@@ -88,7 +88,7 @@ export default function Feedback() {
  خدمة رائعة و عمل رائع وأسلوب أكثر من رائع و الالتزام بالوقت وتكلفة بسيطة يعني جد أفضل شركة بتعامل معها لا تقبل بأقل مما تستحق.
 
   `,
-      image: "/image/f6.svg",
+      image: "/image/f6.png",
       compnay: "مركز رواند",
       location: "المملكة الأردنية الهاشمية",
     },
@@ -97,7 +97,7 @@ export default function Feedback() {
 ما يميزكم حسن التعامل و سرعة الإنجاز ووضع أكثر من خيار للعميل و إبداعكم الذي يدل على الإطلاع على أحدث الأعمال المشابهة لأعمالكم وهذه هي التغذية البصرية
 أتمنى لكم التوفيق، كونكم ممن يتقنون عملهم فأنا أحب ذلك.
   `,
-      image: "/image/f7.svg",
+      image: "/image/f7.png",
       compnay: "شركة نقلة _ زياد الصعيدي",
       location: "المملكة العربية السعودية",
     },
@@ -105,7 +105,7 @@ export default function Feedback() {
       say: `
 أشكر فريقكم الرائع صراحةً على عملهم الجبار في التصميم وتعاملهم الطيب مع العملاء وأنصح أصحاب المشاريع الصغيرة بالتعامل معكم و أتمنى لكم دوام التوفيق والسداد.
   `,
-      image: "/image/f10.svg",
+      image: "/image/f10.png",
       compnay: "شركة القمر",
       location: "المملكة العربية السعودية",
     },
@@ -114,7 +114,7 @@ export default function Feedback() {
 شركة تعاملها راقي و تصاميم مبتكرة و احترافية و الأهم من ذلك كلة السرعة و تحمل تعديلات العميل
 للوصول لحد ارضائه.
   `,
-      image: "/image/f9.svg",
+      image: "/image/f9.png",
       compnay: "شركة مكعبات",
       location: "المملكة العربية السعودية",
     },
@@ -169,6 +169,7 @@ export default function Feedback() {
             }}
           >
             <Button
+              title="previous"
               className="prev"
               sx={{
                 width: "6rem",
@@ -285,7 +286,6 @@ export default function Feedback() {
                         }}
                       >
                         <Image
-                          loading="lazy"
                           width={80}
                           height={80}
                           src={item.image}
@@ -301,14 +301,7 @@ export default function Feedback() {
                             gap: ".6rem",
                           }}
                         >
-                          <Image
-                            loading="lazy"
-                            src={"/image/lo.png"}
-                            className="location"
-                            alt="location"
-                            width={20}
-                            height={20}
-                          />
+                          <Image src={"/image/lo.png"} className="location" alt="location" width={20} height={20} />
                           <span className="place">{item.location}</span>
                         </Box>
                       </Box>
@@ -319,6 +312,7 @@ export default function Feedback() {
             </Swiper>
 
             <Button
+              title="next"
               className="next"
               sx={{
                 width: "6rem",

@@ -6,9 +6,9 @@ import Grid from "@mui/material/Grid2"
 import { motion } from "framer-motion"
 
 // Images & Icons
-import service1 from "../../../../public/images/store/services/service1.svg"
-import service2 from "../../../../public/images/store/services/service2.svg"
-import service3 from "../../../../public/images/store/services/service3.svg"
+import service1 from "../../../../public/images/store/services/service1.png"
+import service2 from "../../../../public/images/store/services/service2.png"
+import service3 from "../../../../public/images/store/services/service3.png"
 
 const TopServicesSecton = () => {
   return (

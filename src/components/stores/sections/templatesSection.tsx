@@ -7,16 +7,16 @@ import { motion } from "framer-motion"
 import { useMediaQuery } from "@mui/material"
 
 // Images & Icons
-import product1 from "../../../../public/images/store/products/product1.svg"
-import product2 from "../../../../public/images/store/products/product2.svg"
-import product3 from "../../../../public/images/store/products/product3.svg"
-import product4 from "../../../../public/images/store/products/product4.svg"
-import product5 from "../../../../public/images/store/products/product5.svg"
-import product6 from "../../../../public/images/store/products/product6.svg"
-import product7 from "../../../../public/images/store/products/product7.svg"
-import product8 from "../../../../public/images/store/products/product8.svg"
-import product9 from "../../../../public/images/store/products/product9.svg"
-import product10 from "../../../../public/images/store/products/product10.svg"
+import product1 from "../../../../public/images/store/products/product1.png"
+import product2 from "../../../../public/images/store/products/product2.png"
+import product3 from "../../../../public/images/store/products/product3.png"
+import product4 from "../../../../public/images/store/products/product4.png"
+import product5 from "../../../../public/images/store/products/product5.png"
+import product6 from "../../../../public/images/store/products/product6.png"
+import product7 from "../../../../public/images/store/products/product7.png"
+import product8 from "../../../../public/images/store/products/product8.png"
+import product9 from "../../../../public/images/store/products/product9.png"
+import product10 from "../../../../public/images/store/products/product10.png"
 
 const products = [
   { title: "عطور", image: product1 },

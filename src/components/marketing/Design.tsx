@@ -8,7 +8,7 @@ import { Container, Button, Box, Card, CardContent, Typography, Grid, useMediaQu
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
 import "swiper/css/navigation"
-import { Navigation, Autoplay } from "swiper/modules"
+import { Navigation } from "swiper/modules"
 import Image from "next/image"
 const icon1 = "/image/icon5.png"
 const icon2 = "/image/icon6.png"
@@ -186,7 +186,7 @@ export default function Design() {
                               gap: "1.6rem",
                             }}
                           >
-                            <Image loading="lazy" src={item.icon} alt={item.title} width={50} height={50} />
+                            <Image src={item.icon} alt={item.title} width={50} height={50} />
                             <Typography
                               variant="h6"
                               sx={{
@@ -253,6 +253,7 @@ export default function Design() {
             }}
           >
             <Button
+              title="previous"
               className="prev"
               sx={{
                 width: { xs: "5rem", lg: "6rem" },
@@ -321,6 +322,7 @@ export default function Design() {
             </Swiper>
 
             <Button
+              title="next"
               className="next"
               sx={{
                 width: { xs: "5rem", lg: "6rem" },

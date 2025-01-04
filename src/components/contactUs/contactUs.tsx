@@ -343,7 +343,6 @@ export default function ContactUsComponent() {
                       height={24}
                       src={images[0]}
                       alt="arrowSelect"
-                      loading="lazy"
                     />
                   )}
                   sx={{

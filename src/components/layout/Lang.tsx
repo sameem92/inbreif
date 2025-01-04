@@ -81,7 +81,7 @@ const Header = () => {
         {...bindTrigger(popupState)}
       >
         <p className="nav-link">العربية</p>
-        <Image src={"/image/chevron-down.svg"} alt="arrow down" width={24} height={24} />
+        <Image src={"/image/chevron-down.png"} alt="arrow down" width={24} height={24} />
       </Box>
 
       <StyledMenu

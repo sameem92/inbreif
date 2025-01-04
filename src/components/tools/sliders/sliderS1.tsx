@@ -102,7 +102,6 @@ const SliderS1: React.FC<{ images: string[] }> = ({ images }) => {
                       className="image-zoom"
                       width={500}
                       height={300}
-                      loading="lazy"
                       style={{ objectFit: "fill" }}
                     />
                   </div>

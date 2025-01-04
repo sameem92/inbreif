@@ -7,7 +7,7 @@ import { Button } from "@mui/material"
 import { motion } from "framer-motion"
 
 // Icons
-import checked from "../../../../public/icons/checkedIcon.svg"
+import checked from "../../../../public/icons/checkedIcon.png"
 
 const currencyMap = {
   default: { code: "USD", symbol: "دولار" },

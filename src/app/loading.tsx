@@ -10,8 +10,6 @@ const Loading = () => {
         flexDirection: "column",
         textAlign: "center",
         padding: "2rem",
-
-        // backgroundImage: `url(${home.src})`,
         background: "#032932",
         position: "fixed",
         top: 0,

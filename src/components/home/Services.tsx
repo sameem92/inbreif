@@ -15,14 +15,14 @@ const Item = styled(Paper)({
 })
 
 const arrow = "/image/arrow.png"
-import service1 from "../../../public/image/service1.svg"
-import service2 from "../../../public/image/service2.svg"
-import service3 from "../../../public/images/services/service1.svg"
-import service4 from "../../../public/images/services/service2.svg"
-import service5 from "../../../public/images/services/service3.svg"
-import service6 from "../../../public/images/services/service4.svg"
-import service7 from "../../../public/images/services/service5.svg"
-import service8 from "../../../public/images/services/service6.svg"
+import service1 from "../../../public/image/service1.png"
+import service2 from "../../../public/image/service2.png"
+import service3 from "../../../public/images/services/service1.png"
+import service4 from "../../../public/images/services/service2.png"
+import service5 from "../../../public/images/services/service3.png"
+import service6 from "../../../public/images/services/service4.png"
+import service7 from "../../../public/images/services/service5.png"
+import service8 from "../../../public/images/services/service6.png"
 
 const secService = [
   {
@@ -133,7 +133,7 @@ export default function Services() {
                         />
                       </Item>
 
-                      <h3 className="third-title">تطبيقات الموبايل</h3>
+                      <h2 className="third-title">تطبيقات الموبايل</h2>
                       <Button
                         variant="text"
                         sx={{
@@ -163,7 +163,6 @@ export default function Services() {
                         <Image
                           src={arrow}
                           alt="arrow"
-                          loading="lazy"
                           width={24}
                           height={24}
                           className="arrow-icon" // Add class to the arrow icon
@@ -208,7 +207,7 @@ export default function Services() {
                         />
                       </Item>
 
-                      <h3 className="third-title">متاجر إلكترونية</h3>
+                      <h2 className="third-title">متاجر إلكترونية</h2>
                       <Button
                         variant="text"
                         sx={{
@@ -238,7 +237,6 @@ export default function Services() {
                         <Image
                           src={arrow}
                           alt="arrow"
-                          loading="lazy"
                           width={24}
                           height={24}
                           className="arrow-icon" // Add class to the arrow icon
@@ -311,7 +309,7 @@ export default function Services() {
                           />
                         </Item>
 
-                        <h3 className="third-title">{item.title}</h3>
+                        <h2 className="third-title">{item.title}</h2>
                         <Button
                           variant="text"
                           sx={{
@@ -341,7 +339,6 @@ export default function Services() {
                           <Image
                             src={arrow}
                             alt="arrow"
-                            loading="lazy"
                             width={24}
                             height={24}
                             className="arrow-icon" // Add class to the arrow icon

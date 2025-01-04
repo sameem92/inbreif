@@ -7,8 +7,8 @@ import Social from "@/components/tools/social/social"
 import Form from "@/components/tools/form/form"
 import Feedback from "@/components/tools/feedback/feedback"
 
-import distinguishes from "../../../public/images/about/distinguishes.svg"
-import values from "../../../public/images/about/values.svg"
+import distinguishes from "../../../public/images/about/distinguishes.png"
+import values from "../../../public/images/about/values.png"
 
 export default function Home() {
   const isMobile = useMediaQuery("(max-width:768px)")
@@ -161,7 +161,6 @@ export default function Home() {
                         width: "100%",
                         height: "auto",
                       }}
-                      loading="lazy"
                       alt="one"
                     />
                   </motion.div>
@@ -192,7 +191,6 @@ export default function Home() {
                       width: "100%",
                       height: "auto",
                     }}
-                    loading="lazy"
                     alt="two"
                   />
                 </Grid2>

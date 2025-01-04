@@ -14,7 +14,7 @@ import Work from "@/components/tools/work/work"
 import style from "./styles/mobileComponent.module.scss"
 
 // Images
-import mobile from "../../../public/images/mobHero.svg"
+import mobile from "../../../public/images/mobHero.png"
 import FeaturesSection from "./featuresSection"
 
 const Item = styled(Paper)(() => ({
@@ -41,7 +41,7 @@ export default function Home() {
           alignItems="center"
           sx={{
             padding: "20rem 10rem 10rem",
-            backgroundImage: 'url("/images/store/bg.svg")',
+            backgroundImage: 'url("/images/store/bg.png")',
             backgroundRepeat: "no-repeat",
             backgroundPosition: "right top",
             backgroundSize: "65% 90%",
@@ -144,7 +144,6 @@ export default function Home() {
                       maxWidth: "100%",
                       maxHeight: "75rem",
                     }}
-                    loading="lazy"
                     alt="mobile-apps"
                   />
                 </div>

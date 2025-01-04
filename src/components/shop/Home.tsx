@@ -1,5 +1,5 @@
 "use client"
-import marketing from "../../../public/images/marketing.svg"
+import marketing from "../../../public/images/marketing.png"
 
 import React from "react"
 import { Box, Container, Grid, Button } from "@mui/material"
@@ -65,7 +65,7 @@ export default function Home() {
               columnSpacing={4}
               alignItems="center"
               sx={{
-                backgroundImage: 'url("/images/store/bg.svg")',
+                backgroundImage: 'url("/images/store/bg.png")',
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "100% center",
                 backgroundSize: "80% 90%",
@@ -149,7 +149,7 @@ export default function Home() {
                       alignItems: "center",
                     }}
                   >
-                    <Image style={{ maxWidth: "100%" }} src={marketing} loading="lazy" alt="mobile-apps" />
+                    <Image style={{ maxWidth: "100%" }} src={marketing} alt="mobile-apps" />
                   </motion.div>
                 </Item>
               </Grid>

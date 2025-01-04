@@ -10,21 +10,30 @@ import Feedback from "@/components/tools/feedback/feedback"
 import Form from "@/components/tools/form/form"
 import Services from "@/components/home/Services"
 import Social from "@/components/tools/social/social"
-
 import { ReactTyped } from "react-typed"
+
+// Icons
+import icon1 from "../../../public/image/icon1.png"
+import icon2 from "../../../public/image/icon2.png"
+import icon3 from "../../../public/image/icon3.png"
+import icon4 from "../../../public/image/icon4.png"
 
 const items = [
   {
     title: "احترافية عالية",
+    icon: icon1,
   },
   {
     title: "خبرة 10+ سنوات",
+    icon: icon2,
   },
   {
     title: "موثقة ومرخصة",
+    icon: icon3,
   },
   {
     title: "أسعار تنافسية",
+    icon: icon4,
   },
 ]
 
@@ -180,15 +189,20 @@ export default function Home() {
                               gap: "1.6rem",
                             }}
                           >
-                            <Image
-                              src={`/image/icon${index + 1}.png`}
-                              alt={item.title}
-                              width={50}
-                              height={50}
-                              loading="lazy"
-                            />
+                            <Box
+                              sx={{
+                                width: "50px",
+                                height: "50px",
+                                img: {
+                                  height: "100%",
+                                  width: "100%",
+                                },
+                              }}
+                            >
+                              <Image src={item.icon} alt={item.title} />
+                            </Box>
                             <Typography
-                              variant="h6"
+                              variant="h2"
                               sx={{
                                 fontSize: {
                                   xs: "1.8rem",
