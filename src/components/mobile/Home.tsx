@@ -32,7 +32,7 @@ export default function Home() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         className="add-padding"
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.4 }}
         id="goToHome"
       >
         <Grid
@@ -109,45 +109,27 @@ export default function Home() {
                   },
                 }}
               >
-                <motion.h1
-                  className="main-title mobile-title"
-                  initial={{ opacity: 0, y: -50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2, duration: 0.6 }}
-                >
-                  معنا، تتحول الأفكار إلى واقع
-                </motion.h1>
-                <motion.p
-                  initial={{ opacity: 0, y: -50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3, duration: 0.6 }}
-                  className="paragrph-another"
-                >
+                <h1 className="main-title mobile-title">معنا، تتحول الأفكار إلى واقع</h1>
+                <p className="paragrph-another">
                   في InBrief، نلتزم بتقديم تطبيقات متميزة تجمع بين الوظائف الفعالة والتصميم العصري. نحن هنا لمساعدتكم في
                   تحقيق أهدافكم الرقمية.
-                </motion.p>
+                </p>
               </Box>
             </Item>
           </Grid>
 
           <Grid size={{ xs: 12, lg: 6 }}>
             <Item>
-              <motion.div
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.6 }}
-              >
-                <div style={{ textAlign: "center" }}>
-                  <Image
-                    src={mobile}
-                    style={{
-                      maxWidth: "100%",
-                      maxHeight: "75rem",
-                    }}
-                    alt="mobile-apps"
-                  />
-                </div>
-              </motion.div>
+              <div style={{ textAlign: "center" }}>
+                <Image
+                  src={mobile}
+                  style={{
+                    maxWidth: "100%",
+                    maxHeight: "75rem",
+                  }}
+                  alt="mobile-apps"
+                />
+              </div>
             </Item>
           </Grid>
         </Grid>

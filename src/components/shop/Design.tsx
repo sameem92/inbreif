@@ -140,7 +140,7 @@ const Section = ({ section }) => (
           className="main-shop-title"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
+          transition={{ delay: 0.2, duration: 0.4 }}
         >
           {section.title}
         </motion.h1>
@@ -158,7 +158,7 @@ const Section = ({ section }) => (
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.4 }}
         style={{
           width: "100%",
         }}
@@ -246,7 +246,7 @@ export default function Design() {
       style={{ width: "100%" }}
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={{ duration: 0.4 }}
     >
       <Container
         sx={{

@@ -104,7 +104,7 @@ export default function Form() {
         }}
         initial={{ opacity: 0, scale: 0.9 }} // Initial state
         whileInView={{ opacity: 1, scale: 1 }} // Animate when in view
-        transition={{ duration: 0.8, ease: "easeOut" }} // Smooth transition
+        transition={{ duration: 0.4 }} // Smooth transition
         viewport={animation} // Trigger animation when 30% of the box is visible
       >
         <Box
@@ -200,7 +200,7 @@ export default function Form() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
+                transition={{ duration: 0.4 }}
                 viewport={animation}
                 style={{ width: "60%", margin: "0 auto" }}
               >

@@ -98,8 +98,7 @@ const cardVariants = {
     y: 0,
     transition: {
       delay: i * 0.2, // Stagger animation for each card
-      duration: 0.8,
-      ease: "easeOut",
+      duration: 0.4,
     },
   }),
 }
@@ -116,7 +115,7 @@ export default function Features({ imgPath }) {
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.4 }}
       viewport={isMobile ? { once: true } : { once: true, amount: 0.3 }}
     >
       <Container

@@ -32,7 +32,7 @@ export default function Home() {
         style={{ paddingTop: "7rem" }}
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.4 }}
         id="goToHome"
       >
         <Box
@@ -102,14 +102,14 @@ export default function Home() {
                     className="main-title mobile-title text-center"
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2, duration: 0.6 }}
+                    transition={{ delay: 0.2, duration: 0.4 }}
                   >
                     التسويق معنا غير
                   </motion.h1>
                   <motion.p
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3, duration: 0.6 }}
+                    transition={{ delay: 0.3, duration: 0.4 }}
                     className="paragrph-another"
                   >
                     باختصار نصل بك إلى هدفك.
@@ -142,7 +142,7 @@ export default function Home() {
                   <motion.div
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2, duration: 0.6 }}
+                    transition={{ delay: 0.2, duration: 0.4 }}
                     style={{
                       display: "flex",
                       justifyContent: "center",

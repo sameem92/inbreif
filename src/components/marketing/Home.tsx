@@ -199,7 +199,7 @@ export default function Home() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         id="goToHome"
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.4 }}
       >
         <Box
           className="home"
@@ -224,25 +224,13 @@ export default function Home() {
             }}
             maxWidth="lg"
           >
-            <motion.h1
-              className="main-secandry-title"
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-            >
-              التصميم الجرافيك
-            </motion.h1>
+            <h1 className="main-secandry-title">التصميم الجرافيك</h1>
             <p className="paragrph">
               نسعى لتحقيق التميز والابداع والعصرية لعملائنا في هويتهم البصرية وإعلاناتهم في سوق مليء بالتحديات
             </p>
           </Container>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             <Container sx={{ display: "flex", justifyContent: "center", gap: "2.4rem" }} maxWidth="lg">
               <Box
                 sx={{
@@ -324,7 +312,7 @@ export default function Home() {
                 </Grid>
               </Box>
             </Container>
-          </motion.div>
+          </div>
         </Box>
       </motion.div>
 
@@ -332,7 +320,7 @@ export default function Home() {
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.4 }}
       >
         <Box
           className="tabs"

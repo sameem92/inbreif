@@ -160,7 +160,7 @@ const PackagesSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={animation}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
           >
             <div className="sectionHead">
               <h2>خطط الاشتراك</h2>
@@ -173,7 +173,7 @@ const PackagesSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
           >
             <Box
               sx={{

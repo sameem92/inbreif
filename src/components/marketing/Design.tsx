@@ -87,7 +87,7 @@ export default function Design() {
         style={isMobile ? { paddingTop: "8rem" } : { paddingTop: "15rem" }}
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.4 }}
       >
         <Box
           sx={{
@@ -115,7 +115,7 @@ export default function Design() {
               className="main-secandry-title"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
+              transition={{ delay: 0.2, duration: 0.4 }}
             >
               موشن جرافيك ومونتاج
             </motion.h1>
@@ -126,7 +126,7 @@ export default function Design() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
           >
             <Container sx={{ display: "flex", justifyContent: "center", gap: "6rem" }} maxWidth="lg">
               <Box
@@ -223,7 +223,7 @@ export default function Design() {
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.4 }}
       >
         <Container
           maxWidth="lg"

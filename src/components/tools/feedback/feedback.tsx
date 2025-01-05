@@ -126,7 +126,7 @@ export default function Feedback() {
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={animation}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.4 }}
       >
         <Container
           maxWidth="lg"
@@ -362,7 +362,7 @@ export default function Feedback() {
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={animation}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.4 }}
       >
         <SliderS3 images={companies} />
       </motion.div>

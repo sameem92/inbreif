@@ -51,7 +51,7 @@ export default function Home() {
         id="goToHome"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.4 }}
       >
         <Box
           className="home"
@@ -77,19 +77,14 @@ export default function Home() {
             }}
             maxWidth="lg"
           >
-            <motion.h1
-              className="main-title"
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-            >
+            <h1 className="main-title">
               <ReactTyped
                 backSpeed={60}
                 strings={["المنصة الأقوى في البرمجيات والتسويق في العالم العربي.", "باختصار نصل بك إلى النجاح الرقمي."]}
                 typeSpeed={60}
                 loop={true}
               />
-            </motion.h1>
+            </h1>
             <Button
               sx={{
                 display: "flex",
@@ -120,7 +115,7 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
           >
             <Container sx={{ display: "flex", justifyContent: "center", gap: "2.4rem" }} maxWidth="lg">
               <Box
