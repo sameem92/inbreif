@@ -4,7 +4,6 @@ import React, { useState } from "react"
 import Grid from "@mui/material/Grid2"
 import { Box, Tab, Tabs, useMediaQuery } from "@mui/material"
 import Packages from "@/components/tools/package/packages"
-import { motion } from "framer-motion"
 
 // Types
 interface TabPanelProps {
@@ -156,25 +155,15 @@ const PackagesSection = () => {
         }}
       >
         <Grid size={{ xs: 12 }}>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={animation}
-            transition={{ duration: 0.4 }}
-          >
+          <div>
             <div className="sectionHead">
               <h2>خطط الاشتراك</h2>
               <p>انشئ متجرك وأحصل على تجربة رائعة تستطيع ترقية الاشتراك من لوحة تحكم المتجر</p>
             </div>
-          </motion.div>
+          </div>
         </Grid>
         <Grid size={{ xs: 12 }}>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-          >
+          <div>
             <Box
               sx={{
                 width: "100%",
@@ -208,7 +197,7 @@ const PackagesSection = () => {
                 </Grid>
               </CustomTabPanel>
             </Box>
-          </motion.div>
+          </div>
         </Grid>
       </Grid>
     </div>

@@ -102,9 +102,9 @@ export default function Form() {
           gap: "4rem",
           width: "100%",
         }}
-        initial={{ opacity: 0, scale: 0.9 }} // Initial state
-        whileInView={{ opacity: 1, scale: 1 }} // Animate when in view
-        transition={{ duration: 0.4 }} // Smooth transition
+        initial={{ opacity: 0 }} // Initial state
+        whileInView={{ opacity: 1 }} // Animate when in view
+        transition={{ duration: 0.4, ease: "easeIn" }}
         viewport={animation} // Trigger animation when 30% of the box is visible
       >
         <Box
@@ -198,9 +198,9 @@ export default function Form() {
             </Box>
             {success && (
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.4, ease: "easeIn" }}
                 viewport={animation}
                 style={{ width: "60%", margin: "0 auto" }}
               >

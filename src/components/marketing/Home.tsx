@@ -7,8 +7,6 @@ import Image from "next/image"
 import { Box, Container, Card, CardContent, Typography, Grid } from "@mui/material"
 import { motion } from "framer-motion"
 import SliderS1 from "@/components/tools/sliders/sliderS1"
-import Feedback from "@/components/tools/feedback/feedback"
-import Form from "@/components/tools/form/form"
 import PackagesSection from "@/components/marketing/packagesSection"
 import Design from "@/components/marketing/Design"
 import Tabs from "@mui/material/Tabs"
@@ -196,10 +194,10 @@ export default function Home() {
 
       <motion.div
         style={{ paddingTop: "7rem" }}
-        initial={{ opacity: 0, y: 100 }}
+        initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
         id="goToHome"
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.4, ease: "easeIn" }}
       >
         <Box
           className="home"
@@ -317,10 +315,10 @@ export default function Home() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.4, ease: "easeIn" }}
       >
         <Box
           className="tabs"
@@ -368,10 +366,6 @@ export default function Home() {
       <PackagesSection />
 
       <Design />
-
-      <Feedback />
-
-      <Form />
     </>
   )
 }

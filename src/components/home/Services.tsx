@@ -83,10 +83,10 @@ export default function Services() {
     >
       <div>
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={animation}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.4, ease: "easeIn" }}
         >
           <Container>
             <h1 className="secondry-title" style={{ margin: "84px auto 4.6rem" }}>
@@ -254,10 +254,10 @@ export default function Services() {
 
       <div>
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={animation}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.4, ease: "easeIn" }}
         >
           <Container>
             <h1 className="secondry-title" style={{ margin: "84px auto 4.6rem" }}>

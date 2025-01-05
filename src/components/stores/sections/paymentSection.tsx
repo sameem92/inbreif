@@ -47,12 +47,7 @@ const payments = [
 const PaymentSection = () => {
   return (
     <div className="paymentSection">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.4 }}
-      >
+      <div>
         <Grid
           container
           spacing={{ xs: 6, md: 12 }}
@@ -195,7 +190,7 @@ const PaymentSection = () => {
             </motion.div>
           </Grid>
         </Grid>
-      </motion.div>
+      </div>
     </div>
   )
 }

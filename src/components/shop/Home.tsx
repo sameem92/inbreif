@@ -6,9 +6,7 @@ import { Box, Container, Grid, Button } from "@mui/material"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Design from "@/components/shop/Design"
-import Feedback from "@/components/tools/feedback/feedback"
 import Social from "@/components/tools/social/social"
-import Form from "@/components/tools/form/form"
 import { styled } from "@mui/material/styles"
 import Paper from "@mui/material/Paper"
 import PackagesSection from "./packagesSection"
@@ -30,9 +28,9 @@ export default function Home() {
 
       <motion.div
         style={{ paddingTop: "7rem" }}
-        initial={{ opacity: 0, y: 100 }}
+        initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.4, ease: "easeIn" }}
         id="goToHome"
       >
         <Box
@@ -102,14 +100,14 @@ export default function Home() {
                     className="main-title mobile-title text-center"
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2, duration: 0.4 }}
+                    transition={{ duration: 0.4, ease: "easeIn" }}
                   >
                     التسويق معنا غير
                   </motion.h1>
                   <motion.p
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3, duration: 0.4 }}
+                    transition={{ duration: 0.4, ease: "easeIn" }}
                     className="paragrph-another"
                   >
                     باختصار نصل بك إلى هدفك.
@@ -140,9 +138,9 @@ export default function Home() {
               <Grid item xs={12} md={6}>
                 <Item>
                   <motion.div
-                    initial={{ opacity: 0, y: -50 }}
+                    initial={{ opacity: 0, y: 0 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2, duration: 0.4 }}
+                    transition={{ duration: 0.4, ease: "easeIn" }}
                     style={{
                       display: "flex",
                       justifyContent: "center",
@@ -160,8 +158,6 @@ export default function Home() {
 
       <PackagesSection />
       <Design />
-      <Feedback />
-      <Form />
     </>
   )
 }

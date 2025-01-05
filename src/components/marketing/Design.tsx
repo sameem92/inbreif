@@ -85,9 +85,9 @@ export default function Design() {
     <div id="motion">
       <motion.div
         style={isMobile ? { paddingTop: "8rem" } : { paddingTop: "15rem" }}
-        initial={{ opacity: 0, y: 100 }}
+        initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.4, ease: "easeIn" }}
       >
         <Box
           sx={{
@@ -113,9 +113,9 @@ export default function Design() {
           >
             <motion.h1
               className="main-secandry-title"
-              initial={{ opacity: 0, y: -50 }}
+              initial={{ opacity: 0, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.4 }}
+              transition={{ duration: 0.4, ease: "easeIn" }}
             >
               موشن جرافيك ومونتاج
             </motion.h1>
@@ -123,10 +123,10 @@ export default function Design() {
           </Container>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.4, ease: "easeIn" }}
           >
             <Container sx={{ display: "flex", justifyContent: "center", gap: "6rem" }} maxWidth="lg">
               <Box
@@ -220,10 +220,10 @@ export default function Design() {
         </Box>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.4, ease: "easeIn" }}
       >
         <Container
           maxWidth="lg"

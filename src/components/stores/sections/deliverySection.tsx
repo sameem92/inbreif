@@ -3,7 +3,6 @@ import Image from "next/image"
 
 // Components
 import Grid from "@mui/material/Grid2"
-import { motion } from "framer-motion"
 
 // Images & Icons
 import delivery from "../../../../public/images/store/delivery.png"
@@ -24,12 +23,7 @@ const companies = [company1, company2, company3, company4, company5, company6, c
 const DeliverySection = () => {
   return (
     <div className="deliverySection package">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.4 }}
-      >
+      <div>
         <Grid
           container
           spacing={{ xs: 6, md: 12 }}
@@ -71,7 +65,7 @@ const DeliverySection = () => {
         </Grid>
 
         <SliderS3 images={companies} className="swiper-y" />
-      </motion.div>
+      </div>
     </div>
   )
 }

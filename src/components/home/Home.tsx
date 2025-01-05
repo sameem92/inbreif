@@ -1,13 +1,10 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 //@ts-nocheck
-"use client"
 import Image from "next/image"
 
 // Components
 import { Box, Container, Card, CardContent, Typography, Grid, Button } from "@mui/material"
 import { motion } from "framer-motion" // Import framer-motion
-import Feedback from "@/components/tools/feedback/feedback"
-import Form from "@/components/tools/form/form"
 import Services from "@/components/home/Services"
 import Social from "@/components/tools/social/social"
 import { ReactTyped } from "react-typed"
@@ -17,6 +14,7 @@ import icon1 from "../../../public/image/icon1.png"
 import icon2 from "../../../public/image/icon2.png"
 import icon3 from "../../../public/image/icon3.png"
 import icon4 from "../../../public/image/icon4.png"
+import { Motion } from "../tools/motion/motion"
 
 const items = [
   {
@@ -49,9 +47,9 @@ export default function Home() {
       <motion.div
         className="hero"
         id="goToHome"
-        initial={{ opacity: 0, y: 100 }}
+        initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.4, ease: "easeIn" }}
       >
         <Box
           className="home"
@@ -112,10 +110,10 @@ export default function Home() {
           </Container>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.4, ease: "easeIn" }}
           >
             <Container sx={{ display: "flex", justifyContent: "center", gap: "2.4rem" }} maxWidth="lg">
               <Box
@@ -228,10 +226,6 @@ export default function Home() {
       </motion.div>
 
       <Services />
-
-      <Feedback />
-
-      <Form />
     </>
   )
 }

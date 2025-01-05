@@ -134,8 +134,8 @@ const FeaturesSection = () => {
                   stiffness: 400,
                   damping: 10,
                 }}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={animation}
               >
                 <div className="feature">

@@ -46,10 +46,10 @@ export default function Slider() {
   return (
     <div className="noise">
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={animation}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.4, ease: "easeIn" }}
       >
         <Box
           sx={{

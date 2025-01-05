@@ -3,8 +3,6 @@
 import style from "./styles/storesComponent.module.scss"
 
 // Components
-import Form from "@/components/tools/form/form"
-import Feedback from "@/components/tools/feedback/feedback"
 import HeroSecion from "./sections/heroSecion"
 import ServicesSection from "./sections/servicesSection"
 import TemplatesSection from "./sections/templatesSection"
@@ -41,10 +39,6 @@ const StoresPage = () => {
       <ExpansionSecton />
 
       <TopServicesSecton />
-
-      <Feedback />
-
-      <Form />
     </div>
   )
 }

@@ -4,8 +4,6 @@ import { Box, Container, List, ListItem, ListItemText, Typography, useMediaQuery
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Social from "@/components/tools/social/social"
-import Form from "@/components/tools/form/form"
-import Feedback from "@/components/tools/feedback/feedback"
 
 import distinguishes from "../../../public/images/about/distinguishes.png"
 import values from "../../../public/images/about/values.png"
@@ -18,7 +16,11 @@ export default function Home() {
       <Social />
 
       {/* Hero Section */}
-      <motion.div initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
+      <motion.div
+        initial={{ opacity: 0, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: "easeIn" }}
+      >
         <Box
           className="home"
           sx={{
@@ -127,10 +129,10 @@ export default function Home() {
                 }}
               >
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={isMobile ? { once: true } : { once: true, amount: 0.3 }}
-                  transition={{ duration: 0.4 }}
+                  transition={{ duration: 0.4, ease: "easeIn" }}
                 >
                   <Image
                     src={distinguishes}
@@ -185,10 +187,10 @@ export default function Home() {
                 }}
               >
                 <motion.div
-                  initial={{ opacity: 0, y: 50 }}
+                  initial={{ opacity: 0, y: 0 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={isMobile ? { once: true } : { once: true, amount: 0.3 }}
-                  transition={{ duration: 0.4 }}
+                  transition={{ duration: 0.4, ease: "easeIn" }}
                 >
                   <Box
                     sx={{
@@ -369,10 +371,6 @@ export default function Home() {
           </Container>
         </Box>
       </motion.div>
-
-      {/* Feedback and Form Components */}
-      <Feedback />
-      <Form />
     </>
   )
 }

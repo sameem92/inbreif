@@ -113,9 +113,9 @@ export default function Features({ imgPath }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 0 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
+      transition={{ duration: 0.4, ease: "easeIn" }}
       viewport={isMobile ? { once: true } : { once: true, amount: 0.3 }}
     >
       <Container

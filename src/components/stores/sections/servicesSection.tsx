@@ -204,35 +204,19 @@ const ServicesSection = () => {
         }}
       >
         <Grid size={{ xs: 12 }}>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={animation}
-            transition={{ duration: 0.4 }}
-            style={{ margin: "0 auto" }}
-          >
+          <div style={{ margin: "0 auto" }}>
             <div className="sectionHead">
               <a href="#features">
                 <Image src={scrollIcon} alt="scroll" />
               </a>
               <h2>استمتع بحرية اختيار الإضافات التي تجعل باقتك متكاملة</h2>
             </div>
-          </motion.div>
+          </div>
         </Grid>
         <Grid size={{ xs: 12 }} container spacing={{ xs: 2, md: 4 }}>
           {services.map((service, i) => (
             <Grid key={service.title} size={{ xs: 6, sm: 4, md: 3 }}>
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 400,
-                  damping: 10,
-                }}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={animation}
-              >
+              <div>
                 <div className="service">
                   <div className="content">
                     {currency && (
@@ -249,7 +233,7 @@ const ServicesSection = () => {
                     <p>{service.description}</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </Grid>
           ))}
         </Grid>

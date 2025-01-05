@@ -3,7 +3,6 @@ import Image from "next/image"
 
 // Components
 import Grid from "@mui/material/Grid2"
-import { motion } from "framer-motion"
 
 // Images & Icons
 import store from "../../../../public/images/store/store.png"
@@ -23,7 +22,7 @@ const HeroSecion = () => {
 
   return (
     <div className="heroSection" id="goToHome">
-      <motion.div initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
+      <div>
         <Grid
           container
           spacing={{ xs: 4, sm: 8, lg: 12 }}
@@ -80,7 +79,7 @@ const HeroSecion = () => {
             </div>
           </Grid>
         </Grid>
-      </motion.div>
+      </div>
     </div>
   )
 }

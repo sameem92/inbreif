@@ -3,7 +3,6 @@ import Image from "next/image"
 
 // Components
 import Grid from "@mui/material/Grid2"
-import { motion } from "framer-motion"
 
 // Images & Icons
 import service1 from "../../../../public/images/store/services/service1.png"
@@ -13,13 +12,7 @@ import service3 from "../../../../public/images/store/services/service3.png"
 const TopServicesSecton = () => {
   return (
     <div className="topServicesSecton">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.4 }}
-        style={{ margin: "0 auto" }}
-      >
+      <div style={{ margin: "0 auto" }}>
         <Grid
           container
           spacing={{ xs: 4, sm: 2 }}
@@ -67,15 +60,9 @@ const TopServicesSecton = () => {
             </div>
           </Grid>
         </Grid>
-      </motion.div>
+      </div>
 
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.4 }}
-        style={{ margin: "0 auto" }}
-      >
+      <div style={{ margin: "0 auto" }}>
         <Grid
           container
           spacing={{ xs: 4, sm: 2 }}
@@ -128,15 +115,9 @@ const TopServicesSecton = () => {
             </div>
           </Grid>
         </Grid>
-      </motion.div>
+      </div>
 
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.4 }}
-        style={{ margin: "0 auto" }}
-      >
+      <div style={{ margin: "0 auto" }}>
         <Grid
           container
           spacing={{ xs: 2 }}
@@ -188,7 +169,7 @@ const TopServicesSecton = () => {
             </div>
           </Grid>
         </Grid>
-      </motion.div>
+      </div>
     </div>
   )
 }

@@ -4,8 +4,6 @@ import { Box } from "@mui/material"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Grid from "@mui/material/Grid2"
-import Feedback from "@/components/tools/feedback/feedback"
-import Form from "@/components/tools/form/form"
 import Social from "@/components/tools/social/social"
 import { styled } from "@mui/material/styles"
 import Paper from "@mui/material/Paper"
@@ -29,10 +27,10 @@ export default function Home() {
       <Social />
 
       <motion.div
-        initial={{ opacity: 0, y: 100 }}
+        initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
         className="add-padding"
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.4, ease: "easeIn" }}
         id="goToHome"
       >
         <Grid
@@ -154,10 +152,6 @@ export default function Home() {
       </Box>
 
       <FeaturesSection />
-
-      <Feedback />
-
-      <Form />
     </div>
   )
 }

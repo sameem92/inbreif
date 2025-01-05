@@ -3,7 +3,6 @@ import React from "react"
 // Components
 import Grid from "@mui/material/Grid2"
 import SliderS2 from "@/components/tools/sliders/sliderS2"
-import { motion } from "framer-motion"
 import { useMediaQuery } from "@mui/material"
 
 // Images & Icons
@@ -33,17 +32,10 @@ const products = [
 
 const TemplatesSection = () => {
   const isMobile = useMediaQuery("(max-width:768px)")
-  const animation = isMobile ? { once: true } : { once: true, amount: 0.3 }
 
   return (
     <div className="templatesSection package">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={animation}
-        transition={{ duration: 0.4 }}
-        style={{ margin: "0 auto" }}
-      >
+      <div style={{ margin: "0 auto" }}>
         <Grid
           container
           sx={{
@@ -77,7 +69,7 @@ const TemplatesSection = () => {
             </a>
           </Grid>
         </Grid>
-      </motion.div>
+      </div>
     </div>
   )
 }

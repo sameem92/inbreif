@@ -9,6 +9,8 @@ import Navbar from "./Navbar"
 import React, { ReactNode } from "react"
 import Footer from "./Footer"
 import createCache from "@emotion/cache"
+import Feedback from "../tools/feedback/feedback"
+import Form from "../tools/form/form"
 
 function createEmotionCache() {
   return createCache({
@@ -31,6 +33,8 @@ export default function AppLayout({ children }: AppLayoutProps) {
       <CacheProvider value={clientSideEmotionCache}>
         <Navbar />
         {children}
+        <Feedback />
+        <Form />
         <Footer />
       </CacheProvider>
     </ThemeProvider>
