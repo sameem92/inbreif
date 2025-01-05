@@ -17,7 +17,7 @@ import "swiper/css/effect-coverflow"
 import "swiper/css/navigation"
 
 // Images & Icons
-import star from "../../../../public/icons/starIcon.png"
+import star from "../../../../public/icons/starIcon.svg"
 
 export default function SlideS2({ products }) {
   const [isBeginning, setIsBeginning] = useState(true)

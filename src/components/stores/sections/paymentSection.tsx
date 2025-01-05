@@ -13,21 +13,21 @@ import Grid from "@mui/material/Grid2"
 import { motion } from "framer-motion"
 
 // Images & Icons
-import payment1 from "../../../../public/images/store/payments/payment1.png"
-import payment2 from "../../../../public/images/store/payments/payment2.png"
-import payment3 from "../../../../public/images/store/payments/payment3.png"
-import payment4 from "../../../../public/images/store/payments/payment4.png"
-import payment5 from "../../../../public/images/store/payments/payment5.png"
-import payment6 from "../../../../public/images/store/payments/payment6.png"
-import payment7 from "../../../../public/images/store/payments/payment7.png"
-import payment8 from "../../../../public/images/store/payments/payment8.png"
-import payment9 from "../../../../public/images/store/payments/payment9.png"
-import payment10 from "../../../../public/images/store/payments/payment10.png"
-import payment11 from "../../../../public/images/store/payments/payment11.png"
-import payment12 from "../../../../public/images/store/payments/payment12.png"
-import store from "../../../../public/icons/storeIcon.png"
-import sector from "../../../../public/icons/sectorIcon.png"
-import support from "../../../../public/icons/supportIcon.png"
+import payment1 from "../../../../public/images/store/payments/payment1.svg"
+import payment2 from "../../../../public/images/store/payments/payment2.svg"
+import payment3 from "../../../../public/images/store/payments/payment3.svg"
+import payment4 from "../../../../public/images/store/payments/payment4.svg"
+import payment5 from "../../../../public/images/store/payments/payment5.svg"
+import payment6 from "../../../../public/images/store/payments/payment6.svg"
+import payment7 from "../../../../public/images/store/payments/payment7.svg"
+import payment8 from "../../../../public/images/store/payments/payment8.svg"
+import payment9 from "../../../../public/images/store/payments/payment9.svg"
+import payment10 from "../../../../public/images/store/payments/payment10.svg"
+import payment11 from "../../../../public/images/store/payments/payment11.svg"
+import payment12 from "../../../../public/images/store/payments/payment12.svg"
+import store from "../../../../public/icons/storeIcon.svg"
+import sector from "../../../../public/icons/sectorIcon.svg"
+import support from "../../../../public/icons/supportIcon.svg"
 
 const payments = [
   payment1,
@@ -121,7 +121,7 @@ const PaymentSection = () => {
                       },
                     }}
                   >
-                    <Image height={60} width={60} src={item} alt="company" />
+                    <Image src={item} alt="company" />
                   </Box>
                 </motion.div>
               </Grid>

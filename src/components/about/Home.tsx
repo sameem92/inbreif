@@ -1,6 +1,6 @@
 "use client"
 
-import { Box, Container, List, ListItem, ListItemText, Typography, Grid, useMediaQuery, Grid2 } from "@mui/material"
+import { Box, Container, List, ListItem, ListItemText, Typography, useMediaQuery, Grid2 } from "@mui/material"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Social from "@/components/tools/social/social"

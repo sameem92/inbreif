@@ -53,6 +53,7 @@ const plansY = [
       "اصدار وطباعة الفواتير",
       "كوبونات خصم و عروض",
     ],
+    link: "https://store.inbrief.click/subsription/منتج/الباقة-الفضية/",
     USD: "250",
     SAR: "800",
     OMR: "90",
@@ -72,6 +73,7 @@ const plansY = [
       "3 مستخدمين لإدارة المتجر",
       "دعم فني واتساب 24 ساعة",
     ],
+    link: "https://store.inbrief.click/subsription/منتج/الباقة-الذهبية/",
     USD: "490",
     SAR: "2000",
     OMR: "150",
@@ -92,6 +94,7 @@ const plansM = [
       "اصدار وطباعة الفواتير",
       "كوبونات خصم و عروض",
     ],
+    link: "https://store.inbrief.click/subsription/منتج/الباقة-الفضية-شهري/",
     USD: "22",
     SAR: "70",
     OMR: "9",
@@ -111,6 +114,7 @@ const plansM = [
       "3 مستخدمين لإدارة المتجر",
       "دعم فني واتساب 24 ساعة",
     ],
+    link: "https://store.inbrief.click/subsription/منتج/الباقة-الذهبية-شهري/",
     USD: "45",
     SAR: "180",
     OMR: "14",
@@ -194,13 +198,13 @@ const PackagesSection = () => {
 
               <CustomTabPanel value={value} index={0}>
                 <Grid container alignItems="flex-end" columnSpacing={2} rowSpacing={6}>
-                  <Packages plans={plansY} more className="" buttonText="الاشتراك الآن" link="" />
+                  <Packages plans={plansY} more className="" buttonText="الاشتراك الآن" />
                 </Grid>
               </CustomTabPanel>
 
               <CustomTabPanel value={value} index={1}>
                 <Grid container alignItems="flex-end" columnSpacing={2} rowSpacing={6}>
-                  <Packages plans={plansM} more className="" buttonText="الاشتراك الآن" link="" />
+                  <Packages plans={plansM} more className="" buttonText="الاشتراك الآن" />
                 </Grid>
               </CustomTabPanel>
             </Box>

@@ -11,7 +11,7 @@ import { motion } from "framer-motion"
 import { useMediaQuery } from "@mui/material"
 
 // Icons
-import scrollIcon from "../../../../public/icons/scrollIcon.png"
+import scrollIcon from "../../../../public/icons/scrollIcon.svg"
 import service1 from "../../../../public/icons/service1.png"
 import service2 from "../../../../public/icons/service2.png"
 import service3 from "../../../../public/icons/service3.png"

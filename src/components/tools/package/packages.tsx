@@ -7,7 +7,7 @@ import { Button } from "@mui/material"
 import { motion } from "framer-motion"
 
 // Icons
-import checked from "../../../../public/icons/checkedIcon.png"
+import checked from "../../../../public/icons/checkedIcon.svg"
 
 const currencyMap = {
   default: { code: "USD", symbol: "دولار" },
@@ -16,7 +16,7 @@ const currencyMap = {
   OM: { code: "OMR", symbol: "ر.ع" },
 }
 
-const Packages = ({ plans, className, more, buttonText, link }) => {
+const Packages = ({ plans, className, more, buttonText }) => {
   const [currency, setCurrency] = useState(null)
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const Packages = ({ plans, className, more, buttonText, link }) => {
     window.open("http://wa.me/96877276659", "_target")
   }
 
-  const goToSite = () => {
+  const goToSite = (link) => {
     window.open(link, "_target")
   }
 
@@ -91,7 +91,7 @@ const Packages = ({ plans, className, more, buttonText, link }) => {
                     background: className !== "planCardS2" && i === 1 ? "#E0E324" : "transparent",
                     borderColor: className !== "planCardS2" && i === 1 ? "transparent" : "#e1e42a",
                   }}
-                  onClick={goToSite}
+                  onClick={() => goToSite(plan?.link)}
                 >
                   {buttonText}
                 </Button>

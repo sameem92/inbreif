@@ -18,7 +18,7 @@ body {
 body {
   background-color: #032932 !important;
   direction: rtl;
-  background-image: url("/image/home2.png");
+  background-image: url("/image/home2.svg");
   background-position: top !important; /* Center the background horizontally */
   background-size: cover !important; /* Ensure the background covers the entire viewport */
   background-repeat: no-repeat !important;
@@ -1186,8 +1186,4 @@ a {
 :disabled {
   cursor: not-allowed !important;
   opacity: 0.5;
-}
-
-.service-img {
-  object-fit: cover;
 }

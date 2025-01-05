@@ -10,7 +10,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 
 // Icons
-import checked from "../../../public/icons/checkedIcon.png"
+import checked from "../../../public/icons/checkedIcon.svg"
 
 const plans = [
   {
