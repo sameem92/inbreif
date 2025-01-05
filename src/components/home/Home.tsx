@@ -1,5 +1,8 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 //@ts-nocheck
+
+"use client"
+
 import Image from "next/image"
 
 // Components
@@ -14,7 +17,6 @@ import icon1 from "../../../public/image/icon1.png"
 import icon2 from "../../../public/image/icon2.png"
 import icon3 from "../../../public/image/icon3.png"
 import icon4 from "../../../public/image/icon4.png"
-import { Motion } from "../tools/motion/motion"
 
 const items = [
   {
