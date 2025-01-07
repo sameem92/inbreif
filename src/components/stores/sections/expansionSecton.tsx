@@ -2,8 +2,11 @@ import React from "react"
 
 // Components
 import Grid from "@mui/material/Grid2"
-// import Image from "next/image"
 import { motion } from "framer-motion"
+
+// import Image from "next/image"
+import gif from "../../../../public/expantion.gif"
+import Image from "next/image"
 
 const ExpansionSecton = () => {
   return (
@@ -40,10 +43,8 @@ const ExpansionSecton = () => {
         </Grid>
 
         <Grid size={{ xs: 12 }} container alignItems="center">
-          <Grid size={{ xs: 12, md: 6 }}>
-            <video autoPlay muted loop>
-              <source src="/videos/video.mp4" type="video/mp4" />
-            </video>
+          <Grid size={{ xs: 12, md: 6 }} sx={{ textAlign: "center" }}>
+            <Image src={gif} height={445} width={222} alt="expantion" />
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
             <motion.div
