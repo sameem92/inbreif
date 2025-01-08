@@ -7,8 +7,6 @@ import Image from "next/image"
 
 // Components
 import Grid from "@mui/material/Grid2"
-import { motion } from "framer-motion"
-import { useMediaQuery } from "@mui/material"
 
 // Icons
 import scrollIcon from "../../../../public/icons/scrollIcon.svg"
@@ -147,8 +145,6 @@ const currencyMap = {
 }
 
 const ServicesSection = () => {
-  const isMobile = useMediaQuery("(max-width:768px)")
-  const animation = isMobile ? { once: true } : { once: true, amount: 0.3 }
   const [currency, setCurrency] = useState(null)
   useEffect(() => {
     const fetchUserLocation = async () => {
@@ -227,7 +223,7 @@ const ServicesSection = () => {
                       </div>
                     )}
                     <div className="img">
-                      <Image src={service.icon} alt={service.title} />
+                      <Image height={100} width={100} src={service.icon} alt={service.title} />
                     </div>
                     <h4>{service.title}</h4>
                     <p>{service.description}</p>

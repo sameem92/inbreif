@@ -323,7 +323,7 @@ export default function ResponsiveFooter() {
                     }}
                     onClick={() => handleNavigation("/mobile-apps")}
                   >
-                    تطبيقات الموبايل
+                    تطبيقات الجوال
                   </Typography>
 
                   <Typography

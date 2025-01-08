@@ -502,6 +502,7 @@
 
   .templatesSection {
     .swiper {
+      padding-top: 7rem !important;
       margin-bottom: 0px !important;
 
       .swiper-wrapper {
@@ -606,7 +607,7 @@
             &::after {
               display: block;
               content: "";
-              background: url("/icons/cartIcon.png");
+              background: url("/icons/cartIcon.svg");
               background-repeat: no-repeat;
               height: 50px;
               width: 50px;
@@ -786,6 +787,21 @@
 
       div:has(> .features) {
         flex: 1;
+      }
+
+      ul li {
+        font-size: 8px;
+        min-height: 45px;
+        padding: 8px 0px;
+      }
+
+      .featuresCard {
+        ul li {
+          img {
+            height: 16px;
+            width: 16px;
+          }
+        }
       }
 
       .packageCard {
@@ -987,18 +1003,9 @@
   }
 
   .expansionSecton {
-    // .img {
-    //   img {
-    //     width: 100%;
-    //   }
-    // }
-
-    video {
-      width: 100%;
-    }
-
     .expansionCard {
       position: relative;
+      max-width: 500px;
 
       .content {
         background: #032932 !important;
@@ -1009,7 +1016,7 @@
         padding: 24px 28px;
 
         h3 {
-          font-size: 25px;
+          font-size: 24px;
           font-weight: 600;
           line-height: 33px;
           color: #fff;
@@ -1021,7 +1028,7 @@
           align-items: flex-start;
           gap: 12px;
           list-style: none;
-          font-size: 20px;
+          font-size: 18px;
           font-weight: 600;
           line-height: 30px;
           color: #ffffff8f;
@@ -1079,6 +1086,12 @@
             font-size: 18px;
           }
         }
+      }
+    }
+
+    @media (max-width: 900px) {
+      .expansionCard {
+        margin: 0 auto;
       }
     }
 

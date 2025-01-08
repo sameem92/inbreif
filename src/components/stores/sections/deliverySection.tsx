@@ -16,9 +16,8 @@ import company5 from "../../../../public/images/store/companies/company5.svg"
 import company6 from "../../../../public/images/store/companies/company6.svg"
 import company7 from "../../../../public/images/store/companies/company7.svg"
 import company8 from "../../../../public/images/store/companies/company8.svg"
-import company9 from "../../../../public/images/store/companies/company9.svg"
 
-const companies = [company1, company2, company3, company4, company5, company6, company7, company8, company9]
+const companies = [company1, company2, company3, company4, company5, company6, company7, company8]
 
 const DeliverySection = () => {
   return (

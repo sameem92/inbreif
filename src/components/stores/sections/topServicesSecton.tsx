@@ -85,8 +85,8 @@ const TopServicesSecton = () => {
           }}
         >
           <Grid size={{ xs: 12, sm: 6 }} order={{ xs: 2, sm: 1 }}>
-            <div className="img start">
-              <Image src={service2} alt="service2" />
+            <div className="img">
+              <Image src={service2} height={365} width={400} alt="service2" />
             </div>
           </Grid>
           <Grid
@@ -100,7 +100,7 @@ const TopServicesSecton = () => {
           >
             <div>
               <div className="sectionHead">
-                <h2>حول متجرك لتطبيق موبايل احترافي</h2>
+                <h2>حول متجرك لتطبيق جوال احترافي</h2>
                 <p>
                   قدم أفضل تجربة للعملاء في التجارة الإلكترونية عن طريق تطبيق يساعد العملاء في التنقل السهلوالسريع
                   والدفع بنقرة واحدة.
@@ -165,7 +165,7 @@ const TopServicesSecton = () => {
           </Grid>
           <Grid size={{ xs: 12, sm: 6 }}>
             <div className="img">
-              <Image src={service3} alt="service3" />
+              <Image src={service3} height={365} width={400} alt="service3" />
             </div>
           </Grid>
         </Grid>

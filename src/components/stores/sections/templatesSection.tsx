@@ -3,7 +3,6 @@ import React from "react"
 // Components
 import Grid from "@mui/material/Grid2"
 import SliderS2 from "@/components/tools/sliders/sliderS2"
-import { useMediaQuery } from "@mui/material"
 
 // Images & Icons
 import product1 from "../../../../public/images/store/products/product1.png"
@@ -31,8 +30,6 @@ const products = [
 ]
 
 const TemplatesSection = () => {
-  const isMobile = useMediaQuery("(max-width:768px)")
-
   return (
     <div className="templatesSection package">
       <div style={{ margin: "0 auto" }}>

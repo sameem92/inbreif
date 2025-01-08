@@ -415,7 +415,7 @@ export default function ContactUsComponent() {
                     },
                   }}
                 >
-                  <MenuItem value={"برمجة تطبيقات موبايل"}>برمجة تطبيقات موبايل</MenuItem>
+                  <MenuItem value={"برمجة تطبيقات جوال"}>برمجة تطبيقات جوال</MenuItem>
                   <MenuItem value={"تطوير مواقع"}>تطوير مواقع</MenuItem>
                   <MenuItem value={"متاجر إلكترونية"}>متاجر إلكترونية</MenuItem>
                   <MenuItem value={"تصميم جرافيك"}>تصميم جرافيك</MenuItem>

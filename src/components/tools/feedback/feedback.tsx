@@ -148,6 +148,7 @@ export default function Feedback() {
             },
             "@media (max-width: 480px)": {
               padding: "5rem 2rem",
+              gap: "22px",
             },
           }}
         >

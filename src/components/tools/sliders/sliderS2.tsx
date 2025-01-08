@@ -105,7 +105,7 @@ export default function SlideS2({ products }) {
           </Button>
 
           <Swiper
-            modules={[Navigation, EffectCoverflow, Scrollbar, Autoplay]}
+            modules={[Navigation, EffectCoverflow, Scrollbar]}
             scrollbar={{ draggable: true, dragSize: 24 }}
             effect="coverflow"
             className="mySwiper"
@@ -128,7 +128,7 @@ export default function SlideS2({ products }) {
               disableOnInteraction: false, // Continue autoplay after user interaction
               pauseOnMouseEnter: true, // Pause autoplay when hovered
             }}
-            speed={1000} // Speed of slide transition (1 second)
+            speed={450}
             coverflowEffect={{
               rotate: 0,
               stretch: 0,

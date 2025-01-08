@@ -13,7 +13,7 @@ import InbreifLogo from "../../../public/image/InbreifLogo.svg"
 const list = [
   { title: "الرئيسية", path: "/" },
   { title: "من نحن", path: "/about-us" },
-  { title: "تطبيقات الموبايل", path: "/mobile-apps" },
+  { title: "تطبيقات الجوال", path: "/mobile-apps" },
   { title: "متاجر إلكترونية", path: "/web-apps" },
   { title: "التصميم و الموشن", path: "/design-and-marketing" },
   { title: "التسويق والحملات", path: "/marketing-and-campaigns" },
@@ -46,10 +46,8 @@ const Header = () => {
             alt="Inbreif Logo"
             className="cursor-pointer"
             style={{
-              height: "auto",
+              margin: "0 auto",
               marginBottom: "2rem",
-              marginRight: "auto",
-              marginLeft: "auto",
             }}
           />
         </ListItem>
@@ -148,7 +146,6 @@ const Header = () => {
                 }}
               >
                 <Image
-                  loading="lazy"
                   onClick={() => handleNavigation("/")}
                   src={InbreifLogo}
                   alt="Inbreif Logo"
@@ -227,7 +224,6 @@ const Header = () => {
 
               {/* Logo */}
               <Image
-                loading="lazy"
                 onClick={() => handleNavigation("/")}
                 src={InbreifLogo}
                 alt="Inbreif Logo"

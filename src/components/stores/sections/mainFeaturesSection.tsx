@@ -22,7 +22,6 @@ import icon10 from "../../../../public/icons/icon10.svg"
 import icon11 from "../../../../public/icons/icon11.svg"
 import icon12 from "../../../../public/icons/icon12.svg"
 import icon13 from "../../../../public/icons/icon13.svg"
-import { useMediaQuery } from "@mui/material"
 
 const MainFeaturesSection = () => {
   return (

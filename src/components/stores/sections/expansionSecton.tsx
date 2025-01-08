@@ -37,16 +37,16 @@ const ExpansionSecton = () => {
           <div style={{ margin: "0 auto" }}>
             <div className="sectionHead">
               <h2>توسع بعالمك التجاري</h2>
-              <p>الأن صار بامكانك تبيع منتجاتك بشكل كامل من خلال الواتساب الخاص بك</p>
+              <p>الآن صار بامكانك تبيع منتجاتك بشكل كامل من خلال الواتساب الخاص بك</p>
             </div>
           </div>
         </Grid>
 
-        <Grid size={{ xs: 12 }} container alignItems="center">
+        <Grid size={{ xs: 12 }} container alignItems="center" gap="50px 0px">
           <Grid size={{ xs: 12, md: 6 }} sx={{ textAlign: "center" }}>
-            <Image src={gif} height={445} width={222} alt="expantion" />
+            <Image src={gif} height={504} width={270} alt="expantion" />
           </Grid>
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid size={{ xs: 12, md: 6 }} sx={{}}>
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{

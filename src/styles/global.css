@@ -607,14 +607,6 @@ button:hover:disabled {
   margin-bottom: 10rem !important;
 }
 
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .swiper-slide img {
   display: block;
   width: 100%;
@@ -722,6 +714,7 @@ button:hover:disabled {
   justify-content: center;
 }
 .mySwiper2 .swiper-slide {
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1072,11 +1065,6 @@ a {
   object-fit: cover !important;
 }
 
-.mySwiper2 {
-  height: 35rem !important;
-  display: flex !important;
-  align-items: center !important;
-}
 .test {
   width: fit-content !important;
   height: 8.3rem !important;

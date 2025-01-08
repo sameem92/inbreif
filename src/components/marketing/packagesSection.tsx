@@ -193,7 +193,7 @@ const PackagesSection = () => {
                             }}
                             onClick={() => goToSite("http://wa.me/96877276659")}
                           >
-                            اطلب الأن
+                            اطلب الآن
                           </Button>
                         </div>
                       </div>

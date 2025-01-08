@@ -3,7 +3,7 @@ import Image from "next/image"
 
 // Components
 import Grid from "@mui/material/Grid2"
-import { Button, useMediaQuery } from "@mui/material"
+import { Button } from "@mui/material"
 
 // Images & Icons
 import checked from "../../../../public/icons/checkedIcon.svg"
@@ -73,6 +73,7 @@ const packages = [
       "checked",
       "أوقات الدوام",
     ],
+    link: "https://store.inbrief.click/subsription/منتج/الباقة-الفضية/",
   },
   {
     title: "الذهبية",
@@ -106,11 +107,14 @@ const packages = [
       "checked",
       "٢٤ ساعة",
     ],
+    link: "https://store.inbrief.click/subsription/منتج/الباقة-الذهبية/",
   },
 ]
 
 const FeaturesSection = () => {
-  const isMobile = useMediaQuery("(max-width:768px)")
+  const goToSite = (link) => {
+    window.open(link, "_target")
+  }
 
   return (
     <div className="featuresSection" id="features">
@@ -191,6 +195,7 @@ const FeaturesSection = () => {
                           background: "transparent",
                           borderColor: "#e1e42a",
                         }}
+                        onClick={() => goToSite(item.link)}
                       >
                         الاشتراك الآن
                       </Button>

@@ -123,17 +123,28 @@ export default function Services() {
                         },
                       }}
                     >
-                      <Item sx={{ mb: 2, padding: "0 !important" }} className="service-box">
+                      <Item
+                        sx={{
+                          height: "260px",
+                          width: "292px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          mb: 2,
+                          padding: "0 !important",
+                        }}
+                        className="service-box"
+                      >
                         <Image
+                          height={200}
+                          width={200}
                           src={service1}
-                          alt="تطبيقات الموبايل"
-                          width={292}
-                          height={260}
+                          alt="تطبيقات الجوال"
                           style={{ maxWidth: "100%" }}
                         />
                       </Item>
 
-                      <h2 className="third-title">تطبيقات الموبايل</h2>
+                      <h2 className="third-title">تطبيقات الجوال</h2>
                       <Button
                         variant="text"
                         sx={{
@@ -197,12 +208,23 @@ export default function Services() {
                         },
                       }}
                     >
-                      <Item sx={{ mb: 2, padding: "0 !important" }} className="service-box">
+                      <Item
+                        sx={{
+                          height: "260px",
+                          width: "292px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          mb: 2,
+                          padding: "0 !important",
+                        }}
+                        className="service-box"
+                      >
                         <Image
+                          height={200}
+                          width={200}
                           src={service2}
                           alt="متاجر إلكترونية"
-                          width={292}
-                          height={260}
                           style={{ maxWidth: "100%" }}
                         />
                       </Item>
@@ -298,13 +320,22 @@ export default function Services() {
                           },
                         }}
                       >
-                        <Item sx={{ mb: 2, padding: "0 !important" }} className="service-box">
+                        <Item
+                          sx={{
+                            height: "260px",
+                            width: "292px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            mb: 2,
+                            padding: "0 !important",
+                          }}
+                          className="service-box"
+                        >
                           <Image
                             src={item.img}
                             alt={item.title}
-                            width={292}
-                            height={260}
-                            style={{ maxWidth: "100%" }}
+                            style={{ height: "100%", maxWidth: "100%", objectFit: "contain" }}
                             className="service-img"
                           />
                         </Item>

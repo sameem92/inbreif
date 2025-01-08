@@ -2,7 +2,7 @@ import React, { useState } from "react"
 
 // Components
 import Grid from "@mui/material/Grid2"
-import { Box, Tab, Tabs, useMediaQuery } from "@mui/material"
+import { Box, Tab, Tabs } from "@mui/material"
 import Packages from "@/components/tools/package/packages"
 
 // Types
@@ -122,8 +122,6 @@ const plansM = [
 ]
 
 const PackagesSection = () => {
-  const isMobile = useMediaQuery("(max-width:768px)")
-  const animation = isMobile ? { once: true } : { once: true, amount: 0.3 }
   const [value, setValue] = useState<string | number>(0)
 
   const handleChange = (_event: React.SyntheticEvent, newValue: string | number) => {

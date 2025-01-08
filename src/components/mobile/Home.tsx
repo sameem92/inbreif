@@ -94,7 +94,7 @@ export default function Home() {
                   width: "100%",
                 }}
               >
-                تطوير تطبيقات الموبايل
+                تطوير تطبيقات الجوال
               </Box>
               <Box
                 sx={{
@@ -122,8 +122,8 @@ export default function Home() {
                 <Image
                   src={mobile}
                   style={{
-                    maxWidth: "100%",
-                    maxHeight: "75rem",
+                    maxWidth: "500px",
+                    maxHeight: "528px",
                   }}
                   alt="mobile-apps"
                 />

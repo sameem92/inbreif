@@ -151,7 +151,7 @@ const FeaturesSection = () => {
           ))}
         </Grid>
         <Grid size={{ xs: 12 }}>
-          <Button onClick={goToWhatsApp}>اطلب الأن تطبيقك</Button>
+          <Button onClick={goToWhatsApp}>اطلب الآن تطبيقك</Button>
         </Grid>
       </Grid>
     </div>
