@@ -93,30 +93,26 @@ const PaymentSection = () => {
             {payments.map((item, i) => (
               <Grid size={{ xs: 3, sm: 4, lg: 2 }} key={i}>
                 <motion.div
-                  whileHover={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.02 }}
                   transition={{
-                    type: "spring",
+                    type: "tween",
                     stiffness: 300,
+                    damping: 10,
                   }}
                 >
-                  <Box
-                    sx={{
-                      background:
-                        "linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
-                      backdropFilter: "blur(10px)",
-                      borderRadius: "14px",
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      height: "80px",
-
-                      "&:hover": {
-                        border: "1px solid #E0E324",
-                      },
-                    }}
-                  >
-                    <Image src={item} alt="company" />
+                  <Box className="hover rd-sm">
+                    <div
+                      className="content"
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        height: "80px",
+                      }}
+                    >
+                      <Image src={item} alt="company" />
+                    </div>
                   </Box>
                 </motion.div>
               </Grid>

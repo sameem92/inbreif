@@ -150,6 +150,11 @@ const PackagesSection = () => {
           },
           "@media (max-width: 480px)": {
             padding: "5rem 2rem",
+            gap: "40px",
+            ".main-secandry-title": {
+              fontSize: "3rem",
+              lineHeight: "5rem",
+            },
           },
         }}
       >

@@ -79,6 +79,9 @@ export default function Services() {
         "@media (max-width: 992px)": {
           padding: "100px 2rem",
         },
+        "@media (max-width: 480px)": {
+          padding: "50px 2rem",
+        },
       }}
     >
       <div>
@@ -115,9 +118,6 @@ export default function Services() {
                         "&:hover h3": {
                           color: "#E0E327",
                         },
-                        "&:hover .service-box": {
-                          border: "1px solid #E0E327 ",
-                        },
                         "&:hover .arrow-icon": {
                           opacity: 1,
                         },
@@ -127,21 +127,23 @@ export default function Services() {
                         sx={{
                           height: "260px",
                           width: "292px",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
                           mb: 2,
                           padding: "0 !important",
                         }}
-                        className="service-box"
+                        className="service-box hover"
                       >
-                        <Image
-                          height={200}
-                          width={200}
-                          src={service1}
-                          alt="تطبيقات الجوال"
-                          style={{ maxWidth: "100%" }}
-                        />
+                        <div
+                          className="content"
+                          style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+                        >
+                          <Image
+                            height={200}
+                            width={200}
+                            src={service1}
+                            alt="تطبيقات الجوال"
+                            style={{ maxWidth: "100%" }}
+                          />
+                        </div>
                       </Item>
 
                       <h2 className="third-title">تطبيقات الجوال</h2>
@@ -159,13 +161,11 @@ export default function Services() {
                           alignItems: "center",
                           textAlign: "center",
                           transition: "all 0.2s ease",
-
                           "&:hover": {
                             color: "#E0E327",
                             backgroundColor: "transparent",
                             transform: "translateY(0px)",
                           },
-
                           ".arrow-icon": {
                             opacity: 0,
                           },
@@ -200,9 +200,6 @@ export default function Services() {
                         "&:hover h3": {
                           color: "#E0E327",
                         },
-                        "&:hover .service-box": {
-                          border: "1px solid #E0E327 ",
-                        },
                         "&:hover .arrow-icon": {
                           opacity: 1,
                         },
@@ -218,15 +215,20 @@ export default function Services() {
                           mb: 2,
                           padding: "0 !important",
                         }}
-                        className="service-box"
+                        className="service-box hover"
                       >
-                        <Image
-                          height={200}
-                          width={200}
-                          src={service2}
-                          alt="متاجر إلكترونية"
-                          style={{ maxWidth: "100%" }}
-                        />
+                        <div
+                          className="content"
+                          style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+                        >
+                          <Image
+                            height={200}
+                            width={200}
+                            src={service2}
+                            alt="متاجر إلكترونية"
+                            style={{ maxWidth: "100%" }}
+                          />
+                        </div>
                       </Item>
 
                       <h2 className="third-title">متاجر إلكترونية</h2>
@@ -291,12 +293,12 @@ export default function Services() {
                 margin: "auto",
               }}
             >
-              <Grid container columnSpacing={{ xs: 2, md: 3, xl: 0 }} rowSpacing={{ xs: 6, md: 4, xl: 10 }}>
+              <Grid container columnSpacing={{ xs: 2, md: 3, xl: 0 }} rowSpacing={{ xs: 2, md: 4, xl: 10 }}>
                 {secService.map((item, index) => (
-                  <Grid item xs={12} sm={6} md={6} custom992={4} lg={4} key={index}>
+                  <Grid item xs={6} custom992={4} lg={4} key={index}>
                     <motion.div
                       whileHover={{ scale: 1.02 }}
-                      transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                      transition={{ type: "tween", stiffness: 300, damping: 10 }}
                     >
                       <Box
                         onClick={() => handleNavigation(item.href)}
@@ -312,11 +314,24 @@ export default function Services() {
                           "&:hover h3": {
                             color: "#E0E327",
                           },
-                          "&:hover .service-box": {
-                            border: "1px solid #E0E327 ",
-                          },
                           "&:hover .arrow-icon": {
                             opacity: 1,
+                          },
+                          "@media(max-width:600px)": {
+                            ".service-box": {
+                              height: "200px",
+                            },
+                            ".third-title": {
+                              fontSize: "1.8rem",
+                            },
+                          },
+                          "@media(max-width:480px)": {
+                            ".service-box": {
+                              height: "140px",
+                            },
+                            ".third-title": {
+                              fontSize: "1.2rem",
+                            },
                           },
                         }}
                       >
@@ -324,20 +339,23 @@ export default function Services() {
                           sx={{
                             height: "260px",
                             width: "292px",
+                            maxWidth: "100%",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
                             mb: 2,
                             padding: "0 !important",
                           }}
-                          className="service-box"
+                          className="service-box hover"
                         >
-                          <Image
-                            src={item.img}
-                            alt={item.title}
-                            style={{ height: "100%", maxWidth: "100%", objectFit: "contain" }}
-                            className="service-img"
-                          />
+                          <div className="content">
+                            <Image
+                              src={item.img}
+                              alt={item.title}
+                              style={{ height: "100%", maxWidth: "100%", objectFit: "contain" }}
+                              className="service-img"
+                            />
+                          </div>
                         </Item>
 
                         <h2 className="third-title">{item.title}</h2>
@@ -355,13 +373,11 @@ export default function Services() {
                             alignItems: "center",
                             textAlign: "center",
                             transition: "all 0.2s ease",
-
                             "&:hover": {
                               color: "#E0E327",
                               backgroundColor: "transparent",
                               transform: "translateY(0px)",
                             },
-
                             ".arrow-icon": {
                               opacity: 0,
                             },

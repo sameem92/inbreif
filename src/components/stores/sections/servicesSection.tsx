@@ -7,6 +7,7 @@ import Image from "next/image"
 
 // Components
 import Grid from "@mui/material/Grid2"
+import { motion } from "framer-motion" // Import framer-motion
 
 // Icons
 import scrollIcon from "../../../../public/icons/scrollIcon.svg"
@@ -212,7 +213,14 @@ const ServicesSection = () => {
         <Grid size={{ xs: 12 }} container spacing={{ xs: 2, md: 4 }}>
           {services.map((service, i) => (
             <Grid key={service.title} size={{ xs: 6, sm: 4, md: 3 }}>
-              <div>
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                transition={{
+                  type: "tween",
+                  stiffness: 400,
+                  damping: 10,
+                }}
+              >
                 <div className="service">
                   <div className="content">
                     {currency && (
@@ -229,7 +237,7 @@ const ServicesSection = () => {
                     <p>{service.description}</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </Grid>
           ))}
         </Grid>

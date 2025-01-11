@@ -59,7 +59,6 @@ export default function Home() {
             "@media (max-width: 768px)": {
               backgroundPosition: "50% 75%",
               backgroundSize: "contain",
-              gap: "0px",
             },
           }}
         >
@@ -117,12 +116,21 @@ export default function Home() {
           </Grid>
 
           <Grid size={{ xs: 12, lg: 6 }}>
-            <Item>
+            <Item
+              sx={{
+                "@media (max-width:767px)": {
+                  img: {
+                    maxHeight: "400px !important",
+                  },
+                },
+              }}
+            >
               <div style={{ textAlign: "center" }}>
                 <Image
                   src={mobile}
                   style={{
-                    maxWidth: "500px",
+                    width: "500px",
+                    maxWidth: "100%",
                     maxHeight: "528px",
                   }}
                   alt="mobile-apps"

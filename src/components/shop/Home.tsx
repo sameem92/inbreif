@@ -147,7 +147,7 @@ export default function Home() {
                       alignItems: "center",
                     }}
                   >
-                    <Image height={450} width={400} src={marketing} alt="mobile-apps" />
+                    <Image style={{ maxWidth: "100%" }} height={450} width={400} src={marketing} alt="mobile-apps" />
                   </motion.div>
                 </Item>
               </Grid>

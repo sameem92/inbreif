@@ -177,21 +177,17 @@ const Section = ({ section }) => (
                 <Grid item key={index} xs={12} sm={6} md={4} alignSelf="stretch">
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    transition={{ type: "spring", stiffness: 200, damping: 10 }}
+                    transition={{ type: "tween", stiffness: 200, damping: 10 }}
                     style={{ height: "100%" }}
+                    className="hover"
                   >
                     <Card
                       sx={{
                         height: "100%",
-                        background:
-                          "linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
-                        backdropFilter: "blur(5px)",
-                        borderRadius: "2.8rem",
                         display: "flex",
                         flexDirection: "column",
                         padding: { xs: "1.2rem", xl: "1.6rem 3rem" },
                         gap: "2.4rem",
-                        "&:hover": { border: "1px solid #E0E324" },
                         "@media(max-width:900px": {
                           minHeight: "330px",
                         },
@@ -199,6 +195,7 @@ const Section = ({ section }) => (
                           minHeight: "auto",
                         },
                       }}
+                      className="content"
                     >
                       <CardContent
                         sx={{

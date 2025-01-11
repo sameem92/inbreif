@@ -50,7 +50,7 @@ const ExpansionSecton = () => {
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{
-                type: "spring",
+                type: "tween",
                 stiffness: 400,
                 damping: 10,
               }}
@@ -73,7 +73,7 @@ const ExpansionSecton = () => {
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{
-                type: "spring",
+                type: "tween",
                 stiffness: 400,
                 damping: 10,
               }}

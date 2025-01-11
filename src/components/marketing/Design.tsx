@@ -145,17 +145,14 @@ export default function Design() {
                       <motion.div
                         whileHover={{ scale: 1.02 }}
                         transition={{
-                          type: "spring",
+                          type: "tween",
                           stiffness: 400,
                           damping: 10,
                         }}
+                        className="hover"
                       >
                         <Card
                           sx={{
-                            background:
-                              "linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
-                            backdropFilter: "blur(5px)",
-                            borderRadius: "2.8rem",
                             display: "flex",
                             flexDirection: "column",
                             justifyContent: "center",
@@ -171,11 +168,8 @@ export default function Design() {
                               md: "1rem",
                               lg: "1.6rem",
                             },
-                            "&:hover": {
-                              border: "1px solid #E0E324",
-                            },
                           }}
-                          className="border"
+                          className="content"
                         >
                           <CardContent
                             sx={{
@@ -195,8 +189,6 @@ export default function Design() {
                                   md: "1.8rem",
                                   lg: "2.4rem",
                                 },
-                                fontWeight: 400,
-
                                 fontWeight: 400,
                                 lineHeight: { xs: "3rem", md: "3.7rem" },
                                 display: "flex",

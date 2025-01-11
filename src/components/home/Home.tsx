@@ -143,12 +143,11 @@ export default function Home() {
                           stiffness: 400,
                           damping: 10,
                         }}
+                        className="hover"
                       >
                         <Card
+                          className="content"
                           sx={{
-                            background:
-                              "linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
-                            backdropFilter: "blur(5px)",
                             borderRadius: "2.8rem",
                             display: "flex",
                             flexDirection: "column",
@@ -166,14 +165,10 @@ export default function Home() {
                               md: "1rem",
                               lg: "1.6rem",
                             },
-                            "&:hover": {
-                              border: "1px solid #E0E324",
-                            },
                             "@media(max-width:991px)": {
                               minWidth: "200px",
                             },
                           }}
-                          className="border"
                         >
                           <CardContent
                             sx={{

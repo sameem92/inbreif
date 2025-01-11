@@ -602,6 +602,13 @@ button:hover:disabled {
   padding-bottom: 7rem;
 }
 
+@media (max-width: 480px) {
+  .swiper {
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+  }
+}
+
 .mySwiper-auto {
   padding-bottom: 8rem !important;
   margin-bottom: 10rem !important;
@@ -945,7 +952,7 @@ a {
   line-height: normal;
 }
 .main-shop-title {
-  color: #fff;
+  color: #e0e324;
   text-align: center;
   font-size: 3.2rem;
   font-style: normal;

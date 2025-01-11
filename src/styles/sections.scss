@@ -137,6 +137,12 @@
     border-radius: 25px;
   }
 
+  &:hover {
+    &::before {
+      background: linear-gradient(81.07deg, #fad414 53.33%, #80660e 93.73%);
+    }
+  }
+
   &.gold {
     &::before {
       background: linear-gradient(81.07deg, #fad414 53.33%, #80660e 93.73%);
@@ -431,8 +437,50 @@
     //   padding: 4px;
     // }
   }
+
+  @media (max-width: 480px) {
+    max-width: 90%;
+  }
 }
 
 div:has(> .planCardS2) {
   height: 100%;
+}
+
+.hover {
+  position: relative;
+  .content {
+    height: 100%;
+    width: 100%;
+    background: #032932 !important;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+    border-radius: 25px;
+  }
+
+  &::before {
+    content: "";
+    background-image: linear-gradient(81.07deg, #22373c 53.33%, #18292d 93.73%);
+    top: -1.5px;
+    left: -1.5px;
+    bottom: -1.5px;
+    right: -1.5px;
+    position: absolute;
+    z-index: -1;
+    border-radius: 25px;
+  }
+
+  &:hover {
+    &::before {
+      background-image: linear-gradient(81.07deg, #fad414 53.33%, #80660e 93.73%);
+    }
+  }
+
+  &.rd-sm {
+    .content,
+    &::before {
+      border-radius: 14px;
+    }
+  }
 }

@@ -106,7 +106,7 @@ const Packages = ({ plans, className, more, buttonText }) => {
         <motion.div
           whileHover={{ scale: 1.02 }}
           transition={{
-            type: "spring",
+            type: "tween",
             stiffness: 400,
             damping: 10,
           }}
