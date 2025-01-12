@@ -102,7 +102,7 @@ export default function Services() {
               }}
             >
               <Grid container columnSpacing={{ xs: 2, md: 3, xl: 0 }} rowSpacing={{ xs: 6, md: 4, xl: 10 }}>
-                <Grid item xs={12} sm={6} md={6} custom992={4} lg={4}>
+                <Grid item xs={6} custom992={4} lg={4}>
                   <motion.div whileHover={{ scale: 1.02 }} transition={{ type: "tween", stiffness: 300, damping: 10 }}>
                     <Box
                       onClick={() => handleNavigation("/mobile-apps")}
@@ -121,13 +121,30 @@ export default function Services() {
                         "&:hover .arrow-icon": {
                           opacity: 1,
                         },
+                        "@media(max-width:600px)": {
+                          ".service-box": {
+                            height: "200px",
+                          },
+                          ".third-title": {
+                            fontSize: "1.8rem",
+                          },
+                        },
+                        "@media(max-width:480px)": {
+                          ".service-box": {
+                            height: "140px",
+                          },
+                          ".third-title": {
+                            fontSize: "1.4rem",
+                          },
+                        },
                       }}
                     >
                       <Item
                         sx={{
                           height: "260px",
                           width: "292px",
-                          mb: 2,
+                          maxWidth: "100%",
+                          mb: { xs: 0, sm: 2 },
                           padding: "0 !important",
                         }}
                         className="service-box hover"
@@ -139,9 +156,9 @@ export default function Services() {
                           <Image
                             height={200}
                             width={200}
+                            style={{ maxHeight: "100%", width: "100%", objectFit: "contain" }}
                             src={service1}
                             alt="تطبيقات الجوال"
-                            style={{ maxWidth: "100%" }}
                           />
                         </div>
                       </Item>
@@ -161,6 +178,7 @@ export default function Services() {
                           alignItems: "center",
                           textAlign: "center",
                           transition: "all 0.2s ease",
+                          padding: "0px",
                           "&:hover": {
                             color: "#E0E327",
                             backgroundColor: "transparent",
@@ -184,7 +202,7 @@ export default function Services() {
                   </motion.div>
                 </Grid>
 
-                <Grid item xs={12} sm={6} md={6} custom992={4} lg={4}>
+                <Grid item xs={6} custom992={4} lg={4}>
                   <motion.div whileHover={{ scale: 1.02 }} transition={{ type: "tween", stiffness: 300, damping: 10 }}>
                     <Box
                       onClick={() => handleNavigation("/web-apps")}
@@ -194,7 +212,7 @@ export default function Services() {
                         flexDirection: "column",
                         alignItems: "center",
                         justifyContent: "center",
-                        gap: { xs: "1.4rem !important", lg: "1.2rem !important" },
+                        gap: { xs: "1rem !important", sm: "1.4rem !important", lg: "1.2rem !important" },
                         transition: "all 0.3s ease",
                         cursor: "pointer",
                         "&:hover h3": {
@@ -203,16 +221,33 @@ export default function Services() {
                         "&:hover .arrow-icon": {
                           opacity: 1,
                         },
+                        "@media(max-width:600px)": {
+                          ".service-box": {
+                            height: "200px",
+                          },
+                          ".third-title": {
+                            fontSize: "1.8rem",
+                          },
+                        },
+                        "@media(max-width:480px)": {
+                          ".service-box": {
+                            height: "140px",
+                          },
+                          ".third-title": {
+                            fontSize: "1.4rem",
+                          },
+                        },
                       }}
                     >
                       <Item
                         sx={{
                           height: "260px",
                           width: "292px",
+                          maxWidth: "100%",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
-                          mb: 2,
+                          mb: { xs: 0, sm: 2 },
                           padding: "0 !important",
                         }}
                         className="service-box hover"
@@ -224,9 +259,9 @@ export default function Services() {
                           <Image
                             height={200}
                             width={200}
+                            style={{ maxHeight: "100%", width: "100%", objectFit: "contain" }}
                             src={service2}
                             alt="متاجر إلكترونية"
-                            style={{ maxWidth: "100%" }}
                           />
                         </div>
                       </Item>
@@ -247,6 +282,7 @@ export default function Services() {
                           justifyContent: "center",
                           textAlign: "center",
                           transition: "all 0.2s ease",
+                          padding: "0px",
                           "&:hover": {
                             color: "#E0E327",
                             backgroundColor: "transparent",
@@ -282,10 +318,19 @@ export default function Services() {
           viewport={animation}
           transition={{ duration: 0.4, ease: "easeIn" }}
         >
-          <Container>
-            <h1 className="secondry-title" style={{ margin: "84px auto 4.6rem" }}>
-              خدمات التصميم والتسويق
-            </h1>
+          <Container
+            sx={{
+              ".secondry-title": {
+                margin: "84px auto 4.6rem",
+              },
+              "@media(max-width:480px)": {
+                ".secondry-title": {
+                  margin: "42px auto 4.6rem",
+                },
+              },
+            }}
+          >
+            <h1 className="secondry-title">خدمات التصميم والتسويق</h1>
             <Box
               sx={{
                 width: { xs: "90%", lg: "100%" },
