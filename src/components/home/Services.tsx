@@ -244,15 +244,14 @@ export default function Services() {
                           lineHeight: "2rem",
                           display: "flex",
                           alignItems: "center",
+                          justifyContent: "center",
                           textAlign: "center",
                           transition: "all 0.2s ease",
-
                           "&:hover": {
                             color: "#E0E327",
                             backgroundColor: "transparent",
                             transform: "translateY(0px)",
                           },
-
                           ".arrow-icon": {
                             opacity: 0,
                           },
@@ -293,9 +292,9 @@ export default function Services() {
                 margin: "auto",
               }}
             >
-              <Grid container columnSpacing={{ xs: 2, md: 3, xl: 0 }} rowSpacing={{ xs: 2, md: 4, xl: 10 }}>
+              <Grid container columnSpacing={{ xs: 2, md: 3, xl: 0 }} rowSpacing={{ xs: 3, sm: 2, md: 4, xl: 10 }}>
                 {secService.map((item, index) => (
-                  <Grid item xs={6} custom992={4} lg={4} key={index}>
+                  <Grid item xs={6} custom992={4} lg={4} key={index} sx={{ alignSelf: "stretch" }}>
                     <motion.div
                       whileHover={{ scale: 1.02 }}
                       transition={{ type: "tween", stiffness: 300, damping: 10 }}
@@ -308,7 +307,7 @@ export default function Services() {
                           flexDirection: "column",
                           alignItems: "center",
                           justifyContent: "center",
-                          gap: { xs: "1.4rem !important", lg: "1.2rem !important" },
+                          gap: { xs: "1rem !important", sm: "1.4rem !important", lg: "1.2rem !important" },
                           transition: "all 0.3s ease",
                           cursor: "pointer",
                           "&:hover h3": {
@@ -330,7 +329,7 @@ export default function Services() {
                               height: "140px",
                             },
                             ".third-title": {
-                              fontSize: "1.2rem",
+                              fontSize: "1.4rem",
                             },
                           },
                         }}
@@ -343,7 +342,7 @@ export default function Services() {
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
-                            mb: 2,
+                            mb: { xs: 0, sm: 2 },
                             padding: "0 !important",
                           }}
                           className="service-box hover"
@@ -373,6 +372,7 @@ export default function Services() {
                             alignItems: "center",
                             textAlign: "center",
                             transition: "all 0.2s ease",
+                            padding: "0px",
                             "&:hover": {
                               color: "#E0E327",
                               backgroundColor: "transparent",

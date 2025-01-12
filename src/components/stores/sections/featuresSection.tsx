@@ -6,8 +6,8 @@ import Grid from "@mui/material/Grid2"
 import { Button } from "@mui/material"
 
 // Images & Icons
-import checked from "../../../../public/icons/checkedIcon.svg"
-import available from "../../../../public/icons/availableIcon.svg"
+import Checked from "../../../../public/icons/checkedIcon.svg"
+import Available from "../../../../public/icons/availableIcon.svg"
 
 const features = [
   "عدد المنتجات",
@@ -173,7 +173,7 @@ const FeaturesSection = () => {
                 <ul>
                   {features.map((feature) => (
                     <li key={feature}>
-                      <Image src={checked} alt="checked" /> <span>{feature}</span>
+                      <Checked /> <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -203,9 +203,7 @@ const FeaturesSection = () => {
 
                     <ul>
                       {item.features.map((feature) => (
-                        <li key={feature}>
-                          {feature !== "checked" ? feature : <Image src={available} alt="available" />}
-                        </li>
+                        <li key={feature}>{feature !== "checked" ? feature : <Available />}</li>
                       ))}
                     </ul>
                   </div>

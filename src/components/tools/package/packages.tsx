@@ -7,7 +7,7 @@ import { Button } from "@mui/material"
 import { motion } from "framer-motion"
 
 // Icons
-import checked from "../../../../public/icons/checkedIcon.svg"
+import Checked from "../../../../public/icons/checkedIcon.svg"
 
 const currencyMap = {
   default: { code: "USD", symbol: "دولار" },
@@ -81,7 +81,7 @@ const Packages = ({ plans, className, more, buttonText }) => {
                 <ul>
                   {plan?.features?.map((feature) => (
                     <li key={feature}>
-                      <Image src={checked} alt="checked" /> <span>{feature}</span>
+                      <Checked /> <span>{feature}</span>
                     </li>
                   ))}
                 </ul>

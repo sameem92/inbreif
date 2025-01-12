@@ -344,24 +344,31 @@
         padding: 4px;
 
         button {
-          display: block;
-          min-height: 44px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-height: auto;
+          height: 48px;
           flex: 1;
           padding: 0px;
           border-radius: 123px;
           font-size: 22px;
           font-weight: 600;
           color: #cdcdcd;
-
-          span {
-            display: block;
-            height: 100%;
-          }
+          padding-bottom: 7px;
 
           &.Mui-selected {
             color: #001014;
           }
         }
+      }
+    }
+
+    @media (max-width: 480px) {
+      .tabs .MuiTabs-flexContainer button {
+        height: 44px;
+        padding-bottom: 6px;
+        font-size: 18px;
       }
     }
   }
@@ -850,6 +857,17 @@
     }
 
     @media (max-width: 480px) {
+      .delivery_img {
+        height: 150px;
+        width: 200px;
+        margin: 0 auto;
+
+        img {
+          max-height: 100%;
+          max-width: 100%;
+        }
+      }
+
       h2 {
         font-size: 30px;
       }

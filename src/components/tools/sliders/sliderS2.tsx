@@ -9,7 +9,7 @@ import Image from "next/image"
 import { Box, Button, useMediaQuery } from "@mui/material"
 import { Swiper, SwiperSlide } from "swiper/react"
 
-import { Scrollbar, Navigation, EffectCoverflow, Autoplay } from "swiper/modules"
+import { Scrollbar, Navigation, EffectCoverflow } from "swiper/modules"
 
 import "swiper/css"
 import "swiper/css/scrollbar"
@@ -17,7 +17,7 @@ import "swiper/css/effect-coverflow"
 import "swiper/css/navigation"
 
 // Images & Icons
-import star from "../../../../public/icons/starIcon.svg"
+import Star from "../../../../public/icons/starIcon.svg"
 
 export default function SlideS2({ products }) {
   const [isBeginning, setIsBeginning] = useState(true)
@@ -147,19 +147,19 @@ export default function SlideS2({ products }) {
                     <h4>{product.title}</h4>
                     <ul>
                       <li>
-                        <Image src={star} alt="star" />
+                        <Star />
                       </li>
                       <li>
-                        <Image src={star} alt="star" />
+                        <Star />
                       </li>
                       <li>
-                        <Image src={star} alt="star" />
+                        <Star />
                       </li>
                       <li>
-                        <Image src={star} alt="star" />
+                        <Star />
                       </li>
                       <li>
-                        <Image src={star} alt="star" />
+                        <Star />
                       </li>
                     </ul>
                   </div>

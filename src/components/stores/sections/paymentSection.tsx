@@ -1,5 +1,4 @@
 import React from "react"
-import Image from "next/image"
 
 // Import Swiper styles
 import "swiper/css"
@@ -13,35 +12,35 @@ import Grid from "@mui/material/Grid2"
 import { motion } from "framer-motion"
 
 // Images & Icons
-import payment1 from "../../../../public/images/store/payments/payment1.svg"
-import payment2 from "../../../../public/images/store/payments/payment2.svg"
-import payment3 from "../../../../public/images/store/payments/payment3.svg"
-import payment4 from "../../../../public/images/store/payments/payment4.svg"
-import payment5 from "../../../../public/images/store/payments/payment5.svg"
-import payment6 from "../../../../public/images/store/payments/payment6.svg"
-import payment7 from "../../../../public/images/store/payments/payment7.svg"
-import payment8 from "../../../../public/images/store/payments/payment8.svg"
-import payment9 from "../../../../public/images/store/payments/payment9.svg"
-import payment10 from "../../../../public/images/store/payments/payment10.svg"
-import payment11 from "../../../../public/images/store/payments/payment11.svg"
-import payment12 from "../../../../public/images/store/payments/payment12.svg"
-import store from "../../../../public/icons/storeIcon.svg"
-import sector from "../../../../public/icons/sectorIcon.svg"
-import support from "../../../../public/icons/supportIcon.svg"
+import Payment1 from "../../../../public/images/store/payments/payment1.svg"
+import Payment2 from "../../../../public/images/store/payments/payment2.svg"
+import Payment3 from "../../../../public/images/store/payments/payment3.svg"
+import Payment4 from "../../../../public/images/store/payments/payment4.svg"
+import Payment5 from "../../../../public/images/store/payments/payment5.svg"
+import Payment6 from "../../../../public/images/store/payments/payment6.svg"
+import Payment7 from "../../../../public/images/store/payments/payment7.svg"
+import Payment8 from "../../../../public/images/store/payments/payment8.svg"
+import Payment9 from "../../../../public/images/store/payments/payment9.svg"
+import Payment10 from "../../../../public/images/store/payments/payment10.svg"
+import Payment11 from "../../../../public/images/store/payments/payment11.svg"
+import Payment12 from "../../../../public/images/store/payments/payment12.svg"
+import Store from "../../../../public/icons/storeIcon.svg"
+import Sector from "../../../../public/icons/sectorIcon.svg"
+import Support from "../../../../public/icons/supportIcon.svg"
 
 const payments = [
-  payment1,
-  payment2,
-  payment3,
-  payment4,
-  payment5,
-  payment6,
-  payment7,
-  payment8,
-  payment9,
-  payment10,
-  payment11,
-  payment12,
+  <Payment1 key={1} />,
+  <Payment2 key={2} />,
+  <Payment3 key={3} />,
+  <Payment4 key={4} />,
+  <Payment5 key={5} />,
+  <Payment6 key={6} />,
+  <Payment7 key={7} />,
+  <Payment8 key={8} />,
+  <Payment9 key={9} />,
+  <Payment10 key={10} />,
+  <Payment11 key={11} />,
+  <Payment12 key={12} />,
 ]
 
 const PaymentSection = () => {
@@ -111,7 +110,7 @@ const PaymentSection = () => {
                         height: "80px",
                       }}
                     >
-                      <Image src={item} alt="company" />
+                      {item}
                     </div>
                   </Box>
                 </motion.div>
@@ -140,7 +139,7 @@ const PaymentSection = () => {
               <div className="count">
                 <div className="content">
                   <div className="icon">
-                    <Image src={store} alt="store" />
+                    <Store />
                   </div>
                   <h4>متاجر</h4>
                   <span>+300</span>
@@ -158,7 +157,7 @@ const PaymentSection = () => {
               <div className="count">
                 <div className="content">
                   <div className="icon">
-                    <Image src={sector} alt="sectorstore" />
+                    <Sector />
                   </div>
                   <h4>قطاعات مختلفة</h4>
                   <span>+20</span>
@@ -177,7 +176,7 @@ const PaymentSection = () => {
               <div className="count">
                 <div className="content">
                   <div className="icon">
-                    <Image src={support} alt="support" />
+                    <Support />
                   </div>
                   <h4>دعم فني</h4>
                   <span>24 / 7</span>

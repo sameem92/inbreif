@@ -12,7 +12,6 @@ import "swiper/css/autoplay"
 import { Navigation, Autoplay } from "swiper/modules"
 import Image from "next/image"
 import { motion } from "framer-motion" // Import framer-motion
-
 import SliderS3 from "../../tools/sliders/sliderS3"
 
 import img1 from "../../../../public/image/company/1.png"

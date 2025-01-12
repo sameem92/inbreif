@@ -6,22 +6,22 @@ import Grid from "@mui/material/Grid2"
 import { motion } from "framer-motion"
 
 // Images & Icons
-import feat1 from "../../../../public/images/store/feat1.svg"
-import feat2 from "../../../../public/images/store/feat2.svg"
+import Feat1 from "../../../../public/images/store/feat1.svg"
+import Feat2 from "../../../../public/images/store/feat2.svg"
 import feat3 from "../../../../public/images/store/feat3.png"
-import icon1 from "../../../../public/icons/icon1.svg"
-import icon2 from "../../../../public/icons/icon2.svg"
-import icon3 from "../../../../public/icons/icon3.svg"
-import icon4 from "../../../../public/icons/icon4.svg"
-import icon5 from "../../../../public/icons/icon5.svg"
-import icon6 from "../../../../public/icons/icon6.svg"
-import icon7 from "../../../../public/icons/icon7.svg"
-import icon8 from "../../../../public/icons/icon8.svg"
-import icon9 from "../../../../public/icons/icon9.svg"
-import icon10 from "../../../../public/icons/icon10.svg"
-import icon11 from "../../../../public/icons/icon11.svg"
-import icon12 from "../../../../public/icons/icon12.svg"
-import icon13 from "../../../../public/icons/icon13.svg"
+import Icon1 from "../../../../public/icons/icon1.svg"
+import Icon2 from "../../../../public/icons/icon2.svg"
+import Icon3 from "../../../../public/icons/icon3.svg"
+import Icon4 from "../../../../public/icons/icon4.svg"
+import Icon5 from "../../../../public/icons/icon5.svg"
+import Icon6 from "../../../../public/icons/icon6.svg"
+import Icon7 from "../../../../public/icons/icon7.svg"
+import Icon8 from "../../../../public/icons/icon8.svg"
+import Icon9 from "../../../../public/icons/icon9.svg"
+import Icon10 from "../../../../public/icons/icon10.svg"
+import Icon11 from "../../../../public/icons/icon11.svg"
+import Icon12 from "../../../../public/icons/icon12.svg"
+import Icon13 from "../../../../public/icons/icon13.svg"
 
 const MainFeaturesSection = () => {
   return (
@@ -66,21 +66,21 @@ const MainFeaturesSection = () => {
                   <p>تصميم مخصص يحمل هويتك التجارية بطريقة احترافية لتعزيز مبيعاتك</p>
                   <ul>
                     <li>
-                      <Image src={icon1} alt="icon1" />
+                      <Icon1 />
                       <span>اختيار من قوالب عديدة</span>
                     </li>
                     <li>
-                      <Image src={icon2} alt="icon1" />
+                      <Icon2 />
                       <span>امكانية تخصيص ألوان وخطوط هويتك</span>
                     </li>
                     <li>
-                      <Image src={icon3} alt="icon1" />
+                      <Icon3 />
                       <span>انشاء القالب الخاص بك</span>
                     </li>
                   </ul>
                 </div>
                 <div className="img">
-                  <Image src={feat1} alt="feat1" />
+                  <Feat1 />
                 </div>
               </div>
             </div>
@@ -101,25 +101,25 @@ const MainFeaturesSection = () => {
                   <p>خدمات ومزايا تعززّ مشروعك وتوسِع انتشارك</p>
                   <ul>
                     <li>
-                      <Image src={icon4} alt="icon4" />
+                      <Icon4 />
                       <span>نطاق مخصص لمتجرك (دومين)</span>
                     </li>
                     <li>
-                      <Image src={icon5} alt="icon5" />
+                      <Icon5 />
                       <span>أمان عالي وشهادات حماية</span>
                     </li>
                     <li>
-                      <Image src={icon6} alt="icon6" />
+                      <Icon6 />
                       <span>عدد عملاء وطلبات غير محدود</span>
                     </li>
                     <li>
-                      <Image src={icon7} alt="icon7" />
+                      <Icon7 />
                       <span>استضافة زوار بعدد غير محدود</span>
                     </li>
                   </ul>
                 </div>
                 <div className="img">
-                  <Image src={feat2} alt="feat2" />
+                  <Feat2 />
                 </div>
               </div>
             </div>
@@ -133,27 +133,27 @@ const MainFeaturesSection = () => {
                   <p>نحول أفكارك لواقع ملموس مدعوم بكافة الخدمات المتقدمة التي تساعدك في زيادة عدد عملائك</p>
                   <ul>
                     <li>
-                      <Image src={icon8} alt="icon8" />
+                      <Icon8 />
                       <span>إستهداف للسلات المتروكة</span>
                     </li>
                     <li>
-                      <Image src={icon9} alt="icon9" />
+                      <Icon9 />
                       <span>خصم الشحن المجاني</span>
                     </li>
                     <li>
-                      <Image src={icon10} alt="icon10" />
+                      <Icon10 />
                       <span>إضافة العروض والخصومات</span>
                     </li>
                     <li>
-                      <Image src={icon11} alt="icon11" />
+                      <Icon11 />
                       <span>إدارة الحملات التسويقية لمتجرك</span>
                     </li>
                     <li>
-                      <Image src={icon12} alt="icon12" />
+                      <Icon12 />
                       <span>خصومات لعملاء المتجر</span>
                     </li>
                     <li>
-                      <Image src={icon13} alt="icon13" />
+                      <Icon13 />
                       <span>رسائل نصية تسويقية عبر الإيميل والـ SMS</span>
                     </li>
                   </ul>

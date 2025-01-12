@@ -255,7 +255,7 @@ export default function ContactUsComponent() {
                 <TextField
                   placeholder="اكتب رقم الجوال"
                   fullWidth
-                  type="text"
+                  type="number"
                   value={phone}
                   onChange={handlePhoneChange}
                   helperText={!phoneValid && phone !== "" ? "يجب ان لا يقل رقم الجوال عن ٨ ارقام" : ""}
@@ -512,7 +512,7 @@ export default function ContactUsComponent() {
                 textAlign: "center",
                 border: "1px solid #22373C",
                 backdropFilter: "blur(25px)",
-                width: { xs: "90%", sm: "50rem", lg: "56rem" },
+                width: { xs: "85%", sm: "50rem", lg: "56rem" },
                 margin: "auto",
                 position: "fixed", // Element is positioned relative to the viewport
                 top: "50%", // Center vertically
@@ -539,7 +539,6 @@ export default function ContactUsComponent() {
                     minWidth: "24px",
                     padding: "0",
                     maxWidth: "24px",
-
                     height: "24px",
                     justifyContent: "center",
                     alignItems: "center",
@@ -566,7 +565,7 @@ export default function ContactUsComponent() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  gap: "4.8rem",
+                  gap: { xs: "2rem", sm: "4.8rem" },
                   width: "100%",
                   flexDirection: "column",
                 }}
@@ -577,8 +576,7 @@ export default function ContactUsComponent() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-
-                    gap: "2.4rem",
+                    gap: { xs: "1.2rem", sm: "2.4rem" },
                     width: "100%",
                     flexDirection: "column",
                   }}

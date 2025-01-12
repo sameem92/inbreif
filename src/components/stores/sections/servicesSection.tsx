@@ -10,7 +10,7 @@ import Grid from "@mui/material/Grid2"
 import { motion } from "framer-motion" // Import framer-motion
 
 // Icons
-import scrollIcon from "../../../../public/icons/scrollIcon.svg"
+import ScrollIcon from "../../../../public/icons/scrollIcon.svg"
 import service1 from "../../../../public/icons/service1.png"
 import service2 from "../../../../public/icons/service2.png"
 import service3 from "../../../../public/icons/service3.png"
@@ -204,7 +204,7 @@ const ServicesSection = () => {
           <div style={{ margin: "0 auto" }}>
             <div className="sectionHead">
               <a href="#features">
-                <Image src={scrollIcon} alt="scroll" />
+                <ScrollIcon />
               </a>
               <h2>استمتع بحرية اختيار الإضافات التي تجعل باقتك متكاملة</h2>
             </div>

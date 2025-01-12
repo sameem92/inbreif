@@ -60,7 +60,8 @@ export default function Slider() {
             gap: "42px",
             justifyContent: "center",
             width: {
-              xs: "90%",
+              xs: "100%",
+              sm: "90%",
               lg: "100%",
             },
           }}
