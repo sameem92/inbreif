@@ -2,27 +2,27 @@
 
 //@ts-nocheck
 
-import React, { useEffect, useState } from "react"
-import Image from "next/image"
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 // Components
-import Grid from "@mui/material/Grid2"
-import { motion } from "framer-motion" // Import framer-motion
+import Grid from "@mui/material/Grid2";
+import { motion } from "framer-motion"; // Import framer-motion
 
 // Icons
-import ScrollIcon from "../../../../public/icons/scrollIcon.svg"
-import service1 from "../../../../public/icons/service1.png"
-import service2 from "../../../../public/icons/service2.png"
-import service3 from "../../../../public/icons/service3.png"
-import service4 from "../../../../public/icons/service4.png"
-import service5 from "../../../../public/icons/service5.png"
-import service6 from "../../../../public/icons/service6.png"
-import service7 from "../../../../public/icons/service7.png"
-import service8 from "../../../../public/icons/service8.png"
-import service9 from "../../../../public/icons/service9.png"
-import service10 from "../../../../public/icons/service10.png"
-import service11 from "../../../../public/icons/service11.png"
-import service12 from "../../../../public/icons/service12.png"
+import ScrollIcon from "../../../../public/icons/scrollIcon.svg";
+import service1 from "../../../../public/icons/service1.png";
+import service2 from "../../../../public/icons/service2.png";
+import service3 from "../../../../public/icons/service3.png";
+import service4 from "../../../../public/icons/service4.png";
+import service5 from "../../../../public/icons/service5.png";
+import service6 from "../../../../public/icons/service6.png";
+import service7 from "../../../../public/icons/service7.png";
+import service8 from "../../../../public/icons/service8.png";
+import service9 from "../../../../public/icons/service9.png";
+import service10 from "../../../../public/icons/service10.png";
+import service11 from "../../../../public/icons/service11.png";
+import service12 from "../../../../public/icons/service12.png";
 
 const services = [
   {
@@ -38,7 +38,8 @@ const services = [
   {
     icon: service2,
     title: "الرسائل النصية (SMS)",
-    description: "كن قريباً من عملائك بإرسال رسائل تسويقية لهم ولمتابعة وصول الطلب لهم.",
+    description:
+      "كن قريباً من عملائك بإرسال رسائل تسويقية لهم ولمتابعة وصول الطلب لهم.",
     USD: "10",
     SAR: "35",
     OMR: "4",
@@ -47,7 +48,8 @@ const services = [
   {
     icon: service3,
     title: "الشات بوت",
-    description: "المحادثة الفورية والرد الآلي التي تزيد من التفاعل وسرعة الرد على استفسارات العملاء.",
+    description:
+      "المحادثة الفورية والرد الآلي التي تزيد من التفاعل وسرعة الرد على استفسارات العملاء.",
     USD: "18",
     SAR: "70",
     OMR: "7",
@@ -56,7 +58,8 @@ const services = [
   {
     icon: service4,
     title: "نظام نقاط البيع (POS)",
-    description: "يقدم نظام نقاط البيع الخاص بنا الحل الأمثل لإدارة عمليات البيع من الأفرع الخاصة بمتجرك.",
+    description:
+      "يقدم نظام نقاط البيع الخاص بنا الحل الأمثل لإدارة عمليات البيع من الأفرع الخاصة بمتجرك.",
     USD: "18",
     SAR: "70",
     OMR: "7",
@@ -65,7 +68,8 @@ const services = [
   {
     icon: service5,
     title: "نظام إدارة السائقين",
-    description: "احصل على خدمة إدارة وتنظيم السائقين الخاصين بك بشكل دقيق وعملي لتسهيل عملية التوصيل والمتابعة.",
+    description:
+      "احصل على خدمة إدارة وتنظيم السائقين الخاصين بك بشكل دقيق وعملي لتسهيل عملية التوصيل والمتابعة.",
     USD: "18",
     SAR: "70",
     OMR: "7",
@@ -74,7 +78,8 @@ const services = [
   {
     icon: service6,
     title: "إنشاء تطبيق للمتجر",
-    description: "تطبيق خاص لمتجرك يوفر تجربة تسوق سهلة ومريحة لعملائك وزيادة مبيعاتك.",
+    description:
+      "تطبيق خاص لمتجرك يوفر تجربة تسوق سهلة ومريحة لعملائك وزيادة مبيعاتك.",
     USD: "120",
     SAR: "425",
     OMR: "35",
@@ -83,7 +88,8 @@ const services = [
   {
     icon: service7,
     title: "استشاري إدارة المتجر",
-    description: "لضمان نجاح العلامة التجارية وزيادة المبيعات، تعيين مسؤول عن الإدارة الكاملة للوحة التحكم الخاصة بك.",
+    description:
+      "لضمان نجاح العلامة التجارية وزيادة المبيعات، تعيين مسؤول عن الإدارة الكاملة للوحة التحكم الخاصة بك.",
     USD: "130",
     SAR: "500",
     OMR: "40",
@@ -92,7 +98,8 @@ const services = [
   {
     icon: service8,
     title: "إضافة المحتوى",
-    description: "احصل على خدمة إضافة المنتجات والصفحات على متجرك مع دعم لغات متعددة للمحتوى الخاص بك.",
+    description:
+      "احصل على خدمة إضافة المنتجات والصفحات على متجرك مع دعم لغات متعددة للمحتوى الخاص بك.",
     USD: "85",
     SAR: "300",
     OMR: "25",
@@ -111,7 +118,8 @@ const services = [
   {
     icon: service10,
     title: "استشاري تسويق المتجر",
-    description: "تعيين مسؤول تسويقي لإنشاء حملات إعلانية وادارة حسابات التواصل الإجتماعي الخاصة بمتجرك.",
+    description:
+      "تعيين مسؤول تسويقي لإنشاء حملات إعلانية وادارة حسابات التواصل الإجتماعي الخاصة بمتجرك.",
     USD: "130",
     SAR: "500",
     OMR: "40",
@@ -120,7 +128,8 @@ const services = [
   {
     icon: service11,
     title: "نظام حجز الطاولات",
-    description: "يقدم لك نظام حجز الطاولات حلاً مثالياً لتسهيل إدارة حجز الزبائن.",
+    description:
+      "يقدم لك نظام حجز الطاولات حلاً مثالياً لتسهيل إدارة حجز الزبائن.",
     USD: "18",
     SAR: "70",
     OMR: "7",
@@ -136,45 +145,45 @@ const services = [
     OMR: "18",
     KD: "16",
   },
-]
+];
 
 const currencyMap = {
   default: { code: "USD", symbol: "دولار" },
   KSA: { code: "SAR", symbol: "ر.س" },
   KW: { code: "KD", symbol: "د.ك" },
   OM: { code: "OMR", symbol: "ر.ع" },
-}
+};
 
 const ServicesSection = () => {
-  const [currency, setCurrency] = useState(null)
+  const [currency, setCurrency] = useState(null);
   useEffect(() => {
     const fetchUserLocation = async () => {
       try {
         // Example with `ip-api`
-        const response = await fetch("https://ipapi.co/json/")
-        const data = await response.json()
+        const response = await fetch("https://ipapi.co/json/");
+        const data = await response.json();
 
         switch (data.country_code) {
           case "SA": // Saudi Arabia
-            setCurrency(currencyMap.KSA)
-            break
+            setCurrency(currencyMap.KSA);
+            break;
           case "KW": // Kuwait
-            setCurrency(currencyMap.KW)
-            break
+            setCurrency(currencyMap.KW);
+            break;
           case "OM": // Oman
-            setCurrency(currencyMap.OM)
-            break
+            setCurrency(currencyMap.OM);
+            break;
           default:
-            setCurrency(currencyMap.default) // Default to USD
+            setCurrency(currencyMap.default); // Default to USD
         }
       } catch (error) {
-        console.error("Error fetching user location:", error)
-        setCurrency(currencyMap.default)
+        console.error("Error fetching user location:", error);
+        setCurrency(currencyMap.default);
       }
-    }
+    };
 
-    fetchUserLocation()
-  }, [])
+    fetchUserLocation();
+  }, []);
 
   return (
     <div className="servicesSection">
@@ -231,7 +240,12 @@ const ServicesSection = () => {
                       </div>
                     )}
                     <div className="img">
-                      <Image height={100} width={100} src={service.icon} alt={service.title} />
+                      <Image
+                        height={100}
+                        width={100}
+                        src={service.icon}
+                        alt={service.title}
+                      />
                     </div>
                     <h4>{service.title}</h4>
                     <p>{service.description}</p>
@@ -243,7 +257,7 @@ const ServicesSection = () => {
         </Grid>
       </Grid>
     </div>
-  )
-}
+  );
+};
 
-export default ServicesSection
+export default ServicesSection;
