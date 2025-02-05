@@ -1,10 +1,10 @@
-import { Box, Stack } from "@mui/material";
-import MainContainer from "../shared/MainContainer";
-import MainCard from "../shared/MainCard";
-import MainList from "../shared/MainList";
+import { Box, Container } from "@mui/material";
 import BadgesList from "../shared/BadgesList";
-import MainSwiper from "../shared/MainSwiper";
 import MainButton from "../shared/MainButton";
+import MainCard from "../shared/MainCard";
+import MainContainer from "../shared/MainContainer";
+import MainList from "../shared/MainList";
+import MainSwiper from "../shared/MainSwiper";
 
 import family from "../../../../public/images/family.png";
 
@@ -37,23 +37,33 @@ const NonProfitSection = () => {
       }}
     >
       <MainContainer>
-        <Stack alignItems="center">
-          <div className="container">
-            <MainSwiper images={images} key="swiper4" />
+        <Container
+          sx={{
+            marginTop: "86px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            "@media (min-width:1440px)": {
+              flexDirection: "row",
+              alignItems: "start",
+            },
+            gap: "44px",
+          }}
+        >
+          <MainSwiper images={images} key="swiper4" />
 
-            <div className="section card-section">
-              <MainCard
-                title="مواقع إلكترونية احترافية لمنظماتك غير الربحية"
-                description="تهدف المواقع إلى تعزيز الرسالة الاجتماعية، وتحتضن قيم مؤسستكم وتعكس رؤيتها."
-                imageUrl={family}
-              />
-              <MainList items={items} />
-              <BadgesList badges={badges} />
-            </div>
+          <div className="section card-section">
+            <MainCard
+              title="مواقع إلكترونية احترافية لمنظماتك غير الربحية"
+              description="تهدف المواقع إلى تعزيز الرسالة الاجتماعية، وتحتضن قيم مؤسستكم وتعكس رؤيتها."
+              imageUrl={family}
+            />
+            <MainList items={items} />
+            <BadgesList badges={badges} />
           </div>
+        </Container>
 
-          <MainButton title="للاستفسار وطلب نسخة تجريبية" />
-        </Stack>
+        <MainButton title="للاستفسار وطلب نسخة تجريبية" />
       </MainContainer>
     </Box>
   );

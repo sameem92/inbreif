@@ -75,11 +75,11 @@ const HeroSection = () => {
 
               <Stack
                 direction="row"
-                spacing={2}
+                spacing={{ xs: 0, sm: 2 }}
                 sx={{
                   marginX: "auto",
                   marginTop: "45px",
-                  "@media only screen and (max-width: 640px)": {
+                  "@media only screen and (max-width: 599px)": {
                     flexDirection: "column",
                     alignItems: "center",
                     gap: "8px",
@@ -97,6 +97,7 @@ const HeroSection = () => {
                 >
                   ابدأ الآن
                 </Button>
+
                 <Button
                   sx={{
                     width: 168,
@@ -109,7 +110,7 @@ const HeroSection = () => {
                     color: "#e1e42a",
                     borderWidth: 1,
                     borderStyle: "solid",
-                    marginRight: 0,
+                    margin: 0,
                   }}
                 >
                   تواصل معنا

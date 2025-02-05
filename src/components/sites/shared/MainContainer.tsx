@@ -10,7 +10,7 @@ const MainContainer = ({ children }: { children: ReactNode }) => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        gap: "42px",
+        gap: "44px",
         padding: "100px 10rem 100px",
         "@media (max-width: 1340px)": {
           padding: "100px 2rem",
@@ -22,9 +22,7 @@ const MainContainer = ({ children }: { children: ReactNode }) => {
           padding: "100px 2rem",
         },
         "@media (max-width: 480px)": {
-          maxWidth: "320px",
           padding: "5rem 2rem",
-          gap: "22px",
         },
       }}
     >

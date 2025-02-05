@@ -1,4 +1,4 @@
-import { Stack } from "@mui/material";
+import { Container } from "@mui/material";
 
 import building from "../../../../public/images/building.png";
 
@@ -24,22 +24,32 @@ const infoImages = [caro, caro, caro, caro, caro];
 const InformationalSection = () => {
   return (
     <MainContainer>
-      <Stack alignItems="center">
-        <div className="container">
-          <div className="section card-section">
-            <MainCard
-              title="مواقع تعريفية"
-              description="تعتبر المواقع التعريفية للشركات والمؤسسات منصة رئيسية لعرض الهوية المؤسسية والمعلومات الأساسية. تُسهم في بناء الثقة مع العملاء من خلال تقديم معلومات دقيقة حول الخدمات والرؤية. كما توفر وسيلة فعالة للتواصل، مما يُعزز من فرص التعاون والنمو."
-              imageUrl={building}
-            />
-            <BadgesList badges={badges} />
-          </div>
-
-          <MainSwiper images={infoImages} key="swiper5" />
+      <Container
+        sx={{
+          marginTop: "86px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          "@media (min-width:1440px)": {
+            flexDirection: "row",
+            alignItems: "start",
+          },
+          gap: "44px",
+        }}
+      >
+        <div className="section card-section">
+          <MainCard
+            title="مواقع تعريفية"
+            description="تعتبر المواقع التعريفية للشركات والمؤسسات منصة رئيسية لعرض الهوية المؤسسية والمعلومات الأساسية. تُسهم في بناء الثقة مع العملاء من خلال تقديم معلومات دقيقة حول الخدمات والرؤية. كما توفر وسيلة فعالة للتواصل، مما يُعزز من فرص التعاون والنمو."
+            imageUrl={building}
+          />
+          <BadgesList badges={badges} />
         </div>
 
-        <MainButton title="للاستفسار وطلب نسخة تجريبية" />
-      </Stack>
+        <MainSwiper images={infoImages} key="swiper5" />
+      </Container>
+
+      <MainButton title="للاستفسار وطلب نسخة تجريبية" />
     </MainContainer>
   );
 };

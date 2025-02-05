@@ -1,4 +1,4 @@
-import { Stack } from "@mui/material";
+import { Container } from "@mui/material";
 
 import ticket from "../../../../public/images/ticket.png";
 
@@ -34,23 +34,32 @@ const images = [caro, caro, caro, caro, caro];
 const PersonalBookingSection = () => {
   return (
     <MainContainer>
-      <Stack alignItems="center">
-        <div className="container">
-          <div className="section card-section">
-            <MainCard
-              title="موقع حجوزات شخصية"
-              description="خدمات إنشاء مواقع الحجوزات الشخصية توفر حلولاً مخصصة تلبي احتياجات مختلف المجالات. تتيح هذه الحلول للمستخدمين تنظيم مواعيدهم بسهولة، مما يعزز الكفاءة ويُحسن تجربة العملاء."
-              imageUrl={ticket}
-            />
-            <MainList items={items} />
-            <BadgesList badges={badges} />
-          </div>
-
-          <MainSwiper images={images} key="swiper3" />
+      <Container
+        sx={{
+          marginTop: "86px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          "@media (min-width:1440px)": {
+            flexDirection: "row",
+            alignItems: "start",
+          },
+          gap: "44px",
+        }}
+      >
+        <div className="section card-section">
+          <MainCard
+            title="موقع حجوزات شخصية"
+            description="خدمات إنشاء مواقع الحجوزات الشخصية توفر حلولاً مخصصة تلبي احتياجات مختلف المجالات. تتيح هذه الحلول للمستخدمين تنظيم مواعيدهم بسهولة، مما يعزز الكفاءة ويُحسن تجربة العملاء."
+            imageUrl={ticket}
+          />
+          <MainList items={items} />
+          <BadgesList badges={badges} />
         </div>
 
-        <MainButton title="للاستفسار وطلب نسخة تجريبية" />
-      </Stack>
+        <MainSwiper images={images} key="swiper3" />
+      </Container>
+      <MainButton title="للاستفسار وطلب نسخة تجريبية" />
     </MainContainer>
   );
 };

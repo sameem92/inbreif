@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import { useEffect, useId, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Button } from "@mui/material";
+import { Box, Button, Stack } from "@mui/material";
 
 import {
   FreeMode,
@@ -35,34 +35,58 @@ const MainSwiper = ({ images }: { images: StaticImageData[] }) => {
     }
   }, []);
 
-  const buttonStyles = (disabled: boolean) => ({
-    width: "32px",
-    height: "32px",
-    minHeight: "32px",
-    minWidth: "32px",
-    borderRadius: "50%",
-    background: !disabled
-      ? "#E1E42A"
-      : "linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
-    border: !disabled ? "none" : "1px solid #18292D",
-    "&:hover": {
-      background: !disabled
-        ? "#E1E42A"
-        : "linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
-      border: !disabled ? "none" : "1px solid #18292D",
-      transform: "translateY(0px)",
-    },
-  });
-
   return (
-    <div className={`section`}>
-      <div className="carousel-section">
-        {/* Previous Button */}
+    <Stack gap={"16px"}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: "1.6rem",
+          justifyContent: "space-between",
+          width: "600px",
+          padding: { sm: "0 2rem" },
+          "@media (max-width: 576px)": {
+            flexWrap: "wrap",
+            justifyContent: "center",
+            flexDirection: "row-reverse",
+            width: "100%",
+          },
+        }}
+      >
         <Button
-          key={`back-${uniqueId}`}
           title="previous"
           className="prev"
-          sx={buttonStyles(isBeginning)}
+          sx={{
+            width: "32px",
+            height: "32px",
+            minHeight: "32px",
+            minWidth: "32px",
+            borderRadius: "50%",
+            background: !isBeginning
+              ? "#E1E42A"
+              : "linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
+            border: !isBeginning ? "none" : "1px solid #18292D",
+            "&:hover": {
+              background: !isBeginning
+                ? "#E1E42A"
+                : "linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
+              border: !isBeginning ? "none" : "1px solid #18292D",
+              transform: "translateY(0px)",
+            },
+            "&:hover svg": {
+              marginRight: "1rem",
+            },
+            "@media (max-width: 576px)": {
+              width: "4rem",
+              height: "4rem",
+              minHeight: "4rem",
+              minWidth: "4rem",
+              order: "2",
+              svg: {
+                width: "14px",
+              },
+            },
+          }}
         >
           <svg
             width="18"
@@ -80,10 +104,8 @@ const MainSwiper = ({ images }: { images: StaticImageData[] }) => {
           </svg>
         </Button>
 
-        {/* Swiper Main */}
         <Swiper
           key={`swiper-${uniqueId}`}
-          modules={[Navigation, Pagination, Scrollbar, Thumbs, FreeMode]}
           spaceBetween={30}
           slidesPerView={1}
           navigation={{
@@ -97,9 +119,9 @@ const MainSwiper = ({ images }: { images: StaticImageData[] }) => {
             setIsBeginning(realIndex === 0);
             setIsEnd(realIndex === totalSlides - 1);
           }}
-          style={{
-            maxWidth: "420px",
-          }}
+          speed={1000}
+          modules={[Navigation, Pagination, Scrollbar, Thumbs, FreeMode]}
+          className="mySwiper2"
         >
           {images.map((img, index) => (
             <SwiperSlide key={index}>
@@ -108,12 +130,39 @@ const MainSwiper = ({ images }: { images: StaticImageData[] }) => {
           ))}
         </Swiper>
 
-        {/* Next Button */}
         <Button
           title="next"
-          key={`next-${uniqueId}`}
           className="next"
-          sx={buttonStyles(isEnd)}
+          sx={{
+            width: "32px",
+            height: "32px",
+            minHeight: "32px",
+            minWidth: "32px",
+            borderRadius: "50%",
+            background: !isEnd
+              ? "#E1E42A"
+              : "linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
+            border: !isEnd ? "none" : "1px solid #18292D",
+            "&:hover": {
+              background: !isEnd
+                ? "#E1E42A"
+                : "linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
+              border: !isEnd ? "none" : "1px solid #18292D",
+              transform: "translateY(0px)",
+            },
+            "&:hover svg": {
+              marginLeft: "1rem",
+            },
+            "@media (max-width: 576px)": {
+              width: "4rem",
+              height: "4rem",
+              minHeight: "4rem",
+              minWidth: "4rem",
+              svg: {
+                width: "14px",
+              },
+            },
+          }}
         >
           <svg
             width="18"
@@ -130,7 +179,7 @@ const MainSwiper = ({ images }: { images: StaticImageData[] }) => {
             />
           </svg>
         </Button>
-      </div>
+      </Box>
 
       {/* Thumbnail Swiper */}
       <div className="swiperThumb">
@@ -151,7 +200,7 @@ const MainSwiper = ({ images }: { images: StaticImageData[] }) => {
 
       {/* Scrollbar */}
       <div className={`custom-scrollbar`}></div>
-    </div>
+    </Stack>
   );
 };
 

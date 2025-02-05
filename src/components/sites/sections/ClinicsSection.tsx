@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Stack } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import BadgesList from "../shared/BadgesList";
 import MainButton from "../shared/MainButton";
 import MainCard from "../shared/MainCard";
@@ -32,23 +32,33 @@ const ClinicsSection = () => {
       }}
     >
       <MainContainer>
-        <Stack alignItems="center">
-          <div className="container">
-            <MainSwiper images={images} />
+        <Container
+          sx={{
+            marginTop: "86px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            "@media (min-width:1440px)": {
+              flexDirection: "row",
+              alignItems: "start",
+            },
+            gap: "44px",
+          }}
+        >
+          <MainSwiper images={images} />
 
-            <div className="section card-section">
-              <MainCard
-                title="موقع للعيادات والمراكز الطبية"
-                description="تسهل المواقع الطبية عملية حجز المواعيد، مما يوفر الوقت والجهد للمرضى. كما تقدم معلومات دقيقة عن الأطباء والتخصصات، بالإضافة إلى خيار الاستشارات عبر الإنترنت، مما يعزز من تجربة الرعاية الصحية."
-                imageUrl={stethoscope}
-              />
-              <MainList items={items} />
-              <BadgesList badges={badges} />
-            </div>
+          <div className="section card-section">
+            <MainCard
+              title="موقع للعيادات والمراكز الطبية"
+              description="تسهل المواقع الطبية عملية حجز المواعيد، مما يوفر الوقت والجهد للمرضى. كما تقدم معلومات دقيقة عن الأطباء والتخصصات، بالإضافة إلى خيار الاستشارات عبر الإنترنت، مما يعزز من تجربة الرعاية الصحية."
+              imageUrl={stethoscope}
+            />
+            <MainList items={items} />
+            <BadgesList badges={badges} />
           </div>
+        </Container>
 
-          <MainButton title="للاستفسار وطلب نسخة تجريبية" />
-        </Stack>
+        <MainButton title="للاستفسار وطلب نسخة تجريبية" />
       </MainContainer>
     </Box>
   );

@@ -4,11 +4,10 @@ const MainButton = ({ title }: { title: string }) => {
   return (
     <Button
       sx={{
-        marginTop: "44px",
         paddingX: "18px",
         borderRadius: 60,
         fontWeight: 600,
-        fontSize: 22,
+        fontSize: "1.375",
         background: "transparent",
         borderColor: "#e1e42a",
         color: "#e1e42a",

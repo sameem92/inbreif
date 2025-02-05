@@ -1,4 +1,4 @@
-import { Stack } from "@mui/material";
+import { Container } from "@mui/material";
 
 import ticket from "../../../../public/images/ticket.png";
 
@@ -32,34 +32,41 @@ const images = [caro, caro, caro, caro, caro];
 const ReservationsSection = () => {
   return (
     <MainContainer>
-      <Stack
-        // sx={{
-        //   maxWidth: "200px",
-        // }}
-        alignItems="center"
-      >
+      <div>
         <h2 className="section-header">
           احصل على موقع إلكتروني لكافة المجالات
         </h2>
         <p>مواقع إلكترونية تناسب كل احتياجاتك، أيًا كان مجالك</p>
-        <div className="container">
-          <div className="section card-section">
-            <MainCard
-              title="موقع حجوزات وتأجير"
-              description="تُعتبر مواقع الحجوزات أداة فعالة لتسهيل عملية البحث والحجز، حيث توفر
+      </div>
+      <Container
+        sx={{
+          marginTop: "86px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          "@media (min-width:1440px)": {
+            flexDirection: "row",
+            alignItems: "start",
+          },
+          gap: "44px",
+        }}
+      >
+        <div className="card-section">
+          <MainCard
+            title="موقع حجوزات وتأجير"
+            description="تُعتبر مواقع الحجوزات أداة فعالة لتسهيل عملية البحث والحجز، حيث توفر
               خيارات متعددة ومقارنة الأسعار بسهولة. تتيح هذه المنصات تقييمات وتجارب
               المستخدمين، مما يساعد العملاء في اتخاذ قرارات مستنيرة تناسب احتياجاتهم.
               كما تعزز من راحة العملية بفضل إمكانية الحجز الفوري."
-              imageUrl={ticket}
-            />
-            <MainList items={items} />
-            <BadgesList badges={badges} />
-          </div>
-          <MainSwiper images={images} key="swiper1" />
+            imageUrl={ticket}
+          />
+          <MainList items={items} />
+          <BadgesList badges={badges} />
         </div>
+        <MainSwiper images={images} key="swiper1" />
+      </Container>
 
-        <MainButton title="للاستفسار وطلب نسخة تجريبية" />
-      </Stack>
+      <MainButton title="للاستفسار وطلب نسخة تجريبية" />
     </MainContainer>
   );
 };
