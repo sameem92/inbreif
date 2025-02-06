@@ -8,6 +8,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 import SiteHeroImage from "../../../../public/images/siteHero.png";
+import Circles from "../../../../public/images/circles.png";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -21,20 +23,18 @@ const HeroSection = () => {
         <Container
           maxWidth="xl"
           sx={{
+            position: "relative",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
             gap: "42px",
-            padding: "155px 10rem 100px",
-            "@media (max-width: 1340px)": {
-              padding: "155px 2rem",
+            padding: "20rem 10rem 100px",
+            "@media (max-width: 1024px)": {
+              padding: "155px 1rem 100px",
             },
-            "@media (max-width: 1240px)": {
-              padding: "155px 1rem",
-            },
-            "@media (max-width: 992px)": {
-              padding: "155px 2rem",
+            "@media (max-width: 768px)": {
+              padding: "155px 2rem 100px",
             },
             "@media (max-width: 480px)": {
               padding: "155 2rem",
@@ -42,6 +42,16 @@ const HeroSection = () => {
             },
           }}
         >
+          <Box
+            sx={{
+              position: "absolute",
+              top: "116px",
+              "@media (max-width: 480px)": { display: "none" },
+            }}
+          >
+            <Image src={Circles} alt="Circles" />
+          </Box>
+
           <Box
             sx={{
               justifyContent: "center",
@@ -113,7 +123,7 @@ const HeroSection = () => {
                     margin: 0,
                   }}
                 >
-                  تواصل معنا
+                  <Link href="/contact-us">تواصل معنا</Link>
                 </Button>
               </Stack>
             </Stack>

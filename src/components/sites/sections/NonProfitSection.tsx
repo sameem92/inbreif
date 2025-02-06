@@ -1,4 +1,4 @@
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
 import BadgesList from "../shared/BadgesList";
 import MainButton from "../shared/MainButton";
 import MainCard from "../shared/MainCard";
@@ -26,6 +26,7 @@ const badges = [
 ];
 
 import caro from "../../../../public/images/caro.png";
+import SwiperCardContainer from "../shared/SwiperCardContainer";
 
 const images = [caro, caro, caro, caro, caro];
 
@@ -37,19 +38,7 @@ const NonProfitSection = () => {
       }}
     >
       <MainContainer>
-        <Container
-          sx={{
-            marginTop: "86px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            "@media (min-width:1440px)": {
-              flexDirection: "row",
-              alignItems: "start",
-            },
-            gap: "44px",
-          }}
-        >
+        <SwiperCardContainer>
           <MainSwiper images={images} key="swiper4" />
 
           <div className="section card-section">
@@ -61,7 +50,7 @@ const NonProfitSection = () => {
             <MainList items={items} />
             <BadgesList badges={badges} />
           </div>
-        </Container>
+        </SwiperCardContainer>
 
         <MainButton title="للاستفسار وطلب نسخة تجريبية" />
       </MainContainer>

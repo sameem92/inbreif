@@ -24,7 +24,7 @@ import { Swiper as SwiperType } from "swiper/types";
 const MainSwiper = ({ images }: { images: StaticImageData[] }) => {
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
-  const uniqueId = useId();
+  const uniqueId = useId().replace(/:/g, "");
   const thumbSwiperRef = useRef<SwiperType | null>(null);
 
   const totalSlides = images.length;
@@ -35,27 +35,38 @@ const MainSwiper = ({ images }: { images: StaticImageData[] }) => {
     }
   }, []);
 
+  const handleSlideChange = (swiper: SwiperType) => {
+    setIsBeginning(swiper.realIndex === 0);
+    setIsEnd(swiper.realIndex === totalSlides - 1);
+  };
+
   return (
-    <Stack gap={"16px"}>
+    <Stack
+      gap={"16px"}
+      sx={{
+        width: "50%",
+        "@media (max-width: 1024px)": { width: "75%" },
+        "@media (max-width: 576px)": { width: "100%" },
+      }}
+    >
       <Box
         sx={{
           display: "flex",
           alignItems: "center",
           gap: "1.6rem",
           justifyContent: "space-between",
-          width: "600px",
+          width: "100%",
           padding: { sm: "0 2rem" },
           "@media (max-width: 576px)": {
             flexWrap: "wrap",
             justifyContent: "center",
             flexDirection: "row-reverse",
-            width: "100%",
           },
         }}
       >
         <Button
           title="previous"
-          className="prev"
+          className={`prev-${uniqueId}`}
           sx={{
             width: "32px",
             height: "32px",
@@ -109,19 +120,18 @@ const MainSwiper = ({ images }: { images: StaticImageData[] }) => {
           spaceBetween={30}
           slidesPerView={1}
           navigation={{
-            prevEl: ".prev",
-            nextEl: ".next",
+            prevEl: `.prev-${uniqueId}`,
+            nextEl: `.next-${uniqueId}`,
           }}
           thumbs={{ swiper: thumbSwiperRef.current }}
-          scrollbar={{ el: `.custom-scrollbar`, draggable: true }}
-          onSlideChange={(swiper) => {
-            const realIndex = swiper.realIndex;
-            setIsBeginning(realIndex === 0);
-            setIsEnd(realIndex === totalSlides - 1);
+          scrollbar={{
+            el: `.custom-scrollbar-${uniqueId}`,
+            draggable: true,
           }}
+          onSlideChange={handleSlideChange}
           speed={1000}
           modules={[Navigation, Pagination, Scrollbar, Thumbs, FreeMode]}
-          className="mySwiper2"
+          className={`mySwiper-${uniqueId} mySwiper2`}
         >
           {images.map((img, index) => (
             <SwiperSlide key={index}>
@@ -132,7 +142,7 @@ const MainSwiper = ({ images }: { images: StaticImageData[] }) => {
 
         <Button
           title="next"
-          className="next"
+          className={`next-${uniqueId}`}
           sx={{
             width: "32px",
             height: "32px",
@@ -182,7 +192,7 @@ const MainSwiper = ({ images }: { images: StaticImageData[] }) => {
       </Box>
 
       {/* Thumbnail Swiper */}
-      <div className="swiperThumb">
+      <div className={`swiperThumb-${uniqueId} swiperThumb`}>
         <Swiper
           modules={[Thumbs, Navigation, FreeMode]}
           spaceBetween={10}
@@ -199,7 +209,7 @@ const MainSwiper = ({ images }: { images: StaticImageData[] }) => {
       </div>
 
       {/* Scrollbar */}
-      <div className={`custom-scrollbar`}></div>
+      <div className={`custom-scrollbar custom-scrollbar-${uniqueId}`}></div>
     </Stack>
   );
 };

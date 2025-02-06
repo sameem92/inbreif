@@ -1,5 +1,3 @@
-import { Container } from "@mui/material";
-
 import ticket from "../../../../public/images/ticket.png";
 
 import BadgesList from "../shared/BadgesList";
@@ -26,31 +24,21 @@ const badges = [
 ];
 
 import caro from "../../../../public/images/caro.png";
+import SwiperCardContainer from "../shared/SwiperCardContainer";
+import { Box } from "@mui/material";
 
 const images = [caro, caro, caro, caro, caro];
 
 const ReservationsSection = () => {
   return (
     <MainContainer>
-      <div>
+      <Box marginBottom="86px">
         <h2 className="section-header">
           احصل على موقع إلكتروني لكافة المجالات
         </h2>
         <p>مواقع إلكترونية تناسب كل احتياجاتك، أيًا كان مجالك</p>
-      </div>
-      <Container
-        sx={{
-          marginTop: "86px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          "@media (min-width:1440px)": {
-            flexDirection: "row",
-            alignItems: "start",
-          },
-          gap: "44px",
-        }}
-      >
+      </Box>
+      <SwiperCardContainer>
         <div className="card-section">
           <MainCard
             title="موقع حجوزات وتأجير"
@@ -64,7 +52,7 @@ const ReservationsSection = () => {
           <BadgesList badges={badges} />
         </div>
         <MainSwiper images={images} key="swiper1" />
-      </Container>
+      </SwiperCardContainer>
 
       <MainButton title="للاستفسار وطلب نسخة تجريبية" />
     </MainContainer>

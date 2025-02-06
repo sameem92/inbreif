@@ -3,6 +3,7 @@
 import { Box, Stack } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import image1 from "../../../../public/images/procedures/1.png";
 import image2 from "../../../../public/images/procedures/2.png";
@@ -75,12 +76,24 @@ const ProceduresSection = () => {
             <p>إجراءات صارمة نتبعها لضمان سير المشاريع بنجاح</p>
             <div className="grid-container">
               {features.map((feature) => (
-                <div className="card" key={feature.title}>
-                  <div className="circle"></div>
-                  <Image src={feature.imageURL} alt={feature.title} />
-                  <h3>{feature.title}</h3>
-                  <p>{feature.description}</p>
-                </div>
+                <motion.div
+                  key={feature.title}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{
+                    type: "tween",
+                    stiffness: 400,
+                    damping: 10,
+                  }}
+                >
+                  <div className="card">
+                    <div className="content">
+                      <div className="circle"></div>
+                      <Image src={feature.imageURL} alt={feature.title} />
+                      <h3>{feature.title}</h3>
+                      <p>{feature.description}</p>
+                    </div>
+                  </div>
+                </motion.div>
               ))}
             </div>
           </Stack>

@@ -1,5 +1,3 @@
-import { Container } from "@mui/material";
-
 import building from "../../../../public/images/building.png";
 
 import BadgesList from "../shared/BadgesList";
@@ -18,25 +16,14 @@ const badges = [
 ];
 
 import caro from "../../../../public/images/caro.png";
+import SwiperCardContainer from "../shared/SwiperCardContainer";
 
 const infoImages = [caro, caro, caro, caro, caro];
 
 const InformationalSection = () => {
   return (
     <MainContainer>
-      <Container
-        sx={{
-          marginTop: "86px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          "@media (min-width:1440px)": {
-            flexDirection: "row",
-            alignItems: "start",
-          },
-          gap: "44px",
-        }}
-      >
+      <SwiperCardContainer>
         <div className="section card-section">
           <MainCard
             title="مواقع تعريفية"
@@ -47,7 +34,7 @@ const InformationalSection = () => {
         </div>
 
         <MainSwiper images={infoImages} key="swiper5" />
-      </Container>
+      </SwiperCardContainer>
 
       <MainButton title="للاستفسار وطلب نسخة تجريبية" />
     </MainContainer>
