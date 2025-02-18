@@ -1,29 +1,32 @@
-import React from "react"
-import Image from "next/image"
+import React from "react";
+import Image from "next/image";
 
 // Components
-import Grid from "@mui/material/Grid2"
-import { motion } from "framer-motion"
+import Grid from "@mui/material/Grid2";
+import { motion } from "framer-motion";
 
 // Images & Icons
-import Feat1 from "../../../../public/images/store/feat1.svg"
-import Feat2 from "../../../../public/images/store/feat2.svg"
-import feat3 from "../../../../public/images/store/feat3.png"
-import Icon1 from "../../../../public/icons/icon1.svg"
-import Icon2 from "../../../../public/icons/icon2.svg"
-import Icon3 from "../../../../public/icons/icon3.svg"
-import Icon4 from "../../../../public/icons/icon4.svg"
-import Icon5 from "../../../../public/icons/icon5.svg"
-import Icon6 from "../../../../public/icons/icon6.svg"
-import Icon7 from "../../../../public/icons/icon7.svg"
-import Icon8 from "../../../../public/icons/icon8.svg"
-import Icon9 from "../../../../public/icons/icon9.svg"
-import Icon10 from "../../../../public/icons/icon10.svg"
-import Icon11 from "../../../../public/icons/icon11.svg"
-import Icon12 from "../../../../public/icons/icon12.svg"
-import Icon13 from "../../../../public/icons/icon13.svg"
+import Feat1 from "../../../../public/images/store/feat1.svg";
+import Feat2 from "../../../../public/images/store/feat2.svg";
+import feat3 from "../../../../public/images/store/feat3.png";
+import Icon1 from "../../../../public/icons/icon1.svg";
+import Icon2 from "../../../../public/icons/icon2.svg";
+import Icon3 from "../../../../public/icons/icon3.svg";
+import Icon4 from "../../../../public/icons/icon4.svg";
+import Icon5 from "../../../../public/icons/icon5.svg";
+import Icon6 from "../../../../public/icons/icon6.svg";
+import Icon7 from "../../../../public/icons/icon7.svg";
+import Icon8 from "../../../../public/icons/icon8.svg";
+import Icon9 from "../../../../public/icons/icon9.svg";
+import Icon10 from "../../../../public/icons/icon10.svg";
+import Icon11 from "../../../../public/icons/icon11.svg";
+import Icon12 from "../../../../public/icons/icon12.svg";
+import Icon13 from "../../../../public/icons/icon13.svg";
+import { useTranslations } from "next-intl";
 
 const MainFeaturesSection = () => {
+  const t = useTranslations("ECommerce.MainFeaturesSection");
+
   return (
     <div className="mainFeaturesSection">
       <Grid
@@ -50,7 +53,13 @@ const MainFeaturesSection = () => {
           },
         }}
       >
-        <Grid size={{ xs: 12 }} display="flex" flexDirection="column" gap="50px" className="feats">
+        <Grid
+          size={{ xs: 12 }}
+          display="flex"
+          flexDirection="column"
+          gap="50px"
+          className="feats"
+        >
           <motion.div
             whileHover={{ scale: 1.02 }}
             transition={{
@@ -62,20 +71,20 @@ const MainFeaturesSection = () => {
             <div className="featureBox">
               <div className="bg">
                 <div className="content">
-                  <h3>متجرك على ذوقك</h3>
-                  <p>تصميم مخصص يحمل هويتك التجارية بطريقة احترافية لتعزيز مبيعاتك</p>
+                  <h3>{t("feature1.title")}</h3>
+                  <p>{t("feature1.description")}</p>
                   <ul>
                     <li>
                       <Icon1 />
-                      <span>اختيار من قوالب عديدة</span>
+                      <span>{t("feature1.list.item1")}</span>
                     </li>
                     <li>
                       <Icon2 />
-                      <span>امكانية تخصيص ألوان وخطوط هويتك</span>
+                      <span>{t("feature1.list.item2")}</span>
                     </li>
                     <li>
                       <Icon3 />
-                      <span>انشاء القالب الخاص بك</span>
+                      <span>{t("feature1.list.item3")}</span>
                     </li>
                   </ul>
                 </div>
@@ -97,24 +106,24 @@ const MainFeaturesSection = () => {
             <div className="featureBox">
               <div className="bg">
                 <div className="content">
-                  <h3>مميزات احترافية لجميع الباقات</h3>
-                  <p>خدمات ومزايا تعززّ مشروعك وتوسِع انتشارك</p>
+                  <h3>{t("feature2.title")}</h3>
+                  <p>{t("feature2.description")}</p>
                   <ul>
                     <li>
                       <Icon4 />
-                      <span>نطاق مخصص لمتجرك (دومين)</span>
+                      <span>{t("feature2.list.item1")}</span>
                     </li>
                     <li>
                       <Icon5 />
-                      <span>أمان عالي وشهادات حماية</span>
+                      <span>{t("feature2.list.item2")}</span>
                     </li>
                     <li>
                       <Icon6 />
-                      <span>عدد عملاء وطلبات غير محدود</span>
+                      <span>{t("feature2.list.item3")}</span>
                     </li>
                     <li>
                       <Icon7 />
-                      <span>استضافة زوار بعدد غير محدود</span>
+                      <span>{t("feature2.list.item4")}</span>
                     </li>
                   </ul>
                 </div>
@@ -129,32 +138,32 @@ const MainFeaturesSection = () => {
             <div className="featureBox">
               <div className="bg">
                 <div className="content">
-                  <h3>خدمات تسويقية مُبتكرة</h3>
-                  <p>نحول أفكارك لواقع ملموس مدعوم بكافة الخدمات المتقدمة التي تساعدك في زيادة عدد عملائك</p>
+                  <h3>{t("feature2.title")}</h3>
+                  <p>{t("feature2.description")}</p>
                   <ul>
                     <li>
                       <Icon8 />
-                      <span>إستهداف للسلات المتروكة</span>
+                      <span>{t("feature3.list.item1")}</span>
                     </li>
                     <li>
                       <Icon9 />
-                      <span>خصم الشحن المجاني</span>
+                      <span>{t("feature3.list.item2")}</span>
                     </li>
                     <li>
                       <Icon10 />
-                      <span>إضافة العروض والخصومات</span>
+                      <span>{t("feature3.list.item3")}</span>
                     </li>
                     <li>
                       <Icon11 />
-                      <span>إدارة الحملات التسويقية لمتجرك</span>
+                      <span>{t("feature3.list.item4")}</span>
                     </li>
                     <li>
                       <Icon12 />
-                      <span>خصومات لعملاء المتجر</span>
+                      <span>{t("feature3.list.item5")}</span>
                     </li>
                     <li>
                       <Icon13 />
-                      <span>رسائل نصية تسويقية عبر الإيميل والـ SMS</span>
+                      <span>{t("feature3.list.item6")}</span>
                     </li>
                   </ul>
                 </div>
@@ -167,7 +176,7 @@ const MainFeaturesSection = () => {
         </Grid>
       </Grid>
     </div>
-  )
-}
+  );
+};
 
-export default MainFeaturesSection
+export default MainFeaturesSection;

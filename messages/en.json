@@ -1,0 +1,861 @@
+{
+  "Shared": {
+    "Home": "Home",
+    "About": "About Us",
+    "Mobile": "Mobile Applications",
+    "E_commerce": "E-commerce",
+    "Web": "Informational & Booking Websites",
+    "Motion": "Design & Motion",
+    "Marketing": "Marketing & Campaigns",
+    "Contact": "Contact Us",
+    "LearnMore": "Learn more",
+    "Services": "Our Services",
+    "Programming_Development": "Programming and Development",
+    "Design_Marketing": "Design and Marketing",
+    "en": "En",
+    "de": "De",
+    "ar": "Ar",
+    "USD": "USD",
+    "SAR": "SAR",
+    "KD": "KD",
+    "OMR": "OMR"
+  },
+  "Home": {
+    "title1": "The best leading platform for software and marketing in the Arab world",
+    "title2": "Briefly, we take you to digital success",
+    "consultation": "Request a free consultation",
+    "price": "competitive prices",
+    "licensing": "verified licensing",
+    "professionalism": "unmatched professionalism",
+    "experience": "over 10 years of experience",
+    "softwareServices": "Software Services",
+    "designMarketingSolution": "Design and Marketing solution",
+    "visualIdentityLogoCreation": "Visual identity and logo creation",
+    "advertisementProfileDesign": "Advertisement and profile design",
+    "motionGraphicsVideoEditing": "Motion graphics and video editing",
+    "marketingCampaigns": "Marketing campaigns",
+    "socialMediaAccountManagement": "Social media account management",
+    "strategicMarketingPlanDevelopment": "Strategic marketing plan development"
+  },
+  "AboutPage": {
+    "welcome": "Welcome to In Brief!",
+    "heroDescription": "We are an officially licensed and leading company specializing in programming, app and website development, and digital marketing, with a strong focus on meeting the needs of the Gulf market. With offices in Saudi Arabia, Kuwait, and Oman, we deliver innovative solutions that enhance our clients’ experiences and position them ahead of the competition.",
+    "whatSetsUsApart": {
+      "title": "What Sets Us Apart",
+      "description": "We aim to be the first choice for clients seeking comprehensive digital solutions. Believing in the power of technology to transform businesses and drive success, we work tirelessly to bring our clients’ visions to life."
+    },
+    "values": {
+      "title": "Our Values",
+      "value1": {
+        "title": "Innovation",
+        "description": "We strive to deliver fresh ideas and creative solutions."
+      },
+      "value2": {
+        "title": "Quality",
+        "description": "We are committed to maintaining the highest standards of excellence."
+      },
+      "value3": {
+        "title": "Transparency",
+        "description": "We build trust-based relationships with our clients."
+      }
+    },
+    "team": {
+      "title": "Our Team",
+      "description": "Our team is made up of experienced professionals united by a passion for technology and creativity. We work collaboratively to achieve our clients’ goals and provide unwavering support at every step."
+    }
+  },
+  "MobileApps": {
+    "mainTitle": "Mobile applications",
+    "mainDescription": {
+      "title": "Turning Ideas into Reality",
+      "description": "At In Brief, we are dedicated to creating exceptional applications that combine functionality with modern design. Let us help you achieve your digital goals and bring your ideas to life.”"
+    },
+    "work": {
+      "title": "Our work",
+      "app": "App"
+    },
+    "features": {
+      "title": "Features",
+      "list": {
+        "feature1": "Designing your project's logo.",
+        "feature2": "Programming the application and control panel with modern technologies.",
+        "feature3": "A portfolio website for your project",
+        "feature4": "Free hosting and domain for one year.",
+        "feature5": "Registering your project on Google Maps.",
+        "feature6": "SSL Certificate.",
+        "feature7": "Integration with local or international shipping.",
+        "feature8": "20 official email addresses.",
+        "feature9": "Integration with a messaging gateway for OTP service and marketing.",
+        "feature10": "Professional design of your choice.",
+        "feature11": "Compatible with all screens.",
+        "feature12": "SEO optimized (Compatible with search engines).",
+        "feature13": "Integration with installment gateways.",
+        "feature14": "Integration with a payment gateway.",
+        "feature15": "Free technical support for one year.",
+        "feature16": "Multilingual support."
+      },
+      "button": "Get your app now"
+    }
+  },
+  "ECommerce": {
+    "HeroSection": {
+      "title": "get your E-commerce store now.",
+      "description": "Design your online store now with an interface and services that give you full control, from payment to shipping, seamlessly.",
+      "startButton": "Start now",
+      "contactButton": "Contact us"
+    },
+    "MainFeaturesSection": {
+      "feature1": {
+        "title": "Your Store, your identity",
+        "description": "A custom design tailored to your brand identity, crafted professionally to boost your sales.",
+        "list": {
+          "item1": "Choose from a variety of templates.",
+          "item2": "The ability to customize your brand's colors and fonts.",
+          "item3": "Create your own custom template."
+        }
+      },
+      "feature2": {
+        "title": "Professional Features for All Packages",
+        "description": "Services and benefits that enhance your project and expand your reach.",
+        "list": {
+          "item1": "Custom Domain for Your Store",
+          "item2": "High Security and Protection Certificates",
+          "item3": "Unlimited Customers and Orders",
+          "item4": "Unlimited Visitor Hosting"
+        }
+      },
+      "feature3": {
+        "title": "Innovative Marketing Services",
+        "description": "We turn your ideas into reality, supported by advanced services that help increase your customer base.",
+        "list": {
+          "item1": "Abandoned Cart Targeting",
+          "item2": "Free Shipping Discount",
+          "item3": "Add Offers and Discounts",
+          "item4": "Manage Marketing Campaigns for Your Store",
+          "item5": "Discounts for Store Customers",
+          "item6": "Marketing SMS and Email Campaigns"
+        }
+      }
+    },
+    "PackagesSection": {
+      "title": "Subscription Plans",
+      "description": "Create your E-commerce store and enjoy a fantastic experience. You can upgrade your subscription directly from your store's dashboard.",
+      "button": "Subscribe now",
+      "yearLabel": "Yearly",
+      "monthLabel": "Monthly",
+      "plans": {
+        "moreButton": "more",
+        "dollar": "$",
+        "rial_saudi": "SAR",
+        "dinar_kuwaiti": "KWD",
+        "rial_omani": "OMR",
+        "customPlan": {
+          "title": "Custom Plan",
+          "description": "You can customize your plan according to your specific needs, allowing you to choose the services that best suit your business.",
+          "button": "Contact us"
+        },
+        "goldPlan": {
+          "title": "Gold Plan",
+          "features": {
+            "feature1": "All Features of the Silver Plan",
+            "feature2": "Store Design Control",
+            "feature3": "Multiple Languages",
+            "feature4": "Affiliate Marketing",
+            "feature5": "Store Performance Tracking and Updates",
+            "feature6": "Various Shipping Methods",
+            "feature7": "Support for 3 Branches",
+            "feature8": "3 Users to Manage the Store",
+            "feature9": "24/7 WhatsApp Technical Support"
+          }
+        },
+        "silverPlan": {
+          "title": "Silver Plan",
+          "features": {
+            "feature1": "Unlimited Orders",
+            "feature2": "Periodic Reports and Analytics",
+            "feature3": "Integration with Payment Gateway",
+            "feature4": "Integration with Installment Gateway",
+            "feature5": "Integration with Shipping Gateway",
+            "feature6": "Invoice Issuance and Printing",
+            "feature7": "Discount Coupons and Offers"
+          }
+        }
+      }
+    },
+    "DeliverySection": {
+      "title": "Shipping and Delivery",
+      "subtitle1": "Provide your customers with multiple options for purchasing and shipping, whether it's fast local or international shipping.",
+      "subtitle2": "Efficient management of shipping and delivery operations for all types of products."
+    },
+    "PaymentSection": {
+      "title": "Easy and Secure Payments",
+      "subtitle": "Unlimited solutions...",
+      "description": "Secure payment methods that allow your customers to shop with confidence and safety in every purchase.",
+      "list": {
+        "item1": "E-commerce",
+        "item2": "Different Sectors",
+        "item3": "Technical Support"
+      }
+    },
+    "ExpansionSection": {
+      "title": "Expand Your Business World",
+      "subtitle": "Now you can sell your products fully through your own WhatsApp.",
+      "list1": {
+        "title": "Expand Your Reach and Boost Sales",
+        "item1": "Display your products directly on your WhatsApp Business catalog, making it easy for customers to access and shop.",
+        "item2": "Create advertising campaigns for your catalog on social media platforms."
+      },
+      "list2": {
+        "title": "Centralized Management",
+        "item1": "Automatically update products and prices from your store to the catalog without the need to manually input data",
+        "item2": "Real-time tracking of customer orders directly from your store's dashboard to your WhatsApp."
+      }
+    },
+    "TopServicesSection": {
+      "service1": {
+        "title": "Smart Chatbot for Customer Service",
+        "feature1": "Advanced Artificial Intelligence",
+        "feature2": "Responds to all customer inquiries instantly",
+        "feature3": "Instant replies to customer queries 24/7",
+        "feature4": "Smart recommendations based on customer interests and order history",
+        "feature5": "Complete orders easily without human intervention"
+      },
+      "service2": {
+        "title": "Transform Your E-commerce store into a Professional Mobile App",
+        "description": "Provide the best e-commerce experience for your customers through an app that helps them navigate easily and make payments with a single click.",
+        "feature1": "Apps increase customer loyalty",
+        "feature2": "Boost your sales in a unique way",
+        "feature3": "Available on Google Play and Apple Store",
+        "feature4": "Payment service via Apple Pay"
+      },
+      "service3": {
+        "title": "Accounting and Inventory Management Services",
+        "description": "With a professional and easy-to-use interface, you can add an unlimited number of products and integrate with accounting systems.",
+        "feature1": "Point of Sale (POS) system",
+        "feature2": "Branch management",
+        "feature3": "Integration with accounting systems",
+        "feature4": "Invoice generation and printing",
+        "feature5": "Adding Value Added Tax (VAT)",
+        "feature6": "Inventory management"
+      }
+    },
+    "FeaturesSection": {
+      "title": "Features and Services",
+      "subtitle": "The features available in your online store and the services you need to support your business",
+      "button": "Subscribe now",
+      "gold": "Gold",
+      "silver": "Silver",
+      "Unlimited": "Unlimited",
+      "MultipleGateways": "Multiple Gateways",
+      "OneLanguage": "One Language",
+      "twoLanguages": "two languages",
+      "threeBranches": "3 branches",
+      "branch": "One branch",
+      "tenPages": "Up to 10 pages",
+      "threePages": "3 pages",
+      "workingHours": "Working Hours",
+      "24Hours": "24 Hours",
+      "3": "3",
+      "1": "1",
+
+      "features": {
+        "title": "Features",
+        "feature1": "Number of Products",
+        "feature2": "Number of Orders",
+        "feature3": "Number of Customers",
+        "feature4": "Store Team",
+        "feature5": "Payment Gateways",
+        "feature6": "Shipping and Delivery",
+        "feature7": "Installment Gateways",
+        "feature8": "Languages",
+        "feature9": "Customizable Interface",
+        "feature10": "Create a Custom Page",
+        "feature11": "Purchase Vouchers",
+        "feature12": "Abandoned Carts",
+        "feature13": "Activate Discounts",
+        "feature14": "Search Engine Optimization (SEO)",
+        "feature15": "Affiliate Marketing",
+        "feature16": "Google Analytics Integration",
+        "feature17": "Pixel Code Integration",
+        "feature18": "Analytics",
+        "feature19": "Branch Management",
+        "feature20": "Price by Region",
+        "feature21": "Import/Export Products",
+        "feature22": "Discount for App Customers",
+        "feature23": "Free Shipping Discount",
+        "feature24": "Order Tracking",
+        "feature25": "Inventory Management",
+        "feature26": "Store Security Tools",
+        "feature27": "Invoice Generation and Printing",
+        "feature28": "WhatsApp Support"
+      }
+    },
+    "ServicesSection": {
+      "title": "Enjoy the Freedom to Customize Your Package with Add-ons",
+      "dollar": "$",
+      "rial_saudi": "SAR",
+      "dinar_kuwaiti": "KWD",
+      "rial_omani": "OMR",
+      "month": "Month",
+      "addons": {
+        "whatsapp": "WhatsApp Business Integration",
+        "whatsapp_desc": "Enable seamless purchasing for new customers by integrating your catalog with WhatsApp Business.",
+
+        "sms": "SMS Messaging",
+        "sms_desc": "Stay connected with your customers by sending marketing messages and order tracking updates.",
+
+        "chatbot": "Chatbot",
+        "chatbot_desc": "Enhance engagement and response speed with instant messaging and automated replies to customer inquiries.",
+
+        "pos": "Point of Sale (POS) System",
+        "pos_desc": "Our POS system offers the best solution for managing in-store sales operations efficiently.",
+
+        "driver": "Driver Management System",
+        "driver_desc": "Manage and organize your drivers with precision to facilitate delivery operations and tracking.",
+
+        "mobile_app": "Store Mobile App Development",
+        "mobile_app_desc": "Launch a dedicated mobile app for your store to provide a smooth shopping experience and boost sales.",
+
+        "consultant": "Store Management Consultant",
+        "consultant_desc": "Ensure brand success and increase sales by appointing a dedicated expert to fully manage your control panel.",
+
+        "content_upload": "Content Upload Service",
+        "content_upload_desc": "Easily add products and pages to your store with multilingual content support.",
+
+        "seo": "Search Engine Optimization (SEO)",
+        "seo_desc": "Boost your store’s ranking on Google with SEO services, including content writing and relevant articles.",
+
+        "marketing_consultant": "Store Marketing Consultant",
+        "marketing_consultant_desc": "Hire a marketing specialist to create ad campaigns and manage your store’s social media accounts.",
+
+        "table_reservation": "Table Reservation System",
+        "table_reservation_desc": "Simplify customer reservations with an efficient table booking system.",
+
+        "multi_vendor": "Multi-Vendor Marketplace",
+        "multi_vendor_desc": "Allow multiple vendors to create profiles and list their products on your store to benefit from shared sales."
+      }
+    },
+    "TemplatesSection": {
+      "title": "Here is your store, no matter your field!",
+      "subtitle": "We are here to meet all your needs, offering a variety of services for all industries.",
+      "order": "Request a preview of the premium templates",
+      "perfumes": "Perfumes",
+      "children_toys": "Children's Toys",
+      "furniture_home": "Furniture & Home Furnishings",
+      "electronic_devices": "Electronic Devices",
+      "abayas_fashion": "Abayas & Fashion",
+      "household_items": "Household Items",
+      "gifts_decor": "Gifts & Decor",
+      "accessories": "Accessories",
+      "digital_products": "Digital Products",
+      "restaurants_cafes": "Restaurants & Cafés"
+    }
+  },
+  "DesignMotion": {
+    "Hero": {
+      "title": "Graphic Design",
+      "description": "We strive for excellence, creativity, and modernity in delivering unique visual identities and advertisements to our clients in a competitive market.",
+      "list": {
+        "item1": "Fast Delivery",
+        "item2": "Affordable Prices",
+        "item3": "Revisions until Customer Satisfaction"
+      },
+      "tabs": {
+        "tab1": "Logos",
+        "tab2": "Visual Identities",
+        "tab3": "Social Media",
+        "tab4": "Profiles and Greetings"
+      }
+    },
+    "DesignVideoPackages": {
+      "title": "Design and Video Packages",
+      "button": "Order now",
+      "dollar": "$",
+      "rial_saudi": "SAR",
+      "dinar_kuwaiti": "KWD",
+      "rial_omani": "OMR",
+      "packages": {
+        "package1": {
+          "title": "Visual Identity",
+          "features": {
+            "feature1": "Professional Logo Design",
+            "feature2": "Create Visual Identity (Colors + Fonts + Icons)",
+            "feature3": "Business Card",
+            "feature4": "Stamp, Official Paper, and Envelope Design",
+            "feature5": "Official Invoice and Receipt Design",
+            "feature6": "Employee Uniform and Print Design",
+            "feature7": "Comprehensive Guide for Professional Identity Usage"
+          }
+        },
+        "package2": {
+          "title": "Motion Graphics",
+          "features": {
+            "feature1": "Script Writing",
+            "feature2": "Story Boarding",
+            "feature3": "Visual Elements Design",
+            "feature4": "Character Design",
+            "feature5": "Incorporating Texts and Logos",
+            "feature6": "Professional Voiceover in Various Languages and Accents",
+            "feature7": "Background Music and Sound Effects"
+          }
+        },
+        "package3": {
+          "title": "Video Editing",
+          "features": {
+            "feature1": "Script Writing",
+            "feature2": "Collect Materials (Videos and Images)",
+            "feature3": "Editing and Improving Material Quality",
+            "feature4": "Adding Visual Effects",
+            "feature5": "Incorporating Text and Animated Titles",
+            "feature6": "Providing Formats Suitable for Different Platforms",
+            "feature7": "Providing Various Sizes for Different Platforms"
+          }
+        }
+      }
+    },
+    "MotionSection": {
+      "title": "Motion Graphics and Video Editing",
+      "description": "We believe that every frame tells a story, and our professional team brings your story to life.",
+      "list": {
+        "item1": "Script Writing",
+        "item2": "2D / 3D",
+        "item3": "Voiceover Accent Variety"
+      }
+    }
+  },
+  "MarketingCampaigns": {
+    "HeroSection": {
+      "title": "Marketing with Us is Different",
+      "description": "In short, we take you to your goal.",
+      "button": "Request a Free Consultation"
+    },
+    "PackagesSection": {
+      "title": "Social Media Marketing Packages",
+      "button": "Subscribe Now",
+      "dollar": "$",
+      "rial_saudi": "SAR",
+      "dinar_kuwaiti": "KWD",
+      "rial_omani": "OMR",
+      "silver": {
+        "title": "Silver",
+        "description": "Faster Reach",
+        "feature1": "Monthly Content Plan",
+        "feature2": "Monthly Cover for Platforms",
+        "feature3": "20 Designs",
+        "feature4": "Writing 20 Creative Contents",
+        "feature5": "Designing 20 Stories",
+        "feature6": "Competitor Analysis",
+        "feature7": "Setting Up the Ad Account",
+        "feature8": "Designing 8 Videos - Reels",
+        "feature9": "Building Automated Welcome Responses for Accounts",
+        "feature10": "Pinning Location on Google Maps",
+        "feature11": "Responding, Commenting, and Engaging with the Audience",
+        "feature12": "Tracking Hashtags and Trends",
+        "feature13": "Analytical and Marketing  Tools",
+        "feature14": "Monthly Performance Report"
+      },
+      "gold": {
+        "title": "Gold",
+        "description": "Stronger Performance",
+        "feature1": "Monthly Content Plan",
+        "feature2": "Monthly Cover for Platforms",
+        "feature3": "35 Designs",
+        "feature4": "Writing 35 Creative Contents",
+        "feature5": "Designing 35 Stories",
+        "feature6": "Competitor Analysis",
+        "feature7": "Setting Up the Ad Account",
+        "feature8": "Managing Ad Campaigns",
+        "feature9": "Designing 15 Videos - Reels",
+        "feature10": "Building Automated Welcome Responses for Accounts",
+        "feature11": "Pinning Location on Google Maps",
+        "feature12": "Responding, Commenting, and Engaging with the Audience",
+        "feature13": "Tracking Hashtags and Trends",
+        "feature14": "Analytical and Marketing  Tools",
+        "feature15": "Monthly Performance Report"
+      },
+      "bronze": {
+        "title": "Bronze",
+        "description": "The Beginning of Success",
+        "feature1": "Monthly Content Plan",
+        "feature2": "Monthly Cover for Platforms",
+        "feature3": "15 Designs",
+        "feature4": "Writing 15 Creative Contents",
+        "feature5": "Designing 15 Stories",
+        "feature6": "Competitor Analysis",
+        "feature7": "Setting Up the Ad Account",
+        "feature8": "Designing 4 Videos - Reels",
+        "feature9": "Building Automated Welcome Responses for Accounts",
+        "feature10": "Responding, Commenting, and Engaging with the Audience",
+        "feature11": "Tracking Hashtags and Trends",
+        "feature12": "Monthly Performance Report"
+      }
+    },
+    "SeoSection": {
+      "title": "Success with SEO Services",
+      "description": "SEO helps you achieve top visibility in search engine results, making it easier for your target customers to reach your website.",
+      "benefits": {
+        "increase_visibility": {
+          "title": "Increasing Your Website’s Visibility in Search Results",
+          "description": "SEO helps improve your website's ranking on search engine results pages (SERPs), increasing the likelihood of visitors reaching your site."
+        },
+        "targeted_visitors": {
+          "title": "Attracting Targeted Visitors",
+          "description": "SEO focuses on attracting people who are searching for products or services similar to what you offer, increasing the chances of converting them into customers."
+        },
+        "better_user_experience": {
+          "title": "Better User Experience",
+          "description": "Part of SEO includes improving the website's speed, design, and content organization, making browsing the site easier."
+        },
+        "increase_sales": {
+          "title": "Increasing Sales",
+          "description": "By targeting the right keywords, SEO helps drive the most likely buyers to your website."
+        },
+        "performance_tracking": {
+          "title": "Measuring Results and Improving Performance",
+          "description": "You can continuously track your website's performance and make improvements based on the data."
+        }
+      },
+      "services": {
+        "title": "Comprehensive SEO Services for Your Website from In Brief",
+        "description": "What you will get from our SEO service?",
+        "analysis": {
+          "title": "Current Website Analysis"
+        },
+        "keyword_optimization": {
+          "title": "Keyword Optimization"
+        },
+        "keyword_research": {
+          "title": "Keyword Research",
+          "description": "In-depth research to find the best keywords for your business."
+        },
+        "performance_tracking": {
+          "title": "Tracking Results and Improving Performance",
+          "description": "Monitor and refine SEO strategies based on data insights."
+        },
+        "on_page_seo": {
+          "title": "On-page SEO",
+          "description": "Optimizing content, HTML, and website structure for better rankings."
+        },
+        "local_seo": {
+          "title": "Local SEO",
+          "description": "Enhancing local search visibility to attract nearby customers."
+        },
+        "technical_seo": {
+          "title": "Technical SEO",
+          "description": "Improving website speed, security, and indexing for better performance."
+        },
+        "off_page_seo": {
+          "title": "Off-page SEO",
+          "description": "Building backlinks and improving external authority signals."
+        }
+      }
+    },
+    "SocialMediaSection": {
+      "title": "Social Media Account Management",
+      "description": "Make your brand shine across social media platforms.",
+      "item1": {
+        "title": "Creating Engaging Content",
+        "feature1": "Provide regular reports on performance, including engagement and growth.",
+        "feature2": "Analyze audience behavior and offer actionable recommendations."
+      },
+      "item2": {
+        "title": "Publishing Strategies",
+        "feature1": "Schedule posts at optimal times to enhance visibility.",
+        "feature2": "se analytical tools to understand engagement patterns and audience preferences."
+      },
+      "item3": {
+        "title": "Performance Analysis",
+        "feature1": "Design visual and textual content that aligns with your brand identity.",
+        "feature2": "Produce Short and Attention-Grabbing Videos to Boost Engagement"
+      }
+    },
+    "AdvertisingCampaigns": {
+      "title": "Paid Advertising Campaigns",
+      "description": "We help you design and execute effective advertising campaigns.",
+      "item1": {
+        "title": "Performance and Return Analysis",
+        "feature1": "Measuring Campaign Effectiveness Using Key Performance Indicators (KPIs)",
+        "feature2": "Providing Reports and Recommendations for Improvement"
+      },
+      "item2": {
+        "title": "Precise Targeting",
+        "feature1": "Targeting Specific Audiences Based on Their Interests and Behavior",
+        "feature2": "Using Techniques like Retargeting to Increase Campaign Effectiveness"
+      },
+      "item3": {
+        "title": "Creative Campaign Design",
+        "feature1": "Developing an Innovative Advertising Strategy Aligned with Your Goals",
+        "feature2": "Designing Visually Appealing Advertisements"
+      }
+    },
+    "MarketingStrategies": {
+      "title": "Marketing Strategies",
+      "description": "We provide you with a customized marketing plan that suits your needs.",
+      "item1": {
+        "title": "Strategy Implementation",
+        "feature1": "Support you in executing plans across marketing channels.",
+        "feature2": "Monitor performance and adjust strategies as needed."
+      },
+      "item2": {
+        "title": "Goal Setting",
+        "feature1": "Set clear, measurable goals that meet your needs.",
+        "feature2": "Develop strategies to achieve these goals."
+      },
+      "item3": {
+        "title": "Market Analysis",
+        "feature1": "Study trends and behaviors to understand the market.",
+        "feature2": "Analyze competitors to identify opportunities and challenges."
+      }
+    },
+    "ContentStrategies": {
+      "title": "Content Strategies",
+      "description": "We help you develop content that attracts and influences your audience.",
+      "item1": {
+        "title": "Content Management",
+        "feature1": "Monitor performance and adjust strategies based on results.",
+        "feature2": "Provide recommendations to enhance engagement and increase reach."
+      },
+      "item2": {
+        "title": "Content Writing",
+        "feature1": "Enhance content for search engines to boost visibility and improve rankings.",
+        "feature2": "Writing Specialized Marketing Copy."
+      },
+      "item3": {
+        "title": "Content Planning",
+        "feature1": "Create a comprehensive content calendar.",
+        "feature2": "Identify the most suitable content types for your audience (articles, designs, videos)."
+      }
+    }
+  },
+  "InformationalReservation": {
+    "HeroSection": {
+      "title": "Create your website now",
+      "description1": "Turn your idea into a digital reality with ease and professionalism.",
+      "description2": "Create your website and start your journey to success today!",
+      "contactButton": "Contact Us",
+      "startButton": "Start Now"
+    },
+    "ProceduresSection": {
+      "title": "We guarantee you the fastest procedures",
+      "subtitle": "Strict measures we follow to ensure the successful execution of projects.",
+      "Feature1": {
+        "title": "Free Domain",
+        "description": "Get a professional free domain to enhance your digital identity."
+      },
+      "Feature2": {
+        "title": "Official Emails",
+        "description": "Create a professional email that reflects your brand’s credibility."
+      },
+      "Feature3": {
+        "title": "Flexible Control Panel",
+        "description": "Full and easy control of your website and settings without complexity."
+      },
+      "Feature4": {
+        "title": "Security Certificates for Website Safety",
+        "description": "Secure your website data with SSL certificates to protect visitors and information."
+      },
+      "Feature5": {
+        "title": "Technical Support",
+        "description": "A dedicated team available to assist you and resolve issues quickly."
+      },
+      "Feature6": {
+        "title": "Compatible with All Screens",
+        "description": "A responsive design ensuring a perfect experience on all devices."
+      }
+    },
+    "title": "Get a website for all industries.",
+    "subtitle": "Websites that suit all your needs, no matter your industry.",
+    "cta": "For inquiries and to request a demo version.",
+    "reservationSection": {
+      "title": "Booking and Rental Website",
+      "description": "Booking websites are an effective tool for simplifying the search and reservation process, offering multiple options and easy price comparison. These platforms provide user reviews and experiences, helping customers make informed decisions that suit their needs. They also enhance convenience with the ability to make instant bookings.",
+      "feature1": "Flexible and Easy Booking",
+      "feature2": "Notifications and booking reminders",
+      "feature3": "Booking management",
+      "feature4": "Secure online payments",
+      "feature5": "Easy price comparison and filtering",
+      "category1": "Flight Bookings",
+      "category2": "Yacht Rentals",
+      "category3": "Car Rentals",
+      "category4": "Hotel Reservations",
+      "category5": "Apartment Rentals"
+    },
+    "clinicalSection": {
+      "title": "A Website for Clinics and Medical Centers",
+      "description": "Medical websites simplify the appointment booking process, saving time and effort for patients. They also provide accurate information about doctors and specialties, along with the option for online consultations, enhancing the healthcare experience.",
+      "feature1": "Flexible and Easy Appointment Booking",
+      "feature2": "Notifications and reminders for appointments",
+      "feature3": "Patient file management through the control panel",
+      "feature4": "Secure online payments",
+      "feature5": "Online medical consultations",
+      "category1": "Clinics",
+      "category2": "Medical Centers",
+      "category3": "Personal Clinic",
+      "category4": "Medical Center"
+    },
+    "PersonalBookingSection": {
+      "title": "Personal Booking Website",
+      "description": "Personal booking website services provide tailored solutions that meet the needs of various industries. These solutions allow users to easily organize their appointments, enhancing efficiency and improving the customer experience.",
+      "feature1": "Flexible and Easy Appointment Booking",
+      "feature2": "Secure online payments",
+      "feature3": "Notifications and booking reminders",
+      "feature4": "Personal client account",
+      "feature5": "Booking management",
+      "feature6": "Option to set a specific time for consultations",
+      "category1": "Lawyer",
+      "category2": "Human Resources Specialist",
+      "category3": "Consultant",
+      "category4": "Interior Designer",
+      "category5": "Photographer",
+      "category6": "Trainer"
+    },
+    "NonProfitSection": {
+      "title": "Professional Websites for Your Nonprofit Organizations",
+      "description": "The websites aim to promote the social message, embrace your organization's values, and reflect its vision.",
+      "feature1": "Donation Section",
+      "feature2": "Generating Reports and Statistics",
+      "feature3": "Surveys",
+      "feature4": "Volunteer Opportunities",
+      "feature5": "Beneficiary Registration",
+      "feature6": "Sharing Events and Occasions",
+      "category1": "Elderly Care Homes",
+      "category2": "Orphan Care",
+      "category3": "Charitable Organization",
+      "category4": "Childcare Nursery",
+      "category5": "Guide"
+    },
+    "InformationalSection": {
+      "title": "Informational Websites",
+      "description": "Informational websites for companies and organizations serve as a primary platform to showcase the corporate identity and essential information. They help build trust with clients by providing accurate details about services and vision. These websites also offer an effective communication channel, enhancing opportunities for collaboration and growth.",
+      "category1": "Import and Export Companies",
+      "category2": "Factories",
+      "category3": "Engineering Companies",
+      "category4": "Real Estate Companies",
+      "category5": "General Trading Companies",
+      "category6": "Logistics Services"
+    }
+  },
+  "ContactUs": {
+    "title": "Fill out the form,",
+    "subtitle": "and our team will contact you.",
+    "field1": "Name",
+    "field2": "Mobile number",
+    "field3": "E-mail",
+    "field4": "Service type",
+    "field5": "Your Message",
+    "write_your_name": "Write your name",
+    "enter_phone_number": "Enter your phone number",
+    "phone_number_min_length": "The phone number must be at least 8 digits",
+    "invalid_email": "Invalid email address",
+    "other_inquiries": "Other Inquiries",
+    "mobile_app_development": "Mobile App Development",
+    "website_development": "Website Development",
+    "e_commerce": "E-commerce",
+    "graphic_design": "Graphic Design",
+    "motion_graphic": "Motion Graphic",
+    "content_marketing": "Content and Marketing Campaigns",
+    "write_message": "Write a message to us",
+    "submit": "Submit",
+    "request_received": "Your request has been received",
+    "response_time": "You will receive a response within 24 hours, thank you."
+  },
+  "Feedback": {
+    "Testimonials": {
+      "title": "Customer Feedback",
+      "company1": {
+        "say": "Thank you for your excellent service, quick responses, and top-tier interaction. Wishing you continued success.",
+        "company": "Automatic Doors Factory Academy",
+        "location": "Saudi Arabia"
+      },
+      "company2": {
+        "say": "Excellent work, professional interaction, and great results in a short time. Wishing you continued success!",
+        "company": "Al-Muzahimiyah Broker",
+        "location": "Saudi Arabia"
+      },
+      "company3": {
+        "say": "Outstanding work, execution, and design, with flexibility in handling and great teamwork. Thank you from the heart.",
+        "company": "Overseas Medical Center",
+        "location": "India"
+      },
+      "company4": {
+        "say": "The rating is excellent, the work is beautiful, the interaction is flexible and sophisticated, and I will work with you again.",
+        "company": "Bakala Project",
+        "location": "Saudi Arabia"
+      },
+      "company5": {
+        "say": "Professional interaction and truly high-quality work. I worked with them on Jorilax, and the work was of excellent quality. I am considering collaborating with them on future projects.",
+        "company": "Jorilax",
+        "location": "Saudi Arabia"
+      },
+      "company6": {
+        "say": "Excellent service, great approach, punctuality, and affordable costs – one of the best companies.",
+        "company": "Rawand Center",
+        "location": "Hashemite Kingdom of Jordan"
+      },
+      "company7": {
+        "say": "What sets you apart is your great communication, fast delivery, multiple options for clients, and creativity. Wishing you continued success, as you truly excel in your work.",
+        "company": "Naqla Company – Ziyad Al-Saeedi",
+        "location": "Saudi Arabia"
+      },
+      "company8": {
+        "say": "I thank your wonderful team for their work in design and their excellent customer service. I recommend project owners to work with you and wish you continued success and prosperity.",
+        "company": "Al-Qamar Company",
+        "location": "Saudi Arabia"
+      },
+      "company9": {
+        "say": "A company with excellent service, innovative and professional designs, and most importantly, speed and adaptability to client revisions.",
+        "company": "Mukaabat Company",
+        "location": "Saudi Arabia"
+      }
+    }
+  },
+  "Form": {
+    "title": "Would you like to start a new project?",
+    "placeholder": "enter your phone number or email address",
+    "button": "send",
+    "success_message": "Your message has been successfully received."
+  },
+  "footer": {
+    "title": "The best leading platform for software and marketing in the Arab world",
+    "license": {
+      "title": "Licensing number",
+      "number": "CR 1559152"
+    },
+    "workingHours": {
+      "title": "Working Hours",
+      "time": "From 8 AM to 8 PM daily, except on Fridays."
+    },
+    "rights": "All rights reserved to Inbrief Software and Marketing Company",
+    "email": "contact@inbrief.click",
+    "locations": "Locations",
+    "location1": {
+      "city": "Dammam",
+      "location": "King Fahd Road with Othman Ibn Affan Road, opposite Al-Mujallal Tower",
+      "phone": "+966552647805"
+    },
+    "location2": {
+      "city": "Kuwait",
+      "location": "Farwaniya - Khaitan - Public Authority for Investment - 1st Floor - 13",
+      "phone": "+96550337772"
+    },
+    "location3": {
+      "city": "Muscat",
+      "location": "Al-Azaiba - 18th November - Opposite Bank Muscat",
+      "phone": "+96877276659"
+    },
+    "location4": {
+      "city": "Germany",
+      "location": "Gerhard-Küchen-Straße 14, 45141 Essen",
+      "phone": "+49 1522 4999190"
+    },
+    "links": {
+      "title": "Links That Matter",
+      "link1": "About Us",
+      "link2": "Mobile Applications",
+      "link3": "E-commerce",
+      "link4": "Informational & Reservation Sites",
+      "link5": "Design & Motion",
+      "link6": "Marketing & Campaigns"
+    }
+  }
+}

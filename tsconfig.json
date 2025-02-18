@@ -1,10 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true, // Allows JavaScript files in the project
     "skipLibCheck": true, // Skip type checking of declaration files
     "strict": false, // Disable all strict type-checking options
@@ -25,9 +21,7 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     },
     "noEmit": true,
     "strictNullChecks": true
@@ -37,11 +31,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/pages/_document.tsx" // Ensure correct spelling of file
-    ,
-    "out/types/**/*.ts"
+    "src/pages/_document.tsx", // Ensure correct spelling of file
+    "out/types/**/*.ts",
+    "src/constants/its"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

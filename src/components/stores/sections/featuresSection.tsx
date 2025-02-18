@@ -1,102 +1,93 @@
-import React from "react"
-import Image from "next/image"
+import React from "react";
 
 // Components
-import Grid from "@mui/material/Grid2"
-import { Button } from "@mui/material"
+import Grid from "@mui/material/Grid2";
+import { Button } from "@mui/material";
 
 // Images & Icons
-import Checked from "../../../../public/icons/checkedIcon.svg"
-import Available from "../../../../public/icons/availableIcon.svg"
+import Checked from "../../../../public/icons/checkedIcon.svg";
+import Available from "../../../../public/icons/availableIcon.svg";
+import { useTranslations } from "next-intl";
 
 const features = [
-  "عدد المنتجات",
-  "عدد الطلبات",
-  "عدد العملاء",
-  "فريق المتجر",
-  "بوابات الدفع",
-  "الشحن والتوصيل",
-  "بوابات التقسيط",
-  "اللغات",
-  "تخصيص واجهة",
-  "انشاء صفحة مخصصة",
-  "قسائم شراء",
-  "السلات المتروكة",
-  "تفعيل الخصومات",
-  "دعم محركات البحث",
-  "التسويق بالعمولة",
-  "ربط جوجل انالتيكس",
-  "ربط البيكسل كود",
-  "التحليلات",
-  "ادارة الفرع",
-  "السعر حسب المنطقة",
-  "استيراد / تصدير المنتجات",
-  "خصم لعملاء التطبيق",
-  "خصم الشحن المجاني",
-  "تتبع الاوردرات",
-  "ادارة المخزون",
-  "ادوات حماية المتجر",
-  "اصدار وطباعة الفواتير",
-  "الدعم واتساب",
-]
+  "features.feature1",
+  "features.feature2",
+  "features.feature3",
+  "features.feature4",
+  "features.feature5",
+  "features.feature6",
+  "features.feature7",
+  "features.feature8",
+  "features.feature9",
+  "features.feature10",
+  "features.feature11",
+  "features.feature12",
+  "features.feature13",
+  "features.feature14",
+  "features.feature15",
+  "features.feature16",
+  "features.feature17",
+  "features.feature18",
+  "features.feature19",
+  "features.feature20",
+  "features.feature21",
+  "features.feature22",
+  "features.feature23",
+  "features.feature24",
+  "features.feature25",
+  "features.feature26",
+  "features.feature27",
+  "features.feature28",
+];
 
 const packages = [
   {
-    title: "الفضية",
+    title: "silver",
     features: [
-      "لا محدود",
-      "لا محدود",
-      "لا محدود",
+      "Unlimited",
+      "Unlimited",
+      "Unlimited",
       "1",
       "checked",
       "checked",
       "checked",
-      "لغة واحدة",
+      "OneLanguage",
       "",
-      "3 صفحات",
+      "threePages",
       "checked",
       "checked",
       "checked",
       "checked",
-      "",
-      "checked",
-      "checked",
-      "checked",
-      "فرع واحد",
       "",
       "checked",
       "checked",
       "checked",
+      "branch",
+      "",
       "checked",
       "checked",
       "checked",
       "checked",
-      "أوقات الدوام",
+      "checked",
+      "checked",
+      "checked",
+      "workingHours",
     ],
     link: "https://store.inbrief.click/subsription/منتج/الباقة-الفضية/",
   },
   {
-    title: "الذهبية",
+    title: "gold",
     features: [
-      "لا محدود",
-      "لا محدود",
-      "لا محدود",
+      "Unlimited",
+      "Unlimited",
+      "Unlimited",
       "3",
       "checked",
-      "تعدد البوابات",
+      "MultipleGateways",
       "checked",
-      "لغتين",
+      "twoLanguages",
       "checked",
-      "حتى 10 صفحات",
-      "checked",
-      "checked",
-      "checked",
-      "checked",
-      "checked",
-      "checked",
-      "checked",
-      "checked",
-      "3 فروع",
+      "tenPages",
       "checked",
       "checked",
       "checked",
@@ -105,16 +96,26 @@ const packages = [
       "checked",
       "checked",
       "checked",
-      "٢٤ ساعة",
+      "threeBranches",
+      "checked",
+      "checked",
+      "checked",
+      "checked",
+      "checked",
+      "checked",
+      "checked",
+      "checked",
+      "24Hours",
     ],
     link: "https://store.inbrief.click/subsription/منتج/الباقة-الذهبية/",
   },
-]
+];
 
 const FeaturesSection = () => {
+  const t = useTranslations("ECommerce.FeaturesSection");
   const goToSite = (link) => {
-    window.open(link, "_target")
-  }
+    window.open(link, "_target");
+  };
 
   return (
     <div className="featuresSection" id="features">
@@ -143,8 +144,8 @@ const FeaturesSection = () => {
         <Grid size={{ xs: 12 }}>
           <div style={{ margin: "0 auto" }}>
             <div className="sectionHead">
-              <h2>أهم المزايا والخدمات</h2>
-              <p>المزايا المتوفرة في المتجر الإلكتروني الخاص بك والخدمات التي تحتاجها لدعم نشاطك</p>
+              <h2>{t("title")}</h2>
+              <p>{t("subtitle")}</p>
             </div>
           </div>
         </Grid>
@@ -168,12 +169,12 @@ const FeaturesSection = () => {
           <Grid size={{ xs: 4 }}>
             <div>
               <div className="featuresCard">
-                <h3>المميزات</h3>
+                <h3>{t("features.title")}</h3>
 
                 <ul>
-                  {features.map((feature) => (
-                    <li key={feature}>
-                      <Checked /> <span>{feature}</span>
+                  {features.map((feature, index) => (
+                    <li key={index}>
+                      <Checked /> <span>{t(feature)}</span>
                     </li>
                   ))}
                 </ul>
@@ -187,7 +188,7 @@ const FeaturesSection = () => {
                 <div className={`features`}>
                   <div className="content">
                     <div className="packageHead">
-                      <h4>{item.title}</h4>
+                      <h4>{t(item.title)}</h4>
 
                       <Button
                         sx={{
@@ -197,13 +198,21 @@ const FeaturesSection = () => {
                         }}
                         onClick={() => goToSite(item.link)}
                       >
-                        الاشتراك الآن
+                        {t("button")}
                       </Button>
                     </div>
 
                     <ul>
-                      {item.features.map((feature) => (
-                        <li key={feature}>{feature !== "checked" ? feature : <Available />}</li>
+                      {item.features.map((feature, index) => (
+                        <li key={`${feature}-${index}`}>
+                          {feature === "checked" ? (
+                            <Available />
+                          ) : feature === "" ? (
+                            ""
+                          ) : (
+                            t(feature)
+                          )}
+                        </li>
                       ))}
                     </ul>
                   </div>
@@ -214,7 +223,7 @@ const FeaturesSection = () => {
         </Grid>
       </Grid>
     </div>
-  )
-}
+  );
+};
 
-export default FeaturesSection
+export default FeaturesSection;

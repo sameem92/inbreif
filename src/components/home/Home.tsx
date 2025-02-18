@@ -1,46 +1,34 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 //@ts-nocheck
 
-"use client"
+"use client";
 
-import Image from "next/image"
+import Image from "next/image";
 
 // Components
-import { Box, Container, Card, CardContent, Typography, Grid, Button } from "@mui/material"
-import { motion } from "framer-motion" // Import framer-motion
-import Services from "@/components/home/Services"
-import Social from "@/components/tools/social/social"
-import { ReactTyped } from "react-typed"
+import Services from "@/components/home/Services";
+import Social from "@/components/tools/social/social";
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  Container,
+  Grid,
+  Typography,
+} from "@mui/material";
+import { motion } from "framer-motion"; // Import framer-motion
+import { ReactTyped } from "react-typed";
 
-// Icons
-import icon1 from "../../../public/image/icon1.png"
-import icon2 from "../../../public/image/icon2.png"
-import icon3 from "../../../public/image/icon3.png"
-import icon4 from "../../../public/image/icon4.png"
-
-const items = [
-  {
-    title: "احترافية عالية",
-    icon: icon1,
-  },
-  {
-    title: "خبرة 10+ سنوات",
-    icon: icon2,
-  },
-  {
-    title: "موثقة ومرخصة",
-    icon: icon3,
-  },
-  {
-    title: "أسعار تنافسية",
-    icon: icon4,
-  },
-]
+import { useTranslations } from "next-intl";
+import { HeroList } from "@/constants/page";
 
 export default function Home() {
   const goToWhatsApp = () => {
-    window.open("http://wa.me/96877276659", "_target")
-  }
+    window.open("http://wa.me/96877276659", "_target");
+  };
+
+  const t = useTranslations("Home");
 
   return (
     <>
@@ -80,7 +68,7 @@ export default function Home() {
             <h1 className="main-title">
               <ReactTyped
                 backSpeed={60}
-                strings={["المنصة الأقوى في البرمجيات والتسويق في العالم العربي.", "باختصار نصل بك إلى النجاح الرقمي."]}
+                strings={[`${t("title1")}`, `${t("title2")}`]}
                 typeSpeed={60}
                 loop={true}
               />
@@ -107,7 +95,7 @@ export default function Home() {
               }}
               onClick={goToWhatsApp}
             >
-              اطلب استشارة مجانية
+              {t("consultation")}
             </Button>
           </Container>
 
@@ -117,7 +105,10 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.4, ease: "easeIn" }}
           >
-            <Container sx={{ display: "flex", justifyContent: "center", gap: "2.4rem" }} maxWidth="lg">
+            <Container
+              sx={{ display: "flex", justifyContent: "center", gap: "2.4rem" }}
+              maxWidth="lg"
+            >
               <Box
                 sx={{
                   paddingBottom: "4.8rem",
@@ -134,7 +125,7 @@ export default function Home() {
                     lg: 6, // Spacing for large screens
                   }}
                 >
-                  {items.map((item, index) => (
+                  {HeroList.map((item, index) => (
                     <Grid item key={index} xs={12} custom490={6} sm={6} md={3}>
                       <motion.div
                         whileHover={{ scale: 1.02 }}
@@ -167,6 +158,9 @@ export default function Home() {
                             },
                             "@media(max-width:991px)": {
                               minWidth: "200px",
+                            },
+                            "@media(min-width:900px)": {
+                              minHeight: "240px",
                             },
                           }}
                         >
@@ -208,7 +202,7 @@ export default function Home() {
                                 color: "#ffffff",
                               }}
                             >
-                              {item.title}
+                              {t(item.title)}
                             </Typography>
                           </CardContent>
                         </Card>
@@ -224,5 +218,5 @@ export default function Home() {
 
       <Services />
     </>
-  )
+  );
 }

@@ -1,132 +1,99 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
 //@ts-nocheck
-import React, { useEffect, useState } from "react"
 
 // Components
-import Grid from "@mui/material/Grid2"
-import { Box, Button } from "@mui/material"
-import { motion } from "framer-motion"
+import { Box, Button } from "@mui/material";
+import Grid from "@mui/material/Grid2";
+import { motion } from "framer-motion";
 
 // Icons
-import Checked from "../../../public/icons/checkedIcon.svg"
+import { useLocale, useTranslations } from "next-intl";
+import Checked from "../../../public/icons/checkedIcon.svg";
+import { useCurrency } from "@/context/CurrencyContext";
 
 const plans = [
   {
-    title: "البرونزية",
+    title: "bronze.title",
     USD: "400",
     SAR: "1500",
     KD: "125",
     OMR: "155",
-    label: "بداية نجاح",
+    label: "bronze.description",
     features: [
-      "خطة محتوى شهرية",
-      "غلاف شهري للمنصات",
-      "15 تصميم",
-      "كتابة 15 محتوى إبداعي",
-      "تصميم 15 ستوري",
-      "دراسة المنافسين",
-      "تهيئة الحساب الإعلاني",
-      "تصميم 4 فيديو - Reels",
-      "بناء الرد الترحيبي الآلي في الحسابات",
-      "الرد والتعليق والتفاعل مع الجمهور",
-      "متابعة الهاشتاجات والترندات",
-      "تقرير شهري بالأداء",
+      "bronze.feature1",
+      "bronze.feature2",
+      "bronze.feature3",
+      "bronze.feature4",
+      "bronze.feature5",
+      "bronze.feature6",
+      "bronze.feature7",
+      "bronze.feature8",
+      "bronze.feature9",
+      "bronze.feature10",
+      "bronze.feature11",
+      "bronze.feature12",
     ],
   },
   {
-    title: "الذهبية",
+    title: "gold.title",
     USD: "930",
     SAR: "3500",
     KD: "290",
     OMR: "360",
-    label: "لأداء أقوى",
+    label: "gold.description",
     features: [
-      "خطة محتوى شهرية",
-      "غلاف شهري للمنصات",
-      "35 تصميم",
-      "كتابة 35 محتوى إبداعي",
-      "تصميم 35 ستوري",
-      "دراسة المنافسين",
-      "تهيئة الحساب الإعلاني",
-      "إدارة الحملات الإعلانية",
-      "تصميم 15 فيديو - Reels",
-      "بناء الرد الترحيبي الآلي في الحسابات",
-      "تثبيت الموقع على خرائط جوجل",
-      "الرد والتعليق والتفاعل مع الجمهور",
-      "متابعة الهاشتاجات والترندات",
-      "أدوات تحليلية وتسويقية",
-      "تقرير شهري بالأداء",
+      "gold.feature1",
+      "gold.feature2",
+      "gold.feature3",
+      "gold.feature4",
+      "gold.feature5",
+      "gold.feature6",
+      "gold.feature7",
+      "gold.feature8",
+      "gold.feature9",
+      "gold.feature10",
+      "gold.feature11",
+      "gold.feature12",
+      "gold.feature13",
+      "gold.feature14",
+      "gold.feature15",
     ],
   },
   {
-    title: "الفضية",
+    title: "silver.title",
     USD: "670",
     SAR: "2500",
     KD: "210",
     OMR: "255",
-    label: "وصول أسرع",
+    label: "silver.description",
     features: [
-      "خطة محتوى شهرية",
-      "غلاف شهري للمنصات",
-      "20 تصميم",
-      "كتابة 20 محتوى إبداعي",
-      "تصميم 20 ستوري",
-      "دراسة المنافسين",
-      "تهيئة الحساب الإعلاني",
-      "تصميم 8 فيديو - Reels",
-      "بناء الرد الترحيبي الآلي في الحسابات",
-      "تثبيت الموقع على خرائط جوجل",
-      "الرد والتعليق والتفاعل مع الجمهور",
-      "متابعة الهاشتاجات والترندات",
-      "أدوات تحليلية وتسويقية",
-      "تقرير شهري بالأداء",
+      "silver.feature1",
+      "silver.feature2",
+      "silver.feature3",
+      "silver.feature4",
+      "silver.feature5",
+      "silver.feature6",
+      "silver.feature7",
+      "silver.feature8",
+      "silver.feature9",
+      "silver.feature10",
+      "silver.feature11",
+      "silver.feature12",
+      "silver.feature13",
+      "silver.feature14",
     ],
   },
-]
-
-const currencyMap = {
-  default: { code: "USD", symbol: "دولار" },
-  KSA: { code: "SAR", symbol: "ر.س" },
-  KW: { code: "KD", symbol: "د.ك" },
-  OM: { code: "OMR", symbol: "ر.ع" },
-}
+];
 
 const PackagesSection = () => {
-  const [currency, setCurrency] = useState(null)
-
-  useEffect(() => {
-    const fetchUserLocation = async () => {
-      try {
-        // Example with `ip-api`
-        const response = await fetch("https://ipapi.co/json/")
-        const data = await response.json()
-
-        switch (data.country_code) {
-          case "SA": // Saudi Arabia
-            setCurrency(currencyMap.KSA)
-            break
-          case "KW": // Kuwait
-            setCurrency(currencyMap.KW)
-            break
-          case "OM": // Oman
-            setCurrency(currencyMap.OM)
-            break
-          default:
-            setCurrency(currencyMap.default) // Default to USD
-        }
-      } catch (error) {
-        console.error("Error fetching user location:", error)
-        setCurrency(currencyMap.default)
-      }
-    }
-
-    fetchUserLocation()
-  }, [])
+  const t = useTranslations("MarketingCampaigns.PackagesSection");
+  const locale = useLocale();
+  const { currency } = useCurrency();
 
   const goToSite = (link) => {
-    window.open(link, "_target")
-  }
+    window.open(link, "_target");
+  };
 
   return (
     <div className="package" id="packages">
@@ -164,7 +131,7 @@ const PackagesSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.4, ease: "easeIn" }}
           >
-            <h2 className="main-secandry-title">باقات تسويق حسابات التواصل الاجتماعي</h2>
+            <h2 className="main-secandry-title">{t("title")}</h2>
           </motion.div>
         </Grid>
         <Grid size={{ xs: 12 }}>
@@ -182,7 +149,12 @@ const PackagesSection = () => {
                 },
               }}
             >
-              <Grid container columnSpacing={2} rowSpacing={6} alignItems="flex-end">
+              <Grid
+                container
+                columnSpacing={2}
+                rowSpacing={6}
+                alignItems="flex-end"
+              >
                 {plans?.map((plan, i) => (
                   <Grid key={plan.title} size={{ xs: 12, sm: 4 }}>
                     <motion.div
@@ -193,20 +165,28 @@ const PackagesSection = () => {
                         damping: 10,
                       }}
                     >
-                      <div className={`plancard withMinHeight ${i === 1 ? "gold" : ""}`}>
+                      <div
+                        className={`plancard withMinHeight ${
+                          i === 1 ? "gold" : ""
+                        }`}
+                      >
                         <div className="content">
-                          <h4>{plan.title}</h4>
-                          {currency && (
-                            <div className="plan_price">
-                              <span>{plan[currency.code]}</span>
-                              <span>{currency.symbol}</span>
-                            </div>
+                          <h4>{t(plan.title)}</h4>
+                          {currency &&
+                            currency.symbol !== "not shown" &&
+                            locale !== "de" && (
+                              <div className="plan_price">
+                                <span>{plan[currency.code]}</span>
+                                <span>{t(currency.symbol)}</span>
+                              </div>
+                            )}
+                          {plan.label && (
+                            <div className="label">{t(plan.label)}</div>
                           )}
-                          {plan.label && <div className="label">{plan.label}</div>}
                           <ul>
                             {plan?.features?.map((feature) => (
                               <li key={feature}>
-                                <Checked /> <span>{feature}</span>
+                                <Checked /> <span>{t(feature)}</span>
                               </li>
                             ))}
                           </ul>
@@ -218,7 +198,7 @@ const PackagesSection = () => {
                             }}
                             onClick={() => goToSite("http://wa.me/96877276659")}
                           >
-                            الاشتراك الآن
+                            {t("button")}
                           </Button>
                         </div>
                       </div>
@@ -231,7 +211,7 @@ const PackagesSection = () => {
         </Grid>
       </Grid>
     </div>
-  )
-}
+  );
+};
 
-export default PackagesSection
+export default PackagesSection;

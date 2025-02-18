@@ -1,21 +1,31 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
 //@ts-nocheck
-"use client"
+"use client";
 
-import React, { useState } from "react"
-import { Container, Button, Box, Card, CardContent, Typography, Grid, useMediaQuery } from "@mui/material"
-import { Swiper, SwiperSlide } from "swiper/react"
-import "swiper/css"
-import "swiper/css/navigation"
-import { Navigation } from "swiper/modules"
-import Image from "next/image"
-const icon1 = "/image/icon5.png"
-const icon2 = "/image/icon6.png"
-const icon3 = "/image/icon7.png"
-import { motion } from "framer-motion"
+import React, { useState } from "react";
+import {
+  Container,
+  Button,
+  Box,
+  Card,
+  CardContent,
+  Typography,
+  Grid,
+  useMediaQuery,
+} from "@mui/material";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
+import Image from "next/image";
+const icon1 = "/image/icon5.png";
+const icon2 = "/image/icon6.png";
+const icon3 = "/image/icon7.png";
+import { motion } from "framer-motion";
 
-import YouTube from "react-youtube"
+import YouTube from "react-youtube";
+import { useLocale, useTranslations } from "next-intl";
 
 const videoIds = [
   "mJt9xiEHKf0",
@@ -27,30 +37,32 @@ const videoIds = [
   "YTgJONDYIGk",
   "G-o6kz4_gNM",
   "jfyI8HoR_V8",
-]
+];
 
 const items = [
   {
     icon: icon1,
-    title: "تنوع لهجات التعليق الصوتي",
+    title: "list.item1",
   },
   {
     icon: icon2,
-    title: " 2D / 3D",
+    title: "list.item2",
   },
   {
     icon: icon3,
-    title: "  كتابة سيناريو",
+    title: "list.item3",
   },
-]
+];
 
 export default function Design() {
-  const [isBeginning, setIsBeginning] = useState(true)
-  const [isEnd, setIsEnd] = useState(false)
-  const isTablet = useMediaQuery("(max-width:991px)")
-  const isMobile = useMediaQuery("(max-width:480px)")
-  const [players, setPlayers] = useState<{ [key: number] }>({}) // Store video player instances
-  const totalSlides = 9
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+  const isTablet = useMediaQuery("(max-width:991px)");
+  const isMobile = useMediaQuery("(max-width:480px)");
+  const [players, setPlayers] = useState<{ [key: number] }>({}); // Store video player instances
+  const totalSlides = 9;
+  const t = useTranslations("DesignMotion.MotionSection");
+  const locale = useLocale();
 
   const opts = {
     height: isMobile ? "200px" : isTablet ? "350px" : "500px",
@@ -62,24 +74,24 @@ export default function Design() {
       iv_load_policy: 3,
       disablekb: 1,
     },
-  }
+  };
 
   // Handle video player ready
   const handleVideoReady = (event, index) => {
     setPlayers((prevPlayers) => ({
       ...prevPlayers,
       [index]: event.target, // Store YouTube player instance
-    }))
-  }
+    }));
+  };
 
   // Stop all inactive videos
   const stopVideos = (activeIndex: number) => {
     Object.entries(players).forEach(([index, player]) => {
       if (parseInt(index) !== activeIndex && player) {
-        player.stopVideo() // Stop the video for non-active slides
+        player.stopVideo(); // Stop the video for non-active slides
       }
-    })
-  }
+    });
+  };
 
   return (
     <div id="motion">
@@ -117,9 +129,9 @@ export default function Design() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, ease: "easeIn" }}
             >
-              موشن جرافيك ومونتاج
+              {t("title")}
             </motion.h1>
-            <p className="paragrph">نحن نؤمن أن كل لقطة تروي قصة وفريقنا المحترف يجعل قصتك تنبض بالحياة </p>
+            <p className="paragrph">{t("description")}</p>
           </Container>
 
           <motion.div
@@ -128,7 +140,10 @@ export default function Design() {
             viewport={{ once: true }}
             transition={{ duration: 0.4, ease: "easeIn" }}
           >
-            <Container sx={{ display: "flex", justifyContent: "center", gap: "6rem" }} maxWidth="lg">
+            <Container
+              sx={{ display: "flex", justifyContent: "center", gap: "6rem" }}
+              maxWidth="lg"
+            >
               <Box
                 sx={{
                   width: { xs: "95%", md: "89%", lg: "80%" },
@@ -163,6 +178,7 @@ export default function Design() {
                               lg: "1.1rem 1.2rem",
                             },
                             height: "100%",
+                            minHeight: locale === "ar" ? "auto" : "202px",
                             gap: {
                               xs: "0.6rem",
                               md: "1rem",
@@ -180,7 +196,12 @@ export default function Design() {
                               gap: "1.6rem",
                             }}
                           >
-                            <Image src={item.icon} alt={item.title} width={50} height={50} />
+                            <Image
+                              src={item.icon}
+                              alt={item.title}
+                              width={50}
+                              height={50}
+                            />
                             <Typography
                               variant="h6"
                               sx={{
@@ -198,7 +219,7 @@ export default function Design() {
                                 color: "#ffffff",
                               }}
                             >
-                              {item.title}
+                              {t(item.title)}
                             </Typography>
                           </CardContent>
                         </Card>
@@ -279,7 +300,13 @@ export default function Design() {
                 },
               }}
             >
-              <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                width="18"
+                height="14"
+                viewBox="0 0 18 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -298,17 +325,21 @@ export default function Design() {
                 nextEl: ".next",
               }}
               onSlideChange={(swiper) => {
-                const realIndex = swiper.realIndex
-                setIsBeginning(realIndex === 0)
-                setIsEnd(realIndex === totalSlides - 1)
-                stopVideos(swiper.realIndex) // Clean up videos on slide change
+                const realIndex = swiper.realIndex;
+                setIsBeginning(realIndex === 0);
+                setIsEnd(realIndex === totalSlides - 1);
+                stopVideos(swiper.realIndex); // Clean up videos on slide change
               }}
               modules={[Navigation]}
               className="mySwiper-video"
             >
               {videoIds.map((id, index) => (
                 <SwiperSlide key={index}>
-                  <YouTube videoId={id} opts={opts} onReady={(event) => handleVideoReady(event, index)} />
+                  <YouTube
+                    videoId={id}
+                    opts={opts}
+                    onReady={(event) => handleVideoReady(event, index)}
+                  />
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -348,7 +379,13 @@ export default function Design() {
                 },
               }}
             >
-              <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                width="18"
+                height="14"
+                viewBox="0 0 18 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -361,5 +398,5 @@ export default function Design() {
         </Container>
       </motion.div>
     </div>
-  )
+  );
 }

@@ -1,15 +1,21 @@
-import React from "react"
-import Image from "next/image"
+import Image from "next/image";
 
 // Components
-import Grid from "@mui/material/Grid2"
+import Grid from "@mui/material/Grid2";
 
 // Images & Icons
-import service1 from "../../../../public/images/store/services/service1.png"
-import service2 from "../../../../public/images/store/services/service2.png"
-import service3 from "../../../../public/images/store/services/service3.png"
+import { useLocation } from "@/context/LocationContext";
+import { useLocale, useTranslations } from "next-intl";
+import service1Foreign from "../../../../public/foreign/service1Foreign.png";
+import service1 from "../../../../public/images/store/services/service1.png";
+import service2 from "../../../../public/images/store/services/service2.png";
+import service3 from "../../../../public/images/store/services/service3.png";
 
 const TopServicesSecton = () => {
+  const t = useTranslations("ECommerce.TopServicesSection");
+  const locale = useLocale();
+  const { location } = useLocation();
+
   return (
     <div className="topServicesSecton">
       <div style={{ margin: "0 auto" }}>
@@ -43,20 +49,24 @@ const TopServicesSecton = () => {
           <Grid size={{ xs: 12, sm: 6 }}>
             <div>
               <div className="sectionHead">
-                <h2>شات بوت ذكي لخدمة عملائك</h2>
+                <h2>{t("service1.title")}</h2>
               </div>
               <ul>
-                <li>ذكاء اصطناعي متقدم.</li>
-                <li>يرد على جميع استفسارات عملائك بشكل فوري.</li>
-                <li>ردود فورية على استفسارات العملاء على مدار الساعة.</li>
-                <li>توصية ذكية بناءً على اهتمامات العميل وسجل طلباته.</li>
-                <li>إتمام الطلبات بسهولة دون الحاجة لتدخل بشري.</li>
+                <li>{t("service1.feature1")}</li>
+                <li>{t("service1.feature2")}</li>
+                <li>{t("service1.feature3")}</li>
+                <li>{t("service1.feature4")}</li>
+                <li>{t("service1.feature5")}</li>
               </ul>
             </div>
           </Grid>
           <Grid size={{ xs: 12, sm: 6 }}>
             <div className="img">
-              <Image src={service1} alt="service1" />
+              {locale === "ar" && location === "not_foreign" ? (
+                <Image src={service1} alt="service1" />
+              ) : (
+                <Image src={service1Foreign} alt="service1" />
+              )}
             </div>
           </Grid>
         </Grid>
@@ -100,17 +110,14 @@ const TopServicesSecton = () => {
           >
             <div>
               <div className="sectionHead">
-                <h2>حول متجرك لتطبيق جوال احترافي</h2>
-                <p>
-                  قدم أفضل تجربة للعملاء في التجارة الإلكترونية عن طريق تطبيق يساعد العملاء في التنقل السهلوالسريع
-                  والدفع بنقرة واحدة.
-                </p>
+                <h2>{t("service2.title")}</h2>
+                <p>{t("service2.description")}</p>
               </div>
               <ul>
-                <li>تزيد التطبيقات من ولاء العملاء.</li>
-                <li>تعزيز مبيعاتك بشكل مميز.</li>
-                <li>متوفر على جوجل بلاي و أبل ستور.</li>
-                <li> خدمة الدفع من خلال أبل باي.</li>
+                <li>{t("service2.feature1")}</li>
+                <li>{t("service2.feature2")}</li>
+                <li>{t("service2.feature3")}</li>
+                <li>{t("service2.feature4")}</li>
               </ul>
             </div>
           </Grid>
@@ -148,18 +155,16 @@ const TopServicesSecton = () => {
           <Grid size={{ xs: 12, sm: 6 }}>
             <div>
               <div className="sectionHead">
-                <h2>خدمات المحاسبة و إدارة المخزون</h2>
-                <p>
-                  يمكنك عبر واجهة إحترافية وسهلة الاستخدام، إضافة عدد لا محدود من المنتجات و الربط مع الأنظمة المحاسبية
-                </p>
+                <h2>{t("service3.title")}</h2>
+                <p>{t("service3.description")}</p>
               </div>
               <ul>
-                <li>نظام نقاط للبيع.</li>
-                <li>إدارة الأفرع.</li>
-                <li>ربط مع أنظمة محاسبية.</li>
-                <li>إصدار وطباعة الفواتير.</li>
-                <li>اضافة ضريبة القيمة المضافة.</li>
-                <li>إدارة المخزون.</li>
+                <li>{t("service3.feature1")}</li>
+                <li>{t("service3.feature2")}</li>
+                <li>{t("service3.feature3")}</li>
+                <li>{t("service3.feature4")}</li>
+                <li>{t("service3.feature5")}</li>
+                <li>{t("service3.feature6")}</li>
               </ul>
             </div>
           </Grid>
@@ -171,7 +176,7 @@ const TopServicesSecton = () => {
         </Grid>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TopServicesSecton
+export default TopServicesSecton;

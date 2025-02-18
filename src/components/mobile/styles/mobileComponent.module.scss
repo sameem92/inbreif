@@ -22,7 +22,7 @@
       position: relative;
 
       .content {
-        min-height: 192px;
+        min-height: 300px;
         height: 100%;
         background: #032932 !important;
         backdrop-filter: blur(10px);
@@ -57,7 +57,11 @@
 
       &::before {
         content: "";
-        background-image: linear-gradient(81.07deg, #22373c 53.33%, #18292d 93.73%);
+        background-image: linear-gradient(
+          81.07deg,
+          #22373c 53.33%,
+          #18292d 93.73%
+        );
         top: -1.5px;
         left: -1.5px;
         bottom: -1.5px;
@@ -69,14 +73,20 @@
 
       &:hover {
         &::before {
-          background-image: linear-gradient(81.07deg, #fad414 53.33%, #80660e 93.73%);
+          background-image: linear-gradient(
+            81.07deg,
+            #fad414 53.33%,
+            #80660e 93.73%
+          );
         }
       }
     }
 
     button {
       height: 60px;
-      width: 170px;
+      // width: 170px;
+      padding-left: 24px;
+      padding-right: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -93,7 +103,7 @@
       }
 
       .feature .content {
-        min-height: 180px;
+        min-height: 211px;
         padding: 18px 16px;
         h4 {
           font-size: 18px;

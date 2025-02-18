@@ -1,21 +1,22 @@
-import React from "react"
-import Image from "next/image"
+import React from "react";
+import Image from "next/image";
 
 // Components
-import Grid from "@mui/material/Grid2"
+import Grid from "@mui/material/Grid2";
 
 // Images & Icons
-import delivery from "../../../../public/images/store/delivery.png"
-import SliderS3 from "@/components/tools/sliders/sliderS3"
+import delivery from "../../../../public/images/store/delivery.png";
+import SliderS3 from "@/components/tools/sliders/sliderS3";
 
-import Company1 from "../../../../public/images/store/companies/company1.svg"
-import Company2 from "../../../../public/images/store/companies/company2.svg"
-import Company3 from "../../../../public/images/store/companies/company3.svg"
-import Company4 from "../../../../public/images/store/companies/company4.svg"
-import Company5 from "../../../../public/images/store/companies/company5.svg"
-import Company6 from "../../../../public/images/store/companies/company6.svg"
-import Company7 from "../../../../public/images/store/companies/company7.svg"
-import Company8 from "../../../../public/images/store/companies/company8.svg"
+import Company1 from "../../../../public/images/store/companies/company1.svg";
+import Company2 from "../../../../public/images/store/companies/company2.svg";
+import Company3 from "../../../../public/images/store/companies/company3.svg";
+import Company4 from "../../../../public/images/store/companies/company4.svg";
+import Company5 from "../../../../public/images/store/companies/company5.svg";
+import Company6 from "../../../../public/images/store/companies/company6.svg";
+import Company7 from "../../../../public/images/store/companies/company7.svg";
+import Company8 from "../../../../public/images/store/companies/company8.svg";
+import { useTranslations } from "next-intl";
 
 const companies = [
   <Company1 key="company1" />,
@@ -26,9 +27,11 @@ const companies = [
   <Company6 key="company6" />,
   <Company7 key="company7" />,
   <Company8 key="company8" />,
-]
+];
 
 const DeliverySection = () => {
+  const t = useTranslations("ECommerce.DeliverySection");
+
   return (
     <div className="deliverySection package">
       <div>
@@ -54,7 +57,12 @@ const DeliverySection = () => {
             },
           }}
         >
-          <Grid size={{ xs: 12 }} container justifyContent="space-between" alignItems="center">
+          <Grid
+            size={{ xs: 12 }}
+            container
+            justifyContent="space-between"
+            alignItems="center"
+          >
             <Grid size={{ xs: 12, md: 5 }}>
               <div className="delivery_img">
                 <Image src={delivery} alt="الشحن والتوصيل" />
@@ -63,10 +71,10 @@ const DeliverySection = () => {
 
             <Grid size={{ xs: 12, md: 7 }}>
               <div className="info">
-                <h2>الشحن والتوصيل</h2>
-                <p>وفر لعملائك خيارات متعددة للشراء والشحن سواء كان شحناً سريعاًمحلياً دولياً.</p>
+                <h2>{t("title")}</h2>
+                <p>{t("subtitle1")}</p>
 
-                <p>إدارة فعالة لعمليات الشحن والتوصيل لجميع أنواع المنتجات.</p>
+                <p>{t("subtitle2")}</p>
               </div>
             </Grid>
           </Grid>
@@ -75,7 +83,7 @@ const DeliverySection = () => {
         <SliderS3 images={companies} className="swiper-y" />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DeliverySection
+export default DeliverySection;

@@ -1,0 +1,865 @@
+{
+  "Shared": {
+    "Home": "Startseite",
+    "About": "Über uns",
+    "Mobile": "Mobile Anwendungen",
+    "E_commerce": "E-Commerce",
+    "Web": "Informations & Buchungswebsites",
+    "Motion": "Design & Motion",
+    "Marketing": "Marketing & Kampagnen",
+    "Contact": "Kontaktieren Sie uns",
+    "LearnMore": "Lerne mehr",
+    "Services": "Unsere Dienstleistungen",
+    "Programming_Development": "Programmierung und Entwicklung",
+    "Design_Marketing": "Design und Marketing",
+    "en": "En",
+    "de": "De",
+    "ar": "Ar",
+    "USD": "USD",
+    "SAR": "SAR",
+    "KD": "KD",
+    "OMRr": "OMR"
+  },
+
+  "Home": {
+    "title1": "Die führende Plattform für Software und Marketing in der arabischen Welt.",
+    "title2": "Kurz gesagt, wir bringen Sie zum digitalen Erfolg.",
+    "consultation": "Fordern Sie eine kostenlose Beratung an.",
+    "price": "Wettbewerbsfähige Preise",
+    "licensing": "Geprüfte Lizenzen",
+    "professionalism": "Unübertroffene Professionalität",
+    "experience": "Über 10 Jahre Erfahrung",
+    "softwareServices": "Software-Lösungen",
+    "designMarketingSolution": "Design- und Marketinglösungen",
+    "visualIdentityLogoCreation": "Erstellung von visueller Identität und Logos",
+    "advertisementProfileDesign": "Werbung und Profildesign",
+    "motionGraphicsVideoEditing": "Motion Graphics und Videobearbeitung",
+    "marketingCampaigns": "Marketingkampagnen",
+    "socialMediaAccountManagement": "Management von Social-Media-Konten",
+    "strategicMarketingPlanDevelopment": "Entwicklung strategischer Marketingpläne"
+  },
+  "AboutPage": {
+    "welcome": "Willkommen bei In Brief!",
+    "heroDescription": "Wir sind ein offiziell lizenziertes und führendes Unternehmen, das sich auf Programmierung, App- und Web-Entwicklung sowie digitales Marketing spezialisiert hat, mit einem starken Fokus auf die Bedürfnisse des Golfmarktes. Mit Büros in Saudi-Arabien, Kuwait und Oman bieten wir innovative Lösungen, die die Erfahrungen unserer Kunden verbessern und sie der Konkurrenz vorausbringen.",
+    "whatSetsUsApart": {
+      "title": "Was uns auszeichnet",
+      "description": "Wir streben danach, die erste Anlaufstelle in Deutschland für Kunden zu sein, die nach ganzheitlichen digitalen Lösungen suchen. Wir glauben an die Kraft der Technologie, Unternehmen zu verbessern und Erfolg zu ermöglichen, und arbeiten hart daran, alles bereitzustellen, was erforderlich ist, um die Visionen unserer Kunden zu verwirklichen."
+    },
+    "values": {
+      "title": "Unsere Werte",
+      "value1": {
+        "title": "Innovation",
+        "description": "Wir streben danach, neue Ideen und kreative Lösungen zu liefern."
+      },
+      "value2": {
+        "title": "Qualität",
+        "description": "Wir verpflichten uns, die höchsten Standards der Exzellenz zu wahren."
+      },
+      "value3": {
+        "title": "Transparenz",
+        "description": "Wir bauen vertrauensvolle Beziehungen zu unseren Kunden auf."
+      }
+    },
+    "team": {
+      "title": "Unser Team",
+      "description": "Unser Team besteht aus erfahrenen Fachleuten, die durch eine Leidenschaft für Technologie und Kreativität vereint sind. Wir arbeiten gemeinsam daran, die Ziele unserer Kunden zu erreichen und bieten ihnen bei jedem Schritt unerschütterliche Unterstützung."
+    }
+  },
+  "MobileApps": {
+    "mainTitle": "Mobile Anwendungen",
+    "mainDescription": {
+      "title": "Ideen in Realität verwandeln",
+      "description": "Bei In Brief widmen wir uns der Erstellung außergewöhnlicher Anwendungen, die Funktionalität mit modernem Design vereinen. Lassen Sie uns Ihnen helfen, Ihre digitalen Ziele zu erreichen und Ihre Ideen zum Leben zu erwecken"
+    },
+    "work": {
+      "title": "Unsere Arbeit",
+      "app": "Anwendung"
+    },
+    "features": {
+      "title": "Funktionen",
+      "list": {
+        "feature1": "Gestaltung des Logos für Ihr Projekt.",
+        "feature2": "Programmierung der Anwendung und des Steuerpanels mit modernen Technologien.",
+        "feature3": "Eine Portfolio-Website für Ihr Projekt.",
+        "feature4": "Kostenloses Hosting und Domain für ein Jahr.",
+        "feature5": "Registrierung Ihres Projekts auf Google Maps.",
+        "feature6": "SSL-Zertifikat.",
+        "feature7": "Integration mit lokalen oder internationalen Versanddiensten.",
+        "feature8": "20 offizielle E-Mail-Adressen.",
+        "feature9": "Integration mit einem Messaging-Gateway für OTP-Dienste und Marketing.",
+        "feature10": "Professionelles Design nach Ihrer Wahl.",
+        "feature11": "Kompatibel mit allen Bildschirmgrößen.",
+        "feature12": "SEO-optimiert (Kompatibel mit Suchmaschinen).",
+        "feature13": "Integration mit Ratenzahlungs-Gateways.",
+        "feature14": "Integration mit einem Zahlungsgateway.",
+        "feature15": "Kostenloser technischer Support für ein Jahr.",
+        "feature16": "Mehrsprachiger Support."
+      },
+      "button": "Holen Sie sich jetzt Ihre App"
+    }
+  },
+  "ECommerce": {
+    "HeroSection": {
+      "title": "Holen Sie sich jetzt Ihren E-Commerce-Shop.",
+      "description": "Gestalten Sie jetzt Ihren Online-Shop mit einer Benutzeroberfläche und Dienstleistungen, die Ihnen vollständige Kontrolle bieten – von",
+      "startButton": "Jetzt starten",
+      "contactButton": "Kontaktieren Sie uns"
+    },
+    "MainFeaturesSection": {
+      "feature1": {
+        "title": "Ihr Shop, Ihre Identität",
+        "description": "Ein maßgeschneidertes Design, das auf Ihre Markenidentität abgestimmt ist und professionell erstellt wurde, um Ihre Verkäufe zu steigern",
+        "list": {
+          "item1": "Wählen Sie aus einer Vielzahl von Vorlagen.",
+          "item2": "Die Möglichkeit, die Farben und Schriftarten Ihrer Marke anzupassen.",
+          "item3": "Erstellen Sie Ihre eigene benutzerdefinierte Vorlage."
+        }
+      },
+      "feature2": {
+        "title": "Professionelle Funktionen für alle Pakete",
+        "description": "Dienstleistungen und Vorteile, die Ihr Projekt verbessern und Ihre Reichweite erweitern..",
+        "list": {
+          "item1": "Eigene Domain für Ihren Shop",
+          "item2": "Hohe Sicherheits- und Schutz-Zertifikate",
+          "item3": "Unbegrenzte Kunden und Bestellungen",
+          "item4": "Unbegrenztes Hosting für Besucher"
+        }
+      },
+      "feature3": {
+        "title": "Innovative Marketing-Dienstleistungen",
+        "description": "Wir verwandeln Ihre Ideen in Realität, unterstützt von fortschrittlichen Services, die helfen, Ihre Kundenbasis zu vergrößern.",
+        "list": {
+          "item1": "Zielgerichtete Ansprache verlassener Warenkörbe",
+          "item2": "Kostenloser Versandrabatt",
+          "item3": "Angebote und Rabatte hinzufügen",
+          "item4": "Verwaltung von Marketingkampagnen für Ihren Shop",
+          "item5": "Rabatte für Shop-Kunden",
+          "item6": "Marketing-SMS- und E-Mail-Kampagnen"
+        }
+      }
+    },
+    "PackagesSection": {
+      "title": "Abonnement-Pläne",
+      "description": "Erstellen Sie Ihren E-Commerce-Shop und genießen Sie eine fantastische Erfahrung. Sie können Ihr Abonnement direkt über das Dashboard Ihres Shops upgraden.",
+      "button": "Abonnieren Sie jetzt",
+      "yearLabel": "jährlich",
+      "monthLabel": "Monatlich",
+      "plans": {
+        "moreButton": "Mehr",
+        "dollar": "$",
+        "rial_saudi": "SAR",
+        "dinar_kuwaiti": "KDW",
+        "rial_omani": "OMR",
+
+        "customPlan": {
+          "title": "Benutzerdefinierter Plan",
+          "description": "Sie können Ihren Plan gemäß Ihren spezifischen Bedürfnissen anpassen und die Dienste auswählen, die am besten zu Ihrem Unternehmen passen.",
+          "button": "Kontaktieren Sie uns"
+        },
+        "goldPlan": {
+          "title": "Gold Plan",
+          "features": {
+            "feature1": "Alle Funktionen des Silberplans",
+            "feature2": "Kontrolle über das Store-Design",
+            "feature3": "Mehrere Sprachen",
+            "feature4": "Affiliate-Marketing",
+            "feature5": "Verfolgung und Aktualisierung der Store-Leistung",
+            "feature6": "Verschiedene Versandmethoden",
+            "feature7": "Unterstützung für 3 Filialen",
+            "feature8": "3 Benutzer zur Verwaltung des Shops",
+            "feature9": "24/7 WhatsApp Technischer Support"
+          },
+          "detailsLink": "Mehr"
+        },
+        "silverPlan": {
+          "title": "Silber Plan",
+          "features": {
+            "feature1": "Unbegrenzte Bestellungen",
+            "feature2": "Periodische Berichte und Analysen",
+            "feature3": "Integration mit einem Zahlungsgateway",
+            "feature4": "Integration mit einem Ratenzahlungs-Gateway",
+            "feature5": "Integration mit Versand-Gateway",
+            "feature6": "Rechnungsstellung und -druck",
+            "feature7": "Rabattgutscheine und Angebote"
+          },
+          "detailsLink": "Mehr"
+        }
+      }
+    },
+    "DeliverySection": {
+      "title": "Versand und Lieferung",
+      "subtitle1": "Bieten Sie Ihren Kunden mehrere Optionen für den Kauf und Versand an, sei es schneller lokaler oder internationaler Versand.",
+      "subtitle2": "Effizientes Management der Versand- und Lieferoperationen für alle Produkttypen."
+    },
+    "PaymentSection": {
+      "title": "Einfache und sichere Zahlungen",
+      "subtitle": "Unbegrenzte Lösungen...",
+      "description": "Sichere Zahlungsmethoden, die es Ihren Kunden ermöglichen, mit Vertrauen und Sicherheit bei jedem Kauf einzukaufen.",
+      "list": {
+        "item1": "E-Commerce",
+        "item2": "Verschiedene Sektoren",
+        "item3": "Technischer Support"
+      }
+    },
+    "ExpansionSection": {
+      "title": "Erweitern Sie Ihre Geschäftswelt",
+      "subtitle": "Jetzt können Sie Ihre Produkte vollständig über Ihr eigenes WhatsApp verkaufen.",
+      "list1": {
+        "title": "Erweitern Sie Ihre Reichweite und steigern Sie den Umsatz.",
+        "item1": "Zeigen Sie Ihre Produkte direkt in Ihrem WhatsApp Business- Katalog an, sodass Kunden einfach darauf zugreifen und einkaufen können.",
+        "item2": "Erstellen Sie Werbekampagnen für Ihren Katalog auf sozialen Medienplattformen."
+      },
+      "list2": {
+        "title": "Zentralisierte Verwaltung",
+        "item1": "Aktualisieren Sie automatisch Produkte und Preise von Ihrem Shop zum Katalog, ohne Daten manuell eingeben zu müssen.",
+        "item2": "Echtzeitverfolgung von Kundenbestellungen direkt vom Dashboard Ihres Shops zu Ihrem WhatsApp."
+      }
+    },
+    "TopServicesSection": {
+      "service1": {
+        "title": "Intelligenter Chatbot für den Kundenservice",
+        "feature1": "Fortschrittliche Künstliche Intelligenz",
+        "feature2": "Sofortige Antwort auf alle Kundenanfragen",
+        "feature3": "Sofortige Antworten auf Kundenfragen rund um die Uhr",
+        "feature4": "Smarte Empfehlungen basierend auf den Interessen und der Bestellhistorie der Kunden",
+        "feature5": "Bestellungen einfach ohne menschliches Eingreifen abschließen"
+      },
+      "service2": {
+        "title": "Verwandeln Sie Ihren E-Commerce-Shop in eine professionelle mobile App",
+        "description": "Bieten Sie Ihren Kunden das beste E-Commerce-Erlebnis durch eine App, die ihnen hilft, einfach zu navigieren und mit nur einem Klick zu bezahlen.",
+        "feature1": "Apps erhöhen die Kundentreue",
+        "feature2": "Steigern Sie Ihren Umsatz auf einzigartige Weise",
+        "feature3": "Verfügbar im Google Play Store und im Apple Store",
+        "feature4": "Zahlungsdienst über Apple Pay"
+      },
+      "service3": {
+        "title": "Buchhaltungs- und Bestandsverwaltungsdienste",
+        "description": "Mit einer professionellen und benutzerfreundlichen Oberfläche können Sie eine unbegrenzte Anzahl von Produkten hinzufügen und sich mit Buchhaltungssystemen integrieren.",
+        "feature1": "Point-of-Sale (POS)-System",
+        "feature2": "Filialmanagement",
+        "feature3": "Integration mit Buchhaltungssystemen",
+        "feature4": "Rechnungserstellung und -druck",
+        "feature5": "Hinzufügen der Mehrwertsteuer (MwSt)",
+        "feature6": "Bestandsverwaltung"
+      }
+    },
+    "FeaturesSection": {
+      "title": "Funktionen und Dienstleistungen",
+      "subtitle": "Die Funktionen, die in Ihrem Online-Shop verfügbar sind, und die Dienstleistungen, die Sie benötigen, um Ihr Geschäft zu unterstützen",
+      "gold": "Gold Plan",
+      "silver": "Silber Plan",
+      "Unlimited": "Unbegrenzt",
+      "MultipleGateways": "Mehrere Gateways",
+      "OneLanguage": "Eine Sprache",
+      "twoLanguages": "zwei Sprachen.",
+      "threeBranches": "3 Zweigstellen",
+      "branch": "Eine Zweigstelle",
+      "tenPages": "Bis zu 10 Seiten",
+      "threePages": "3 Seiten",
+      "workingHours": "Arbeitszeiten",
+      "24Hours": "24 Stunden",
+      "button": "Abonnieren Sie jetzt",
+      "3": "3",
+      "1": "1",
+
+      "features": {
+        "title": "Funktionen",
+        "feature1": "Anzahl der Produkte",
+        "feature2": "Anzahl der Bestellungen",
+        "feature3": "Anzahl der Kunden",
+        "feature4": "Filialteam",
+        "feature5": "Zahlungsgateways",
+        "feature6": "Versand und Lieferung",
+        "feature7": "Ratenzahlungs-Gateways",
+        "feature8": "Sprachen",
+        "feature9": "Anpassbare Benutzeroberfläche",
+        "feature10": "Erstellen Sie eine benutzerdefinierte Seite",
+        "feature11": "Kaufgutscheine",
+        "feature12": "Verlassene Warenkörbe",
+        "feature13": "Rabatte aktivieren",
+        "feature14": "Unterstützung für Suchmaschinenoptimierung (SEO)",
+        "feature15": "Affiliate-Marketing",
+        "feature16": "Google Analytics-Integration",
+        "feature17": "Pixel-Code-Integration",
+        "feature18": "Analytik",
+        "feature19": "Filialmanagement",
+        "feature20": "Preis nach Region",
+        "feature21": "Produkte importieren/exportieren",
+        "feature22": "Rabatt für App-Kunden",
+        "feature23": "Rabatt für kostenlosen Versand",
+        "feature24": "Bestellverfolgung",
+        "feature25": "Bestandsverwaltung",
+        "feature26": "Sicherheitstools für den Shop",
+        "feature27": "Rechnungserstellung und -druck",
+        "feature28": "WhatsApp-Support"
+      }
+    },
+    "ServicesSection": {
+      "title": "Genießen Sie die Freiheit, Ihr Paket mit Add-ons anzupassen",
+      "dollar": "$",
+      "rial_saudi": "SAR",
+      "dinar_kuwaiti": "KDW",
+      "rial_omani": "OMR",
+      "month": "Monat",
+      "addons": {
+        "whatsapp": "WhatsApp Business-Integration",
+        "whatsapp_desc": "Ermöglichen Sie neuen Kunden einen nahtlosen Kaufprozess, indem Sie Ihren Katalog mit WhatsApp Business verbinden.",
+
+        "sms": "SMS-Nachrichten",
+        "sms_desc": "Bleiben Sie mit Ihren Kunden in Kontakt, indem Sie ihnen Marketingnachrichten und Bestellverfolgungs-Updates senden.",
+
+        "chatbot": "Chatbot",
+        "chatbot_desc": "Steigern Sie die Interaktion und Antwortgeschwindigkeit mit Sofortnachrichten und automatisierten Antworten auf Kundenanfragen.",
+
+        "pos": "Kassensystem (POS)",
+        "pos_desc": "Unser POS-System bietet die optimale Lösung für eine effiziente Verwaltung der Verkaufsprozesse in Ihren Filialen.",
+
+        "driver": "Fahrermanagement-System",
+        "driver_desc": "Verwalten und organisieren Sie Ihre Fahrer präzise, um die Lieferung und Nachverfolgung zu erleichtern.",
+
+        "mobile_app": "Entwicklung einer mobilen App für den Store",
+        "mobile_app_desc": "Bieten Sie Ihren Kunden eine benutzerfreundliche Einkaufserfahrung mit einer individuellen Store-App und steigern Sie Ihren Umsatz.",
+
+        "consultant": "Beratung zur Store-Verwaltung",
+        "consultant_desc": "Sichern Sie den Erfolg Ihrer Marke und steigern Sie den Umsatz, indem Sie einen Experten zur vollständigen Verwaltung Ihres Dashboards ernennen.",
+
+        "content_upload": "Inhaltsbereitstellung",
+        "content_upload_desc": "Lassen Sie Produkte und Seiten in Ihrem Store hinzufügen – mit Unterstützung für mehrsprachige Inhalte.",
+
+        "seo": "Suchmaschinenoptimierung (SEO)",
+        "seo_desc": "Verbessern Sie Ihr Google-Ranking mit SEO-Diensten, einschließlich passender Inhalte und Artikel.",
+
+        "marketing_consultant": "Marketing-Beratung für den Store",
+        "marketing_consultant_desc": "Beauftragen Sie einen Marketingexperten zur Erstellung von Werbekampagnen und zur Verwaltung Ihrer Social-Media-Kanäle.",
+
+        "table_reservation": "Tischreservierungssystem",
+        "table_reservation_desc": "Vereinfachen Sie die Kundenreservierungen mit einem effizienten Tischbuchungssystem.",
+
+        "multi_vendor": "Multi-Vendor-Marktplatz",
+        "multi_vendor_desc": "Ermöglichen Sie mehreren Händlern, Profile zu erstellen und ihre Produkte in Ihrem Store zu listen, um von gemeinsamen Verkäufen zu profitieren."
+      }
+    },
+    "TemplatesSection": {
+      "title": "Hier ist Ihr Geschäft, egal in welcher Branche Sie tätig sind!",
+      "subtitle": "Wir sind hier, um all Ihre Bedürfnisse zu erfüllen, mit einer Vielzahl von Dienstleistungen für alle Branchen.",
+      "order": "Fordern Sie eine Vorschau der Premium-Vorlagen an",
+      "perfumes": "Parfums",
+      "children_toys": "Kinderspielzeug",
+      "furniture_home": "Möbel & Wohnaccessoires",
+      "electronic_devices": "Elektronische Geräte",
+      "abayas_fashion": "Abayas & Mode",
+      "household_items": "Haushaltswaren",
+      "gifts_decor": "Geschenke & Dekoration",
+      "accessories": "Accessoires",
+      "digital_products": "Digitale Produkte",
+      "restaurants_cafes": "Restaurants & Cafés"
+    }
+  },
+  "DesignMotion": {
+    "Hero": {
+      "title": "Grafikdesign",
+      "description": "Wir streben nach Exzellenz, Kreativität und Modernität, um unseren Kunden einzigartige visuelle Identitäten und Werbeanzeigen in einem wettbewerbsintensiven Markt zu liefern.",
+      "list": {
+        "item1": "Schnelle Lieferung",
+        "item2": "Erschwingliche Preise",
+        "item3": "Überarbeitungen bis zur Kundenzufriedenheit"
+      },
+      "tabs": {
+        "tab1": "Logos",
+        "tab2": "Visuelle Identitäten",
+        "tab3": "Soziale Medien",
+        "tab4": "Profile und Grüße"
+      }
+    },
+    "DesignVideoPackages": {
+      "title": "Design- und Video-Pakete",
+      "button": "Jetzt bestellen",
+      "dollar": "$",
+      "rial_saudi": "SAR",
+      "dinar_kuwaiti": "KDW",
+      "rial_omani": "OMR",
+      "packages": {
+        "package1": {
+          "title": "Visuelle Identität",
+          "features": {
+            "feature1": "Professionelles Logo- Design",
+            "feature2": "Visuelle Identität erstellen (Farben + Schriftarten + Symbole)",
+            "feature3": "Visitenkarte",
+            "feature4": "Design von Stempel, offizieller Papier und Umschlägen",
+            "feature5": "Design von offiziellen Rechnungen und Quittungen",
+            "feature6": "Design von Mitarbeiteruniformen und Drucksachen",
+            "feature7": "Umfassender Leitfaden zur Nutzung der professionellen Identität"
+          }
+        },
+        "package2": {
+          "title": "Bewegte Grafiken",
+          "features": {
+            "feature1": "Drehbuchschreiben",
+            "feature2": "Storyboard-Erstellung",
+            "feature3": "Design visueller Elemente",
+            "feature4": "Charakterdesign",
+            "feature5": "Einfügen von Texten und Logos",
+            "feature6": "Professionelles Voiceover in verschiedenen Sprachen und Akzenten",
+            "feature7": "Hintergrundmusik und Soundeffekte"
+          }
+        },
+        "package3": {
+          "title": "Video Bearbeitung",
+          "features": {
+            "feature1": "Drehbuchschreiben",
+            "feature2": "Materialien sammeln (Videos und Bilder)",
+            "feature3": "Bearbeitung und Verbesserung der Materialqualität",
+            "feature4": "Hinzufügen von visuellen Effekten",
+            "feature5": "Einfügen von Text und animierten Titeln",
+            "feature6": "Bereitstellung von Formaten, die für verschiedene Plattformen geeignet sind",
+            "feature7": "Bereitstellung verschiedener Größen für verschiedene Plattformen"
+          }
+        }
+      }
+    },
+    "MotionSection": {
+      "title": "Bewegungsgrafik und Video-Bearbeitung",
+      "description": "Wir glauben, dass jeder Frame eine Geschichte erzählt, und unser professionelles Team erweckt Ihre Geschichte zum Leben.",
+      "list": {
+        "item1": "Drehbuchschreiben",
+        "item2": "2D / 3D",
+        "item3": "Vielfalt der Voiceover- Akzente"
+      }
+    }
+  },
+  "MarketingCampaigns": {
+    "HeroSection": {
+      "title": "Marketing mit uns ist anders",
+      "description": "Kurz gesagt, wir bringen Sie zu Ihrem Ziel.",
+      "button": "Fordern Sie eine kostenlose Beratung an"
+    },
+    "PackagesSection": {
+      "title": "Fordern Sie eine kostenlose Beratung an",
+      "button": "Jetzt abonnieren",
+      "dollar": "$",
+      "rial_saudi": "SAR",
+      "dinar_kuwaiti": "KDW",
+      "rial_omani": "OMR",
+      "silver": {
+        "title": "Silver",
+        "description": "Schnellere Reichweite",
+        "feature1": "Monatlicher Inhaltsplan",
+        "feature2": "Monatliche Cover für Plattformen",
+        "feature3": "20 Designs",
+        "feature4": "Schreiben von 20 kreativen Inhalten",
+        "feature5": "Designen von 20 Stories",
+        "feature6": "Wettbewerbsanalyse",
+        "feature7": "Einrichtung des Werbekontos",
+        "feature8": "Designen von 8 Videos - Reels",
+        "feature9": "Erstellen von automatisierten Willkommensantworten für Konten",
+        "feature10": "Standort auf Google Maps festlegen",
+        "feature11": "Beantworten, Kommentieren und Interagieren mit der Zielgruppe",
+        "feature12": "Verfolgen von Hashtags und Trends",
+        "feature13": "Analytische und Marketing-Tools",
+        "feature14": "Monatlicher Leistungsbericht"
+      },
+      "gold": {
+        "title": "Gold",
+        "description": "Stärkere Leistung",
+        "feature1": "Monatlicher Inhaltsplan",
+        "feature2": "Monatliche Cover für Plattformen",
+        "feature3": "35 Designs",
+        "feature4": "Schreiben von 35 kreativen Inhalten",
+        "feature5": "Designen von 35 Stories",
+        "feature6": "Wettbewerbsanalyse",
+        "feature7": "Einrichtung des Werbekontos",
+        "feature8": "Verwalten von Werbekampagnen",
+        "feature9": "Designen von 15 Videos - Reels",
+        "feature10": "Erstellen von automatisierten Willkommensantworten für Konten",
+        "feature11": "Standort auf Google Maps festlegen",
+        "feature12": "Beantworten, Kommentieren und Interagieren mit der Zielgruppe",
+        "feature13": "Verfolgen von Hashtags und Trends",
+        "feature14": "Analytische und Marketing-Tools",
+        "feature15": "Monatlicher Leistungsbericht"
+      },
+      "bronze": {
+        "title": "Bronze",
+        "description": "Der Beginn des Erfolgs",
+        "feature1": "Monatlicher Inhaltsplan",
+        "feature2": "Monatliche Cover für Plattformen",
+        "feature3": "15 Designs",
+        "feature4": "Schreiben von 15 kreativen Inhalten",
+        "feature5": "Designen von 15 Stories",
+        "feature6": "Wettbewerbsanalyse",
+        "feature7": "Einrichtung des Werbekontos",
+        "feature8": "Designen von 4 Videos - Reels",
+        "feature9": "Erstellen von automatisierten Willkommensantworten für Konten",
+        "feature10": "Beantworten, Kommentieren und Interagieren mit der Zielgruppe",
+        "feature11": "Verfolgen von Hashtags und Trends",
+        "feature12": "Monatlicher Leistungsbericht"
+      }
+    },
+    "SeoSection": {
+      "title": "Neue Erfolgsebenen mit SEO-Dienstleistungen",
+      "description": "SEO hilft Ihnen, eine hohe Sichtbarkeit in den Suchmaschinenergebnissen zu erreichen, wodurch es für Ihre Zielkunden einfacher wird, Ihre Website zu finden.",
+      "benefits": {
+        "increase_visibility": {
+          "title": "Steigerung der Sichtbarkeit Ihrer Website in den Suchergebnissen",
+          "description": "SEO hilft dabei, das Ranking Ihrer Website auf den Suchmaschinenergebnisseiten (SERPs) zu verbessern, wodurch die Wahrscheinlichkeit steigt, dass Besucher Ihre Website erreichen."
+        },
+        "targeted_visitors": {
+          "title": "Anziehung gezielter Besucher",
+          "description": "SEO konzentriert sich darauf, Menschen anzuziehen, die nach Produkten oder Dienstleistungen suchen, die denen ähnlich sind, die Sie anbieten, und erhöht so die Chancen, sie in Kunden umzuwandeln."
+        },
+        "better_user_experience": {
+          "title": "Bessere Benutzererfahrung",
+          "description": "Ein Teil von SEO besteht darin, die Geschwindigkeit, das Design und die Inhaltsorganisation der Website zu verbessern, was das Surfen auf der Seite erleichtert."
+        },
+        "increase_sales": {
+          "title": "Steigerung der Verkäufe",
+          "description": "Durch die gezielte Ansprache der richtigen Keywords hilft SEO, die wahrscheinlichsten Käufer auf Ihre Website zu führen."
+        },
+        "performance_tracking": {
+          "title": "Ergebnisse messen und Leistung verbessern",
+          "description": "Sie können die Leistung Ihrer Website kontinuierlich verfolgen und Verbesserungen basierend auf den Daten vornehmen."
+        }
+      },
+      "services": {
+        "title": "Umfassende SEO-Dienstleistungen für Ihre Website von In Brief",
+        "description": "Was Sie von unserem SEO-Service erhalten?",
+        "analysis": {
+          "title": "Aktuelle Website-Analyse"
+        },
+        "keyword_optimization": {
+          "title": "Keyword-Optimierung"
+        },
+        "keyword_research": {
+          "title": "Keyword-Recherche",
+          "description": "Detaillierte Analyse, um die besten Keywords für Ihr Unternehmen zu finden."
+        },
+        "performance_tracking": {
+          "title": "Verfolgen der Ergebnisse und Verbesserung der Leistung",
+          "description": "Überwachung und Optimierung der SEO-Strategien basierend auf Datenanalysen."
+        },
+        "on_page_seo": {
+          "title": "On-page SEO",
+          "description": "Optimierung von Inhalten, HTML und Website-Struktur für bessere Platzierungen."
+        },
+        "local_seo": {
+          "title": "Lokales SEO",
+          "description": "Verbesserung der lokalen Suchergebnisse, um Kunden in Ihrer Nähe zu erreichen."
+        },
+        "technical_seo": {
+          "title": "Technisches SEO",
+          "description": "Optimierung der Website-Geschwindigkeit, Sicherheit und Indexierung für bessere Leistung."
+        },
+        "off_page_seo": {
+          "title": "Off-page SEO",
+          "description": "Aufbau von Backlinks und Verbesserung externer Autoritätssignale."
+        }
+      }
+    },
+    "SocialMediaSection": {
+      "title": "Social Media Account Management",
+      "description": "Bringen Sie Ihre Marke auf den Social Media-Plattformen zum Strahlen.",
+      "item1": {
+        "title": "Erstellen von ansprechendem Inhalt",
+        "feature1": "Regelmäßige Berichterstattung über die Leistung, einschließlich Engagement und Wachstum.",
+        "feature2": "Analyse des Nutzerverhaltens und Bereitstellung umsetzbarer Empfehlungen."
+      },
+      "item2": {
+        "title": "Veröffentlichungsstrategien",
+        "feature1": "Posts zu optimalen Zeiten planen, um die Sichtbarkeit zu erhöhen.",
+        "feature2": "Verwendung analytischer Tools, um Engagement-Muster und Präferenzen der Zielgruppe zu verstehen."
+      },
+      "item3": {
+        "title": "Leistungsanalyse",
+        "feature1": "Visuellen und textuellen Inhalt gestalten, der mit Ihrer Markenidentität übereinstimmt.",
+        "feature2": "Produzieren Sie kurze und auffällige Videos, um das Engagement zu steigern."
+      }
+    },
+    "AdvertisingCampaigns": {
+      "title": "Bezahlte Werbekampagnen",
+      "description": "Wir helfen Ihnen, effektive Werbekampagnen zu gestalten und durchzuführen.",
+      "item1": {
+        "title": "Leistungs- und Renditeanalyse",
+        "feature1": "Messung der Kampagneneffektivit ät anhand von Schlüsselkennzahlen (KPIs)",
+        "feature2": "Bereitstellung von Berichten und Empfehlungen zur Verbesserung"
+      },
+      "item2": {
+        "title": "Präzises Targeting",
+        "feature1": "Zielgruppenansprac he basierend auf ihren Interessen und Verhalten",
+        "feature2": "Verwendung von Techniken wie Retargeting, um die Kampagneneffektivit ät zu steigern"
+      },
+      "item3": {
+        "title": "Kreative Kampagnengestaltung",
+        "feature1": "Entwicklung einer innovativen Werbestrategie, die mit Ihren Zielen übereinstimmt",
+        "feature2": "Gestaltung visuell ansprechender Anzeigen"
+      }
+    },
+    "MarketingStrategies": {
+      "title": "Marketingstrategien",
+      "description": "Wir bieten Ihnen einen maßgeschneiderten Marketingplan, der Ihren Bedürfnissen entspricht.",
+      "item1": {
+        "title": "Strategieumsetzung",
+        "feature1": "Unterstützung bei der Umsetzung von Plänen über verschiedene Marketingkanäle.",
+        "feature2": "Überwachung der Leistung und Anpassung der Strategien nach Bedarf."
+      },
+      "item2": {
+        "title": "Zielsetzung",
+        "feature1": "Setzen Sie klare, messbare Ziele, die Ihren Bedürfnissen entsprechen.",
+        "feature2": "Entwicklung von Strategien zur Erreichung dieser Ziele."
+      },
+      "item3": {
+        "title": "Marktanalyse",
+        "feature1": "Untersuchung von Trends und Verhaltensweisen, um den Markt zu verstehen.",
+        "feature2": "Analyse der Wettbewerber zur Identifizierung von Chancen und Herausforderungen."
+      }
+    },
+    "ContentStrategies": {
+      "title": "Inhaltsstrategien",
+      "description": "Wir helfen Ihnen, Inhalte zu entwickeln, die Ihre Zielgruppe ansprechen und beeinflussen.",
+      "item1": {
+        "title": "Inhaltsverwaltung",
+        "feature1": "Überwachung der Leistung und Anpassung der Strategien basierend.",
+        "feature2": "Bereitstellung von Empfehlungen zur Steigerung des Engagements und der Reichweite."
+      },
+      "item2": {
+        "title": "Inhaltserstellung",
+        "feature1": "Optimierung von Inhalten für Suchmaschinen, um die Sichtbarkeit zu erhöhen.",
+        "feature2": "Schreiben von spezialisierten Marketingtexten"
+      },
+      "item3": {
+        "title": "Inhaltsplanung",
+        "feature1": "Erstellung eines umfassenden Inhaltskalenders.",
+        "feature2": "Identifizierung der am besten geeigneten Inhaltsarten für Ihre Zielgruppe (Artikel, Designs, Videos)."
+      }
+    }
+  },
+  "InformationalReservation": {
+    "HeroSection": {
+      "title": "Erstellen Sie jetzt Ihre Website",
+      "description1": "Verwandeln Sie Ihre Idee mit Leichtigkeit und Professionalität in eine digitale Realität.",
+      "description2": "Erstellen Sie jetzt Ihre Website und starten Sie noch heute Ihre Reise zum Erfolg.",
+      "contactButton": "Kontaktieren Sie uns",
+      "startButton": "Jetzt starten"
+    },
+    "ProceduresSection": {
+      "title": "Wir garantieren Ihnen die schnellsten Verfahren",
+      "subtitle": "Strenge Maßnahmen, die wir befolgen, um die erfolgreiche Umsetzung von Projekten zu gewährleisten.",
+      "Feature1": {
+        "title": "Kostenlose Domain",
+        "description": "Holen Sie sich eine professionelle kostenlose Domain, um Ihre digitale Identität zu stärken."
+      },
+      "Feature2": {
+        "title": "Offizielle E-Mails",
+        "description": "Erstellen Sie eine professionelle E-Mail, die die Glaubwürdigkeit Ihrer Marke widerspiegelt."
+      },
+      "Feature3": {
+        "title": "Flexibles Control Panel",
+        "description": "Vollständige und einfache Kontrolle über Ihre Website und Einstellungen ohne Komplexität."
+      },
+      "Feature4": {
+        "title": "Security Certificates for Website Safety",
+        "description": "Sichern Sie die Daten Ihrer Website mit SSL-Zertifikaten, um Besucher und Informationen zu schützen."
+      },
+      "Feature5": {
+        "title": "Technischer Support",
+        "description": "Ein engagiertes Team steht bereit, um Ihnen zu helfen und Probleme schnell zu lösen."
+      },
+      "Feature6": {
+        "title": "Kompatibel mit allen Bildschirmen",
+        "description": "Ein responsives Design sorgt für ein perfektes Erlebnis auf allen Geräten."
+      }
+    },
+    "title": "Holen Sie sich eine Website für alle Branchen.",
+    "subtitle": "Websites, die all Ihre Bedürfnisse erfüllen, egal in welcher Branche Sie tätig sind.",
+    "cta": "Für Anfragen und um eine Demo-Version anzufordern.",
+    "reservationSection": {
+      "title": "Buchungs- und Miet-Website",
+      "description": "Buchungswebsites vereinfachen effektiv den Such- und Reservierungsprozess, bieten mehrere Optionen und eine einfache Preisvergleichsfunktion. Diese Plattformen bieten Nutzerbewertungen und Erfahrungen, die den Kunden helfen, fundierte Entscheidungen zu treffen, die ihren Bedürfnissen entsprechen. Sie erhöhen auch den Komfort, indem sie sofortige Buchungen ermöglichen.",
+      "feature1": "Flexible und einfache Buchung",
+      "feature2": "Benachrichtigungen und Erinnerungen an Buchungen",
+      "feature3": "Buchungsmanagement",
+      "feature4": "Sichere Online-Zahlungen",
+      "feature5": "Einfache Preisvergleiche und Filteroptionen",
+      "category1": "Flugbuchungen",
+      "category2": "Yachtvermietung",
+      "category3": "Autovermietung",
+      "category4": "Hotelreservierungen",
+      "category5": "Apartmentvermietung"
+    },
+    "clinicalSection": {
+      "title": "Eine Website für Kliniken und medizinische Zentren",
+      "description": "Medizinische Websites vereinfachen den Buchungsprozess von Terminen, sparen Zeit und Mühe für die Patienten. Sie bieten auch genaue Informationen über Ärzte und Fachrichtungen sowie die Möglichkeit für Online-Konsultationen, was die Gesundheitsversorgungserfahrung verbessert.",
+      "feature1": "Flexible und einfache Terminbuchung",
+      "feature2": "Benachrichtigungen und Erinnerungen für Termine",
+      "feature3": "Patientenakte-Verwaltung über das Control Panel",
+      "feature4": "Sichere Online-Zahlungen",
+      "feature5": "Online-Medizinische Konsultationen",
+      "category1": "Kliniken",
+      "category2": "Medizinische Zentren",
+      "category3": "Persönliche Klinik",
+      "category4": "Medizinisches Zentrum"
+    },
+    "PersonalBookingSection": {
+      "title": "Persönliche Buchungs-Website",
+      "description": "Die Dienste für persönliche Buchungs-Websites bieten maßgeschneiderte Lösungen, die den Bedürfnissen verschiedener Branchen gerecht werden. Diese Lösungen ermöglichen es den Nutzern, ihre Termine einfach zu organisieren, was die Effizienz steigert und das Kundenerlebnis verbessert.",
+      "feature1": "Flexible und einfache Terminbuchung",
+      "feature2": "Sichere Online-Zahlungen",
+      "feature3": "Benachrichtigungen und Erinnerungen an Buchungen",
+      "feature4": "Persönliches Kundenkonto",
+      "feature5": "Buchungsmanagement",
+      "feature6": "Möglichkeit, eine spezifische Zeit für Konsultationen festzulegen",
+      "category1": "Anwalt",
+      "category2": "Spezialist für Personalwesen",
+      "category3": "Berater",
+      "category4": "Innenarchitekt",
+      "category5": "Fotograf",
+      "category6": "Trainer"
+    },
+    "NonProfitSection": {
+      "title": "Professionelle Websites für Ihre gemeinnützigen Organisationen",
+      "description": "Die Websites zielen darauf ab, die soziale Botschaft zu fördern, die Werte Ihrer Organisation zu umarmen und ihre Vision widerzuspiegeln.",
+      "feature1": "Spendenbereich",
+      "feature2": "Erstellung von Berichten und Statistiken",
+      "feature3": "Umfragen",
+      "feature4": "Freiwilligenmöglichkeiten",
+      "feature5": "Registrierung von Begünstigten",
+      "feature6": "Teilen von Veranstaltungen und Anlässen",
+      "category1": "Altenpflegeheime",
+      "category2": "Waisenpflege",
+      "category3": "Wohltätigkeitsorganisation",
+      "category4": "Kindertagesstätte",
+      "category5": "Leitfaden"
+    },
+    "InformationalSection": {
+      "title": "Informationswebsites",
+      "description": "Informationswebsites für Unternehmen und Organisationen dienen als Hauptplattform, um die Unternehmensidentität und wichtige Informationen zu präsentieren. Sie helfen dabei, Vertrauen bei den Kunden aufzubauen, indem sie genaue Informationen über Dienstleistungen und Vision bereitstellen. Diese Websites bieten auch einen effektiven Kommunikationskanal, der die Möglichkeiten für Zusammenarbeit und Wachstum fördert.",
+      "category1": "Import- und Exportunternehmen",
+      "category2": "Fabriken",
+      "category3": "Ingenieurbauunternehmen",
+      "category4": "Immobilienunternehmen",
+      "category5": "Allgemeine Handelsunternehmen",
+      "category6": "Logistikdienstleistungen"
+    }
+  },
+  "ContactUs": {
+    "title": "Füllen Sie das Formular aus,",
+    "subtitle": "und unser Team wird sich mit Ihnen in Verbindung setzen.",
+    "field1": "Name",
+    "field2": "Mobilnummer",
+    "field3": "E-Mail",
+    "field4": "Serviceart",
+    "field5": "Ihre Nachricht",
+    "write_your_name": "Schreiben Sie Ihren Namen",
+    "enter_phone_number": "Geben Sie Ihre Telefonnummer ein",
+    "phone_number_min_length": "Die Telefonnummer muss mindestens 8 Ziffern enthalten",
+    "invalid_email": "Ungültige E-Mail-Adresse",
+    "other_inquiries": "Weitere Anfragen",
+    "mobile_app_development": "Mobile App-Entwicklung",
+    "website_development": "Webseitenentwicklung",
+    "e_commerce": "E-Commerce",
+    "graphic_design": "Grafikdesign",
+    "motion_graphic": "Bewegungsgrafik",
+    "content_marketing": "Inhalt und Marketingkampagnen",
+    "write_message": "Schreiben Sie uns eine Nachricht",
+    "submit": "Absenden",
+    "request_received": "Ihre Anfrage wurde erhalten",
+    "response_time": "Sie erhalten innerhalb von 24 Stunden eine Antwort, vielen Dank."
+  },
+  "Feedback": {
+    "Testimonials": {
+      "title": "Kundenbewertungen",
+      "company1": {
+        "say": "Danke für Ihren ausgezeichneten Service, schnelle Antworten und erstklassige Interaktion. Ich wünsche Ihnen weiterhin viel Erfolg.",
+        "company": "Automatische Türfabrik Akademie",
+        "location": "Saudi-Arabien"
+      },
+      "company2": {
+        "say": "Professionelle Interaktion und wirklich hochqualitative Arbeit. Ich habe mit ihnen an Jorilax gearbeitet, und die Arbeit war von exzellenter Qualität. Ich ziehe in Erwägung, in zukünftigen Projekten mit ihnen zusammenzuarbeiten.",
+        "company": "Al-Muzahimiyah Makler",
+        "location": "Saudi-Arabien"
+      },
+      "company3": {
+        "say": "Hervorragende Arbeit, Ausführung und Design, mit Flexibilität in der Handhabung und großartiger Teamarbeit. Vielen Dank aus tiefstem Herzen.",
+        "company": "Overseas Medizinisches Zentrum",
+        "location": "Indien"
+      },
+      "company4": {
+        "say": "Die Bewertung ist ausgezeichnet, die Arbeit ist wunderschön, die Interaktion ist flexibel und anspruchsvoll, und ich werde wieder mit Ihnen zusammenarbeiten.",
+        "company": "Bakala Projekt",
+        "location": "Saudi-Arabien"
+      },
+      "company5": {
+        "say": "Professionelle Interaktion und wirklich hochwertige Arbeit. Ich habe mit ihnen an Jorilax gearbeitet, und die Arbeit war von exzellenter Qualität. Ich erwäge, in zukünftigen Projekten mit ihnen zusammenzuarbeiten.",
+        "company": "Jorilax",
+        "location": "Saudi-Arabien"
+      },
+      "company6": {
+        "say": "Ausgezeichneter Service, großartige Herangehensweise, Pünktlichkeit und erschwingliche Kosten – eines der besten Unternehmen.",
+        "company": "Rawand Zentrum",
+        "location": "Jordanien"
+      },
+      "company7": {
+        "say": "Was Sie auszeichnet, ist Ihre großartige Kommunikation, schnelle Lieferung, zahlreiche Optionen für Kunden und Kreativität. Ich wünsche Ihnen weiterhin viel Erfolg, da Sie in Ihrer Arbeit wirklich herausragen.",
+        "company": "Naqla Unternehmen – Ziyad Al-Saeedi",
+        "location": "Saudi-Arabien"
+      },
+      "company8": {
+        "say": "Ich danke Ihrem wunderbaren Team für ihre Arbeit im Design und ihren exzellenten Kundenservice. Ich empfehle Projektinhabern, mit Ihnen zusammenzuarbeiten, und wünsche Ihnen weiterhin viel Erfolg und Wohlstand.",
+        "company": "Al-Qamar Unternehmen",
+        "location": "Saudi-Arabien"
+      },
+      "company9": {
+        "say": "Ein Unternehmen mit exzellentem Service, innovativen und professionellen Designs und vor allem Schnelligkeit sowie Anpassungsfähigkeit an Kundenüberarbeitungen.",
+        "company": "Mukaabat Unternehmen",
+        "location": "Saudi-Arabien"
+      }
+    }
+  },
+  "Form": {
+    "title": "Möchten Sie ein neues Projekt starten?",
+    "placeholder": "Geben Sie Ihre Telefonnummer oder E-Mail-Adresse ein",
+    "button": "Senden",
+    "success_message": "Ihre Nachricht wurde erfolgreich empfangen."
+  },
+  "footer": {
+    "title": "Die beste führende Plattform für Software und Marketing in der arabischen Welt",
+    "license": {
+      "title": "Lizenznummer",
+      "number": "CR 1559152"
+    },
+    "workingHours": {
+      "title": "Öffnungszeiten",
+      "time": "Von 8 Uhr bis 20 Uhr täglich, außer freitags."
+    },
+    "rights": "Alle Rechte vorbehalten für die Inbrief Software- und Marketingfirma",
+    "email": "contact@inbrief.click",
+    "locations": "Standorte",
+    "location1": {
+      "city": "Dammam",
+      "location": "King Fahd Straße mit Othman Ibn Affan Straße, gegenüber dem Al-Mujallal Tower Telefon",
+      "phone": "+966552647805"
+    },
+    "location2": {
+      "city": "Kuwait",
+      "location": "Farwaniya - Khaitan - Public Authority for Investment - 1. Etage - 13 Telefon",
+      "phone": "+96550337772"
+    },
+    "location3": {
+      "city": "Muscat",
+      "location": "Al-Azaiba - 18. November - gegenüber der Bank Muscat Telefon",
+      "phone": "+96877276659"
+    },
+    "location4": {
+      "city": "Deutschland",
+      "location": "Gerhard-Küchen-Straße 14, 45141 Essen",
+      "phone": "+49 1522 4999190"
+    },
+    "links": {
+      "title": "Wichtige Links",
+      "link1": "Über uns",
+      "link2": "Mobile Anwendungen",
+      "link3": "E-Commerce",
+      "link4": "Informations- und Buchungswebsites",
+      "link5": "Design & Motion",
+      "link6": "Marketing & Campaigns"
+    }
+  }
+}

@@ -1,25 +1,33 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
 //@ts-nocheck
-"use client"
+"use client";
 
-import React from "react"
-import { Box, useMediaQuery } from "@mui/material"
-import { Swiper, SwiperSlide } from "swiper/react"
-import "swiper/css"
-import "swiper/css/navigation"
-import "swiper/css/autoplay"
-import { Autoplay } from "swiper/modules"
-import Image from "next/image"
+import React from "react";
+import { Box, useMediaQuery } from "@mui/material";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
+import { Autoplay } from "swiper/modules";
+import Image from "next/image";
 
-export default function SliderS3({ images, className }) {
-  const isMobile = useMediaQuery("(max-width: 600px)")
-  const isTablet = useMediaQuery("(max-width: 900px)")
-  const isTablet2 = useMediaQuery("(max-width: 1240px)")
-  const isTablet3 = useMediaQuery("(max-width: 1440px)")
+export default function SliderS3({ images, className = "" }) {
+  const isMobile = useMediaQuery("(max-width: 600px)");
+  const isTablet = useMediaQuery("(max-width: 900px)");
+  const isTablet2 = useMediaQuery("(max-width: 1240px)");
+  const isTablet3 = useMediaQuery("(max-width: 1440px)");
 
   // Define the number of slides per view based on the screen size
-  const slidesPerView = isMobile ? 2 : isTablet ? 3 : isTablet2 ? 4 : isTablet3 ? 5 : 6
+  const slidesPerView = isMobile
+    ? 2
+    : isTablet
+    ? 3
+    : isTablet2
+    ? 4
+    : isTablet3
+    ? 5
+    : 6;
 
   return (
     <>
@@ -65,7 +73,15 @@ export default function SliderS3({ images, className }) {
                   }}
                   className="fix-x"
                 >
-                  {src?.key ? src : <Image src={src} alt={`company-logo-${index + 1}`} quality={100} />}
+                  {src?.key ? (
+                    src
+                  ) : (
+                    <Image
+                      src={src}
+                      alt={`company-logo-${index + 1}`}
+                      quality={100}
+                    />
+                  )}
                 </Box>
               </SwiperSlide>
             ))}
@@ -73,5 +89,5 @@ export default function SliderS3({ images, className }) {
         </Box>
       </Box>
     </>
-  )
+  );
 }

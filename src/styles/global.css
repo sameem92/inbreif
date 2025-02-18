@@ -15,9 +15,29 @@ body {
   scroll-behavior: smooth;
 }
 
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
 body {
   background-color: #032932 !important;
-  direction: rtl;
   background-image: url("/image/home2.svg");
   background-position: top !important; /* Center the background horizontally */
   background-size: cover !important; /* Ensure the background covers the entire viewport */
@@ -53,7 +73,9 @@ header .css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
   padding-bottom: 0;
 }
 
-header .css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input > div {
+header
+  .css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input
+  > div {
   display: flex;
 }
 
@@ -122,6 +144,9 @@ button:hover:disabled {
   text-align: center;
 
   color: #ffffff;
+}
+[dir="ltr"] .main-title {
+  font-size: 4rem;
 }
 .main-title-2 {
   font-style: normal;
@@ -314,7 +339,11 @@ button:hover:disabled {
   min-height: 64.3rem;
   gap: 2.4rem;
 
-  background: linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%);
+  background: linear-gradient(
+    137.34deg,
+    rgba(27, 54, 44, 0.16) 23.98%,
+    rgba(112, 113, 122, 0.16) 65.73%
+  );
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 3.2rem;
   transition: all 0.3s ease;
@@ -424,7 +453,11 @@ button:hover:disabled {
   flex-direction: column;
   align-items: center;
   box-shadow: none !important;
-  background: linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%) !important;
+  background: linear-gradient(
+    137.34deg,
+    rgba(27, 54, 44, 0.16) 23.98%,
+    rgba(112, 113, 122, 0.16) 65.73%
+  ) !important;
   backdrop-filter: blur(5px) !important;
   border-radius: 2.4rem !important;
   padding: 32px;
@@ -474,6 +507,9 @@ button:hover:disabled {
   text-align: right;
   width: 100% !important;
 }
+[dir="ltr"] .mobile-title {
+  text-align: left;
+}
 .text-primary {
   color: #e1e42a;
 }
@@ -503,6 +539,7 @@ button:hover:disabled {
   .main-title {
     font-size: 5rem;
   }
+
   .paragrph-another {
     font-size: 2.5rem;
   }
@@ -519,6 +556,7 @@ button:hover:disabled {
   }
   .main-secandry-title {
     font-size: 4rem;
+    line-height: 5.6rem;
   }
 }
 @media screen and (max-width: 768px) {
@@ -557,12 +595,18 @@ button:hover:disabled {
   html {
     font-size: 9px;
   }
+
   .main-title {
     margin-top: 10px;
     font-size: 3.5rem !important;
   }
   .main-title-2 {
     font-size: 4rem;
+    line-height: 5.6rem;
+  }
+
+  [dir="ltr"] .main-title {
+    font-size: 3rem !important;
   }
 }
 .image-container {
@@ -831,7 +875,11 @@ a {
   text-align: center !important;
 
   border: 1px solid #22373c !important;
-  background: linear-gradient(137deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%) !important;
+  background: linear-gradient(
+    137deg,
+    rgba(27, 54, 44, 0.16) 23.98%,
+    rgba(112, 113, 122, 0.16) 65.73%
+  ) !important;
 }
 @media screen and (max-width: 1240px) {
   .service-box h3,
@@ -951,6 +999,20 @@ a {
   font-weight: 400;
   line-height: normal;
 }
+.main-seo-title {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 63px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #e0e324;
+}
+@media (max-width: 500px) {
+  .main-seo-title {
+    font-size: 32px;
+  }
+}
+
 .main-shop-title {
   color: #e0e324;
   text-align: center;
@@ -973,12 +1035,21 @@ a {
   font-weight: 400;
   line-height: 3rem; /* 157.143% */
 }
+@media (max-width: 1240px) {
+  [dir="ltr"] .mobile-title {
+    text-align: center;
+  }
+}
+
 @media (max-width: 1080px) {
   .mobile-title {
     font-size: 4rem;
   }
 }
 @media screen and (max-width: 900px) {
+  [dir="ltr"] .mobile-title {
+    text-align: center;
+  }
   .title-h3-2 {
     font-size: 2.4rem;
     text-align: center;
@@ -1181,4 +1252,145 @@ a {
 :disabled {
   cursor: not-allowed !important;
   opacity: 0.5;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 64px;
+}
+
+.language-select {
+  appearance: none;
+  width: 100px;
+  padding: 8px;
+  background-color: transparent;
+  border: none;
+  color: #e0e0e0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.language-select:focus {
+  outline: none;
+}
+
+/* Globe icon */
+.select-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-image: url("/icons/global.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  pointer-events: none;
+}
+
+/* Dropdown options */
+.language-select option {
+  background-color: #001219;
+  color: #e0e0e0;
+  padding: 8px;
+}
+
+/* For Firefox */
+.language-select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #e0e0e0;
+}
+
+.currency-select-wrapper {
+  position: relative;
+  width: fit-content;
+}
+
+.currency-select {
+  appearance: none;
+  background-color: #0b3b3c;
+  color: white;
+  padding: 12px 32px 12px 32px;
+  border: none;
+  border-radius: 50px;
+  font-size: 8px;
+  height: 31px;
+  cursor: pointer;
+}
+
+.currency-select:focus {
+  outline: none;
+  outline-offset: none;
+}
+
+/* Custom chevron */
+.currency-select-wrapper::before {
+  content: "";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #e1e42a;
+  pointer-events: none;
+}
+
+.css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 16.5px 3px;
+}
+
+/* Hide default arrow in IE/Edge */
+.currency-select::-ms-expand {
+  display: none;
+}
+
+/* Optional: Style the options */
+.currency-select option {
+  background-color: #0b3b3c;
+  color: white;
+  padding: 12px;
+}
+
+/* For modern browsers */
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+  .language-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+}
+
+/* RTL Support */
+/* [dir="rtl"] .language-select {
+  padding: 8px 36px 8px 8px;
+} */
+
+[dir="rtl"] .select-wrapper::before {
+  right: 32px;
+  left: auto;
+}
+
+.MuiListItem-root {
+  text-align: left;
+}
+
+/* Apply right alignment when direction is RTL */
+[dir="rtl"] .MuiListItem-root {
+  text-align: right;
+}
+
+.css-siyuh6-MuiSelect-icon,
+.css-1p53uxe-MuiSelect-icon {
+  right: 2%;
+  left: auto;
+}
+
+[dir="rtl"] .css-siyuh6-MuiSelect-icon,
+[dir="rtl"] .css-1p53uxe-MuiSelect-icon {
+  left: 2%;
+  right: auto;
 }

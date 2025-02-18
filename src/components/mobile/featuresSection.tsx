@@ -1,102 +1,105 @@
-import React from "react"
-import Image from "next/image"
+"use client";
+
+import Image from "next/image";
 
 // Components
-import Grid from "@mui/material/Grid2"
-import { motion } from "framer-motion"
+import Grid from "@mui/material/Grid2";
+import { motion } from "framer-motion";
 
 // Icons
-import feature1 from "../../../public/images/features/feature1.png"
-import feature2 from "../../../public/images/features/feature2.png"
-import feature3 from "../../../public/images/features/feature3.png"
-import feature4 from "../../../public/images/features/feature4.png"
-import feature5 from "../../../public/images/features/feature5.png"
-import feature6 from "../../../public/images/features/feature6.png"
-import feature7 from "../../../public/images/features/feature7.png"
-import feature8 from "../../../public/images/features/feature8.png"
-import feature9 from "../../../public/images/features/feature9.png"
-import feature10 from "../../../public/images/features/feature10.png"
-import feature11 from "../../../public/images/features/feature11.png"
-import feature12 from "../../../public/images/features/feature12.png"
-import feature13 from "../../../public/images/features/feature13.png"
-import feature14 from "../../../public/images/features/feature14.png"
-import feature15 from "../../../public/images/features/feature15.png"
-import feature16 from "../../../public/images/features/feature16.png"
-import { Button, useMediaQuery } from "@mui/material"
+import { Button, useMediaQuery } from "@mui/material";
+import { useTranslations } from "next-intl";
+import feature1 from "../../../public/images/features/feature1.png";
+import feature10 from "../../../public/images/features/feature10.png";
+import feature11 from "../../../public/images/features/feature11.png";
+import feature12 from "../../../public/images/features/feature12.png";
+import feature13 from "../../../public/images/features/feature13.png";
+import feature14 from "../../../public/images/features/feature14.png";
+import feature15 from "../../../public/images/features/feature15.png";
+import feature16 from "../../../public/images/features/feature16.png";
+import feature2 from "../../../public/images/features/feature2.png";
+import feature3 from "../../../public/images/features/feature3.png";
+import feature4 from "../../../public/images/features/feature4.png";
+import feature5 from "../../../public/images/features/feature5.png";
+import feature6 from "../../../public/images/features/feature6.png";
+import feature7 from "../../../public/images/features/feature7.png";
+import feature8 from "../../../public/images/features/feature8.png";
+import feature9 from "../../../public/images/features/feature9.png";
 
 const features = [
   {
     icon: feature1,
-    title: "تصميم الشعار الخاص بمشروعك",
+    title: "feature1",
   },
   {
     icon: feature2,
-    title: "برمجة التطبيق ولوحة التحكم بتقنيات حديثة",
+    title: "feature2",
   },
   {
     icon: feature3,
-    title: "موقع تعريفي خاص بمشروعك",
+    title: "feature3",
   },
   {
     icon: feature4,
-    title: "استضافة ودومين مجاني لمدة عام",
+    title: "feature4",
   },
   {
     icon: feature5,
-    title: "تسجيل مشروعك على جوجل ماب",
+    title: "feature5",
   },
   {
     icon: feature6,
-    title: "شهادة حماية SSL",
+    title: "feature6",
   },
   {
     icon: feature7,
-    title: "الربط مع شحن محلي أو دولي",
+    title: "feature7",
   },
   {
     icon: feature8,
-    title: "٢٠ بريد إلكتروني رسمي",
+    title: "feature8",
   },
   {
     icon: feature9,
-    title: "الربط مع بوابة الرسائل لخدمة OTP و التسويق",
+    title: "feature9",
   },
   {
     icon: feature10,
-    title: "تصميم احترافي من اختيارك",
+    title: "feature10",
   },
   {
     icon: feature11,
-    title: "متوافق مع كافة الشاشات",
+    title: "feature11",
   },
   {
     icon: feature12,
-    title: "متوافق مع محركات البحث SEO",
+    title: "feature12",
   },
   {
     icon: feature13,
-    title: "الربط مع بوابات التقسيط",
+    title: "feature13",
   },
   {
     icon: feature14,
-    title: "الربط مع بوابة دفع",
+    title: "feature14",
   },
   {
     icon: feature15,
-    title: "دعم فني مجاني لمدة سنة",
+    title: "feature15",
   },
   {
     icon: feature16,
-    title: "تعدد اللغات",
+    title: "feature16",
   },
-]
+];
 
 const FeaturesSection = () => {
-  const isMobile = useMediaQuery("(max-width:768px)")
-  const animation = isMobile ? { once: true } : { once: true, amount: 0.3 }
+  const isMobile = useMediaQuery("(max-width:768px)");
+  const animation = isMobile ? { once: true } : { once: true, amount: 0.3 };
   const goToWhatsApp = () => {
-    window.open("http://wa.me/96877276659", "_target")
-  }
+    window.open("http://wa.me/96877276659", "_target");
+  };
+  const t = useTranslations("MobileApps");
 
   return (
     <div className="featuresSection">
@@ -120,10 +123,15 @@ const FeaturesSection = () => {
       >
         <Grid size={{ xs: 12 }}>
           <div className="sectionHead">
-            <h2>المميزات</h2>
+            <h2>{t("features.title")}</h2>
           </div>
         </Grid>
-        <Grid size={{ xs: 12 }} container rowSpacing={{ xs: 2, lg: 3 }} columnSpacing={{ xs: 2, lg: 3 }}>
+        <Grid
+          size={{ xs: 12 }}
+          container
+          rowSpacing={{ xs: 2, lg: 3 }}
+          columnSpacing={{ xs: 2, lg: 3 }}
+        >
           {features.map((feature) => (
             <Grid key={feature.title} size={{ xs: 6, sm: 3 }}>
               <motion.div
@@ -143,19 +151,17 @@ const FeaturesSection = () => {
                     <div className="img">
                       <Image src={feature.icon} alt={feature.title} />
                     </div>
-                    <h4>{feature.title}</h4>
+                    <h4>{t(`features.list.${feature.title}`)}</h4>
                   </div>
                 </div>
               </motion.div>
             </Grid>
           ))}
         </Grid>
-        <Grid size={{ xs: 12 }}>
-          <Button onClick={goToWhatsApp}>اطلب الآن تطبيقك</Button>
-        </Grid>
+        <Button onClick={goToWhatsApp}>{t("features.button")}</Button>
       </Grid>
     </div>
-  )
-}
+  );
+};
 
-export default FeaturesSection
+export default FeaturesSection;

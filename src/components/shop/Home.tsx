@@ -1,26 +1,33 @@
-"use client"
-import marketing from "../../../public/images/marketing.png"
+"use client";
+import marketingForeign from "../../../public/foreign/marketingForeign.png";
+import marketing from "../../../public/images/marketing.png";
 
-import React from "react"
-import { Box, Container, Grid, Button } from "@mui/material"
-import { motion } from "framer-motion"
-import Image from "next/image"
-import Design from "@/components/shop/Design"
-import Social from "@/components/tools/social/social"
-import { styled } from "@mui/material/styles"
-import Paper from "@mui/material/Paper"
-import PackagesSection from "./packagesSection"
+import Design from "@/components/shop/Design";
+import Social from "@/components/tools/social/social";
+import { useLocation } from "@/context/LocationContext";
+import { Box, Button, Container, Grid } from "@mui/material";
+import Paper from "@mui/material/Paper";
+import { styled } from "@mui/material/styles";
+import { motion } from "framer-motion";
+import { useLocale, useTranslations } from "next-intl";
+import Image from "next/image";
+import PackagesSection from "./packagesSection";
+import SeoSection from "./SeoSection";
 
 const Item = styled(Paper)(() => ({
   backgroundColor: "transparent",
   boxShadow: "none",
   border: "none",
-}))
+}));
 
 export default function Home() {
+  const t = useTranslations("MarketingCampaigns.HeroSection");
+  const locale = useLocale();
+  const { location } = useLocation();
+
   const goToWhatsApp = () => {
-    window.open("http://wa.me/96877276659", "_target")
-  }
+    window.open("http://wa.me/96877276659", "_target");
+  };
 
   return (
     <>
@@ -102,7 +109,7 @@ export default function Home() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, ease: "easeIn" }}
                   >
-                    التسويق معنا غير
+                    {t("title")}
                   </motion.h1>
                   <motion.p
                     initial={{ opacity: 0, y: -50 }}
@@ -110,7 +117,7 @@ export default function Home() {
                     transition={{ duration: 0.4, ease: "easeIn" }}
                     className="paragrph-another"
                   >
-                    باختصار نصل بك إلى هدفك.
+                    {t("description")}
                   </motion.p>
                   <Button
                     sx={{
@@ -131,7 +138,7 @@ export default function Home() {
                     }}
                     onClick={goToWhatsApp}
                   >
-                    اطلب استشارة مجانية
+                    {t("button")}
                   </Button>
                 </Item>
               </Grid>
@@ -147,7 +154,23 @@ export default function Home() {
                       alignItems: "center",
                     }}
                   >
-                    <Image style={{ maxWidth: "100%" }} height={450} width={400} src={marketing} alt="mobile-apps" />
+                    {locale === "ar" && location === "not_foreign" ? (
+                      <Image
+                        style={{ maxWidth: "100%" }}
+                        height={450}
+                        width={400}
+                        src={marketing}
+                        alt="mobile-apps"
+                      />
+                    ) : (
+                      <Image
+                        style={{ maxWidth: "100%" }}
+                        height={450}
+                        width={400}
+                        src={marketingForeign}
+                        alt="mobile-apps"
+                      />
+                    )}
                   </motion.div>
                 </Item>
               </Grid>
@@ -157,7 +180,8 @@ export default function Home() {
       </motion.div>
 
       <PackagesSection />
+      <SeoSection />
       <Design />
     </>
-  )
+  );
 }

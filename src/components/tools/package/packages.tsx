@@ -1,60 +1,27 @@
-import React, { useEffect, useState } from "react"
-import Image from "next/image"
-
 // Components
-import Grid from "@mui/material/Grid2"
-import { Button } from "@mui/material"
-import { motion } from "framer-motion"
+import { Button } from "@mui/material";
+import Grid from "@mui/material/Grid2";
+import { motion } from "framer-motion";
 
 // Icons
-import Checked from "../../../../public/icons/checkedIcon.svg"
-
-const currencyMap = {
-  default: { code: "USD", symbol: "دولار" },
-  KSA: { code: "SAR", symbol: "ر.س" },
-  KW: { code: "KD", symbol: "د.ك" },
-  OM: { code: "OMR", symbol: "ر.ع" },
-}
+import { useCurrency } from "@/context/CurrencyContext";
+import { useLocale, useTranslations } from "next-intl";
+import Checked from "../../../../public/icons/checkedIcon.svg";
 
 const Packages = ({ plans, className, more, buttonText }) => {
-  const [currency, setCurrency] = useState(null)
+  const t = useTranslations("ECommerce.PackagesSection.plans");
+  const locale = useLocale();
 
-  useEffect(() => {
-    const fetchUserLocation = async () => {
-      try {
-        // Example with `ip-api`
-        const response = await fetch("https://ipapi.co/json/")
-        const data = await response.json()
-
-        switch (data.country_code) {
-          case "SA": // Saudi Arabia
-            setCurrency(currencyMap.KSA)
-            break
-          case "KW": // Kuwait
-            setCurrency(currencyMap.KW)
-            break
-          case "OM": // Oman
-            setCurrency(currencyMap.OM)
-            break
-          default:
-            setCurrency(currencyMap.default) // Default to USD
-        }
-      } catch (error) {
-        console.error("Error fetching user location:", error)
-        setCurrency(currencyMap.default)
-      }
-    }
-
-    fetchUserLocation()
-  }, [])
+  const { currency } = useCurrency();
+  console.log(currency);
 
   const goToWhatsApp = () => {
-    window.open("http://wa.me/96877276659", "_target")
-  }
+    window.open("http://wa.me/96877276659", "_target");
+  };
 
   const goToSite = (link) => {
-    window.open(link, "_target")
-  }
+    window.open(link, "_target");
+  };
 
   return (
     <>
@@ -70,32 +37,40 @@ const Packages = ({ plans, className, more, buttonText }) => {
           >
             <div className={`plancard ${i === 1 ? "gold" : ""}`}>
               <div className="content">
-                <h4>{plan.title}</h4>
-                {currency && (
-                  <div className="plan_price">
-                    <span>{plan[currency.code]}</span>
-                    <span>{currency.symbol}</span>
-                  </div>
-                )}
+                <h4>{t(plan.title)}</h4>
+                {currency &&
+                  currency.symbol !== "not shown" &&
+                  locale !== "de" && (
+                    <div className="plan_price">
+                      <span>{plan[currency.code]}</span>{" "}
+                      <span>{t(currency.symbol)}</span>
+                    </div>
+                  )}
                 {plan.label && <div className="label">{plan.label}</div>}
                 <ul>
                   {plan?.features?.map((feature) => (
                     <li key={feature}>
-                      <Checked /> <span>{feature}</span>
+                      <Checked /> <span>{t(feature)}</span>
                     </li>
                   ))}
                 </ul>
                 <Button
                   sx={{
                     color: "#001014",
-                    background: className !== "planCardS2" && i === 1 ? "#E0E324" : "transparent",
-                    borderColor: className !== "planCardS2" && i === 1 ? "transparent" : "#e1e42a",
+                    background:
+                      className !== "planCardS2" && i === 1
+                        ? "#E0E324"
+                        : "transparent",
+                    borderColor:
+                      className !== "planCardS2" && i === 1
+                        ? "transparent"
+                        : "#e1e42a",
                   }}
                   onClick={() => goToSite(plan?.link)}
                 >
                   {buttonText}
                 </Button>
-                {more && <a href="#features">المزيد من التفاصيل</a>}
+                {more && <a href="#features">{t("moreButton")}</a>}
               </div>
             </div>
           </motion.div>
@@ -113,9 +88,9 @@ const Packages = ({ plans, className, more, buttonText }) => {
         >
           <div className="plancard custom">
             <div className="content">
-              <h4>مخصصة</h4>
+              <h4>{t("customPlan.title")}</h4>
 
-              <p>يمكنك تخصيص باقتك وفقا لاحتياجاتك الخاصةمما يتيح لك اختيار الخدمات التي تناسب نشاطك</p>
+              <p>{t("customPlan.description")}</p>
 
               <Button
                 onClick={goToWhatsApp}
@@ -123,14 +98,14 @@ const Packages = ({ plans, className, more, buttonText }) => {
                   background: "transparent",
                 }}
               >
-                تواصل معنا
+                {t("customPlan.button")}
               </Button>
             </div>
           </div>
         </motion.div>
       </Grid>
     </>
-  )
-}
+  );
+};
 
-export default Packages
+export default Packages;

@@ -1,79 +1,87 @@
-"use client"
+"use client";
 
-import React, { useEffect } from "react"
-import Image from "next/image"
+import React, { useEffect } from "react";
+import Image from "next/image";
 
 // Components
-import { Box, Container, Card, CardContent, Typography, Grid } from "@mui/material"
-import { motion } from "framer-motion"
-import SliderS1 from "@/components/tools/sliders/sliderS1"
-import PackagesSection from "@/components/marketing/packagesSection"
-import Design from "@/components/marketing/Design"
-import Tabs from "@mui/material/Tabs"
+import {
+  Box,
+  Container,
+  Card,
+  CardContent,
+  Typography,
+  Grid,
+} from "@mui/material";
+import { motion } from "framer-motion";
+import SliderS1 from "@/components/tools/sliders/sliderS1";
+import PackagesSection from "@/components/marketing/packagesSection";
+import Design from "@/components/marketing/Design";
+import Tabs from "@mui/material/Tabs";
 
-import Social from "@/components/tools/social/social"
-import Tab from "@mui/material/Tab"
+import Social from "@/components/tools/social/social";
+import Tab from "@mui/material/Tab";
+import { useLocale, useTranslations } from "next-intl";
 
 // Images
-const icon1 = "/image/icon5.png"
-const icon2 = "/image/icon6.png"
-const icon3 = "/image/icon7.png"
-const img1 = "/image/sh/1.png"
-const img2 = "/image/sh/2.png"
-const img3 = "/image/sh/3.png"
-const img4 = "/image/sh/4.png"
-const img5 = "/image/sh/5.png"
-const img6 = "/image/sh/6.png"
-const img7 = "/image/sh/7.png"
-const img8 = "/image/sh/8.png"
-const img9 = "/image/sh/9.png"
-const img10 = "/image/sh/10.png"
-const img11 = "/image/sh/11.png"
-const img12 = "/image/sh/12.png"
-const img13 = "/image/sh/13.png"
-const img14 = "/image/sh/14.png"
-const img15 = "/image/sh/15.png"
-const img16 = "/image/sh/16.png"
-const img17 = "/image/sh/17.png"
-const img18 = "/image/sh/18.png"
-const img19 = "/image/sh/19.png"
-const img20 = "/image/sh/20.png"
-const img21 = "/image/sh/21.png"
-const img22 = "/image/sh/22.png"
-const img23 = "/image/x1.png"
-const img24 = "/image/x2.png"
-const img25 = "/image/x3.png"
-const img26 = "/image/x4.png"
-const img27 = "/image/x5.png"
-const img28 = "/image/socail/1.png"
-const img29 = "/image/socail/2.png"
-const img30 = "/image/socail/3.png"
-const img31 = "/image/socail/4.png"
-const img32 = "/image/socail/5.png"
-const img33 = "/image/socail/6.png"
-const img34 = "/image/socail/7.png"
-const img35 = "/image/socail/8.png"
-const img36 = "/image/socail/9.png"
-const img37 = "/image/socail/10.png"
-const img38 = "/image/socail/11.png"
-const img39 = "/image/socail/12.png"
-const img40 = "/image/profile/1.png"
-const img41 = "/image/profile/2.png"
-const img42 = "/image/profile/3.png"
-const img43 = "/image/profile/4.png"
-const img44 = "/image/profile/5.png"
-const img45 = "/image/profile/6.png"
-const img46 = "/image/profile/7.png"
-const img47 = "/image/profile/8.png"
-const img48 = "/image/profile/9.png"
-const img49 = "/image/profile/10.png"
-const img50 = "/image/profile/11.png"
-const img51 = "/image/profile/12.png"
-const img52 = "/image/profile/13.png"
-const img53 = "/image/profile/14.png"
-const img54 = "/image/profile/15.png"
-const img55 = "/image/profile/16.png"
-const img56 = "/image/profile/17.png"
+const icon1 = "/image/icon5.png";
+const icon2 = "/image/icon6.png";
+const icon3 = "/image/icon7.png";
+const img1 = "/image/sh/1.png";
+const img2 = "/image/sh/2.png";
+const img3 = "/image/sh/3.png";
+const img4 = "/image/sh/4.png";
+const img5 = "/image/sh/5.png";
+const img6 = "/image/sh/6.png";
+const img7 = "/image/sh/7.png";
+const img8 = "/image/sh/8.png";
+const img9 = "/image/sh/9.png";
+const img10 = "/image/sh/10.png";
+const img11 = "/image/sh/11.png";
+const img12 = "/image/sh/12.png";
+const img13 = "/image/sh/13.png";
+const img14 = "/image/sh/14.png";
+const img15 = "/image/sh/15.png";
+const img16 = "/image/sh/16.png";
+const img17 = "/image/sh/17.png";
+const img18 = "/image/sh/18.png";
+const img19 = "/image/sh/19.png";
+const img20 = "/image/sh/20.png";
+const img21 = "/image/sh/21.png";
+const img22 = "/image/sh/22.png";
+const img23 = "/image/x1.png";
+const img24 = "/image/x2.png";
+const img25 = "/image/x3.png";
+const img26 = "/image/x4.png";
+const img27 = "/image/x5.png";
+const img28 = "/image/socail/1.png";
+const img29 = "/image/socail/2.png";
+const img30 = "/image/socail/3.png";
+const img31 = "/image/socail/4.png";
+const img32 = "/image/socail/5.png";
+const img33 = "/image/socail/6.png";
+const img34 = "/image/socail/7.png";
+const img35 = "/image/socail/8.png";
+const img36 = "/image/socail/9.png";
+const img37 = "/image/socail/10.png";
+const img38 = "/image/socail/11.png";
+const img39 = "/image/socail/12.png";
+const img40 = "/image/profile/1.png";
+const img41 = "/image/profile/2.png";
+const img42 = "/image/profile/3.png";
+const img43 = "/image/profile/4.png";
+const img44 = "/image/profile/5.png";
+const img45 = "/image/profile/6.png";
+const img46 = "/image/profile/7.png";
+const img47 = "/image/profile/8.png";
+const img48 = "/image/profile/9.png";
+const img49 = "/image/profile/10.png";
+const img50 = "/image/profile/11.png";
+const img51 = "/image/profile/12.png";
+const img52 = "/image/profile/13.png";
+const img53 = "/image/profile/14.png";
+const img54 = "/image/profile/15.png";
+const img55 = "/image/profile/16.png";
+const img56 = "/image/profile/17.png";
 
 const logos = [
   img1,
@@ -98,11 +106,24 @@ const logos = [
   img20,
   img21,
   img22,
-]
+];
 
-const visualIdentities = [img23, img24, img25, img26, img27]
+const visualIdentities = [img23, img24, img25, img26, img27];
 
-const socials = [img28, img29, img30, img31, img32, img33, img34, img35, img36, img37, img38, img39]
+const socials = [
+  img28,
+  img29,
+  img30,
+  img31,
+  img32,
+  img33,
+  img34,
+  img35,
+  img36,
+  img37,
+  img38,
+  img39,
+];
 
 const profiles = [
   img40,
@@ -122,23 +143,23 @@ const profiles = [
   img54,
   img55,
   img56,
-]
+];
 
 // Types
 interface TabPanelProps {
-  index: number | string
-  value: number | string
-  children: React.ReactNode
+  index: number | string;
+  value: number | string;
+  children: React.ReactNode;
 }
 function a11yProps(index: number) {
   return {
     id: `simple-tab-${index}`,
     "aria-controls": `simple-tabpanel-${index}`,
-  }
+  };
 }
 
 function CustomTabPanel(props: TabPanelProps) {
-  const { value, index, children, ...other } = props
+  const { value, index, children, ...other } = props;
 
   return (
     <Box
@@ -154,40 +175,45 @@ function CustomTabPanel(props: TabPanelProps) {
     >
       {value === index && <>{children}</>}
     </Box>
-  )
+  );
 }
 
 const items = [
   {
     icon: icon1,
-    title: "تسليم سريع",
+    title: "item1",
   },
   {
     icon: icon2,
-    title: " أسعار معقولة",
+    title: "item2",
   },
   {
     icon: icon3,
-    title: " تعديلات حتى رضا العميل",
+    title: "item3",
   },
-]
+];
 
 export default function Home() {
-  const [value, setValue] = React.useState<string | number>(0)
+  const [value, setValue] = React.useState<string | number>(0);
+  const t = useTranslations("DesignMotion");
+  const locale = useLocale();
 
-  const handleChange = (_event: React.SyntheticEvent, newValue: string | number) => {
-    setValue(newValue)
-  }
+  const handleChange = (
+    _event: React.SyntheticEvent,
+    newValue: string | number
+  ) => {
+    setValue(newValue);
+  };
 
   useEffect(() => {
-    const hash = window.location.href.split("#")[1]
+    const hash = window.location.href.split("#")[1];
     if (hash) {
-      const targetElement = document.getElementById(hash)
+      const targetElement = document.getElementById(hash);
       if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "smooth", block: "center" })
+        targetElement.scrollIntoView({ behavior: "smooth", block: "center" });
       }
     }
-  }, [])
+  }, []);
   return (
     <>
       <Social />
@@ -222,14 +248,15 @@ export default function Home() {
             }}
             maxWidth="lg"
           >
-            <h1 className="main-secandry-title">التصميم الجرافيك</h1>
-            <p className="paragrph">
-              نسعى لتحقيق التميز والابداع والعصرية لعملائنا في هويتهم البصرية وإعلاناتهم في سوق مليء بالتحديات
-            </p>
+            <h1 className="main-secandry-title">{t("Hero.title")}</h1>
+            <p className="paragrph">{t("Hero.description")}</p>
           </Container>
 
           <div>
-            <Container sx={{ display: "flex", justifyContent: "center", gap: "2.4rem" }} maxWidth="lg">
+            <Container
+              sx={{ display: "flex", justifyContent: "center", gap: "2.4rem" }}
+              maxWidth="lg"
+            >
               <Box
                 sx={{
                   width: { xs: "90%", lg: "74%" },
@@ -259,8 +286,13 @@ export default function Home() {
                             flexDirection: "column",
                             justifyContent: "center",
                             alignItems: "center",
-                            padding: { xs: "1.6rem 0.5rem", md: "1rem", lg: "1.1rem" },
+                            padding: {
+                              xs: "1.6rem 0.5rem",
+                              md: "1rem",
+                              lg: "1.1rem",
+                            },
                             height: "100%",
+                            minHeight: locale === "ar" ? "auto" : "196px",
                             gap: { xs: ".6rem", md: "1rem", lg: "1.6rem" },
                           }}
                           className="content"
@@ -274,7 +306,12 @@ export default function Home() {
                               gap: "1rem",
                             }}
                           >
-                            <Image src={item.icon} alt={item.title} width={50} height={50} />
+                            <Image
+                              src={item.icon}
+                              alt={item.title}
+                              width={50}
+                              height={50}
+                            />
                             <Typography
                               variant="h6"
                               sx={{
@@ -282,7 +319,7 @@ export default function Home() {
                                 fontSize: {
                                   xs: "2rem",
                                   md: "1.8rem",
-                                  lg: "2.4rem",
+                                  lg: locale === "ar" ? "2.4rem" : "2rem",
                                 },
                                 fontWeight: 400,
                                 lineHeight: { xs: "3rem", lg: "3.7rem" },
@@ -293,7 +330,7 @@ export default function Home() {
                                 color: "#ffffff",
                               }}
                             >
-                              {item.title}
+                              {t(`Hero.list.${item.title}`)}
                             </Typography>
                           </CardContent>
                         </Card>
@@ -333,10 +370,26 @@ export default function Home() {
               justifyContent: "center",
             }}
           >
-            <Tab className="tab" label="شعارات" {...a11yProps(0)} />
-            <Tab className="tab" label="هويات بصرية" {...a11yProps(1)} />
-            <Tab className="tab" label="  سوشيال ميديا" {...a11yProps(2)} />
-            <Tab className="tab" label="بروفايلات ومجلات" {...a11yProps(3)} />
+            <Tab
+              className="tab"
+              label={t("Hero.tabs.tab1")}
+              {...a11yProps(0)}
+            />
+            <Tab
+              className="tab"
+              label={t("Hero.tabs.tab2")}
+              {...a11yProps(1)}
+            />
+            <Tab
+              className="tab"
+              label={t("Hero.tabs.tab3")}
+              {...a11yProps(2)}
+            />
+            <Tab
+              className="tab"
+              label={t("Hero.tabs.tab4")}
+              {...a11yProps(3)}
+            />
           </Tabs>
           <CustomTabPanel value={value} index={0}>
             <SliderS1 images={logos} />
@@ -360,5 +413,5 @@ export default function Home() {
 
       <Design />
     </>
-  )
+  );
 }

@@ -1,15 +1,31 @@
-"use client"
+"use client";
 
-import { Box, Container, List, ListItem, ListItemText, Typography, useMediaQuery, Grid2 } from "@mui/material"
-import { motion } from "framer-motion"
-import Image from "next/image"
-import Social from "@/components/tools/social/social"
+import Social from "@/components/tools/social/social";
+import {
+  Box,
+  Container,
+  Grid2,
+  List,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
-import distinguishes from "../../../public/images/about/distinguishes.png"
-import values from "../../../public/images/about/values.png"
+import { useLocation } from "@/context/LocationContext";
+import { useLocale, useTranslations } from "next-intl";
+import distinguishesForeign from "../../../public/foreign/distinguishesForeign.png";
+import ValuesForeign from "../../../public/foreign/valuesForeign.png";
+import distinguishes from "../../../public/images/about/distinguishes.png";
+import values from "../../../public/images/about/values.png";
+import ValueItem from "./ValueItem";
 
 export default function Home() {
-  const isMobile = useMediaQuery("(max-width:768px)")
+  const isMobile = useMediaQuery("(max-width:768px)");
+
+  const t = useTranslations("AboutPage");
+  const locale = useLocale();
+  const { location } = useLocation();
 
   return (
     <>
@@ -24,6 +40,7 @@ export default function Home() {
         <Box
           className="home"
           sx={{
+            direction: locale === "ar" ? "ltr" : "rtl",
             backgroundSize: "cover",
             backgroundPosition: "center",
             display: "flex",
@@ -55,15 +72,10 @@ export default function Home() {
             }}
             maxWidth="lg"
           >
-            <h1 className="main-title-2 text-primary">مرحبًا بكم في شركة InBrief!</h1>
-            <p className="title-h3-2">
-              نحن شركة مرخصة رسمياً و رائدة في مجال البرمجة وتطوير التطبيقات والمواقع الإلكترونية والتسويق الإلكتروني،
-              حيث نركز على تلبية احتياجات السوق الخليجي. بفضل مكاتبنا المنتشرة في السعودية والكويت وسلطنة عمان، نتمكن من
-              تقديم حلول مبتكرة ترتقي بتجربة عملائنا وتجعلهم في مقدمة المنافسة.
-            </p>
+            <h1 className="main-title-2 text-primary">{t("welcome")}</h1>
+            <p className="title-h3-2">{t("heroDescription")}</p>
           </Container>
 
-          {/* Features Section */}
           <Container
             sx={{
               display: "flex",
@@ -72,7 +84,13 @@ export default function Home() {
             }}
             maxWidth="lg"
           >
-            <Grid2 container alignItems="center" justifyContent="space-between" gap="20px">
+            {/* Features Section */}
+            <Grid2
+              container
+              alignItems="center"
+              justifyContent="space-between"
+              gap="20px"
+            >
               <Grid2 size={{ xs: 12, md: 5 }}>
                 <Box
                   sx={{
@@ -102,7 +120,7 @@ export default function Home() {
                       color: "#E1E42A",
                     }}
                   >
-                    ما يميزنا
+                    {t("whatSetsUsApart.title")}
                   </Typography>
                   <Typography
                     variant="h3"
@@ -113,8 +131,7 @@ export default function Home() {
                       color: "#fff",
                     }}
                   >
-                    نسعى لأن نكون الوجهة الأولى للعملاء الذين يبحثون عن حلول رقمية متكاملة. نؤمن بقوة التكنولوجيا في
-                    تحسين الأعمال وتحقيق النجاح، ونعمل بجد لتوفير كل ما يلزم لتحقيق رؤى عملائنا.
+                    {t("whatSetsUsApart.description")}
                   </Typography>
                 </Box>
               </Grid2>
@@ -131,25 +148,41 @@ export default function Home() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  viewport={isMobile ? { once: true } : { once: true, amount: 0.3 }}
+                  viewport={
+                    isMobile ? { once: true } : { once: true, amount: 0.3 }
+                  }
                   transition={{ duration: 0.4, ease: "easeIn" }}
                 >
-                  <Image
-                    src={distinguishes}
-                    style={{
-                      maxWidth: "55rem",
-                      width: "100%",
-                      height: "auto",
-                    }}
-                    alt="one"
-                  />
+                  {locale === "ar" && location === "not_foreign" ? (
+                    <Image
+                      src={distinguishes}
+                      style={{
+                        maxWidth: "55rem",
+                        width: "100%",
+                        height: "auto",
+                      }}
+                      alt="one"
+                    />
+                  ) : (
+                    <Image
+                      src={distinguishesForeign}
+                      style={{
+                        maxWidth: "100%",
+                      }}
+                      alt="one"
+                    />
+                  )}
                 </motion.div>
               </Grid2>
             </Grid2>
 
             {/* Values Section */}
-
-            <Grid2 container alignItems="center" justifyContent="space-between" gap="20px">
+            <Grid2
+              container
+              alignItems="center"
+              justifyContent="space-between"
+              gap="20px"
+            >
               <Grid2
                 size={{ xs: 12, md: 6 }}
                 sx={{
@@ -158,15 +191,25 @@ export default function Home() {
                   order: { xs: 2, md: 1 },
                 }}
               >
-                <Image
-                  src={values}
-                  style={{
-                    maxWidth: "55rem",
-                    width: "100%",
-                    height: "auto",
-                  }}
-                  alt="two"
-                />
+                {locale === "ar" && location === "not_foreign" ? (
+                  <Image
+                    src={values}
+                    style={{
+                      maxWidth: "55rem",
+                      width: "100%",
+                      height: "auto",
+                    }}
+                    alt="two"
+                  />
+                ) : (
+                  <Image
+                    src={ValuesForeign}
+                    style={{
+                      maxWidth: "100%",
+                    }}
+                    alt="two"
+                  />
+                )}
               </Grid2>
 
               {/* Values Text */}
@@ -189,7 +232,9 @@ export default function Home() {
                 <motion.div
                   initial={{ opacity: 0, y: 0 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={isMobile ? { once: true } : { once: true, amount: 0.3 }}
+                  viewport={
+                    isMobile ? { once: true } : { once: true, amount: 0.3 }
+                  }
                   transition={{ duration: 0.4, ease: "easeIn" }}
                 >
                   <Box
@@ -211,7 +256,7 @@ export default function Home() {
                         color: "#E1E42A",
                       }}
                     >
-                      قيمنا
+                      {t("values.title")}
                     </Typography>
                     <List
                       sx={{
@@ -219,99 +264,18 @@ export default function Home() {
                         listStylePosition: "inside",
                       }}
                     >
-                      <ListItem sx={{ padding: "0" }}>
-                        <ListItemText
-                          primary={
-                            <Typography
-                              sx={{
-                                fontSize: { xs: "2rem", lg: "2.7rem" },
-                                fontWeight: 400,
-                                lineHeight: "3.7rem",
-                                color: "#fff",
-                                position: "relative",
-                                marginInlineStart: "20px",
-                                "&:before": {
-                                  position: "absolute",
-                                  content: '""',
-                                  left: "-20px",
-                                  flexShrink: 0,
-                                  display: "block",
-                                  height: "8px",
-                                  width: "8px",
-                                  borderRadius: "45%",
-                                  background: "#e1e42a",
-                                  marginTop: "12px",
-                                },
-                              }}
-                            >
-                              <span style={{ color: "#E1E42A", flexShrink: 0 }}>الابتكار :</span>
-                              نسعى دائمًا لتقديم أفكار جديدة وحلول مبتكرة.
-                            </Typography>
-                          }
-                        />
-                      </ListItem>
-                      <ListItem sx={{ padding: "0" }}>
-                        <ListItemText
-                          primary={
-                            <Typography
-                              sx={{
-                                fontSize: { xs: "2rem", lg: "2.7rem" },
-                                fontWeight: 400,
-                                lineHeight: "3.7rem",
-                                color: "#fff",
-                                position: "relative",
-                                marginInlineStart: "20px",
-                                "&:before": {
-                                  position: "absolute",
-                                  content: '""',
-                                  left: "-20px",
-                                  flexShrink: 0,
-                                  display: "block",
-                                  height: "8px",
-                                  width: "8px",
-                                  borderRadius: "45%",
-                                  background: "#e1e42a",
-                                  marginTop: "12px",
-                                },
-                              }}
-                            >
-                              <span style={{ color: "#E1E42A", flexShrink: 0 }}>الجودة :</span>
-                              نلتزم بتقديم أعلى معايير الجودة.
-                            </Typography>
-                          }
-                        />
-                      </ListItem>
-                      <ListItem sx={{ padding: "0" }}>
-                        <ListItemText
-                          primary={
-                            <Typography
-                              sx={{
-                                fontSize: { xs: "2rem", lg: "2.7rem" },
-                                fontWeight: 400,
-                                lineHeight: "3.7rem",
-                                color: "#fff",
-                                position: "relative",
-                                marginInlineStart: "20px",
-                                "&:before": {
-                                  position: "absolute",
-                                  content: '""',
-                                  left: "-20px",
-                                  flexShrink: 0,
-                                  display: "block",
-                                  height: "8px",
-                                  width: "8px",
-                                  borderRadius: "45%",
-                                  background: "#e1e42a",
-                                  marginTop: "12px",
-                                },
-                              }}
-                            >
-                              <span style={{ color: "#E1E42A", flexShrink: 0 }}>الشفافية :</span>
-                              نؤمن ببناء علاقات قائمة على الثقة مع عملائنا.
-                            </Typography>
-                          }
-                        />
-                      </ListItem>
+                      <ValueItem
+                        title={t("values.value1.title")}
+                        description={t("values.value1.description")}
+                      />
+                      <ValueItem
+                        title={t("values.value2.title")}
+                        description={t("values.value2.description")}
+                      />
+                      <ValueItem
+                        title={t("values.value3.title")}
+                        description={t("values.value3.description")}
+                      />
                     </List>
                   </Box>
                 </motion.div>
@@ -351,7 +315,7 @@ export default function Home() {
                   letterSpacing: "-1.44px",
                 }}
               >
-                فريق العمل
+                {t("team.title")}
               </Typography>
               <Typography
                 variant="body1"
@@ -364,13 +328,12 @@ export default function Home() {
                   width: { xs: "100%", lg: "85%" },
                 }}
               >
-                يتكون فريقنا من مجموعة من المحترفين ذوي الخبرة، الذين يجمعهم شغف التكنولوجيا والإبداع. نحن نعمل كفريق
-                واحد لتحقيق أهداف عملائنا وتقديم الدعم اللازم في كل خطوة.
+                {t("team.description")}
               </Typography>
             </Box>
           </Container>
         </Box>
       </motion.div>
     </>
-  )
+  );
 }

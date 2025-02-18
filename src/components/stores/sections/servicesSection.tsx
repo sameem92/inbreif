@@ -2,34 +2,34 @@
 
 //@ts-nocheck
 
-import React, { useEffect, useState } from "react"
-import Image from "next/image"
+import Image from "next/image";
 
 // Components
-import Grid from "@mui/material/Grid2"
-import { motion } from "framer-motion" // Import framer-motion
+import Grid from "@mui/material/Grid2";
+import { motion } from "framer-motion"; // Import framer-motion
 
 // Icons
-import ScrollIcon from "../../../../public/icons/scrollIcon.svg"
-import service1 from "../../../../public/icons/service1.png"
-import service2 from "../../../../public/icons/service2.png"
-import service3 from "../../../../public/icons/service3.png"
-import service4 from "../../../../public/icons/service4.png"
-import service5 from "../../../../public/icons/service5.png"
-import service6 from "../../../../public/icons/service6.png"
-import service7 from "../../../../public/icons/service7.png"
-import service8 from "../../../../public/icons/service8.png"
-import service9 from "../../../../public/icons/service9.png"
-import service10 from "../../../../public/icons/service10.png"
-import service11 from "../../../../public/icons/service11.png"
-import service12 from "../../../../public/icons/service12.png"
+import { useCurrency } from "@/context/CurrencyContext";
+import { useTranslations } from "next-intl";
+import ScrollIcon from "../../../../public/icons/scrollIcon.svg";
+import service1 from "../../../../public/icons/service1.png";
+import service10 from "../../../../public/icons/service10.png";
+import service11 from "../../../../public/icons/service11.png";
+import service12 from "../../../../public/icons/service12.png";
+import service2 from "../../../../public/icons/service2.png";
+import service3 from "../../../../public/icons/service3.png";
+import service4 from "../../../../public/icons/service4.png";
+import service5 from "../../../../public/icons/service5.png";
+import service6 from "../../../../public/icons/service6.png";
+import service7 from "../../../../public/icons/service7.png";
+import service8 from "../../../../public/icons/service8.png";
+import service9 from "../../../../public/icons/service9.png";
 
 const services = [
   {
     icon: service1,
-    title: "ربط مع واتساب بيزنس",
-    description:
-      "احصل على ميزة الربط لتمكين عملاء جدد من اجراء عملية شراء متكاملة لمنتجاتك من الكتالوج الخاص بك على الواتساب بيزنس.",
+    title: "addons.whatsapp",
+    description: "addons.whatsapp_desc",
     USD: "18",
     SAR: "70",
     OMR: "7",
@@ -37,8 +37,8 @@ const services = [
   },
   {
     icon: service2,
-    title: "الرسائل النصية (SMS)",
-    description: "كن قريباً من عملائك بإرسال رسائل تسويقية لهم ولمتابعة وصول الطلب لهم.",
+    title: "addons.sms",
+    description: "addons.sms_desc",
     USD: "10",
     SAR: "35",
     OMR: "4",
@@ -46,8 +46,8 @@ const services = [
   },
   {
     icon: service3,
-    title: "الشات بوت",
-    description: "المحادثة الفورية والرد الآلي التي تزيد من التفاعل وسرعة الرد على استفسارات العملاء.",
+    title: "addons.chatbot",
+    description: "addons.chatbot_desc",
     USD: "18",
     SAR: "70",
     OMR: "7",
@@ -55,8 +55,8 @@ const services = [
   },
   {
     icon: service4,
-    title: "نظام نقاط البيع (POS)",
-    description: "يقدم نظام نقاط البيع الخاص بنا الحل الأمثل لإدارة عمليات البيع من الأفرع الخاصة بمتجرك.",
+    title: "addons.pos",
+    description: "addons.pos_desc",
     USD: "18",
     SAR: "70",
     OMR: "7",
@@ -64,8 +64,8 @@ const services = [
   },
   {
     icon: service5,
-    title: "نظام إدارة السائقين",
-    description: "احصل على خدمة إدارة وتنظيم السائقين الخاصين بك بشكل دقيق وعملي لتسهيل عملية التوصيل والمتابعة.",
+    title: "addons.driver",
+    description: "addons.driver_desc",
     USD: "18",
     SAR: "70",
     OMR: "7",
@@ -73,8 +73,8 @@ const services = [
   },
   {
     icon: service6,
-    title: "إنشاء تطبيق للمتجر",
-    description: "تطبيق خاص لمتجرك يوفر تجربة تسوق سهلة ومريحة لعملائك وزيادة مبيعاتك.",
+    title: "addons.mobile_app",
+    description: "addons.mobile_app_desc",
     USD: "120",
     SAR: "425",
     OMR: "35",
@@ -82,8 +82,8 @@ const services = [
   },
   {
     icon: service7,
-    title: "استشاري إدارة المتجر",
-    description: "لضمان نجاح العلامة التجارية وزيادة المبيعات، تعيين مسؤول عن الإدارة الكاملة للوحة التحكم الخاصة بك.",
+    title: "addons.consultant",
+    description: "addons.consultant_desc",
     USD: "130",
     SAR: "500",
     OMR: "40",
@@ -91,8 +91,8 @@ const services = [
   },
   {
     icon: service8,
-    title: "إضافة المحتوى",
-    description: "احصل على خدمة إضافة المنتجات والصفحات على متجرك مع دعم لغات متعددة للمحتوى الخاص بك.",
+    title: "addons.content_upload",
+    description: "addons.content_upload_desc",
     USD: "85",
     SAR: "300",
     OMR: "25",
@@ -100,9 +100,8 @@ const services = [
   },
   {
     icon: service9,
-    title: "تحسين محركات البحث",
-    description:
-      "قم برفع متجرك في أعلى نتائج البحث في جوجل وذلك عبر خدمة seo و كتابة المحتوى والمقالات المناسبة لمتجرك.",
+    title: "addons.seo",
+    description: "addons.seo_desc",
     USD: "130",
     SAR: "500",
     OMR: "40",
@@ -110,8 +109,8 @@ const services = [
   },
   {
     icon: service10,
-    title: "استشاري تسويق المتجر",
-    description: "تعيين مسؤول تسويقي لإنشاء حملات إعلانية وادارة حسابات التواصل الإجتماعي الخاصة بمتجرك.",
+    title: "addons.marketing_consultant",
+    description: "addons.marketing_consultant_desc",
     USD: "130",
     SAR: "500",
     OMR: "40",
@@ -119,8 +118,8 @@ const services = [
   },
   {
     icon: service11,
-    title: "نظام حجز الطاولات",
-    description: "يقدم لك نظام حجز الطاولات حلاً مثالياً لتسهيل إدارة حجز الزبائن.",
+    title: "addons.table_reservation",
+    description: "addons.table_reservation_desc",
     USD: "18",
     SAR: "70",
     OMR: "7",
@@ -128,53 +127,18 @@ const services = [
   },
   {
     icon: service12,
-    title: "متجر متعدد التجار",
-    description:
-      "تتيح لك ميزة المتجر متعدد التجار إمكانية السماح لكل تاجر إنشاء ملفه الشخصي و رفع منتجاته على متجرك للاستفادة من مبيعاته.",
+    title: "addons.multi_vendor",
+    description: "addons.multi_vendor_desc",
     USD: "50",
     SAR: "200",
     OMR: "18",
     KD: "16",
   },
-]
-
-const currencyMap = {
-  default: { code: "USD", symbol: "دولار" },
-  KSA: { code: "SAR", symbol: "ر.س" },
-  KW: { code: "KD", symbol: "د.ك" },
-  OM: { code: "OMR", symbol: "ر.ع" },
-}
+];
 
 const ServicesSection = () => {
-  const [currency, setCurrency] = useState(null)
-  useEffect(() => {
-    const fetchUserLocation = async () => {
-      try {
-        // Example with `ip-api`
-        const response = await fetch("https://ipapi.co/json/")
-        const data = await response.json()
-
-        switch (data.country_code) {
-          case "SA": // Saudi Arabia
-            setCurrency(currencyMap.KSA)
-            break
-          case "KW": // Kuwait
-            setCurrency(currencyMap.KW)
-            break
-          case "OM": // Oman
-            setCurrency(currencyMap.OM)
-            break
-          default:
-            setCurrency(currencyMap.default) // Default to USD
-        }
-      } catch (error) {
-        console.error("Error fetching user location:", error)
-        setCurrency(currencyMap.default)
-      }
-    }
-
-    fetchUserLocation()
-  }, [])
+  const t = useTranslations("ECommerce.ServicesSection");
+  const { currency } = useCurrency();
 
   return (
     <div className="servicesSection">
@@ -206,7 +170,7 @@ const ServicesSection = () => {
               <a href="#features">
                 <ScrollIcon />
               </a>
-              <h2>استمتع بحرية اختيار الإضافات التي تجعل باقتك متكاملة</h2>
+              <h2>{t("title")}</h2>
             </div>
           </div>
         </Grid>
@@ -226,15 +190,20 @@ const ServicesSection = () => {
                     {currency && (
                       <div className="service_price">
                         <span>{service[currency.code]}</span>
-                        <span>{currency.symbol}</span>
-                        {i !== 7 && <span>/شهر</span>}
+                        <span>{t(currency.symbol)}</span>
+                        {i !== 7 && <span>/{t("month")}</span>}
                       </div>
                     )}
                     <div className="img">
-                      <Image height={100} width={100} src={service.icon} alt={service.title} />
+                      <Image
+                        height={100}
+                        width={100}
+                        src={service.icon}
+                        alt={service.title}
+                      />
                     </div>
-                    <h4>{service.title}</h4>
-                    <p>{service.description}</p>
+                    <h4>{t(service.title)}</h4>
+                    <p>{t(service.description)}</p>
                   </div>
                 </div>
               </motion.div>
@@ -243,7 +212,7 @@ const ServicesSection = () => {
         </Grid>
       </Grid>
     </div>
-  )
-}
+  );
+};
 
-export default ServicesSection
+export default ServicesSection;

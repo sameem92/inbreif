@@ -1,11 +1,12 @@
-import { Alert, Container, useMediaQuery } from "@mui/material"
-import Box from "@mui/material/Box"
-import Typography from "@mui/material/Typography"
-import Button from "@mui/material/Button"
-import TextField from "@mui/material/TextField"
-import { motion } from "framer-motion"
-import emailjs from "@emailjs/browser"
-import { useState } from "react"
+import { Alert, Container, useMediaQuery } from "@mui/material";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 const textStyle = {
   "&.MuiTextField-root": {
@@ -33,22 +34,23 @@ const textStyle = {
       margin: 0,
     },
   },
-}
+};
 
 export default function Form() {
-  const isMobile = useMediaQuery("(max-width:768px)")
-  const animation = isMobile ? { once: true } : { once: true, amount: 0.3 }
-  const [value, setValue] = useState("")
-  const [loading, setLoading] = useState(false)
-  const [success, setSuccess] = useState(false)
+  const isMobile = useMediaQuery("(max-width:768px)");
+  const animation = isMobile ? { once: true } : { once: true, amount: 0.3 };
+  const [value, setValue] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const t = useTranslations("Form");
 
   const showSuccess = () => {
-    setSuccess(true)
-    setTimeout(() => setSuccess(false), 2000)
-  }
+    setSuccess(true);
+    setTimeout(() => setSuccess(false), 2000);
+  };
 
   const handleSubmit = async () => {
-    setLoading(true)
+    setLoading(true);
 
     await emailjs
       .send(
@@ -62,15 +64,15 @@ export default function Form() {
       )
       .then(
         () => {
-          setLoading(false)
-          setValue("")
-          showSuccess()
+          setLoading(false);
+          setValue("");
+          showSuccess();
         },
         () => {
-          setLoading(false)
+          setLoading(false);
         }
-      )
-  }
+      );
+  };
 
   return (
     <Container
@@ -127,7 +129,8 @@ export default function Form() {
               flexDirection: "column",
               borderRadius: "4.8rem",
               padding: { xs: "8rem 2.4rem", lg: "12rem 0" },
-              background: "linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
+              background:
+                "linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
               backdropFilter: "blur(10px)",
             }}
           >
@@ -147,7 +150,7 @@ export default function Form() {
                 },
               }}
             >
-              هل تريد البدء في مشروع جديد؟
+              {t("title")}
             </Typography>
             <Box
               sx={{
@@ -168,7 +171,7 @@ export default function Form() {
               <TextField
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
-                placeholder="قم بإدخال رقم الهاتف أو عنوان البريد الالكتروني"
+                placeholder={t("placeholder")}
                 fullWidth
                 type="text"
                 sx={textStyle}
@@ -193,7 +196,7 @@ export default function Form() {
                   lineHeight: "1.6rem",
                 }}
               >
-                إرسال
+                {t("button")}
               </Button>
             </Box>
             {success && (
@@ -205,7 +208,7 @@ export default function Form() {
                 style={{ width: "60%", margin: "0 auto" }}
               >
                 <Alert severity="success" style={{ borderRadius: "52px" }}>
-                  تم استلام رسالتك بنجاح
+                  {t("success_message")}
                 </Alert>
               </motion.div>
             )}
@@ -213,5 +216,5 @@ export default function Form() {
         </Box>
       </motion.div>
     </Container>
-  )
+  );
 }

@@ -14,17 +14,15 @@ const theme = createTheme({
     values: {
       xs: 0,
       custom490: 490, // Custom breakpoint at 450px
-      custom768:768,
+      custom768: 768,
       sm: 600,
       md: 900,
       custom992: 950, // Custom breakpoint at 450px
 
-      lg: 1240, 
+      lg: 1240,
       // Set lg to 1240px
       xl: 1440, // You can set xl to any value, e.g., 1440px or keep it as is
-    // @ts-ignore
-
-
+      // @ts-ignore
     },
   },
   palette: {

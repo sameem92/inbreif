@@ -1,14 +1,16 @@
-import React from "react"
+import React from "react";
 
 // Components
-import Grid from "@mui/material/Grid2"
-import { motion } from "framer-motion"
+import Grid from "@mui/material/Grid2";
+import { motion } from "framer-motion";
 
 // import Image from "next/image"
-import gif from "../../../../public/expantion.gif"
-import Image from "next/image"
+import gif from "../../../../public/expantion.gif";
+import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const ExpansionSecton = () => {
+  const t = useTranslations("ECommerce.ExpansionSection");
   return (
     <div className="expansionSecton package">
       <Grid
@@ -36,8 +38,8 @@ const ExpansionSecton = () => {
         <Grid size={{ xs: 12 }}>
           <div style={{ margin: "0 auto" }}>
             <div className="sectionHead">
-              <h2>توسع بعالمك التجاري</h2>
-              <p>الآن صار بامكانك تبيع منتجاتك بشكل كامل من خلال الواتساب الخاص بك</p>
+              <h2>{t("title")}</h2>
+              <p>{t("subtitle")}</p>
             </div>
           </div>
         </Grid>
@@ -58,13 +60,10 @@ const ExpansionSecton = () => {
             >
               <div className="expansionCard">
                 <div className="content">
-                  <h3>توسيع نطاق الوصول وزيادة المبيعات</h3>
+                  <h3>{t("list1.title")}</h3>
                   <ul>
-                    <li>
-                      عرض منتجاتك مباشرة على كتالوج الواتساب بيزنس الخاص بك مما يتيح لعملائك الوصول إليها والتسوق
-                      بسهولة.
-                    </li>
-                    <li>إنشاء حملات إعلانية للكتالوج الخاص بك على منصات التواصل الاجتماعي.</li>
+                    <li>{t("list1.item1")}</li>
+                    <li>{t("list1.item2")}</li>
                   </ul>
                 </div>
               </div>
@@ -80,10 +79,10 @@ const ExpansionSecton = () => {
             >
               <div className="expansionCard">
                 <div className="content">
-                  <h3>إدارة مركزية</h3>
+                  <h3>{t("list2.title")}</h3>
                   <ul>
-                    <li>تحديث المنتجات و الأسعار تلقائياً من متجرك الى الكتالوجدون الحاجة الى إدخال البيانات.</li>
-                    <li>متابعة لحظية من لوحة التحكم المتجر لطلبات العملاء على الواتساب الخاص بك.</li>
+                    <li>{t("list2.item1")}</li>
+                    <li>{t("list2.item2")}</li>
                   </ul>
                 </div>
               </div>
@@ -92,7 +91,7 @@ const ExpansionSecton = () => {
         </Grid>
       </Grid>
     </div>
-  )
-}
+  );
+};
 
-export default ExpansionSecton
+export default ExpansionSecton;

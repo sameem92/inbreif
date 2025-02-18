@@ -1,26 +1,27 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 
 // Components
-import Grid from "@mui/material/Grid2"
-import { Box, Tab, Tabs } from "@mui/material"
-import Packages from "@/components/tools/package/packages"
+import Grid from "@mui/material/Grid2";
+import { Box, Tab, Tabs } from "@mui/material";
+import Packages from "@/components/tools/package/packages";
+import { useTranslations } from "next-intl";
 
 // Types
 interface TabPanelProps {
-  index: number | string
-  value: number | string
-  children: React.ReactNode
+  index: number | string;
+  value: number | string;
+  children: React.ReactNode;
 }
 
 function a11yProps(index: number) {
   return {
     id: `simple-tab-${index}`,
     "aria-controls": `simple-tabpanel-${index}`,
-  }
+  };
 }
 
 function CustomTabPanel(props: TabPanelProps) {
-  const { value, index, children, ...other } = props
+  const { value, index, children, ...other } = props;
 
   return (
     <Box
@@ -36,21 +37,21 @@ function CustomTabPanel(props: TabPanelProps) {
     >
       {value === index && <>{children}</>}
     </Box>
-  )
+  );
 }
 
 const plansY = [
   {
-    title: "الفضية",
+    title: "silverPlan.title",
     price: "800",
     features: [
-      "عدد غير محدود من الطلبات",
-      "تقارير وتحليلات دورية",
-      "الربط مع بوابة الدفع",
-      "الربط مع بوابة التقسيط",
-      "الربط مع بوابة شحن",
-      "اصدار وطباعة الفواتير",
-      "كوبونات خصم و عروض",
+      "silverPlan.features.feature1",
+      "silverPlan.features.feature2",
+      "silverPlan.features.feature3",
+      "silverPlan.features.feature4",
+      "silverPlan.features.feature5",
+      "silverPlan.features.feature6",
+      "silverPlan.features.feature7",
     ],
     link: "https://store.inbrief.click/subsription/منتج/الباقة-الفضية/",
     USD: "250",
@@ -59,18 +60,18 @@ const plansY = [
     KD: "80",
   },
   {
-    title: "الذهبية",
+    title: "goldPlan.title",
     price: "2000",
     features: [
-      "جميع مميزات الباقة الفضية",
-      "تحكم في تصميم المتجر",
-      "لغات متعددة",
-      "التسويق بالعمولة",
-      "متابعة وتحديث أداء المتجر",
-      "طرق شحن متنوعة",
-      "دعم 3 فروع",
-      "3 مستخدمين لإدارة المتجر",
-      "دعم فني واتساب 24 ساعة",
+      "goldPlan.features.feature1",
+      "goldPlan.features.feature2",
+      "goldPlan.features.feature3",
+      "goldPlan.features.feature4",
+      "goldPlan.features.feature5",
+      "goldPlan.features.feature6",
+      "goldPlan.features.feature7",
+      "goldPlan.features.feature8",
+      "goldPlan.features.feature9",
     ],
     link: "https://store.inbrief.click/subsription/منتج/الباقة-الذهبية/",
     USD: "490",
@@ -78,20 +79,20 @@ const plansY = [
     OMR: "150",
     KD: "150",
   },
-]
+];
 
 const plansM = [
   {
-    title: "الفضية",
+    title: "silverPlan.title",
     price: "70",
     features: [
-      "عدد غير محدود من الطلبات",
-      "تقارير وتحليلات دورية",
-      "الربط مع بوابة الدفع",
-      "الربط مع بوابة التقسيط",
-      "الربط مع بوابة شحن",
-      "اصدار وطباعة الفواتير",
-      "كوبونات خصم و عروض",
+      "silverPlan.features.feature1",
+      "silverPlan.features.feature2",
+      "silverPlan.features.feature3",
+      "silverPlan.features.feature4",
+      "silverPlan.features.feature5",
+      "silverPlan.features.feature6",
+      "silverPlan.features.feature7",
     ],
     link: "https://store.inbrief.click/subsription/منتج/الباقة-الفضية-شهري/",
     USD: "22",
@@ -100,18 +101,18 @@ const plansM = [
     KD: "8",
   },
   {
-    title: "الذهبية",
+    title: "goldPlan.title",
     price: "2000",
     features: [
-      "جميع مميزات الباقة الفضية",
-      "تحكم في تصميم المتجر",
-      "لغات متعددة",
-      "التسويق بالعمولة",
-      "متابعة وتحديث أداء المتجر",
-      "طرق شحن متنوعة",
-      "دعم 3 فروع",
-      "3 مستخدمين لإدارة المتجر",
-      "دعم فني واتساب 24 ساعة",
+      "goldPlan.features.feature1",
+      "goldPlan.features.feature2",
+      "goldPlan.features.feature3",
+      "goldPlan.features.feature4",
+      "goldPlan.features.feature5",
+      "goldPlan.features.feature6",
+      "goldPlan.features.feature7",
+      "goldPlan.features.feature8",
+      "goldPlan.features.feature9",
     ],
     link: "https://store.inbrief.click/subsription/منتج/الباقة-الذهبية-شهري/",
     USD: "45",
@@ -119,14 +120,19 @@ const plansM = [
     OMR: "14",
     KD: "15",
   },
-]
+];
 
 const PackagesSection = () => {
-  const [value, setValue] = useState<string | number>(0)
+  const [value, setValue] = useState<string | number>(0);
 
-  const handleChange = (_event: React.SyntheticEvent, newValue: string | number) => {
-    setValue(newValue)
-  }
+  const handleChange = (
+    _event: React.SyntheticEvent,
+    newValue: string | number
+  ) => {
+    setValue(newValue);
+  };
+
+  const t = useTranslations("ECommerce.PackagesSection");
 
   return (
     <div className="packagesSection package" id="packages">
@@ -155,8 +161,8 @@ const PackagesSection = () => {
         <Grid size={{ xs: 12 }}>
           <div>
             <div className="sectionHead">
-              <h2>خطط الاشتراك</h2>
-              <p>انشئ متجرك وأحصل على تجربة رائعة تستطيع ترقية الاشتراك من لوحة تحكم المتجر</p>
+              <h2>{t("title")}</h2>
+              <p>{t("description")}</p>
             </div>
           </div>
         </Grid>
@@ -179,19 +185,39 @@ const PackagesSection = () => {
                   justifyContent: "center",
                 }}
               >
-                <Tab label="سنوي" {...a11yProps(0)} />
-                <Tab label="شهري" {...a11yProps(1)} />
+                <Tab label={t("yearLabel")} {...a11yProps(0)} />
+                <Tab label={t("monthLabel")} {...a11yProps(1)} />
               </Tabs>
 
               <CustomTabPanel value={value} index={0}>
-                <Grid container alignItems="flex-end" columnSpacing={2} rowSpacing={6}>
-                  <Packages plans={plansY} more className="" buttonText="الاشتراك الآن" />
+                <Grid
+                  container
+                  alignItems="flex-end"
+                  columnSpacing={2}
+                  rowSpacing={6}
+                >
+                  <Packages
+                    plans={plansY}
+                    more
+                    className=""
+                    buttonText={t("button")}
+                  />
                 </Grid>
               </CustomTabPanel>
 
               <CustomTabPanel value={value} index={1}>
-                <Grid container alignItems="flex-end" columnSpacing={2} rowSpacing={6}>
-                  <Packages plans={plansM} more className="" buttonText="الاشتراك الآن" />
+                <Grid
+                  container
+                  alignItems="flex-end"
+                  columnSpacing={2}
+                  rowSpacing={6}
+                >
+                  <Packages
+                    plans={plansM}
+                    more
+                    className=""
+                    buttonText={t("button")}
+                  />
                 </Grid>
               </CustomTabPanel>
             </Box>
@@ -199,7 +225,7 @@ const PackagesSection = () => {
         </Grid>
       </Grid>
     </div>
-  )
-}
+  );
+};
 
-export default PackagesSection
+export default PackagesSection;

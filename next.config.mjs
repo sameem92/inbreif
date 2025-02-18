@@ -1,22 +1,24 @@
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-
   eslint: {
     ignoreDuringBuilds: true,
   },
   typescript: {
-
     ignoreBuildErrors: true,
   },
 
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ["@svgr/webpack"]
+      use: ["@svgr/webpack"],
     });
 
     return config;
-  }
+  },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

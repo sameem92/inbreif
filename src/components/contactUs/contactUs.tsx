@@ -1,17 +1,18 @@
-"use client"
+"use client";
 
-import React, { useState } from "react"
-import { Box, Container } from "@mui/material"
-import Typography from "@mui/material/Typography"
-import TextField from "@mui/material/TextField"
-import MenuItem from "@mui/material/MenuItem"
-import Select from "@mui/material/Select"
-import Button from "@mui/material/Button"
-import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
+import React, { useState } from "react";
+import { Box, Container } from "@mui/material";
+import Typography from "@mui/material/Typography";
+import TextField from "@mui/material/TextField";
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
+import Button from "@mui/material/Button";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
-import emailjs from "@emailjs/browser"
-const images = ["/image/arrow-select.png", "/image/right.png"]
+import emailjs from "@emailjs/browser";
+import { useTranslations } from "next-intl";
+const images = ["/image/arrow-select.png", "/image/right.png"];
 
 const textStyle = {
   "& .MuiInputBase-root": {
@@ -39,7 +40,7 @@ const textStyle = {
       margin: 0,
     },
   },
-}
+};
 
 const textStyleTextare = {
   "& .MuiInputBase-root": {
@@ -69,38 +70,39 @@ const textStyleTextare = {
       margin: 0,
     },
   },
-}
+};
 
 export default function ContactUsComponent() {
-  const [name, setName] = React.useState("")
-  const [email, setEmail] = React.useState("")
-  const [phone, setPhone] = React.useState("")
-  const [emailValid, setEmailValid] = React.useState(false)
-  const [phoneValid, setPhoneValid] = React.useState(false)
-  const [service, setService] = React.useState("استفسارات اخري")
-  const [message, setMessage] = React.useState("")
-  const [loading, setLoading] = useState(false)
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [phone, setPhone] = React.useState("");
+  const [emailValid, setEmailValid] = React.useState(false);
+  const [phoneValid, setPhoneValid] = React.useState(false);
+  const [service, setService] = React.useState("");
+  const [message, setMessage] = React.useState("");
+  const [loading, setLoading] = useState(false);
 
-  const [isPopupOpen, setIsPopupOpen] = React.useState(false)
+  const [isPopupOpen, setIsPopupOpen] = React.useState(false);
+  const t = useTranslations("ContactUs");
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const emailValue = e.target.value
-    setEmail(emailValue)
+    const emailValue = e.target.value;
+    setEmail(emailValue);
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    setEmailValid(emailRegex.test(emailValue))
-  }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setEmailValid(emailRegex.test(emailValue));
+  };
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const phone = e.target.value
-    setPhone(phone)
+    const phone = e.target.value;
+    setPhone(phone);
 
-    const valid = phone.trim().length >= 8
-    setPhoneValid(valid)
-  }
+    const valid = phone.trim().length >= 8;
+    setPhoneValid(valid);
+  };
 
   const handleSubmit = async () => {
-    setLoading(true)
+    setLoading(true);
     await emailjs
       .send(
         "service_xznqpsf",
@@ -116,19 +118,19 @@ export default function ContactUsComponent() {
       )
       .then(
         () => {
-          setLoading(false)
-          setIsPopupOpen(true)
+          setLoading(false);
+          setIsPopupOpen(true);
         },
         () => {
-          setLoading(false)
-          console.log("Failed to send message. Please try again.")
+          setLoading(false);
+          console.log("Failed to send message. Please try again.");
         }
-      )
-  }
+      );
+  };
 
   const handleClosePopup = () => {
-    setIsPopupOpen(false)
-  }
+    setIsPopupOpen(false);
+  };
   return (
     <>
       <div
@@ -180,9 +182,9 @@ export default function ContactUsComponent() {
                 textAlign: "center",
               }}
             >
-              املأ الاستمارة ،
+              {t("title")}
               <br />
-              وسيقوم فريقنا بالاتصال بك.
+              {t("subtitle")}
             </Typography>
             <Box
               className="border contact-us"
@@ -219,11 +221,11 @@ export default function ContactUsComponent() {
                     color: "#fff",
                   }}
                 >
-                  الاسم
+                  {t("field1")}
                 </Typography>
 
                 <TextField
-                  placeholder="اكتب اسمك"
+                  placeholder={t("write_your_name")}
                   fullWidth
                   type="text"
                   value={name}
@@ -249,16 +251,20 @@ export default function ContactUsComponent() {
                     color: "#fff",
                   }}
                 >
-                  رقم الجوال
+                  {t("field2")}
                 </Typography>
 
                 <TextField
-                  placeholder="اكتب رقم الجوال"
+                  placeholder={t("enter_phone_number")}
                   fullWidth
                   type="number"
                   value={phone}
                   onChange={handlePhoneChange}
-                  helperText={!phoneValid && phone !== "" ? "يجب ان لا يقل رقم الجوال عن ٨ ارقام" : ""}
+                  helperText={
+                    !phoneValid && phone !== ""
+                      ? t("phone_number_min_length")
+                      : ""
+                  }
                   sx={textStyle}
                 />
               </Box>
@@ -279,7 +285,7 @@ export default function ContactUsComponent() {
                     color: "#fff",
                   }}
                 >
-                  بريد إلكتروني
+                  {t("field3")}
                 </Typography>
 
                 <TextField
@@ -289,7 +295,9 @@ export default function ContactUsComponent() {
                   value={email}
                   onChange={handleEmailChange}
                   error={!emailValid && email !== ""} // Show error if email is invalid and not empty
-                  helperText={!emailValid && email !== "" ? "البريد الإلكتروني غير صالح" : ""}
+                  helperText={
+                    !emailValid && email !== "" ? t("invalid_email") : ""
+                  }
                   sx={textStyle}
                 />
               </Box>
@@ -311,10 +319,10 @@ export default function ContactUsComponent() {
                     color: "#fff",
                   }}
                 >
-                  نوع الخدمة
+                  {t("field4")}
                 </Typography>
                 <Select
-                  defaultValue="استفسارات اخري "
+                  defaultValue={t("other_inquiries")}
                   displayEmpty
                   value={service}
                   onChange={(e) => setService(e.target.value)}
@@ -329,11 +337,11 @@ export default function ContactUsComponent() {
                             color: "#fff",
                           }}
                         >
-                          استفسارات اخري
+                          {t("other_inquiries")}
                         </Typography>
-                      )
+                      );
                     }
-                    return value
+                    return value;
                   }}
                   variant="outlined"
                   IconComponent={({ className }) => (
@@ -357,8 +365,8 @@ export default function ContactUsComponent() {
                     color: "#fff",
                     "& .arrow-icon-2": {
                       top: "32%",
-                      right: "2%",
                     },
+
                     "&:focus": {
                       outline: "none",
                     },
@@ -380,7 +388,8 @@ export default function ContactUsComponent() {
                           padding: "1.2rem",
                           gap: "4px",
                           border: "1px solid ",
-                          borderImageSource: "linear-gradient(81.07deg, #22373C 53.33%, #18292D 93.73%)",
+                          borderImageSource:
+                            "linear-gradient(81.07deg, #22373C 53.33%, #18292D 93.73%)",
                         },
                         "& li": {
                           "&:hover": {
@@ -415,13 +424,25 @@ export default function ContactUsComponent() {
                     },
                   }}
                 >
-                  <MenuItem value={"برمجة تطبيقات جوال"}>برمجة تطبيقات جوال</MenuItem>
-                  <MenuItem value={"تطوير مواقع"}>تطوير مواقع</MenuItem>
-                  <MenuItem value={"متاجر إلكترونية"}>متاجر إلكترونية</MenuItem>
-                  <MenuItem value={"تصميم جرافيك"}>تصميم جرافيك</MenuItem>
-                  <MenuItem value={"موشن جرافيك"}>موشن جرافيك</MenuItem>
-                  <MenuItem value={"محتوى وحملات تسويقية"}>محتوى وحملات تسويقية</MenuItem>
-                  <MenuItem value={"استفسارات أخرى"}>استفسارات أخرى</MenuItem>
+                  <MenuItem value={t("mobile_app_development")}>
+                    {t("mobile_app_development")}
+                  </MenuItem>
+                  <MenuItem value={t("website_development")}>
+                    {t("website_development")}
+                  </MenuItem>
+                  <MenuItem value={t("e_commerce")}>{t("e_commerce")}</MenuItem>
+                  <MenuItem value={t("graphic_design")}>
+                    {t("graphic_design")}
+                  </MenuItem>
+                  <MenuItem value={t("motion_graphic")}>
+                    {t("motion_graphic")}
+                  </MenuItem>
+                  <MenuItem value={t("content_marketing")}>
+                    {t("content_marketing")}
+                  </MenuItem>
+                  <MenuItem value={t("other_inquiries")}>
+                    {t("other_inquiries")}
+                  </MenuItem>
                 </Select>
               </Box>
               <Box
@@ -441,10 +462,10 @@ export default function ContactUsComponent() {
                     color: "#fff",
                   }}
                 >
-                  رسالتك
+                  {t("field5")}
                 </Typography>
                 <TextField
-                  placeholder="اكتب رسالة لنا"
+                  placeholder={t("write_message")}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   multiline
@@ -476,7 +497,7 @@ export default function ContactUsComponent() {
                   lineHeight: "1.6rem",
                 }}
               >
-                إرسال
+                {t("submit")}
               </Button>
             </Box>
           </Container>
@@ -506,7 +527,8 @@ export default function ContactUsComponent() {
 
             <Box
               sx={{
-                background: "linear-gradient(137deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
+                background:
+                  "linear-gradient(137deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
                 borderRadius: "2.4rem",
                 padding: { xs: "2.4rem", md: "3.6rem" },
                 textAlign: "center",
@@ -549,7 +571,13 @@ export default function ContactUsComponent() {
                   }}
                   onClick={handleClosePopup}
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="13"
+                    viewBox="0 0 12 13"
+                    fill="none"
+                  >
                     <path
                       d="M8.625 3.875L3.375 9.125M3.375 3.875L8.625 9.125"
                       stroke="white"
@@ -570,7 +598,13 @@ export default function ContactUsComponent() {
                   flexDirection: "column",
                 }}
               >
-                <Image src={images[1]} alt="right" className="right" height={120} width={120} />
+                <Image
+                  src={images[1]}
+                  alt="right"
+                  className="right"
+                  height={120}
+                  width={120}
+                />
                 <Box
                   sx={{
                     display: "flex",
@@ -594,7 +628,7 @@ export default function ContactUsComponent() {
                       color: "#fff",
                     }}
                   >
-                    تم استلام طلبك
+                    {t("request_received")}
                   </Typography>
 
                   <Typography
@@ -609,7 +643,7 @@ export default function ContactUsComponent() {
                       lineHeight: "2.4rem",
                     }}
                   >
-                    سيتم الرد عليك خلال ٢٤ ساعة ، شكراً لك.
+                    {t("response_time")}
                   </Typography>
                 </Box>
               </Box>
@@ -618,5 +652,5 @@ export default function ContactUsComponent() {
         )}
       </AnimatePresence>
     </>
-  )
+  );
 }

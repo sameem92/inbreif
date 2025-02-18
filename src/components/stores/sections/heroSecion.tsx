@@ -1,24 +1,24 @@
-import React from "react"
-import Image from "next/image"
+import React from "react";
+import Image from "next/image";
 
 // Components
-import Grid from "@mui/material/Grid2"
+import Grid from "@mui/material/Grid2";
 
 // Images & Icons
-import store from "../../../../public/images/store/store.png"
-import { Button } from "@mui/material"
+import store from "../../../../public/images/store/store.png";
+import { Button } from "@mui/material";
+import { useTranslations } from "next-intl";
+import { goToWhatsApp } from "@/util/lib";
 
 const HeroSecion = () => {
-  const goToWhatsApp = () => {
-    window.open("http://wa.me/96877276659", "_target")
-  }
+  const t = useTranslations("ECommerce.HeroSection");
 
   const scrollToPackages = () => {
-    const packagesSection = document.getElementById("packages")
+    const packagesSection = document.getElementById("packages");
     if (packagesSection) {
-      packagesSection.scrollIntoView({ behavior: "smooth" })
+      packagesSection.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
     <div className="heroSection" id="goToHome">
@@ -60,14 +60,18 @@ const HeroSecion = () => {
         >
           <Grid size={{ xs: 12, md: 6 }}>
             <div>
-              <h1>أنشئ متجرك الإلكتروني الآن</h1>
+              <h1>{t("title")}</h1>
 
-              <p>صمم متجرك الإلكتروني الآن من خلال واجهة وخدمات تتيح لك التحكم الكامل من الدفع الى الشحن بكل سلاسة.</p>
+              <p>{t("description")}</p>
 
               <div className="actions">
-                <Button onClick={scrollToPackages}>ابدأ الآن</Button>
-                <Button onClick={goToWhatsApp} sx={{ background: "transparent" }} className="transparent">
-                  تواصل معنا
+                <Button onClick={scrollToPackages}>{t("startButton")}</Button>
+                <Button
+                  onClick={goToWhatsApp}
+                  sx={{ background: "transparent" }}
+                  className="transparent"
+                >
+                  {t("contactButton")}
                 </Button>
               </div>
             </div>
@@ -81,7 +85,7 @@ const HeroSecion = () => {
         </Grid>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HeroSecion
+export default HeroSecion;
