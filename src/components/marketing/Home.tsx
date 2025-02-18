@@ -15,7 +15,7 @@ import {
 import { motion } from "framer-motion";
 import SliderS1 from "@/components/tools/sliders/sliderS1";
 import PackagesSection from "@/components/marketing/packagesSection";
-import Design from "@/components/marketing/Design";
+
 import Tabs from "@mui/material/Tabs";
 
 import Social from "@/components/tools/social/social";
@@ -410,8 +410,6 @@ export default function Home() {
       </motion.div>
 
       <PackagesSection />
-
-      <Design />
     </>
   );
 }

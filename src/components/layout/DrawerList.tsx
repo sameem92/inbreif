@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FC } from "react";
 import InbreifLogo from "../../../public/image/InbreifLogo.svg";
+import CurrencySwitcher from "./components/CurrencySwitcher";
 
 interface DrawerListProps {
   toggleDrawer: (
@@ -89,6 +90,9 @@ const DrawerList: FC<DrawerListProps> = ({ toggleDrawer }) => {
           >
             {t("Contact")}
           </Button>
+        </ListItem>
+        <ListItem>
+          <CurrencySwitcher />
         </ListItem>
 
         <div className="social-menu-footer" style={{ marginTop: "20px" }}>
