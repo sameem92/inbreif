@@ -266,8 +266,7 @@ button:hover:disabled {
   padding-bottom: 7rem !important;
   margin-bottom: 15rem !important;
 }
-.MuiPaper-root li {
-}
+
 .service-box-hover {
   transition: all 0.3s ease;
 }
@@ -1393,4 +1392,12 @@ a {
 [dir="rtl"] .css-1p53uxe-MuiSelect-icon {
   left: 2%;
   right: auto;
+}
+
+.css-1qjcnuo-MuiButtonBase-root-MuiMenuItem-root {
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .css-1qjcnuo-MuiButtonBase-root-MuiMenuItem-root {
+  justify-content: flex-start;
 }
