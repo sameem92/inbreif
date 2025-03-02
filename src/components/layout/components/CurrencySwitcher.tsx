@@ -1,3 +1,5 @@
+"use client";
+
 import { useCurrency } from "@/context/CurrencyContext";
 import {
   Box,
@@ -7,36 +9,37 @@ import {
   Typography,
 } from "@mui/material";
 import { useLocale, useTranslations } from "next-intl";
-import React from "react";
+import React, { ReactNode } from "react";
+import Image from "next/image";
 
 // Define currency type
 interface Currency {
   code: string;
   symbol: string;
-  flag: string;
+  flag: ReactNode;
 }
 
-// Define currency map
+// Define currency map with SVG components
 const currencyMap: Record<string, Currency> = {
   default: {
     code: "USD",
     symbol: "dollar",
-    flag: "https://flagcdn.com/w20/us.png",
+    flag: <Image src={"/flags/USFlag.svg"} alt=".." width={25} height={25} />,
   },
   SAR: {
     code: "SAR",
     symbol: "rial_saudi",
-    flag: "https://flagcdn.com/w20/sa.png",
+    flag: <Image src={"/flags/SAFlag.svg"} alt=".." width={25} height={25} />,
   },
   KD: {
     code: "KD",
     symbol: "dinar_kuwaiti",
-    flag: "https://flagcdn.com/w20/kw.png",
+    flag: <Image src={"/flags/KWFlag.svg"} alt=".." width={25} height={25} />,
   },
   OMR: {
     code: "OMR",
     symbol: "rial_omani",
-    flag: "https://flagcdn.com/w20/om.png",
+    flag: <Image src={"/flags/OMFlag.svg"} alt=".." width={25} height={25} />,
   },
 };
 
@@ -44,6 +47,8 @@ const CurrencySwitcher: React.FC = () => {
   const { currency, setCurrency } = useCurrency();
   const locale = useLocale();
   const t = useTranslations("Shared");
+
+  console.log(currency);
 
   const handleCurrencyChange = (e: SelectChangeEvent<string>) => {
     const selectedCode = e.target.value;
@@ -57,6 +62,7 @@ const CurrencySwitcher: React.FC = () => {
         <Select
           value={currency.code}
           onChange={handleCurrencyChange}
+          className="currency"
           sx={{
             color: "#fff",
             backgroundColor: "#0B414D",
@@ -72,16 +78,15 @@ const CurrencySwitcher: React.FC = () => {
               <Box
                 sx={{
                   display: "flex",
-                  flexDirection: locale === "ar" ? "row" : "row-reverse",
+                  flexDirection:
+                    typeof window !== "undefined" && locale === "ar"
+                      ? "row"
+                      : "row-reverse",
                   alignItems: "center",
                   gap: 1,
                 }}
               >
-                <img
-                  src={cur.flag || "/placeholder.svg"}
-                  alt={`flag`}
-                  style={{ width: 25, height: 25, borderRadius: 12.5 }}
-                />
+                {cur.flag}
                 <Typography>{t(cur.code)}</Typography>
               </Box>
             </MenuItem>

@@ -1,9 +1,21 @@
-import Home from "@/components/about/Home"
+import Home from "@/components/about/Home";
+import { getTranslations } from "next-intl/server";
 
-export const metadata = {
-  title: "من نحن | شركة إن بريف للبرمجة والتسويق",
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "AboutPage.metadata",
+  });
+
+  return {
+    title: t("title"),
+  };
 }
 
 export default function Main() {
-  return <Home />
+  return <Home />;
 }

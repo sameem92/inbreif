@@ -1,9 +1,9 @@
+"use client";
+
 import MenuIcon from "@mui/icons-material/Menu";
 import { Box, Drawer, IconButton } from "@mui/material";
-import Link from "next/link";
 import { useState } from "react";
-import InbreifLogo from "../../../../public/image/InbreifLogo.svg";
-import DrawerList from "../DrawerList";
+import DrawerList from "./DrawerList";
 import LangSwitcher from "./LangSwitcher";
 
 const DrawerNav = () => {
@@ -19,17 +19,16 @@ const DrawerNav = () => {
     <>
       <Box
         sx={{
-          width: "100%",
-          display: "flex",
+          display: "none",
           justifyContent: "space-between",
           alignItems: "center",
+          "@media (max-width: 1128px)": {
+            display: "flex",
+          },
+
           // gap: "2.4rem",
         }}
       >
-        <Link href="/">
-          <InbreifLogo />
-        </Link>
-
         <Box sx={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <LangSwitcher />
           <IconButton

@@ -142,7 +142,6 @@ button:hover:disabled {
   margin: 0 auto;
   line-height: 9.6rem;
   text-align: center;
-
   color: #ffffff;
 }
 [dir="ltr"] .main-title {
@@ -211,18 +210,34 @@ button:hover:disabled {
   align-items: center;
   justify-content: center;
 }
-.social-menu-whatsapp ul li a {
+.social-menu-whatsapp {
   position: relative;
   display: block;
   width: 6rem;
   height: 6rem;
-  border-radius: 50%;
-  background-color: #fff;
+  border-radius: 5;
+  /* background-color: #fff; */
   text-align: center;
   transition: 0.6s;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.bounce {
+  animation: bounce 1s ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .social-menu ul li a:hover {
@@ -570,6 +585,7 @@ button:hover:disabled {
   }
   .main-secandry-title {
     font-size: 3.2rem;
+    line-height: 4.6rem;
   }
 }
 @media screen and (max-width: 768px) {
@@ -598,6 +614,7 @@ button:hover:disabled {
   .main-title {
     margin-top: 10px;
     font-size: 3.5rem !important;
+    line-height: 5.6rem;
   }
   .main-title-2 {
     font-size: 4rem;
@@ -1009,6 +1026,7 @@ a {
 @media (max-width: 500px) {
   .main-seo-title {
     font-size: 32px;
+    line-height: 48px;
   }
 }
 
@@ -1062,6 +1080,7 @@ a {
     font-size: 2rem;
     text-align: center;
   }
+
   .secondry-title,
   .main-shop-title {
     font-size: 3.5rem;
@@ -1075,7 +1094,7 @@ a {
     text-align: center !important;
   }
   .paragrph-shop {
-    font-size: 1.4rem !important;
+    font-size: 1.8rem !important;
     width: 100% !important;
   }
   .text-center,
@@ -1400,4 +1419,25 @@ a {
 
 [dir="rtl"] .css-1qjcnuo-MuiButtonBase-root-MuiMenuItem-root {
   justify-content: flex-start;
+}
+
+.css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  padding-right: 24px;
+}
+
+.currency
+  .css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  padding-right: 3px !important;
+}
+
+.css-151tb8j {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .css-151tb8j {
+  flex-direction: row;
+}
+
+.currency .css-mp9f0v {
+  padding-right: 3px;
 }

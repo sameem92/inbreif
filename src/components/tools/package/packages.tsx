@@ -1,33 +1,25 @@
 // Components
 import { Button } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import { motion } from "framer-motion";
 
 // Icons
 import { useCurrency } from "@/context/CurrencyContext";
+import { goToSite, goToWhatsApp } from "@/util/lib";
 import { useLocale, useTranslations } from "next-intl";
 import Checked from "../../../../public/icons/checkedIcon.svg";
+import MotionWrapper from "../MotionWrapper";
 
-const Packages = ({ plans, className, more, buttonText }) => {
+const Packages = ({ plans, className = "", more, buttonText }) => {
   const t = useTranslations("ECommerce.PackagesSection.plans");
   const locale = useLocale();
-
   const { currency } = useCurrency();
-  console.log(currency);
-
-  const goToWhatsApp = () => {
-    window.open("http://wa.me/96877276659", "_target");
-  };
-
-  const goToSite = (link) => {
-    window.open(link, "_target");
-  };
+  const isGermanNumber = locale === "de" || currency.code === "DE";
 
   return (
     <>
       {plans?.map((plan, i) => (
         <Grid key={plan.title} size={{ xs: 12, sm: 4 }}>
-          <motion.div
+          <MotionWrapper
             whileHover={{ scale: 1.02 }}
             transition={{
               type: "tween",
@@ -73,12 +65,12 @@ const Packages = ({ plans, className, more, buttonText }) => {
                 {more && <a href="#features">{t("moreButton")}</a>}
               </div>
             </div>
-          </motion.div>
+          </MotionWrapper>
         </Grid>
       ))}
 
       <Grid size={{ xs: 12, sm: 4 }}>
-        <motion.div
+        <MotionWrapper
           whileHover={{ scale: 1.02 }}
           transition={{
             type: "tween",
@@ -93,7 +85,7 @@ const Packages = ({ plans, className, more, buttonText }) => {
               <p>{t("customPlan.description")}</p>
 
               <Button
-                onClick={goToWhatsApp}
+                onClick={() => goToWhatsApp(isGermanNumber)}
                 sx={{
                   background: "transparent",
                 }}
@@ -102,7 +94,7 @@ const Packages = ({ plans, className, more, buttonText }) => {
               </Button>
             </div>
           </div>
-        </motion.div>
+        </MotionWrapper>
       </Grid>
     </>
   );

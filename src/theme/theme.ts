@@ -99,6 +99,7 @@ const theme = createTheme({
             backgroundColor: "#fff", // Hover background color
             color: "#001014", // Hover text color (black)
             transform: "translateY(-3px)", // Move the text slightly upwards
+            borderColor: "#fff",
           },
           "&:disabled": {
             cursor: "not-allowed",

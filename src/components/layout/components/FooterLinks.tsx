@@ -1,6 +1,6 @@
 import { Grid, Box, Typography } from "@mui/material";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+import FooterLink from "./FooterLink";
 
 const FooterLinks = () => {
   const t = useTranslations("footer");
@@ -66,29 +66,3 @@ const FooterLinks = () => {
 };
 
 export default FooterLinks;
-
-const FooterLink = ({ title, path }: { title: string; path: string }) => {
-  const router = useRouter();
-
-  return (
-    <Typography
-      variant="body2"
-      sx={{
-        fontFamily: "Kumbh Sans, sans-serif",
-        fontSize: "1.6rem",
-        fontWeight: 400,
-        lineHeight: "1.6rem",
-        cursor: "pointer",
-        transition: "color 0.3s ease",
-        "&:hover": {
-          color: " #e0e324",
-        },
-      }}
-      onClick={() => {
-        router.push(path);
-      }}
-    >
-      {title}
-    </Typography>
-  );
-};

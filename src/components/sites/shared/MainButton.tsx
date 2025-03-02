@@ -1,13 +1,18 @@
 "use client";
+import { useCurrency } from "@/context/CurrencyContext";
 import { goToWhatsApp } from "@/util/lib";
 import { Button } from "@mui/material";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const MainButton = () => {
   const t = useTranslations("InformationalReservation");
+  const locale = useLocale();
+  const { currency } = useCurrency();
+
+  const isGermanNumber = locale === "de" || currency.code === "DE";
   return (
     <Button
-      onClick={goToWhatsApp}
+      onClick={() => goToWhatsApp(isGermanNumber)}
       sx={{
         paddingX: "18px",
         borderRadius: 60,
@@ -18,6 +23,10 @@ const MainButton = () => {
         color: "#e1e42a",
         borderWidth: 1,
         borderStyle: "solid",
+
+        ":hover": {
+          border: "none",
+        },
       }}
     >
       {t("cta")}

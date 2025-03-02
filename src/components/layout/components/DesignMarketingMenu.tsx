@@ -89,6 +89,7 @@ export default function DesignMarketingMenu() {
         {DesignServices.map((item, index) => (
           <MenuItem onClick={handleMouseLeave} key={index}>
             <Link
+              prefetch={true}
               href={item.path}
               className={`nav-link ${isActive(item.path) ? "active" : ""}`}
             >

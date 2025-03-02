@@ -1,9 +1,16 @@
 import { Container } from "@mui/material";
 import { ReactNode } from "react";
 
-const MainContainer = ({ children }: { children: ReactNode }) => {
+const MainContainer = ({
+  children,
+  ref,
+}: {
+  children: ReactNode;
+  ref?: React.Ref<HTMLDivElement>;
+}) => {
   return (
     <Container
+      ref={ref}
       maxWidth="lg"
       sx={{
         display: "flex",

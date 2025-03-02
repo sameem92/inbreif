@@ -1,5 +1,13 @@
-import Home from "@/components/home/Home"
+import HeroSection from "@/components/home/HeroSection";
+import Services from "@/components/home/Services";
+import Social from "@/components/tools/social/social";
 
 export default function Main() {
-  return <Home />
+  return (
+    <>
+      <Social />
+      <HeroSection />
+      <Services />
+    </>
+  );
 }

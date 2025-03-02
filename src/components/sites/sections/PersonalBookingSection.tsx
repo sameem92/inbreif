@@ -26,10 +26,10 @@ const badges = [
 ];
 
 import { useTranslations } from "next-intl";
-import caro from "../../../../public/images/caro.png";
+import personal1 from "../../../../public/images/sites/personal_1.png";
 import SwiperCardContainer from "../shared/SwiperCardContainer";
 
-const images = [caro, caro, caro, caro, caro];
+const images = [personal1];
 
 const PersonalBookingSection = () => {
   const t = useTranslations("InformationalReservation.PersonalBookingSection");

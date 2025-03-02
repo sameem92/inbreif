@@ -1,57 +1,18 @@
 "use client";
 
+import { FEATURES } from "@/constants/sites";
 import { Box, Stack } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-
-const features = [
-  {
-    title: "Feature1.title",
-    description: "Feature1.description",
-    imageURL: ".././images/procedures/1.svg",
-    imageWidth: 76,
-    imageHeight: 80,
-  },
-  {
-    title: "Feature2.title",
-    description: "Feature2.description",
-    imageURL: ".././images/procedures/2.svg",
-    imageWidth: 81,
-    imageHeight: 76,
-  },
-  {
-    title: "Feature3.title",
-    description: "Feature3.description",
-    imageURL: ".././images/procedures/3.svg",
-    imageWidth: 80,
-    imageHeight: 67,
-  },
-  {
-    title: "Feature4.title",
-    description: "Feature4.description",
-    imageURL: ".././images/procedures/4.svg",
-    imageWidth: 87,
-    imageHeight: 76,
-  },
-  {
-    title: "Feature5.title",
-    description: "Feature5.description",
-    imageURL: ".././images/procedures/5.svg",
-    imageWidth: 88,
-    imageHeight: 88,
-  },
-  {
-    title: "Feature6.title",
-    description: "Feature6.description",
-    imageURL: ".././images/procedures/6.svg",
-    imageWidth: 88,
-    imageHeight: 85,
-  },
-];
+import ProcedureCard from "../shared/ProcedureCard";
+import { useInView } from "motion/react";
+import { useRef } from "react";
+import MotionWrapper from "@/components/tools/MotionWrapper";
 
 const ProceduresSection = () => {
   const t = useTranslations("InformationalReservation.ProceduresSection");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <Box
@@ -81,31 +42,22 @@ const ProceduresSection = () => {
           <Stack>
             <h2 className="section-header">{t("title")}</h2>
             <p>{t("subtitle")}</p>
-            <div className="grid-container">
-              {features.map((feature) => (
-                <motion.div
-                  key={feature.title}
-                  whileHover={{ scale: 1.02 }}
+            <div className="grid-container" ref={ref}>
+              {FEATURES.map((feature, index) => (
+                <MotionWrapper
+                  key={index}
+                  initial={{ opacity: 0, y: 100 }}
+                  animate={
+                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }
+                  }
                   transition={{
-                    type: "tween",
-                    stiffness: 400,
-                    damping: 10,
+                    duration: 0.8,
+                    ease: "easeOut",
+                    delay: index * 0.1,
                   }}
                 >
-                  <div className="card">
-                    <div className="content">
-                      <div className="circle"></div>
-                      <img
-                        src={feature.imageURL}
-                        alt={feature.title}
-                        width={feature.imageWidth}
-                        height={feature.imageHeight}
-                      />
-                      <h3>{t(feature.title)}</h3>
-                      <p>{t(feature.description)}</p>
-                    </div>
-                  </div>
-                </motion.div>
+                  <ProcedureCard feature={feature} />
+                </MotionWrapper>
               ))}
             </div>
           </Stack>

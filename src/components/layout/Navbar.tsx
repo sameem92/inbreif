@@ -1,6 +1,6 @@
-"use client";
+// "use client";
 
-import { AppBar, Box, Stack, Toolbar, useMediaQuery } from "@mui/material";
+import { AppBar, Box, Stack, Toolbar } from "@mui/material";
 import Link from "next/link";
 import InbreifLogo from "../../../public/image/InbreifLogo.svg";
 import ContactUsButton from "./components/ContactUsButton";
@@ -10,8 +10,6 @@ import LangSwitcher from "./components/LangSwitcher";
 import MainNavigation from "./components/MainNavigation";
 
 const Header = () => {
-  const isMobile = useMediaQuery("(max-width: 1128px)");
-
   return (
     <AppBar
       sx={{
@@ -38,32 +36,35 @@ const Header = () => {
             width: "100%",
           }}
         >
-          {isMobile ? (
-            <DrawerNav />
-          ) : (
+          <Link href="/" prefetch={true}>
+            <InbreifLogo />
+          </Link>
+          <DrawerNav />
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+            flexDirection="row-reverse"
+            width="100%"
+            sx={{
+              display: "flex",
+              "@media (max-width: 1128px)": {
+                display: "none",
+              },
+            }}
+          >
             <Stack
               direction="row"
-              justifyContent="space-between"
               alignItems="center"
               flexDirection="row-reverse"
-              width="100%"
+              gap="1rem"
             >
-              <Stack
-                direction="row"
-                alignItems="center"
-                flexDirection="row-reverse"
-                gap="1rem"
-              >
-                <LangSwitcher />
-                <ContactUsButton />
-                <CurrencySwitcher />
-              </Stack>
-              <MainNavigation />
-              <Link href="/">
-                <InbreifLogo />
-              </Link>
+              <LangSwitcher />
+              <ContactUsButton />
+              <CurrencySwitcher />
             </Stack>
-          )}
+            <MainNavigation />
+          </Stack>
         </Toolbar>
       </Box>
     </AppBar>

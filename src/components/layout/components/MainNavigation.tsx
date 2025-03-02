@@ -1,10 +1,11 @@
+"use client";
+
 import { NavList } from "@/constants/page";
 import { Box, Stack } from "@mui/material";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import ProgrammingDevelopmentMenu from "./ProgrammingDevelopmentMenu";
-import DesignMarketingMenu from "./DesignMarketingMenu";
+import NavigationMenuDemo from "./NavigationMenuDemo";
 
 const MainNavigation = () => {
   const t = useTranslations("Shared");
@@ -33,6 +34,7 @@ const MainNavigation = () => {
         >
           {NavList.map((item) => (
             <Link
+              prefetch={true}
               href={item.path}
               className={`nav-link ${isActive(item.path) ? "active" : ""}`}
               key={item.path}
@@ -43,20 +45,7 @@ const MainNavigation = () => {
         </Stack>
       ) : (
         <>
-          <Link
-            href="/"
-            className={`nav-link ${isActive("/") ? "active" : ""}`}
-          >
-            {t("Home")}
-          </Link>
-          <Link
-            href="/about-us"
-            className={`nav-link ${isActive("/about-us") ? "active" : ""}`}
-          >
-            {t("About")}
-          </Link>
-          <ProgrammingDevelopmentMenu />
-          <DesignMarketingMenu />
+          <NavigationMenuDemo />
         </>
       )}
     </Box>

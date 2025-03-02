@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material"
+import { Box } from "@mui/material";
 const Loading = () => {
   return (
     <Box
@@ -20,11 +20,8 @@ const Loading = () => {
       }}
     >
       <div className="loader"></div>
-      <Typography variant="h6" sx={{ marginTop: "1.5rem" }} className="loading">
-        برجاء الانتظار
-      </Typography>
     </Box>
-  )
-}
+  );
+};
 
-export default Loading
+export default Loading;

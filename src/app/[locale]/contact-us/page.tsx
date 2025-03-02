@@ -1,9 +1,22 @@
-import ContactUsComponent from "@/components/contactUs/contactUs"
+import ContactUsComponent from "@/components/contactUs/contactUs";
 
-export const metadata = {
-  title: "تواصل معنا | شركة إن بريف للبرمجة والتسويق",
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "ContactUs.metadata",
+  });
+
+  return {
+    title: t("title"),
+  };
 }
 
 export default function ContactUsPage() {
-  return <ContactUsComponent />
+  return <ContactUsComponent />;
 }

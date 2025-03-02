@@ -1,12 +1,14 @@
+"use client";
+
+import emailjs from "@emailjs/browser";
 import { Alert, Container, useMediaQuery } from "@mui/material";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
-import { useState } from "react";
+import Typography from "@mui/material/Typography";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
+import MotionWrapper from "../MotionWrapper";
 
 const textStyle = {
   "&.MuiTextField-root": {
@@ -95,7 +97,7 @@ export default function Form() {
         },
       }}
     >
-      <motion.div
+      <MotionWrapper
         style={{
           display: "flex",
           flexDirection: "column",
@@ -178,7 +180,7 @@ export default function Form() {
               />
               <Button
                 onClick={handleSubmit}
-                disabled={loading}
+                disabled={loading || value.split(" ").join("").length < 5}
                 sx={{
                   display: "flex",
                   justifyContent: "center",
@@ -200,7 +202,7 @@ export default function Form() {
               </Button>
             </Box>
             {success && (
-              <motion.div
+              <MotionWrapper
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.4, ease: "easeIn" }}
@@ -210,11 +212,11 @@ export default function Form() {
                 <Alert severity="success" style={{ borderRadius: "52px" }}>
                   {t("success_message")}
                 </Alert>
-              </motion.div>
+              </MotionWrapper>
             )}
           </Box>
         </Box>
-      </motion.div>
+      </MotionWrapper>
     </Container>
   );
 }

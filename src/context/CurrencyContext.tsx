@@ -1,34 +1,52 @@
-import React, { createContext, useState, useContext, useEffect } from "react";
+"use client";
 
-// Currency mapping based on country
-const currencyMap = {
+import React, {
+  createContext,
+  useState,
+  useContext,
+  useEffect,
+  ReactNode,
+} from "react";
+import UsaFlag from "../../public/flags/USFlag.svg";
+import KwFlag from "../../public/flags/KWFlag.svg";
+import OmFlag from "../../public/flags/OMFlag.svg";
+import SaFlag from "../../public/flags/SAFlag.svg";
+
+// Define currency type
+interface Currency {
+  code: string;
+  symbol: string;
+  flag: ReactNode;
+}
+
+// Currency mapping with SVG components
+const currencyMap: Record<string, Currency> = {
   default: {
     code: "USD",
     symbol: "dollar",
-    flag: "https://flagcdn.com/w20/us.png",
+    flag: <UsaFlag />,
   },
   SA: {
     code: "SAR",
     symbol: "rial_saudi",
-    flag: "https://flagcdn.com/w20/sa.png",
-  }, // Saudi Arabia
+    flag: <SaFlag />,
+  },
   KW: {
     code: "KD",
     symbol: "dinar_kuwaiti",
-    flag: "https://flagcdn.com/w20/kw.png",
-  }, // Kuwait
+    flag: <KwFlag />,
+  },
   OM: {
     code: "OMR",
     symbol: "rial_omani",
-    flag: "https://flagcdn.com/w20/om.png",
-  }, // Oman
-  DE: { code: "DE", symbol: "not shown", flag: "" }, // Germany
+    flag: <OmFlag />,
+  },
 };
 
 // Define context type
 interface CurrencyContextType {
-  currency: { code: string; symbol: string };
-  setCurrency: (currency: { code: string; symbol: string }) => void;
+  currency: Currency;
+  setCurrency: (currency: Currency) => void;
 }
 
 // Create context
@@ -42,23 +60,27 @@ export const CurrencyProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [currency, setCurrency] = useState<{ code: string; symbol: string }>(
-    currencyMap.default
-  );
+  const [currency, setCurrency] = useState<Currency>(currencyMap.default);
 
   useEffect(() => {
+    const storedCurrency = localStorage.getItem("user_currency");
+    if (storedCurrency) {
+      setCurrency(JSON.parse(storedCurrency));
+      return;
+    }
+
     const fetchUserLocation = async () => {
       try {
-        // Fetch user's country based on IP
         const response = await fetch("https://ipapi.co/json/");
         const data = await response.json();
 
-        // Set currency based on country code
-        const userCountry = data.country_code; // Example: "SA", "KW", etc.
-        setCurrency(currencyMap[userCountry] || currencyMap.default);
+        const userCountry = data.country_code;
+        const newCurrency = currencyMap[userCountry] || currencyMap.default;
+        setCurrency(newCurrency);
+        localStorage.setItem("user_currency", JSON.stringify(newCurrency));
       } catch (error) {
         console.error("Error fetching user location:", error);
-        setCurrency(currencyMap.default); // Default to USD if error occurs
+        setCurrency(currencyMap.default);
       }
     };
 

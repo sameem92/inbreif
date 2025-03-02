@@ -77,7 +77,10 @@ const FooterLocations = () => {
               city={t("location1.city")}
               location={t("location1.location")}
             />
-            <FooterPhone phone={t("location1.phone")} />
+            <FooterPhone
+              phoneText={t("location1.phone")}
+              phoneNumber="966552647805"
+            />
           </Box>
           <Box
             sx={{
@@ -90,7 +93,10 @@ const FooterLocations = () => {
               city={t("location2.city")}
               location={t("location2.location")}
             />
-            <FooterPhone phone={t("location2.phone")} />
+            <FooterPhone
+              phoneText={t("location2.phone")}
+              phoneNumber="96550337772"
+            />
           </Box>
           <Box
             sx={{
@@ -103,7 +109,10 @@ const FooterLocations = () => {
               city={t("location3.city")}
               location={t("location3.location")}
             />
-            <FooterPhone phone={t("location3.phone")} />
+            <FooterPhone
+              phoneText={t("location3.phone")}
+              phoneNumber="96877276659"
+            />
           </Box>
           <Box
             sx={{
@@ -116,7 +125,10 @@ const FooterLocations = () => {
               city={t("location4.city")}
               location={t("location4.location")}
             />
-            <FooterPhone phone={t("location4.phone")} />
+            <FooterPhone
+              phoneText={t("location4.phone")}
+              phoneNumber="491784740741"
+            />
           </Box>
         </Box>
       </Box>
@@ -144,7 +156,7 @@ const FooterLocation = ({
         fontWeight: 400,
         lineHeight: locale === "ar" ? "1.6rem" : "2.2rem",
         display: "flex",
-        alignItems: "center",
+        alignItems: "flex-start",
         gap: "1rem",
       }}
     >
@@ -156,7 +168,13 @@ const FooterLocation = ({
   );
 };
 
-const FooterPhone = ({ phone }: { phone: string }) => {
+const FooterPhone = ({
+  phoneText,
+  phoneNumber,
+}: {
+  phoneText: string;
+  phoneNumber: string;
+}) => {
   return (
     <Typography
       variant="body2"
@@ -175,11 +193,11 @@ const FooterPhone = ({ phone }: { phone: string }) => {
 
       <strong>
         <a
-          href="http://wa.me/966552647805"
+          href={`http://wa.me/${phoneNumber}`}
           target="_blank"
           style={{ color: "white" }}
         >
-          {phone}
+          {phoneText}
         </a>
       </strong>
     </Typography>

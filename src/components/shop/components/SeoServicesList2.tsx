@@ -1,17 +1,7 @@
-import { Box, Card, CardContent, Typography } from "@mui/material";
-import { motion } from "framer-motion";
+import MotionWrapper from "@/components/tools/MotionWrapper";
+import { services2 } from "@/constants/campaigns";
+import { Box, Card, Typography } from "@mui/material";
 import { useLocale, useTranslations } from "next-intl";
-
-const services = [
-  { title: "analysis.title" },
-  { title: "keyword_optimization.title" },
-  { title: "keyword_research.title" },
-  { title: "performance_tracking.title" },
-  { title: "on_page_seo.title" },
-  { title: "local_seo.title" },
-  { title: "technical_seo.title" },
-  { title: "off_page_seo.title" },
-];
 
 const containerStyles = {
   display: "flex",
@@ -33,6 +23,8 @@ const cardStyles = {
   display: "flex",
   zIndex: 0,
   flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
   padding: { xs: "1rem", sm: "1.5rem", md: "2rem", lg: "2.5rem" },
   gap: { xs: "1rem", sm: "1.5rem", md: "2rem", lg: "2.5rem" },
   "@media(max-width:900px)": {
@@ -43,23 +35,14 @@ const cardStyles = {
   },
 };
 
-const cardContentStyles = {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
-  gap: "1.6rem",
-  height: "100%",
-};
-
 const SeoServicesList = () => {
   const t = useTranslations("MarketingCampaigns.SeoSection.services");
 
   const locale = useLocale();
 
   const typographyStyles = {
-    fontWeight: 700,
-    fontSize: locale === "ar" ? "20px" : "18px",
+    fontWeight: 600,
+    fontSize: { xs: "16px", sm: locale === "ar" ? "20px" : "18px" },
     lineHeight: locale === "ar" ? "30px" : "24px",
     letterSpacing: "0%",
     textAlign: "center",
@@ -67,7 +50,7 @@ const SeoServicesList = () => {
   };
 
   return (
-    <motion.div
+    <MotionWrapper
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
@@ -76,27 +59,32 @@ const SeoServicesList = () => {
     >
       <Box sx={containerStyles}>
         <Box sx={cardContainerStyles}>
-          {services.map((service, index) => (
-            <Box key={index} width="256px" height="112px">
-              <motion.div
+          {services2.map((service, index) => (
+            <Box
+              key={index}
+              sx={{
+                width: { xs: "175px", sm: "256px" },
+                height: { xs: "auto", sm: "112px" },
+                minHeight: "112px",
+              }}
+            >
+              <MotionWrapper
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "tween", stiffness: 200, damping: 10 }}
                 style={{ height: "100%" }}
                 className="hover"
               >
                 <Card sx={cardStyles} className="content">
-                  <CardContent sx={cardContentStyles}>
-                    <Typography variant="h6" sx={typographyStyles}>
-                      {t(service.title)}
-                    </Typography>
-                  </CardContent>
+                  <Typography variant="h6" sx={typographyStyles}>
+                    {t(service.title)}
+                  </Typography>
                 </Card>
-              </motion.div>
+              </MotionWrapper>
             </Box>
           ))}
         </Box>
       </Box>
-    </motion.div>
+    </MotionWrapper>
   );
 };
 

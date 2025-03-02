@@ -1,20 +1,23 @@
-import Home from "@/components/marketing/Home";
-import { Box } from "@mui/material";
-import Design from "@/components/marketing/Design";
+import MainComponent from "@/components/marketing/MainComponent";
 
-export const metadata = {
-  title: "تصميم جرافيك وموشن احترافي | شركة إن بريف للبرمجة والتسويق",
-  description:
-    "أفضل شركة تصميم فيديو موشن جرافيك، نقدم لك تصميمات جرافيك وموشن جرافيك احترافية لعلامتك التجارية بأسعار مناسبة، تواصل معنا.",
-};
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "DesignMotion.metadata",
+  });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 export default function Main() {
-  return (
-    <>
-      <Home />
-      <Box id="motion">
-        <Design />
-      </Box>
-    </>
-  );
+  return <MainComponent />;
 }

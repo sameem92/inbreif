@@ -1,4 +1,42 @@
 {
+  "metadata": {
+    "title": "InBrief Software- und Digitalmarketing-Unternehmen | Integrierte Technologielösungen",
+    "description": "Ein spezialisiertes und führendes Unternehmen für Marketing und Programmierung am Golf. Webdesign, App-Entwicklung, Verwaltung von Werbekampagnen und Grafikdesign.",
+    "keywords": {
+      "Mobile_design_services": "Mobile Design Services",
+      "Mobile_design": "Mobildesign",
+      "Free_consultation": "Kostenlose Beratung",
+      "Contact_us": "Kontaktiere uns",
+      "Website_design": "Webseitengestaltung",
+      "Graphic_design": "Grafikdesign",
+      "Mobile_applications": "Mobile Anwendungen",
+      "Unlimited": "Unbegrenzt",
+      "App_development": "App-Entwicklung",
+      "Store_design": "Shop-Design",
+      "Website_development": "Webseitenerstellung",
+      "Top_level_security": "Höchste Sicherheitsstandards",
+      "Custom_store_services": "Benutzerdefinierte Shop-Dienste",
+      "Application_development": "Anwendungsentwicklung",
+      "Web_development": "Webentwicklung",
+      "Website_programming_and_design": "Webseiten-Programmierung und -Design",
+      "E_commerce": "E-Commerce",
+      "Digital_marketing": "Digitales Marketing",
+      "Medical_websites": "Medizinische Websites",
+      "Booking_websites": "Buchungswebsites",
+      "Charity_websites": "Wohltätigkeitsseiten",
+      "Marketing_campaigns": "Marketingkampagnen",
+      "Sponsored_ads": "Gesponserte Anzeigen",
+      "Paid_campaigns": "Bezahlte Kampagnen"
+    },
+    "openGraph": {
+      "title": "InBrief Software- und Digitalmarketing-Unternehmen | Integrierte Technologielösungen",
+      "description": "Ein spezialisiertes und führendes Unternehmen für Marketing und Programmierung am Golf. Webdesign, App-Entwicklung, Verwaltung von Werbekampagnen und Grafikdesign."
+    },
+    "twitter": {
+      "title": "InBrief Software- und Digitalmarketing-Unternehmen | Integrierte Technologielösungen",
+      "description": "Ein spezialisiertes und führendes Unternehmen für Marketing und Programmierung am Golf. Webdesign, App-Entwicklung, Verwaltung von Werbekampagnen und Grafikdesign."
+    }
+  },
   "Shared": {
     "Home": "Startseite",
     "About": "Über uns",
@@ -18,11 +56,11 @@
     "USD": "USD",
     "SAR": "SAR",
     "KD": "KD",
-    "OMRr": "OMR"
+    "OMRr": "OMR",
+    "loading_text": "Bitte warten"
   },
-
   "Home": {
-    "title1": "Die führende Plattform für Software und Marketing in der arabischen Welt.",
+    "title1": "Die führende Plattform für Software und Marketing.",
     "title2": "Kurz gesagt, wir bringen Sie zum digitalen Erfolg.",
     "consultation": "Fordern Sie eine kostenlose Beratung an.",
     "price": "Wettbewerbsfähige Preise",
@@ -39,6 +77,9 @@
     "strategicMarketingPlanDevelopment": "Entwicklung strategischer Marketingpläne"
   },
   "AboutPage": {
+    "metadata": {
+      "title": "Über uns | InBrief Software- und Marketingunternehmen"
+    },
     "welcome": "Willkommen bei In Brief!",
     "heroDescription": "Wir sind ein offiziell lizenziertes und führendes Unternehmen, das sich auf Programmierung, App- und Web-Entwicklung sowie digitales Marketing spezialisiert hat, mit einem starken Fokus auf die Bedürfnisse des Golfmarktes. Mit Büros in Saudi-Arabien, Kuwait und Oman bieten wir innovative Lösungen, die die Erfahrungen unserer Kunden verbessern und sie der Konkurrenz vorausbringen.",
     "whatSetsUsApart": {
@@ -66,6 +107,10 @@
     }
   },
   "MobileApps": {
+    "metadata": {
+      "title": "Entwicklung und Design von mobilen Apps | InBrief Software- und Marketingunternehmen",
+      "description": "Spezialisiert auf die Gestaltung und Entwicklung von mobilen Apps mit hoher Fachkompetenz und den neuesten Technologien für iOS und Android. Holen Sie sich jetzt Ihre mobile App."
+    },
     "mainTitle": "Mobile Anwendungen",
     "mainDescription": {
       "title": "Ideen in Realität verwandeln",
@@ -73,7 +118,16 @@
     },
     "work": {
       "title": "Unsere Arbeit",
-      "app": "Anwendung"
+      "app": "ANWENDUNG",
+      "homely": "HOMELY",
+      "afaak": "AFAAK",
+      "noura": "NOURA",
+      "adasa": "ADASA",
+      "harbi": "HARBI",
+      "pharm": "DR.PHARM",
+      "sawnn": "SAWNN",
+      "wajeez": "WAJEEZ",
+      "baitoty": "BAITOTY"
     },
     "features": {
       "title": "Funktionen",
@@ -99,6 +153,10 @@
     }
   },
   "ECommerce": {
+    "metadata": {
+      "title": "Entwicklung und Design von E-Commerce-Shops | InBrief Software- und Marketingunternehmen",
+      "description": "Ein umfassendes E-Commerce-Shop-Design mit innovativen Benutzeroberflächen und einem nahtlosen Einkaufserlebnis. Erstellen Sie einen benutzerfreundlichen Online-Shop mit einem schnellen und einfachen Bedienfeld. Gestalten Sie jetzt Ihren E-Commerce-Shop."
+    },
     "HeroSection": {
       "title": "Holen Sie sich jetzt Ihren E-Commerce-Shop.",
       "description": "Gestalten Sie jetzt Ihren Online-Shop mit einer Benutzeroberfläche und Dienstleistungen, die Ihnen vollständige Kontrolle bieten – von",
@@ -273,11 +331,11 @@
         "feature7": "Ratenzahlungs-Gateways",
         "feature8": "Sprachen",
         "feature9": "Anpassbare Benutzeroberfläche",
-        "feature10": "Erstellen Sie eine benutzerdefinierte Seite",
+        "feature10": "Individuelle Seite erstellen",
         "feature11": "Kaufgutscheine",
         "feature12": "Verlassene Warenkörbe",
         "feature13": "Rabatte aktivieren",
-        "feature14": "Unterstützung für Suchmaschinenoptimierung (SEO)",
+        "feature14": "(SEO)",
         "feature15": "Affiliate-Marketing",
         "feature16": "Google Analytics-Integration",
         "feature17": "Pixel-Code-Integration",
@@ -326,13 +384,13 @@
         "content_upload": "Inhaltsbereitstellung",
         "content_upload_desc": "Lassen Sie Produkte und Seiten in Ihrem Store hinzufügen – mit Unterstützung für mehrsprachige Inhalte.",
 
-        "seo": "Suchmaschinenoptimierung (SEO)",
+        "seo": "(SEO)",
         "seo_desc": "Verbessern Sie Ihr Google-Ranking mit SEO-Diensten, einschließlich passender Inhalte und Artikel.",
 
         "marketing_consultant": "Marketing-Beratung für den Store",
         "marketing_consultant_desc": "Beauftragen Sie einen Marketingexperten zur Erstellung von Werbekampagnen und zur Verwaltung Ihrer Social-Media-Kanäle.",
 
-        "table_reservation": "Tischreservierungssystem",
+        "table_reservation": "(TRS)",
         "table_reservation_desc": "Vereinfachen Sie die Kundenreservierungen mit einem effizienten Tischbuchungssystem.",
 
         "multi_vendor": "Multi-Vendor-Marktplatz",
@@ -356,6 +414,10 @@
     }
   },
   "DesignMotion": {
+    "metadata": {
+      "title": "Professionelles Grafik- und Motion-Design | InBrief Software- und Marketingunternehmen",
+      "description": "Die beste Motion-Graphic-Video-Designfirma. Wir bieten professionelle Grafik- und Motion-Graphic-Designs für Ihre Marke zu erschwinglichen Preisen. Kontaktieren Sie uns jetzt."
+    },
     "Hero": {
       "title": "Grafikdesign",
       "description": "Wir streben nach Exzellenz, Kreativität und Modernität, um unseren Kunden einzigartige visuelle Identitäten und Werbeanzeigen in einem wettbewerbsintensiven Markt zu liefern.",
@@ -428,6 +490,10 @@
     }
   },
   "MarketingCampaigns": {
+    "metadata": {
+      "title": "Verwaltung von Marketingkampagnen | InBrief Software- und Marketingunternehmen",
+      "description": "Effektive Strategien zur Verwaltung von Werbekampagnen. Wir bieten Ihnen innovative und schnelle Marketinglösungen, um effektive Ergebnisse zu erzielen. Starten Sie jetzt Ihre Marketingkampagnen für die besten Ergebnisse."
+    },
     "HeroSection": {
       "title": "Marketing mit uns ist anders",
       "description": "Kurz gesagt, wir bringen Sie zu Ihrem Ziel.",
@@ -521,7 +587,7 @@
       },
       "services": {
         "title": "Umfassende SEO-Dienstleistungen für Ihre Website von In Brief",
-        "description": "Was Sie von unserem SEO-Service erhalten?",
+        "description": "Was Sie von unserem SEO-Service erhalten",
         "analysis": {
           "title": "Aktuelle Website-Analyse"
         },
@@ -632,6 +698,10 @@
     }
   },
   "InformationalReservation": {
+    "metadata": {
+      "title": "Webentwicklung und -design | InBrief Software- und Marketingunternehmen",
+      "description": "Verwirklichen Sie Ihre Idee einfach und professionell digital. Erstellen Sie Ihre Website und starten Sie noch heute Ihre Reise zum Erfolg!"
+    },
     "HeroSection": {
       "title": "Erstellen Sie jetzt Ihre Website",
       "description1": "Verwandeln Sie Ihre Idee mit Leichtigkeit und Professionalität in eine digitale Realität.",
@@ -740,6 +810,9 @@
     }
   },
   "ContactUs": {
+    "metadata": {
+      "title": "Kontaktieren Sie uns | InBrief Software- und Marketingunternehmen"
+    },
     "title": "Füllen Sie das Formular aus,",
     "subtitle": "und unser Team wird sich mit Ihnen in Verbindung setzen.",
     "field1": "Name",
@@ -820,7 +893,7 @@
     "success_message": "Ihre Nachricht wurde erfolgreich empfangen."
   },
   "footer": {
-    "title": "Die beste führende Plattform für Software und Marketing in der arabischen Welt",
+    "title": "Die beste führende Plattform für Software und Marketing.",
     "license": {
       "title": "Lizenznummer",
       "number": "CR 1559152"
@@ -850,7 +923,7 @@
     "location4": {
       "city": "Deutschland",
       "location": "Gerhard-Küchen-Straße 14, 45141 Essen",
-      "phone": "+49 1522 4999190"
+      "phone": "+49 1784 740741"
     },
     "links": {
       "title": "Wichtige Links",

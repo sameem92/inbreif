@@ -1,19 +1,18 @@
 import { FeedbackItems } from "@/constants/page";
 import {
-  Container,
   Box,
   Button,
   Card,
   CardContent,
+  Container,
   Typography,
 } from "@mui/material";
-import { motion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
-import React, { useState } from "react";
-import { Navigation, Autoplay } from "swiper/modules";
-import { SwiperSlide } from "swiper/react";
-import { Swiper } from "swiper/react";
+import { useState } from "react";
+import { Autoplay, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import MotionWrapper from "../MotionWrapper";
 
 const Testimonials = ({
   animation,
@@ -27,7 +26,7 @@ const Testimonials = ({
   const locale = useLocale();
 
   return (
-    <motion.div
+    <MotionWrapper
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={animation}
@@ -316,7 +315,7 @@ const Testimonials = ({
           </Button>
         </Box>
       </Container>
-    </motion.div>
+    </MotionWrapper>
   );
 };
 

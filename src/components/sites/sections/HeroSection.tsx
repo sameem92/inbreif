@@ -1,23 +1,29 @@
 "use client";
 
-import { Button, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
-import { motion } from "framer-motion";
 import Image from "next/image";
 
-import { goToWhatsApp } from "@/util/lib";
-import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+import MotionWrapper from "@/components/tools/MotionWrapper";
+import { useLocale, useTranslations } from "next-intl";
+import SiteHeroImageForeign from "../../../../public/foreign/SiteHeroImageForeign.png";
 import Circles from "../../../../public/images/circles.png";
 import SiteHeroImage from "../../../../public/images/siteHero.png";
+import ContactBtn from "../shared/ContactBtn";
+import StartBtn from "../shared/StartBtn";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const HeroSection = () => {
   const t = useTranslations("InformationalReservation.HeroSection");
-  const router = useRouter();
+  const locale = useLocale();
+  const ref1 = useRef(null);
+  const isInView1 = useInView(ref1, { once: true, margin: "-100px" });
+
   return (
     <div className="heroSection">
-      <motion.div
+      <MotionWrapper
         initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: "easeIn" }}
@@ -52,10 +58,11 @@ const HeroSection = () => {
               "@media (max-width: 480px)": { display: "none" },
             }}
           >
-            <Image src={Circles} alt="Circles" />
+            <Image src={Circles} alt="Circles" style={{ maxWidth: "100%" }} />
           </Box>
 
           <Box
+            ref={ref1}
             sx={{
               justifyContent: "center",
               alignItems: "center",
@@ -65,75 +72,52 @@ const HeroSection = () => {
               maxWidth: "780px",
             }}
           >
-            <Stack gap={"12px"}>
-              <h1>{t("title")}</h1>
-              <Box
-                sx={{
-                  position: "relative",
-                  aspectRatio: "16/9",
-                  width: "100%",
-                }}
-              >
-                <Image
-                  src={SiteHeroImage}
-                  fill
-                  alt="Site Hero Image"
-                  style={{ objectFit: "contain" }}
-                />
-              </Box>
-              <p>
-                {t("description1")} <br />
-                {t("description2")}
-              </p>
-
-              <Stack
-                direction="row"
-                sx={{
-                  marginX: "auto",
-                  marginTop: "45px",
-                  gap: "8px",
-                  "@media only screen and (max-width: 320px)": {
-                    flexDirection: "column",
-                    alignItems: "center",
-                  },
-                }}
-              >
-                <Button
-                  onClick={goToWhatsApp}
+            <MotionWrapper
+              initial={{ y: 100, opacity: 0 }}
+              animate={isInView1 ? { y: 0, opacity: 1 } : {}}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <Stack gap={"12px"}>
+                <h1>{t("title")}</h1>
+                <Box
                   sx={{
-                    paddingX: "24px",
-                    height: 56,
-                    borderRadius: 60,
-                    fontWeight: 600,
-                    fontSize: 22,
+                    position: "relative",
+                    aspectRatio: "16/9",
+                    width: "100%",
                   }}
                 >
-                  {t("startButton")}
-                </Button>
+                  <Image
+                    src={locale === "ar" ? SiteHeroImage : SiteHeroImageForeign}
+                    fill
+                    alt="Site Hero Image"
+                    style={{ objectFit: "contain" }}
+                  />
+                </Box>
+                <p>
+                  {t("description1")} <br />
+                  {t("description2")}
+                </p>
 
-                <Button
-                  onClick={() => router.push("/contact-us")}
+                <Stack
+                  direction="row"
                   sx={{
-                    paddingX: "24px",
-                    height: 56,
-                    borderRadius: 60,
-                    fontWeight: 600,
-                    fontSize: 22,
-                    background: "transparent",
-                    borderColor: "#e1e42a",
-                    borderWidth: 1,
-                    borderStyle: "solid",
-                    margin: 0,
-                    color: "white",
+                    marginX: "auto",
+                    marginTop: "45px",
+                    gap: "8px",
+                    "@media only screen and (max-width: 320px)": {
+                      flexDirection: "column",
+                      alignItems: "center",
+                    },
                   }}
                 >
-                  {t("contactButton")}
-                </Button>
+                  <StartBtn />
+                  <ContactBtn />
+                </Stack>
               </Stack>
-            </Stack>
+            </MotionWrapper>
           </Box>
         </Container>
-      </motion.div>
+      </MotionWrapper>
     </div>
   );
 };

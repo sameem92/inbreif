@@ -15,7 +15,7 @@
     color: #ffffff;
     font-size: 23px;
     line-height: 41px;
-    max-width: 469px;
+    max-width: 800px;
   }
 
   .card-section {
@@ -25,11 +25,16 @@
     gap: 20px;
 
     @media (max-width: "1024px") {
-      align-items: center;
+      max-width: 60%;
+    }
+
+    @media (max-width: "786px") {
+      max-width: 80%;
     }
 
     @media (max-width: "425px") {
-      align-items: start;
+      align-items: flex-start;
+      max-width: 100%;
     }
 
     .main-card {
@@ -120,14 +125,14 @@
       padding: 0;
       margin: 0;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 36px;
-      row-gap: 24px;
+      grid-template-columns: repeat(2, auto);
+      gap: 12px;
+      max-width: max-content;
 
       .listItem {
         display: flex;
         justify-content: flex-start;
-        align-items: start;
+        align-items: flex-start;
         gap: 24px;
 
         p {
@@ -177,6 +182,7 @@
 
     .badges {
       list-style-type: none;
+      max-width: max-content;
       padding: 0;
       margin: 0;
       display: flex;
@@ -197,12 +203,8 @@
         }
       }
 
-      @media (max-width: "1024px") {
-        justify-content: center;
-      }
-
       @media (max-width: "425px") {
-        justify-content: start;
+        justify-content: flex-start;
       }
     }
   }
@@ -288,12 +290,27 @@
       color: #e1e42a;
       font-weight: 700;
       font-size: 49px;
-      line-height: 73.5px;
+      line-height: 5rem;
       margin-bottom: 4.625rem;
       text-align: center;
 
       @media (max-width: 640px) {
-        font-size: 42px;
+        font-size: 32px;
+      }
+    }
+
+    p {
+      text-align: center;
+      margin: 0 auto;
+      font-weight: 600;
+      color: #ffffff;
+      font-size: 23px;
+      line-height: 41px;
+      max-width: 800px;
+
+      @media (max-width: 640px) {
+        font-size: 16px;
+        line-height: 3rem;
       }
     }
   }
@@ -315,12 +332,8 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      @media (max-width: 574px) and (min-width: 425px) {
+      @media (max-width: 574px) {
         gap: 20px;
-      }
-
-      @media (max-width: 425px) {
-        grid-template-columns: 1fr;
       }
     }
 
@@ -328,40 +341,43 @@
       position: relative;
 
       @media (max-width: 574px) {
-        width: 190px;
+        width: 200px;
       }
 
       @media (max-width: 426px) {
-        width: auto;
+        width: 170px;
       }
 
       .content {
         width: 258px;
         background: #032932 !important;
         backdrop-filter: blur(10px);
-        padding: 64px 27px 0;
+        padding: 64px 27px 16px;
         border-radius: 25px;
         z-index: 1;
-
-        @media (max-width: 574px) and (min-width: 426px) {
-          padding: 64px 20px 0;
-          width: 190px;
+        min-height: 100%;
+        min-height: 275px;
+        [dir="ltr"] & {
+          min-height: 335px;
         }
 
-        [dir="ltr"] & {
-          min-height: 343px;
-          padding-bottom: 24px;
-
-          @media (max-width: 574px) and (min-width: 426px) {
-            min-height: 340px;
+        @media (max-width: 574px) {
+          padding: 64px 20px 16px;
+          width: 100%;
+          min-height: 260px;
+          [dir="ltr"] & {
+            min-height: 310px;
           }
         }
 
-        [dir="rtl"] & {
-          min-height: 283px;
-
-          @media (max-width: 574px) and (min-width: 426px) {
-            min-height: 300px;
+        @media (max-width: 426px) {
+          [dir="ltr"] & {
+            min-height: 340px;
+          }
+          [dir="rtl"] & {
+            @media (max-width: 426px) {
+              min-height: 280px;
+            }
           }
         }
       }
@@ -400,6 +416,10 @@
         height: 119px;
         border-radius: 50%;
         background: #ffffff0d;
+        @media (max-width: 426px) {
+          width: 80px;
+          height: 80px;
+        }
       }
 
       h3 {
@@ -411,9 +431,9 @@
         text-align: center;
         color: #fff;
 
-        @media (max-width: 574px) and (min-width: 425px) {
-          font-size: 16px;
-          line-height: 24px;
+        @media (max-width: 574px) {
+          font-size: 14px;
+          line-height: 20px;
         }
       }
 
@@ -425,7 +445,7 @@
         color: #ffffffc2;
         margin-top: 12px;
 
-        @media (max-width: 574px) and (min-width: 425px) {
+        @media (max-width: 574px) {
           font-size: 12px;
           line-height: 18px;
         }

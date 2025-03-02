@@ -53,18 +53,18 @@ export const DesignServices = [
 
 export const HeroList = [
   {
+    id: 1,
     title: "professionalism",
     icon: icon1,
   },
+  { id: 2, title: "experience", icon: icon2 },
   {
-    title: "experience",
-    icon: icon2,
-  },
-  {
+    id: 3,
     title: "licensing",
     icon: icon3,
   },
   {
+    id: 4,
     title: "price",
     icon: icon4,
   },

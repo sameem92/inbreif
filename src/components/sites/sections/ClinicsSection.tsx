@@ -7,7 +7,10 @@ import MainCard from "../shared/MainCard";
 import MainContainer from "../shared/MainContainer";
 import MainList from "../shared/MainList";
 import MainSwiper from "../shared/MainSwiper";
-
+import { useTranslations } from "next-intl";
+import SwiperCardContainer2 from "../shared/SwiperCardContainer2";
+import clincis1 from "../../../../public/images/sites/clincis_1.png";
+import clincis2 from "../../../../public/images/sites/clinics_2.png";
 import stethoscope from "../../../../public/images/stethoscope.png";
 
 const items = [
@@ -25,11 +28,7 @@ const badges = [
   "clinicalSection.category4",
 ];
 
-import { useTranslations } from "next-intl";
-import caro from "../../../../public/images/caro.png";
-import SwiperCardContainer2 from "../shared/SwiperCardContainer2";
-
-const images = [caro, caro, caro, caro, caro];
+const images = [clincis1, clincis2];
 
 const ClinicsSection = () => {
   const t = useTranslations("InformationalReservation.clinicalSection");
@@ -43,7 +42,7 @@ const ClinicsSection = () => {
         <SwiperCardContainer2>
           <MainSwiper images={images} />
 
-          <div className="section card-section">
+          <div className="card-section">
             <MainCard
               title={t("title")}
               description={t("description")}

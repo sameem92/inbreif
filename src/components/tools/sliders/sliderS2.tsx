@@ -4,6 +4,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 // Components
 import { Box, Button, useMediaQuery } from "@mui/material";
@@ -19,14 +20,16 @@ import "swiper/css/navigation";
 // Images & Icons
 import Star from "../../../../public/icons/starIcon.svg";
 import { useLocale } from "next-intl";
+import { PRODUCTS } from "@/constants/web";
 
-export default function SlideS2({ products }) {
+export default function SlideS2() {
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
   const isTablet = useMediaQuery("(max-width:1024px)");
   const totalSlides = 10;
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const locale = useLocale();
+  const t = useTranslations("ECommerce.TemplatesSection");
 
   useEffect(() => {
     setImagesLoaded(true);
@@ -163,14 +166,14 @@ export default function SlideS2({ products }) {
               slideShadows: false,
             }}
           >
-            {products.map((product) => (
-              <SwiperSlide key={product.title}>
+            {PRODUCTS.map((product) => (
+              <SwiperSlide key={t(product.title)}>
                 <div className="product">
                   <div className="content">
                     <div className="img">
-                      <Image src={product.image} alt={product.title} />
+                      <Image src={product.image} alt={t(product.title)} />
                     </div>
-                    <h4>{product.title}</h4>
+                    <h4>{t(product.title)}</h4>
                     <ul>
                       <li>
                         <Star />

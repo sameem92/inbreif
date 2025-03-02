@@ -16,10 +16,12 @@ const badges = [
 ];
 
 import { useTranslations } from "next-intl";
-import caro from "../../../../public/images/caro.png";
+import info1 from "../../../../public/images/sites/info_1.png";
+import info2 from "../../../../public/images/sites/info_2.png";
+
 import SwiperCardContainer from "../shared/SwiperCardContainer";
 
-const infoImages = [caro, caro, caro, caro, caro];
+const infoImages = [info1, info2];
 
 const InformationalSection = () => {
   const t = useTranslations("InformationalReservation.InformationalSection");
@@ -27,7 +29,7 @@ const InformationalSection = () => {
   return (
     <MainContainer>
       <SwiperCardContainer>
-        <div className="section card-section">
+        <div className="card-section">
           <MainCard
             title={t("title")}
             description={t("description")}

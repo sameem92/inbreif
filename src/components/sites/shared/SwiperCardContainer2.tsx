@@ -9,7 +9,7 @@ const SwiperCardContainer2 = ({ children }: { children: ReactNode }) => {
         flexDirection: "column-reverse",
         alignItems: "center",
         gap: "80px",
-        "@media (min-width:1440px)": {
+        "@media (min-width:1025px)": {
           flexDirection: "row",
           alignItems: "start",
           gap: "44px",

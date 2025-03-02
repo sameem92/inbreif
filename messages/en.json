@@ -1,4 +1,42 @@
 {
+  "metadata": {
+    "title": "InBrief Software and Digital Marketing Company | Integrated Technology Solutions",
+    "description": "A specialized and leading company in marketing and programming in the Gulf. Website design, app development, ad campaign management, and graphic design.",
+    "keywords": {
+      "Mobile_design_services": "Mobile design services",
+      "Mobile_design": "Mobile design",
+      "Free_consultation": "Free consultation",
+      "Contact_us": "Contact us",
+      "Website_design": "Website design",
+      "Graphic_design": "Graphic design",
+      "Mobile_applications": "Mobile applications",
+      "Unlimited": "Unlimited",
+      "App_development": "App development",
+      "Store_design": "Store design",
+      "Website_development": "Website development",
+      "Top_level_security": "Top-level security",
+      "Custom_store_services": "Custom store services",
+      "Application_development": "Application development",
+      "Web_development": "Web development",
+      "Website_programming_and_design": "Website programming and design",
+      "E_commerce": "E-commerce",
+      "Digital_marketing": "Digital marketing",
+      "Medical_websites": "Medical websites",
+      "Booking_websites": "Booking websites",
+      "Charity_websites": "Charity websites",
+      "Marketing_campaigns": "Marketing campaigns",
+      "Sponsored_ads": "Sponsored ads",
+      "Paid_campaigns": "Paid campaigns"
+    },
+    "openGraph": {
+      "title": "InBrief Software and Digital Marketing Company | Integrated Technology Solutions",
+      "description": "A specialized and leading company in marketing and programming in the Gulf. Website design, app development, ad campaign management, and graphic design."
+    },
+    "twitter": {
+      "title": "InBrief Software and Digital Marketing Company | Integrated Technology Solutions",
+      "description": "A specialized and leading company in marketing and programming in the Gulf. Website design, app development, ad campaign management, and graphic design."
+    }
+  },
   "Shared": {
     "Home": "Home",
     "About": "About Us",
@@ -18,10 +56,11 @@
     "USD": "USD",
     "SAR": "SAR",
     "KD": "KD",
-    "OMR": "OMR"
+    "OMR": "OMR",
+    "loading_text": "Please wait"
   },
   "Home": {
-    "title1": "The best leading platform for software and marketing in the Arab world",
+    "title1": "The best leading platform for software and marketing.",
     "title2": "Briefly, we take you to digital success",
     "consultation": "Request a free consultation",
     "price": "competitive prices",
@@ -38,6 +77,9 @@
     "strategicMarketingPlanDevelopment": "Strategic marketing plan development"
   },
   "AboutPage": {
+    "metadata": {
+      "title": "About Us | InBrief Software and Marketing Company"
+    },
     "welcome": "Welcome to In Brief!",
     "heroDescription": "We are an officially licensed and leading company specializing in programming, app and website development, and digital marketing, with a strong focus on meeting the needs of the Gulf market. With offices in Saudi Arabia, Kuwait, and Oman, we deliver innovative solutions that enhance our clients’ experiences and position them ahead of the competition.",
     "whatSetsUsApart": {
@@ -65,6 +107,10 @@
     }
   },
   "MobileApps": {
+    "metadata": {
+      "title": "Mobile App Development and Design | InBrief Software and Marketing Company",
+      "description": "Specialized in mobile app design and development with high expertise and the latest technologies for both iOS and Android. Get your mobile app now."
+    },
     "mainTitle": "Mobile applications",
     "mainDescription": {
       "title": "Turning Ideas into Reality",
@@ -72,7 +118,16 @@
     },
     "work": {
       "title": "Our work",
-      "app": "App"
+      "app": "APP",
+      "homely": "HOMELY",
+      "afaak": "AFAAK",
+      "noura": "NOURA",
+      "adasa": "ADASA",
+      "harbi": "HARBI",
+      "pharm": "DR.PHARM",
+      "sawnn": "SAWNN",
+      "wajeez": "WAJEEZ",
+      "baitoty": "BAITOTY"
     },
     "features": {
       "title": "Features",
@@ -98,6 +153,10 @@
     }
   },
   "ECommerce": {
+    "metadata": {
+      "title": "E-commerce Store Development and Design | InBrief Software and Marketing Company",
+      "description": "A comprehensive e-commerce store design featuring innovative user interfaces and a seamless shopping experience. Get an easy-to-use online store with a fast and simple control panel. Design your e-commerce store now."
+    },
     "HeroSection": {
       "title": "get your E-commerce store now.",
       "description": "Design your online store now with an interface and services that give you full control, from payment to shipping, seamlessly.",
@@ -273,7 +332,7 @@
         "feature11": "Purchase Vouchers",
         "feature12": "Abandoned Carts",
         "feature13": "Activate Discounts",
-        "feature14": "Search Engine Optimization (SEO)",
+        "feature14": "(SEO)",
         "feature15": "Affiliate Marketing",
         "feature16": "Google Analytics Integration",
         "feature17": "Pixel Code Integration",
@@ -352,6 +411,10 @@
     }
   },
   "DesignMotion": {
+    "metadata": {
+      "title": "Professional Graphic and Motion Design | InBrief Software and Marketing Company",
+      "description": "The best motion graphic video design company. We offer professional graphic and motion graphic designs for your brand at affordable prices. Contact us now."
+    },
     "Hero": {
       "title": "Graphic Design",
       "description": "We strive for excellence, creativity, and modernity in delivering unique visual identities and advertisements to our clients in a competitive market.",
@@ -424,6 +487,10 @@
     }
   },
   "MarketingCampaigns": {
+    "metadata": {
+      "title": "Marketing Campaign Management | InBrief Software and Marketing Company",
+      "description": "Effective strategies for managing advertising campaigns. We offer innovative and fast marketing solutions to achieve effective results. Start your marketing campaigns now for the best outcomes."
+    },
     "HeroSection": {
       "title": "Marketing with Us is Different",
       "description": "In short, we take you to your goal.",
@@ -517,7 +584,7 @@
       },
       "services": {
         "title": "Comprehensive SEO Services for Your Website from In Brief",
-        "description": "What you will get from our SEO service?",
+        "description": "What you will get from our SEO service",
         "analysis": {
           "title": "Current Website Analysis"
         },
@@ -628,6 +695,10 @@
     }
   },
   "InformationalReservation": {
+    "metadata": {
+      "title": "Website Development and Design | InBrief Software and Marketing Company",
+      "description": "Turn your idea into a digital reality with ease and professionalism. Create your website and start your journey to success today!"
+    },
     "HeroSection": {
       "title": "Create your website now",
       "description1": "Turn your idea into a digital reality with ease and professionalism.",
@@ -736,6 +807,9 @@
     }
   },
   "ContactUs": {
+    "metadata": {
+      "title": "Contact Us | InBrief Software and Marketing Company"
+    },
     "title": "Fill out the form,",
     "subtitle": "and our team will contact you.",
     "field1": "Name",
@@ -816,7 +890,7 @@
     "success_message": "Your message has been successfully received."
   },
   "footer": {
-    "title": "The best leading platform for software and marketing in the Arab world",
+    "title": "The best leading platform for software and marketing.",
     "license": {
       "title": "Licensing number",
       "number": "CR 1559152"
@@ -846,7 +920,7 @@
     "location4": {
       "city": "Germany",
       "location": "Gerhard-Küchen-Straße 14, 45141 Essen",
-      "phone": "+49 1522 4999190"
+      "phone": "+49 1784 740741"
     },
     "links": {
       "title": "Links That Matter",

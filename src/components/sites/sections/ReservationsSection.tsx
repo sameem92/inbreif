@@ -1,11 +1,15 @@
+import { Box } from "@mui/material";
+import { useTranslations } from "next-intl";
+import reserve1 from "../../../../public/images/sites/reserve_1.png";
+import reserve2 from "../../../../public/images/sites/reserve_2.png";
 import ticket from "../../../../public/images/ticket.png";
-
 import BadgesList from "../shared/BadgesList";
 import MainButton from "../shared/MainButton";
 import MainCard from "../shared/MainCard";
 import MainContainer from "../shared/MainContainer";
 import MainList from "../shared/MainList";
 import MainSwiper from "../shared/MainSwiper";
+import SwiperCardContainer from "../shared/SwiperCardContainer";
 
 const items = [
   "reservationSection.feature1",
@@ -23,12 +27,7 @@ const badges = [
   "reservationSection.category5",
 ];
 
-import caro from "../../../../public/images/caro.png";
-import SwiperCardContainer from "../shared/SwiperCardContainer";
-import { Box } from "@mui/material";
-import { useTranslations } from "next-intl";
-
-const images = [caro, caro, caro, caro, caro];
+const images = [reserve1, reserve2];
 
 const ReservationsSection = () => {
   const t = useTranslations("InformationalReservation");

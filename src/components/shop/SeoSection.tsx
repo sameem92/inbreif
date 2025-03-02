@@ -1,10 +1,9 @@
 import { Box, Container, Stack } from "@mui/material";
-import { motion } from "framer-motion";
-import React from "react";
+import { useTranslations } from "next-intl";
+import MotionWrapper from "../tools/MotionWrapper";
 import SectionInfo from "./components/SectionInfo";
 import SeoServicesList from "./components/SeoServicesList";
 import SeoServicesList2 from "./components/SeoServicesList2";
-import { useTranslations } from "next-intl";
 
 const SeoSection = () => {
   const t = useTranslations("MarketingCampaigns.SeoSection");
@@ -14,7 +13,7 @@ const SeoSection = () => {
         backgroundColor: "#00000017",
       }}
     >
-      <motion.div
+      <MotionWrapper
         style={{ width: "100%" }}
         initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
@@ -25,11 +24,11 @@ const SeoSection = () => {
             display: "flex",
             flexDirection: "column",
             padding: { xs: "6rem 2rem", md: "10rem 2rem", xl: "15rem 2rem" },
-            gap: "197px",
+            gap: { xs: "100px", sm: "130px", md: "150px", xl: "170px" },
           }}
           maxWidth="lg"
         >
-          <Stack spacing="144px">
+          <Stack spacing="115px">
             <SectionInfo title={t("title")} description={t("description")} />
             <SeoServicesList />
           </Stack>
@@ -42,7 +41,7 @@ const SeoSection = () => {
             <SeoServicesList2 />
           </Stack>
         </Container>
-      </motion.div>
+      </MotionWrapper>
     </Box>
   );
 };

@@ -1,67 +1,18 @@
-import React from "react";
-import { Box, Typography, Grid } from "@mui/material";
+import { displayCurrentYear } from "@/util/lib";
+import { Box, Grid, Typography } from "@mui/material";
 import Container from "@mui/material/Container";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
-import Fade from "@mui/material/Fade";
-import useScrollTrigger from "@mui/material/useScrollTrigger";
 import footer from "../../../public/image/fo.png";
 import timer from "../../../public/image/time.png";
-
-import up from "../../../public/image/up.png";
-import { useLocale, useTranslations } from "next-intl";
-import SocialMediaLinks from "./components/SocialMediaLinks";
 import FooterLinks from "./components/FooterLinks";
 import FooterLocations from "./components/FooterLocations";
-import { displayCurrentYear } from "@/util/lib";
-
-function ScrollTop() {
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 10, // Try setting a low threshold for testing
-  });
-
-  // Log to check when the trigger fires
-  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    const anchor = (
-      (event.target as HTMLDivElement).ownerDocument || document
-    ).querySelector("#goToHome");
-    if (anchor) {
-      anchor.scrollIntoView({
-        block: "center",
-        behavior: "smooth",
-      });
-    }
-  };
-  return (
-    <Fade in={trigger}>
-      <Box
-        onClick={handleClick}
-        role="presentation"
-        sx={{
-          position: "fixed",
-          bottom: 16,
-          right: 16,
-          cursor: "pointer",
-          zIndex: 1000,
-        }}
-      >
-        <Image
-          onClick={handleClick}
-          width={50}
-          height={50}
-          src={up}
-          alt="up"
-          style={{ cursor: "pointer", width: "5rem", height: "5rem" }}
-        />
-      </Box>
-    </Fade>
-  );
-}
+import ScrollTop from "./components/ScrollTop";
+import SocialMediaLinks from "./components/SocialMediaLinks";
 
 export default function ResponsiveFooter() {
   const t = useTranslations("footer");
   const locale = useLocale();
-
   const year = displayCurrentYear();
 
   return (

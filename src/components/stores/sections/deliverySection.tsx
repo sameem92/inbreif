@@ -1,36 +1,18 @@
-import React from "react";
-import Image from "next/image";
+"use client";
 
-// Components
+import MotionWrapper from "@/components/tools/MotionWrapper";
 import Grid from "@mui/material/Grid2";
-
-// Images & Icons
-import delivery from "../../../../public/images/store/delivery.png";
-import SliderS3 from "@/components/tools/sliders/sliderS3";
-
-import Company1 from "../../../../public/images/store/companies/company1.svg";
-import Company2 from "../../../../public/images/store/companies/company2.svg";
-import Company3 from "../../../../public/images/store/companies/company3.svg";
-import Company4 from "../../../../public/images/store/companies/company4.svg";
-import Company5 from "../../../../public/images/store/companies/company5.svg";
-import Company6 from "../../../../public/images/store/companies/company6.svg";
-import Company7 from "../../../../public/images/store/companies/company7.svg";
-import Company8 from "../../../../public/images/store/companies/company8.svg";
+import { useInView } from "motion/react";
 import { useTranslations } from "next-intl";
-
-const companies = [
-  <Company1 key="company1" />,
-  <Company2 key="company2" />,
-  <Company3 key="company3" />,
-  <Company4 key="company4" />,
-  <Company5 key="company5" />,
-  <Company6 key="company6" />,
-  <Company7 key="company7" />,
-  <Company8 key="company8" />,
-];
+import Image from "next/image";
+import { useRef } from "react";
+import delivery from "../../../../public/images/store/delivery.png";
+import OurCompanies from "../shared/OurCompanies";
 
 const DeliverySection = () => {
   const t = useTranslations("ECommerce.DeliverySection");
+  const ref1 = useRef(null);
+  const isInView1 = useInView(ref1, { once: true, margin: "-100px" });
 
   return (
     <div className="deliverySection package">
@@ -58,29 +40,41 @@ const DeliverySection = () => {
           }}
         >
           <Grid
+            ref={ref1}
             size={{ xs: 12 }}
             container
             justifyContent="space-between"
             alignItems="center"
           >
             <Grid size={{ xs: 12, md: 5 }}>
-              <div className="delivery_img">
-                <Image src={delivery} alt="الشحن والتوصيل" />
-              </div>
+              <MotionWrapper
+                initial={{ y: 100 }}
+                animate={isInView1 ? { y: 0, opacity: 1 } : {}}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+                <div className="delivery_img">
+                  <Image src={delivery} alt="الشحن والتوصيل" />
+                </div>
+              </MotionWrapper>
             </Grid>
 
             <Grid size={{ xs: 12, md: 7 }}>
-              <div className="info">
-                <h2>{t("title")}</h2>
-                <p>{t("subtitle1")}</p>
-
-                <p>{t("subtitle2")}</p>
-              </div>
+              <MotionWrapper
+                initial={{ y: 100 }}
+                animate={isInView1 ? { y: 0, opacity: 1 } : {}}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+                <div className="info">
+                  <h2>{t("title")}</h2>
+                  <p>{t("subtitle1")}</p>
+                  <p>{t("subtitle2")}</p>
+                </div>
+              </MotionWrapper>
             </Grid>
           </Grid>
         </Grid>
 
-        <SliderS3 images={companies} className="swiper-y" />
+        <OurCompanies />
       </div>
     </div>
   );

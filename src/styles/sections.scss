@@ -54,7 +54,7 @@
       margin: 16px auto;
       background: #124651;
       border-radius: 20px;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 500;
       color: #fff;
       padding: 4px 16px;
@@ -73,6 +73,16 @@
         font-weight: 600;
         color: #fff;
         list-style: none;
+
+        [dir="ltr"] & {
+          font-size: 18px;
+          @media (max-width: 1102px) {
+            font-size: 16px;
+          }
+          @media (max-width: 972px) {
+            font-size: 14px;
+          }
+        }
 
         span {
           flex: 1;
@@ -283,7 +293,11 @@
 
     &.gold {
       .content {
-        min-height: 600px;
+        min-height: 650px;
+
+        [dir="ltr"] & {
+          min-height: 750px;
+        }
       }
     }
 
@@ -294,7 +308,7 @@
         .label {
           height: 35px;
           padding: 4px 16px;
-          font-size: 20px;
+          font-size: 16px;
         }
       }
 
@@ -345,7 +359,10 @@
     }
 
     &.gold .content {
-      min-height: 500px;
+      min-height: 600px;
+      [dir="ltr"] & {
+        min-height: 650px;
+      }
     }
 
     &.withMinHeight {
@@ -354,7 +371,7 @@
 
         .label {
           padding: 4px 16px;
-          font-size: 16px;
+          font-size: 14px;
         }
       }
 
@@ -417,15 +434,18 @@
     }
 
     &.gold .content {
-      min-height: 450px;
+      min-height: 550px;
+      [dir="ltr"] & {
+        min-height: 550px;
+      }
     }
 
     &.withMinHeight {
       .content {
         min-height: 600px;
         .label {
-          width: 100px;
-          font-size: 16px;
+          padding: 4px 16px;
+          font-size: 12px;
         }
       }
 

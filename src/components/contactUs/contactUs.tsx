@@ -1,17 +1,20 @@
 "use client";
 
-import React, { useState } from "react";
 import { Box, Container } from "@mui/material";
-import Typography from "@mui/material/Typography";
-import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
-import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-
+import React, { useState, memo } from "react";
 import emailjs from "@emailjs/browser";
 import { useTranslations } from "next-intl";
+import MotionWrapper from "../tools/MotionWrapper";
+import FormTitle from "./shared/FormTitle";
+import FieldWrapper from "./shared/FieldWrapper";
+
 const images = ["/image/arrow-select.png", "/image/right.png"];
 
 const textStyle = {
@@ -24,7 +27,6 @@ const textStyle = {
       padding: "0 1.6rem",
       background: "transparent",
     },
-
     "& .MuiOutlinedInput-notchedOutline": {
       background: "transparent",
       borderRadius: "7rem",
@@ -48,12 +50,10 @@ const textStyleTextare = {
   },
   "&.MuiTextField-root": {
     color: "#FFF",
-
     "& .MuiInputLabel-outlined": {
       padding: "0 1.6rem",
       background: "transparent",
     },
-
     "& .MuiOutlinedInput-notchedOutline": {
       background: "transparent",
       borderRadius: "2.4rem",
@@ -66,29 +66,26 @@ const textStyleTextare = {
     },
     "& .MuiFormHelperText-contained": {
       color: "error.main",
-
       margin: 0,
     },
   },
 };
 
-export default function ContactUsComponent() {
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [phone, setPhone] = React.useState("");
-  const [emailValid, setEmailValid] = React.useState(false);
-  const [phoneValid, setPhoneValid] = React.useState(false);
-  const [service, setService] = React.useState("");
-  const [message, setMessage] = React.useState("");
+const ContactUsComponent = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [emailValid, setEmailValid] = useState(false);
+  const [phoneValid, setPhoneValid] = useState(false);
+  const [service, setService] = useState("");
+  const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-
-  const [isPopupOpen, setIsPopupOpen] = React.useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const t = useTranslations("ContactUs");
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const emailValue = e.target.value;
     setEmail(emailValue);
-
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     setEmailValid(emailRegex.test(emailValue));
   };
@@ -96,7 +93,6 @@ export default function ContactUsComponent() {
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const phone = e.target.value;
     setPhone(phone);
-
     const valid = phone.trim().length >= 8;
     setPhoneValid(valid);
   };
@@ -126,21 +122,21 @@ export default function ContactUsComponent() {
           console.log("Failed to send message. Please try again.");
         }
       );
+    setName("");
+    setPhone("");
+    setEmail("");
+    setService("");
+    setMessage("");
   };
 
   const handleClosePopup = () => {
     setIsPopupOpen(false);
   };
+
   return (
     <>
-      <div
-        style={{
-          height: "9.6rem",
-          width: "100%",
-        }}
-        id="goToHome"
-      />
-      <motion.div
+      <div style={{ height: "9.6rem", width: "100%" }} id="goToHome" />
+      <MotionWrapper
         className="hero"
         id="goToHome"
         initial={{ opacity: 0, y: 100 }}
@@ -172,20 +168,7 @@ export default function ContactUsComponent() {
             }}
             maxWidth="md"
           >
-            <Typography
-              variant="h1"
-              sx={{
-                fontSize: { xs: "3.6rem", md: "4rem" },
-                fontWeight: 700,
-                lineHeight: "6rem",
-                color: "#fff",
-                textAlign: "center",
-              }}
-            >
-              {t("title")}
-              <br />
-              {t("subtitle")}
-            </Typography>
+            <FormTitle />
             <Box
               className="border contact-us"
               sx={{
@@ -198,32 +181,12 @@ export default function ContactUsComponent() {
                 borderRadius: "4.8rem",
                 padding: { xs: "2rem 3rem", md: "6.6rem 5.6rem " },
                 paddingBottom: { xs: "5rem", lg: "5rem" },
-
                 background:
                   "linear-gradient(137.34deg, rgba(27, 54, 44, 0.16) 23.98%, rgba(112, 113, 122, 0.16) 65.73%)",
                 backdropFilter: "blur(10px)",
               }}
             >
-              <Box
-                sx={{
-                  display: "flex",
-                  gap: { xs: ".6rem", md: "1.6rem" },
-                  width: "100%",
-                  flexDirection: "column",
-                }}
-              >
-                <Typography
-                  variant="body2"
-                  sx={{
-                    fontSize: "1.6rem",
-                    fontWeight: 500,
-                    lineHeight: "2.4rem",
-                    color: "#fff",
-                  }}
-                >
-                  {t("field1")}
-                </Typography>
-
+              <FieldWrapper title={t("field1")}>
                 <TextField
                   placeholder={t("write_your_name")}
                   fullWidth
@@ -232,32 +195,11 @@ export default function ContactUsComponent() {
                   onChange={(e) => setName(e.target.value)}
                   sx={textStyle}
                 />
-              </Box>
-
-              <Box
-                sx={{
-                  display: "flex",
-                  gap: { xs: ".6rem", md: "1.6rem" },
-                  width: "100%",
-                  flexDirection: "column",
-                }}
-              >
-                <Typography
-                  variant="body2"
-                  sx={{
-                    fontSize: "1.6rem",
-                    fontWeight: 500,
-                    lineHeight: "2.4rem",
-                    color: "#fff",
-                  }}
-                >
-                  {t("field2")}
-                </Typography>
-
+              </FieldWrapper>
+              <FieldWrapper title={t("field2")}>
                 <TextField
                   placeholder={t("enter_phone_number")}
                   fullWidth
-                  type="number"
                   value={phone}
                   onChange={handlePhoneChange}
                   helperText={
@@ -267,60 +209,22 @@ export default function ContactUsComponent() {
                   }
                   sx={textStyle}
                 />
-              </Box>
-              <Box
-                sx={{
-                  display: "flex",
-                  gap: { xs: ".6rem", md: "1.6rem" },
-                  width: "100%",
-                  flexDirection: "column",
-                }}
-              >
-                <Typography
-                  variant="body2"
-                  sx={{
-                    fontSize: "1.6rem",
-                    fontWeight: 500,
-                    lineHeight: "2.4rem",
-                    color: "#fff",
-                  }}
-                >
-                  {t("field3")}
-                </Typography>
-
+              </FieldWrapper>
+              <FieldWrapper title={t("field3")}>
                 <TextField
                   placeholder="demo@gmail.com"
                   fullWidth
                   type="email"
                   value={email}
                   onChange={handleEmailChange}
-                  error={!emailValid && email !== ""} // Show error if email is invalid and not empty
+                  error={!emailValid && email !== ""}
                   helperText={
                     !emailValid && email !== "" ? t("invalid_email") : ""
                   }
                   sx={textStyle}
                 />
-              </Box>
-              <Box
-                className="select"
-                sx={{
-                  display: "flex",
-                  gap: { xs: ".6rem", md: "1.6rem" },
-                  width: "100%",
-                  flexDirection: "column",
-                }}
-              >
-                <Typography
-                  variant="body2"
-                  sx={{
-                    fontSize: "1.6rem",
-                    fontWeight: 500,
-                    lineHeight: "2.4rem",
-                    color: "#fff",
-                  }}
-                >
-                  {t("field4")}
-                </Typography>
+              </FieldWrapper>
+              <FieldWrapper title={t("field4")}>
                 <Select
                   defaultValue={t("other_inquiries")}
                   displayEmpty
@@ -366,7 +270,6 @@ export default function ContactUsComponent() {
                     "& .arrow-icon-2": {
                       top: "32%",
                     },
-
                     "&:focus": {
                       outline: "none",
                     },
@@ -444,26 +347,8 @@ export default function ContactUsComponent() {
                     {t("other_inquiries")}
                   </MenuItem>
                 </Select>
-              </Box>
-              <Box
-                sx={{
-                  display: "flex",
-                  gap: { xs: ".6rem", md: "1.6rem" },
-                  width: "100%",
-                  flexDirection: "column",
-                }}
-              >
-                <Typography
-                  variant="body2"
-                  sx={{
-                    fontSize: "1.6rem",
-                    fontWeight: 500,
-                    lineHeight: "2.4rem",
-                    color: "#fff",
-                  }}
-                >
-                  {t("field5")}
-                </Typography>
+              </FieldWrapper>
+              <FieldWrapper title={t("field5")}>
                 <TextField
                   placeholder={t("write_message")}
                   value={message}
@@ -473,7 +358,7 @@ export default function ContactUsComponent() {
                   maxRows={8}
                   sx={textStyleTextare}
                 />
-              </Box>
+              </FieldWrapper>
 
               <Button
                 onClick={handleSubmit}
@@ -502,11 +387,12 @@ export default function ContactUsComponent() {
             </Box>
           </Container>
         </Box>
-      </motion.div>
+      </MotionWrapper>
+
       <AnimatePresence>
         {isPopupOpen && (
           <>
-            <motion.div
+            <MotionWrapper
               initial={{ opacity: 0, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, ease: "easeIn" }}
@@ -523,7 +409,9 @@ export default function ContactUsComponent() {
                 cursor: "pointer",
               }}
               onClick={handleClosePopup}
-            />
+            >
+              <div></div>
+            </MotionWrapper>
 
             <Box
               sx={{
@@ -536,11 +424,11 @@ export default function ContactUsComponent() {
                 backdropFilter: "blur(25px)",
                 width: { xs: "85%", sm: "50rem", lg: "56rem" },
                 margin: "auto",
-                position: "fixed", // Element is positioned relative to the viewport
-                top: "50%", // Center vertically
-                left: "50%", // Center horizontally
-                zIndex: 99999999, // Keep high z-index for visibility
-                transform: "translate(-50%, -50%)", // Shift the element by 50% of its own width and height
+                position: "fixed",
+                top: "50%",
+                left: "50%",
+                zIndex: 99999999,
+                transform: "translate(-50%, -50%)",
               }}
             >
               <Box
@@ -581,9 +469,9 @@ export default function ContactUsComponent() {
                     <path
                       d="M8.625 3.875L3.375 9.125M3.375 3.875L8.625 9.125"
                       stroke="white"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </svg>
                 </Button>
@@ -653,4 +541,6 @@ export default function ContactUsComponent() {
       </AnimatePresence>
     </>
   );
-}
+};
+
+export default memo(ContactUsComponent);

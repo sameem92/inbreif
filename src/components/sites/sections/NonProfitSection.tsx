@@ -26,10 +26,13 @@ const badges = [
 ];
 
 import { useTranslations } from "next-intl";
-import caro from "../../../../public/images/caro.png";
+import nonProfit1 from "../../../../public/images/sites/non_profit_1.png";
+import nonProfit2 from "../../../../public/images/sites/non_profit_2.png";
+import nonProfit3 from "../../../../public/images/sites/non_profit_3.png";
+
 import SwiperCardContainer2 from "../shared/SwiperCardContainer2";
 
-const images = [caro, caro, caro, caro, caro];
+const images = [nonProfit1, nonProfit2, nonProfit3];
 
 const NonProfitSection = () => {
   const t = useTranslations("InformationalReservation.NonProfitSection");
