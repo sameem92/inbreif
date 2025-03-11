@@ -48,7 +48,7 @@ const Header = () => {
             width="100%"
             sx={{
               display: "flex",
-              "@media (max-width: 1128px)": {
+              "@media (max-width: 1185px)": {
                 display: "none",
               },
             }}

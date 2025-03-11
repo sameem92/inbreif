@@ -12,7 +12,8 @@ const SwiperCardContainer2 = ({ children }: { children: ReactNode }) => {
         "@media (min-width:1025px)": {
           flexDirection: "row",
           alignItems: "start",
-          gap: "44px",
+          justifyContent: "space-between",
+          gap: "0px",
         },
       }}
     >

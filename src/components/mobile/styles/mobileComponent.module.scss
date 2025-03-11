@@ -36,13 +36,14 @@
         justify-content: center;
 
         .img {
-          height: 70px;
-          width: 80px;
           margin-bottom: 15px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
 
           img {
-            max-height: 100%;
-            max-width: 100%;
+            width: auto;
+            max-height: 70px;
           }
         }
 

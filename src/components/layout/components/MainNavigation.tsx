@@ -3,9 +3,10 @@
 import { NavList } from "@/constants/page";
 import { Box, Stack } from "@mui/material";
 import { useLocale, useTranslations } from "next-intl";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { usePathname } from "next/navigation";
 import NavigationMenuDemo from "./NavigationMenuDemo";
+import { UrlObject } from "url";
 
 const MainNavigation = () => {
   const t = useTranslations("Shared");
@@ -19,7 +20,6 @@ const MainNavigation = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        gap: "2.6rem",
         flexGrow: 1,
       }}
     >
@@ -30,12 +30,16 @@ const MainNavigation = () => {
           alignItems="center"
           flexDirection="row"
           width="100%"
-          gap="16px"
+          gap="18px"
         >
           {NavList.map((item) => (
             <Link
               prefetch={true}
-              href={item.path}
+              href={
+                item.path as
+                  | "/"
+                  | ({ pathname: "/" } & Omit<UrlObject, "pathname">)
+              }
               className={`nav-link ${isActive(item.path) ? "active" : ""}`}
               key={item.path}
             >

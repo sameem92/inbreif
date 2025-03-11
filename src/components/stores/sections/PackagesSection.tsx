@@ -6,7 +6,7 @@ import React, { useRef, useState } from "react";
 import Grid from "@mui/material/Grid2";
 import { Box, Tab, Tabs } from "@mui/material";
 import Packages from "@/components/tools/package/packages";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { plansM, plansY } from "@/constants/web";
 import { useInView } from "framer-motion";
 import MotionWrapper from "@/components/tools/MotionWrapper";
@@ -49,6 +49,7 @@ const PackagesSection = () => {
   const [value, setValue] = useState<string | number>(0);
   const ref1 = useRef(null);
   const isInView1 = useInView(ref1, { once: true, margin: "-100px" });
+  const locale = useLocale();
 
   const handleChange = (
     _event: React.SyntheticEvent,
@@ -113,18 +114,20 @@ const PackagesSection = () => {
                   },
                 }}
               >
-                <Tabs
-                  className="tabs"
-                  value={value}
-                  onChange={handleChange}
-                  sx={{
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <Tab label={t("yearLabel")} {...a11yProps(0)} />
-                  <Tab label={t("monthLabel")} {...a11yProps(1)} />
-                </Tabs>
+                {locale !== "de" && (
+                  <Tabs
+                    className="tabs"
+                    value={value}
+                    onChange={handleChange}
+                    sx={{
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Tab label={t("yearLabel")} {...a11yProps(0)} />
+                    <Tab label={t("monthLabel")} {...a11yProps(1)} />
+                  </Tabs>
+                )}
 
                 <CustomTabPanel value={value} index={0}>
                   <Grid

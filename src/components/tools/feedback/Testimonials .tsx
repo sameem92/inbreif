@@ -157,7 +157,7 @@ const Testimonials = ({
               disableOnInteraction: false, // Continue autoplay after user interaction
               pauseOnMouseEnter: true, // Pause autoplay when hovered
             }}
-            speed={1000} // Speed of slide transition (1 second)
+            speed={500} // Speed of slide transition (0.5 second)
             modules={[Navigation, Autoplay]} // Add Autoplay module
             className="mySwiper2"
           >

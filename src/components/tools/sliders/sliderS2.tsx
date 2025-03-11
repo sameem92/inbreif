@@ -10,7 +10,12 @@ import { useTranslations } from "next-intl";
 import { Box, Button, useMediaQuery } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Scrollbar, Navigation, EffectCoverflow } from "swiper/modules";
+import {
+  Scrollbar,
+  Navigation,
+  EffectCoverflow,
+  Autoplay,
+} from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/scrollbar";
@@ -134,7 +139,8 @@ export default function SlideS2() {
           </Button>
 
           <Swiper
-            modules={[Navigation, EffectCoverflow, Scrollbar]}
+            modules={[Navigation, EffectCoverflow, Scrollbar, Autoplay]}
+            loop={true} // Enable looping
             scrollbar={{ draggable: true, dragSize: 24 }}
             effect="coverflow"
             className="mySwiper"
@@ -143,7 +149,6 @@ export default function SlideS2() {
             spaceBetween={60}
             grabCursor={true}
             allowTouchMove={true}
-            loop={true}
             navigation={{
               prevEl: ".prev",
               nextEl: ".next",

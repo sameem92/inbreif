@@ -98,6 +98,7 @@ const ServiceBox = ({ imgSrc, title, href }) => {
             alignItems: "center",
             justifyContent: "space-between",
             flex: "1",
+            gap: "1.5rem",
           }}
         >
           <Box maxWidth="292px">

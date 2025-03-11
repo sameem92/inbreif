@@ -1,53 +1,40 @@
 "use client";
 
+import { Locale } from "@/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
+import { useTransition } from "react";
+import { usePathname, useRouter } from "@/i18n/navigation";
 
 const LangSwitcher = () => {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+  const params = useParams();
   const t = useTranslations("Shared");
 
-  const [language, setLanguage] = useState<string>(locale);
-
-  useEffect(() => {
-    const savedLang = localStorage.getItem("language") || locale;
-
-    if (savedLang !== locale && pathname) {
-      setLanguage(savedLang);
-      const newPathname = pathname.startsWith(`/${locale}`)
-        ? pathname.replace(`/${locale}`, `/${savedLang}`)
-        : `/${savedLang}${pathname}`;
-
-      router.replace(newPathname);
-    }
-  }, [locale]); // Only run when locale changes
-
-  const switchLanguage = (newLocale: string) => {
-    if (pathname) {
-      const newPathname = pathname.startsWith(`/${locale}`)
-        ? pathname.replace(`/${locale}`, `/${newLocale}`)
-        : `/${newLocale}${pathname}`;
-
-      localStorage.setItem("language", newLocale);
-      router.push(newPathname);
-    }
-  };
+  const [isPending, startTransition] = useTransition();
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLanguage = event.target.value;
-    setLanguage(newLanguage);
-    switchLanguage(newLanguage);
+    const newLanguage = event.target.value as Locale;
+    startTransition(() => {
+      router.replace(
+        // @ts-expect-error -- TypeScript will validate that only known `params`
+        // are used in combination with a given `pathname`. Since the two will
+        // always match for the current route, we can skip runtime checks.
+        { pathname, params },
+        { locale: newLanguage }
+      );
+    });
   };
 
   return (
     <div className="select-wrapper">
       <select
         className="language-select"
-        value={language}
+        defaultValue={locale}
         onChange={handleChange}
+        disabled={isPending}
       >
         <option value="en">{t("en")}</option>
         <option value="ar">{t("ar")}</option>

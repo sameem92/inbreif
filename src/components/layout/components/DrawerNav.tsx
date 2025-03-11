@@ -22,7 +22,7 @@ const DrawerNav = () => {
           display: "none",
           justifyContent: "space-between",
           alignItems: "center",
-          "@media (max-width: 1128px)": {
+          "@media (max-width: 1185px)": {
             display: "flex",
           },
 

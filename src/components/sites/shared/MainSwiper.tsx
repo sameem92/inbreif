@@ -12,6 +12,7 @@ import {
   Pagination,
   Scrollbar,
   Thumbs,
+  Autoplay,
 } from "swiper/modules";
 
 import "swiper/css";
@@ -40,7 +41,7 @@ const MainSwiper = ({ images }: { images: StaticImageData[] }) => {
     <Stack
       gap={"16px"}
       sx={{
-        width: "50%",
+        width: "55%",
         "@media (max-width: 1024px)": { width: "90%" },
         "@media (max-width: 576px)": { width: "100%" },
       }}
@@ -146,8 +147,20 @@ const MainSwiper = ({ images }: { images: StaticImageData[] }) => {
           }}
           onSwiper={setThumbSwiper}
           onSlideChange={handleSlideChange}
-          speed={1000}
-          modules={[Navigation, Pagination, Scrollbar, Thumbs, FreeMode]}
+          loop={true} // Enable looping
+          autoplay={{
+            disableOnInteraction: false, // Continue autoplay after user interaction
+            pauseOnMouseEnter: true, // Pause autoplay when hovered
+          }}
+          speed={500} // Speed of slide transition (0.5 second)
+          modules={[
+            Navigation,
+            Pagination,
+            Scrollbar,
+            Thumbs,
+            FreeMode,
+            Autoplay,
+          ]}
           className={`mySwiper-${uniqueId} mySwiper2`}
         >
           {images.map((img, index) => (

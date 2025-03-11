@@ -5,7 +5,11 @@ import AppLayout from "@/components/layout/AppLayout";
 import { routing } from "@/i18n/routing";
 import { ReactLenis } from "@/util/lenis";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 import { IBM_Plex_Sans_Arabic } from "next/font/google";
 import { notFound } from "next/navigation";
 import Script from "next/script";
@@ -17,6 +21,10 @@ const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
   display: "swap",
   variable: "--font-ibm-plex-sans-arabic",
 });
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export async function generateMetadata({
   params,
@@ -87,6 +95,8 @@ export default async function RootLayout({
   if (!routing.locales.includes(locale as "en" | "ar" | "de")) {
     notFound();
   }
+
+  setRequestLocale(locale);
 
   const messages = await getMessages();
 

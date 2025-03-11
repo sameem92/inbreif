@@ -3,14 +3,14 @@
 import { Box, Container, Grid, useMediaQuery } from "@mui/material";
 
 import { HomeServices } from "@/constants/page";
-import { useLocale, useTranslations } from "next-intl";
+import { useInView } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { useRef } from "react";
 import service1 from "../../../public/image/service1.png";
 import service2 from "../../../public/image/service2.png";
 import service3 from "../../../public/image/service3.png";
 import MotionWrapper from "../tools/MotionWrapper";
 import ServiceBox from "./ServiceBox";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
 
 const SoftwareServices = [
   { imgSrc: service1, title: "Shared.Mobile", href: "/mobile-apps" },
@@ -30,7 +30,6 @@ export default function Services() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const ref2 = useRef(null);
   const isInView2 = useInView(ref2, { once: true, margin: "-100px" });
-  const locale = useLocale();
 
   return (
     <Container
