@@ -33,7 +33,8 @@
     ".next/types/**/*.ts",
     "src/pages/_document.tsx", // Ensure correct spelling of file
     "out/types/**/*.ts",
-    "src/constants/its"
+    "src/constants/its",
+    "next.config.mjs"
   ],
   "exclude": ["node_modules"]
 }

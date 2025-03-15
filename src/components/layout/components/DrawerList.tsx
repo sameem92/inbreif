@@ -1,7 +1,7 @@
 import { NavList } from "@/constants/page";
 import { Box, Button, List, ListItem } from "@mui/material";
 import { useLocale, useTranslations } from "next-intl";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { usePathname, useRouter } from "next/navigation";
 import { FC } from "react";
 import InbreifLogo from "../../../../public/image/InbreifLogo.svg";

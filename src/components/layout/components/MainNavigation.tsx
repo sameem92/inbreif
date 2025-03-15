@@ -1,16 +1,17 @@
 "use client";
 
 import { NavList } from "@/constants/page";
+import { Link } from "@/i18n/navigation";
 import { Box, Stack } from "@mui/material";
 import { useLocale, useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
-import { usePathname } from "next/navigation";
-import NavigationMenuDemo from "./NavigationMenuDemo";
+import { useSelectedLayoutSegment } from "next/navigation";
 import { UrlObject } from "url";
+import NavigationMenuDemo from "./NavigationMenuDemo";
 
 const MainNavigation = () => {
   const t = useTranslations("Shared");
-  const pathname = usePathname();
+  const selectedLayoutSegment = useSelectedLayoutSegment();
+  const pathname = selectedLayoutSegment ? `/${selectedLayoutSegment}` : "/";
   const isActive = (path: string) => pathname === path;
   const locale = useLocale();
 
@@ -20,6 +21,7 @@ const MainNavigation = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        gap: "2.6rem",
         flexGrow: 1,
       }}
     >

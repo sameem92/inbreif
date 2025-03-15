@@ -1,6 +1,5 @@
 "use client";
 
-import { Locale } from "@/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
 import { useTransition } from "react";
@@ -12,7 +11,6 @@ const LangSwitcher = () => {
   const pathname = usePathname();
   const params = useParams();
   const t = useTranslations("Shared");
-
   const [isPending, startTransition] = useTransition();
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {

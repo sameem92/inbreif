@@ -2,17 +2,13 @@ import "@/styles/global.css";
 import "@/styles/sections.scss";
 
 import AppLayout from "@/components/layout/AppLayout";
-import { routing } from "@/i18n/routing";
 import { ReactLenis } from "@/util/lenis";
-import { NextIntlClientProvider } from "next-intl";
-import {
-  getMessages,
-  getTranslations,
-  setRequestLocale,
-} from "next-intl/server";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { IBM_Plex_Sans_Arabic } from "next/font/google";
 import { notFound } from "next/navigation";
 import Script from "next/script";
+import { routing } from "../../i18n/routing";
 
 // Import IBM Plex Sans Arabic font
 const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
@@ -21,10 +17,6 @@ const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
   display: "swap",
   variable: "--font-ibm-plex-sans-arabic",
 });
-
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
-}
 
 export async function generateMetadata({
   params,
@@ -87,24 +79,22 @@ export async function generateMetadata({
 
 export default async function RootLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  if (!routing.locales.includes(locale as "en" | "ar" | "de")) {
+  // Ensure that the incoming `locale` is valid
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
-
-  setRequestLocale(locale);
-
-  const messages = await getMessages();
 
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
       <ReactLenis root>
         <body className={ibmPlexSansArabic.className}>
-          <NextIntlClientProvider messages={messages}>
+          <NextIntlClientProvider>
             {/* Google Tag Manager (noscript) */}
             <noscript>
               <iframe

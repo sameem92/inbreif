@@ -1,7 +1,7 @@
 // "use client";
 
 import { AppBar, Box, Stack, Toolbar } from "@mui/material";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import InbreifLogo from "../../../public/image/InbreifLogo.svg";
 import ContactUsButton from "./components/ContactUsButton";
 import CurrencySwitcher from "./components/CurrencySwitcher";

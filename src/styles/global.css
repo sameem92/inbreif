@@ -738,6 +738,17 @@ button:hover:disabled {
     padding-bottom: 5rem !important;
   }
 }
+@media screen and (max-width: 1024px) {
+  .service-box {
+    /* padding: 1rem 2rem; */
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .service-box {
+    /* padding: 1rem 2rem; */
+  }
+}
 
 .price-li {
   padding: 10px 5px 10px 5px;

@@ -2,7 +2,7 @@ import { DesignServices, ProgrammingServices } from "@/constants/page";
 import { CaretDownIcon } from "@radix-ui/react-icons";
 import classNames from "classnames";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { NavigationMenu } from "radix-ui";
 import "./navStyles.css";
 
