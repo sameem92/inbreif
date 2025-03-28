@@ -54,6 +54,10 @@
       font-weight: 700;
       color: #e1e42a;
       margin-bottom: 29px;
+
+      @media (max-width: 425px) {
+        margin: 0 auto;
+      }
     }
 
     p {
@@ -76,7 +80,11 @@
     .actions {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 8px;
+
+      @media (max-width: 425px) {
+        margin: 0 auto;
+      }
 
       @media (max-width: 375px) {
         flex-direction: column;
@@ -87,26 +95,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 22px;
+        font-size: 1.6rem;
         font-weight: 600;
         border-radius: 60px;
-
-        @media (max-width: 1439px) {
-          font-size: 20px;
-        }
-
-        @media (max-width: 1023px) {
-          font-size: 18px;
-        }
-
-        @media (max-width: 923px) {
-          font-size: 16px;
-        }
-
-        @media (max-width: 425px) {
-          font-size: 12px;
-          padding: 8px 16px;
-        }
 
         &.transparent {
           color: #e0e324;

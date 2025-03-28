@@ -4,7 +4,8 @@ import Image, { StaticImageData } from "next/image";
 import { useId, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Box, Button, Stack } from "@mui/material";
+import { Box, Button, IconButton, Modal, Stack } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 
 import {
   FreeMode,
@@ -26,6 +27,10 @@ import { useLocale } from "next-intl";
 const MainSwiper = ({ images }: { images: StaticImageData[] }) => {
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<StaticImageData | null>(
+    null
+  );
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const uniqueId = useId().replace(/:/g, "");
   const [thumbSwiper, setThumbSwiper] = useState<SwiperType | null>(null);
   const locale = useLocale();
@@ -35,6 +40,16 @@ const MainSwiper = ({ images }: { images: StaticImageData[] }) => {
   const handleSlideChange = (swiper: SwiperType) => {
     setIsBeginning(swiper.realIndex === 0);
     setIsEnd(swiper.realIndex === totalSlides - 1);
+  };
+
+  const openModal = (image: StaticImageData) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
   };
 
   return (
@@ -164,11 +179,63 @@ const MainSwiper = ({ images }: { images: StaticImageData[] }) => {
           className={`mySwiper-${uniqueId} mySwiper2`}
         >
           {images.map((img, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide
+              key={index}
+              onClick={() => openModal(img)}
+              style={{ cursor: "pointer" }}
+            >
               <Image src={img} alt={`image ${index}`} />
             </SwiperSlide>
           ))}
         </Swiper>
+
+        <Modal open={isModalOpen} onClose={closeModal}>
+          <Box
+            sx={{
+              position: "fixed",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              bgcolor: "rgba(0, 0, 0, 0.8)",
+              borderRadius: "16px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              width: { xs: "95%", xl: "70%" },
+              maxWidth: "100%",
+              maxHeight: "90%",
+              outline: "none",
+            }}
+          >
+            {selectedImage && (
+              <>
+                <Image
+                  src={selectedImage}
+                  alt="Selected"
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto",
+                    maxHeight: "90vh",
+                    borderRadius: "16px",
+                  }}
+                />
+                <IconButton
+                  onClick={closeModal}
+                  sx={{
+                    position: "absolute",
+                    top: 10,
+                    right: 10,
+                    background: "rgba(0,0,0,0.5)",
+                    color: "#fff",
+                    "&:hover": { background: "rgba(0,0,0,0.7)" },
+                  }}
+                >
+                  <CloseIcon />
+                </IconButton>
+              </>
+            )}
+          </Box>
+        </Modal>
 
         <Button
           title="next"
